@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: processor manufacturer constants
+    rule-category: anti-analysis/anti-vm/detect-vm-environment
+    author: matthew.williams@fireeye.com
+    reference: https://en.wikipedia.org/wiki/CPUID
+    scope: basic block
+    examples:
+      - 47E43BE32F2BDE64E34F9008A7693CC6:0x5AE50
+  features:
+    - and:
+      - mnemonic: cmp
+      - or:
+        - number: 0x61774D56    # 'awMV' (VMware)
+        - number: 0x566E6558    # 'VneX' (Xen HVM)
+        - number: 0x7263694D    # 'rciM' (Microsoft Hyper-V)
+        - number: 0x4B4D564B    # 'KMVK' (KVM)
+        - number: 0x70726C20    # 'prl ' (Parallels)
+        - number: 0x786F4256    # 'xoBV' (VirtualBox)
+      - optional:
+        - mnemonic: cpuid
+

@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: open internet session
+    rule-category: communication/communication-via-wininet/open-internet-session
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 6f99a2c8944cb02ff28c6f9ced59b161:0x40E2F0
+  features:
+    - and:
+      - api: wininet.InternetOpen
+      - optional:
+        - api: wininet.InternetCloseHandle

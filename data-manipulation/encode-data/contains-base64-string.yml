@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: contains Base64 string
+    rule-category: data-manipulation/encode-data/encode-data-using-base64
+    author: moritz.raabe@fireeye.com
+    scope: file
+    examples:
+      - BFB9B5391A13D0AFD787E87AB90F14F5
+      - 074072B261FC27B65C72671F13510C05
+      - 5DB2D2BE20D59AA0BE6709A6850F1775
+  features:
+    - string: /ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/

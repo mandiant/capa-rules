@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: write pipe
+    rule-category: communication/communication-via-pipes/write-pipe
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - C91887D861D9BD4A5872249B641BC9F9:0x401A77
+  features:
+    - and:
+      - or:
+        - match: create pipe
+        - match: connect pipe
+      - api: kernel32.WriteFile

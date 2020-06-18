@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: load shellcode RWX thread
+    rule-category: load-code/load-shellcode/load-shellcode-rwx-thread
+    author: moritz.raabe@fireeye.com
+    scope: function
+  features:
+    - and:
+      - match: allocate RWX memory
+      - match: create thread

@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: c2s file transfer command
+    rule-category: command-and-control/handle-command/file-transfer
+    author: william.ballenthin@fireeye.com
+    scope: function
+  features:
+    - and:
+      - match: read file
+      - match: send data

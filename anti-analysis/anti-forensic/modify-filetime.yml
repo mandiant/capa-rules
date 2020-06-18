@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: modify file time
+    rule-category: anti-analysis/anti-forensic/modify-filetime
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 03-04.exe_:0x4014e0
+  features:
+    - or:
+      - and:
+        - api: kernel32.GetSystemTime
+        - api: kernel32.FileTimeToLocalFileTime
+        - api: kernel32.GetSystemTimeAsFileTime
+        - api: kernel32.SystemTimeToFileTime
+        - api: kernel32.GetFileTime
+      - api: kernel32.SetFileTime

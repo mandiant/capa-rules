@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: create reverse shell
+    rule-category: communication/communication-via-reverse-shell/create-reverse-shell
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - C91887D861D9BD4A5872249B641BC9F9:0x401A77
+  features:
+    - or:
+      - and:
+        - match: create pipe
+        - api: kernel32.PeekNamedPipe
+        - api: kernel32.CreateProcess
+        - api: kernel32.ReadFile
+        - api: kernel32.WriteFile
+      - and:
+        - match: create process
+        - match: read pipe
+        - match: write pipe
+      - and:
+        - match: create pipe
+        - match: create process
+        - basic block:
+          - and:
+            - count(api(SetHandleInformation)): 2 or more
+            - number: 1 = HANDLE_FLAG_INHERIT

@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: stackstring obfuscation
+    rule-category: anti-analysis/data-obfuscation/string-obfuscation
+    author: moritz.raabe@fireeye.com
+    scope: basic block
+    examples:
+      - Practical Malware Analysis Lab 16-03.exe_:0x4013D0
+  features:
+    - characteristic(stack string): true

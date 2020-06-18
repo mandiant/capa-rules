@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: get file size
+    rule-category: machine-access-control/file-manipulation/get-file-size
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - or:
+      - api: kernel32.GetFileSize
+      - api: kernel32.GetFileSizeEx

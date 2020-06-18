@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: vmware io port
+    author: matthew.williams@fireeye.com
+    rule-category: anti-analysis/anti-vm/detect-vm-environment
+    scope: function
+  features:
+    - and:
+      - mnemonic: in
+      - number: 0x564D5868 = VMXh
+      - number: 0x5658 = VX

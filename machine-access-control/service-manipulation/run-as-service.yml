@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: run as service
+    rule-category: persistence/continuous-execution/persist-via-windows-service
+    author: moritz.raabe@fireeye.com
+    scope: file
+    examples:
+      - Practical Malware Analysis Lab 03-02.dll_
+  features:
+    - or:
+      - export: ServiceMain
+      - import: RegisterServiceCtrlHandler
+      - import: RegisterServiceCtrlHandlerEx

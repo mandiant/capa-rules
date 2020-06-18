@@ -1,0 +1,9 @@
+rule:
+  meta:
+    name: enumerate windows
+    rule-category: machine-access-control/gui-window-manipulation/enumerate-windows
+    author: moritz.raabe@fireeye.com
+    scope: function
+  features:
+    - or:
+      - api: user32.EnumWindows

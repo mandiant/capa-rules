@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: write file to internet
+    rule-category: communication/communication-via-http/write-file-to-internet
+    author: matthew.williams@fireeye.com
+    scope: basic block
+    examples:
+      - EAAD7DFC78304B977D3844CC63577152:0x4500CB
+  features:
+    - and:
+      - optional:
+        - or:
+          - match: connect to internet host
+          - match: connect to internet url
+      - api: wininet.InternetWriteFile

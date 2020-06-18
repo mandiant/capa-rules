@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: read pipe
+    rule-category: communication/communication-via-pipes/read-pipe
+    description: PeekNamedPipe isn't required to read from a pipe; however, pipes are often utilized to capture the
+                 output of a cmd.exe process. In a multi-thread instance, a new thread is created that calls
+                 PeekNamedPipe and ReadFile to obtain the command output.
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 14-02.exe_:0x4014C0
+  features:
+    - and:
+      - api: kernel32.PeekNamedPipe
+      - api: kernel32.ReadFile

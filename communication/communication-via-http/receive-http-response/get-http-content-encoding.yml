@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: get HTTP content encoding
+    rule-category: communication/communication-via-http/receive-http-response
+    author: matthew.williams@fireeye.com
+    scope: basic block
+    examples:
+      - FBBAAF569B63F6398503E4F1979CABEF:0x4068D9
+  features:
+    - and:
+      - api: wininet.HttpQueryInfo
+      - number: 0x1D = HTTP_QUERY_CONTENT_ENCODING

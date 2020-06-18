@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: terminate thread
+    rule-category: machine-access-control/thread-manipulation/terminate-thread
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 03-02.dll_:0x10003286
+  features:
+    - or:
+      - api: kernel32.TerminateThread

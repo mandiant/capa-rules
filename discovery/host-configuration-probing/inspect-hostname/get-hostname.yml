@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: get hostname
+    rule-category: discovery/host-configuration-probing/inspect-hostname
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - 9324D1A8AE37A36AE560C37448C9705A:0x4052A0
+  features:
+    - or:
+      - api: kernel32.GetComputerName
+      - api: kernel32.GetComputerNameEx
+      - api: GetComputerObjectName
+      - api: ws2_32.gethostname

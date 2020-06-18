@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: get file version info
+    rule-category: machine-access-control/file-manipulation/get-file-version-info
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - and:
+      - api: version.GetFileVersionInfo
+      - api: version.GetFileVersionInfoSize
+      - optional:
+        # retrieves specified version information from the specified version-information resource
+        - api: version.VerQueryValue

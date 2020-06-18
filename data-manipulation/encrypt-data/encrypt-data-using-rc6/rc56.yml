@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: RC6 (or RC5)
+    note: both RC5 and RC6 use these same constants. RC6 is probably more common.
+    rule-category: data-manipulation/encrypt-data/encrypt-data-using-rc6
+    author: william.ballenthin@fireeye.com
+    scope: function
+    examples:
+      - D87BA0BFCE1CDB17FD243B8B1D247E88:0x402390
+  features:
+    - and:
+      # ref: https://github.com/stamparm/cryptospecs/blob/master/symmetrical/sources/rc6.c#L66
+      - number: 0xB7E15163
+      - or:
+        - number: 0x9e3779b9  # when we add an unsigned
+        - number: 0x61C88647  # when we subtracted an unsigned

@@ -1,0 +1,34 @@
+rule:
+  meta:
+    name: RC4 key-scheduling algorithm (KSA)
+    author: moritz.raabe@fireeye.com
+    rule-category: data-manipulation/encrypt-data/encrypt-data-using-rc4
+    scope: function
+    examples:
+      - 34404A3FB9804977C6AB86CB991FB130:0x403D40
+      - C805528F6844D7CAF5793C025B56F67D:0x4067AE
+      - 9324D1A8AE37A36AE560C37448C9705A:0x404950
+      - 782A48821D88060ADF0F7EF3E8759FEE3DDAD49E942DAAD18C5AF8AE0E9EB51E:0x405C42
+  features:
+    - or:
+      - and:
+        - basic block:
+          - and:
+            # TODO misses if regular loop is used
+            - characteristic(tight loop): true
+            - or:
+              - number: 0xFF
+              - number: 0x100
+        - match: assembly modulo 256
+        - or:
+          - mnemonic: div
+          - mnemonic: idiv
+      # optimized, writes DWORDs instead of bytes
+      - and:
+        - or:
+          - number: 0xFFFEFDFC
+          - mnemonic: sub
+        - or:
+          - number: 0x03020100
+          - mnemonic: add
+        - number: 0x4040404

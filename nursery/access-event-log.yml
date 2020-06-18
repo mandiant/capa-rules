@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: access event log
+    author: moritz.raabe@fireeye.com
+    rule-category: other-features/access-event-log
+    scope: function
+  features:
+    - or:
+      - api: OpenEventLog
+      - api: ClearEventLog
+      - api: OpenBackupEventLog
+      - api: ReportEvent

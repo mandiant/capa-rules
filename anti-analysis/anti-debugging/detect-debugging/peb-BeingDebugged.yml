@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: PEB access BeingDebugged flag
+    rule-category: anti-analysis/anti-debugging/detect-debugging
+    author: moritz.raabe@fireeye.com
+    reference: Practical Malware Analysis, Chapter 16, p. 353
+    scope: basic block
+    examples:
+      - Practical Malware Analysis Lab 16-01.exe_:0x403530
+  features:
+    - and:
+      - characteristic(peb access): true
+      - offset: 2 = PEB.BeingDebugged

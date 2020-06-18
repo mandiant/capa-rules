@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: read file from internet
+    rule-category: communication/communication-via-http/read-file-from-internet
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 6f99a2c8944cb02ff28c6f9ced59b161:0x40D590
+  features:
+    - and:
+      - optional:
+        - or:
+          - match: connect to internet host
+          - match: connect to internet url
+      - api: wininet.InternetReadFile
+      - api: wininet.InternetReadFileEx

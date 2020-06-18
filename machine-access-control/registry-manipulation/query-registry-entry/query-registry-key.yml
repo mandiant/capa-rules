@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: query registry key
+    rule-category: machine-access-control/registry-manipulation/query-registry-entry
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 493167E85E45363D09495D0841C30648:0x404930
+  features:
+    - or:
+      - api: ZwQueryKey

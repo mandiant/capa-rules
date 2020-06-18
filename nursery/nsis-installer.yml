@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: NSIS installer
+    rule-category: other-features/installer/nsis
+    author: moritz.raabe@fireeye.com
+    scope: file
+    reference: https://nsis.sourceforge.io/Main_Page
+  features:
+    - or:
+      - string: /http://nsis\.sf\.net/

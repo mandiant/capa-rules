@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: create HTTP request
+    rule-category: communication/communication-via-http/send-http-request
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x10002650
+  features:
+    - or:
+      - api: winhttp.WinHttpOpenRequest

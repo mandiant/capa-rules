@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: anti-debugging instructions
+    rule-category: anti-analysis/anti-debugging/detect-debugging
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 16-03.exe_:0x401300
+  features:
+    - or:
+      - count(mnemonic(rdtsc)): 2 or more
+      - mnemonic: icebp

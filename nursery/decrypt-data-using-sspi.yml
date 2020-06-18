@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: decrypt data using sspi
+    rule-category: data-manipulation/decrypt-data/decrypt-data-using-sspi
+    author: matthew.williams@fireeye.com
+    scope: basic block
+    reference: https://docs.microsoft.com/en-us/windows/win32/api/sspi/nf-sspi-decryptmessage
+  features:
+    - and:
+      - api: secur32.DecryptMessage
+

@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: decompression via COM
+    rule-category: data-manipulation/compression/decompression-com
+    author: matthew.williams@fireeye.com
+    scope: function
+    examples:
+      - FBBAAF569B63F6398503E4F1979CABEF:0x40691F
+    reference: https://www.virusbulletin.com/virusbulletin/2012/09/urlzone-reloaded-new-evolution/
+  features:
+    - and:
+      - api: ole32.CoCreateInstance
+      - bytes: D0 7C C3 54 44 D9 D0 11 A9 F4 00 60 97 94 23 11 = StdEncodingFilterFac
+      - bytes: 00 DE BD 70 8E C1 D0 11 A9 CE 00 60 97 94 23 11 = IEncodingFilterFactory
+      - count(offset(0x10)): 2 or more   # IEncodingFilterFactory.GetDefaultFilter and <filter>.DoDecode

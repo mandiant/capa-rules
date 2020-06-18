@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: capture system keystrokes via application hook
+    rule-category: collection/output-peripheral-capture/capture-system-keystrokes
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 12-03.exe_:0x401000
+  features:
+    - and:
+      - match: set application hook
+      - or:
+        - number: 13 = WH_KEYBOARD_LL
+        - number: 2  = WH_KEYBOARD

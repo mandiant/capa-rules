@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: process replacement
+    author: william.ballenthin@fireeye.com
+    rule-category: machine-access-control/process-manipulation/process-replacement
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 12-02.exe_:0x4010EA
+  features:
+    - and:
+      - match: create process suspended
+      - and:
+        - match: write process memory
+        - or:
+          - api: kernel32.ResumeThread
+          - api: ntdll.NtResumeThread

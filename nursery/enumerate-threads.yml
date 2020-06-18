@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: enumerate threads
+    author: moritz.raabe@fireeye.com
+    rule-category: machine-access-control/process-manipulation/enumerate-threads
+    scope: function
+  features:
+    - and:
+      - api: kernel32.Thread32First
+      - api: kernel32.Thread32Next

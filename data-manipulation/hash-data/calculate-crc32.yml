@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: CRC32 hash
+    rule-category: data-manipulation/hash-data/hash-data-using-crc32
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
+      - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
+  features:
+    - or:
+      - and:
+        - mnemonic: shr
+        - number: 0xEDB88320
+        - number: 8
+        - characteristic(nzxor): True
+      - api: RtlComputeCrc32

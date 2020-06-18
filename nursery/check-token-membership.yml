@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: check token membership
+    rule-category: discovery/session-configuration-probing/inspect-session-information
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - and:
+      - api: advapi32.CheckTokenMembership
+      - optional:
+        - api: advapi32.AllocateAndInitializeSid
+        - api: advapi32.FreeSid

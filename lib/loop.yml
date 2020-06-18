@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: loop
+    author: moritz.raabe@fireeye.com
+    scope: function
+    lib: true
+    examples:
+      - 08AC667C65D36D6542917655571E61C8:0x406EAA
+  features:
+    - or:
+      - characteristic(loop): True
+      - characteristic(recursive call): True
+      - basic block:
+        - characteristic(tight loop): True

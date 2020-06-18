@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: capture system keystrokes via polling
+    rule-category: collection/output-peripheral-capture/capture-system-keystrokes
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 11-03.dll_:0x10001030
+  features:
+    - or:
+      - api: user32.GetAsyncKeyState
+      - api: user32.GetKeyState
+      - api: user32.GetKeyboardState
+      - api: user32.VkKeyScan
+      - api: user32.VkKeyScanEx
+      - api: user32.GetKeyNameText

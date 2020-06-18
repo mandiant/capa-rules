@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: read file via mapping
+    rule-category: machine-access-control/file-manipulation/read-file-via-mapping
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - and:
+      - api: kernel32.MapViewOfFile
+      - number: 4 = FILE_MAP_READ
+      - optional:
+        - api: kernel32.UnmapViewOfFile
+        - and:
+          - match: get file size
+          - api: kernel32.CreateFileMapping
+          - number: 2 = PAGE_READONLY

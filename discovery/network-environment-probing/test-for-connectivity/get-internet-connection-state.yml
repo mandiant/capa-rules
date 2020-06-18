@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: get internet connection state
+    rule-category: machine-access-control/network-environment-probing/test-for-connectivity
+    author: matthew.williams@fireeye.com
+    scope: basic block
+    examples:
+      - 648FC498110B11B4313A47A776E6BA40:0x6633F0
+  features:
+    - and:
+      - api: wininet.InternetGetConnectedState
+      - optional:
+        - mnemonic: cmp
+        - or:
+          - number: 0
+          - number: 1

@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: get session information
+    rule-category: discovery/session-configuration-probing/inspect-session-information
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - and:
+      - api: wtsapi32.WTSQuerySessionInformation
+      - optional:
+        - api: wtsapi32.WTSFreeMemory

@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: reference screen saver executable
+    rule-category: persistence
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    description: SCRNSAVE.EXE registry value specifies the name of the screen saver executable file
+  features:
+    - and:
+      - string: SCRNSAVE.EXE
+      - optional:
+        - string: ScreenSaveTimeOut
+        - string: Control Panel\Desktop
+        - match: set registry value

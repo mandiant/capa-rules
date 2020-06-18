@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: connect network resource
+    rule-category: communication/communication-via-network-resource/connect-network-resource
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    description: connect to disk or print resource
+  features:
+    - and:
+      - or:
+        - api: mpr.WNetAddConnection
+        - api: mpr.WNetAddConnection2
+        - api: mpr.WNetAddConnection3
+      - optional:
+        - api: mpr.WNetCancelConnection
+        - api: mpr.WNetCancelConnection2

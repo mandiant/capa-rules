@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: check for time delay using GetTickCount
+    rule-category: anti-analysis/anti-debugging/detect-debugging
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 16-03.exe_:0x4013d0
+  features:
+    - and:
+        - count(api(kernel32.GetTickCount)): 2 or more

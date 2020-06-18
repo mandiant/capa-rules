@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: installer Wise
+    rule-category: other-features/installer/wiseinstall
+    author: moritz.raabe@fireeye.com
+    scope: file
+  features:
+    - or:
+      - string: WiseMain
+      - string: /Wise Installation Wizard/

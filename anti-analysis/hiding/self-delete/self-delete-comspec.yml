@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: self delete via COMSPEC envrionment variable
+    rule-category: anti-analysis/hiding/self-delete
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 14-02.exe_:0x401880
+  features:
+    - and:
+      - match: get comspec path
+      - match: create process
+      # /c del
+      - string: /\/c\s*del\s*/
+      - optional:
+        # > nul
+        - string: /\s*>\s*nul\s*/
+

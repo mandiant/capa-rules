@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: enumerate processes on remote desktop session host
+    rule-category: machine-access-control/process-manipulation/list-processes
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 6f99a2c8944cb02ff28c6f9ced59b161:0x414B70
+  features:
+    - and:
+      - or:
+        - api: wtsapi32.WTSEnumerateProcesses
+        - api: wtsapi32.WTSEnumerateProcessesEx
+      - optional:
+        - or:
+          - api: wtsapi32.WTSFreeMemory
+          - api: wtsapi32.WTSOpenServer

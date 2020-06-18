@@ -1,0 +1,9 @@
+rule:
+  meta:
+    name: get networking parameters
+    rule-category: discovery/network-environment-probing/get-networking-parameters
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - or:
+      - api: iphlpapi.GetNetworkParams

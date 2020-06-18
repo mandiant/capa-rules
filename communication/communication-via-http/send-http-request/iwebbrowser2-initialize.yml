@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: IWebBrowser2 initialize
+    rule-category: communication/communication-via-http/send-http-request
+    author: matthew.williams@fireeye.com
+    scope: basic block
+    examples:
+      - 395EB0DDD99D2C9E37B6D0B73485EE9C:0x402130
+      # https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752127(v%3Dvs.85)
+  features:
+    - and:
+      - api: ole32.CoCreateInstance
+      - bytes: 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = CLSID_InternetExplorer
+      - bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IID_IWebBrowser2

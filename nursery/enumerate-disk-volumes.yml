@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: enumerate disk volumes
+    rule-category: discovery/datamine/enumerate-disk-volumes
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - and:
+      - match: loop
+      - or:
+        - and:
+          - api: kernel32.FindFirstVolume
+          - api: kernel32.FindNextVolume
+          - optional:
+            - api: kernel32.FindVolumeClose
+        - and:
+          - api: kernel32.FindFirstVolumeMountPoint
+          - api: kernel32.FindNextVolumeMountPoint
+          - optional:
+            - api: kernel32.FindVolumeMountPointClose

@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: check socket status
+    rule-category: communication/communication-via-socket/check-socket-status
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x1000C1F0
+  features:
+    - and:
+      - api: ws2_32.select

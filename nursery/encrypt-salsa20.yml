@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: encrypt using Salsa20 or ChaCha
+    author: moritz.raabe@fireeye.com
+    rule-category: data-manipulation/encrypt-data/encrypt-data-using-salsa20
+    scope: function
+  features:
+    # The constant words spell "expand 32-byte k" in ASCII (i.e. the 4 words are "expa", "nd 3", "2-by", and "te k")
+    - or:
+      - string: expand 32-byte k
+      - and:
+        - string: expa
+        - string: nd 3
+        - string: 2-by
+        - string: te k
+      - and:
+        - number: 0x61707865  # apxe
+        - number: 0x3320646E  # 3 dn
+        - number: 0x79622D32  # yb-2
+        - number: 0x6B206574  # k et

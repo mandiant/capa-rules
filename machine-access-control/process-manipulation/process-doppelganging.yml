@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: process doppelganging
+    author: moritz.raabe@fireeye.com
+    rule-category: machine-access-control/process-manipulation/process-doppelganging
+    scope: file
+    examples:
+      # proc_doppel64.exe from https://github.com/hasherezade/process_doppelganging/releases/tag/0.2
+      - A5D66324DAAEE5672B913AA461D4BD3A
+  features:
+    - and:
+      - string: /CreateFileTransacted./
+      - or:
+        - string: ZwCreateSection
+        - string: NtCreateSection
+      - string: RollbackTransaction
