@@ -2,10 +2,10 @@ rule:
   meta:
     name: loop
     author: moritz.raabe@fireeye.com
+    lib: true
     scope: function
     examples:
       - 08AC667C65D36D6542917655571E61C8:0x406EAA
-    lib: true
   features:
     - or:
       - characteristic(loop): true

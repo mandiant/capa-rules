@@ -4,12 +4,12 @@ rule:
     rule-category: technical-targetting/automated-teller-machine-targetting/diebold-nixdorf-atm-targetting
     author: william.ballenthin@fireeye.com
     scope: file
+    references:
+      - https://www.vkremez.com/2017/12/lets-learn-cutlet-atm-malware-internals.html
     examples:
       - 658b0502b53f718bd0611a638dfd5969
       - 8683c43f1e22363ce98f0a89ca4ed389
       - 953bc3e68f0a49c6ade30b52a2bfaaab
-    references:
-      - https://www.vkremez.com/2017/12/lets-learn-cutlet-atm-malware-internals.html
   features:
     - or:
       - import: cscwcng.dll

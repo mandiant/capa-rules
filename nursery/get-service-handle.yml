@@ -2,8 +2,8 @@ rule:
   meta:
     name: get service handle
     author: moritz.raabe@fireeye.com
-    scope: function
     lib: true
+    scope: function
   features:
     - or:
       - api: advapi32.CreateService

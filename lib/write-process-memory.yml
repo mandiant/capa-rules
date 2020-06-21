@@ -3,10 +3,10 @@ rule:
     name: write process memory
     rule-category: machine-access-control/process-manipulation/write-process-memory
     author: moritz.raabe@fireeye.com
+    lib: true
     scope: function
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x4027CF
-    lib: true
   features:
     - or:
       - api: kernel32.WriteProcessMemory

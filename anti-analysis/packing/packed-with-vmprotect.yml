@@ -4,10 +4,10 @@ rule:
     rule-category: anti-analysis/packing/packed-with-vmprotect
     author: william.ballenthin@fireeye.com
     scope: file
-    examples:
-      - 971e599e6e707349eccea2fd4c8e5f67
     references:
       - https://www.pcworld.com/article/2824572/leaked-programming-manual-may-help-criminals-develop-more-atm-malware.html
+    examples:
+      - 971e599e6e707349eccea2fd4c8e5f67
   features:
     - or:
       - string: A debugger has been found running in your system.
