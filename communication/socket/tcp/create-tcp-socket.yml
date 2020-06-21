@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: create TCP socket
+    namespace: communication/socket/tcp
+    author: william.ballenthin@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - n/a
+    examples:
+      - Practical Malware Analysis Lab 01-01.dll_:0x10001010
+  features:
+    - and:
+      - number: 6 = IPPROTO_TCP
+      - number: 1 = SOCK_STREAM
+      - number: 2 = AF_INET
+      - or:
+        - api: ws2_32.socket
+        - api: ws2_32.WSASocket

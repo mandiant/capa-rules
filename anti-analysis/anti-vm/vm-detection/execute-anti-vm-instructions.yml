@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: execute anti-VM instructions
+    namespace: anti-analysis/anti-vm/vm-detection
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks T1497.001
+    mbc:
+      - Anti-Behavioral Analysis::Virtual Machine Detection::Instruction Testing
+    examples:
+      - Practical Malware Analysis Lab 17-03.exe_:0x401A80
+  features:
+    - or:
+      - mnemonic: sdit
+      - mnemonic: sgdt
+      - mnemonic: sldt
+      - mnemonic: smsw
+      - mnemonic: str
+      - mnemonic: in
+      - mnemonic: cpuid
+      - mnemonic: vpcext

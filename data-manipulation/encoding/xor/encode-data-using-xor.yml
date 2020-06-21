@@ -1,0 +1,36 @@
+rule:
+  meta:
+    name: encode data using XOR
+    namespace: data-manipulation/encoding/xor
+    author: moritz.raabe@fireeye.com
+    scope: basic block
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information T1027
+    mbc:
+      - ''
+    examples:
+      - 2D3EDC218A90F03089CC01715A9F047F:0x403D7E
+  features:
+    - and:
+      - characteristic(tight loop): true
+      - characteristic(nzxor): true
+      # Reduce false positives
+      - not:
+        - or:
+          # ~i: Bitwise negation operation for unsigned numbers
+          - number: 0xFFFFFFFF # 32 bits
+          - number: 0xFFFFFFFFFFFFFFFF # 64 bits
+          # ~i: Bitwise negation operation for numbers in 2 complement representation
+          - number: 0x0FFFFFFF # 32 bits
+          - number: 0x0FFFFFFFFFFFFFFF # 64 bits
+          # Magic constants used in the implementation of strings functions
+          # such as `strlen` and `strcat` in the Windows standard library:
+          # (((i - 0x81010101) ^ ~i) & 0x81010100)
+          ## 32 bits
+          - number: 0x7EFEFEFF
+          - number: 0x81010101 # -0x81010101 = 0x7EFEFEFF
+          - number: 0x81010100 # 0x81010100 = ~0x7EFEFEFF
+          ## 64 bits
+          - number: 0x7EFEFEFEFEFEFEFF
+          - number: 0x8101010101010101
+          - number: 0x8101010101010100

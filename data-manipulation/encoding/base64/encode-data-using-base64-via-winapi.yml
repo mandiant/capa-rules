@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: encode data using Base64 via WinAPI
+    namespace: data-manipulation/encoding/base64
+    author: moritz.raabe@fireeye.com
+    scope: basic block
+    att&ck:
+      - n/a
+    mbc:
+      - ''
+  features:
+    - and:
+      - number: 1 = CRYPT_STRING_BASE64
+      - api: CryptStringToBinary

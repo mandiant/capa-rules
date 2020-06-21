@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: capture screenshot
+    namespace: collection/screenshot
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Collection::Screen Capture T1113
+    mbc:
+      - ''
+    examples:
+      - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314610A
+  features:
+    - and:
+      - or:
+        - api: user32.GetWindowDC
+        - api: user32.GetDC
+      - api: gdi32.BitBlt
+      - api: gdi32.CreateCompatibleDC
+      - api: gdi32.CreateCompatibleBitmap
+      - optional:
+        - or:
+          - api: user32.GetSystemMetrics  # fetch screen dimensions
+          - api: user32.GetDesktopWindow  # get entire desktop

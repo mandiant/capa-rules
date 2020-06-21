@@ -1,0 +1,36 @@
+rule:
+  meta:
+    name: parse PE header
+    namespace: load-code/pe
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Execution::Shared Modules T1129
+    mbc:
+      - ''
+    examples:
+      - 9324D1A8AE37A36AE560C37448C9705A:0x403DD0
+  features:
+    # TODO filter out false positives
+    - or:
+      - and:
+        - mnemonic: cmp
+        - or:
+          - number: 0x4550 = IMAGE_DOS_SIGNATURE (MZ)
+          - and:
+            - number: 0x50
+            - number: 0x45
+        - or:
+          - number: 0x5A4D = IMAGE_NT_SIGNATURE (PE)
+          - and:
+            - number: 0x4D
+            - number: 0x5A
+      - and:
+        # - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
+        - or:
+          - and:  # 32-bit
+            - offset: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
+            - offset: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
+          - and:  # 64-bit
+            - offset: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
+            - offset: 0x30 = IMAGE_NT_HEADERS64.OptionalHeader.ImageBase

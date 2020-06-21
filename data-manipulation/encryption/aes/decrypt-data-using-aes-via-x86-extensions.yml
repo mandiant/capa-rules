@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: decrypt data using AES via x86 extensions
+    namespace: data-manipulation/encryption/aes
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information T1027
+    mbc:
+      - ''
+    examples:
+      - 66602B5FAB602CB4E6F754748D249542:0x4097D0
+  features:
+    - or:
+      - mnemonic: aesdec  # Perform One Round of an AES Decryption Flow
+      - mnemonic: vaesdec
+      - mnemonic: aesdeclast  # Perform Last Round of an AES Decryption Flow
+      - mnemonic: vaesdeclast

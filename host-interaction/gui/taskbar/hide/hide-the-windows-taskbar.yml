@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: hide the Windows taskbar
+    namespace: host-interaction/gui/taskbar/hide
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - ''
+    examples:
+      - 39C05B15E9834AC93F206BC114D0A00C357C888DB567BA8F5345DA0529CBED41:0x10007250
+  features:
+    - and:
+      - match: find taskbar
+      - api: user32.ShowWindow
+      - number: 0x0 = SW_HIDE

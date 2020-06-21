@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: check for PEB NtGlobalFlag flag
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    author: moritz.raabe@fireeye.com
+    scope: basic block
+    att&ck:
+      - n/a
+    mbc:
+      - 'Anti-Behavioral Analysis::Detect Debugger:: Process Environment Block'
+    references:
+      - Practical Malware Analysis, Chapter 16, p. 355
+      - https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb/index.htm
+    examples:
+      - Practical Malware Analysis Lab 16-01.exe_:0x403530
+  features:
+    - and:
+      - characteristic(peb access): true
+      - or:
+        # 32-bit
+        - offset: 0x68 = PEB.NtGlobalFlag
+        # 64-bit
+        - offset: 0xBC = PEB.NtGlobalFlag
+      - number: 0x70 = (FLG_HEAP_ENABLE_TAIL_CHECK | FLG_HEAP_ENABLE_FREE_CHECK | FLG_HEAP_VALIDATE_PARAMETERS)

@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: get routing table
+    namespace: host-interaction/network/routing-table
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Network Configuration Discovery T1016
+    mbc:
+      - ''
+  features:
+    - or:
+      - api: iphlpapi.GetIpForwardTable
+      - api: iphlpapi.GetIpForwardTable2

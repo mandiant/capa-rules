@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: debug build
+    namespace: executable/pe/debug
+    author: william.ballenthin@fireeye.com
+    scope: file
+    att&ck:
+      - n/a
+    mbc:
+      - ''
+  features:
+    - or:
+      - string: Assertion failed!
+      - string: 'Assertion failed:'

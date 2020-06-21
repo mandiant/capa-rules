@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: spawn thread to RWX shellcode
+    namespace: load-code/shellcode
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - ''
+  features:
+    - and:
+      - match: allocate RWX memory
+      - match: create thread

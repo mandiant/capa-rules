@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: encrypt data using RC4 PRGA
+    namespace: data-manipulation/encryption/rc4
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information T1027
+    mbc:
+      - ''
+    examples:
+      - 34404A3FB9804977C6AB86CB991FB130:0x403DB0
+      - 34404A3FB9804977C6AB86CB991FB130:0x403E50
+      - 9324D1A8AE37A36AE560C37448C9705A:0x4049F0
+  features:
+    - and:
+      # TODO: maybe add characteristic for nzxor reg size
+      - count(characteristic(nzxor)): 1
+      # TODO optimized code uses an 8-bit register for this, e.g. BL at 782a48821d88060adf0f7ef3e8759fee3ddad49e942daad18c5af8ae0e9eb51e:0x405CC1
+      - match: assembly modulo 256
+      # TODO this should not call (many) sub routines, fix
+#      - count(characteristic(calls from)): (0, 4)
+      - optional:
+        - or:
+          - number: 0xFF
+          - number: 0x100

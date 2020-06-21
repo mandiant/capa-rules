@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: hash data using CRC32b
+    namespace: data-manipulation/checksum/crc32
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - n/a
+  features:
+    - and:
+      - number: 0x4C11DB7
+      - characteristic(nzxor): true

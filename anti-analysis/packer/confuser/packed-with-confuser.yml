@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: packed with Confuser
+    namespace: anti-analysis/packer/confuser
+    author: william.ballenthin@fireeye.com
+    scope: file
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information T1027.002
+    mbc:
+      - Anti-Static Analysis::Software Packing
+    examples:
+      - b9f5bd514485fb06da39beff051b9fdc
+  features:
+    - or:
+      - string: ConfusedByAttribute

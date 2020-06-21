@@ -1,0 +1,29 @@
+rule:
+  meta:
+    name: reference anti-VM strings
+    namespace: anti-analysis/anti-vm/vm-detection
+    author: moritz.raabe@fireeye.com
+    scope: file
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks T1497.001
+    mbc:
+      - Anti-Behavioral Analysis::Virtual Machine Detection::Check Registry Keys
+    references:
+      - https://github.com/ctxis/CAPE/blob/master/modules/signatures/antivm_*
+    examples:
+      - Practical Malware Analysis Lab 17-02.dll_
+  features:
+    - or:
+      - string: /VMWare/i
+      - string: /VMTools/i
+      - string: /vmGuestLib.dll/i
+      - string: /VBox/i
+      - string: /VirtualBox/i
+      - string: /drivers\\vboxdrv/i
+      - string: /HARDWARE\\ACPI\\(DSDT|FADT|RSDT)\\BOCHS/i
+      - string: /HARDWARE\\DESCRIPTION\\System\\(SystemBiosVersion|VideoBiosVersion)/i
+      - string: /HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\.*ProcessorNameString/i
+      - string: /HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0/i
+      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Enum\\IDE/i
+      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Services\\Disk\\Enum\\/i
+      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\SystemInformation\\SystemManufacturer/i

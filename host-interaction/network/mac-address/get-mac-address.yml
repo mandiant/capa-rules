@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: get MAC address
+    namespace: host-interaction/network/mac-address
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Information Discovery T1082
+    mbc:
+      - ''
+    examples:
+      - 65CFE3A06D981CE36F6BCDAA7E633B3F:0x48FCA0
+  features:
+    - and:
+      - api: iphlpapi.GetAdaptersInfo
+      - or:
+        - offset: 0x194 = IP_ADAPTER_INFO.Address
+        - offset: 0x195 = IP_ADAPTER_INFO.Address+1
+        - offset: 0x196 = IP_ADAPTER_INFO.Address+2
+        - offset: 0x197 = IP_ADAPTER_INFO.Address+3
+        - offset: 0x198 = IP_ADAPTER_INFO.Address+4
+        - offset: 0x199 = IP_ADAPTER_INFO.Address+5
+      - optional:
+        - string: '%02X-%02X-%02X-%02X-%02X-%02X'

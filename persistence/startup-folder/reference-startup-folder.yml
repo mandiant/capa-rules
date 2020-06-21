@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: reference startup folder
+    namespace: persistence/startup-folder
+    author: matthew.williams@fireeye.com
+    scope: file
+    att&ck:
+      - Persistence/Boot or Logon Autostart Execution/Registry Run Keys / Startup Folder T1547.001
+    mbc:
+      - ''
+  features:
+    - or:
+      - string: /Start Menu\\Programs\\Startup/i

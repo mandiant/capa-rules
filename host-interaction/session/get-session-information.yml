@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: get session information
+    namespace: host-interaction/session
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Owner/User Discovery T1033
+    mbc:
+      - ''
+  features:
+    - and:
+      - api: wtsapi32.WTSQuerySessionInformation
+      - optional:
+        - api: wtsapi32.WTSFreeMemory

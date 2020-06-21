@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: access the Windows event log
+    namespace: host-interaction/log/winevt/access
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - ''
+  features:
+    - or:
+      - api: OpenEventLog
+      - api: ClearEventLog
+      - api: OpenBackupEventLog
+      - api: ReportEvent

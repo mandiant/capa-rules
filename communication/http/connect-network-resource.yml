@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: connect network resource
+    namespace: communication/http
+    author: michael.hunhoff@fireeye.com
+    description: connect to disk or print resource
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - n/a
+  features:
+    - and:
+      - or:
+        - api: mpr.WNetAddConnection
+        - api: mpr.WNetAddConnection2
+        - api: mpr.WNetAddConnection3
+      - optional:
+        - api: mpr.WNetCancelConnection
+        - api: mpr.WNetCancelConnection2

@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: connect to URL
+    namespace: communication/http/client
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - n/a
+    examples:
+      - 6f99a2c8944cb02ff28c6f9ced59b161:0x40E2F0
+  features:
+    - and:
+      - optional:
+        - match: open internet session
+      - api: wininet.InternetOpenUrl

@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: receive data on socket
+    namespace: communication/socket/receive
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - n/a
+    examples:
+      - Practical Malware Analysis Lab 01-01.dll_:0x10001010
+  features:
+    - or:
+      - api: ws2_32.recv
+      - api: ws2_32.recvfrom
+      - api: ws2_32.WSARecv
+      - api: ws2_32.WSARecvDisconnect
+      - api: ws2_32.WSARecvEx
+      - api: ws2_32.WSARecvFrom
+      - api: ws2_32.WSARecvMsg

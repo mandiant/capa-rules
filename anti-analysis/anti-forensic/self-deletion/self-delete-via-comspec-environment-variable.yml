@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: self delete via COMSPEC environment variable
+    namespace: anti-analysis/anti-forensic/self-deletion
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Indicator Removal on Host T1551
+    mbc:
+      - ''
+    examples:
+      - Practical Malware Analysis Lab 14-02.exe_:0x401880
+  features:
+    - and:
+      - match: get comspec path
+      - match: create process
+      # /c del
+      - string: /\/c\s*del\s*/
+      - optional:
+        # > nul
+        - string: /\s*>\s*nul\s*/

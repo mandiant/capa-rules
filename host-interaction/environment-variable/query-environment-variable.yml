@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: query environment variable
+    namespace: host-interaction/environment-variable
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - ''
+    examples:
+      - Practical Malware Analysis Lab 14-02.exe_:0x401880
+  features:
+    - or:
+      - api: kernel32.GetEnvironmentVariable
+      - api: kernel32.GetEnvironmentStrings
+      - api: kernel32.ExpandEnvironmentStrings

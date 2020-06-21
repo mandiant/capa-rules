@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: send file using FTP via wininet
+    namespace: communication/ftp/send
+    author: michael.hunhof@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - n/a
+    examples:
+      - Practical Malware Analysis Lab 20-02.exe_:0x401380
+  features:
+    - and:
+      - api: wininet.FtpPutFile
+      - optional:
+        - or:
+          - api: wininet.FtpSetCurrentDirectory
+          - and:
+            - api: wininet.InternetConnect
+            - number: 0x15 = IPPORT_FTP

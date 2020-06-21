@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: run PowerShell expression
+    namespace: load-code/powershell/
+    author: anamaria.martinezgom@fireeye.com
+    scope: function
+    att&ck:
+      - Execution::Command and Scripting Interpreter::PowerShell T1059.001
+    mbc:
+      - ''
+  features:
+    - and:
+      - or:
+        - string: / iex\(/i
+        - string: / iex /i
+        - string: /Invoke-Expression/i
+      - optional:
+        - string: /powershell.exe /

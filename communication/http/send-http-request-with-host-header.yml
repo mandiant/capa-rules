@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: send HTTP request with Host header
+    namespace: communication/http
+    author: anamaria.martinezgom@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - n/a
+  features:
+    - and:
+      - match: send HTTP request
+      - string: /Host:/i

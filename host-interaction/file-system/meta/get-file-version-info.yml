@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: get file version info
+    namespace: host-interaction/file-system/meta
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::File and Directory Discovery T1083
+    mbc:
+      - ''
+  features:
+    - and:
+      - api: version.GetFileVersionInfo
+      - api: version.GetFileVersionInfoSize
+      - optional:
+        # retrieves specified version information from the specified version-information resource
+        - api: version.VerQueryValue

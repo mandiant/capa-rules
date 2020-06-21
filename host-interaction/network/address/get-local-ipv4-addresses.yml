@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: get local IPv4 addresses
+    namespace: host-interaction/network/address
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Network Configuration Discovery T1016
+    mbc:
+      - ''
+    examples:
+      - Practical Malware Analysis Lab 05-01.dll_:0x100037e6
+      - 4C0553285D724DCAF5909924B4E3E90A:0x402010
+  features:
+    - and:
+      - api: GetAdaptersInfo
+      - offset: 0x1B0 = IP_ADAPTER_INFO.IpAddressList.IpAddress
+      # loop feature?

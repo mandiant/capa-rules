@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: log keystrokes via application hook
+    namespace: collection/keylog
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Collection::Input Capture::Keylogging T1056.001
+    mbc:
+      - ''
+    examples:
+      - Practical Malware Analysis Lab 12-03.exe_:0x401000
+  features:
+    - and:
+      - match: set application hook
+      - or:
+        - number: 13 = WH_KEYBOARD_LL
+        - number: 2  = WH_KEYBOARD

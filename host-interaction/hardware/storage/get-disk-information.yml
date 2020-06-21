@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: get disk information
+    namespace: host-interaction/hardware/storage
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Information Discovery T1082
+    mbc:
+      - ''
+    examples:
+      - 9324D1A8AE37A36AE560C37448C9705A:0x4052A0
+      - 972B219F18379907A045431303F4DA7D:0x41064E
+  features:
+    - or:
+      - api: kernel32.GetDriveType
+      - api: kernel32.GetLogicalDrives
+      - api: kernel32.GetDiskFreeSpace
+      - api: kernel32.GetDiskFreeSpaceEx
+      - api: kernel32.GetVolumeInformation
+      - api: kernel32.GetVolumeNameForVolumeMountPoint
+      - api: kernel32.GetVolumePathNamesForVolumeName
+      - api: kernel32.GetLogicalDriveStrings
+      - api: kernel32.QueryDosDevice

@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: terminate process
+    namespace: host-interaction/process/terminate
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - n/a
+    mbc:
+      - ''
+    examples:
+      - C91887D861D9BD4A5872249B641BC9F9:0x401A77
+  features:
+    - and:
+      - optional:
+        - api: kernel32.OpenProcess
+      - or:
+        - api: kernel32.TerminateProcess
+        - api: ntdll.NtTerminateProcess

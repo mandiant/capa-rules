@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: packaged as a Wise installer
+    namespace: executable/installer/wiseinstall
+    author: moritz.raabe@fireeye.com
+    scope: file
+    att&ck:
+      - n/a
+    mbc:
+      - ''
+  features:
+    - or:
+      - string: WiseMain
+      - string: /Wise Installation Wizard/
