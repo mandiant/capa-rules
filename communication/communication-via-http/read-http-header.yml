@@ -5,7 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     examples:
-      -  6A352C3E55E8AE5ED39DC1BE7FB964B1:0x10002A30
+      - 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x10002A30
   features:
     - and:
       - api: winhttp.WinHttpQueryHeaders

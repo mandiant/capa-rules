@@ -12,4 +12,3 @@ rule:
         - string: /Invoke-Expression/i
       - optional:
         - string: /powershell.exe /
-

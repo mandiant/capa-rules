@@ -8,6 +8,6 @@ rule:
       - 9324D1A8AE37A36AE560C37448C9705A:0x4052A0
   features:
     - or:
-        - api: kernel32.GlobalMemoryStatus
-        - api: kernel32.GlobalMemoryStatusEx
+      - api: kernel32.GlobalMemoryStatus
+      - api: kernel32.GlobalMemoryStatusEx
         # TODO kernel32.GetSystemInfo with offset

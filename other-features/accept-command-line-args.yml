@@ -1,8 +1,8 @@
 rule:
   meta:
     name: accept command line arguments
-    author: moritz.raabe@fireeye.com
     rule-category: other-features/accept-command-line-arguments
+    author: moritz.raabe@fireeye.com
     scope: function
     examples:
       - Practical Malware Analysis Lab 10-03.exe_:0x401140

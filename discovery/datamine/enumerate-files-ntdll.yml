@@ -4,10 +4,10 @@ rule:
     rule-category: discovery/datamine/datamine-files
     author: moritz.raabe@fireeye.com
     scope: function
-    references:
-      - https://github.com/hfiref0x/TDL/blob/cc4b46ae1c939b14a22a734a727b163f873a41b5/Source/Furutaka/sup.c#L315
     examples:
       - 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x14000203C
+    references:
+      - https://github.com/hfiref0x/TDL/blob/cc4b46ae1c939b14a22a734a727b163f873a41b5/Source/Furutaka/sup.c#L315
   features:
     - and:
       - basic block:
@@ -18,4 +18,4 @@ rule:
       - optional:
         - api: ntdll.RtlAllocateHeap
         - match: loop
-        - characteristic(indirect call): True
+        - characteristic(indirect call): true

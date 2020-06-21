@@ -13,4 +13,4 @@ rule:
       - match: credssp get outbound credentials handle
       - number: 4 = CredsspSchannelCreds
       - optional:
-        - string: "Microsoft Unified Security Protocol Provider"
+        - string: Microsoft Unified Security Protocol Provider

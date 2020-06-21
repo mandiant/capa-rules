@@ -8,4 +8,3 @@ rule:
   features:
     - and:
       - api: secur32.EncryptMessage
-

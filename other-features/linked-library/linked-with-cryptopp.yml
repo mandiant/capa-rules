@@ -9,9 +9,9 @@ rule:
       - 66602B5FAB602CB4E6F754748D249542
   features:
     - or:
-      - string: "Cryptographic algorithms are disabled after a power-up self test failed."
-      - string: ": this object requires an IV"
-      - string: "BER decode error"
-      - string: ".?AVException@CryptoPP@@"
-      - string: "FileStore: error reading file"
-      - string: "StreamTransformationFilter: PKCS_PADDING cannot be used with "
+      - string: Cryptographic algorithms are disabled after a power-up self test failed.
+      - string: ': this object requires an IV'
+      - string: BER decode error
+      - string: .?AVException@CryptoPP@@
+      - string: 'FileStore: error reading file'
+      - string: 'StreamTransformationFilter: PKCS_PADDING cannot be used with '

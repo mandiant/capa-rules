@@ -9,4 +9,4 @@ rule:
       - match: query environment variable
       - or:
         - string: COMSPEC
-        - string: "%COMSPEC%"
+        - string: '%COMSPEC%'

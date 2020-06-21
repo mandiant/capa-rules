@@ -17,4 +17,4 @@ rule:
         - offset: 0x198 = IP_ADAPTER_INFO.Address+4
         - offset: 0x199 = IP_ADAPTER_INFO.Address+5
       - optional:
-        - string: "%02X-%02X-%02X-%02X-%02X-%02X"
+        - string: '%02X-%02X-%02X-%02X-%02X-%02X'

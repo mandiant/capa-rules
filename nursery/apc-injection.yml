@@ -1,22 +1,21 @@
 rule:
   meta:
     name: APC injection
-    author: william.ballenthin@fireeye.com
     rule-category: machine-access-control/process-manipulation/code-injection
+    author: william.ballenthin@fireeye.com
     scope: function
   features:
     - and:
       - or:
-          - match: write process memory
-          - api: kernel32.MapViewOfSection
-          - api: ntdll.NtMapViewOfSection
-          - api: ntdll.ZwMapViewOfSection
-          - api: kernel32.MapViewOfFile
+        - match: write process memory
+        - api: kernel32.MapViewOfSection
+        - api: ntdll.NtMapViewOfSection
+        - api: ntdll.ZwMapViewOfSection
+        - api: kernel32.MapViewOfFile
       - or:
         - api: kernel32.QueueUserAPC
         - api: ntdll.NtQueueApcThread
       - optional:
         - or:
-            - api: kernel32.CreateProcess
-            - api: kernel32.OpenProcess
-
+          - api: kernel32.CreateProcess
+          - api: kernel32.OpenProcess

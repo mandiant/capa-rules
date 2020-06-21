@@ -15,7 +15,7 @@ rule:
         - match: get comspec path
         - string: \\cmd.exe
         - string: cmd.exe
-        - string: "cmd.exe /c "
+        - string: 'cmd.exe /c '
         - string: C:\\Windows\\system32\\cmd.exe
       - optional:
         - api: kernel32.GetSystemDirectory

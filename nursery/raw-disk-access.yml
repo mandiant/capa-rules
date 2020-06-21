@@ -7,4 +7,4 @@ rule:
   features:
     - or:
       - string: \\\\.\\PhysicalDrive0
-      - string: "\\\\.\\C:"
+      - string: '\\.\C:'

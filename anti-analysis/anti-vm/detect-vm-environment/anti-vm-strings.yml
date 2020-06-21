@@ -3,10 +3,10 @@ rule:
     name: anti-vm strings
     rule-category: anti-analysis/anti-vm/detect-vm-environment
     author: moritz.raabe@fireeye.com
-    reference: https://github.com/ctxis/CAPE/blob/master/modules/signatures/antivm_*
     scope: file
     examples:
       - Practical Malware Analysis Lab 17-02.dll_
+    reference: https://github.com/ctxis/CAPE/blob/master/modules/signatures/antivm_*
   features:
     - or:
       - string: /VMWare/i

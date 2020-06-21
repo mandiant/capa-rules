@@ -1,8 +1,8 @@
 rule:
   meta:
     name: interact driver
-    author: moritz.raabe@fireeye.com
     rule-category: load-code/load-driver/interact-driver
+    author: moritz.raabe@fireeye.com
     scope: function
     examples:
       - Practical Malware Analysis Lab 10-03.exe_:0x401000

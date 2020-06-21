@@ -3,10 +3,10 @@ rule:
     name: processor manufacturer constants
     rule-category: anti-analysis/anti-vm/detect-vm-environment
     author: matthew.williams@fireeye.com
-    reference: https://en.wikipedia.org/wiki/CPUID
     scope: basic block
     examples:
       - 47E43BE32F2BDE64E34F9008A7693CC6:0x5AE50
+    reference: https://en.wikipedia.org/wiki/CPUID
   features:
     - and:
       - mnemonic: cmp
@@ -19,4 +19,3 @@ rule:
         - number: 0x786F4256    # 'xoBV' (VirtualBox)
       - optional:
         - mnemonic: cpuid
-

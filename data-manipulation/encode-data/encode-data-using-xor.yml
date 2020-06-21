@@ -1,15 +1,15 @@
 rule:
   meta:
     name: encode via XOR
-    author: moritz.raabe@fireeye.com
     rule-category: data-manipulation/encode-data/encode-data-using-xor
+    author: moritz.raabe@fireeye.com
     scope: basic block
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403D7E
   features:
     - and:
-      - characteristic(tight loop): True
-      - characteristic(nzxor): True
+      - characteristic(tight loop): true
+      - characteristic(nzxor): true
       # Reduce false positives
       - not:
         - or:
@@ -30,4 +30,3 @@ rule:
           - number: 0x7EFEFEFEFEFEFEFF
           - number: 0x8101010101010101
           - number: 0x8101010101010100
-

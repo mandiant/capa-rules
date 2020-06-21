@@ -1,8 +1,8 @@
 rule:
   meta:
     name: extract resource via API
-    author: william.ballenthin@fireeye.com
     rule-category: load-data/load-data-from-self/load-data-from-resource
+    author: william.ballenthin@fireeye.com
     scope: function
     examples:
       - BF88E1BD4A3BDE10B419A622278F1FF7:0x401000

@@ -1,8 +1,8 @@
 rule:
   meta:
     name: process replacement
-    author: william.ballenthin@fireeye.com
     rule-category: machine-access-control/process-manipulation/process-replacement
+    author: william.ballenthin@fireeye.com
     scope: function
     examples:
       - Practical Malware Analysis Lab 12-02.exe_:0x4010EA

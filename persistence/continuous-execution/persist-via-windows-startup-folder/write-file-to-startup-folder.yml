@@ -8,9 +8,8 @@ rule:
       - 07F7846BBCDA782E5639292AD93907EB:0x401040
   features:
     - and:
-        - match: resolve Windows startup folder
-        - or:
-          - match: copy file
-          - match: move file
-          - match: write file
-
+      - match: resolve Windows startup folder
+      - or:
+        - match: copy file
+        - match: move file
+        - match: write file

@@ -4,10 +4,10 @@ rule:
     rule-category: technical-targetting/automated-teller-machine-targetting/diebold-atm-targetting
     author: william.ballenthin@fireeye.com
     scope: file
-    references:
-      - https://www.fireeye.com/blog/threat-research/2017/01/new_ploutus_variant.html
     examples:
       - b2ad4409323147b63e370745e5209996
+    references:
+      - https://www.fireeye.com/blog/threat-research/2017/01/new_ploutus_variant.html
   features:
     - or:
       - string: DBD_AdvFuncDisp  # dispenser

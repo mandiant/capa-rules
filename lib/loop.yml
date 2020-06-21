@@ -3,12 +3,12 @@ rule:
     name: loop
     author: moritz.raabe@fireeye.com
     scope: function
-    lib: true
     examples:
       - 08AC667C65D36D6542917655571E61C8:0x406EAA
+    lib: true
   features:
     - or:
-      - characteristic(loop): True
-      - characteristic(recursive call): True
+      - characteristic(loop): true
+      - characteristic(recursive call): true
       - basic block:
-        - characteristic(tight loop): True
+        - characteristic(tight loop): true

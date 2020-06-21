@@ -4,11 +4,11 @@ rule:
     rule-category: technical-targetting/automated-teller-machine-targetting/ncr-atm-targetting
     author: william.ballenthin@fireeye.com
     scope: function
-    references:
-      - https://www.pcworld.com/article/2824572/leaked-programming-manual-may-help-criminals-develop-more-atm-malware.html
     examples:
       - 84a1212f4a91066babcf594d87a85894:0x404470   # loads routines via GetProcAddress
       # 971e599e6e707349eccea2fd4c8e5f67  # packed with vmprotect
+    references:
+      - https://www.pcworld.com/article/2824572/leaked-programming-manual-may-help-criminals-develop-more-atm-malware.html
   features:
     - or:
       - string: msxfs.dll    # Extension for Financial Services (XFS)
@@ -42,5 +42,3 @@ rule:
 
       - api: msxfs.WFSUnlock
       - string: WFSUnlock
-
-

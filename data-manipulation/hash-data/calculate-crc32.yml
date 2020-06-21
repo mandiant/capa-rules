@@ -13,5 +13,5 @@ rule:
         - mnemonic: shr
         - number: 0xEDB88320
         - number: 8
-        - characteristic(nzxor): True
+        - characteristic(nzxor): true
       - api: RtlComputeCrc32

@@ -1,8 +1,8 @@
 rule:
   meta:
     name: thread injection
-    author: anamaria.martinezgom@fireeye.com
     rule-category: machine-access-control/process-manipulation/thread-injection
+    author: anamaria.martinezgom@fireeye.com
     scope: function
     examples:
       - Practical Malware Analysis Lab 12-01.exe_:0x4010D0
