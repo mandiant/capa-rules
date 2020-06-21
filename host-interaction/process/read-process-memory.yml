@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/process
     author: matthew.williams@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
   features:
     - and:
       - api: kernel32.ReadProcessMemory

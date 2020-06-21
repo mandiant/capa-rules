@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: file
     att&ck:
-      - Impact::Resource Hijacking T1496
-    mbc:
-      - ''
+      - Impact::Resource Hijacking [T1496]
     references:
       - https://github.com/ctxis/CAPE/blob/master/modules/signatures/cryptomining.py
   features:

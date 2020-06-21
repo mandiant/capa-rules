@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/file-system
     author: william.ballenthin@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
   features:
     - or:
       - string: \\\\.\\PhysicalDrive0

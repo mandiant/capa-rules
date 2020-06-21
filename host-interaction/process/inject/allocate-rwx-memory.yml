@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: basic block
     att&ck:
-      - Defense Evasion::Process Injection T1055
-    mbc:
-      - ''
+      - Defense Evasion::Process Injection [T1055]
     examples:
       - Practical Malware Analysis Lab 03-03.exe_:0x4010EA
       # ntdll

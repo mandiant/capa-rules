@@ -4,10 +4,6 @@ rule:
     namespace: executable/pe/section/tls
     author: michael.hunhoff@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - Practical Malware Analysis Lab 16-02.exe_
   features:

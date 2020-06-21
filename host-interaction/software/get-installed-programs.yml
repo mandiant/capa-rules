@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Discovery::Software Discovery T1518
-    mbc:
-      - ''
+      - Discovery::Software Discovery [T1518]
   features:
     - and:
       - match: open registry key

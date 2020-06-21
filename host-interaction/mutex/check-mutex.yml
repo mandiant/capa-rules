@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/mutex
     author: moritz.raabem@fireeye.com
     scope: basic block
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:

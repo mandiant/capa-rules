@@ -5,10 +5,6 @@ rule:
     author: william.ballenthin@fireeye.com
     description: all known techniques for receiving data from a potential C2 server
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x13145D60
   features:

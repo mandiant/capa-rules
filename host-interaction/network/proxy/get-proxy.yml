@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Discovery::System Network Configuration Discovery T1016
-    mbc:
-      - ''
+      - Discovery::System Network Configuration Discovery [T1016]
   features:
     - and:
       - match: open registry key

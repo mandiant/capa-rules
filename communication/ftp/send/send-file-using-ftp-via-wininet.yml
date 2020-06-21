@@ -4,10 +4,6 @@ rule:
     namespace: communication/ftp/send
     author: michael.hunhof@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - n/a
     examples:
       - Practical Malware Analysis Lab 20-02.exe_:0x401380
   features:

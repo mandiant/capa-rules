@@ -5,9 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
-      - Discovery::System Information Discovery T1082
-    mbc:
-      - ''
+      - Discovery::System Information Discovery [T1082]
   features:
     - and:
       - match: loop

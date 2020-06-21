@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Discovery::File and Directory Discovery T1083
-    mbc:
-      - ''
+      - Discovery::File and Directory Discovery [T1083]
     examples:
       - 31600AD0D1A7EA615690DF111AE36C73:0x401284
   features:

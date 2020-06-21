@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/environment-variable
     author: michael.hunhoff@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - Practical Malware Analysis Lab 11-03.exe_:0x406580
   features:

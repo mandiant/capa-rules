@@ -4,10 +4,6 @@ rule:
     namespace: collection/credit-card
     author: matthew.williams@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
   features:
     - and:
       - basic block:

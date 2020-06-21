@@ -5,9 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
-      - Discovery::System Network Configuration Discovery T1016
-    mbc:
-      - ''
+      - Discovery::System Network Configuration Discovery [T1016]
   features:
     - or:
       - api: iphlpapi.GetIpForwardTable

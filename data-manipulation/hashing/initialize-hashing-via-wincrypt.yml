@@ -4,10 +4,6 @@ rule:
     namespace: data-manipulation/hashing
     author: michael.hunhoff@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - n/a
   features:
     - and:
       - api: advapi32.CryptCreateHash

@@ -5,9 +5,7 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: function
     att&ck:
-      - Exfiltration::Exfiltration Over C2 Channel T1041
-    mbc:
-      - ''
+      - Exfiltration::Exfiltration Over C2 Channel [T1041]
   features:
     - and:
       - match: read file

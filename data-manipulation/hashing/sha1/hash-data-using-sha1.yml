@@ -4,10 +4,6 @@ rule:
     namespace: data-manipulation/hashing/sha1
     author: moritz.raabe@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - n/a
     examples:
       - D063B1804E8D2BB26BD2E097141C1BBC:0x4344D0
   features:

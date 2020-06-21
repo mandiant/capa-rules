@@ -5,10 +5,6 @@ rule:
     author: michael.hunhoff@fireeye.com
     description: connect to disk or print resource
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - n/a
   features:
     - and:
       - or:

@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/registry/create
     author: moritz.raabe@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x13147AF0
   features:

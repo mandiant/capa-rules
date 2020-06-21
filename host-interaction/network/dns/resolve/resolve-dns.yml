@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/network/dns/resolve
     author: william.ballenthin@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - 82986A4302421ABA1DB9DB34A8BC2BA1:0x401530  # winternals networking lab
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010

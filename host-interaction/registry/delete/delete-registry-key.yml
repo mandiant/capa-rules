@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/registry/delete
     author: moritz.raabe@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - 034B7231A49387604E81A5A5D2FE7E08F6982C418A28B719D2FAACE3C312EBB5:0x4012A8
       - 493167E85E45363D09495D0841C30648:0x404D60

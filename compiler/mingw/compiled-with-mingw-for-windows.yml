@@ -4,10 +4,6 @@ rule:
     namespace: compiler/mingw
     author: william.ballenthin@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - 5b3968b47eb16a1cb88525e3b565eab1
   features:

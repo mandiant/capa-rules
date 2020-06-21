@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Collection::Screen Capture T1113
-    mbc:
-      - ''
+      - Collection::Screen Capture [T1113]
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314610A
   features:

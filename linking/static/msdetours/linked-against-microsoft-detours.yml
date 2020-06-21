@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: file
     att&ck:
-      - Defense Evasion::Hijack Execution Flow T1574
-    mbc:
-      - ''
+      - Defense Evasion::Hijack Execution Flow [T1574]
     references:
       - https://github.com/microsoft/Detours
     examples:

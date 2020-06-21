@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/file-system/write
     author: william.ballenthin@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - Practical Malware Analysis Lab 01-04.exe_:0x4011FC
       # ntdll

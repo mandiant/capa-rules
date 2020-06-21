@@ -4,10 +4,6 @@ rule:
     namespace: compiler/autoit
     author: william.ballenthin@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - 55D77AB16377A8A314982F723FCC6FAE
   features:

@@ -6,9 +6,7 @@ rule:
     description: SCRNSAVE.EXE registry value specifies the name of the screen saver executable file
     scope: function
     att&ck:
-      - Persistence::Event Triggered Execution::Screensaver T1546.002
-    mbc:
-      - ''
+      - Persistence::Event Triggered Execution::Screensaver [T1546.002]
   features:
     - and:
       - string: SCRNSAVE.EXE

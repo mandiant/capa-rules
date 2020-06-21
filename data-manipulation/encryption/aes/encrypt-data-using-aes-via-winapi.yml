@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information T1027
-    mbc:
-      - ''
+      - Defense Evasion::Obfuscated Files or Information [T1027]
     examples:
       - BC577119D1A5B7DA489E7B5817D3CC38:0x10002FAC
   features:

@@ -5,9 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
-      - Collection::Clipboard Data T1115
-    mbc:
-      - ''
+      - Collection::Clipboard Data [T1115]
     examples:
       - C91887D861D9BD4A5872249B641BC9F9:0x40156F
       - 93dfc146f60bd796eb28d4e4f348f2e4:0x401050

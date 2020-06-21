@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/thread/list
     author: moritz.raabe@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
   features:
     - and:
       - api: kernel32.Thread32First

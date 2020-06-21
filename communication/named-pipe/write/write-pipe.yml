@@ -4,10 +4,6 @@ rule:
     namespace: communication/named-pipe/write
     author: moritz.raabe@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - n/a
     examples:
       - C91887D861D9BD4A5872249B641BC9F9:0x401A77
   features:

@@ -4,10 +4,6 @@ rule:
     namespace: linking/static/cppregex
     author: william.ballenthin@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
   features:
     - or:
       - string: regex_error(error_syntax)    # from C++ STL regex, ref: http://www.cplusplus.com/reference/regex/regex_error/

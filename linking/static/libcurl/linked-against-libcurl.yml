@@ -4,10 +4,6 @@ rule:
     namespace: linking/static/libcurl
     author: moritz.raabe@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - A90E5B3454AA71D9700B2EA54615F44B
   features:

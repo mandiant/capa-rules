@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/gui
     author: michael.hunhoff@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - Practical Malware Analysis Lab 12-03.exe_:0x401000
   features:

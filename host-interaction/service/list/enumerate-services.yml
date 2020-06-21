@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Discovery::System Service Discovery T1007
-    mbc:
-      - ''
+      - Discovery::System Service Discovery [T1007]
     examples:
       - 3D760B6FC84571C928BED835863FC302:0x4062E0
   features:

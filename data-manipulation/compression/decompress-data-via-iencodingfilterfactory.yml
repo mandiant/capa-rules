@@ -4,10 +4,6 @@ rule:
     namespace: data-manipulation/compression
     author: matthew.williams@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     references:
       - https://www.virusbulletin.com/virusbulletin/2012/09/urlzone-reloaded-new-evolution/
     examples:

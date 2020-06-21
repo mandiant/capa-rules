@@ -5,9 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
-      - Discovery::System Owner/User Discovery T1033
-    mbc:
-      - ''
+      - Discovery::System Owner/User Discovery [T1033]
   features:
     - and:
       - api: wtsapi32.WTSQuerySessionInformation

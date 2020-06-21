@@ -5,9 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
-      - Collection::Input Capture::Keylogging T1056.001
-    mbc:
-      - ''
+      - Collection::Input Capture::Keylogging [T1056.001]
     examples:
       - Practical Malware Analysis Lab 11-03.dll_:0x10001030
   features:

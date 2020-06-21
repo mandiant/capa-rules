@@ -4,10 +4,6 @@ rule:
     namespace: data-manipulation/hashing/md5
     author: moritz.raabe@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - n/a
   features:
     - or:
       - and:

@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Execution::Shared Modules T1129
-    mbc:
-      - ''
+      - Execution::Shared Modules [T1129]
     examples:
       - 3FDFB2D522E7DEECAAAF2F87420F7E75:0x4117B7
   features:

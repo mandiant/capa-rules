@@ -5,9 +5,7 @@ rule:
     author: michael.hunhoff@fireye.com
     scope: function
     att&ck:
-      - Persistence::Event Triggered Execution::AppInit DLLs T1546.010
-    mbc:
-      - ''
+      - Persistence::Event Triggered Execution::AppInit DLLs [T1546.010]
     examples:
       - Practical Malware Analysis Lab 11-02.dll_:0x1000158b
   features:

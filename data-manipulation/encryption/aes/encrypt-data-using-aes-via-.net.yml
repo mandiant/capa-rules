@@ -5,9 +5,7 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: file
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information T1027
-    mbc:
-      - ''
+      - Defense Evasion::Obfuscated Files or Information [T1027]
     examples:
       - b9f5bd514485fb06da39beff051b9fdc
   features:

@@ -4,10 +4,6 @@ rule:
     namespace: executable/resource
     author: william.ballenthin@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - BF88E1BD4A3BDE10B419A622278F1FF7:0x401000
       - Practical Malware Analysis Lab 01-04.exe_:0x4011FC

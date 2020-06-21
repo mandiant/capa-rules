@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/gui
     author: michael.hunhoff@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - 39C05B15E9834AC93F206BC114D0A00C357C888DB567BA8F5345DA0529CBED41:0x100096c6
   features:

@@ -5,9 +5,7 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: function
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information T1027
-    mbc:
-      - ''
+      - Defense Evasion::Obfuscated Files or Information [T1027]
   features:
     - or:
       - bytes: 50 a7 f4 51 53 65 41 7e = d-0

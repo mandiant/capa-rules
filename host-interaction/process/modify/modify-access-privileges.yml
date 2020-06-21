@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Privilege Escalation::Access Token Manipulation T1134
-    mbc:
-      - ''
+      - Privilege Escalation::Access Token Manipulation [T1134]
     examples:
       - 9324D1A8AE37A36AE560C37448C9705A:0x403BE0
   features:

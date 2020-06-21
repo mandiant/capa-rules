@@ -5,9 +5,7 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: function
     att&ck:
-      - Defense Evasion::Process Injection::Asynchronous Procedure Call T1055.004
-    mbc:
-      - ''
+      - Defense Evasion::Process Injection::Asynchronous Procedure Call [T1055.004]
   features:
     - and:
       - or:

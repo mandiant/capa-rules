@@ -5,9 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
-      - Discovery::Process Discovery T1057
-    mbc:
-      - ''
+      - Discovery::Process Discovery [T1057]
     examples:
       - 6f99a2c8944cb02ff28c6f9ced59b161:0x414B70
   features:

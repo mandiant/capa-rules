@@ -5,9 +5,7 @@ rule:
     author: michael.hunhoff@fireye.com
     scope: function
     att&ck:
-      - Persistence::Event Triggered Execution T1546
-    mbc:
-      - ''
+      - Persistence::Event Triggered Execution [T1546]
     examples:
       - Practical Malware Analysis Lab 11-01.exe_:0x401000
   features:

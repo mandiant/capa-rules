@@ -5,7 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks T1497.001
+      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
       - Anti-Behavioral Analysis::Virtual Machine Detection::Instruction Testing
     examples:

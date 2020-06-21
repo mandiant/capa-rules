@@ -4,10 +4,6 @@ rule:
     namespace: runtime/dotnet
     author: william.ballenthin@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - b9f5bd514485fb06da39beff051b9fdc
   features:

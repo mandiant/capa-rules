@@ -6,9 +6,7 @@ rule:
     lib: true
     scope: function
     att&ck:
-      - Defense Evasion::Process Injection T1055
-    mbc:
-      - ''
+      - Defense Evasion::Process Injection [T1055]
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x4027CF
   features:

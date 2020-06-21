@@ -5,9 +5,7 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: function
     att&ck:
-      - Discovery::Query Registry T1012
-    mbc:
-      - ''
+      - Discovery::Query Registry [T1012]
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x13145B5A
       - Practical Malware Analysis Lab 03-02.dll_:0x100047AD

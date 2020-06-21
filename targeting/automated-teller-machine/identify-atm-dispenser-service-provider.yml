@@ -4,10 +4,6 @@ rule:
     namespace: targeting/automated-teller-machine
     author: william.ballenthin@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     references:
       - https://doc.axxonsoft.com/confluence/display/atm70en/Configuring+the+connection+to+the+dispenser+service+provider
     examples:

@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/log/debug/write-event
     author: michael.hunhoff@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     examples:
       - 493167E85E45363D09495D0841C30648:0x401000
   features:

@@ -4,10 +4,6 @@ rule:
     namespace: targeting/automated-teller-machine/diebold-nixdorf
     author: william.ballenthin@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     references:
       - https://www.vkremez.com/2017/12/lets-learn-cutlet-atm-malware-internals.html
     examples:

@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Persistence::Create or Modify System Process::Windows Service T1543.003
-    mbc:
-      - ''
+      - Persistence::Create or Modify System Process::Windows Service [T1543.003]
     examples:
       - af60700383b75727f5256a0000c1476f:0x1127E
   features:

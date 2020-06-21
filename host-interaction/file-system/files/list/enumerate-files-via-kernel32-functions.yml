@@ -5,9 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Discovery::File and Directory Discovery T1083
-    mbc:
-      - ''
+      - Discovery::File and Directory Discovery [T1083]
     examples:
       - Practical Malware Analysis Lab 01-01.exe_:0x4011E0
       - Practical Malware Analysis Lab 20-02.exe_:0x401000

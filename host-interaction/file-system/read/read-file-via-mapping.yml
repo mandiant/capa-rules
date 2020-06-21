@@ -4,10 +4,6 @@ rule:
     namespace: host-interaction/file-system/read
     author: michael.hunhoff@fireeye.com
     scope: function
-    att&ck:
-      - n/a
-    mbc:
-      - ''
   features:
     - and:
       - api: kernel32.MapViewOfFile

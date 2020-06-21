@@ -4,10 +4,6 @@ rule:
     namespace: executable/installer/nsis
     author: moritz.raabe@fireeye.com
     scope: file
-    att&ck:
-      - n/a
-    mbc:
-      - ''
     references:
       - https://nsis.sourceforge.io/Main_Page
   features:
