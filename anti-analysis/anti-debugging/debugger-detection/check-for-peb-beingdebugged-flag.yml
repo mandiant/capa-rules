@@ -5,7 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: basic block
     mbc:
-      - 'Anti-Behavioral Analysis::Detect Debugger:: Process Environment Block'
+      - Anti-Behavioral Analysis::Detect Debugger::Process Environment Block
     references:
       - Practical Malware Analysis, Chapter 16, p. 353
     examples:
