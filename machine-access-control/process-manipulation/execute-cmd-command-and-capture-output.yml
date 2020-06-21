@@ -4,9 +4,10 @@ rule:
     rule-category: machine-access-control/process-manipulation/execute-cmd-command-and-capture-output
     author: matthew.williams@fireeye.com
     scope: function
+    references:
+      - https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa
     examples:
       - Practical Malware Analysis Lab 14-02.exe_:0x4011C0
-    reference: https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa
   features:
     - and:
       - match: create process with modified stdhandles and window

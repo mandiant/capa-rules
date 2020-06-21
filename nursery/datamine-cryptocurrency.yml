@@ -4,7 +4,8 @@ rule:
     rule-category: discovery/datamine/datamine-cryptocurrency
     author: moritz.raabe@fireeye.com
     scope: file
-    reference: https://github.com/ctxis/CAPE/blob/master/modules/signatures/cryptomining.py
+    references:
+      - https://github.com/ctxis/CAPE/blob/master/modules/signatures/cryptomining.py
   features:
     - or:
       - string: stratum+tcp://

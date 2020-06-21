@@ -4,9 +4,10 @@ rule:
     rule-category: anti-analysis/anti-debugging/detect-debugging
     author: moritz.raabe@fireeye.com
     scope: basic block
+    references:
+      - Practical Malware Analysis, Chapter 16, p. 353
     examples:
       - Practical Malware Analysis Lab 16-01.exe_:0x403530
-    reference: Practical Malware Analysis, Chapter 16, p. 353
   features:
     - and:
       - characteristic(peb access): true

@@ -4,7 +4,7 @@ rule:
     rule-category: machine-access-control/file-manipulation/create-shortcut-via-COM
     author: matthew.williams@fireeye.com
     scope: function
-    reference:
+    references:
       - https://docs.microsoft.com/en-us/windows/win32/shell/links#creating-a-shortcut-and-a-folder-shortcut-to-a-file
   features:
     - and:
