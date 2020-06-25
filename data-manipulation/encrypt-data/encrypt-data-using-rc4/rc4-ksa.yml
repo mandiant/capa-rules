@@ -1,8 +1,8 @@
 rule:
   meta:
     name: RC4 key-scheduling algorithm (KSA)
-    author: moritz.raabe@fireeye.com
     rule-category: data-manipulation/encrypt-data/encrypt-data-using-rc4
+    author: moritz.raabe@fireeye.com
     scope: function
     examples:
       - 34404A3FB9804977C6AB86CB991FB130:0x403D40

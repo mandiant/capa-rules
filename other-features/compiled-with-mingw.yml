@@ -8,6 +8,5 @@ rule:
       - 5b3968b47eb16a1cb88525e3b565eab1
   features:
     - and:
-      - string: "Mingw runtime failure:"
+      - string: 'Mingw runtime failure:'
       - string: _Jv_RegisterClasses  # from GCC
-

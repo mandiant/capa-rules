@@ -2,8 +2,8 @@ rule:
   meta:
     name: crypto
     author: moritz.raabe@fireeye.com
-    scope: function
     lib: true
+    scope: function
     examples:
       - A45E377DBB98A6B44FD4034BC3FFF9B0:0x4017A0
       - D9EEC34D1D5409264FD06B751DBA3C7BD1C96F169196960B101113DCC5485A73:0x402DD0

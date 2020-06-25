@@ -5,7 +5,7 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: file
     examples:
-      - b9f5bd514485fb06da39beff051b9fdc  
+      - b9f5bd514485fb06da39beff051b9fdc
   features:
     - and:
       - string: RijndaelManaged

@@ -17,4 +17,3 @@ rule:
           - string: Environment
           - string: windir
           - match: set registry value
-

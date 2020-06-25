@@ -1,8 +1,8 @@
 rule:
   meta:
     name: vmware io port
-    author: matthew.williams@fireeye.com
     rule-category: anti-analysis/anti-vm/detect-vm-environment
+    author: matthew.williams@fireeye.com
     scope: function
   features:
     - and:

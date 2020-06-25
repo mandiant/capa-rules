@@ -3,8 +3,8 @@ rule:
     name: connect network resource
     rule-category: communication/communication-via-network-resource/connect-network-resource
     author: michael.hunhoff@fireeye.com
-    scope: function
     description: connect to disk or print resource
+    scope: function
   features:
     - and:
       - or:

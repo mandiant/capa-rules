@@ -2,8 +2,8 @@ rule:
   meta:
     name: send data
     rule-category: communication/send-data
-    description: all known techniques for sending data to a potential C2 server
     author: william.ballenthin@fireeye.com
+    description: all known techniques for sending data to a potential C2 server
     scope: function
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x13145D60

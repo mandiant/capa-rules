@@ -1,8 +1,8 @@
 rule:
   meta:
     name: shutdown system
-    author: michael.hunhoff@fireeye.com
     rule-category: machine-access-control/operating-system-manipulation/os-shutdown
+    author: michael.hunhoff@fireeye.com
     scope: function
     examples:
       - 39C05B15E9834AC93F206BC114D0A00C357C888DB567BA8F5345DA0529CBED41:0x10008D60

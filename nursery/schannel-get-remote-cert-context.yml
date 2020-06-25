@@ -4,7 +4,8 @@ rule:
     rule-category: other-features/schannel/schannel-get-remote-cert-context
     author: matthew.williams@fireeye.com
     scope: basic block
-    reference: https://docs.microsoft.com/en-us/windows/win32/secauthn/querycontextattributes--schannel
+    references:
+      - https://docs.microsoft.com/en-us/windows/win32/secauthn/querycontextattributes--schannel
   features:
     - and:
       - api: secur32.QueryContextAttributes

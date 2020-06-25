@@ -1,10 +1,10 @@
 rule:
   meta:
     name: write process memory
-    author: moritz.raabe@fireeye.com
     rule-category: machine-access-control/process-manipulation/write-process-memory
-    scope: function
+    author: moritz.raabe@fireeye.com
     lib: true
+    scope: function
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x4027CF
   features:

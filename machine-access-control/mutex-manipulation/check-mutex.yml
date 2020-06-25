@@ -1,8 +1,8 @@
 rule:
   meta:
     name: check mutex
-    author: moritz.raabem@fireeye.com
     rule-category: machine-access-control/mutex-manipulation/check-mutex
+    author: moritz.raabem@fireeye.com
     scope: basic block
     examples:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010

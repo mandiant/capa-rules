@@ -18,4 +18,4 @@ rule:
       - optional:
         - api: ntdll.RtlAllocateHeap
         - match: loop
-        - characteristic(indirect call): True
+        - characteristic(indirect call): true

@@ -10,4 +10,3 @@ rule:
     - or:
       - api: kernel32.CreatePipe
       - api: kernel32.CreateNamedPipe
-

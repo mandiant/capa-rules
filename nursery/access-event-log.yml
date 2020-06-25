@@ -1,8 +1,8 @@
 rule:
   meta:
     name: access event log
-    author: moritz.raabe@fireeye.com
     rule-category: other-features/access-event-log
+    author: moritz.raabe@fireeye.com
     scope: function
   features:
     - or:

@@ -3,8 +3,9 @@ rule:
     name: PEB access BeingDebugged flag
     rule-category: anti-analysis/anti-debugging/detect-debugging
     author: moritz.raabe@fireeye.com
-    reference: Practical Malware Analysis, Chapter 16, p. 353
     scope: basic block
+    references:
+      - Practical Malware Analysis, Chapter 16, p. 353
     examples:
       - Practical Malware Analysis Lab 16-01.exe_:0x403530
   features:

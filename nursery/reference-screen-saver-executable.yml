@@ -3,8 +3,8 @@ rule:
     name: reference screen saver executable
     rule-category: persistence
     author: michael.hunhoff@fireeye.com
-    scope: function
     description: SCRNSAVE.EXE registry value specifies the name of the screen saver executable file
+    scope: function
   features:
     - and:
       - string: SCRNSAVE.EXE

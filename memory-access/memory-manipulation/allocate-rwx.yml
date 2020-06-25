@@ -1,8 +1,8 @@
 rule:
   meta:
     name: allocate RWX memory
-    author: moritz.raabe@fireeye.com
     rule-category: memory-access/memory-manipulation/allocate-rwx-memory
+    author: moritz.raabe@fireeye.com
     scope: basic block
     examples:
       - Practical Malware Analysis Lab 03-03.exe_:0x4010EA

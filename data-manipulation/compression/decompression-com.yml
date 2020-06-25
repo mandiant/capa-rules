@@ -4,9 +4,10 @@ rule:
     rule-category: data-manipulation/compression/decompression-com
     author: matthew.williams@fireeye.com
     scope: function
+    references:
+      - https://www.virusbulletin.com/virusbulletin/2012/09/urlzone-reloaded-new-evolution/
     examples:
       - FBBAAF569B63F6398503E4F1979CABEF:0x40691F
-    reference: https://www.virusbulletin.com/virusbulletin/2012/09/urlzone-reloaded-new-evolution/
   features:
     - and:
       - api: ole32.CoCreateInstance

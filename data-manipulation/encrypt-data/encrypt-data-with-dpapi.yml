@@ -12,4 +12,3 @@ rule:
       - api: CryptUnprotectMemory
       - api: crypt32.CryptProtectData
       - api: crypt32.CryptUnprotectData
-      

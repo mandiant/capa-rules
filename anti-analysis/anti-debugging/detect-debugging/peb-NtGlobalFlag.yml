@@ -3,10 +3,10 @@ rule:
     name: PEB check NtGlobalFlag flag
     rule-category: anti-analysis/anti-debugging/detect-debugging
     author: moritz.raabe@fireeye.com
+    scope: basic block
     references:
       - Practical Malware Analysis, Chapter 16, p. 355
       - https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb/index.htm
-    scope: basic block
     examples:
       - Practical Malware Analysis Lab 16-01.exe_:0x403530
   features:

@@ -1,8 +1,8 @@
 rule:
   meta:
     name: compression via WinAPI
-    author: moritz.raabe@fireeye.com
     rule-category: data-manipulation/compression/compression-winapi
+    author: moritz.raabe@fireeye.com
     scope: function
     examples:
       - 638dcc3d37b3a574044233c9637d7288:0x401020

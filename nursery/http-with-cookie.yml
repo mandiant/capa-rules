@@ -5,6 +5,6 @@ rule:
     author: anamaria.martinezgom@fireeye.com
     scope: function
   features:
-      - and:
-        - match: send HTTP request
-        - string: /Cookie:/i
+    - and:
+      - match: send HTTP request
+      - string: /Cookie:/i
