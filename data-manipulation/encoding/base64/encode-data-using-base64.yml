@@ -17,7 +17,7 @@ rule:
       - or:
         - number: 0x3D = '='
         - number: 0x3D3D = '=='
-      - match: loop
+      - match: contain loop
       - optional:
         - number: 2
         - number: 3

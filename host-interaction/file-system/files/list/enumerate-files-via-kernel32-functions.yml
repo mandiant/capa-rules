@@ -22,4 +22,4 @@ rule:
         - api: kernel32.FindNextFileName
       - optional:
         - api: kernel32.FindClose
-        - match: loop
+        - match: contain loop

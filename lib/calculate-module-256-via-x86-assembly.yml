@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: calculate module 256 via x86 assembly
+    namespace: ''
+    author: moritz.raabe@fireeye.com
+    lib: true
+    scope: basic block
+    examples:
+      - 9324D1A8AE37A36AE560C37448C9705A:0x4049A9
+  features:
+    #  and ecx, 800000FFh
+    #  and ecx, 0FFh
+    - and:
+      - mnemonic: and
+      - or:
+        - number: 0x800000FF
+        - number: 0xFF

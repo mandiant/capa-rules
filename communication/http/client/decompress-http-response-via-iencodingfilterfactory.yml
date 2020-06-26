@@ -8,5 +8,5 @@ rule:
       - FBBAAF569B63F6398503E4F1979CABEF:0x4067F0
   features:
     - and:
-      - match: get HTTP content encoding
-      - match: decompression via COM
+      - match: get HTTP response content encoding
+      - match: decompress data via IEncodingFilterFactory

@@ -11,4 +11,4 @@ rule:
     - or:
       - match: send HTTP request
       - match: send data on socket
-      - match: write file to internet
+      - match: send file via HTTP

@@ -8,7 +8,7 @@ rule:
       - Discovery::System Information Discovery [T1082]
   features:
     - and:
-      - match: loop
+      - match: contain loop
       - or:
         - and:
           - api: kernel32.FindFirstVolume

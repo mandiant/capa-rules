@@ -10,6 +10,6 @@ rule:
     - and:
       - optional:
         - or:
-          - match: connect to internet host
-          - match: connect to internet url
+          - match: connect to HTTP server
+          - match: connect to URL
       - api: wininet.InternetWriteFile

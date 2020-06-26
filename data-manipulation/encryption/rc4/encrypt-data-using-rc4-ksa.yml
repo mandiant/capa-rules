@@ -21,7 +21,7 @@ rule:
             - or:
               - number: 0xFF
               - number: 0x100
-        - match: assembly modulo 256
+        - match: calculate module 256 via x86 assembly
         - or:
           - mnemonic: div
           - mnemonic: idiv

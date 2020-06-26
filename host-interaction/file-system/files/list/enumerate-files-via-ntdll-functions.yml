@@ -19,5 +19,5 @@ rule:
       - api: ntdll.NtQueryDirectoryObject
       - optional:
         - api: ntdll.RtlAllocateHeap
-        - match: loop
+        - match: contain loop
         - characteristic(indirect call): true

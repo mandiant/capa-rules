@@ -10,7 +10,7 @@ rule:
       - Practical Malware Analysis Lab 14-02.exe_:0x401880
   features:
     - and:
-      - match: get comspec path
+      - match: get COMSPEC environment variable
       - match: create process
       # /c del
       - string: /\/c\s*del\s*/

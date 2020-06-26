@@ -9,5 +9,5 @@ rule:
   features:
     - and:
       - optional:
-        - match: open internet session
+        - match: create HTTP request
       - api: wininet.InternetOpenUrl

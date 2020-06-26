@@ -9,4 +9,4 @@ rule:
   features:
     - and:
       - string: Shell_TrayWnd
-      - match: find window
+      - match: find graphical window

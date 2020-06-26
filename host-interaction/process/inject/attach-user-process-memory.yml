@@ -1,7 +1,7 @@
 rule:
   meta:
     name: attach user process memory
-    namespace: host-interaction/process/inject/kernel-to-user
+    namespace: host-interaction/process/inject
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:

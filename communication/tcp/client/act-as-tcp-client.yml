@@ -8,4 +8,4 @@ rule:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
     - and:
-      - match: connect via TCP socket
+      - match: connect TCP socket

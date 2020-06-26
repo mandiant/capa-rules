@@ -10,5 +10,5 @@ rule:
   features:
     - or:
       - match: receive data on socket
-      - match: read file from internet
+      - match: read data from Internet
       - match: download URL to file

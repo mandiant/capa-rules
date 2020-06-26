@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: get service handle
+    namespace: ''
+    author: moritz.raabe@fireeye.com
+    lib: true
+    scope: function
+  features:
+    - or:
+      - api: advapi32.CreateService
+      - api: advapi32.OpenService

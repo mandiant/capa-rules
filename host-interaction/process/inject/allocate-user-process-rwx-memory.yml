@@ -1,7 +1,7 @@
 rule:
   meta:
-    name: free user process memory
-    namespace: host-interaction/process/inject/kernel-to-user
+    name: allocate user process RWX memory
+    namespace: host-interaction/process/inject
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
@@ -11,7 +11,7 @@ rule:
   features:
     - and:
       - match: attach user process memory
+      - match: allocate RWX memory
       - number: 0xFFFFFFFF = NtCurrentProcess()
-      - api: ZwFreeVirtualMemory
       - optional:
         - match: find process by PID

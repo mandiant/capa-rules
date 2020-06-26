@@ -7,6 +7,6 @@ rule:
   features:
     - or:
       - and:
-        - match: initialize wincrypt hash
+        - match: initialize hashing via WinCrypt
         - number: 0x8004 = CALG_SHA1
         - api: advapi32.CryptHashData
