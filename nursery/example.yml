@@ -1,8 +1,0 @@
-rule:
-  meta:
-    name: example
-    author: william.ballenthin@fireeye.com
-    scope: function
-  features:
-    - or:
-      - api: Foo32.bar
