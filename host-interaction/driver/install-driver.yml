@@ -3,17 +3,12 @@ rule:
     name: install driver
     namespace: host-interaction/driver
     author: moritz.raabe@fireeye.com
-    scope: function
+    scope: basic block
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
     examples:
       - af60700383b75727f5256a0000c1476f:0x1127E
   features:
     - or:
-      - and:
-        - or:
-          - number: 1 = SERVICE_KERNEL_DRIVER
-          - number: 2 = SERVICE_FILE_SYSTEM_DRIVER
-        - api: CreateService
       - api: ntdll.NtLoadDriver
       - api: ZwLoadDriver
