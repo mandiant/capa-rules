@@ -13,19 +13,9 @@ rule:
         # resolve the PEB
         - or:
           - characteristic(peb access): true
-          # in the case of CallObfuscator, gs:[rax]
-          # ref: https://github.com/d35ha/CallObfuscator/blob/5834aff9ff4511f1408ae4ce80b79737af4ae77b/ShellCode/shell_x64.asm#L8
-          - and:
-            - number: 0x30  # x32
-            - characteristic(fs access): true
-          # in 0f5d5d07c6533bc6d991836ce79daaa1
-          # then we have:
-          #
-          #     xor edx, edx
-          #     mov edx, fs:[edx+30h]
-          - and:
-            - offset: 0x30  # x32
-            - characteristic(fs access): true
+
+        # x86 Windows uses fs:0 to access the TIB which contains SEH information at offset 0
+        # checking for fs:0 and a (possibly unrelated) number or offset often results in false positives
 
         # LDR_DATA* Ldr;
         # good PEB layout reference here:
