@@ -3,15 +3,10 @@ rule:
     name: load driver
     rule-category: load-code/load-driver/load-driver
     author: moritz.raabe@fireeye.com
-    scope: function
+    scope: basic block
     examples:
       - af60700383b75727f5256a0000c1476f:0x1127E
   features:
     - or:
-      - and:
-        - or:
-          - number: 1 = SERVICE_KERNEL_DRIVER
-          - number: 2 = SERVICE_FILE_SYSTEM_DRIVER
-        - api: CreateService
       - api: ntdll.NtLoadDriver
       - api: ZwLoadDriver
