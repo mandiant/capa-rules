@@ -15,7 +15,7 @@ rule:
       # TODO: maybe add characteristic for nzxor reg size
       - count(characteristic(nzxor)): 1
       # TODO optimized code uses an 8-bit register for this, e.g. BL at 782a48821d88060adf0f7ef3e8759fee3ddad49e942daad18c5af8ae0e9eb51e:0x405CC1
-      - match: calculate module 256 via x86 assembly
+      - match: calculate modulo 256 via x86 assembly
       # TODO this should not call (many) sub routines, fix
 #      - count(characteristic(calls from)): (0, 4)
       - optional:
