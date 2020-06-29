@@ -1,9 +1,0 @@
-rule:
-  meta:
-    name: empty recycle bin
-    rule-category: other-features/empty-recycle-bin
-    author: moritz.raabe@fireeye.com
-    scope: function
-  features:
-    - or:
-      - api: SHEmptyRecycleBin

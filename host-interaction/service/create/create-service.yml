@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: create service
+    namespace: host-interaction/service/create
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Persistence::Create or Modify System Process::Windows Service [T1543.003]
+    examples:
+      - Practical Malware Analysis Lab 03-02.dll_:0x10004706
+  features:
+    - and:
+      - api: advapi32.CreateService
+      - optional:
+        - api: advapi32.OpenSCManager

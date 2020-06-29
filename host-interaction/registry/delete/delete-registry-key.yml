@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: delete registry key
+    namespace: host-interaction/registry/delete
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - 034B7231A49387604E81A5A5D2FE7E08F6982C418A28B719D2FAACE3C312EBB5:0x4012A8
+      - 493167E85E45363D09495D0841C30648:0x404D60
+  features:
+    - or:
+      - api: advapi32.RegDeleteKey
+      - api: advapi32.RegDeleteKeyEx
+      - api: advapi32.RegDeleteKeyTransacted
+      - api: advapi32.RegDeleteKeyValue
+      - api: advapi32.RegDeleteTree
+      - api: advapi32.RegDeleteValue
+      - api: SHDeleteKey
+      - api: SHDeleteValue
+      - api: ZwDeleteKey

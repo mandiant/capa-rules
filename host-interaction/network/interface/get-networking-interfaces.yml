@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: get networking interfaces
+    namespace: host-interaction/network/interface
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Network Configuration Discovery [T1016]
+    examples:
+      - B7841B9D5DC1F511A93CC7576672EC0C:0x1000EBF0
+  features:
+    - or:
+      - api: iphlpapi.GetIfTable
+      - api: iphlpapi.GetAdaptersInfo

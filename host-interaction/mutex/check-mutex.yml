@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: check mutex
+    namespace: host-interaction/mutex
+    author: moritz.raabem@fireeye.com
+    scope: basic block
+    examples:
+      - Practical Malware Analysis Lab 01-01.dll_:0x10001010
+  features:
+    - and:
+      - or:
+        - api: kernel32.OpenMutex
+        - match: create mutex
+      - optional:
+        - or:
+          - api: kernel32.GetLastError
+          - number: 2 = ERROR_FILE_NOT_FOUND
+          - number: 0xB7 = ERROR_ALREADY_EXISTS

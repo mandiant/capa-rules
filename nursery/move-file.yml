@@ -1,7 +1,7 @@
 rule:
   meta:
     name: move file
-    rule-category: machine-access-control/file-manipulation/move-file
+    namespace: host-interaction/file-system/move
     author: moritz.raabe@fireeye.com
     scope: function
   features:

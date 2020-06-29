@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: encrypt or decrypt via WinCrypt
+    namespace: data-manipulation/encryption
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    examples:
+      - A45E377DBB98A6B44FD4034BC3FFF9B0:0x4017A0
+  features:
+    - and:
+      - or:
+        - api: CryptAcquireContext
+        - api: CryptGenKey
+        - api: CryptImportKey
+      - or:
+        - api: CryptEncrypt
+        - api: CryptDecrypt

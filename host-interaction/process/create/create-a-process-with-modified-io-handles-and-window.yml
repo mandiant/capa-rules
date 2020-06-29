@@ -1,0 +1,28 @@
+rule:
+  meta:
+    name: create a process with modified I/O handles and window
+    namespace: host-interaction/process/create
+    author: matthew.williams@fireeye.com
+    scope: function
+    references:
+      - https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa
+    examples:
+      - Practical Malware Analysis Lab 14-02.exe_:0x4011C0
+  features:
+    - and:
+      - or:
+        # API functions below accept a pointer to a STARTUPINFO structure (see StartupInfo.cb feature below)
+        - api: kernel32.CreateProcess
+        - api: kernel32.CreateProcessInternal
+        - api: advapi32.CreateProcessAsUser
+        - api: advapi32.CreateProcessWithLogon
+        - api: advapi32.CreateProcessWithToken
+      - number: 0x101 = STARTF_USESTDHANDLES | STARTF_USESHOWWINDOW
+        # STARTF_USESTDHANDLES indicates the hStdInput, hStdOutput, and hStdError members contain additional information
+        # STARTF_USESHOWWINDOW indicates the wShowWindow member contains additional information
+      - or:
+        - number: 0x44  # StartupInfo.cb (size) x86
+        - number: 0x68  # StartupInfo.cb (size) x64
+        # STARTUPINFOEX size values not currently supported
+      - optional:
+        - api: kernel32.GetStartupInfo

@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: identify ATM dispenser service provider
+    namespace: targeting/automated-teller-machine
+    author: william.ballenthin@fireeye.com
+    scope: file
+    references:
+      - https://doc.axxonsoft.com/confluence/display/atm70en/Configuring+the+connection+to+the+dispenser+service+provider
+    examples:
+      - b2ad4409323147b63e370745e5209996
+      - 1f094dd65be477d15d871e72f0fdce5e
+  features:
+    - or:
+      - string: CurrencyDispenser1  # NCR
+      - string: CDM30               # Wincor
+      - string: DBD_AdvFuncDisp     # Diebold

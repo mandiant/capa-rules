@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: create mutex
+    namespace: host-interaction/mutex
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 01-01.dll_:0x10001010
+  features:
+    - or:
+      - api: kernel32.CreateMutex
+      - api: kernel32.CreateMutexEx

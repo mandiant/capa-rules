@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: set global application hook
+    namespace: host-interaction/gui
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 39C05B15E9834AC93F206BC114D0A00C357C888DB567BA8F5345DA0529CBED41:0x100096c6
+  features:
+    - and:
+      - match: set application hook
+      - number: 0x3 = WM_GETMESSAGE
+      - count(number(0x0)): 1 or more

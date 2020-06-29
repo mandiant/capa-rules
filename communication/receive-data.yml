@@ -1,7 +1,7 @@
 rule:
   meta:
     name: receive data
-    rule-category: communication/receive-data
+    namespace: communication
     author: william.ballenthin@fireeye.com
     description: all known techniques for receiving data from a potential C2 server
     scope: function
@@ -10,5 +10,5 @@ rule:
   features:
     - or:
       - match: receive data on socket
-      - match: read file from internet
+      - match: read data from Internet
       - match: download URL to file

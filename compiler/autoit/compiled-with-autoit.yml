@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: compiled with AutoIt
+    namespace: compiler/autoit
+    author: william.ballenthin@fireeye.com
+    scope: file
+    examples:
+      - 55D77AB16377A8A314982F723FCC6FAE
+  features:
+    - or:
+      # strings from: https://fumik0.com/2019/03/25/lets-play-with-qulab-an-exotic-malware-developed-in-autoit/
+      - string: "AutoIt has detected the stack has become corrupt.\n\nStack corruption typically occurs when either the wrong calling convention is used or when the function is called with the wrong number of arguments.\n\nAutoIt supports the __stdcall (WINAPI) and __cdecl calling conventions.  The __stdcall (WINAPI) convention is used by default but __cdecl can be used instead.  See the DllCall() documentation for details on changing the calling convention."
+      - string: AutoIt Error
+      - string: />>>AUTOIT SCRIPT<<</
+      - string: '>>>AUTOIT NO CMDEXECUTE<<<'
+      - string: '#requireadmin'
+      - string: '#OnAutoItStartRegister'

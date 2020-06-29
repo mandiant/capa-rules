@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: start HTTP server
+    namespace: communication/http/server
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x10001970
+  features:
+    - and:
+      - api: httpapi.HttpInitialize
+      - optional:
+        - api: httpapi.HttpTerminate

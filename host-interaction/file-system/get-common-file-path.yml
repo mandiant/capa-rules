@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: get common file path
+    namespace: host-interaction/file-system
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 03-02.dll_:0x10003415
+      - 972B219F18379907A045431303F4DA7D:0x404887
+  features:
+    - or:
+      - api: kernel32.GetTempPath
+      - api: kernel32.GetTempFileName
+      - api: kernel32.GetSystemDirectory
+      - api: kernel32.GetWindowsDirectory
+      - api: kernel32.GetSystemWow64Directory
+      - api: GetAllUsersProfileDirectory
+      - api: GetAppContainerFolderPath
+      - api: GetCurrentDirectory
+      - api: GetDefaultUserProfileDirectory
+      - api: GetProfilesDirectory
+      - api: GetUserProfileDirectory
+      - api: SHGetFolderPathAndSubDir
+      - api: shell32.SHGetFolderPath
+      - api: shell32.SHGetFolderLocation
+      - api: shell32.SHGetSpecialFolderPath
+      - api: shell32.SHGetSpecialFolderLocation

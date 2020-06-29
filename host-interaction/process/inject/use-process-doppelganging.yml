@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: use process doppelganging
+    namespace: host-interaction/process/inject
+    author: moritz.raabe@fireeye.com
+    scope: file
+    att&ck:
+      - Defense Evasion::Process Injection::Process Doppelganging [T1055.013]
+    examples:
+      # proc_doppel64.exe from https://github.com/hasherezade/process_doppelganging/releases/tag/0.2
+      - A5D66324DAAEE5672B913AA461D4BD3A
+  features:
+    - and:
+      - string: /CreateFileTransacted./
+      - or:
+        - string: ZwCreateSection
+        - string: NtCreateSection
+      - string: RollbackTransaction

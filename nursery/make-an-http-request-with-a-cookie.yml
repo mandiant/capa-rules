@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: make an HTTP request with a Cookie
+    namespace: communication/http/client
+    author: anamaria.martinezgom@fireeye.com
+    scope: function
+  features:
+    - and:
+      - match: send HTTP request
+      - string: /Cookie:/i

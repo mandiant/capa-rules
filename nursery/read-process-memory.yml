@@ -1,7 +1,7 @@
 rule:
   meta:
     name: read process memory
-    rule-category: memory-access/read-memory/read-process-memory
+    namespace: host-interaction/process
     author: matthew.williams@fireeye.com
     scope: function
   features:

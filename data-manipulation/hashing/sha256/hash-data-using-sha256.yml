@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: hash data using SHA256
+    namespace: data-manipulation/hashing/sha256
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - C0CFFCF211035A839E28D542DE300298:0x180011400
+      - 6CC148363200798A12091B97A17181A1:0x140120240
+  features:
+    - or:
+      - and:
+        - number: 0x6A09E667
+        - number: 0xBB67AE85
+        - number: 0x3C6EF372
+        - number: 0xA54FF53A
+        - number: 0x510E527F
+        - number: 0x9B05688C
+        - number: 0x1F83D9AB
+        - number: 0x5BE0CD19

@@ -1,12 +1,14 @@
 rule:
   meta:
     name: enumerate disk volumes
-    rule-category: discovery/datamine/enumerate-disk-volumes
+    namespace: host-interaction/hardware/storage
     author: michael.hunhoff@fireeye.com
     scope: function
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
   features:
     - and:
-      - match: loop
+      - match: contain loop
       - or:
         - and:
           - api: kernel32.FindFirstVolume

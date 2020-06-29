@@ -1,9 +1,0 @@
-rule:
-  meta:
-    name: reference Windows startup folder
-    rule-category: persistence
-    author: matthew.williams@fireeye.com
-    scope: file
-  features:
-    - or:
-      - string: /Start Menu\\Programs\\Startup/i

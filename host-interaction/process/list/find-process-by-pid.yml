@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: find process by PID
+    namespace: host-interaction/process/list
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::Process Discovery [T1057]
+    examples:
+      - 493167E85E45363D09495D0841C30648:0x404B00
+  features:
+    - and:
+      - api: ntoskrnl.PsLookupProcessByProcessId
+      - optional:
+        - api: ntoskrnl.ObfDereferenceObject

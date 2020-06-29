@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: send file via HTTP
+    namespace: communication/http/client
+    author: matthew.williams@fireeye.com
+    scope: basic block
+    examples:
+      - EAAD7DFC78304B977D3844CC63577152:0x4500CB
+  features:
+    - and:
+      - optional:
+        - or:
+          - match: connect to HTTP server
+          - match: connect to URL
+      - api: wininet.InternetWriteFile

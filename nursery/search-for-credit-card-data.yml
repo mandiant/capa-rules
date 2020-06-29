@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: search for credit card data
+    namespace: collection/credit-card
+    author: matthew.williams@fireeye.com
+    scope: function
+  features:
+    - and:
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x5E = '^' (Track 1 separator)
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x3D = '=' (Track 2 separator)
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          # seen in 518185ED134F93DF708590E74473DA8E and 05B2D1AF23CF96E295BBBFC6CDC76E1F
+          - number: 0x44 = 'D' (Unknown separator)
+      - match: read process memory

@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: linked against OpenSSL
+    namespace: linking/static/openssl
+    author: william.ballenthin@fireeye.com
+    scope: file
+    examples:
+      - 6cc148363200798a12091b97a17181a1
+  features:
+    - or:
+      - string: RC4 for x86_64, CRYPTOGAMS by <appro@openssl.org>
+      - string: AES for x86_64, CRYPTOGAMS by <appro@openssl.org>
+      - string: DSA-SHA1-old

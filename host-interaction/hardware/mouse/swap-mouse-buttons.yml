@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: swap mouse buttons
+    namespace: host-interaction/hardware/mouse
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - B7841B9D5DC1F511A93CC7576672EC0C:0x10007250
+  features:
+    - or:
+      - api: user32.SwapMouseButton

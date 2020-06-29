@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: reference Diebold ATM routines
+    namespace: targeting/automated-teller-machine/diebold-nixdorf
+    author: william.ballenthin@fireeye.com
+    scope: file
+    references:
+      - https://www.fireeye.com/blog/threat-research/2017/01/new_ploutus_variant.html
+    examples:
+      - b2ad4409323147b63e370745e5209996
+  features:
+    - or:
+      - string: DBD_AdvFuncDisp  # dispenser
+      - string: DBD_EPP4         # pin pad

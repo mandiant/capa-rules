@@ -1,6 +1,7 @@
 rule:
   meta:
     name: crypto
+    namespace: ''
     author: moritz.raabe@fireeye.com
     lib: true
     scope: function
@@ -10,11 +11,11 @@ rule:
   features:
     - or:
       # TODO ref category data-manipulation/encrypt-data/
-      - match: references AES constants
-      - match: RC4 key-scheduling algorithm (KSA)
-      - match: RC4 PRGA
-      - match: RC4 encrypt via WinAPI
-      - match: RC6 (or RC5)
-      - match: encrypt using Salsa20 or ChaCha
-      - match: encrypts or decrypts data using DPAPI
-      - match: use of wincrypt
+      - match: reference AES constants
+      - match: encrypt data using RC4 KSA
+      - match: encrypt data using RC4 PRGA
+      - match: encrypt data using RC4 via WinAPI
+      - match: encrypt data using RC6
+      - match: encrypt data using Salsa20 or ChaCha
+      - match: encrypt data using DPAPI
+      - match: encrypt or decrypt via WinCrypt

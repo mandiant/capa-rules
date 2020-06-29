@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: check for OutputDebugString error
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    mbc:
+      - Anti-Behavioral Analysis::Detect Debugger::OutputDebugString
+    examples:
+      - Practical Malware Analysis Lab 16-02.exe_:0x401020
+  features:
+    - and:
+      - api: kernel32.SetLastError
+      - api: kernel32.GetLastError
+      - api: kernel32.OutputDebugString

@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: check if file exists
+    namespace: host-interaction/file-system/exists
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
+    examples:
+      - 31600AD0D1A7EA615690DF111AE36C73:0x401284
+  features:
+    - or:
+      - basic block:
+        - and:
+          - api: kernel32.GetFileAttributes
+          - mnemonic: cmp
+          - number: 0xFFFFFFFF = INVALID_FILE_ATTRIBUTES
+      - basic block:
+        - and:
+          - api: kernel32.GetLastError
+          - mnemonic: cmp
+          - number: 2 = ERROR_FILE_NOT_FOUND
+      - api: shlwapi.PathFileExists

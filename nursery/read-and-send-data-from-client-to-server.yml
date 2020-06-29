@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: read and send data from client to server
+    namespace: c2/file-transfer
+    author: william.ballenthin@fireeye.com
+    scope: function
+    att&ck:
+      - Exfiltration::Exfiltration Over C2 Channel [T1041]
+  features:
+    - and:
+      - match: read file
+      - match: send data

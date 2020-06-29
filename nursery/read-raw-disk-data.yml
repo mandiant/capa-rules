@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: read raw disk data
+    namespace: host-interaction/file-system
+    author: william.ballenthin@fireeye.com
+    scope: file
+  features:
+    - or:
+      - string: \\\\.\\PhysicalDrive0
+      - string: '\\.\C:'

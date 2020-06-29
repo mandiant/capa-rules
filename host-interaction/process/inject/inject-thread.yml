@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: inject thread
+    namespace: host-interaction/process/inject
+    author: anamaria.martinezgom@fireeye.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    examples:
+      - Practical Malware Analysis Lab 12-01.exe_:0x4010D0
+      - 2D3EDC218A90F03089CC01715A9F047F:0x4027CF
+  features:
+    - and:
+      - or:
+        - api: kernel32.VirtualAlloc
+        - api: kernel32.VirtualAllocEx
+        - api: kernel32.VirtualAllocExNuma
+      - match: write process memory
+      - or:
+        - api: kernel32.CreateRemoteThread
+        - api: ntdll.RtlCreateUserThread
+      - optional:
+        - or:
+          - api: kernel32.OpenProcess
+          - number: 0x40 = PAGE_EXECUTE_READWRITE
+          - number: 0x3000 = MEM_COMMIT or MEM_RESERVE

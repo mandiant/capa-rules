@@ -1,7 +1,7 @@
 rule:
   meta:
     name: read file via mapping
-    rule-category: machine-access-control/file-manipulation/read-file-via-mapping
+    namespace: host-interaction/file-system/read
     author: michael.hunhoff@fireeye.com
     scope: function
   features:

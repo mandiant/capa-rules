@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: create registry key
+    namespace: host-interaction/registry/create
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 03-02.dll_:0x10004706
+      - Practical Malware Analysis Lab 11-01.exe_:0x401000
+  features:
+    - or:
+      - api: advapi32.RegCreateKey
+      - api: advapi32.RegCreateKeyEx
+      - api: advapi32.RegCreateKeyTransacted

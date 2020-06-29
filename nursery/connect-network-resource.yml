@@ -1,7 +1,7 @@
 rule:
   meta:
     name: connect network resource
-    rule-category: communication/communication-via-network-resource/connect-network-resource
+    namespace: communication/http
     author: michael.hunhoff@fireeye.com
     description: connect to disk or print resource
     scope: function

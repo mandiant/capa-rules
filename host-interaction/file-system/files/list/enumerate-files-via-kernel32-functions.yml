@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: enumerate files via kernel32 functions
+    namespace: host-interaction/file-system/files/list
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
+    examples:
+      - Practical Malware Analysis Lab 01-01.exe_:0x4011E0
+      - Practical Malware Analysis Lab 20-02.exe_:0x401000
+  features:
+    - and:
+      - or:
+        - api: kernel32.FindFirstFile
+        - api: kernel32.FindFirstFileEx
+        - api: kernel32.FindFirstFileTransacted
+        - api: kernel32.FindFirstFileName
+        - api: kernel32.FindFirstFileNameTransacted
+      - or:
+        - api: kernel32.FindNextFile
+        - api: kernel32.FindNextFileName
+      - optional:
+        - api: kernel32.FindClose
+        - match: contain loop

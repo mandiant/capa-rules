@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: copy network traffic
+    namespace: host-interaction/network/traffic/copy
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 493167E85E45363D09495D0841C30648:0x404780
+  features:
+    - and:
+      - api: fwpkclnt.FwpsCopyStreamDataToBuffer0

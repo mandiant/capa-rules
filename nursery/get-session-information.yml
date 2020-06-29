@@ -1,9 +1,11 @@
 rule:
   meta:
     name: get session information
-    rule-category: discovery/session-configuration-probing/inspect-session-information
+    namespace: host-interaction/session
     author: michael.hunhoff@fireeye.com
     scope: function
+    att&ck:
+      - Discovery::System Owner/User Discovery [T1033]
   features:
     - and:
       - api: wtsapi32.WTSQuerySessionInformation

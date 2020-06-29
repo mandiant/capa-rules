@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: linked against C++ regex library
+    namespace: linking/static/cppregex
+    author: william.ballenthin@fireeye.com
+    scope: file
+  features:
+    - or:
+      - string: regex_error(error_syntax)    # from C++ STL regex, ref: http://www.cplusplus.com/reference/regex/regex_error/
+      - string: 'regex_error(error_collate): The expression contained an invalid collating element name.'

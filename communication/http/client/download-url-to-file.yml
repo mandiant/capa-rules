@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: download URL to file
+    namespace: communication/http/client
+    author: matthew.williams@fireeye.com
+    scope: function
+    examples:
+      - F5C93AC768C8206E87544DDD76B3277C:0x100020F0
+      - Practical Malware Analysis Lab 20-01.exe_:0x401040
+  features:
+    - or:
+      - api: urlmon.URLDownloadToFile
+      - api: urlmon.URLDownloadToCacheFile

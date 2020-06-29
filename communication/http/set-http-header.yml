@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: set HTTP header
+    namespace: communication/http
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x1000E230
+  features:
+    - and:
+      - api: winhttp.WinHttpAddRequestHeaders

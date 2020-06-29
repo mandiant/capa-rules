@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: print debug messages
+    namespace: host-interaction/log/debug/write-event
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 493167E85E45363D09495D0841C30648:0x401000
+  features:
+    - or:
+      - api: ntoskrnl.DbgPrint
+      - api: kernel32.OutputDebugString

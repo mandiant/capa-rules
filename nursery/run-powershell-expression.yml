@@ -1,9 +1,11 @@
 rule:
   meta:
-    name: run Powershell expression
-    rule-category: load-code/load-powershell/run-powershell-expression
+    name: run PowerShell expression
+    namespace: load-code/powershell/
     author: anamaria.martinezgom@fireeye.com
     scope: function
+    att&ck:
+      - Execution::Command and Scripting Interpreter::PowerShell [T1059.001]
   features:
     - and:
       - or:

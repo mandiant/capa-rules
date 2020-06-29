@@ -1,9 +1,11 @@
 rule:
   meta:
     name: get networking parameters
-    rule-category: discovery/network-environment-probing/get-networking-parameters
+    namespace: host-interaction/network
     author: michael.hunhoff@fireeye.com
     scope: function
+    att&ck:
+      - Discovery::System Network Configuration Discovery [T1016]
   features:
     - or:
       - api: iphlpapi.GetNetworkParams

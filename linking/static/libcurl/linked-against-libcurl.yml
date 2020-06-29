@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: linked against libcurl
+    namespace: linking/static/libcurl
+    author: moritz.raabe@fireeye.com
+    scope: file
+    examples:
+      - A90E5B3454AA71D9700B2EA54615F44B
+  features:
+    - or:
+      - string: /CLIENT libcurl/
+      - string: /curl\.haxx\.se/

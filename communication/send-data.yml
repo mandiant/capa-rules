@@ -1,7 +1,7 @@
 rule:
   meta:
     name: send data
-    rule-category: communication/send-data
+    namespace: communication
     author: william.ballenthin@fireeye.com
     description: all known techniques for sending data to a potential C2 server
     scope: function
@@ -11,4 +11,4 @@ rule:
     - or:
       - match: send HTTP request
       - match: send data on socket
-      - match: write file to internet
+      - match: send file via HTTP

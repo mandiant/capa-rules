@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: bypass Windows File Protection
+    namespace: host-interaction/file-system/windows-file-protection
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 01-04.exe_:0x401174
+  features:
+    - and:
+      - string: sfc_os.dll              #   System File Checker
+      - number: 0x2                     #   SfcTerminateWatcherThread
+      - match: link function at runtime

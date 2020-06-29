@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: inject APC
+    namespace: host-interaction/process/inject
+    author: william.ballenthin@fireeye.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Process Injection::Asynchronous Procedure Call [T1055.004]
+  features:
+    - and:
+      - or:
+        - match: write process memory
+        - api: kernel32.MapViewOfSection
+        - api: ntdll.NtMapViewOfSection
+        - api: ntdll.ZwMapViewOfSection
+        - api: kernel32.MapViewOfFile
+      - or:
+        - api: kernel32.QueueUserAPC
+        - api: ntdll.NtQueueApcThread
+      - optional:
+        - or:
+          - api: kernel32.CreateProcess
+          - api: kernel32.OpenProcess

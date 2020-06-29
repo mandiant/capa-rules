@@ -1,7 +1,7 @@
 rule:
   meta:
     name: debug build
-    rule-category: other-features/debug-build
+    namespace: executable/pe/debug
     author: william.ballenthin@fireeye.com
     scope: file
   features:

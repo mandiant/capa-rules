@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: install driver
+    namespace: host-interaction/driver
+    author: moritz.raabe@fireeye.com
+    scope: basic block
+    att&ck:
+      - Persistence::Create or Modify System Process::Windows Service [T1543.003]
+    examples:
+      - af60700383b75727f5256a0000c1476f:0x1127E
+  features:
+    - or:
+      - api: ntdll.NtLoadDriver
+      - api: ZwLoadDriver

@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: open registry key
+    namespace: host-interaction/registry/open
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 03-02.dll_:0x10004706
+      - 493167E85E45363D09495D0841C30648:0x404D60
+  features:
+    - or:
+      - api: advapi32.RegOpenKey
+      - api: advapi32.RegOpenKeyEx
+      - api: ZwOpenKey

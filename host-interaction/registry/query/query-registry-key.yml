@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: query registry key
+    namespace: host-interaction/registry/query
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::Query Registry [T1012]
+    examples:
+      - 493167E85E45363D09495D0841C30648:0x404930
+  features:
+    - or:
+      - api: ZwQueryKey

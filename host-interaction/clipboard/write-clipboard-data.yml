@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: write clipboard data
+    namespace: host-interaction/clipboard
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 6F99A2C8944CB02FF28C6F9CED59B161:0x403180
+  features:
+    - and:
+      - optional:
+        - match: open clipboard
+      - api: user32.SetClipboardData

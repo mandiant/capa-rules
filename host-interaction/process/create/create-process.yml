@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: create process
+    namespace: host-interaction/process/create
+    author: moritz.raabe@fireeye.com
+    scope: basic block
+    examples:
+      - 9324D1A8AE37A36AE560C37448C9705A:0x406DB0
+      - Practical Malware Analysis Lab 01-04.exe_:0x4011FC
+  features:
+    - or:
+      - api: kernel32.WinExec
+      - api: kernel32.CreateProcess
+      - api: shell32.ShellExecute
+      - api: shell32.ShellExecuteEx
+      - api: advapi32.CreateProcessAsUser
+      - api: advapi32.CreateProcessWithLogon
+      - api: advapi32.CreateProcessWithToken
+      - api: kernel32.CreateProcessInternal
+      - api: ntdll.NtCreateUserProcess
+      - api: ntdll.NtCreateProcess
+      - api: ntdll.NtCreateProcessEx
+      - api: ntdll.ZwCreateProcess
+      - api: ntdll.ZwCreateProcessEx
+      - api: ntdll.ZwCreateUserProcess
+      - api: ntdll.RtlCreateUserProcess

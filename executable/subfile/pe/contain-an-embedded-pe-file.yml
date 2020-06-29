@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: contain an embedded PE file
+    namespace: executable/subfile/pe
+    author: moritz.raabe@fireeye.com
+    scope: file
+    examples:
+      - Practical Malware Analysis Lab 01-04.exe_:0x4060
+  features:
+    - count(characteristic(embedded pe)): 1 or more

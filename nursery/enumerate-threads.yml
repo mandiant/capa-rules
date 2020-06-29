@@ -1,7 +1,7 @@
 rule:
   meta:
     name: enumerate threads
-    rule-category: machine-access-control/process-manipulation/enumerate-threads
+    namespace: host-interaction/thread/list
     author: moritz.raabe@fireeye.com
     scope: function
   features:

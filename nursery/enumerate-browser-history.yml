@@ -1,7 +1,7 @@
 rule:
   meta:
     name: enumerate browser history
-    rule-category: discovery/datamine/enumerate-browser-history
+    namespace: host-interaction/browser/history/list
     author: michael.hunhoff@fireeye.com
     scope: function
   features:

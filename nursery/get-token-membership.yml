@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: get token membership
+    namespace: host-interaction/session
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Owner/User Discovery [T1033]
+  features:
+    - and:
+      - api: advapi32.CheckTokenMembership
+      - optional:
+        - api: advapi32.AllocateAndInitializeSid
+        - api: advapi32.FreeSid

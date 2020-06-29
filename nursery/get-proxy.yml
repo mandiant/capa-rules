@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: get proxy
+    namespace: host-interaction/network/proxy
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Network Configuration Discovery [T1016]
+  features:
+    - and:
+      - match: open registry key
+      - string: ProxyServer

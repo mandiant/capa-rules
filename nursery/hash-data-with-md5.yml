@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: hash data with MD5
+    namespace: data-manipulation/hashing/md5
+    author: moritz.raabe@fireeye.com
+    scope: function
+  features:
+    - or:
+      - and:
+        # Magic initialization constants used in MD4 and MD5
+        - number: 0x67452301  # A
+        - number: 0xefcdab89  # B
+        - number: 0x98badcfe  # C
+        - number: 0x10325476  # D
+        - not:
+          - number: 0xc3d2e1f0  # if this is there, it's likely SHA1
+      - basic block:
+        - and:
+          - number: 0x8003 = CALG_MD5
+          - api: advapi32.CryptCreateHash

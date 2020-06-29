@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: packaged as an InstallShield installer
+    namespace: executable/installer/installshield
+    author: moritz.raabe@fireeye.com
+    scope: file
+  features:
+    - or:
+      # AppHelp has an export ApphelpCheckInstallShieldPackage,
+      # which we want to avoid FP'ing on,
+      # so do an exact match for this string.
+      # ok to relax if there are counterexamples.
+      - string: InstallShield

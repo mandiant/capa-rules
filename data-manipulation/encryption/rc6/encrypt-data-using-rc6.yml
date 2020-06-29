@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: encrypt data using RC6
+    namespace: data-manipulation/encryption/rc6
+    author: william.ballenthin@fireeye.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    examples:
+      - D87BA0BFCE1CDB17FD243B8B1D247E88:0x402390
+    note: both RC5 and RC6 use these same constants. RC6 is probably more common.
+  features:
+    - and:
+      # ref: https://github.com/stamparm/cryptospecs/blob/master/symmetrical/sources/rc6.c#L66
+      - number: 0xB7E15163
+      - or:
+        - number: 0x9e3779b9  # when we add an unsigned
+        - number: 0x61C88647  # when we subtracted an unsigned

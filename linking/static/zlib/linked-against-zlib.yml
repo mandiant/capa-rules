@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: linked against ZLIB
+    namespace: linking/static/zlib
+    author: william.ballenthin@fireeye.com
+    scope: file
+    examples:
+      - 6cc148363200798a12091b97a17181a1
+  features:
+    - or:
+      - string: /deflate .* Copyright/
+      - string: /inflate .* Copyright/

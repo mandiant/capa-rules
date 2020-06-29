@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: create directory
+    namespace: host-interaction/file-system/create
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 17-02.dll_:0x10008f62
+  features:
+    - or:
+      - api: kernel32.CreateDirectory
+      - api: kernel32.CreateDirectoryEx
+      - api: kernel32.CreateDirectoryTransacted
+      - api: NtCreateDirectoryObject
+      - api: ZwCreateDirectoryObject
+      - api: SHCreateDirectory
+      - api: SHCreateDirectoryEx
+      - api: _mkdir
+      - api: _wmkdir

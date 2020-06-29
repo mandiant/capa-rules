@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: contain obfuscated stackstrings
+    namespace: anti-analysis/obfuscation/string/stackstring
+    author: moritz.raabe@fireeye.com
+    scope: basic block
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Anti-Static Analysis::Disassembler Evasion::Argument Obfuscation
+    examples:
+      - Practical Malware Analysis Lab 16-03.exe_:0x4013D0
+  features:
+    - characteristic(stack string): true

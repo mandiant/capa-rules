@@ -1,9 +1,11 @@
 rule:
   meta:
     name: get file size
-    rule-category: machine-access-control/file-manipulation/get-file-size
+    namespace: host-interaction/file-system/meta
     author: michael.hunhoff@fireeye.com
     scope: function
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
   features:
     - or:
       - api: kernel32.GetFileSize

@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: persist via Run registry key
+    namespace: persistence/registry/run
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Persistence/Boot or Logon Autostart Execution/Registry Run Keys / Startup Folder [T1547.001]
+    examples:
+      - Practical Malware Analysis Lab 06-03.exe_:0x401130
+  features:
+    - and:
+      - or:
+        - or:
+          - api: advapi32.RegOpenKey
+          - api: advapi32.RegOpenKeyEx
+        - or:
+          - api: advapi32.RegSetValue
+          - api: advapi32.RegSetValueEx
+        - or:
+          - number: 0x80000001 = HKEY_CURRENT_USER
+          - number: 0x80000002 = HKEY_LOCAL_MACHINE
+      - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Run/i

@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: read file
+    namespace: host-interaction/file-system/read
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314567B
+  features:
+    - or:
+      - and:
+        - optional:
+          - and:
+            - number: 0x80000000 = GENERIC_READ
+            - or:
+              - api: kernel32.CreateFile
+        - or:
+          - api: kernel32.ReadFile
+          - api: ReadFileEx
+          - api: NtReadFile
+          - api: ZwReadFile
+          - api: _read
+          - api: fread

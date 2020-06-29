@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: get CPU information
+    namespace: host-interaction/hardware/cpu
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+    examples:
+      - BFB9B5391A13D0AFD787E87AB90F14F5:0x13145B5A
+  features:
+    - and:
+      - match: query registry value
+      - string: /Hardware\\Description\\System\\CentralProcessor/i

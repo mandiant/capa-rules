@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: replace clipboard data
+    namespace: host-interaction/clipboard
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 6f99a2c8944cb02ff28c6f9ced59b161:0x403180
+  features:
+    - and:
+      - optional:
+        - match: open clipboard
+      - match: write clipboard data
+      - api: user32.EmptyClipboard

@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: compiled to the .NET platform
+    namespace: runtime/dotnet
+    author: william.ballenthin@fireeye.com
+    scope: file
+    examples:
+      - b9f5bd514485fb06da39beff051b9fdc
+  features:
+    - or:
+      - import: mscoree._CorExeMain
+      - import: mscoree._corexemain
+      - import: mscoree._CorDllMain
+      - import: mscoree._cordllmain

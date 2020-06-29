@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: interact with driver via control codes
+    namespace: host-interaction/driver
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - Practical Malware Analysis Lab 10-03.exe_:0x401000
+      - 9412A66BC81F51A1FA916AC47C77E02AC1A7C9DFF543233ED70AA265EF6A1E76:0x10002DE0
+  features:
+    - or:
+      - api: DeviceIoControl
+      - api: NtUnloadDriver
+      - api: ZwUnloadDriver
+      - and:
+        - number: 38 = SystemLoadAndCallImage
+        - api: ZwSetSystemInformation

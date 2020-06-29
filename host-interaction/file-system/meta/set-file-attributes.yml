@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: set file attributes
+    namespace: host-interaction/file-system/meta
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - 946A99F36A46D335DEC080D9A4371940:0x100015f0
+  features:
+    - or:
+      - api: kernel32.SetFileAttributes
