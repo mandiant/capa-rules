@@ -1,7 +1,6 @@
 rule:
   meta:
     name: crypto
-    namespace: ''
     author: moritz.raabe@fireeye.com
     lib: true
     scope: function

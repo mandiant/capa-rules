@@ -1,7 +1,6 @@
 rule:
   meta:
     name: contain loop
-    namespace: ''
     author: moritz.raabe@fireeye.com
     lib: true
     scope: function

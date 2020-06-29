@@ -1,7 +1,6 @@
 rule:
   meta:
     name: write process memory
-    namespace: host-interaction/process/injection
     author: moritz.raabe@fireeye.com
     lib: true
     scope: function

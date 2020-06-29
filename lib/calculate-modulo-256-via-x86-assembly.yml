@@ -1,7 +1,6 @@
 rule:
   meta:
-    name: calculate module 256 via x86 assembly
-    namespace: ''
+    name: calculate modulo 256 via x86 assembly
     author: moritz.raabe@fireeye.com
     lib: true
     scope: basic block
