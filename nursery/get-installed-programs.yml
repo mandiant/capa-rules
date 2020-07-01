@@ -10,4 +10,4 @@ rule:
     - and:
       - match: open registry key
       - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall/i
-      - characteristic(loop): true
+      - characteristic: loop

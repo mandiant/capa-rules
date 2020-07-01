@@ -17,7 +17,7 @@ rule:
         - basic block:
           - and:
             # TODO misses if regular loop is used
-            - characteristic(tight loop): true
+            - characteristic: tight loop
             - or:
               - number: 0xFF
               - number: 0x100

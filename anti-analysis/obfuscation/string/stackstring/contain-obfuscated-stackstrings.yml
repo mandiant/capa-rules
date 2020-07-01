@@ -11,4 +11,4 @@ rule:
     examples:
       - Practical Malware Analysis Lab 16-03.exe_:0x4013D0
   features:
-    - characteristic(stack string): true
+    - characteristic: stack string
