@@ -10,8 +10,8 @@ rule:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403D7E
   features:
     - and:
-      - characteristic(tight loop): true
-      - characteristic(nzxor): true
+      - characteristic: tight loop
+      - characteristic: nzxor
       # Reduce false positives
       - not:
         - or:
