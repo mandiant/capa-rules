@@ -1,10 +1,126 @@
 # capa rules
-Standard collection of rules for [capa](https://ghe.eng.fireeye.com/FLARE/capa): the tool for enumerating the capabilities of programs.
+This is the standard collection of rules for [capa](https://ghe.eng.fireeye.com/FLARE/capa) - the tool for enumerating the capabilities of programs.
 
-# philosophy
-We want rule writing to be easy and fun! A larger rule corpus benefits everyone in the community and we encourage all kinds of contributions. If you have improvement ideas or encounter any issues, please let us know.
+## philosophy
+Rule writing should be easy and fun! 
+A large rule corpus benefits everyone in the community and we encourage all kinds of contributions.
 
-# rule nursery
+Anytime you see something neat in malware, we want you to think of expressing it in a capa rule.
+Then, we'll make it as painless as possible to share your rule here and distribute it to the capa users.
+
+## rule development
+
+capa uses a collection of rules to identify capabilities within a program.
+These rules are easy to write, even for those new to reverse engineering.
+By authoring rules, you can extend the capabilities that capa recognizes.
+In some regards, capa rules are a mixture of the OpenIOC, Yara, and YAML formats.
+
+Here's an example of a capa rule:
+
+```yaml
+rule:
+  meta:
+    name: checksum data with CRC32
+    namespace: data-manipulation/checksum/crc32
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
+      - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
+  features:
+    - or:
+      - and:
+        - mnemonic: shr
+        - number: 0xEDB88320
+        - number: 8
+        - characteristic(nzxor): true
+      - api: RtlComputeCrc32
+```
+
+capa interpets the content of these rules as it inspects executable files.
+If you follow the guidelines of this rule format, then you can teach capa to identify new capabilities.
+
+The [doc/format.md](./doc/format.md) file describes exactly how to construct rules.
+Please refer to it as you create rules for capa.
+
+
+## namespace organization
+
+The organization of this repository mirrors the namespaces of the rules it contains. 
+capa uses namespaces to group like things together, especially when it renders its final report.
+Namespaces are hierarchical, so the children of a namespace encodes its specific techniques.
+In a few words each, the top level namespaces are:
+
+  - [anti-analysis](./anti-analysis/) - packing, obfuscation, anti-X, etc.
+  - [c2](./c2/) - commands that may be issued by a controller, such as interactive shell or file transfer
+  - [collection](./collection/) - data that may be enumerated and collected for exfiltration
+  - [communication](./communication/) - HTTP, TCP, etc.
+  - [compiler](./compiler/) - detection of build environments, such as MSVC, Delphi, or AutoIT
+  - [data-manipulation](./data-manipulation/) - encryption, hashing, etc.
+  - [executable](./executable/) - characteristics of the executable, such as PE sections or debug info
+  - [host-interaction](./host-interaction/) - access or manipulation of system resources, like processes or the Registry
+  - [impact](./impact/) - end goal
+  - [linking](./linking/) - detection of dependencies, such as OpenSSL or Zlib
+  - [load-code](./load-code/) - runtime load and execution of code, such as embedded PE or shellcode
+  - [persistence](./persistence/) - all sorts of ways to maintain access
+  - [runtime](./runtime/) - detection of language runtimes, such as the .NET platform or Go
+  - [targeting](./targeting/) - special handling of systems, such as ATM machines
+  
+We can easily add more top level namespaces as the need arises. 
+
+
+### library rules
+capa supports rules matching other rule matches. 
+For example, the following rule set describes various methods of persistence.
+Note that the rule `persistence` matches if either `run key` or `service` match against a sample.
+
+```yaml
+---
+rule:
+  meta:
+    name: run key
+  features:
+    string: /CurrentVersion\/Run/i
+---
+rule:
+  meta:
+    name: service
+  features:
+    api: CreateService
+---
+rule:
+  meta:
+    name: persistence
+  features:
+    or:
+      - match: run key
+      - match: service
+```
+
+Using this feature, we can capture common logic into "library rules".
+These rules don't get rendered as results but are used as building blocks to create other rules.
+For example, there are quite a few ways to write to files on Windows, 
+ so the following library rule makes it easy for other rules to thoroughly match file writing.
+ 
+ ```yaml
+rule:
+  meta:
+    name: file write
+    lib: True
+  features:
+    or:
+      api: WriteFile
+      api: fwrite
+      ...
+ ```
+
+Set `rule.meta.lib=True` to declare a lib rule and place the rule file into the [lib](./lib/) rule directory.
+Lib rules should not have a namespace.
+Lib rules will not be rendered as results.
+Capa will only attempt to match lib rules that are referenced by other rules, 
+ so there's no performance overhead for defining many reusable library rules.
+
+### rule nursery
 The rule [nursery](https://github.com/fireeye/capa-rules/tree/master/nursery) is a staging ground for rules that are not quite polished. Nursery rule logic should still be solid, though metadata may be incomplete. For example, rules that miss a public example of the technique.
 
 The rule engine matches regularly on nursery rules. However, our rule linter only enumerates missing rule data, but will not fail the CI build, because its understood that the rule is incomplete.
