@@ -18,4 +18,4 @@ rule:
       - or:
         - mnemonic: popa
         - mnemonic: popad  # vivisect
-      - characteristic(cross section flow): true
+      - characteristic: cross section flow

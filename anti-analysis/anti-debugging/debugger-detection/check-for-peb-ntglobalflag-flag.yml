@@ -13,7 +13,7 @@ rule:
       - Practical Malware Analysis Lab 16-01.exe_:0x403530
   features:
     - and:
-      - characteristic(peb access): true
+      - characteristic: peb access
       - or:
         # 32-bit
         - offset: 0x68 = PEB.NtGlobalFlag

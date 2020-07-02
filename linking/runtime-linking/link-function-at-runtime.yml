@@ -20,4 +20,4 @@ rule:
         - api: kernel32.GetProcAddress
         - api: ntdll.LdrGetProcedureAddress
       - optional:
-        - characteristic(indirect call): true
+        - characteristic: indirect call
