@@ -16,7 +16,8 @@ rule:
       - and:
         - basic block:
           - and:
-            # TODO misses if regular loop is used
+            # misses if regular loop is used,
+            # however we cannot model that a loop contains a certain number
             - characteristic: tight loop
             - or:
               - number: 0xFF
