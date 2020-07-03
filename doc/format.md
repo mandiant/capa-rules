@@ -32,11 +32,11 @@ Here's an example rule used by capa:
 ```
 
 This document defines the available structures and features that you can use as you write capa rules.
+We'll start at the high level structure and then dig into the logic structures and features that capa supports.
 
-
-# contents
-
+### table of contents 
 - [rule format](#rule-format)
+  - [yaml](#yaml)
   - [meta block](#meta-block)
   - [features block](#features-block)
 - [extracted features](#extracted-features)
@@ -69,7 +69,6 @@ Once you have a draft rule, you can use the [linter](https://github.com/fireeye/
 Then, you should use the [formatter](https://github.com/fireeye/capa/blob/master/scripts/capafmt.py)
  to reformat the rule into a style that's consistent with all other capa rules.
 This way, you don't have to worry about the width of indentation while you're focused on logic.
-
 We run the linter and formatter in our Continuous Integration setup so that we can be sure all rules are consistent.
 
 Anyways, within the yaml document, the top-level element is a dictionary named `rule`
@@ -108,24 +107,20 @@ meta:
 
 Here are the common fields:
 
-  - `name` is required. This string should uniquely identify the rule.
+  - `name` is required. This string should uniquely identify the rule. More details below.
 
-  - `namespace` is required when a rule describes a technique (as opposed to matching a role or disposition).
-The namespace helps us group rules into buckets, such as `host-manipulation/file-system` or `impact/wipe-disk`.
-When capa emits its final report, it orders the results by category, so related techniques show up together.
+  - `namespace` is required when a rule describes a technique, and helps us group rules into buckets. More details below.
 
   - `author` specifies the name or handle of the rule author.
   
   - `description` is optional text that describes the intent or interpretation of the rule.
 
   - `scope` indicates to which feature set this rule applies.
-    It can take the following values:
+    Here are the legal values:
     - **`basic block`**: matches features within each basic block.
       This is used to achieve locality in rules (for example for parameters of a function).
     - **`function`** (default): match features within each function.
     - **`file`**: matches features across the whole file.
-    - **`program`**: *matches the matches* of `function` and `file` scopes.
-      Not yet implemented.
       
   - `att&ck` is an optional list of [ATT&CK framework](https://attack.mitre.org/) techniques that the rule implies, like 
 `Discovery::Query Registry [T1012]` or `Persistence::Create or Modify System Process::Windows Service [T1543.003]`.
@@ -138,18 +133,18 @@ like the ATT&CK list.
 
   - `maec/analysis-conclusion` is required when the rule describes a disposition, such as `benign` or `malicious`.
 
-  - `examples` is a *required* list of references to samples that should match the capability.
+  - `examples` is a *required* list of references to samples that the rule should match.
 The linter verifies that each rule correctly fires on each sample referenced in a rule's `examples` list.
-When the rule scope is `function`, then the reference should be `<sample hash>:<function va>`.
+These example files are stored in the [github.com/fireeye/capa-testfiles](https://github.com/fireeye/capa-testfiles) repository.
 
-  - `references` lists related information in a book, article, blog post, etc.
+  - `references` lists related information found in a book, article, blog post, etc.
 
 Other fields are not allowed, and the linter will complain about them.
 
 ### rule name
 
 The `rule.meta.name` uniquely identifies a rule.
-It can be used as a feature and referenced in other rules, so if you change a rule name, be sure to search for cross references.
+It can be referenced in other rules, so if you change a rule name, be sure to search for cross references.
 
 By convention, the rule name should complete one of the following sentences:
   - "The program/function may..."
@@ -168,8 +163,61 @@ Therefore, these are good rule names:
 
 ### rule namespace
 
-TODO
+The rule namespace helps us group related rules together.
+You'll notice that the file system layout of the rule files matches the namespaces that they contain.
+Furthermore, output from capa is ordered by namespace, so all `communication` matches render next to one another.
 
+Namespaces are hierarchical, so the children of a namespace encodes its specific techniques.
+In a few words each, the top level namespaces are:
+
+  - [anti-analysis](https://github.com/fireeye/capa-rules/anti-analysis/) - packing, obfuscation, anti-X, etc.
+  - [c2](https://github.com/fireeye/capa-rules/c2/) - commands that may be issued by a controller, such as interactive shell or file transfer
+  - [collection](https://github.com/fireeye/capa-rules/collection/) - data that may be enumerated and collected for exfiltration
+  - [communication](https://github.com/fireeye/capa-rules/communication/) - HTTP, TCP, etc.
+  - [compiler](https://github.com/fireeye/capa-rules/compiler/) - detection of build environments, such as MSVC, Delphi, or AutoIT
+  - [data-manipulation](https://github.com/fireeye/capa-rules/data-manipulation/) - encryption, hashing, etc.
+  - [executable](https://github.com/fireeye/capa-rules/executable/) - characteristics of the executable, such as PE sections or debug info
+  - [host-interaction](https://github.com/fireeye/capa-rules/host-interaction/) - access or manipulation of system resources, like processes or the Registry
+  - [impact](https://github.com/fireeye/capa-rules/impact/) - end goal
+  - [linking](https://github.com/fireeye/capa-rules/linking/) - detection of dependencies, such as OpenSSL or Zlib
+  - [load-code](https://github.com/fireeye/capa-rules/load-code/) - runtime load and execution of code, such as embedded PE or shellcode
+  - [persistence](https://github.com/fireeye/capa-rules/persistence/) - all sorts of ways to maintain access
+  - [runtime](https://github.com/fireeye/capa-rules/runtime/) - detection of language runtimes, such as the .NET platform or Go
+  - [targeting](https://github.com/fireeye/capa-rules/targeting/) - special handling of systems, such as ATM machines
+  
+We can easily add more top level namespaces as the need arises. 
+
+All namespaces components should be nouns that describe the capability concept, except for possibly the last component.
+For example, here's a namespace subtree that describes capabilities for interacting with system hardware:
+
+```
+host-interaction/hardware
+host-interaction/hardware/storage
+host-interaction/hardware/memory
+host-interaction/hardware/cpu
+host-interaction/hardware/mouse
+host-interaction/hardware/keyboard
+host-interaction/hardware/keyboard/layout
+host-interaction/hardware/cdrom
+```
+
+When there are many common operations for a namespace, 
+and many ways to implement each operation, 
+then the final path component may be a verb that describes the operation.
+For example, there are *many* ways to do multiple file operations on Windows, so the namespace subtree looks like:
+
+```
+rules/host-interaction/file-system
+rules/host-interaction/file-system/create
+rules/host-interaction/file-system/delete
+rules/host-interaction/file-system/write
+rules/host-interaction/file-system/copy
+rules/host-interaction/file-system/exists
+rules/host-interaction/file-system/read
+rules/host-interaction/file-system/list
+```
+
+The depth of the namespace tree is not limited, but we've found that 3-4 components is typically sufficient.
 
 ## features block
 
@@ -198,11 +246,6 @@ For this to match, the function must:
   - reference the number `8`, and
   - have an unusual feature, in this case, contain a non-zeroing XOR instruction
 If only one of these features is found in a function, the rule will not match.
-
-
-## limitations
-### circular rule dependencies
-While capa supports [matching on prior rule matches](#matching-prior-rule-matches) users should ensure that their rules do not introduce circular dependencies between rules.
 
 
 # extracted features
@@ -267,18 +310,17 @@ Regexes should be surrounded with `/` characters.
 By default, capa uses case-sensitive matching and assumes leading and trailing wildcards.
 To perform case-insensitive matching append an `i`. To anchor the regex at the start or end of a string, use `^` and/or `$`.
 
-To add context to a string use the two-line syntax, using  the `description` tag: `description: DESCRIPTION STRING`.
-The inline syntax is not supported.
+To add context to a string, use the two-line syntax: `description: DESCRIPTION STRING` because the inline syntax is not supported.
 Check the [description section](#description) for more details.
 
 Examples:
 
 ```
+- string: Firefox 64.0
 - string: This program cannot be run in DOS mode.
   description: MS-DOS stub message
 - string: '{3E5FC7F9-9A51-4367-9063-A120244FBEC7}'
   description: CLSID_CMSTPLUA
-- string: Firefox 64.0
 - string:'/SELECT.*FROM.*WHERE/
 - string: /Hardware\\Description\\System\\CentralProcessor/i
 ```
@@ -447,6 +489,7 @@ Rules are uniquely identified by their `rule.meta.name` property;
 this is the value that should appear on the right-hand side of the `match` expression.
 
 capa will refuse to run if a rule dependency is not present during matching.
+Similarly, you should ensure that you do not introduce circular dependencies among rules that match one another.
 
 Common rule patterns, such as the various ways to implement "writes to a file", can be refactored into "library rules". 
 These are rules with `rule.meta.lib: True`.
