@@ -9,6 +9,5 @@ rule:
   features:
     - or:
       - characteristic: loop
+      - characteristic: tight loop
       - characteristic: recursive call
-      - basic block:
-        - characteristic: tight loop
