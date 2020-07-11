@@ -7,28 +7,24 @@ In some regards, capa rules are a mixture of the OpenIOC, Yara, and YAML formats
 
 Here's an example rule used by capa:
 
-```
-───────┬──────────────────────────────────────────────────────────────────────────
-       │ File: rules/data-manipulation/checksum/crc32/checksum-data-with-crc32.yml
-───────┼──────────────────────────────────────────────────────────────────────────
-   1   │ rule:
-   2   │   meta:
-   3   │     name: checksum data with CRC32
-   4   │     namespace: data-manipulation/checksum/crc32
-   5   │     author: moritz.raabe@fireeye.com
-   6   │     scope: function
-   7   │     examples:
-   8   │       - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
-   9   │       - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
-  10   │   features:
-  11   │     - or:
-  12   │       - and:
-  13   │         - mnemonic: shr
-  14   │         - number: 0xEDB88320
-  15   │         - number: 8
-  16   │         - characteristic(nzxor): true
-  17   │       - api: RtlComputeCrc32
-──────────────────────────────────────────────────────────────────────────────────
+```yaml
+rule:
+  meta:
+    name: hash data with CRC32
+    namespace: data-manipulation/checksum/crc32
+    author: moritz.raabe@fireeye.com
+    scope: function
+    examples:
+      - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
+      - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
+  features:
+    - or:
+      - and:
+        - mnemonic: shr
+        - number: 0xEDB88320
+        - number: 8
+        - characteristic: nzxor
+      - api: RtlComputeCrc32
 ```
 
 This document defines the available structures and features that you can use as you write capa rules.
@@ -61,8 +57,8 @@ We'll start at the high level structure and then dig into the logic structures a
 
 ## yaml
 
-Rules are yaml files that follow a certain schema.
-You should be able to use any old yaml editor/syntax highlighting to assist you.
+Rules are YAML files that follow a certain schema.
+You should be able to use any YAML editor/syntax highlighting to assist you.
 
 Once you have a draft rule, you can use the [linter](https://github.com/fireeye/capa/blob/master/scripts/lint.py) 
  to check that your rule adheres to best practices.
@@ -71,7 +67,7 @@ Then, you should use the [formatter](https://github.com/fireeye/capa/blob/master
 This way, you don't have to worry about the width of indentation while you're focused on logic.
 We run the linter and formatter in our Continuous Integration setup so that we can be sure all rules are consistent.
 
-Anyways, within the yaml document, the top-level element is a dictionary named `rule`
+Within the YAML document, the top-level element is a dictionary named `rule`
  with two required children dictionaries:
 `meta` and `features`.
 There are no other children.
@@ -233,11 +229,12 @@ There are five structural expressions that may be nested:
 For example, consider the following rule:
 
 ```
-   9   │     - and:
-  10   │       - mnemonic: shr
-  11   │       - number: 0xEDB88320
-  12   │       - number: 8
-  13   │       - characteristic(nzxor): True
+      - and:
+        - mnemonic: shr
+        - number: 0xEDB88320
+        - number: 8
+        - characteristic: nzxor
+      - api: RtlComputeCrc32
 ```
 
 For this to match, the function must:
@@ -266,7 +263,7 @@ These are the features supported at the function-scope:
 
 ### api
 A call to a named function, probably an import,
-though possibly a local function (like `malloc`) extracted via FLIRT.
+though possibly a local function (like `malloc`) extracted via function signature matching like FLIRT.
 
 The parameter is a string describing the function name, specified like `module.functionname` or `functionname`.
 
@@ -310,7 +307,7 @@ Regexes should be surrounded with `/` characters.
 By default, capa uses case-sensitive matching and assumes leading and trailing wildcards.
 To perform case-insensitive matching append an `i`. To anchor the regex at the start or end of a string, use `^` and/or `$`.
 
-To add context to a string, use the two-line syntax: `description: DESCRIPTION STRING` because the inline syntax is not supported.
+To add context to a string, use the two-line syntax `...description: DESCRIPTION STRING` shown below because the inline syntax is not supported here.
 Check the [description section](#description) for more details.
 
 Examples:
@@ -332,10 +329,10 @@ A sequence of bytes referenced by the logic of the program.
 The provided sequence must match from the beginning of the referenced bytes and be no more than `0x100` bytes.
 The parameter is a sequence of hexadecimal bytes.
 To help humans understand the meaning of the bytes sequence, you may provide a description.
-Use the inline syntax (preferred) by ending the line with ` = DESCRIPTION STRING`.
+For this use the inline syntax by appending your ` = DESCRIPTION STRING`.
 Check the [description section](#description) for more details.
 
-The example below illustrates byte matching given a COM CLSID pushed onto the stack prior to `CoCreateInstance`.
+The example below illustrates byte matching given a COM CLSID pushed onto the stack prior to a call to `CoCreateInstance`.
 
 Disassembly:
 
@@ -381,25 +378,25 @@ Examples:
 Characteristics are features that are extracted by the analysis engine.
 They are one-off features that seem interesting to the authors.
 
-For example, the `characteristic(nzxor)` feature describes non-zeroing XOR instructions.
+For example, the `characteristic: nzxor` feature describes non-zeroing XOR instructions.
 capa does not support instruction pattern matching,
  so a select set of interesting instructions are pulled out as characteristics.
 
 | characteristic                             | scope                 | description |
 |--------------------------------------------|-----------------------|-------------|
-| `characteristic(embedded pe): true`        | file                  | (XOR encoded) embedded PE files. |
-| `characteristic(switch): true`             | function              | Function contains a switch or jump table. |
-| `characteristic(loop): true`               | function              | Function contains a loop. |
-| `characteristic(recursive call): true`     | function              | Function is recursive. |
-| `characteristic(calls from): true`         | function              | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
-| `characteristic(calls to): true`           | function              | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
-| `characteristic(nzxor): true`              | basic block, function | Non-zeroing XOR instruction |
-| `characteristic(peb access): true`         | basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h], or `NtCurrentPeb` |
-| `characteristic(fs access): true`          | basic block, function | Access to memory via the `fs` segment. |
-| `characteristic(gs access): true`          | basic block, function | Access to memory via the `gs` segment. |
-| `characteristic(cross section flow): true` | basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
-| `characteristic(tight loop): true`         | basic block           | A tight loop where a basic block branches to itself. |
-| `characteristic(indirect call): true`      | basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
+| `characteristic: embedded pe`        | file                  | (XOR encoded) embedded PE files. |
+| `characteristic: switch`             | function              | Function contains a switch or jump table. |
+| `characteristic: loop`               | function              | Function contains a loop. |
+| `characteristic: recursive call`     | function              | Function is recursive. |
+| `characteristic: calls from`         | function              | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
+| `characteristic: calls to`           | function              | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
+| `characteristic: nzxor`              | basic block, function | Non-zeroing XOR instruction |
+| `characteristic: peb access`         | basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h] |
+| `characteristic: fs access`          | basic block, function | Access to memory via the `fs` segment. |
+| `characteristic: gs access`          | basic block, function | Access to memory via the `gs` segment. |
+| `characteristic: cross section flow` | basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
+| `characteristic: tight loop`         | basic block           | A tight loop where a basic block branches to itself. |
+| `characteristic: indirect call`      | basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
 
 ## file features
 
@@ -471,19 +468,19 @@ These rules can be expressed like:
     count(mnemonic(mov)): 3
     count(basic block): 4
 
-`count` supports inline descriptions, except for [strings](#string), using the following syntax:
+`count` supports inline descriptions, except for [strings](#string), via the following syntax:
 
     count(number(2 = AF_INET/SOCK_DGRAM)): 2
 
-## matching prior rule matches
+## matching prior rule matches and namespaces
 
-capa rules can specify logic for matching on other rule matches.
+capa rules can specify logic for matching on other rule matches or namespaces.
 This allows a rule author to refactor common capability patterns into their own reusable components.
 You can specify a rule match expression like so:
 
     - and:
-      - match: file creation
-      - match: process creation
+      - match: create process
+      - match: host-interaction/file-system/write
 
 Rules are uniquely identified by their `rule.meta.name` property;
 this is the value that should appear on the right-hand side of the `match` expression.
