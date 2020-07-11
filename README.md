@@ -1,5 +1,5 @@
 # capa rules
-This is the standard collection of rules for [capa](https://ghe.eng.fireeye.com/FLARE/capa) - the tool for enumerating the capabilities of programs.
+This is the standard collection of rules for [capa](https://github.com/fireeye/capa) - the tool to automatically identify capabilities of programs.
 
 ## philosophy
 Rule writing should be easy and fun! 
@@ -20,7 +20,7 @@ Here's an example of a capa rule:
 ```yaml
 rule:
   meta:
-    name: checksum data with CRC32
+    name: hash data with CRC32
     namespace: data-manipulation/checksum/crc32
     author: moritz.raabe@fireeye.com
     scope: function
@@ -33,7 +33,7 @@ rule:
         - mnemonic: shr
         - number: 0xEDB88320
         - number: 8
-        - characteristic(nzxor): true
+        - characteristic: nzxor
       - api: RtlComputeCrc32
 ```
 
@@ -78,6 +78,14 @@ Note that the rule `persistence` matches if either `run key` or `service` match 
 ---
 rule:
   meta:
+    name: persistence
+  features:
+    or:
+      - match: run key
+      - match: service
+---
+rule:
+  meta:
     name: run key
   features:
     string: /CurrentVersion\/Run/i
@@ -87,14 +95,6 @@ rule:
     name: service
   features:
     api: CreateService
----
-rule:
-  meta:
-    name: persistence
-  features:
-    or:
-      - match: run key
-      - match: service
 ```
 
 Using this feature, we can capture common logic into "library rules".
@@ -105,7 +105,7 @@ For example, there are quite a few ways to write to files on Windows,
  ```yaml
 rule:
   meta:
-    name: file write
+    name: write file
     lib: True
   features:
     or:
@@ -115,8 +115,8 @@ rule:
  ```
 
 Set `rule.meta.lib=True` to declare a lib rule and place the rule file into the [lib](./lib/) rule directory.
-Lib rules should not have a namespace.
-Lib rules will not be rendered as results.
+Library rules should not have a namespace.
+Library rules will not be rendered as results.
 Capa will only attempt to match lib rules that are referenced by other rules, 
  so there's no performance overhead for defining many reusable library rules.
 
@@ -128,6 +128,6 @@ The rule engine matches regularly on nursery rules. However, our rule linter onl
 We encourage contributors to create rules in the nursery, and hope that the community will work to "graduate" the rule once things are acceptable.
 
 Examples of things that would place a rule into the nursery:
-  - no real world examples
+  - no real-world examples
   - missing categorization
-  - (maybe) questions about fidelity (e.g. RC4 PRNG)
+  - (maybe) questions about fidelity (e.g. RC4 PRNG algorithm)
