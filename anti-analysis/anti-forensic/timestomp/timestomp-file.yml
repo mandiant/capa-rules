@@ -9,8 +9,8 @@ rule:
     examples:
       - Practical Malware Analysis Lab 03-04.exe_:0x4014e0
   features:
-    - or:
-      - and:
+    - and:
+      - or:
         - api: kernel32.GetSystemTime
         - api: kernel32.FileTimeToLocalFileTime
         - api: kernel32.GetSystemTimeAsFileTime

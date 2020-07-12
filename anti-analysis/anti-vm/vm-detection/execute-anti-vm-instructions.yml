@@ -3,7 +3,7 @@ rule:
     name: execute anti-VM instructions
     namespace: anti-analysis/anti-vm/vm-detection
     author: moritz.raabe@fireeye.com
-    scope: function
+    scope: basic block
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
