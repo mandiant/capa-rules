@@ -1,4 +1,4 @@
-name: Update rules number badge
+name: Update rules number badge and sync rules submodule in capa
 on:
   push:
     branches: [ master ]
@@ -6,7 +6,7 @@ jobs:
   update_num_rules:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
+    - name: Checkout capa-rules
       uses: actions/checkout@v2
     - name: Update rules number badge in README
       run: |
@@ -19,7 +19,36 @@ jobs:
         # Do not fail the action if rules number doesn't change
         git add -A
         git diff-index --quiet HEAD || git commit -am 'Update rules number badge'
-    - name: Push changes
+    - name: Push changes to capa-rules
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  sync_submodule_capa:
+    runs-on: ubuntu-latest
+    needs: update_num_rules
+    steps:
+    - name: Checkout capa
+      uses: actions/checkout@v2
+      with:
+        repository: fireeye/capa
+        token: ${{ secrets.CAPA_TOKEN }}
+        submodules: true
+    - name: Sync rules submodule
+      run: |
+        git submodule update --remote rules
+    - name: Update rules number badge in README
+      run: |
+        num_rules=$(find rules -type f -name '*.yml' -not -path 'rules/.github/*' | wc -l)
+        sed -i "s/rules-[0-9]*-blue\.svg/rules-$num_rules-blue.svg/" README.md
+    - name: Commit changes
+      run: |
+        git config user.email 'capa-dev@fireeye.com'
+        git config user.name 'Capa Bot'
+        git commit -am 'Sync capa rules submodule'
+    - name: Push changes to capa
+      uses: ad-m/github-push-action@master
+      with:
+        repository: fireeye/capa
+        github_token: ${{ secrets.CAPA_TOKEN }}
+
