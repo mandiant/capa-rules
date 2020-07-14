@@ -1,4 +1,6 @@
 # capa rules
+[![Number of rules](https://img.shields.io/badge/rules-261-blue.svg)](rules)
+
 This is the standard collection of rules for [capa](https://github.com/fireeye/capa) - the tool to automatically identify capabilities of programs.
 
 ## philosophy

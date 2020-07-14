@@ -1,0 +1,25 @@
+name: Update rules number badge
+on:
+  push:
+    branches: [ master ]
+jobs:
+  update_num_rules:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Update rules number badge in README
+      run: |
+        num_rules=$(find . -type f -name '*.yml' -not -path './.github/*' | wc -l)
+        sed -i "s/rules-[0-9]*-blue\.svg/rules-$num_rules-blue.svg/" README.md
+    - name: Commit changes
+      run: |
+        git config user.email 'capa-dev@fireeye.com'
+        git config user.name 'Capa Bot'
+        # Do not fail the action if rules number doesn't change
+        git add -A
+        git diff-index --quiet HEAD || git commit -am 'Update rules number badge'
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
