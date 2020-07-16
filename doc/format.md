@@ -52,7 +52,6 @@ We'll start at the high level structure and then dig into the logic structures a
   - [counting](#counting)
   - [matching prior rule matches](#matching-prior-rule-matches)
   - [descriptions](#descriptions)
-- [limitations](#Limitations)
 
 
 ## yaml
@@ -285,7 +284,7 @@ The parameter is a number; if prefixed with `0x` then in hex format, otherwise, 
 
 To help humans understand the meaning of a number, such that the constant `0x40` means `PAGE_EXECUTE_READWRITE`, you may provide a description alongside the definition.
 Use the inline syntax (preferred) by ending the line with ` = DESCRIPTION STRING`.
-Check the [description section](#description) for more details.
+Check the [description section](#descriptions) for more details.
 
 Examples:
 
@@ -308,7 +307,7 @@ By default, capa uses case-sensitive matching and assumes leading and trailing w
 To perform case-insensitive matching append an `i`. To anchor the regex at the start or end of a string, use `^` and/or `$`.
 
 To add context to a string, use the two-line syntax `...description: DESCRIPTION STRING` shown below because the inline syntax is not supported here.
-Check the [description section](#description) for more details.
+Check the [description section](#descriptions) for more details.
 
 Examples:
 
@@ -318,7 +317,8 @@ Examples:
   description: MS-DOS stub message
 - string: '{3E5FC7F9-9A51-4367-9063-A120244FBEC7}'
   description: CLSID_CMSTPLUA
-- string:'/SELECT.*FROM.*WHERE/
+- string: '/SELECT.*FROM.*WHERE/'
+  description: SQL WHERE Clause
 - string: /Hardware\\Description\\System\\CentralProcessor/i
 ```
 
@@ -330,7 +330,7 @@ The provided sequence must match from the beginning of the referenced bytes and 
 The parameter is a sequence of hexadecimal bytes.
 To help humans understand the meaning of the bytes sequence, you may provide a description.
 For this use the inline syntax by appending your ` = DESCRIPTION STRING`.
-Check the [description section](#description) for more details.
+Check the [description section](#descriptions) for more details.
 
 The example below illustrates byte matching given a COM CLSID pushed onto the stack prior to a call to `CoCreateInstance`.
 
@@ -494,7 +494,7 @@ By default, library rules will not be output to the user as a rule match,
 but can be matched by other rules.
 When no active rules depend on a library rule, these the library rules will not be evaluated - maintaining performance.
 
-## description
+## descriptions
 
 All features support an optional description which helps with documenting rules and provides context in capa's output.
 For all features except for [strings](#string), the description can be specified inline preceded by ` = `: ` = DESCRIPTION STRING`.
