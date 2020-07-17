@@ -11,3 +11,4 @@ rule:
         - or:
           - api: kernel32.OpenProcess
           - api: kernel32.VirtualQueryEx
+          - api: psapi.QueryWorkingSet
