@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  rule_linter:
+    runs-on: ubuntu-latest
+    steps:
+    # We check the submodules separately as the rules submodule's reference may not be our PR/master
+    - name: Checkout capa without submodules
+      uses: actions/checkout@v2
+      with:
+        repository: fireeye/capa
+    - name: Checkout capa-rules
+      uses: actions/checkout@v2
+      with:
+        path: rules
+    - name: Checkout capa-testfiles
+      uses: actions/checkout@v2
+      with:
+        repository: fireeye/capa-testfiles
+        path: tests/data
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    # We don't need vivisect, so we can install capa using Python3
+    - name: Install capa
+      run: pip install -e .
+    - name: Run rule linter
+      run: python scripts/lint.py rules/
+
