@@ -28,15 +28,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: update_num_rules
     steps:
+    # Do not checkout submodules as we don't need capa-testfiles and we need to
+    # update the rules submodule reference
     - name: Checkout capa
       uses: actions/checkout@v2
       with:
         repository: fireeye/capa
-        token: ${{ secrets.CAPA_TOKEN }}
-        submodules: true
-    - name: Sync rules submodule
-      run: |
-        git submodule update --remote rules
+    - name: Checkout capa-rules
+      uses: actions/checkout@v2
+      with:
+        path: rules
     - name: Update rules number badge in README
       run: |
         num_rules=$(find rules -type f -name '*.yml' -not -path 'rules/.github/*' | wc -l)
