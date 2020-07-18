@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: check for unmoving mouse cursor
+    namespace: anti-analysis/anti-vm/vm-detection
+    author: BitsOfBinary
+    scope: function
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion::User Activity Based Checks [T1497.002]
+    references:
+      - https://www.joesecurity.org/blog/5852460122427342172
+    examples:
+      - 7E17F0F35D50F49407841372F24FBD38:0x4010f6
+  features:
+    - and:
+      - count(api(user32.GetCursorPos)): 2 or more
