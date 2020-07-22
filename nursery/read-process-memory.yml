@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/process
     author: 
       - matthew.williams@fireeye.com
-      - @_re_fox
+      - "@_re_fox"
     scope: function
   features:
     - and:
