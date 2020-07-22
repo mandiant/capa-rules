@@ -8,9 +8,7 @@ rule:
       - 1d8fd13c890060464019c0f07b928b1a:0x00402eb0
   features:
     - and:
-        - or:
-          - api: CreateMutex
-          - api: CreateMutexEx
+        - match: create mutex
         - api: GetLastError
         - api: ExitProcess
         - or:
