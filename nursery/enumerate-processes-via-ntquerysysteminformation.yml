@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: query processes via NtQuerySystemInformation
+    name: enumerate processes via NtQuerySystemInformation
     namespace: host-interaction/process/list
     author: "@_re_fox"
     scope: basic block
