@@ -7,6 +7,7 @@ rule:
     references:
       - https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp
     examples:
+      - c66172b12971a329f8d5ff01665f204b:0x404A18
   features:
     - and:
       - or:
