@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: credit card feature parsing
+    name: parse credit card information
     namespace: collection/credit-card
     author: "@_re_fox"
     scope: function
