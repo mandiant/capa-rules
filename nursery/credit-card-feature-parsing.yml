@@ -1,0 +1,38 @@
+rule:
+  meta:
+    name: credit card feature parsing
+    namespace: collection/credit-card
+    author: "@_re_fox"
+    scope: function
+  examples:
+    - 1d8fd13c890060464019c0f07b928b1a:0x402860
+  features:
+    - 4 or more:
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x5E = '^' (Track 1 separator)
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x3D = '=' (Track 2 separator)
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x25 = '%' (Track 1 start sentinel)
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x42 = 'B' (Format code)
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x44 = 'D' (Format code)
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x3F = '?' (Track 1 & 2 end sentinel)
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x3B = ';' (Track 2 start sentinel)
