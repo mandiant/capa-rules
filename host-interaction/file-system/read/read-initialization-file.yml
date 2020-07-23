@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: read initialization file
+    namespace: host-interaction/file-system/read
+    author: "@_re_fox"
+    scope: function
+  examples:
+    - 1d8fd13c890060464019c0f07b928b1a:0x401070
+  features:
+    - and:
+      - or:
+        - api: GetPrivateProfileInt
+        - api: GetPrivateProfileString
+        - api: GetPrivateProfileSection
+        - api: GetPrivateProfileSectionNames
+      - string: /\.ini/i
+      - optional:
+        - api: GetFullPathName
