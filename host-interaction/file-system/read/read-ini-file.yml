@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: read ini file
+    name: read .ini file
     namespace: host-interaction/file-system/read
     author: "@_re_fox"
     scope: function
