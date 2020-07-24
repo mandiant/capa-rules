@@ -9,6 +9,8 @@ rule:
       - 60abaef3fda131ffa20df480cb3f8029:0x4048e0
   features:
     - and:
+      - match: contain loop
+        description: Iterate over CC digits
       - basic block:
         - and:
           - number: 0x0
@@ -23,10 +25,15 @@ rule:
           - number: 0x9
         description: Digital root lookup table
       - basic block:
-        - and:
-          - number: 0x30
-          - mnemonic: sub
-          description: Conversion of chr to int 
+        - or:
+          - and:
+            - number: 0x30
+            - mnemonic: sub
+            description: Conversion of chr to int (SUB 0x30) 
+          - and:
+            - mnemonic: lea
+            - offset: -0x30
+            description: Conversion of chr to int (LEA REG,[REG+ -0x30])
       - basic block:
         - and:
           - mnemonic: idiv
