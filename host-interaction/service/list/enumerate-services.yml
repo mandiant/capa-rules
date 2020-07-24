@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Discovery::System Service Discovery [T1007]
     examples:
-      - 3D760B6FC84571C928BED835863FC302:0x4062E0
+      - Practical Malware Analysis Lab 05-01.dll_:0x1000B823
   features:
     - or:
       - api: advapi32.EnumServicesStatus

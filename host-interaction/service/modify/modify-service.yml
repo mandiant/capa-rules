@@ -12,5 +12,6 @@ rule:
     - and:
       - optional:
         - match: get service handle
-      - api: advapi32.ChangeServiceConfig
-      - api: advapi32.ChangeServiceConfig2
+      - or:
+        - api: advapi32.ChangeServiceConfig
+        - api: advapi32.ChangeServiceConfig2

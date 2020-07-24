@@ -10,5 +10,6 @@ rule:
     - and:
       - match: create TCP socket
       - api: listen
-      - api: accept
-      - api: WSAAccept
+      - or:
+        - api: accept
+        - api: WSAAccept

@@ -12,5 +12,6 @@ rule:
         - or:
           - match: connect to HTTP server
           - match: connect to URL
-      - api: wininet.InternetReadFile
-      - api: wininet.InternetReadFileEx
+      - or:
+        - api: wininet.InternetReadFile
+        - api: wininet.InternetReadFileEx

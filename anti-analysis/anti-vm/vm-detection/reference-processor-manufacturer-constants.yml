@@ -10,8 +10,6 @@ rule:
       - Anti-Behavioral Analysis::Virtual Machine Detection::Unique Hardware/Firmware Check
     references:
       - https://en.wikipedia.org/wiki/CPUID
-    examples:
-      - 47E43BE32F2BDE64E34F9008A7693CC6:0x5AE50
   features:
     - and:
       - mnemonic: cmp

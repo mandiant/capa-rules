@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: set global application hook
+    namespace: host-interaction/gui
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - and:
+      - api: user32.SetWindowsHookEx
+      - number: 0x3 = WM_GETMESSAGE
+      - number: 0x0 = dwThreadId
