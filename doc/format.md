@@ -351,15 +351,14 @@ Example rule elements:
 A structure offset referenced by the logic of the program.
 This should not be a stack offset.
 
-The parameter is a number; if prefixed with `0x` then in hex format, otherwise, decimal format.
-It can be followed by an optional description.
+The parameter is a number; if prefixed with `0x` then in hex format, otherwise, decimal format. Negative offsets are supported.
+An offset can be followed by an optional description.
 
 Examples:
 
     offset: 0xC
     offset: 0x14
-
-Note that capa treats all offsets as unsigned values. A negative number is not a valid feature value.
+    offset: -0x4
 
 ### mnemonic
 
