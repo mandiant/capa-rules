@@ -43,14 +43,14 @@ We'll start at the high level structure and then dig into the logic structures a
     - [bytes](#bytes)
     - [offset](#offset)
     - [mnemonic](#mnemonic)
-    - [characteristics](#characteristics)
+    - [characteristic](#characteristic)
   - [file features](#file-features)
     - [string](#file-string)
     - [export](#export)
     - [import](#import)
     - [section](#section)
   - [counting](#counting)
-  - [matching prior rule matches](#matching-prior-rule-matches)
+  - [matching prior rule matches and namespaces](#matching-prior-rule-matches-and-namespaces)
   - [descriptions](#descriptions)
 
 
