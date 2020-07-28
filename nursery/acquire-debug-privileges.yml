@@ -11,3 +11,5 @@ rule:
   features:
     - and:
       - string: "SeDebugPrivilege"
+      - optional:
+        - match: modify access privileges
