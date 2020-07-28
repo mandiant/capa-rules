@@ -38,6 +38,9 @@ jobs:
     - name: Checkout capa-rules
       uses: actions/checkout@v2
       with:
+        # To include the commit from update_num_rules (the default `ref` is the
+        # one which triggered the action)
+        ref: master
         path: rules
     - name: Update rules number badge in README
       run: |
