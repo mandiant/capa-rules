@@ -224,7 +224,10 @@ There are five structural expressions that may be nested:
   - `not` - match when the child expression does not
   - `N or more` - match at least `N` or more of the children
     - `optional` is an alias for `0 or more`, which is useful for documenting related features. See [write-file.yml](/rules/machine-access-control/file-manipulation/write-file.yml) for an example.
-  
+
+To add context to a statement, you can use the two-line syntax `description: DESCRIPTION STRING` shown below.
+Check the [description section](#descriptions) for more details.
+
 For example, consider the following rule:
 
 ```
@@ -233,6 +236,7 @@ For example, consider the following rule:
         - number: 0xEDB88320
         - number: 8
         - characteristic: nzxor
+        description: If one of this features is not found, the rule will not match
       - api: RtlComputeCrc32
 ```
 
@@ -495,7 +499,8 @@ When no active rules depend on a library rule, these the library rules will not 
 
 ## descriptions
 
-All features support an optional description which helps with documenting rules and provides context in capa's output.
+All features and statements support an optional description which helps with documenting rules and provides context in capa's output.
+
 For all features except for [strings](#string), the description can be specified inline preceded by ` = `: ` = DESCRIPTION STRING`.
 For example:
 
@@ -504,13 +509,23 @@ For example:
 ```
 
 The inline syntax is preferred.
-For [strings](#string) or if the description is long or contains newlines, use the two-line syntax.
-It uses the `description` tag in the following way: `description: DESCRIPTION STRING`
+For [strings](#string), [statements](#features-block) or if the description is long or contains newlines, use the two-line syntax.
+It uses the `description` tag in the following way: `description: DESCRIPTION STRING`.
 For example:
 
 ```
-- string: This program cannot be run in DOS mode.
-  description: MS-DOS stub message
-- number: 0x4550
-  description: IMAGE_DOS_SIGNATURE (MZ)
+- or:
+  - string: This program cannot be run in DOS mode.
+    description: MS-DOS stub message
+  - number: 0x4550
+    description: IMAGE_DOS_SIGNATURE (MZ)
+  - and:
+    - offset: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
+    - offset: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
+    description: 32-bits
+  - and:
+    - offset: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
+    - offset: 0x30 = IMAGE_NT_HEADERS64.OptionalHeader.ImageBase
+    description: 64-bits
+  description: PE file signatures
 ```
