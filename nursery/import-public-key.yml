@@ -5,10 +5,12 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: function
     examples:
-      # - unpacked Cl0p ransomware
+      - ffeae4a391a1d5203bd04b4161557227:0x4047A0
   features:
     - and:
-      - api: crypt32.CryptStringToBinary
-      - api: crypt32.CryptDecodeObjectEx
-      - api: crypt32.CryptAcquireContext
+      - api: advapi32.CryptAcquireContext
       - api: crypt32.CryptImportPublicKeyInfo
+      - optional:
+        - and:
+          - api: crypt32.CryptStringToBinary
+          - api: crypt32.CryptDecodeObjectEx
