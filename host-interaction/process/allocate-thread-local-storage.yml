@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: allocate thread local storage
+    namespace: host-interaction/process
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 03B236B23B1EC37C663527C1F53AF3FE:0x18000ADF6
+  features:
+    - or:
+      - api: kernel32.TlsAlloc
