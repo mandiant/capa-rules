@@ -11,9 +11,10 @@ rule:
   features:
     - and:
       - or:
-        - api: CryptAcquireContext
-        - api: CryptGenKey
-        - api: CryptImportKey
-      - or:
         - api: CryptEncrypt
         - api: CryptDecrypt
+      - optional:
+        - or:
+          - api: CryptAcquireContext
+          - api: CryptGenKey
+          - api: CryptImportKey

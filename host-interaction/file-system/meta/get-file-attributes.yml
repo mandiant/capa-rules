@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: get file attributes
+    namespace: host-interaction/file-system/meta
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 03B236B23B1EC37C663527C1F53AF3FE:0x180019824
+  features:
+    - or:
+      - api: kernel32.GetFileAttributes

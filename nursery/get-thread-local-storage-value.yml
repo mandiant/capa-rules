@@ -1,0 +1,9 @@
+rule:
+  meta:
+    name: get thread local storage value
+    namespace: host-interaction/process
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - and:
+      - api: kernel32.TlsGetValue
