@@ -286,6 +286,8 @@ For example, a crypto constant.
 
 The parameter is a number; if prefixed with `0x` then in hex format, otherwise, decimal format.
 
+If the number is only relevant for a particular architecture, then you can use one of the architecture flavors: `number/x32` or `number/x64`.
+
 To help humans understand the meaning of a number, such that the constant `0x40` means `PAGE_EXECUTE_READWRITE`, you may provide a description alongside the definition.
 Use the inline syntax (preferred) by ending the line with ` = DESCRIPTION STRING`.
 Check the [description section](#descriptions) for more details.
@@ -295,6 +297,7 @@ Examples:
     number: 16
     number: 0x10
     number: 0x40 = PAGE_EXECUTE_READWRITE
+    number/x32: 0x20 = number of bits
 
 Note that capa treats all numbers as unsigned values. A negative number is not a valid feature value.
 To match a negative number you may specify its two's complement representation. For example, `0xFFFFFFF0` (`-2`) in a 32-bit file.
@@ -358,11 +361,18 @@ This should not be a stack offset.
 The parameter is a number; if prefixed with `0x` then in hex format, otherwise, decimal format. Negative offsets are supported.
 An offset can be followed by an optional description.
 
+If the number is only relevant for a particular architecture, then you can use one of the architecture flavors: `number/x32` or `number/x64`.
+
 Examples:
 
-    offset: 0xC
-    offset: 0x14
-    offset: -0x4
+```yaml
+offset: 0xC
+offset: 0x14 = PEB.BeingDebugged
+offset: -0x4
+or:
+  offset/x32: 0x68 = PEB.NtGlobalFlag
+  offset/x64: 0xBC = PEB.NtGlobalFlag
+```
 
 ### mnemonic
 
