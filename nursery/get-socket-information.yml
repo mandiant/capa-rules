@@ -1,0 +1,9 @@
+rule:
+  meta:
+    name: get socket information
+    namespace: communication/socket
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - and:
+      - api: ws2_32.getsockname
