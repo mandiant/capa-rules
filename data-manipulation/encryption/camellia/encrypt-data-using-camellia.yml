@@ -14,18 +14,18 @@ rule:
       - bytes: 70 00 70 70 2c 00 2c 2c b3 00 b3 b3 c0 00 c0 c0 e4 00 e4 e4 57 00 57 57 ea 00 ea ea ae 00 ae ae 23 00 23 23 6b 00 6b 6b 45 00 45 45 a5 00 a5 a5 ed 00 ed ed 4f 00 4f 4f 1d 00 1d 1d 92 00 92 92 86 00 86 86 af 00 af af 7c 00 7c 7c 1f 00 1f 1f 3e 00 3e 3e dc 00 dc dc 5e 00 5e 5e 0b 00 0b 0b a6 00 a6 a6 39 00 39 39 d5 00 d5 d5 5d 00 5d 5d d9 00 d9 d9 5a 00 5a 5a 51 00 51 51 6c 00 6c 6c 8b 00 8b 8b 9a 00 9a 9a fb 00 fb fb b0 00 b0 b0 74 00 74 74 2b 00 2b 2b f0 00 f0 f0 84 00 84 84 df 00 df df cb 00 cb cb 34 00 34 = sp4404
       - or:
         - and:
-          - number: 0x3bcc908b
-          - number: 0xa09e667f
-          - number: 0x4caa73b2
-          - number: 0xb67ae858
-          - number: 0xc6ef372f
-          - number: 0xe94f82be
-          - number: 0x54ff53a5
-          - number: 0xf1d36f1c
-          - number: 0x10e527fa
-          - number: 0xde682d1d
-          - number: 0xb05688c2
-          - number: 0xb3e6c1fd
+          - number: 0x3bcc908b = CAMELLIA_SIGMA1R
+          - number: 0xa09e667f = CAMELLIA_SIGMA1L
+          - number: 0x4caa73b2 = CAMELLIA_SIGMA2R
+          - number: 0xb67ae858 = CAMELLIA_SIGMA2L
+          - number: 0xc6ef372f = CAMELLIA_SIGMA3L
+          - number: 0xe94f82be = CAMELLIA_SIGMA3R
+          - number: 0x54ff53a5 = CAMELLIA_SIGMA4L
+          - number: 0xf1d36f1c = CAMELLIA_SIGMA4R
+          - number: 0x10e527fa = CAMELLIA_SIGMA5L
+          - number: 0xde682d1d = CAMELLIA_SIGMA5R
+          - number: 0xb05688c2 = CAMELLIA_SIGMA6L
+          - number: 0xb3e6c1fd = CAMELLIA_SIGMA6R
         - and:
           - bytes: 8b 90 cc 3b 7f 66 9e a0 = sigma1
           - bytes: b2 73 aa 4c 58 e8 7a b6 = sigma2
