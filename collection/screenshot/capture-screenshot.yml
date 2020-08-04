@@ -2,18 +2,26 @@ rule:
   meta:
     name: capture screenshot
     namespace: collection/screenshot
-    author: moritz.raabe@fireeye.com
+    author: 
+      - moritz.raabe@fireeye.com
+      - "@_re_fox"
     scope: function
     att&ck:
       - Collection::Screen Capture [T1113]
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314610A
+      - 7204e3efc2434012e13ca939db0d0b02:0x414070
   features:
     - and:
       - or:
         - api: user32.GetWindowDC
         - api: user32.GetDC
-      - api: gdi32.BitBlt
+        - and:
+          - api: gdi32.CreateDCA
+          - string: DISPLAY
+      - or:
+        - api: gdi32.BitBlt
+        - api: gdi32.GetDIBits
       - api: gdi32.CreateCompatibleDC
       - api: gdi32.CreateCompatibleBitmap
       - optional:

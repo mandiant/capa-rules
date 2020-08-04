@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: set thread local storage value
+    namespace: host-interaction/process
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 03B236B23B1EC37C663527C1F53AF3FE:0x18000AE21
+  features:
+    - and:
+      - api: kernel32.TlsSetValue
+      - optional:
+        - match: allocate thread local storage

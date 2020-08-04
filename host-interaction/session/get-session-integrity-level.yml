@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: get session integrity level
+    namespace: host-interaction/session
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Owner/User Discovery [T1033]
+    examples:
+      - 03B236B23B1EC37C663527C1F53AF3FE:0x18002956B
+  features:
+    - or:
+      - api: shell32.IsUserAnAdmin

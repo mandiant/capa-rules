@@ -13,3 +13,4 @@ rule:
       - or:
         - api: kernel32.TerminateProcess
         - api: ntdll.NtTerminateProcess
+        - api: kernel32.ExitProcess
