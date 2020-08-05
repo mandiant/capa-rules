@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: bypass UAC via Token Manipulations
+    namespace: host-interaction/uac/bypass
+    author: richard.cole@fireeye.com
+    scope: function
+    att&ck:
+        - Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Access Control [T1548.002]
+    references:
+        - https://github.com/hfiref0x/UACME/blob/0a4d2bd67f4872c595f0217ef6ebdcf135186945/Source/Akagi/methods/tyranid.c#L83
+    examples:
+      - 2f43138aa75fb12ac482b486cbc98569:0x180001B48
+  features:
+    - and:
+        - string: wusa.exe
+        - api: ShellExecuteExW
+        - api: ImpersonateLoggedOnUser
+        - api: GetStartupInfoW
+        - api: CreateProcessWithLogonW
