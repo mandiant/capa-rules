@@ -1,0 +1,9 @@
+rule:
+  meta:
+    name: set console window title
+    namespace: host-interaction/gui/console
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - or:
+      - api: kernel32.SetConsoleTitle

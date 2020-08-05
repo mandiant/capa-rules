@@ -8,8 +8,12 @@ rule:
       - Discovery::File and Directory Discovery [T1083]
   features:
     - and:
-      - api: version.GetFileVersionInfo
-      - api: version.GetFileVersionInfoSize
+      - or:
+        - api: version.GetFileVersionInfo
+        - api: version.GetFileVersionInfoEx
       - optional:
         # retrieves specified version information from the specified version-information resource
         - api: version.VerQueryValue
+        - or:
+          - api: version.GetFileVersionInfoSize
+          - api: version.GetFileVersionInfoSizeEx

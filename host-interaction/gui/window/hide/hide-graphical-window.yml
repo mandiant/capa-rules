@@ -1,12 +1,12 @@
 rule:
   meta:
-    name: hide the Windows taskbar
-    namespace: host-interaction/gui/taskbar/hide
+    name: hide graphical window
+    namespace: host-interaction/gui/window/hide
     author: michael.hunhoff@fireeye.com
-    scope: function
+    scope: basic block
     examples:
       - 39C05B15E9834AC93F206BC114D0A00C357C888DB567BA8F5345DA0529CBED41:0x10007250
   features:
     - and:
-      - match: find taskbar
-      - match: hide graphical window
+      - number: 0x0 = SW_HIDE
+      - api: user32.ShowWindow
