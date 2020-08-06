@@ -10,4 +10,4 @@ rule:
       - optional:
         - api: wininet.FindNextUrlCacheEntry
         - api: wininet.FindCloseUrlCache
-        - match: loop
+        - match: contain loop
