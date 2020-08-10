@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: validate credit card using luhn algorithm
+    name: validate credit card number using luhn algorithm
     namespace: data-manipulation/checksum/luhn
     author: "@_re_fox"
     scope: function
