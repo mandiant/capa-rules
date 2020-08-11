@@ -11,6 +11,7 @@ rule:
       - C805528F6844D7CAF5793C025B56F67D:0x4067AE
       - 9324D1A8AE37A36AE560C37448C9705A:0x404950
       - 782A48821D88060ADF0F7EF3E8759FEE3DDAD49E942DAAD18C5AF8AE0E9EB51E:0x405C42
+      - 73CE04892E5F39EC82B00C02FC04C70F:0x40646E
   features:
     - or:
       - and:
@@ -22,10 +23,16 @@ rule:
             - or:
               - number: 0xFF
               - number: 0x100
-        - match: calculate modulo 256 via x86 assembly
+          description: initialize S
+        - or:
+          - match: calculate modulo 256 via x86 assembly
+          # compiler may do this via zero-extended mov from 8-bit register
+          - count(mnemonic(movzx)): 2 or more
+          description: modulo 256
         - or:
           - mnemonic: div
           - mnemonic: idiv
+          description: modulo key length
       # optimized, writes DWORDs instead of bytes
       - and:
         - or:

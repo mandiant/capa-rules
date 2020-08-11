@@ -10,12 +10,16 @@ rule:
       - 34404A3FB9804977C6AB86CB991FB130:0x403DB0
       - 34404A3FB9804977C6AB86CB991FB130:0x403E50
       - 9324D1A8AE37A36AE560C37448C9705A:0x4049F0
+      - 73CE04892E5F39EC82B00C02FC04C70F:0x4064C6
   features:
     - and:
       # TODO: maybe add characteristic for nzxor reg size
       - count(characteristic(nzxor)): 1
-      # TODO optimized code uses an 8-bit register for this, e.g. BL at 782a48821d88060adf0f7ef3e8759fee3ddad49e942daad18c5af8ae0e9eb51e:0x405CC1
-      - match: calculate modulo 256 via x86 assembly
+      - or:
+        - match: calculate modulo 256 via x86 assembly
+        # compiler may do this via zero-extended mov from 8-bit register
+        - count(mnemonic(movzx)): 4 or more
+        description: modulo 256
       # should not call (many) functions
       - count(characteristic(calls from)): (0, 4)
       # should not be too simple
