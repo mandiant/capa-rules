@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: check ProcessDebugFlags
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+    mbc:
+      - Anti-Behavioral Analysis::Detect Debugger
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtQueryInformationProcess_ProcessDebugFlags.cpp
+  features:
+    - and:
+      - api: NtQueryInformationProcess
+      - number: 0x1F = ProcessDebugFlags

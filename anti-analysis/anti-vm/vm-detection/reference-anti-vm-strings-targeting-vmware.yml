@@ -1,0 +1,48 @@
+rule:
+  meta:
+    name: reference anti-VM strings targeting VMWare
+    namespace: anti-analysis/anti-vm/vm-detection
+    author: michael.hunhoff@fireeye.com
+    scope: file
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/VMWare.cpp
+    examples:
+      - al-khaser_x86.exe_
+  features:
+    - or:
+      - string: /VMWare/i
+      - string: /VMTools/i
+      - string: /SOFTWARE\\VMware, Inc\.\\VMware Tools/i
+      - string: /vmnet.sys/i
+      - string: /vmmouse.sys/i
+      - string: /vmusb.sys/i
+      - string: /vm3dmp.sys/i
+      - string: /vmci.sys/i
+      - string: /vmhgfs.sys/i
+      - string: /vmmemctl.sys/i
+      - string: /vmx86.sys/i
+      - string: /vmrawdsk.sys/i
+      - string: /vmusbmouse.sys/i
+      - string: /vmkdb.sys/i
+      - string: /vmnetuserif.sys/i
+      - string: /vmnetadapter.sys/i
+      - string: /\\\\.\\HGFS/i
+      - string: /\\\\.\\vmci/i
+      - string: /vmtoolsd.exe/i
+      - string: /vmwaretray.exe/i
+      - string: /vmwareuser.exe/i
+      - string: /VGAuthService.exe/i
+      - string: /vmacthlp.exe/i
+      - string: /vmci/i # VMWare VMCI Bus Driver
+      - string: /vmhgfs/i # VMWare Host Guest Control Redirector
+      - string: /vmmouse/i
+      - string: /vmmemctl/i # VMWare Guest Memory Controller Driver
+      - string: /vmusb/i
+      - string: /vmusbmouse/i
+      - string: /vmx_svga/i
+      - string: /vmxnet/i
+      - string: /vmx86/i
+      - string: /VMwareVMware/i
+      - string: /vmGuestLib.dll/i
