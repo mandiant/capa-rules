@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: check if process is running under wine
+    namespace: anti-analysis/anti-emulation/wine
+    author: "@_re_fox"
+    scope: function
+    examples:
+      - ccbf7cba35bab56563c0fbe4237fdc41:0x40d750
+  features:
+    - and:
+      - api: GetModuleHandle
+      - api: GetProcAddress
+      - string: wine_get_unix_file_name
+      - or:
+        - string: kernel32.dll
+        - string: ntdll.dll
