@@ -28,3 +28,25 @@ rule:
         - and:
           - number: 0x87c37b91114253d5 = 64-bit c1 for 128-bit hash
           - number: 0x4cf5ad432745937f = 64-bit c2 for 128-bit hash
+        - basic block:
+          - and:
+            - count(mnemonic(shr)): 3
+            - number: 16
+            - number: 13
+            - optional:
+              - count(characteristic(nzxor)): 3 or more
+            description: 'hash >> 16; hash >> 13; hash >> 16'
+        - and:
+          # Group this two blocks under an `and` as on their own they are not
+          # unique enough and would cause false positives
+          - basic block:
+            - and:
+              - mnemonic: rol
+              - number: 15 = r1
+              description: k ROL r1
+          - basic block:
+            - and:
+              - mnemonic: rol
+              - number: 13 = r2
+              description: hash ROL r2
+
