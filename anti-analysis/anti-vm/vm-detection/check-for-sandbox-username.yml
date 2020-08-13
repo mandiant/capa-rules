@@ -1,7 +1,7 @@
 rule:
   meta:
     name: check for sandbox username
-    namespace: anti-analysis/anti-vm
+    namespace: anti-analysis/anti-vm/vm-detection
     author: "@_re_fox"
     scope: function
     examples:
