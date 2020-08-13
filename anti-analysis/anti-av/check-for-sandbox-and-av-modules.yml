@@ -1,7 +1,7 @@
 rule:
   meta:
     name: check for sandbox and av modules
-    namespace: anti-analysis/anti-vm
+    namespace: anti-analysis/anti-av
     author: "@_re_fox"
     scope: basic block
     examples:
