@@ -398,7 +398,6 @@ capa does not support instruction pattern matching,
 | characteristic                             | scope                 | description |
 |--------------------------------------------|-----------------------|-------------|
 | `characteristic: embedded pe`        | file                  | (XOR encoded) embedded PE files. |
-| `characteristic: switch`             | function              | Function contains a switch or jump table. |
 | `characteristic: loop`               | function              | Function contains a loop. |
 | `characteristic: recursive call`     | function              | Function is recursive. |
 | `characteristic: calls from`         | function              | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
