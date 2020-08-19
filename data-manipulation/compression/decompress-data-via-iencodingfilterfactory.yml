@@ -13,4 +13,4 @@ rule:
       - api: ole32.CoCreateInstance
       - bytes: D0 7C C3 54 44 D9 D0 11 A9 F4 00 60 97 94 23 11 = StdEncodingFilterFac
       - bytes: 00 DE BD 70 8E C1 D0 11 A9 CE 00 60 97 94 23 11 = IEncodingFilterFactory
-      - count(offset(0x10)): 2 or more   # IEncodingFilterFactory.GetDefaultFilter and <filter>.DoDecode
+      - count(offset(0x10 = IEncodingFilterFactory.GetDefaultFilter and <filter>.DoDecode)): 2 or more
