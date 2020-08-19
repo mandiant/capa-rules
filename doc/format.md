@@ -478,7 +478,7 @@ These rules can be expressed like:
     count(characteristic(nzxor)): (2, 10)     # match any value in the range 2<=count<=10
 
     count(mnemonic(mov)): 3
-    count(basic block): 4
+    count(basic blocks): 4
 
 `count` supports inline descriptions, except for [strings](#string), via the following syntax:
 
