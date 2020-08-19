@@ -22,16 +22,16 @@ rule:
         # LDR_DATA* Ldr;
         # good PEB layout reference here:
         # https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb_ldr_data.htm
-        - offset: 0x0C  # x32
+        - offset: 0x0C  = PEB.LDR_DATA # x32
 
         # resolve a module list
         - or:
-          # LIST_ENTRY    InLoadOrderModuleList;
-          - offset: 0x0C  # x32
+          # LIST_ENTRY
+          - offset: 0x0C  = PEB.LDR_DATA.InLoadOrderModuleList # x32
           # LIST_ENTRY    InMemoryOrderModuleList;
-          - offset: 0x14  # x32
+          - offset: 0x14  = PEB.LDR_DATA.InMemoryOrderModuleList # x32
           # LIST_ENTRY    InInitializationOrderModuleList;
-          - offset: 0x1C  # x32
+          - offset: 0x1C  = PEB.LDR_DATA.InInitializationOrderModuleList # x32
 
       # x64
       - and:
@@ -49,19 +49,19 @@ rule:
           #     xor edx, edx
           #     mov edx, fs:[edx+30h]
           - and:
-            - offset: 0x60  # x64
+            - offset: 0x60  = PEB # x64
             - characteristic: gs access
 
         # LDR_DATA* Ldr;
         # good PEB layout reference here:
         # https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb_ldr_data.htm
-        - offset: 0x18  # x64
+        - offset: 0x18    = PEB.LDR_DATA # x64
 
         # resolve a module list
         - or:
           # LIST_ENTRY    InLoadOrderModuleList;
-          - offset: 0x10  # x64
+          - offset: 0x10  = PEB.LDR_DATA.InLoadOrderModuleList # x64
           # LIST_ENTRY    InMemoryOrderModuleList;
-          - offset: 0x20  # x64
+          - offset: 0x20   = PEB.LDR_DATA.InMemoryOrderModuleList # x64
           # LIST_ENTRY    InInitializationOrderModuleList;
-          - offset: 0x30  # x64
+          - offset: 0x30  = PEB.LDR_DATA.InInitializationOrderModuleList # x64
