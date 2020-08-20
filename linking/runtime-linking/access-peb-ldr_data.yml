@@ -38,7 +38,7 @@ rule:
           # in the case of CallObfuscator, gs:[rax]
           # ref: https://github.com/d35ha/CallObfuscator/blob/5834aff9ff4511f1408ae4ce80b79737af4ae77b/ShellCode/shell_x64.asm#L8
           - and:
-            - number/x64: 0x60 = PEB
+            - number/x64: 0x60 
             - characteristic: gs access
           # in 0f5d5d07c6533bc6d991836ce79daaa1
           # then we have:
