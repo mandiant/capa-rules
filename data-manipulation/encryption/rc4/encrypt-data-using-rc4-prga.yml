@@ -23,7 +23,7 @@ rule:
       # should not call (many) functions
       - count(characteristic(calls from)): (0, 4)
       # should not be too simple
-      - count(basic blocks): 4 or more
+      - count(basic block): 4 or more
       - match: contain loop
       - optional:
         - or:
