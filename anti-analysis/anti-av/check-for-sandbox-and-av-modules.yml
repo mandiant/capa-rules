@@ -37,4 +37,4 @@ rule:
         - string: /dbghelp\.dll/i
           description: WINE
         - string: /printfhelp\.dll/i 
-          descrtipion: Unknown Sandbox
+          description: Unknown Sandbox
