@@ -12,7 +12,6 @@ rule:
       - al-khaser_x86.exe_:0x420000
   features:
     - or:
-      - api: kernel32.IsDebuggerPresent
       - api: kernel32.CheckRemoteDebuggerPresent
       - api: WUDFPlatform.WudfIsAnyDebuggerPresent
       - api: WUDFPlatform.WudfIsKernelDebuggerPresent

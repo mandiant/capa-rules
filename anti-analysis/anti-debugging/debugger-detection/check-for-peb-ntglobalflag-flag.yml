@@ -18,15 +18,11 @@ rule:
           - match: PEB access
           - or:
             - or:
-              # 32-bit
-              - offset: 0x68 = PEB.NtGlobalFlag
-              # 64-bit
-              - offset: 0xBC = PEB.NtGlobalFlag
+              - offset/x32: 0x68 = PEB.NtGlobalFlag
+              - offset/x64: 0xBC = PEB.NtGlobalFlag
             - and:
               - mnemonic: add
               - or:
-                # 32-bit
-                - number: 0x68 = PEB.NtGlobalFlag
-                # 64-bit
-                - number: 0xBC = PEB.NtGlobalFlag
+                - number/x32: 0x68 = PEB.NtGlobalFlag
+                - number/x64: 0xBC = PEB.NtGlobalFlag
       - number: 0x70 = (FLG_HEAP_ENABLE_TAIL_CHECK | FLG_HEAP_ENABLE_FREE_CHECK | FLG_HEAP_VALIDATE_PARAMETERS)

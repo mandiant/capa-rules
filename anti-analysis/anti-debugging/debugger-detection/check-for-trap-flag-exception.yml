@@ -14,7 +14,6 @@ rule:
   features:
     - and:
       - or:
-        # read/write EFLAGS
         - and:
           - mnemonic: pushf
           - mnemonic: popf
@@ -24,7 +23,7 @@ rule:
         - and:
           - mnemonic: pushfq
           - mnemonic: popfq
-      # set trap flag
+        description: read/write EFLAGS register
       - or:
         - and:
           - mnemonic: or
@@ -32,3 +31,4 @@ rule:
         - and:
           - mnemonic: bts
           - number: 0x8
+        description: set trap flag

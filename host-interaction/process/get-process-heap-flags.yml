@@ -16,7 +16,7 @@ rule:
       - or:
         # 32-bit
         - and:
-          - number/x32: 0x18 # offset process heap
+          - number/x32: 0x18 = offset process heap
           - or:
             - number/x32: 0x40 # offset heap flags >= Vista
             - number/x32: 0xC # offset heap flags < Vista
