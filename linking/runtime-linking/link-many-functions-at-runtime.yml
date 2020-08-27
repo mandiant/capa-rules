@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: link many functions at runtime
+    namespace: linking/runtime-linking
+    author: moritz.raabe@fireeye.com
+    scope: function
+    att&ck:
+      - Execution::Shared Modules [T1129]
+    examples:
+      - b7b5e1253710d8927cbe07d52d2d2e10:0x401000
+  features:
+    - and:
+      - or:
+        - api: kernel32.LoadLibrary
+        - api: kernel32.GetModuleHandle
+        - api: kernel32.GetModuleHandleEx
+        - api: ntdll.LdrLoadDll
+      - or:
+        - count(api(kernel32.GetProcAddress)): 5 or more
+        - count(api(ntdll.LdrGetProcedureAddress)): 5 or more
