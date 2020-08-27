@@ -15,5 +15,9 @@ rule:
       - basic block:
         - and:
           - mnemonic: cmp
-          - number: 0xCC
+          - or:
+            - number: 0xCC
+            - and:
+              - number: 0xCD
+              - number: 0x3
       - match: contain loop

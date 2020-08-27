@@ -35,10 +35,13 @@ rule:
       - string: /vmwareuser.exe/i
       - string: /VGAuthService.exe/i
       - string: /vmacthlp.exe/i
-      - string: /vmci/i # VMWare VMCI Bus Driver
-      - string: /vmhgfs/i # VMWare Host Guest Control Redirector
+      - string: /vmci/i
+        description: VMWare VMCI Bus Driver
+      - string: /vmhgfs/i
+        description: VMWare Host Guest Control Redirector
       - string: /vmmouse/i
-      - string: /vmmemctl/i # VMWare Guest Memory Controller Driver
+      - string: /vmmemctl/i
+        description: VMWare Guest Memory Controller Driver
       - string: /vmusb/i
       - string: /vmusbmouse/i
       - string: /vmx_svga/i

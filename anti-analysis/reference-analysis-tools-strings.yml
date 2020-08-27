@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: reference anti-analysis strings targeting analysis tools
+    name: reference analysis tools strings
     namespace: anti-analysis
     author: michael.hunhoff@fireeye.com
     scope: file
@@ -35,9 +35,12 @@ rule:
       - string: /windbg.exe/i
       - string: /joeboxcontrol.exe/i
       - string: /joeboxserver.exe/i
-      - string: /joeboxserver.exe/i
       - string: /ResourceHacker.exe/i
       - string: /x32dbg.exe/i
       - string: /x64dbg.exe/i
       - string: /Fiddler.exe/i
       - string: /httpdebugger.exe/i
+      - string: /fakenet.exe/i
+      - string: /netmon.exe/i
+      - string: /WPE PRO.exe/i
+      - string: /decompile.exe/i

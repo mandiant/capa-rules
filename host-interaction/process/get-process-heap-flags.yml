@@ -14,15 +14,13 @@ rule:
     - and:
       - match: PEB access
       - or:
-        # 32-bit
         - and:
           - number/x32: 0x18 = offset process heap
           - or:
-            - number/x32: 0x40 # offset heap flags >= Vista
-            - number/x32: 0xC # offset heap flags < Vista
-        # 64-bit
+            - number/x32: 0x40 = offset heap flags >= Vista
+            - number/x32: 0xC = offset heap flags < Vista
         - and:
-          - number/x64: 0x30 # offset process heap
+          - number/x64: 0x30 = offset process heap
           - or:
-            - number/x64: 0x70 # offset heap flags >= Vista
-            - number/x64: 0x14 # offset heap flags < Vista
+            - number/x64: 0x70 = offset heap flags >= Vista
+            - number/x64: 0x14 = offset heap flags < Vista

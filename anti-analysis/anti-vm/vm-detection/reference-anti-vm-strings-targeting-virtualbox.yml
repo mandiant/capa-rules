@@ -65,9 +65,12 @@ rule:
       - string: /PNP_BUS_0/i
       - string: /Oracle Corporation/i
       - string: /VBoxWdd/i
-      - string: /VBoxS/i # VirtualBox Shared Folders
-      - string: /VBoxMouse/i # VirtualBox Guest Mouse
-      - string: /VBoxGuest/i # VirtualBox Guest Driver
+      - string: /VBoxS/i
+        description: VirtualBox Shared Folders
+      - string: /VBoxMouse/i
+        description: VirtualBox Guest Mouse
+      - string: /VBoxGuest/i
+        description: VirtualBox Guest Driver
       - string: /VBoxVBoxVBox/i
       - string: /innotek GmbH/i
       - string: /drivers\\vboxdrv/i

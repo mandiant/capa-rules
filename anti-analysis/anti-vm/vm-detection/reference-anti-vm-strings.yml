@@ -26,21 +26,27 @@ rule:
       - string: /Hyper-V/i
       - string: /Kernel-VMDetection-Private/i
       # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L699
-      - string: /KVMKVMKVM/i # KVM
-      - string: /Microsoft Hv/i # Microsoft Hyper-V or Windows Virtual PC
+      - string: /KVMKVMKVM/i
+        description: KVM
+      - string: /Microsoft Hv/i
+        description: Microsoft Hyper-V or Windows Virtual PC
       # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L8
-      - string: /avghookx.dll/i # AVG
-      - string: /avghooka.dll/i # AVG
-      - string: /snxhk.dll/i # Avast
-      - string: /sbiedll.dll/i # Sandboxie
-      - string: /dbghelp.dll/i # WindBG
-      - string: /api_log.dll/i # iDefense Lab
-      - string: /dir_watch.dll/i # iDefense Lab
-      - string: /pstorec.dll/i # SunBelt Sandbox
-      - string: /vmcheck.dll/i # Virtual PC
-      - string: /wpespy.dll/i # WPE Pro
-      - string: /cmdvrt64.dll/i # Comodo Container
-      - string: /cmdvrt32.dll/i # Comodo Container
+      - string: /avghookx.dll/i
+        description: AVG
+      - string: /avghooka.dll/i
+        description: AVG
+      - string: /snxhk.dll/i
+        description: Avast
+      - string: /pstorec.dll/i
+        description: SunBelt Sandbox
+      - string: /vmcheck.dll/i
+        description: Virtual PC
+      - string: /wpespy.dll/i
+        description: WPE Pro
+      - string: /cmdvrt64.dll/i
+        description: Comodo Container
+      - string: /cmdvrt32.dll/i
+        description: Comodo Container
       # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L46
       - string: /sample.exe/i
       - string: /bot.exe/i

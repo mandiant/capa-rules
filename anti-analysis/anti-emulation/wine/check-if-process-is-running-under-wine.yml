@@ -4,13 +4,21 @@ rule:
     namespace: anti-analysis/anti-emulation/wine
     author: "@_re_fox"
     scope: function
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Wine.cpp
     examples:
       - ccbf7cba35bab56563c0fbe4237fdc41:0x40d750
   features:
-    - and:
-      - api: GetModuleHandle
-      - api: GetProcAddress
-      - string: wine_get_unix_file_name
+    - or:
+      - and:
+        - api: GetModuleHandle
+        - api: GetProcAddress
+        - string: wine_get_unix_file_name
+        - or:
+          - string: kernel32.dll
+          - string: ntdll.dll
       - or:
-        - string: kernel32.dll
-        - string: ntdll.dll
+        - string: /Wine/i
+        - string: /SOFTWARE\\Wine/i
