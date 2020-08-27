@@ -1,6 +1,6 @@
 ---
 name: False negative
-about: Report a false negative rule match
+about: Report a sample that should have matched but didn't (false negative)
 title: "[RULE NAME]"
 labels: false negative
 
