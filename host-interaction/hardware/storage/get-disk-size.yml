@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: get disk size
+    namespace: host-interaction/hardware/storage
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L347
+    examples:
+      - al-khaser_x86.exe_:0x4343D0
+      - al-khaser_x86.exe_:0x434010
+  features:
+    - or:
+      - api: kernel32.GetDiskFreeSpace
+      - api: kernel32.GetDiskFreeSpaceEx
+      - basic block:
+        - and:
+          - api: DeviceIoControl
+          - number: 0x7405C = IOCTL_DISK_GET_LENGTH_INFO
+      - and:
+        - or:
+          - string: /SELECT\s+\*\s+FROM\s+Win32_LogicalDisk/i
+          - string: /SELECT\s+\*\s+FROM\s+Win32_DiskDrive\s+WHERE\s+\(SerialNumber\s+IS\s+NOT\s+NULL\)\s+AND\s+\(MediaType\s+LIKE\s+\'Fixed\s+hard\s+disk\%\'\)/i
+        - string: Size
+

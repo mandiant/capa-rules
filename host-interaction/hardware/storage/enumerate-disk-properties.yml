@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: enumerate disk properties
+    namespace: host-interaction/hardware/storage
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L518
+    examples:
+      - al-khaser_x86.exe_:0x4369B0
+  features:
+    - and:
+      - basic block:
+        - and:
+          - api: SetupAPI.SetupDiGetClassDevs
+          - bytes: 67 E9 36 4D 25 E3 CE 11 BF C1 08 00 2B E1 03 18 = GUID_DEVCLASS_DISKDRIVE
+      - api: SetupAPI.SetupDiEnumDeviceInfo
+      - api: SetupAPI.SetupDiGetDeviceRegistryProperty
+      - optional:
+        - api: SetupAPI.SetupDiDestroyDeviceInfoList

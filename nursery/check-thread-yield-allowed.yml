@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: check thread yield allowed
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    mbc:
+      - Anti-Behavioral Analysis::Detect Debugger
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtYieldExecution.cpp
+  features:
+    - and:
+      - api: NtYieldExecution
+      - match: contain loop
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 0x40000024 = STATUS_NO_YIELD_PERFORMED

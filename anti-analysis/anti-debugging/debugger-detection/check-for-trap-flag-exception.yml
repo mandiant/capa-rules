@@ -1,0 +1,34 @@
+rule:
+  meta:
+    name: check for trap flag exception
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+    mbc:
+      - Anti-Behavioral Analysis::Detect Debugger
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/TrapFlag.cpp
+    examples:
+      - al-khaser_x86.exe_:0x431680
+      - al-khaser_x64.exe_:0x140030CB0
+  features:
+    - and:
+      - or:
+        - and:
+          - mnemonic: pushf
+          - mnemonic: popf
+        - and:
+          - mnemonic: pushfd
+          - mnemonic: popfd
+        - and:
+          - mnemonic: pushfq
+          - mnemonic: popfq
+        description: read/write EFLAGS register
+      - or:
+        - and:
+          - mnemonic: or
+          - number: 0x100
+        - and:
+          - mnemonic: bts
+          - number: 0x8
+        description: set trap flag
