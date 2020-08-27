@@ -2,16 +2,21 @@ rule:
   meta:
     name: check mutex and exit
     namespace: host-interaction/mutex
-    author: "@_re_fox"
+    author:
+      - "@_re_fox"
+      - moritz.raabe@fireeye.com
     scope: function
     examples:
-      - 1d8fd13c890060464019c0f07b928b1a:0x00402eb0
+      - 1d8fd13c890060464019c0f07b928b1a:0x402eb0
   features:
     - and:
-        - match: create mutex
-        - api: GetLastError
-        - api: ExitProcess
-        - or:
+      - match: create mutex
+      - api: ExitProcess
+      - or:
+        - api: WaitForSingleObject
+        - and:
+          - api: GetLastError
+          - or:
             - number: 2 = ERROR_FILE_NOT_FOUND
-            - number: 0xb7 = ERROR_ALREADY_EXISTS
+            - number: 0xB7 = ERROR_ALREADY_EXISTS
             - number: 5 = ERROR_ACCESS_DENIED
