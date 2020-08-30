@@ -1,7 +1,6 @@
 rule:
   meta:
     name: get service handle
-    namespace: ''
     author: moritz.raabe@fireeye.com
     lib: true
     scope: function
