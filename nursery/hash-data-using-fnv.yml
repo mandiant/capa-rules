@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: hash data using FNV
+    namespace: data-manipulation/hashing/fnv
+    author: moritz.raabe@fireeye.com
+    description: can be any Fowler-Noll-Vo (FNV) hash variant, including FNV-1, FNV-1a, FNV-0
+    scope: function
+    references:
+      - http://isthe.com/chongo/tech/comp/fnv/
+      - https://create.stephan-brumme.com/fnv-hash/
+  features:
+    - and:
+      - or:
+        - number: 16777619 = 32 bit FNV_prime
+        - number: 1099511628211 = 64 bit FNV_prime
+        # FNV-0 hash does not use these initialization values
+      - optional:
+        - number: 2166136261 = 32 bit offset_basis
+        - number: 14695981039346656037 = 64 bit offset_basis
+      # FNV-1 hash does multiply then XOR
+      # FNV-1a hash does XOR then multiply
+      - basic block:
+        - and:
+          - characteristic: nzxor
+          - or:
+            - mnemonic: imul
+            - mnemonic: mul

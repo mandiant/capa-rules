@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: check for debugger via API
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    mbc:
+      - Anti-Behavioral Analysis::Detect Debugger
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/CheckRemoteDebuggerPresent.cpp
+    examples:
+      - al-khaser_x86.exe_:0x420000
+  features:
+    - or:
+      - api: kernel32.CheckRemoteDebuggerPresent
+      - api: WUDFPlatform.WudfIsAnyDebuggerPresent
+      - api: WUDFPlatform.WudfIsKernelDebuggerPresent
+      - api: WUDFPlatform.WudfIsUserDebuggerPresent

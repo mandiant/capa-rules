@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: get number of processors
+    namespace: host-interaction/hardware/cpu
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L113
+    examples:
+      - al-khaser_x86.exe_:0x432CB0
+  features:
+    - and:
+      - match: PEB access
+      - or:
+        - number/x32: 0x64
+        - number/x64: 0xB8

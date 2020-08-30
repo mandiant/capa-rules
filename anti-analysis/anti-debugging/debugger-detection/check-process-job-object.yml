@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: check process job object
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    mbc:
+      - Anti-Behavioral Analysis::Detect Debugger
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/ProcessJob.cpp
+    examples:
+      - al-khaser_x86.exe_:0x426730
+  features:
+    - and:
+      - match: contain loop
+      - basic block:
+        - and:
+          - api: kernel32.QueryInformationJobObject
+          - number: 0x3 = JobObjectBasicProcessIdList
+      - basic block:
+        - and:
+          - api: kernel32.OpenProcess
+          - number: 0x400 = PROCESS_QUERY_INFORMATION

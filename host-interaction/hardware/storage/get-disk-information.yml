@@ -13,8 +13,6 @@ rule:
     - or:
       - api: kernel32.GetDriveType
       - api: kernel32.GetLogicalDrives
-      - api: kernel32.GetDiskFreeSpace
-      - api: kernel32.GetDiskFreeSpaceEx
       - api: kernel32.GetVolumeInformation
       - api: kernel32.GetVolumeNameForVolumeMountPoint
       - api: kernel32.GetVolumePathNamesForVolumeName

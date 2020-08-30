@@ -1,0 +1,34 @@
+rule:
+  meta:
+    name: PEB access
+    author: michael.hunhoff@fireeye.com
+    lib: true
+    scope: basic block
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtGlobalFlag.cpp
+    examples:
+      - al-khaser_x86.exe_:0x420D20
+  features:
+    - or:
+      - characteristic: peb access
+      - and:
+        # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtGlobalFlag.cpp#L41
+        - characteristic: fs access
+        - or:
+          - offset/x32: 0x30
+          - and:
+            - number/x32: 0x30
+            - mnemonic: add
+      - and:
+        - characteristic: gs access
+        - or:
+          - offset/x64: 0x60
+          - and:
+            - number/x64: 0x60
+            - mnemonic: add
+      - and:
+        # WoW64 PEB address is fetched via the WoW64 Thread Environment Block (TEB) at FS:[0x18]-0x2000
+        # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtGlobalFlag.cpp#L45
+        - characteristic: fs access
+        - mnemonic: sub
+        - number: 0x2000

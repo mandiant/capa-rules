@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: get process heap force flags
+    namespace: host-interaction/process
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+    att&ck:
+      - Discovery::Process Discovery [T1057]
+    references:
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/ProcessHeap_ForceFlags.cpp
+    examples:
+      - al-khaser_x86.exe_:0x425470
+  features:
+    - and:
+      - match: PEB access
+      - or:
+        - and:
+          - number/x32: 0x18 = offset process heap
+          - or:
+            - number/x32: 0x44 = offset force flags >= Vista
+            - number/x32: 0x10 = offset force flags < Vista
+        - and:
+          - number/x64: 0x30 = offset process heap
+          - or:
+            - number/x64: 0x74 = offset force flags >= Vista
+            - number/x64: 0x18 = offset force flags < Vista
