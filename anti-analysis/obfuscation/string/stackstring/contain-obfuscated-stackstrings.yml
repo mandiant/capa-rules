@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
-      - Anti-Static Analysis::Disassembler Evasion::Argument Obfuscation
+      - Anti-Static Analysis::Disassembler Evasion::Argument Obfuscation [B0012.001]
     examples:
       - Practical Malware Analysis Lab 16-03.exe_:0x4013D0
   features:

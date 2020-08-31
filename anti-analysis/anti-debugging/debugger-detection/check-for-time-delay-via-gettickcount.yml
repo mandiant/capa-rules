@@ -5,7 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     mbc:
-      - Anti-Behavioral Analysis::Detect Debugger::Timing/Delay Checks
+      - Anti-Behavioral Analysis::Debugger Detection::Timing/Delay Check GetTickCount [B0001.032]
     examples:
       - Practical Malware Analysis Lab 16-03.exe_:0x4013d0
   features:

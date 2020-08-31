@@ -5,9 +5,9 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: function
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027.002]
+      - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
-      - Anti-Static Analysis::Software Packing
+      - Anti-Static Analysis::Software Packing::Standard Compression [F0001.002]
     examples:
       - Practical Malware Analysis Lab 18-01.exe_:0x409dc0
   features:

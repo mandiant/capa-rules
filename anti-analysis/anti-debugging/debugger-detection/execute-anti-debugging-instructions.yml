@@ -5,7 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     mbc:
-      - Anti-Behavioral Analysis::Detect Debugger
+      - Anti-Behavioral Analysis::Debugger Detection::Anti-debugging Instructions [B0001.034]
     examples:
       - Practical Malware Analysis Lab 16-03.exe_:0x401300
   features:

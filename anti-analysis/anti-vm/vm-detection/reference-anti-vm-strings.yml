@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
-      - Anti-Behavioral Analysis::Virtual Machine Detection::Check Registry Keys
+      - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]
     references:
       - https://github.com/ctxis/CAPE/blob/master/modules/signatures/antivm_*
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp
