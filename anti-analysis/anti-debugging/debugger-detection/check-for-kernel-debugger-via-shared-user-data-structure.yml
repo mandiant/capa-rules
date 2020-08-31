@@ -5,7 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     mbc:
-      - Anti-Behavioral Analysis::Detect Debugger
+      - Anti-Behavioral Analysis::Debugger Detection [B0001]
     references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/SharedUserData_KernelDebugger.cpp
       - http://www.geoffchappell.com/studies/windows/km/ntoskrnl/structs/kuser_shared_data.htm

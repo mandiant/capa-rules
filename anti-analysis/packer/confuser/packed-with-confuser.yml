@@ -5,9 +5,9 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: file
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027.002]
+      - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
-      - Anti-Static Analysis::Software Packing
+      - Anti-Static Analysis::Software Packing::Confuser [F0001.012]
     examples:
       - b9f5bd514485fb06da39beff051b9fdc
   features:

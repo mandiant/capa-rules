@@ -5,7 +5,8 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     mbc:
-      - Anti-Behavioral Analysis::Detect Debugger
+      - Anti-Behavioral Analysis::Debugger Detection::CheckRemoteDebuggerPresent [B0001.002]
+      - Anti-Behavioral Analysis::Debugger Detection::WudfIsAnyDebuggerPresent [B0001.031]
     references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/CheckRemoteDebuggerPresent.cpp
     examples:

@@ -4,6 +4,9 @@ rule:
     namespace: anti-analysis/anti-av
     author: "@_re_fox"
     scope: basic block
+    mbc:
+      - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]
+      - Anti-Behavioral Analysis::Sandbox Detection [B0007]
     examples:
       - ccbf7cba35bab56563c0fbe4237fdc41:0x0040a4a0
   features:

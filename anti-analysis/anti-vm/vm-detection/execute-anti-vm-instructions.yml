@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
-      - Anti-Behavioral Analysis::Virtual Machine Detection::Instruction Testing
+      - Anti-Behavioral Analysis::Virtual Machine Detection::Instruction Testing [B0009.029]
     examples:
       - Practical Malware Analysis Lab 17-03.exe_:0x401A80
   features:

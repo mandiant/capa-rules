@@ -5,7 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     mbc:
-      - Anti-Behavioral Analysis::Detect Debugger::Process Environment Block
+      - Anti-Behavioral Analysis::Debugger Detection::Process Environment Block NtGlobalFlag [B0001.036]
     references:
       - Practical Malware Analysis, Chapter 16, p. 355
       - https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb/index.htm

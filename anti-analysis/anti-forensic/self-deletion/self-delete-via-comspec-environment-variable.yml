@@ -5,7 +5,9 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
-      - Defense Evasion::Indicator Removal on Host [T1551]
+      - Defense Evasion::Indicator Removal on Host::File Deletion [T1070.004]
+    mbc:
+      - Defense Evasion::Self Deletion::COMSPEC Environment Variable [F0007.001]
     examples:
       - Practical Malware Analysis Lab 14-02.exe_:0x401880
   features:

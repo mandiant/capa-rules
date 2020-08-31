@@ -5,7 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     mbc:
-      - Anti-Behavioral Analysis::Detect Debugger::OutputDebugString
+      - Anti-Behavioral Analysis::Debugger Detection::OutputDebugString [B0001.016]
     examples:
       - Practical Malware Analysis Lab 16-02.exe_:0x401020
   features:

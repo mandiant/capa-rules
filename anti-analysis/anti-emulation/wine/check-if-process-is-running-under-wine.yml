@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
+    mbc:
+      - Anti-Behavioral Analysis::Emulator Detection [B0004]
     references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Wine.cpp
     examples:

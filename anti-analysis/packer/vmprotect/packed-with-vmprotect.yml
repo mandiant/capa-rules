@@ -5,9 +5,9 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: file
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027.002]
+      - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
-      - Anti-Static Analysis::Software Packing
+      - Anti-Static Analysis::Software Packing::VMProtect [F0001.010]
     references:
       - https://www.pcworld.com/article/2824572/leaked-programming-manual-may-help-criminals-develop-more-atm-malware.html
     examples:
