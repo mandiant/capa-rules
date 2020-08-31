@@ -2,12 +2,17 @@ rule:
   meta:
     name: query environment variable
     namespace: host-interaction/environment-variable
-    author: michael.hunhoff@fireeye.com
+    author: 
+      - michael.hunhoff@fireeye.com
+      - "@_re_fox"
     scope: function
     examples:
       - Practical Malware Analysis Lab 14-02.exe_:0x401880
+      - 0761142efbda6c4b1e801223de723578:0x65483490
   features:
     - or:
       - api: kernel32.GetEnvironmentVariable
       - api: kernel32.GetEnvironmentStrings
       - api: kernel32.ExpandEnvironmentStrings
+      - api: msvcr90.getenv
+      - api: msvcrt.getenv
