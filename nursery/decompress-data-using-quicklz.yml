@@ -1,0 +1,53 @@
+rule:
+    meta:
+      name: decompress data using QuickLZ
+      namespace: data-manipulation/compression
+      author: david@edeca.net
+      description: detects the inner decompression loop from QuickLZ
+      scope: function
+      examples:
+        - 64d9f7d96b99467f36e22fada623c3bb:0x10001510
+        - 234c8034e88b2d097d2da51a85253825:0x100015B0
+        - f54a09e966bb929e68f5c01fa3087a3a:0x10001590
+        - d115f4b2ec8579be33fe883219c00ae2:0x1800015E0
+        - 831083e1614090dbb5815dba36faa2f3:0x1800016E0
+        - 7e0b974f004e4e0523fe4d9b9d89e5ad:0x1800016B0
+      references:
+        - http://www.quicklz.com/
+    features:
+      - or:
+        - basic block:
+          - and:
+            - mnemonic: xor
+            - mnemonic: shr
+            - mnemonic: and
+            - number: 0xC
+            - number: 0xFFF
+            - or:
+              - offset: 0x4000
+              - offset: 0x8000
+            description: Mode 1 decompression
+        - basic block:
+          - and:
+            - mnemonic: shr
+            - mnemonic: and
+            - mnemonic: mov
+            - number: 0x5
+            - number: 0x1
+            - number: 0x7FF
+          description: Mode 2 decompression
+        - and:
+          - basic block:
+            - and:
+              - mnemonic: shr
+              - mnemonic: and
+              - mnemonic: mov
+              - number: 0x2
+              - number: 0x3
+              - number: 0x3FFF
+          - basic block:
+            - and:
+              - mnemonic: shr
+              - mnemonic: and
+              - number: 0x3FF
+          description: Mode 3 decompression
