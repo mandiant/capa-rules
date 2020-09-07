@@ -4,7 +4,7 @@ rule:
     namespace: anti-analysis/anti-debugging
     author: michael.hunhoff@fireeye.com
     scope: basic block
-    referernces:
+    references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtSetInformationThread_ThreadHideFromDebugger.cpp
   features:
     - and:
