@@ -30,4 +30,4 @@ rule:
         - characteristic: nzxor
         - count(mnemonic(shr)): 8 or more 
         - mnemonic: ror
-        description: DES RawProcessBlock 
+        # description: DES RawProcessBlock

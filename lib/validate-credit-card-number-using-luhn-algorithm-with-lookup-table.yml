@@ -26,7 +26,7 @@ rule:
             - number: 0x5
             - number: 0x7
             - number: 0x9
-            description: Digital root lookup table
+            # description: Digital root lookup table
           - 8 or more:
             - number: 0x0
             - number: 0x1
@@ -37,17 +37,17 @@ rule:
             - number: 0xfffffffd
             - number: 0xfffffffe
             - number: 0xffffffff
-            description: Digital root lookup table via neg numbers
+            # description: Digital root lookup table via neg numbers
       - basic block:
         - or:
           - and:
             - number: 0x30
             - mnemonic: sub
-            description: Conversion of chr to int (SUB 0x30) 
+            # description: Conversion of chr to int (SUB 0x30)
           - and:
             - mnemonic: lea
             - offset: -0x30
-            description: Conversion of chr to int (LEA REG,[REG+ -0x30])
+            # description: Conversion of chr to int (LEA REG,[REG+ -0x30])
       - basic block:
         - or:
           - and:
@@ -56,7 +56,7 @@ rule:
             - number: 0xa
             - optional : 
               - mnemonic: neg
-            description: Final section returning checkum % 10
+            # description: Final section returning checkum % 10
           - and:
             - mnemonic: shr
             - mnemonic: imul
@@ -65,4 +65,4 @@ rule:
             - number: 0x2
             - optional : 
               - mnemonic: neg
-            description: Compiler optimized returning checkum % 10 
+            # description: Compiler optimized returning checkum % 10

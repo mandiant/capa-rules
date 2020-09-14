@@ -21,4 +21,4 @@ rule:
           - count(mnemonic(shr)) : 2 or more
           - count(mnemonic(shl)) : 2 or more
           - characteristic: nzxor
-          description: tiger key schedule
+          # description: tiger key schedule

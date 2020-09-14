@@ -23,7 +23,7 @@ rule:
         - and:
           - mnemonic: pushfq
           - mnemonic: popfq
-        description: read/write EFLAGS register
+        # description: read/write EFLAGS register
       - or:
         - and:
           - mnemonic: or
@@ -31,4 +31,4 @@ rule:
         - and:
           - mnemonic: bts
           - number: 0x8
-        description: set trap flag
+        # description: set trap flag

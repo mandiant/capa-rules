@@ -23,16 +23,16 @@ rule:
             - or:
               - number: 0xFF
               - number: 0x100
-          description: initialize S
+          # description: initialize S
         - or:
           - match: calculate modulo 256 via x86 assembly
           # compiler may do this via zero-extended mov from 8-bit register
           - count(mnemonic(movzx)): 2 or more
-          description: modulo 256
+          # description: modulo 256
         - or:
           - mnemonic: div
           - mnemonic: idiv
-          description: modulo key length
+          # description: modulo key length
       # optimized, writes DWORDs instead of bytes
       - and:
         - or:
