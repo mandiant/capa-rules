@@ -1,0 +1,38 @@
+rule:
+  meta: 
+    name: gh0st variants RTTI and PDB
+    namespace: mal-family
+    author: "@stevemk14ebr"
+    scope: file
+    examples:
+      - 3F5052E19005378AA8D3E5C14DB9B37F96EE6C97AAF5C780F532DFF2E73568E3
+      - 53D5C336D9BCA7E4B28522F616FF6B0C6B1B3AC0250AD57F3558413C89A7E120
+      - 3EE11AE7062D538AC14F4C28B0328BF87835CB166830CBB5EF354DECC0B78FBE
+      - D9FA2D3CCBF8F2A71B60BEA36D9278265C02558429F80C162FA45D569B928C8F
+      - C871A5125906A3ED6F0C90A09CCB70FE57C42E23ED4D2F1ABA4609D4E5E1BD1D
+      - C6AD4B17246733F93C6ED4632858F9022A00788401BD995A57E46DBCEFD3D47F
+      - DA6F698517F8BF3BA70D4DC637C3C9B702D1F799346F38BEFA5B3F30DCB01854
+      - B51AE22EB8326AE493FA4E7872D1944B125F2161ADF31176EB87F0D3A31A8625
+  features:
+    - 3 or more:
+      - string: .?AVCClientSocket@@
+      - string: .?AVCFileManager@@
+      - string: .?AVCKernelManager@@
+      - string: .?AVCBuffer@@
+      - string: .?AVCManager@@
+      - string: .?AVCPortmapManager@@
+      - string: .?AVCCpuUsage@@
+      - string: .?AVCUltraPortmapManager@@
+      - string: .?AVCShareRestrictedSD@@
+      - string: .?AVCDialupass@@
+      - string: .?AVCAudioManager@@
+      - string: .?AVCScreenSpy@@
+      - string: .?AVCSystemManager@@
+      - string: .?AVCVideoCap@@
+      - string: .?AVCVideoManager@@
+      - string: .?AVCIOCPServer@@
+      - string: .?AVCBmpToAvi@@
+      - string: .?AVCShareRestrictedSD@@
+      - string: .?AVCScreenManager@@
+      - string: .?AVCCursorInfo@@
+      - string: gh0st\\Release
