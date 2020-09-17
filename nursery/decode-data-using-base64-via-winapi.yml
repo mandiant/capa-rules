@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: decode data using Base64 via WinAPI
+    namespace: data-manipulation/encoding/base64
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - and:
+      - or:
+        - number: 0x1 = CRYPT_STRING_BASE64
+        - number: 0x6 = CRYPT_STRING_BASE64_ANY
+        - number: 0x7 = CRYPT_STRING_ANY
+      - api: CryptStringToBinary

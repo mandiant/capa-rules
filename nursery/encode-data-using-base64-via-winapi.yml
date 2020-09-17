@@ -7,4 +7,4 @@ rule:
   features:
     - and:
       - number: 1 = CRYPT_STRING_BASE64
-      - api: CryptStringToBinary
+      - api: CryptBinaryToString
