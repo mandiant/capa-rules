@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: impersonate user
+    namespace: host-interaction/user
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - or:
+      - api: advapi32.LogonUser
+      - and:
+        - api: userenv.LoadUserProfile
+        - optional:
+          - api: advapi32.GetUserName
+          - api: advapi32.GetUserNameEx
