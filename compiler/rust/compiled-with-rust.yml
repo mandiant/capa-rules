@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: compiled with rust
+    namespace: compiler/rust
+    author: "@_re_fox"
+    scope: function
+    examples:
+      - c3341b7dfbb9d43bca8c812e07b4299f:0x45F490
+  features:
+    - and:
+      - basic block:
+        - string: /run with \`RUST_BACKTRACE=1\` environment variable/
+      - basic block:
+        - string: /thread '' panicked at '',/
