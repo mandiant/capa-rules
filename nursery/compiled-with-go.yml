@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: compiled with Go
+    namespace: compiler/go
+    author: michael.hunhoff@fireeye.com
+    scope: file
+  features:
+    - or:
+      - string: /Go build ID:/
+      - string: /go.buildid/
+      - string: /Go buildinf:/
