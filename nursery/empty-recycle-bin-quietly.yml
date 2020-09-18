@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: empty recycle bin quiet
+    name: empty recycle bin quietly
     namespace: host-interaction/recycle-bin
     author: matthew.williams@fireeye.com
     scope: basic block
