@@ -5,6 +5,8 @@ rule:
     author: '@recvfrom'
     description: Looks for instruction mnemonics associated with initialization of the HC-128 stream cipher
     scope: basic block
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
     examples:
       - e69a8eb94f65480980deaf1ff5a431a6:0x405D0D
     references:
