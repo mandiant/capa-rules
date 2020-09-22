@@ -12,8 +12,5 @@ rule:
     - and:
       - api: SHEmptyRecycleBin
       - or:
-        - and:
-          - mnemonic: lea
-          - offset: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION
-          # description: accounts for argument loaded via LEA (lea r8d, [rdx+7])
+        - offset: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION
         - number: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION
