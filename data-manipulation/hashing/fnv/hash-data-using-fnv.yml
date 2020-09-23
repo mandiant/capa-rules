@@ -5,9 +5,12 @@ rule:
     author: moritz.raabe@fireeye.com
     description: can be any Fowler-Noll-Vo (FNV) hash variant, including FNV-1, FNV-1a, FNV-0
     scope: function
+    examples:
+      - fd3ff5d9a5d9af87c467d9114294fc50:0x10011A80
     references:
       - http://isthe.com/chongo/tech/comp/fnv/
       - https://create.stephan-brumme.com/fnv-hash/
+      - https://blog.morphisec.com/crystalbit-apple-double-dll-hijack
   features:
     - and:
       - or:
