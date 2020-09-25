@@ -225,10 +225,14 @@ There are five structural expressions that may be nested:
   - `N or more` - match at least `N` or more of the children
     - `optional` is an alias for `0 or more`, which is useful for documenting related features. See [write-file.yml](/rules/machine-access-control/file-manipulation/write-file.yml) for an example.
 
+To add context to a statement, you can add *one* nested description entry in the form `- description: DESCRIPTION STRING`.
+Check the [description section](#descriptions) for more details.
+
 For example, consider the following rule:
 
 ```
       - and:
+        - description: core of CRC-32 algorithm
         - mnemonic: shr
         - number: 0xEDB88320
         - number: 8
@@ -504,7 +508,7 @@ When no active rules depend on a library rule, these the library rules will not 
 
 ## descriptions
 
-All features support an optional description which helps with documenting rules and provides context in capa's output.
+All features and statements support an optional description which helps with documenting rules and provides context in capa's output.
 
 For all features except for [strings](#string), the description can be specified inline preceded by ` = `: ` = DESCRIPTION STRING`.
 For example:
@@ -516,6 +520,9 @@ For example:
 The inline syntax is preferred.
 For [strings](#string) or if the description is long or contains newlines, use the two-line syntax.
 It uses the `description` tag in the following way: `description: DESCRIPTION STRING`.
+
+For [statements](#features-block) you can add *one* nested description entry to the statement.
+
 For example:
 
 ```
@@ -525,6 +532,7 @@ For example:
   - number: 0x4550
     description: IMAGE_DOS_SIGNATURE (MZ)
   - and:
+    - description: documentation of this `and` statement
     - offset: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
     - offset: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
   - and:
