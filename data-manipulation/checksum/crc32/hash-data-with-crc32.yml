@@ -7,11 +7,16 @@ rule:
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
       - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
+      - 7EFF498DE13CC734262F87E6B3EF38AB:0x100084A6
   features:
     - or:
       - and:
         - mnemonic: shr
         - number: 0xEDB88320
         - number: 8
+        - characteristic: nzxor
+      - and:
+        - number: 0x8320
+        - number: 0xEDB8
         - characteristic: nzxor
       - api: RtlComputeCrc32
