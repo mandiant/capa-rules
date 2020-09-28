@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: enumerate network shares
+    namespace: host-interaction/network
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - and:
+      - or:
+        - api: netapi32.NetShareEnum
+        - api: mpr.WNetEnumResource
+      - match: contain loop

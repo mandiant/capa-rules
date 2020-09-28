@@ -9,7 +9,6 @@ rule:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
     - or:
-      - api: ws2_32.inet_addr
       - api: ws2_32.gethostbyname
       - api: DnsQuery_A
       - api: DnsQuery_W

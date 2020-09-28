@@ -11,3 +11,7 @@ rule:
       - api: kernel32.CreateThread
       - api: _beginthread
       - api: _beginthreadex
+      - basic block:
+        - and:
+          - api: kernel32.GetCurrentProcess
+          - api: kernel32.CreateRemoteThread

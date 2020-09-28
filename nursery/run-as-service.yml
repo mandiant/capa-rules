@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: run as service
+    namespace: host-interaction/service
+    author: michael.hunhoff@fireeye.com
+    scope: function
+  features:
+    - or:
+      - api: RegisterServiceCtrlHandlerEx
+      - api: RegisterServiceCtrlHandler
+      - api: StartServiceCtrlDispatcher

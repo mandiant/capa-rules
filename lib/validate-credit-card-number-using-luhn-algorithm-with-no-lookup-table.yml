@@ -23,30 +23,30 @@ rule:
                 - number: 0x1 
             - mnemonic: cmp
             - number: 0x9
-            description: Digital Root check number*2 < 0x9 
+            # description: Digital Root check number*2 < 0x9
         - and:
           - basic block:
             - and:
               - mnemonic: cmp
               - number: 0x9
-              description: Compare number to 0x9 for Digital Root
+              # description: Compare number to 0x9 for Digital Root
           - basic block:
             - or:
               - mnemonic: add
               - and:
                 - mnemonic: shl
                 - number: 0x1
-              description: 2*Number for Digital Root
+              # description: 2*Number for Digital Root
       - basic block:
         - or:
           - and:
             - number: 0x30
             - mnemonic: sub
-            description: Conversion of chr to int (SUB 0x30) 
+            # description: Conversion of chr to int (SUB 0x30)
           - and:
             - mnemonic: lea
             - offset: -0x30
-            description: Conversion of chr to int (LEA REG,[REG+ -0x30])
+            # description: Conversion of chr to int (LEA REG,[REG+ -0x30])
       - basic block:
         - or:
           - and:
@@ -55,7 +55,7 @@ rule:
             - number: 0xa
             - optional : 
               - mnemonic: neg
-            description: Final section returning checkum % 10 
+            # description: Final section returning checkum % 10
           - and:
             - mnemonic: shr
             - mnemonic: imul
@@ -64,4 +64,4 @@ rule:
             - number: 0x2
             - optional : 
               - mnemonic: neg
-            description: Compiler optimized returning checkum % 10 
+            # description: Compiler optimized returning checkum % 10

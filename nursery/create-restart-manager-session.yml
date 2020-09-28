@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: create Restart Manager session
+    namespace: host-interaction/process
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    description: Windows Restart Manager can be used to close/unlock specific files, often abused by Ransomware
+    references: https://www.carbonblack.com/blog/tau-threat-discovery-conti-ransomware/
+  features:
+    - or:
+      - api: rstrtmgr.RmStartSession

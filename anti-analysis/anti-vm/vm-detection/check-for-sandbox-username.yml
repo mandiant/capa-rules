@@ -13,11 +13,11 @@ rule:
       - api: GetUserName
       - or:
         - string: /MALTEST/i
-          description: Betabot Username Check  
+          description: Betabot Username Check
         - string: /TEQUILABOOMBOOM/i
           description: VirusTotal Sandbox
         - string: /SANDBOX/i
-          description: Gookit Username Check 
+          description: Gookit Username Check
         - string: /^VIRUS/i
           description: Satan Username Check
         - string: /MALWARE/i
@@ -27,36 +27,36 @@ rule:
         - string: /Test\sUser/i
           description: Betabot Username Check
         - string: /CurrentUser/i
-          description: Gookit Username Check 
+          description: Gookit Username Check
         - string: /7SILVIA/i
-          description: Gookit Username Check 
+          description: Gookit Username Check
         - string: /FORTINET/i
           description: Shifu Username Check
         - string: /John\sDoe/i
           description: Emotet Username Check
         - string: /Emily/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /HANSPETER\-PC/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /HAPUBWS/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /Hong\sLee/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /IT\-ADMIN/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /JOHN\-PC/i
           description: Trickbot Downloader Username Check
         - string: /Johnson/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /Miller/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /MUELLER\-PC/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /Peter\sWilson/i
           description: Trickbot Downloader Username Check
         - string: /SystemIT/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /Timmy/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
         - string: /WIN7\-TRAPS/i
-          description: Trickbot Downloader Username Check 
+          description: Trickbot Downloader Username Check
