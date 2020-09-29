@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Collection::Input Capture::Keylogging [T1056.001]
+    mbc:
+      - Collection::Keylogging::Application Hook [F0002.001]
     examples:
       - Practical Malware Analysis Lab 12-03.exe_:0x401000
   features:

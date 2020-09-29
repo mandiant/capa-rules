@@ -4,6 +4,8 @@ rule:
     namespace: communication/named-pipe/create
     author: matthew.williams@fireeye.com
     scope: function
+    mbc:
+      - Communication::Interprocess Communication::Create Pipe [C0003.001]
     examples:
       - Practical Malware Analysis Lab 14-02.exe_:0x4011C0
   features:

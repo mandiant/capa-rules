@@ -4,6 +4,8 @@ rule:
     namespace: communication/socket/tcp
     author: william.ballenthin@fireeye.com
     scope: basic block
+    mbc:
+      - Communication::Socket Communication::Create TCP Socket [C0001.011]
     examples:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:

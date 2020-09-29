@@ -4,6 +4,8 @@ rule:
     namespace: collection/credit-card
     author: "@_re_fox"
     scope: function
+    att&ck:
+      - Credential Access::Data from Local System [T1005]
     examples:
       - 1d8fd13c890060464019c0f07b928b1a:0x402860
   features:

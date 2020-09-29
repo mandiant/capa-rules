@@ -4,6 +4,8 @@ rule:
     namespace: communication/icmp
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - Communication::ICMP Communication::Echo Request [C0014.002]
     references:
       - https://docs.microsoft.com/en-us/windows/win32/api/icmpapi/
     examples:

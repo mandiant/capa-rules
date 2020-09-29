@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter::Windows Command Shell [T1059.003]
+    mbc:
+      - Impact::Remote Access::Reverse Shell [B0022.001]
     examples:
       - C91887D861D9BD4A5872249B641BC9F9:0x401A77
   features:

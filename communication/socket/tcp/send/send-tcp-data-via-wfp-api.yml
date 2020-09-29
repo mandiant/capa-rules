@@ -4,6 +4,8 @@ rule:
     namespace: communication/socket/tcp/send
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - Communication::Socket Communication::Send TCP Data [C0001.014]
     examples:
       - 493167E85E45363D09495D0841C30648:0x404560
   features:

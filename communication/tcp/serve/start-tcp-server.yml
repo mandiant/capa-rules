@@ -4,6 +4,8 @@ rule:
     namespace: communication/tcp/serve
     author: william.ballenthin@fireeye.com
     scope: function
+    mbc:
+      - Communication::Socket Communication::Start TCP Server [C0001.005]
     examples:
       - AF2F4142463F42548B8650A3ADF5CEB2:0x10010880
   features:

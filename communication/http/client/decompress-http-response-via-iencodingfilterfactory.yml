@@ -4,6 +4,8 @@ rule:
     namespace: communication/http/client
     author: matthew.williams@fireeye.com
     scope: function
+    mbc:
+      - Communication::HTTP Communication::Get Response [C0002.017]
     examples:
       - FBBAAF569B63F6398503E4F1979CABEF:0x4067F0
   features:

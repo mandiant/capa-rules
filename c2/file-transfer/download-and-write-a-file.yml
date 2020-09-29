@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Command and Control::Ingress Tool Transfer [T1105]
+    mbc:
+      - Command and Control::C2 Communication::Server to Client File Transfer [B0030.003]
     examples:
       - 5D7C34B6854D48D3DA4F96B71550A221:0x401346
     maec/malware-category: downloader
