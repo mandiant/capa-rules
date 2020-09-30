@@ -14,6 +14,7 @@ rule:
       - bytes: 55 3c 32 26 85 60 0e 5b f5 59 1b fa a9 c1 46 1a fa 8f 4c 7c a1 45 e2 a9 d7 55 29 db 59 51 ca 65 c2 af 35 ce 76 0a db 05 45 3d 11 a9 7e c7 ea 81 0d 0a ac b6 8a f8 8e 52 ff e3 7b 59 53 a2 9e a0 56 cd 48 ac b3 df 0d 43 6f e4 5c f4 7a a6 b3 c4 5e d0 e2 fb d8 cf ce 4e f0 35 99 b3 10 6f f5 3e c6 19 d6 9c 82 d6 22 0b 69 20 df 74 0a 46 fd 17 40 ed 10 85 8e cc f8 6c a7 ca 6e 3a bf 24 c8 d6 49 70 81 1a 58 3d 24 61 a2 63 c1 bb b6 ac 8b 04 32 cc 44 7d c2 8a a3 d9 ab 10 f4 aa 5b ff dd 7f 4b 82 04 a8 5a 49 6d ad 94 9f 8c = sbox4
       - or:
         - and:
+          - description: tiger key schedule
           - number: 0xa5a5a5a5a5a5a5a5
           - number: 0x0123456789abcdef
           - number: 0x13
@@ -21,4 +22,3 @@ rule:
           - count(mnemonic(shr)) : 2 or more
           - count(mnemonic(shl)) : 2 or more
           - characteristic: nzxor
-          # description: tiger key schedule

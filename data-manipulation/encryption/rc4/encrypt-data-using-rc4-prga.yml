@@ -19,7 +19,6 @@ rule:
         - match: calculate modulo 256 via x86 assembly
         # compiler may do this via zero-extended mov from 8-bit register
         - count(mnemonic(movzx)): 4 or more
-        # description: modulo 256
       # should not call (many) functions
       - count(characteristic(calls from)): (0, 4)
       # should not be too simple
