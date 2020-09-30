@@ -17,24 +17,23 @@ rule:
       - and:
         - basic block:
           - and:
+            - description: initialize S
             # misses if regular loop is used,
             # however we cannot model that a loop contains a certain number
             - characteristic: tight loop
             - or:
               - number: 0xFF
               - number: 0x100
-          # description: initialize S
         - or:
           - match: calculate modulo 256 via x86 assembly
           # compiler may do this via zero-extended mov from 8-bit register
           - count(mnemonic(movzx)): 2 or more
-          # description: modulo 256
         - or:
+          - description: modulo key length
           - mnemonic: div
           - mnemonic: idiv
-          # description: modulo key length
-      # optimized, writes DWORDs instead of bytes
       - and:
+        - description: optimized, writes DWORDs instead of bytes
         - or:
           - number: 0xFFFEFDFC
           - mnemonic: sub

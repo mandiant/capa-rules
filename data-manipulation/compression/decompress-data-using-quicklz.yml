@@ -19,6 +19,7 @@ rule:
       - or:
         - basic block:
           - and:
+            - description: Mode 1 decompression
             - mnemonic: xor
             - mnemonic: shr
             - mnemonic: and
@@ -27,17 +28,17 @@ rule:
             - or:
               - offset: 0x4000
               - offset: 0x8000
-            # description: Mode 1 decompression
         - basic block:
           - and:
+            - description: Mode 2 decompression
             - mnemonic: shr
             - mnemonic: and
             - mnemonic: mov
             - number: 0x5
             - number: 0x1
             - number: 0x7FF
-          # description: Mode 2 decompression
         - and:
+          - description: Mode 3 decompression
           - basic block:
             - and:
               - mnemonic: shr
@@ -51,4 +52,3 @@ rule:
               - mnemonic: shr
               - mnemonic: and
               - number: 0x3FF
-          # description: Mode 3 decompression
