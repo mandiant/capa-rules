@@ -4,6 +4,9 @@ rule:
     namespace: communication/ftp/send
     author: michael.hunhof@fireeye.com
     scope: function
+    mbc:
+      - Communication::FTP Communication::Send File [C0004.001]
+      - Communication::FTP Communication::WinINet [C0004.002]
     examples:
       - Practical Malware Analysis Lab 20-02.exe_:0x401380
   features:

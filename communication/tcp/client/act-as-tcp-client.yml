@@ -4,6 +4,8 @@ rule:
     namespace: communication/tcp/client
     author: william.ballenthin@fireeye.com
     scope: function
+    mbc:
+      - Communication::Socket Communication::TCP Client [C0001.008]
     examples:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:

@@ -4,6 +4,8 @@ rule:
     namespace: collection/network
     author: "@_re_fox"
     scope: basic block
+    att&ck:
+      - Discovery::System Network Configuration Discovery [T1016]
     examples:
       - 7204e3efc2434012e13ca939db0d0b02:0x403028
   features:

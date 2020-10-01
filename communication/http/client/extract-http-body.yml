@@ -4,6 +4,8 @@ rule:
     namespace: communication/http/client
     author: matthew.williams@fireeye.com
     scope: function
+    mbc:
+      - Communication::HTTP Communication::Extract Body [C0002.011]
     references:
       - https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574(v=vs.85)
     examples:

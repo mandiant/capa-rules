@@ -4,6 +4,8 @@ rule:
     namespace: collection/browser
     author: "@_re_fox"
     scope: function
+    att&ck:
+      - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
     examples: 
       - 7204e3efc2434012e13ca939db0d0b02:0x4073c0
   features:

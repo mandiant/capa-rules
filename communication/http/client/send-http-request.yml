@@ -4,6 +4,8 @@ rule:
     namespace: communication/http/client
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - Communication::HTTP Communication::Send Request [C0002.003]
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x13145D60
       - 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x100026E0

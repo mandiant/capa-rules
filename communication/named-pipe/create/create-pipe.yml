@@ -4,6 +4,8 @@ rule:
     namespace: communication/named-pipe/create
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - Communication::Interprocess Communication::Create Pipe [C0003.001]
     examples:
       - Practical Malware Analysis Lab 03-02.dll_:0x10003a13
   features:

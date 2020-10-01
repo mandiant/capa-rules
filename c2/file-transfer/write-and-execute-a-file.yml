@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Command and Control::Ingress Tool Transfer [T1105]
+    mbc:
+      - Execution::Install Additional Program [B0023]
     examples:
       - 9324D1A8AE37A36AE560C37448C9705A:0x403A40
       - Practical Malware Analysis Lab 01-04.exe_:0x4011FC

@@ -4,6 +4,8 @@ rule:
     namespace: communication/http/client
     author: matthew.williams@fireeye.com
     scope: function
+    mbc:
+      - Communication::HTTP Communication::Download URL [C0002.006]
     examples:
       - F5C93AC768C8206E87544DDD76B3277C:0x100020F0
       - Practical Malware Analysis Lab 20-01.exe_:0x401040

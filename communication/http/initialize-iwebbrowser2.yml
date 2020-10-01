@@ -4,6 +4,8 @@ rule:
     namespace: communication/http
     author: matthew.williams@fireeye.com
     scope: basic block
+    mbc:
+      - Communication::HTTP Communication::IWebBrowser [C0002.010]
     examples:
       - 395EB0DDD99D2C9E37B6D0B73485EE9C:0x402130
       # https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752127(v%3Dvs.85)

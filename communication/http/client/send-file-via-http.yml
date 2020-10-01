@@ -4,6 +4,8 @@ rule:
     namespace: communication/http/client
     author: matthew.williams@fireeye.com
     scope: basic block
+    mbc:
+      - Communication::HTTP Communication::Send Data [C0002.005]
     examples:
       - EAAD7DFC78304B977D3844CC63577152:0x4500CB
   features:

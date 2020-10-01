@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Collection::Input Capture::Keylogging [T1056.001]
+    mbc:
+      - Collection::Keylogging::Polling [F0002.002]
     examples:
       - Practical Malware Analysis Lab 11-03.dll_:0x10001030
   features:

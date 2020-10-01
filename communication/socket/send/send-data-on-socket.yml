@@ -4,6 +4,8 @@ rule:
     namespace: communication/socket/send
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - Communication::Socket Communication::Send Data [C0001.007]
     examples:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
