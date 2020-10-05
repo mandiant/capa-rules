@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: query processor features
+    name: query processor feature
     namespace: host-interaction/hardware/cpu
     author: "@_re_fox"
     scope: basic block
