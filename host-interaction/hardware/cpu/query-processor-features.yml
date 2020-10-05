@@ -1,0 +1,44 @@
+rule:
+  meta:
+    name: query processor features
+    namespace: host-interaction/hardware/cpu
+    author: "@_re_fox"
+    scope: basic block
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+    references:
+      - https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-isprocessorfeaturepresent
+    examples:
+      - b87e9dd18a5533a09d3e48a7a1efbcf6:0x140007468
+  features:
+    - and:
+      - api: kernel32.IsProcessorFeaturePresent
+      - or:
+        - number: 25 = PF_ARM_64BIT_LOADSTORE_ATOMIC
+        - number: 24 = PF_ARM_DIVIDE_INSTRUCTION_AVAILABLE
+        - number: 26 = PF_ARM_EXTERNAL_CACHE_AVAILABLE
+        - number: 27 = PF_ARM_FMAC_INSTRUCTIONS_AVAILABLE
+        - number: 18 = PF_ARM_VFP_32_REGISTERS_AVAILABLE
+        - number: 7 = PF_3DNOW_INSTRUCTIONS_AVAILABLE
+        - number: 16 = PF_CHANNELS_ENABLED
+        - number: 2 = PF_COMPARE_EXCHANGE_DOUBLE
+        - number: 14 = PF_COMPARE_EXCHANGE128
+        - number: 15 = PF_COMPARE64_EXCHANGE128
+        - number: 23 = PF_FASTFAIL_AVAILABLE
+        - number: 1 = PF_FLOATING_POINT_EMULATED
+        - number: 0 = PF_FLOATING_POINT_PRECISION_ERRATA
+        - number: 3 = PF_MMX_INSTRUCTIONS_AVAILABLE
+        - number: 12 = PF_NX_ENABLED
+        - number: 9 = PF_PAE_ENABLED
+        - number: 8 = PF_RDTSC_INSTRUCTION_AVAILABLE
+        - number: 22 = PF_RDWRFSGSBASE_AVAILABLE
+        - number: 20 = PF_SECOND_LEVEL_ADDRESS_TRANSLATION
+        - number: 13 = PF_SSE3_INSTRUCTIONS_AVAILABLE
+        - number: 21 = PF_SSE3_INSTRUCTIONS_AVAILABLE
+        - number: 6 = PF_XMMI_INSTRUCTIONS_AVAILABLE
+        - number: 10 = PF_XMMI64_INSTRUCTIONS_AVAILABLE
+        - number: 17 = PF_XSAVE_ENABLED
+        - number: 29 = PF_ARM_V8_INSTRUCTIONS_AVAILABLE
+        - number: 30 = PF_ARM_V8_CRYPTO_INSTRUCTIONS_AVAILABLE
+        - number: 31 = PF_ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE
+        - number: 34 = PF_ARM_V81_ATOMIC_INSTRUCTIONS_AVAILABLE
