@@ -8,16 +8,21 @@ rule:
       - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]
     examples:
       - Practical Malware Analysis Lab 06-03.exe_:0x401130
+      - b87e9dd18a5533a09d3e48a7a1efbcf6:0x1400070E0
   features:
-    - and:
-      - or:
+    - or:
+      - and:
         - or:
-          - api: advapi32.RegOpenKey
-          - api: advapi32.RegOpenKeyEx
-        - or:
-          - api: advapi32.RegSetValue
-          - api: advapi32.RegSetValueEx
-        - or:
-          - number: 0x80000001 = HKEY_CURRENT_USER
-          - number: 0x80000002 = HKEY_LOCAL_MACHINE
-      - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Run/i
+          - or:
+            - api: advapi32.RegOpenKey
+            - api: advapi32.RegOpenKeyEx
+          - or:
+            - api: advapi32.RegSetValue
+            - api: advapi32.RegSetValueEx
+          - or:
+            - number: 0x80000001 = HKEY_CURRENT_USER
+            - number: 0x80000002 = HKEY_LOCAL_MACHINE
+        - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Run/i
+      - and:
+        - match: create process
+        - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\Run/i
