@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: terminate process via fastfail
+    namespace: host-interaction/process/terminate
+    author: "@_re_fox"
+    scope: basic block
+    references:
+      - https://docs.microsoft.com/en-us/cpp/intrinsics/fastfail?view=vs-2019
+    examples:
+      - b87e9dd18a5533a09d3e48a7a1efbcf6:0x14000747F
+  features:
+    - and:
+      - mnemonic: int
+      - number: 0x29
