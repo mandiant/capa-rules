@@ -24,11 +24,11 @@ rule:
             - number: 0x4D
             - number: 0x5A
       - and:
-        # - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
+        - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
         - or:
-          - and:  # 32-bit
-            - offset: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
-            - offset: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
-          - and:  # 64-bit
-            - offset: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
-            - offset: 0x30 = IMAGE_NT_HEADERS64.OptionalHeader.ImageBase
+          - and:
+            - offset/x32: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
+            - offset/x32: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
+          - and:
+            - offset/x64: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
+            - offset/x64: 0x30 = IMAGE_NT_HEADERS64.OptionalHeader.ImageBase
