@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: packed with kkrunchy
+    namespace: anti-analysis/packer/kkrunchy
+    author: "@_re_fox"
+    scope: file
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
+    mbc:
+      - Anti-Static Analysis::Software Packing [F0001]
+    examples:
+      - f9ac6b16273556b3a57bf2c6d7e7db97
+    references:
+      - http://www.farbrausch.de/~fg/kkrunchy/
+  features:
+    - or:
+      - section: kkrunchy
