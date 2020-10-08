@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: packed with upack
+    namespace: anti-analysis/packer/upack
+    author: "@_re_fox"
+    scope: file
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
+    mbc:
+      - Anti-Static Analysis::Software Packing [F0001]
+    examples:
+      - 9d98f8519d9fee8219caca5b31eef0bd
+  features:
+    - and:
+      - section: .Upack
+      - string: UpackByDwing@
