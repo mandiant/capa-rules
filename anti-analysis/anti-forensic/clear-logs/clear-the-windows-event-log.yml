@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: clear the Windows event log
+    namespace: anti-analysis/anti-forensic/clear-logs
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+    att&ck:
+      - Defense Evasion::Indicator Removal on Host::Clear Windows Event Logs [T1070.001]
+    examples:
+      - 82BF6347ACF15E5D883715DC289D8A2B:0x14005E0C0
+  features:
+    - and:
+      - api: advapi32.ElfClearEventLogFile
+      - optional:
+        - api: advapi32.OpenEventLog
