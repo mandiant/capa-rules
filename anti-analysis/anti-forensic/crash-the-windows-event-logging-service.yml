@@ -4,7 +4,7 @@ rule:
     namespace: anti-analysis/anti-forensic
     author: michael.hunhoff@fireeye.com
     scope: basic block
-    attack:
+    att&ck:
       - Defense Evasion::Impair Defenses::Disable Windows Event Logging [T1562.002]
     references:
       - https://github.com/limbenjamin/LogServiceCrash
