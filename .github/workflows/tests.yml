@@ -33,4 +33,30 @@ jobs:
       run: pip install -e .
     - name: Run rule linter
       run: python scripts/lint.py rules/
-
+  # Ensure that new rules are compatible with latest release
+  rules_latest_release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout capa-rules
+      uses: actions/checkout@v2
+      with:
+        path: rules
+    - name: Checkout capa-testfiles
+      uses: actions/checkout@v2
+      with:
+        repository: fireeye/capa-testfiles
+        path: tests/data
+    - name: Get latest release executable name
+      run: echo "zip_name=capa-$(curl -s https://api.github.com/repos/fireeye/capa/releases/latest |
+                 jq .name |
+                 tr -d '"')-linux.zip" >> $GITHUB_ENV
+    - name: Fetch latest capa release executable
+      uses: robinraju/release-downloader@v1
+      with:
+        repository: "fireeye/capa"
+        latest: true
+        fileName: ${{ env.zip_name }}
+    - name: Unzip
+      run: unzip ${{ env.zip_name }} -d latest-release
+    - name: Run latest release with current rules
+      run: latest-release/capa -r rules/ tests/data/9324d1a8ae37a36ae560c37448c9705a.exe_
