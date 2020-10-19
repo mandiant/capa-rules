@@ -5,6 +5,11 @@ rule:
     author: '@recvfrom'
     description: Looks for cryptographic constants associated with the Sosemanuk stream cipher
     scope: basic block
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Encrypt Data::Sosemanuk [C0027.008]
     examples:
       - ea7bb99e03606702c1cbe543bb32b27e:0x10003350
     references:

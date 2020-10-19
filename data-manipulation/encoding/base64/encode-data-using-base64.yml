@@ -4,6 +4,11 @@ rule:
     namespace: data-manipulation/encoding/base64
     author: moritz.raabe@fireeye.com
     scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]
+      - Data Manipulation::Encoding::Base64 [C0026.001]
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314889C
       - 074072B261FC27B65C72671F13510C05:0x100049B2
