@@ -4,6 +4,8 @@ rule:
     namespace: executable/pe
     author: moritz.raabe@fireeye.com
     scope: file
+    mbc:
+      - Anti-Behavioral Analysis::Execution Guardrails::Runs as Service [E1480.m07]
     examples:
       - Practical Malware Analysis Lab 03-02.dll_
   features:

@@ -4,6 +4,8 @@ rule:
     namespace: data-manipulation/hashing
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - Cryptography::Cryptographic Hash [C0029]
     examples:
       - 03B236B23B1EC37C663527C1F53AF3FE:0x18002E46B
   features:

@@ -7,6 +7,9 @@ rule:
     scope: basic block
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Encrypt Data::HC-128 [C0027.006]
     examples:
       - e69a8eb94f65480980deaf1ff5a431a6:0x405D0D
     references:

@@ -4,6 +4,8 @@ rule:
     namespace: data-manipulation/prng/mersenne
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - Cryptography::Generate Pseudo-random Sequence::Mersenne Twister [C0021.005]
     examples:
       - D9630C174B8FF5C0AA26168DF523E63E:0x41A850
   features:

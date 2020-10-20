@@ -6,6 +6,9 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Cryptography::Encrypt Data::RC4 [C0027.009]
+      - Cryptography::Generate Pseudo-random Sequence::RC4 PRGA [C0021.004]
     examples:
       - 34404A3FB9804977C6AB86CB991FB130:0x403DB0
       - 34404A3FB9804977C6AB86CB991FB130:0x403E50

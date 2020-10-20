@@ -4,6 +4,11 @@ rule:
     namespace: data-manipulation/encryption/des
     author: "@_re_fox"
     scope: basic block
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Encrypt Data::3DES [C0027.004]
     examples:
       - 91a12a4cf437589ba70b1687f5acad19:0x47F5E8
   features:

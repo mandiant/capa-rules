@@ -6,6 +6,9 @@ rule:
     scope: basic block
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]
+      - Data Manipulation::Encoding::XOR [C0026.002]
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403D7E
   features:

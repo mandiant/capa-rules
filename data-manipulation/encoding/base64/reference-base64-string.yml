@@ -4,6 +4,9 @@ rule:
     namespace: data-manipulation/encoding/base64
     author: moritz.raabe@fireeye.com
     scope: file
+    mbc:
+      - Data Manipulation::Encoding::Base64 [C0026.001]
+      - Data Manipulation::Check String [C0019]
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5
       - 074072B261FC27B65C72671F13510C05

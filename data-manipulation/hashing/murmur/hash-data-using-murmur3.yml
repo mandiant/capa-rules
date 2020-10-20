@@ -4,6 +4,8 @@ rule:
     namespace: data-manipulation/hashing/murmur
     author: william.ballenthin@fireeye.com
     scope: function
+    mbc:
+      - Data Manipulation::Non-Cryptographic Hash::MurmurHash [C0030.001]
     references:
       - https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp
     examples:
