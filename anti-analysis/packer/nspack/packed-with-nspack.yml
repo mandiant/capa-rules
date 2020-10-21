@@ -10,6 +10,8 @@ rule:
       - Anti-Static Analysis::Software Packing [F0001]
     examples:
       - 02179f3ba93663074740b5c0d283bae2
+    references:
+      - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
   features:
     - or:
       - section: .nsp0

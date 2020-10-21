@@ -12,6 +12,7 @@ rule:
       - f9ac6b16273556b3a57bf2c6d7e7db97
     references:
       - http://www.farbrausch.de/~fg/kkrunchy/
+      - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
   features:
     - or:
       - section: kkrunchy

@@ -10,6 +10,7 @@ rule:
       - Anti-Static Analysis::Software Packing::VMProtect [F0001.010]
     references:
       - https://www.pcworld.com/article/2824572/leaked-programming-manual-may-help-criminals-develop-more-atm-malware.html
+      - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
     examples:
       - 971e599e6e707349eccea2fd4c8e5f67
   features:
@@ -20,3 +21,4 @@ rule:
       - string: it's infected by a Virus or cracked. This file won't work anymore.
       - section: .vmp0
       - section: .vmp1
+      - section: .vmp2
