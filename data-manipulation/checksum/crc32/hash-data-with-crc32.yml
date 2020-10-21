@@ -5,7 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     mbc:
-      -Data Manipulation::Checksum::CRC32 [C0032.001]
+      - Data Manipulation::Checksum::CRC32 [C0032.001]
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
       - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
