@@ -10,6 +10,9 @@ rule:
       - Anti-Static Analysis::Software Packing [F0001]
     examples:
       - 068a76d4823419b376d418cf03215d5c
+    references:
+      - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
   features:
     - or:
       - section: .RLPack
+      - section: .packed

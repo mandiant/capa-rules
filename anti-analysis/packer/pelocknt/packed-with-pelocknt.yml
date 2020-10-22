@@ -10,6 +10,8 @@ rule:
       - Anti-Static Analysis::Software Packing [F0001]
     examples:
       - f0a6a1bd6d760497623611e8297a81df
+    references:
+      - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
   features:
     - or:
       - section: PELOCKnt

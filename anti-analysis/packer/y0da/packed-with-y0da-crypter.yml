@@ -10,7 +10,10 @@ rule:
       - Anti-Static Analysis::Software Packing [F0001]
     examples:
       - 0cd2b334aede270b14868db28211cde3
+    references:
+      - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
   features:
     - or:
       - section: .y0da
       - section: .y0da_1
+      - section: .yP

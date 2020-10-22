@@ -1,19 +1,17 @@
 rule:
   meta:
-    name: packed with upack
-    namespace: anti-analysis/packer/upack
-    author: "@_re_fox"
+    name: packed with TSULoader
+    namespace: anti-analysis/packer/tsuloader
+    author: william.ballenthin@fireeye.com
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
       - Anti-Static Analysis::Software Packing [F0001]
     examples:
-      - 9d98f8519d9fee8219caca5b31eef0bd
     references:
       - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
   features:
-    - and:
-      - section: .Upack
-      - section: .ByDwing
-      - string: UpackByDwing@
+    - or:
+      - section: .tsuarch
+      - section: .tsustub
