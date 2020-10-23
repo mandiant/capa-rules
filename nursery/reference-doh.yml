@@ -1,13 +1,13 @@
 rule:
   meta:
-    name: reference of DoH
+    name: references DNS over HTTPS endpoints
     namespace: communication/dns
-    author: markus.neis@swisscom.com
+    author: markus.neis@swisscom.com / @markus_neis
     scope: file
     references:
       - https://github.com/curl/curl/wiki/DNS-over-HTTPS
     examples:
-      # - 749e7becf00fccc6dff324a83976dc0d
+       - 749e7becf00fccc6dff324a83976dc0d
   features:
     - or:
       - string: /.*https://doh.seby.io:8443/dns-query.*/i
