@@ -60,3 +60,5 @@ rule:
           description: Trickbot Downloader Username Check
         - string: /WIN7\-TRAPS/i
           description: Trickbot Downloader Username Check
+        - string: /WDAGUtilityAccount/i
+          description: Windows Defender Application Guard
