@@ -19,3 +19,6 @@ rule:
       - api: SetProcessWindowStation
       - api: OpenInputDesktop
       - api: SetThreadDesktop
+      - optional:
+        - string: "Default"
+          description: default desktop name
