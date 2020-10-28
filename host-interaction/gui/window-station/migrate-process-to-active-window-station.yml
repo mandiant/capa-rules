@@ -13,7 +13,9 @@ rule:
   features:
     - and:
       - api: OpenWindowStation
-      - string: "winsta0"
+      - or:
+        - string: "winsta0"
+        - string: "WinSta0"
       - api: SetProcessWindowStation
       - api: OpenInputDesktop
       - api: SetThreadDesktop
