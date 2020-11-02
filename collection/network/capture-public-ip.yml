@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: capture public ip
+    namespace: collection/network
+    author: "@_re_fox"
+    scope: function
+    att&ck:
+      - Discovery::System Network Configuration Discovery [T1016]
+    examples:
+      - 84f1b049fa8962b215a77f51af6714b3:0x100061e5
+  features:
+    - and:
+      - api: InternetOpen
+      - api: InternetOpenUrl
+      - api: InternetReadFile
+      - or:
+          - string: /bot\.whatismyipaddress.com/
+          - string: /ipinfo.io\/ip/
+          - string: /checkip\.dyndns\.org/
+          - string: /ifconfig\.me/
+          - string: /ipecho\.net\/plain/
+          - string: /api\.ipify\.org/
+          - string: /checkip\.amazonaws\.com/
+          - string: /icanhazip\.com/
+          - string: /wtfismyip\.com/text/
