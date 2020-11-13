@@ -10,9 +10,14 @@ rule:
       - Cryptography::Cryptographic Hash [C0029]
   features:
     - and:
-      - api: BCryptHashData
+      - or:
+        - api: BCryptHash
+        - and:
+          - api: BCryptHashData
+          - optional:
+            - api: BCryptFinishHash
+            - api: BCryptDestroyHash
+            - api: BCryptCreateHash
       - optional:
-        - api: BCryptFinishHash
-        - api: BCryptDestroyHash
         - api: BCryptOpenAlgorithmProvider
-        - api: BCryptCreateHash
+        - api: BCryptCloseAlgorithmProvider
