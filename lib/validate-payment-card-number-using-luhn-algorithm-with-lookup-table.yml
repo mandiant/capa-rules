@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: validate credit card number using luhn algorithm with lookup table
+    name: validate payment card number using luhn algorithm with lookup table
     lib: true
     author: "@_re_fox"
     scope: function

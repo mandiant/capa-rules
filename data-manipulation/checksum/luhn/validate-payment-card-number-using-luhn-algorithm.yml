@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: validate credit card number using luhn algorithm
+    name: validate payment card number using luhn algorithm
     namespace: data-manipulation/checksum/luhn
     author: "@_re_fox"
     scope: function
@@ -11,5 +11,5 @@ rule:
       - 6fcc13563aad936c7d0f3165351cb453:0x4026C0
   features:
     - or:
-      - match: validate credit card number using luhn algorithm with no lookup table
-      - match: validate credit card number using luhn algorithm with lookup table
+      - match: validate payment card number using luhn algorithm with no lookup table
+      - match: validate payment card number using luhn algorithm with lookup table
