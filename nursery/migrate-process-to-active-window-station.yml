@@ -5,7 +5,6 @@ rule:
     author: william.ballenthin@fireeye.com
     description: set process to the active window station so it can receive GUI events. commonly seen in keyloggers.
     scope: function
-    examples:
     references:
       - https://www.installsetupconfig.com/win32programming/windowstationsdesktops13_1.html
       - https://brianbondy.com/blog/100/understanding-windows-at-a-deeper-level-sessions-window-stations-and-desktops
