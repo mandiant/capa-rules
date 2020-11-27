@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: contains CPP file path
+    namespace: executable/pe/cppfiles
+    author: Ialle Teixeira
+    scope: file
+    examples:
+      - 83A761B12295B06047BE6CA13A142E2B944F7394D6BAEC64956612DC1CE64461 # WerFault.exe
+  features:
+    - string: /\\.*\.cpp/
