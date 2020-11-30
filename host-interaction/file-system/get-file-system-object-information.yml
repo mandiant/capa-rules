@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: get file system object information
+    namespace: host-interaction/file-system
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+    examples:
+      - 50D5EE1CE2CA5E30C6B1019EE64EEEC2:0x403538
+  features:
+    - or:
+      - api: SHGetFileInfo

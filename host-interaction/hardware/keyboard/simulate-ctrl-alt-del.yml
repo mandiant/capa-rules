@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: simulate CTRL ALT DEL
+    namespace: host-interaction/hardware/keyboard
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    examples:
+      - 50D5EE1CE2CA5E30C6B1019EE64EEEC2:0x407C27
+  features:
+    - and:
+      - optional:
+        - basic block:
+          - and:
+            - or:
+              - api: OpenDesktop
+              - api: OpenInputDesktop
+            - string: Winlogon
+      - basic block:
+        - and:
+          - api: PostMessage
+          - number: 0x2E0003 = (MOD_ALT | MOD_CONTROL | VK_DELETE)
+          - number: 0x312 = WM_HOTKEY
+          - number: 0xFFFF = HWND_BROADCAST
