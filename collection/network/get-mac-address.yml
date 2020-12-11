@@ -1,7 +1,7 @@
 rule:
   meta:
     name: get MAC address
-    namespace: collection/network/mac-address
+    namespace: collection/network
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
