@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Asynchronous Procedure Call [T1055.004]
+    examples:
+      - al-khaser_x64.exe_:0x140019348
   features:
     - and:
       - or:
@@ -19,5 +21,6 @@ rule:
         - api: ntdll.NtQueueApcThread
       - optional:
         - or:
+          - number: 0x1fffff = THREAD_ALL_ACCESS
           - api: kernel32.CreateProcess
           - api: kernel32.OpenProcess
