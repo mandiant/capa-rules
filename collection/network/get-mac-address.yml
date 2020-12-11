@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]
+    examples:
+      - al-khaser_x64.exe_:0x14001A1BC
   features:
     - and:
       - api: iphlpapi.GetAdaptersInfo
