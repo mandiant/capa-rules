@@ -5,7 +5,7 @@ rule:
     author: matthew.williams@fireeye.com
     scope: function
     mbc:
-        - Data Manipulation::Decompress Data::IEncodingFilterFactory [C0025.002]
+        - Data::Decompress Data::IEncodingFilterFactory [C0025.002]
     references:
       - https://www.virusbulletin.com/virusbulletin/2012/09/urlzone-reloaded-new-evolution/
     examples:

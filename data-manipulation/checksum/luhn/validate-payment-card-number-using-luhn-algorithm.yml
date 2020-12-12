@@ -5,7 +5,7 @@ rule:
     author: "@_re_fox"
     scope: function
     mbc:
-      - Data Manipulation::Checksum::Luhn [C0032.002]
+      - Data::Checksum::Luhn [C0032.002]
     examples:
       - 1d8fd13c890060464019c0f07b928b1a:0x401920
       - 6fcc13563aad936c7d0f3165351cb453:0x4026C0

@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Collection::Archive Collected Data::Archive via Library [T1560.002]
     mbc:
-      - Data Manipulation::Compress Data [C0024]
+      - Data::Compress Data [C0024]
     examples:
       - 638dcc3d37b3a574044233c9637d7288:0x401020
   features:
