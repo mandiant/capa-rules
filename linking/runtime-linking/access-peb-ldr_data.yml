@@ -3,7 +3,7 @@ rule:
     name: access PEB ldr_data
     namespace: linking/runtime-linking
     author: moritz.raabe@fireeye.com
-    scope: function
+    scope: basic block
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:
