@@ -9,14 +9,17 @@ rule:
     examples:
       - ad4229879180e267f431ac6666b6a0a2:0x14007B4D4
   features:
-    - or:
-      - and:
-        - characteristic: loop
+    - and:
+      - characteristic: loop
+      - or:
         - number/x64: 0xcbf29ce484222325 = FNV_offset_basis
-        - basic block:
-          - and:
+        - number/x32: 0x811c9dc5 = FNV_offset_basis
+      - basic block:
+        - and:
+          - characteristic: nzxor
+          - or:
             - number/x64: 0x100000001b3 = FNV prime
-            - characteristic: nzxor
-            - or:
-              - mnemonic: imul
-              - mnemonic: mul
+            - number/x32: 0x01000193 = FNV prime
+          - or:
+            - mnemonic: imul
+            - mnemonic: mul
