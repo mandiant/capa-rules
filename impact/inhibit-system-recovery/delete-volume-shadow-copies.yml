@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Impact::Inhibit System Recovery [T1490]
+    mbc:
+      - Impact::Disk Content Wipe::Delete Shadow Drive [F0014.001]
     examples:
       - B87E9DD18A5533A09D3E48A7A1EFBCF6:0x140006AF0
   features:
