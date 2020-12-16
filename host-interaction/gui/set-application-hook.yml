@@ -4,12 +4,6 @@ rule:
     namespace: host-interaction/gui
     author: michael.hunhoff@fireeye.com
     scope: function
-    mbc:
-      - Collection::Hooking [F0003]
-      - Credential Access::Hooking [F0003]
-      - Defense Evasion::Hooking [F0003]
-      - Persistence::Hooking [F0003]
-      - Privilege Escalation::Hooking [F0003]
     examples:
       - Practical Malware Analysis Lab 12-03.exe_:0x401000
   features:
