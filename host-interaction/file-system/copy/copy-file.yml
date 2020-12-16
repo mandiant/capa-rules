@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/copy
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - File System::Copy File [C0045]
     examples:
       - Practical Malware Analysis Lab 01-01.exe_:0x401440
   features:

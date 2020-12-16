@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/process/terminate
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - Process::Terminate Process [C0018]
     examples:
       - C91887D861D9BD4A5872249B641BC9F9:0x401A77
   features:

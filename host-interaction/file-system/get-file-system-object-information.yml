@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system
     author: michael.hunhoff@fireeye.com
     scope: basic block
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
     examples:
       - 50D5EE1CE2CA5E30C6B1019EE64EEEC2:0x403538
   features:

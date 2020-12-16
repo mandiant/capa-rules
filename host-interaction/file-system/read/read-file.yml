@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/read
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - File System::Read File [C0051]
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314567B
   features:

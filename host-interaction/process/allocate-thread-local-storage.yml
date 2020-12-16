@@ -4,6 +4,11 @@ rule:
     namespace: host-interaction/process
     author: michael.hunhoff@fireeye.com
     scope: function
+    att&ck:
+      - Privilege Escalation::Process Injection::Thread Local Storage [1055.005]
+      - Defense Evasion::Process Injection::Thread Local Storage [1055.005]
+    mbc:
+      - Process::Allocate Thread Local Storage [C0040]
     examples:
       - 03B236B23B1EC37C663527C1F53AF3FE:0x18000ADF6
   features:

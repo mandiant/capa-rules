@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/mutex
     author: moritz.raabem@fireeye.com
     scope: basic block
+    mbc:
+      - Process::Check Mutex [C0043]
     examples:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:

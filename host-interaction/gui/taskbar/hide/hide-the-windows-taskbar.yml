@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/gui/taskbar/hide
     author: michael.hunhoff@fireeye.com
     scope: function
+    att&ck:
+      - Defense Evasion::Hide Artifacts [T1564]
     examples:
       - 39C05B15E9834AC93F206BC114D0A00C357C888DB567BA8F5345DA0529CBED41:0x10007250
   features:

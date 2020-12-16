@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/process/create
     author: william.ballenthin@fireeye.com
     scope: basic block
+    mbc:
+      - Process::Create Process::Create Suspended Process [C0017.003]
     examples:
       - Practical Malware Analysis Lab 03-03.exe_:0x4010EA
   features:

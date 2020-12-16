@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/windows-file-protection
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - Defense Evasion::Disable Security Tools::Bypass Windows File Protection [F0004.007]
     examples:
       - Practical Malware Analysis Lab 01-04.exe_:0x401174
   features:

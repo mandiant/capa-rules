@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/create
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - File System::Create Directory [C0046]
     examples:
       - Practical Malware Analysis Lab 17-02.dll_:0x10008f62
   features:

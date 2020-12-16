@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/process/terminate
     author: "@_re_fox"
     scope: basic block
+    mbc:
+      - Process::Terminate Process [C0018]
     references:
       - https://docs.microsoft.com/en-us/cpp/intrinsics/fastfail?view=vs-2019
     examples:
