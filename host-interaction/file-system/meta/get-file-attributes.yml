@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/meta
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - File System::Get File Attributes [C0049]
     examples:
       - 03B236B23B1EC37C663527C1F53AF3FE:0x180019824
   features:

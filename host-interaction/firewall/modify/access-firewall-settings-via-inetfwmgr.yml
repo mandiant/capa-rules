@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/firewall/modify
     author: moritz.raabe@fireeye.com
     scope: function
+    att&ck:
+      - Discovery::Software Discovery::Security Software Discovery [T1518.001]
     examples:
       - EB355BD63BDDCE02955792B4CD6539FB:0x10003927
   features:

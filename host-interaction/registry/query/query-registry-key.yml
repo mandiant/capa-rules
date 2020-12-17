@@ -6,6 +6,8 @@ rule:
     scope: function
     att&ck:
       - Discovery::Query Registry [T1012]
+    mbc:
+      - Operating System::Registry::Query Registry Key [C0036.005]
     examples:
       - 493167E85E45363D09495D0841C30648:0x404930
   features:

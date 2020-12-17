@@ -6,6 +6,8 @@ rule:
       - michael.hunhoff@fireeye.com
       - "@_re_fox"
     scope: function
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
     examples:
       - Practical Malware Analysis Lab 14-02.exe_:0x401880
       - 0761142efbda6c4b1e801223de723578:0x65483490

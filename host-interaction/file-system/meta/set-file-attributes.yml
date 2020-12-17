@@ -4,6 +4,10 @@ rule:
     namespace: host-interaction/file-system/meta
     author: moritz.raabe@fireeye.com
     scope: function
+    att&ck:
+      - Defense Evasion::File and Directory Permissions Modification [T1222]
+    mbc:
+      - File System::Set File Attributes [C0050]
     examples:
       - 946A99F36A46D335DEC080D9A4371940:0x100015f0
   features:

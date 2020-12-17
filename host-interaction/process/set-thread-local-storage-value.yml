@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/process
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - Process::Set Thread Local Storage Value [C0041]
     examples:
       - 03B236B23B1EC37C663527C1F53AF3FE:0x18000AE21
   features:

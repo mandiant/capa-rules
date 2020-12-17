@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/cli
     author: "@_re_fox"
     scope: basic block
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
     examples:
       - 31600ad0d1a7ea615690df111ae36c73:0x4016B8
   features:

@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/environment-variable
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - Operating System::Environment Variable::Set Variable [C0034.001]
     examples:
       - Practical Malware Analysis Lab 11-03.exe_:0x406580
   features:
