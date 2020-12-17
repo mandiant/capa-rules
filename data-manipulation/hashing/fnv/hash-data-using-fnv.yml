@@ -16,11 +16,11 @@ rule:
   features:
     - and:
       - characteristic: loop
-      - or:
+      - optional:
         # FNV-0 hash does not use these initialization values
         - number/x64: 0xcbf29ce484222325 = FNV_offset_basis
         - number/x32: 0x811c9dc5 = FNV_offset_basis
-      - optional:
+      - or:
         - number/x64: 0x100000001b3 = FNV prime
         - number/x32: 0x01000193 = FNV prime
       - basic block:
