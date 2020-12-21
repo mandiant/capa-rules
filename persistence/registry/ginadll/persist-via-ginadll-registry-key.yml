@@ -9,11 +9,13 @@ rule:
     examples:
       - Practical Malware Analysis Lab 11-01.exe_:0x401000
   features:
-    - and:
-      - or:
+    - or:
+      - and:
         - or:
           - match: set registry value
-        - or:
           - number: 0x80000002 = HKEY_LOCAL_MACHINE
-      - string: /SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
-      - string: GinaDLL
+        - string: /SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
+        - string: /GinaDLL/i
+      - and:
+        - match: create process
+        - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GinaDLL/i

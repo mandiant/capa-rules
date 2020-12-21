@@ -9,20 +9,35 @@ rule:
     examples:
       - Practical Malware Analysis Lab 06-03.exe_:0x401130
       - b87e9dd18a5533a09d3e48a7a1efbcf6:0x1400070E0
+      - 4729a6b153dfa2ad96bbae68aa2a7cc0b21174013ace970386afb5a087951481:0x470624
   features:
     - or:
       - and:
         - or:
-          - or:
-            - api: advapi32.RegOpenKey
-            - api: advapi32.RegOpenKeyEx
-          - or:
-            - api: advapi32.RegSetValue
-            - api: advapi32.RegSetValueEx
-          - or:
-            - number: 0x80000001 = HKEY_CURRENT_USER
-            - number: 0x80000002 = HKEY_LOCAL_MACHINE
-        - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Run/i
+          - match: set registry value
+          - number: 0x80000001 = HKEY_CURRENT_USER
+          - number: 0x80000002 = HKEY_LOCAL_MACHINE
+        - or:
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Run/i
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce/i
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx/i
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders/i
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders/i
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion\\RunServices/i
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce/i
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run/i
+          - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\load/i
+          - string: /System\\CurrentControlSet\\Control\\Session Manager\\BootExecute/i
       - and:
         - match: create process
-        - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\Run/i
+        - or:
+          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\Run/i
+          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce/i
+          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx/i
+          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders/i
+          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders/i
+          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\RunServices/i
+          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce/i
+          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run/i
+          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\load/i
+          - string: /REG ADD[\s\"\\a-z_]{5,20}System\\CurrentControlSet\\Control\\Session Manager\\BootExecute/i
