@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Winlogon Helper DLL [T1547.004]
     examples:
-      - 4729a6b153dfa2ad96bbae68aa2a7cc0b21174013ace970386afb5a087951481:0x47f818
+      - 9ff8e68343cc29c1036650fc153e69f7:0x47f818
   features:
     - or:
       - and:
