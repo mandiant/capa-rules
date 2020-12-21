@@ -5,7 +5,7 @@ rule:
     author: 0x534a@mailbox.org
     scope: function
     att&ck:
-      - Persistence/Scheduled Task/Job/Scheduled Task [T1053.005]
+      - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
     examples:
       - 79cde1aa711e321b4939805d27e160be:0x401440
   features:
