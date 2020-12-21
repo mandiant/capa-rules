@@ -23,3 +23,4 @@ rule:
           - string: /checkip\.amazonaws\.com/
           - string: /icanhazip\.com/
           - string: /wtfismyip\.com/text/
+          - string: /api\.myip\.com/
