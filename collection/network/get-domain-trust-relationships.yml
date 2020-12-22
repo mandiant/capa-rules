@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: Get domain trust relationships 
+    name: get domain trust relationships 
     namespace: collection/network
     author: johnk3r
     scope: function
