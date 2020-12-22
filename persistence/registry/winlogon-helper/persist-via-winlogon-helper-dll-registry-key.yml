@@ -22,7 +22,9 @@ rule:
           - string: /Shell/i
       - and:
         - match: create process
+        - string: /reg(|.exe) add /i
+        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
         - or:
-          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Notify/i
-          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit/i
-          - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell/i
+          - string: /Notify/i
+          - string: /Userinit/i
+          - string: /Shell/i

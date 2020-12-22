@@ -18,4 +18,6 @@ rule:
         - string: /GinaDLL/i
       - and:
         - match: create process
-        - string: /REG ADD[\s\"\\a-z_]{5,20}Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GinaDLL/i
+        - string: /reg(|.exe) add /i
+        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
+        - string: /GinaDLL/i
