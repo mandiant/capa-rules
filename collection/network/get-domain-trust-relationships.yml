@@ -12,10 +12,9 @@ rule:
   features:
     - or:
       - and:
-        - string: /nltest.*/i
-      - or:
-        - string: //domain_trusts/i
-        - string: //dclist/i
-        - string: //all_trusts/i      
-      - or:
-        - api: DsEnumerateDomainTrusts
+        - string: /nltest/i
+        - or:
+          - string: /\/domain_trusts/i
+          - string: /\/dclist/i
+          - string: /\/all_trusts/i
+      - api: DsEnumerateDomainTrusts
