@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: Detect Domain Trust Discovery 
+    name: Get domain trust relationships 
     namespace: collection/network
     author: johnk3r
     scope: function
@@ -11,5 +11,11 @@ rule:
       - 0731679c5f99e8ee65d8b29a3cabfc6b:0x40408E
   features:
     - or:
-      - api: DsEnumerateDomainTrusts
-      - string: /nltest.exe/i
+      - and:
+        - string: /nltest.*/i
+      - or:
+        - string: //domain_trusts/i
+        - string: //dclist/i
+        - string: //all_trusts/i      
+      - or:
+        - api: DsEnumerateDomainTrusts
