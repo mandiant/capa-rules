@@ -14,5 +14,5 @@ rule:
         - or:
           - and:
             - string: /schtasks/i
-            - string: //create /i
+            - string: /\/create /i
           - string: /Register-ScheduledTask /i
