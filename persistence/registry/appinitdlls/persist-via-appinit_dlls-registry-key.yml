@@ -9,19 +9,11 @@ rule:
     examples:
       - Practical Malware Analysis Lab 11-02.dll_:0x1000158b
   features:
-    - or:
-      - and:
-        - or:
-          - match: set registry value
-          - number: 0x80000002 = HKEY_LOCAL_MACHINE
-        - or:
-          - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
-          - string: /Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
-        - string: /AppInit_DLLs/i
-      - and:
-        - match: create process
-        - string: /reg(|.exe) add /i
-        - or:
-          - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
-          - string: /Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
-        - string: /AppInit_DLLs/i
+    - and:
+      - or:
+        - match: set registry value
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
+      - or:
+        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
+        - string: /Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
+      - string: /AppInit_DLLs/i

@@ -9,22 +9,13 @@ rule:
     examples:
       - 9ff8e68343cc29c1036650fc153e69f7:0x47f818
   features:
-    - or:
-      - and:
-        - or:
-          - match: set registry value
-          - number: 0x80000001 = HKEY_CURRENT_USER
-          - number: 0x80000002 = HKEY_LOCAL_MACHINE
-        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
-        - or:
-          - string: /Notify/i
-          - string: /Userinit/i
-          - string: /Shell/i
-      - and:
-        - match: create process
-        - string: /reg(|.exe) add /i
-        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
-        - or:
-          - string: /Notify/i
-          - string: /Userinit/i
-          - string: /Shell/i
+    - and:
+      - or:
+        - match: set registry value
+        - number: 0x80000001 = HKEY_CURRENT_USER
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
+      - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
+      - or:
+        - string: /Notify/i
+        - string: /Userinit/i
+        - string: /Shell/i

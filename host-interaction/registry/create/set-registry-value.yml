@@ -9,10 +9,14 @@ rule:
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x13147AF0
   features:
-    - and:
-      - or:
-        - match: create registry key
-        - match: open registry key
-      - or:
-        - api: advapi32.RegSetValue
-        - api: advapi32.RegSetValueEx
+    - or:
+      - and:
+        - or:
+          - match: create registry key
+          - match: open registry key
+        - or:
+          - api: advapi32.RegSetValue
+          - api: advapi32.RegSetValueEx
+      - and:
+        - match: create process
+        - string: /reg(|.exe) add /i
