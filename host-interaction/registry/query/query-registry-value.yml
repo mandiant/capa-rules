@@ -2,7 +2,9 @@ rule:
   meta:
     name: query registry value
     namespace: host-interaction/registry/query
-    author: william.ballenthin@fireeye.com
+    author:
+      - william.ballenthin@fireeye.com
+      - michael.hunhoff@fireeye.com
     scope: function
     att&ck:
       - Discovery::Query Registry [T1012]
@@ -18,6 +20,27 @@ rule:
           - match: create registry key
           - match: open registry key
       - or:
+        - api: advapi32.RegGetValue
+        - api: advapi32.RegEnumValue
         - api: advapi32.RegQueryValue
         - api: advapi32.RegQueryValueEx
+        - api: advapi32.RegQueryMultipleValues
+        - api: ZwQueryValueKey
         - api: ZwEnumerateValueKey
+        - api: NtQueryValueKey
+        - api: NtEnumerateValueKey
+        - api: RtlQueryRegistryValues
+        - api: SHGetValue
+        - api: SHEnumValue
+        - api: SHRegGetInt
+        - api: SHRegGetPath
+        - api: SHRegGetValue
+        - api: SHQueryValueEx
+        - api: SHRegGetUSValue
+        - api: SHOpenRegStream
+        - api: SHRegEnumUSValue
+        - api: SHOpenRegStream2
+        - api: SHRegQueryUSValue
+        - api: SHRegGetBoolUSValue
+        - api: SHRegGetValueFromHKCUHKLM
+        - api: SHRegGetBoolValueFromHKCUHKLM

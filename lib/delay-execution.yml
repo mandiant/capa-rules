@@ -3,23 +3,26 @@ rule:
     name: delay execution
     author: michael.hunhoff@fireeye.com
     lib: true
-    scope: function
+    scope: basic block
     references:
       - https://docs.microsoft.com/en-us/windows/win32/sync/wait-functions
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/TimingAttacks/timing.cpp
     examples:
       - al-khaser_x86.exe_:0x449770
+      - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x402FA6
   features:
     - or:
       - api: kernel32.Sleep
       - api: kernel32.SleepEx
-      - api: NtDelayExecution
-      - api: WaitOnAddress
       - api: kernel32.WaitForSingleObject
+      - api: kernel32.SignalObjectAndWait
       - api: kernel32.WaitForSingleObjectEx
       - api: kernel32.WaitForMultipleObjects
       - api: kernel32.WaitForMultipleObjectsEx
-      - api: kernel32.SignalObjectAndWait
+      - api: kernel32.RegisterWaitForSingleObject
+      - api: WaitOnAddress
       - api: user32.MsgWaitForMultipleObjects
       - api: user32.MsgWaitForMultipleObjectsEx
-      - api: kernel32.RegisterWaitForSingleObject
+      - api: NtDelayExecution
+      - api: KeWaitForSingleObject
+      - api: KeDelayExecutionThread

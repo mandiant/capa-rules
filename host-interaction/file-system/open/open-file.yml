@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: open file
+    namespace: host-interaction/file-system/open
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+    examples:
+      - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x401D7E
+  features:
+    - or:
+      - api: CreateFile
+      - api: CreateFileEx
+      - api: IoCreateFile
+      - api: IoCreateFileEx
+      - api: ZwOpenFile
+      - api: ZwCreateFile
+      - api: NtOpenFile
+      - api: NtCreateFile

@@ -3,14 +3,21 @@ rule:
     name: create registry key
     namespace: host-interaction/registry/create
     author: michael.hunhoff@fireeye.com
-    scope: function
+    scope: basic block
     mbc:
       - Operating System::Registry::Create Registry Key [C0036.004]
     examples:
       - Practical Malware Analysis Lab 03-02.dll_:0x10004706
       - Practical Malware Analysis Lab 11-01.exe_:0x401000
+      - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4045F2
+      - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x40433E
   features:
     - or:
       - api: advapi32.RegCreateKey
       - api: advapi32.RegCreateKeyEx
       - api: advapi32.RegCreateKeyTransacted
+      - api: RtlCreateRegistryKey
+      - api: ZwCreateKey
+      - api: ZwCreateKeyTransacted
+      - api: NtCreateKey
+      - api: SHRegCreateUSKey

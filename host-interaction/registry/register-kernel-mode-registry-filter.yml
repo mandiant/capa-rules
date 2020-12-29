@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: register kernel-mode registry filter
+    namespace: host-interaction/registry
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+    references:
+      - https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function
+    examples:
+      - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x407160
+  features:
+    - and:
+      - api: CmRegisterCallbackEx
