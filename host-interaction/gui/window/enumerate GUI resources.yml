@@ -1,7 +1,7 @@
 rule:
   meta:
     name: enumerate GUI resources
-    namespace: host-interaction/gui/window
+    namespace: host-interaction/gui
     author: johnk3r
     scope: function
     att&ck:
