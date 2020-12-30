@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get enumeration functions
+    name: enumerate GUI resources
     namespace: host-interaction/gui/window
     author: johnk3r
     scope: function
