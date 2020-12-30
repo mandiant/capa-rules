@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: enumerate GUI resources
+    name: enumerate gui resources
     namespace: host-interaction/gui
     author: johnk3r
     scope: function
