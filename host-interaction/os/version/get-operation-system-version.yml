@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: get operation system version
+    namespace: host-interaction/os/version
+    author: johnk3r
+    scope: function
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+    examples:
+      - f4584aed97469c461826ea17ca9b3c1d:0x40589F
+  features:
+    - or:
+      - api: VerifyVersionInfo
+      - api: VerSetConditionMask
