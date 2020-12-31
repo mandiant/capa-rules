@@ -2,7 +2,7 @@ rule:
   meta:
     name: enumerate gui resources
     namespace: host-interaction/gui
-    author: johnk3r
+    author: johnk3
     scope: function
     att&ck:
       - Discovery::Application Windows Discovery [T1010]
