@@ -6,7 +6,7 @@ rule:
       description: detects the inner decompression loop from QuickLZ
       scope: function
       mbc:
-        - Data Manipulation::Decompress Data::QuickLZ [C0025.001]
+        - Data::Decompress Data::QuickLZ [C0025.001]
       examples:
         - 64d9f7d96b99467f36e22fada623c3bb:0x10001510
         - 234c8034e88b2d097d2da51a85253825:0x100015B0

@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: enumerate files recursively
+    namespace: host-interaction/file-system/files/list
+    author: "@_re_fox"
+    scope: function
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
+    examples:
+      - 5f66b82558ca92e54e77f216ef4c066c:0x40640E
+  features:
+    - and:
+      - or:
+        - match: enumerate files via kernel32 functions
+        - match: enumerate files via ntdll functions
+      - characteristic: recursive call

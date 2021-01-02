@@ -14,7 +14,7 @@ rule:
       - al-khaser_x86.exe_
   features:
     - or:
-      - string: /Xen/i
+      - string: /^Xen/i
       - string: /XenVMMXenVMM/i
       - string: /xenservice.exe/i
       - string: /XenVMMXenVMM/i

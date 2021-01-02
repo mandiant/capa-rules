@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/console
     author: william.ballenthin@fireeye.com
     scope: function
+    mbc:
+      - Operating System::Console [C0033]
     references:
       - https://stackoverflow.com/a/15770935/87207
     examples:

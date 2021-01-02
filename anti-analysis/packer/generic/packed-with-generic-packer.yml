@@ -19,3 +19,5 @@ rule:
         - mnemonic: popa
         - mnemonic: popad  # vivisect
       - characteristic: cross section flow
+      - not:
+        - match: contain pusha popa sequence

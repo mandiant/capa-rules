@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/gui/session
     author: "@_re_fox"
     scope: basic block
+    mbc:
+      - Operating System::Wallpaper [C0035]
     examples:
       - 5dd0b130d5c3d40c69e3972f39fd7d62:0x45AC6F
   features:

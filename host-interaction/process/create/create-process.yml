@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/process/create
     author: moritz.raabe@fireeye.com
     scope: basic block
+    mbc:
+      - Process::Create Process [C0017]
     examples:
       - 9324D1A8AE37A36AE560C37448C9705A:0x406DB0
       - Practical Malware Analysis Lab 01-04.exe_:0x4011FC

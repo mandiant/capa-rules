@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/process/create
     author: matthew.williams@fireeye.com
     scope: function
+    mbc:
+      - Process::Create Process [C0017]
     references:
       - https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa
     examples:

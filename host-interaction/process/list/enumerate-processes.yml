@@ -12,9 +12,11 @@ rule:
       - 35d04ecd797041eee796f4ddaa96cae8:0x10004F34
   features:
     - and:
-      - or:
-        - number: 0xF = TH32CS_SNAPALL
-        - number: 0x2 = TH32CS_SNAPPROCESS
-      - api: kernel32.CreateToolhelp32Snapshot
       - api: kernel32.Process32First
       - api: kernel32.Process32Next
+      - optional:
+        - and:
+          - or:
+            - number: 0xF = TH32CS_SNAPALL
+            - number: 0x2 = TH32CS_SNAPPROCESS
+          - api: kernel32.CreateToolhelp32Snapshot

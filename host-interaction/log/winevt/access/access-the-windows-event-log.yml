@@ -4,6 +4,10 @@ rule:
     namespace: host-interaction/log/winevt/access
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - Discovery::File and Directory Discovery::Log File [E1083.m01]
+    examples:
+      - mimikatz.exe_:0x45228B
   features:
     - or:
       - api: OpenEventLog

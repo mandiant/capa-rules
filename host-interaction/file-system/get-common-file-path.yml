@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system
     author: moritz.raabe@fireeye.com
     scope: function
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
     examples:
       - Practical Malware Analysis Lab 03-02.dll_:0x10003415
       - 972B219F18379907A045431303F4DA7D:0x404887

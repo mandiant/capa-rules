@@ -18,5 +18,6 @@ rule:
       - mnemonic: smsw
       - mnemonic: str
       - mnemonic: in
-      - mnemonic: cpuid
+      # many misleading hits in runtime code, see #194
+      # - mnemonic: cpuid
       - mnemonic: vpcext

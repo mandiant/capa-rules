@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/clipboard
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - Impact::Clipboard Modification [E1510]
     examples:
       - 6F99A2C8944CB02FF28C6F9CED59B161:0x403180
   features:
