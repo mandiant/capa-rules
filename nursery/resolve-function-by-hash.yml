@@ -5,7 +5,7 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: function
     att&ck:
-      - Execution::Shared Modules [T1129]
+      - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     examples:
     references:
       - https://www.fireeye.com/blog/threat-research/2012/11/precalculated-string-hashes-reverse-engineering-shellcode.html

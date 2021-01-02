@@ -4,8 +4,6 @@ rule:
     namespace: c2/file-transfer
     author: moritz.raabe@fireeye.com
     scope: function
-    att&ck:
-      - Command and Control::Ingress Tool Transfer [T1105]
     mbc:
       - Execution::Install Additional Program [B0023]
     examples:

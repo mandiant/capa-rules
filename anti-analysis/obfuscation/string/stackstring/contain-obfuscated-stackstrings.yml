@@ -5,7 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: basic block
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027]
+      - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     mbc:
       - Anti-Static Analysis::Disassembler Evasion::Argument Obfuscation [B0012.001]
     examples:

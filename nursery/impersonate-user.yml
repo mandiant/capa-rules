@@ -3,6 +3,8 @@ rule:
     name: impersonate user
     namespace: host-interaction/user
     author: michael.hunhoff@fireeye.com
+    att&ck:
+      - Privilege Escalation::Access Token Manipulation::Token Impersonation/Theft [T1134.001]
     scope: function
   features:
     - or:
