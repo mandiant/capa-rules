@@ -11,9 +11,9 @@ rule:
   features:
     - and:
       - or:
-        - or:
-          - match: set registry value
-        - or:
-          - number: 0x80000002 = HKEY_LOCAL_MACHINE
-      - string: /SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
-      - string: AppInit_DLLs
+        - match: set registry value
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
+      - or:
+        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
+        - string: /Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
+      - string: /AppInit_DLLs/i

@@ -5,7 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
-      - Persistence/Scheduled Task/Job/Scheduled Task [T1053.005]
+      - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
     examples:
       - 2B8BEC5BCB1777EAA155D832F7AFC797:0x405887
   features:
