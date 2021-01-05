@@ -24,15 +24,28 @@ jobs:
       with:
         repository: fireeye/capa-testfiles
         path: tests/data
-    - name: Set up Python 3.8
+    - name: Set up Python 2.7
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
-    # We don't need vivisect, so we can install capa using Python3
+        python-version: 2.7
     - name: Install capa
       run: pip install -e .
-    - name: Run rule linter
+    # Regular lint is fast, so do this first
+    - name: Run regular lint on all rules
       run: python scripts/lint.py rules/
+    # Then run thorough lint
+    - name: Get modified files
+      id: files
+      uses: jitterbit/get-changed-files@v1
+    - name: Run thorough lint on modified rule files
+      run: |
+        cd rules/
+        for changed_file in ${{ steps.files.outputs.added_modified }}; do
+          if [[ ! $changed_file =~ ".git" ]]; then
+            tag=$(grep 'name:' $changed_file | sed 's/^.*: //')
+            python ../scripts/lint.py --thorough -t "$tag" -v .
+          fi
+        done
   # Ensure that new rules are compatible with latest release
   rules_latest_release:
     runs-on: ubuntu-latest
