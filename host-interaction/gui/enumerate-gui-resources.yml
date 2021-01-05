@@ -5,7 +5,7 @@ rule:
     author: johnk3r
     scope: function
     att&ck:
-      - Discovery::Application Windows Discovery [T1010]
+      - Discovery::Application Window Discovery [T1010]
     examples:
       - 5e6764534b3a1e4d3abacc4810b6985d:0x4011C0
       - a74ee8200aace7d19dee79871bbf2ed3:0x403750
