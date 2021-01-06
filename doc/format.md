@@ -131,6 +131,7 @@ like the ATT&CK list.
   - `examples` is a *required* list of references to samples that the rule should match.
 The linter verifies that each rule correctly fires on each sample referenced in a rule's `examples` list.
 These example files are stored in the [github.com/fireeye/capa-testfiles](https://github.com/fireeye/capa-testfiles) repository.
+`function` and `basic block` scope rules must contain offsets to the respective match locations using the format `<sample name>:<function or basic block offset>`.
 
   - `references` lists related information found in a book, article, blog post, etc.
 
