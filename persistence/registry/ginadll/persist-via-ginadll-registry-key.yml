@@ -11,9 +11,7 @@ rule:
   features:
     - and:
       - or:
-        - or:
-          - match: set registry value
-        - or:
-          - number: 0x80000002 = HKEY_LOCAL_MACHINE
+        - match: set registry value
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
       - string: /SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
-      - string: GinaDLL
+      - string: /GinaDLL/i

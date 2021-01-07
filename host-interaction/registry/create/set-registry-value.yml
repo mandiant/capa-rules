@@ -13,18 +13,22 @@ rule:
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x40433E
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x40415E
   features:
-    - and:
-      - optional:
-        - match: create or open registry key
-      - or:
-        - api: advapi32.RegSetValue
-        - api: advapi32.RegSetValueEx
-        - api: advapi32.RegSetKeyValue
-        - api: ZwSetValueKey
-        - api: NtSetValueKey
-        - api: RtlWriteRegistryValue
-        - api: SHSetValue
-        - api: SHRegSetPath
-        - api: SHRegSetValue
-        - api: SHRegSetUSValue
-        - api: SHRegWriteUSValue
+    - or:
+      - and:
+        - optional:
+          - match: create or open registry key
+        - or:
+          - api: advapi32.RegSetValue
+          - api: advapi32.RegSetValueEx
+          - api: advapi32.RegSetKeyValue
+          - api: ZwSetValueKey
+          - api: NtSetValueKey
+          - api: RtlWriteRegistryValue
+          - api: SHSetValue
+          - api: SHRegSetPath
+          - api: SHRegSetValue
+          - api: SHRegSetUSValue
+          - api: SHRegWriteUSValue
+      - and:
+        - match: create process
+        - string: /reg(|.exe) add /i
