@@ -12,7 +12,6 @@ rule:
       - 946A99F36A46D335DEC080D9A4371940:0x10001DA0
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x408020
   features:
-    - or:
       - or:
         - api: kernel32.CreateThread
         - api: _beginthread
@@ -20,6 +19,6 @@ rule:
         - api: PsCreateSystemThread
         - api: SHCreateThread
         - api: SHCreateThreadWithHandle
-      - and:
-        - api: kernel32.GetCurrentProcess
-        - api: kernel32.CreateRemoteThread
+        - and:
+          - api: kernel32.GetCurrentProcess
+          - api: kernel32.CreateRemoteThread

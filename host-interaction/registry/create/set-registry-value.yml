@@ -15,8 +15,7 @@ rule:
   features:
     - and:
       - optional:
-        - match: create registry key
-        - match: open registry key
+        - match: create or open registry key
       - or:
         - api: advapi32.RegSetValue
         - api: advapi32.RegSetValueEx

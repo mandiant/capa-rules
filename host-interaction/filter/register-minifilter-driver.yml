@@ -1,7 +1,7 @@
 rule:
   meta:
-    name: register kernel-mode file system filter
-    namespace: host-interaction/file-system
+    name: register minifilter driver
+    namespace: host-interaction/filter
     author: michael.hunhoff@fireeye.com
     scope: basic block
     references:

@@ -1,8 +1,8 @@
 rule:
   meta:
-    name: create file
-    namespace: host-interaction/file-system/create
+    name: create or open file
     author: michael.hunhoff@fireeye.com
+    lib: true
     scope: basic block
     examples:
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x401D7E
@@ -12,4 +12,7 @@ rule:
       - api: CreateFileEx
       - api: IoCreateFile
       - api: IoCreateFileEx
+      - api: ZwOpenFile
       - api: ZwCreateFile
+      - api: NtOpenFile
+      - api: NtCreateFile

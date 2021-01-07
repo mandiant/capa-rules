@@ -1,7 +1,7 @@
 rule:
   meta:
-    name: query registry value
-    namespace: host-interaction/registry/query
+    name: query or enumerate registry value
+    namespace: host-interaction/registry
     author:
       - william.ballenthin@fireeye.com
       - michael.hunhoff@fireeye.com
@@ -16,9 +16,7 @@ rule:
   features:
     - and:
       - optional:
-        - or:
-          - match: create registry key
-          - match: open registry key
+          - match: create or open registry key
       - or:
         - api: advapi32.RegGetValue
         - api: advapi32.RegEnumValue
