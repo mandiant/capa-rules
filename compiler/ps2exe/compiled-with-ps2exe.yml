@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: compiled with ps2exe
+    namespace: compiler/ps2exe
+    author: "@_re_fox"
+    scope: file
+    references:
+      - https://github.com/ikarstein/ps2exe
+    examples:
+      - 8775ed26068788279726e08ff9665aab
+  features:
+    - and:
+      - match: compiled to the .NET platform
+      - string: PS2EXEApp
+      - string: PS2EXE
+      - string: PS2EXE_Host
