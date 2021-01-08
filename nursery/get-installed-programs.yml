@@ -8,6 +8,6 @@ rule:
       - Discovery::Software Discovery [T1518]
   features:
     - and:
-      - match: open registry key
+      - match: create or open registry key
       - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall/i
       - characteristic: loop

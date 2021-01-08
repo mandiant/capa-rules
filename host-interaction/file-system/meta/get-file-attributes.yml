@@ -3,11 +3,17 @@ rule:
     name: get file attributes
     namespace: host-interaction/file-system/meta
     author: michael.hunhoff@fireeye.com
-    scope: function
+    scope: basic block
     mbc:
       - File System::Get File Attributes [C0049]
     examples:
       - 03B236B23B1EC37C663527C1F53AF3FE:0x180019824
+      - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4028B6
+      - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4029E0
   features:
     - or:
       - api: kernel32.GetFileAttributes
+      - api: ZwQueryDirectoryFile
+      - api: ZwQueryInformationFile
+      - api: NtQueryDirectoryFile
+      - api: NtQueryInformationFile

@@ -8,5 +8,5 @@ rule:
       - Discovery::System Network Configuration Discovery [T1016]
   features:
     - and:
-      - match: open registry key
+      - match: create or open registry key
       - string: ProxyServer

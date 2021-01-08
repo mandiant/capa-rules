@@ -2,18 +2,23 @@ rule:
   meta:
     name: create thread
     namespace: host-interaction/thread/create
-    author: moritz.raabe@fireeye.com
-    scope: function
+    author:
+      - moritz.raabe@fireeye.com
+      - michael.hunhoff@fireeye.com
+    scope: basic block
     mbc:
       - Process::Create Thread [C0038]
     examples:
       - 946A99F36A46D335DEC080D9A4371940:0x10001DA0
+      - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x408020
   features:
-    - or:
-      - api: kernel32.CreateThread
-      - api: _beginthread
-      - api: _beginthreadex
-      - basic block:
+      - or:
+        - api: kernel32.CreateThread
+        - api: _beginthread
+        - api: _beginthreadex
+        - api: PsCreateSystemThread
+        - api: SHCreateThread
+        - api: SHCreateThreadWithHandle
         - and:
           - api: kernel32.GetCurrentProcess
           - api: kernel32.CreateRemoteThread
