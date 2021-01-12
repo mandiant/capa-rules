@@ -6,6 +6,7 @@ rule:
     scope: function
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
+      - Impact::Service Stop [T1489]
     examples:
       - E544A4D616B60147D9774B48C2B65EF2:0x402140
   features:

@@ -5,7 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
-      Discovery::Network Sniffing [T1040]
+      - Discovery::Network Sniffing [T1040]
     examples:
       - 493167E85E45363D09495D0841C30648:0x404780
   features:

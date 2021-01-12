@@ -4,8 +4,6 @@ rule:
     namespace: c2/file-transfer
     author: william.ballenthin@fireeye.com
     scope: function
-    att&ck:
-      - Command and Control::Ingress Tool Transfer [T1105]
   features:
     - and:
       - match: receive data

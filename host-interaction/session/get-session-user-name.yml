@@ -6,6 +6,7 @@ rule:
     scope: function
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
+      - Discovery::Account Discovery [T1087]
     examples:
       - Practical Malware Analysis Lab 14-01.exe_:0x401285
   features:

@@ -6,6 +6,7 @@ rule:
     scope: basic block
     att&ck:
       - Discovery::Process Discovery [T1057]
+      - Discovery::Software Discovery [T1518]
     examples:
       - 31bd8dd48ac0de3d4da340bf29f4d280:0x00401be3
   features:

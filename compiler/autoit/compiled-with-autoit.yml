@@ -4,6 +4,8 @@ rule:
     namespace: compiler/autoit
     author: william.ballenthin@fireeye.com
     scope: file
+    att&ck:
+      - Execution::Command and Scripting Interpreter [T1059]
     examples:
       - 55D77AB16377A8A314982F723FCC6FAE
   features:

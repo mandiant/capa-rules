@@ -4,6 +4,8 @@ rule:
     namespace: anti-analysis/anti-vm/vm-detection
     author: "@_re_fox"
     scope: function
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion [T1497]
     mbc:
       - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]
     examples:
