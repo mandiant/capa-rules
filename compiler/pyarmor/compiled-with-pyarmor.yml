@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: compiled with pyarmor
+    namespace: compiler/pyarmor
+    author: "@stvemillertime, @itreallynick"
+    scope: file
+    att&ck:
+      - Execution::Command and Scripting Interpreter::Python [T1059.006]
+    references:
+      - https://twitter.com/stvemillertime/status/1349032548580483073
+    examples:
+      - a0fb20bc9aa944c3a0a6c4545c195818
+  features:
+    - or:
+      - string: pyarmor_runtimesh
+      - string: PYARMOR
+      - string: __pyarmor__
+      - string: PYARMOR_SIGNATURE
