@@ -9,8 +9,7 @@ rule:
     references:
       - https://twitter.com/stvemillertime/status/1349032548580483073
     examples:
-      - 0e054493c82baf64b30f3cb0349843dedd8f8e25e8f53eec0a9d7ed2dbadb20a.exe_
-      - 000286df4376dc71b1f5d8367b2da929bc016c441651365268077a08548d0e67.exe_
+      - a0fb20bc9aa944c3a0a6c4545c195818
   features:
     - or:
       - string: pyarmor_runtimesh
