@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: compiled with dashingsoft pyarmor
+    name: compiled with pyarmor
     namespace: compiler/pyarmor
     author: "@stvemillertime, @itreallynick"
     scope: file
