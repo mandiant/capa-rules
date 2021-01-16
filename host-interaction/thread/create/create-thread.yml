@@ -19,6 +19,9 @@ rule:
       - api: PsCreateSystemThread
       - api: SHCreateThread
       - api: SHCreateThreadWithHandle
-      - and:
-        - api: kernel32.GetCurrentProcess
-        - api: kernel32.CreateRemoteThread
+      - api: kernel32.CreateRemoteThread
+      - api: ntdll.RtlCreateUserThread
+      - api: ntdll.NtCreateThread
+      - api: ntdll.NtCreateThreadEx
+      - api: ntdll.ZwCreateThread
+      - api: ntdll.ZwCreateThreadEx
