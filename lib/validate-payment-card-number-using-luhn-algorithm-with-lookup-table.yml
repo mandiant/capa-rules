@@ -4,6 +4,8 @@ rule:
     lib: true
     author: "@_re_fox"
     scope: function
+    mbc:
+      - Data::Checksum::Luhn [C0032.002]
     examples:
       - 1d8fd13c890060464019c0f07b928b1a:0x401920
       - 60abaef3fda131ffa20df480cb3f8029:0x4048e0
