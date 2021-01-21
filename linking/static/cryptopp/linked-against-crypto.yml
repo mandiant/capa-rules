@@ -4,6 +4,8 @@ rule:
     namespace: linking/static/cryptopp
     author: moritz.raabe@fireeye.com
     scope: file
+    mbc:
+      - Cryptography::Crypto Library [C0059]
     examples:
       - 8BA66E4B618FFDC8255F1DF01F875DDE6FD0561305D9F8307BE7BB11D02AE363
       - 66602B5FAB602CB4E6F754748D249542
