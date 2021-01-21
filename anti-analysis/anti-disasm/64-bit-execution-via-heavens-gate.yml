@@ -5,6 +5,8 @@ rule:
     author: '@recvfrom'
     description: Looks for instructions related to executing 64-bit code from a 32-bit process (Heaven's Gate)
     scope: function
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools::Heavens Gate [F0004.008]
     examples:
       - 79abd17391adc6251ecdc58d13d76baf:0x10002385
     references:

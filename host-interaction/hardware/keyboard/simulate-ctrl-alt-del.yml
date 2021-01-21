@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/hardware/keyboard
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - Hardware::Simulate Hardware::Ctrl-Alt-Del [C0057.001]
     examples:
       - 50D5EE1CE2CA5E30C6B1019EE64EEEC2:0x407C27
   features:

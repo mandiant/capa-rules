@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/registry/delete
     author: michael.hunhoff@fireeye.com
     scope: function
+    mbc:
+      - Operating System::Registry::Delete Registry Value [C0036.007]
     examples:
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4041A0
   features:

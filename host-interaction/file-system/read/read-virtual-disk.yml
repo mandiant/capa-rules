@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/read
     author: "@_re_fox"
     scope: function
+    mbc:
+      - File System::Read Virtual Disk [C0056]
     references:
       - https://github.com/vxunderground/VXUG-Papers/blob/main/Weaponizing%20Windows%20Virtualization/src.cpp
       - https://github.com/vxunderground/VXUG-Papers/blob/main/Weaponizing%20Windows%20Virtualization/WeaponizingWindowsVirtualization.pdf
