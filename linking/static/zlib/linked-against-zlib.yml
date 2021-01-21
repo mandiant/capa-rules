@@ -4,6 +4,8 @@ rule:
     namespace: linking/static/zlib
     author: william.ballenthin@fireeye.com
     scope: file
+    mbc:
+      - Data::Compression Library [C0060]
     examples:
       - 6cc148363200798a12091b97a17181a1
   features:

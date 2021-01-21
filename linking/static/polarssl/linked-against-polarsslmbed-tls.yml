@@ -4,6 +4,8 @@ rule:
     namespace: linking/static/polarssl
     author: william.ballenthin@fireeye.com
     scope: file
+    mbc:
+      - Cryptography::Crypto Library [C0059]
     examples:
       - 232b0a8546035d9017fadf68398826edb0a1e055566bc1d356d6c9fdf1d7e485
   features:

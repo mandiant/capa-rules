@@ -4,6 +4,8 @@ rule:
     namespace: anti-analysis/anti-disasm
     author: moritz.raabe@fireeye.com
     scope: file
+    mbc:
+      - Anti-Static Analysis::Disassembler Evasion [B0012]
     examples:
       - a5c70086b3bc4fe64f4e7a0aa452e620
   features:

@@ -4,6 +4,8 @@ rule:
     author: moritz.raabe@fireeye.com
     lib: true
     scope: basic block
+    mbc:
+      - Data::Modulo [C0058]
     examples:
       - 9324D1A8AE37A36AE560C37448C9705A:0x4049A9
   features:

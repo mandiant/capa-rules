@@ -4,6 +4,8 @@ rule:
     author: michael.hunhoff@fireeye.com
     lib: true
     scope: basic block
+    mbc:
+      - Anti-Behavioral Analysis::Dynamic Analysis Evasion::Delayed Execution [B0003.003]
     references:
       - https://docs.microsoft.com/en-us/windows/win32/sync/wait-functions
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/TimingAttacks/timing.cpp

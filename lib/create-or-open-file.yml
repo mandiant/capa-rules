@@ -4,6 +4,8 @@ rule:
     author: michael.hunhoff@fireeye.com
     lib: true
     scope: basic block
+    mbc:
+      - File System::Create File [C0016]
     examples:
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x401D7E
   features:
