@@ -10,10 +10,10 @@ rule:
     mbc:
       - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
       - Cryptography::Encrypt Data::Sosemanuk [C0027.008]
-    examples:
-      - ea7bb99e03606702c1cbe543bb32b27e:0x10003350
     references:
       - https://labs.sentinelone.com/enter-the-maze-demystifying-an-affiliate-involved-in-maze-snow/
+    examples:
+      - ea7bb99e03606702c1cbe543bb32b27e:0x10003350
   features:
     - or:
       - bytes: 00 00 00 00 E1 9F CF 13 6B 97 37 26 8A 08 F8 35 D6 87 6E 4C 37 18 A1 5F BD 10 59 6A 5C 8F 96 79 05 A7 DC 98 E4 38 13 8B 6E 30 EB BE 8F AF 24 AD D3 20 B2 D4 32 BF 7D C7 B8 B7 85 F2 59 28 4A E1 0A E7 11 99 EB 78 DE 8A 61 70 26 BF 80 EF E9 AC DC 60 7F D5 3D FF B0 C6 B7 F7 48 F3 56 68 87 E0 0F 40 CD 01 EE DF 02 12 64 D7 FA 27 85 48 35 34 D9 C7 A3 4D 38 58 6C 5E B2 50 94 6B 53 CF 5B 78 = mul_a

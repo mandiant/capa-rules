@@ -7,11 +7,11 @@ rule:
     scope: function
     mbc:
       - Defense Evasion::Disable or Evade Security Tools::Heavens Gate [F0004.008]
-    examples:
-      - 79abd17391adc6251ecdc58d13d76baf:0x10002385
     references:
       - https://download.bitdefender.com/resources/files/News/CaseStudies/study/318/Bitdefender-TRR-Whitepaper-Maze-creat4351-en-EN-GenericUse.pdf
       - https://www.malwaretech.com/2014/02/the-0x33-segment-selector-heavens-gate.html
+    examples:
+      - 79abd17391adc6251ecdc58d13d76baf:0x10002385
   features:
     - and:
       - and:

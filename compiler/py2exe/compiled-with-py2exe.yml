@@ -9,4 +9,4 @@ rule:
   features:
     - and:
       - string: PY2EXE_VERBOSE
-      - api: getenv 
+      - api: getenv

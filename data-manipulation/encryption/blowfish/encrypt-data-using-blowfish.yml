@@ -9,7 +9,7 @@ rule:
     mbc:
       - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
       - Cryptography::Encrypt Data::Blowfish [C0027.002]
-    examples: 
+    examples:
       - 0761142efbda6c4b1e801223de723578:0x653E19E5
   features:
     - or:

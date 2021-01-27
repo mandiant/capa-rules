@@ -2,7 +2,7 @@ rule:
   meta:
     name: read process memory
     namespace: host-interaction/process
-    author: 
+    author:
       - matthew.williams@fireeye.com
       - "@_re_fox"
     scope: function

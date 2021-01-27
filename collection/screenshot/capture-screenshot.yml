@@ -2,7 +2,7 @@ rule:
   meta:
     name: capture screenshot
     namespace: collection/screenshot
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - "@_re_fox"
       - michael.hunhoff@fireeye.com
