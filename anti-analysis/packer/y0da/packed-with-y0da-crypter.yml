@@ -8,10 +8,10 @@ rule:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
       - Anti-Static Analysis::Software Packing [F0001]
-    examples:
-      - 0cd2b334aede270b14868db28211cde3
     references:
       - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
+    examples:
+      - 0cd2b334aede270b14868db28211cde3
   features:
     - or:
       - section: .y0da

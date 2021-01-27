@@ -34,5 +34,5 @@ rule:
         - number: 0x8
         - number: 0x3f
         - characteristic: nzxor
-        - count(mnemonic(shr)): 8 or more 
+        - count(mnemonic(shr)): 8 or more
         - mnemonic: ror

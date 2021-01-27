@@ -8,9 +8,9 @@ rule:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
       - Anti-Static Analysis::Software Packing [F0001]
-    examples:
     references:
       - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
+    examples:
   features:
     - or:
       - section: .sforce3

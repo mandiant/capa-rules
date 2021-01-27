@@ -16,4 +16,3 @@ rule:
       - api: msvcrt._get_wpgmptr
       - api: msvcrt._pgmptr
       - api: msvcrt._wpgmptr
-     

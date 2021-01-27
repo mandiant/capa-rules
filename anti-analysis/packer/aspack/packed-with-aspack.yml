@@ -8,11 +8,11 @@ rule:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
       - Anti-Static Analysis::Software Packing [F0001]
-    examples:
-      - 2055994ff75b4309eee3a49c5749d306
     references:
       - http://www.aspack.com/
       - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
+    examples:
+      - 2055994ff75b4309eee3a49c5749d306
   features:
     - or:
       - section: .aspack

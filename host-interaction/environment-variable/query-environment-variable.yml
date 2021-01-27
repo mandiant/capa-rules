@@ -2,7 +2,7 @@ rule:
   meta:
     name: query environment variable
     namespace: host-interaction/environment-variable
-    author: 
+    author:
       - michael.hunhoff@fireeye.com
       - "@_re_fox"
     scope: function

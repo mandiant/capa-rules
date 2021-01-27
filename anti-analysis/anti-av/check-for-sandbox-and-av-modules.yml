@@ -15,17 +15,17 @@ rule:
       - or:
         - string: /avghook(x|a)\.dll/i
           description: AVG
-        - string: /snxhk\.dll/i 
+        - string: /snxhk\.dll/i
           description: Avast
-        - string: /sf2\.dll/i 
+        - string: /sf2\.dll/i
           description: Avast
         - string: /sbiedll\.dll/i
           description: Sandboxie
-        - string: /dbghelp\.dll/i 
+        - string: /dbghelp\.dll/i
           description: WindBG
-        - string: /api_log\.dll/i 
+        - string: /api_log\.dll/i
           description: iDefense Lab
-        - string: /dir_watch\.dll/ 
+        - string: /dir_watch\.dll/
           description: iDefense Lab
         - string: /pstorec\.dll/i
           description: SunBelt Sandbox
@@ -33,11 +33,11 @@ rule:
           description: Virtual PC
         - string: /wpespy\.dll/i
           description: WPE Pro
-        - string: /cmdvrt(64|32).dll/i 
+        - string: /cmdvrt(64|32).dll/i
           description: Comodo Container
-        - string: /sxin.dll/i 
+        - string: /sxin.dll/i
           description: 360 SOFTWARE
         - string: /dbghelp\.dll/i
           description: WINE
-        - string: /printfhelp\.dll/i 
+        - string: /printfhelp\.dll/i
           description: Unknown Sandbox

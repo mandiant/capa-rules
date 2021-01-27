@@ -1,8 +1,8 @@
 rule:
   meta:
     name: validate payment card number using luhn algorithm with lookup table
-    lib: true
     author: "@_re_fox"
+    lib: true
     scope: function
     mbc:
       - Data::Checksum::Luhn [C0032.002]
@@ -11,7 +11,7 @@ rule:
       - 60abaef3fda131ffa20df480cb3f8029:0x4048e0
   features:
     - and:
-      - not: 
+      - not:
         - characteristic: nzxor
       - characteristic: loop
         description: Iterate over CC digits
@@ -57,7 +57,7 @@ rule:
             - mnemonic: idiv
             - mnemonic: cdq
             - number: 0xa
-            - optional : 
+            - optional:
               - mnemonic: neg
           - and:
             - description: Compiler optimized returning checkum % 10
@@ -66,5 +66,5 @@ rule:
             - number: 0x66666667
             - number: 0x1f
             - number: 0x2
-            - optional : 
+            - optional:
               - mnemonic: neg
