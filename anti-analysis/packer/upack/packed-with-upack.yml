@@ -13,7 +13,7 @@ rule:
     examples:
       - 9d98f8519d9fee8219caca5b31eef0bd
   features:
-    - and:
+    - or:
       - section: .Upack
       - section: .ByDwing
       - string: UpackByDwing@
