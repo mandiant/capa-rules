@@ -2,7 +2,7 @@ rule:
   meta:
     name: allocate memory
     author: 0x534a@mailbox.org
-    lib: True
+    lib: true
     scope: basic block
     mbc:
       - Memory::Allocate Memory [C0007]
