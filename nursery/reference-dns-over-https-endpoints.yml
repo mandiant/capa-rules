@@ -7,8 +7,8 @@ rule:
     references:
       - https://github.com/curl/curl/wiki/DNS-over-HTTPS
     examples:
-       - 749e7becf00fccc6dff324a83976dc0d:0x00004589 # https://dns.google.com/resolve?name=
-       - 749e7becf00fccc6dff324a83976dc0d:0x000045d6 # https://cloudflare-dns.com/dns-query?ct=application/dns-json&name= 
+      - 749e7becf00fccc6dff324a83976dc0d:0x00004589  # https://dns.google.com/resolve?name=
+      - 749e7becf00fccc6dff324a83976dc0d:0x000045d6  # https://cloudflare-dns.com/dns-query?ct=application/dns-json&name= 
   features:
     - or:
       - string: /https://doh.seby.io:8443/dns-query.*/i

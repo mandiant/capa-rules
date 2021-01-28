@@ -8,10 +8,10 @@ rule:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
       - Anti-Static Analysis::Software Packing [F0001]
-    examples:
-      - f0a6a1bd6d760497623611e8297a81df
     references:
       - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
+    examples:
+      - f0a6a1bd6d760497623611e8297a81df
   features:
     - or:
       - section: PELOCKnt

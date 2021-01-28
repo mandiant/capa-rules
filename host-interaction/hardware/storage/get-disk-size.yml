@@ -24,4 +24,3 @@ rule:
           - string: /SELECT\s+\*\s+FROM\s+Win32_LogicalDisk/i
           - string: /SELECT\s+\*\s+FROM\s+Win32_DiskDrive\s+WHERE\s+\(SerialNumber\s+IS\s+NOT\s+NULL\)\s+AND\s+\(MediaType\s+LIKE\s+\'Fixed\s+hard\s+disk\%\'\)/i
         - string: Size
-

@@ -16,5 +16,5 @@ rule:
     - and:
       - string: /OfficePackagesForWDAG/
       - api: GetWindowsDirectory
-      - optional: 
+      - optional:
         - api: CreateFile

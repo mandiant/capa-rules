@@ -25,4 +25,4 @@ rule:
         - or:
           - api: CryptAcquireContext
           - api: CryptEncrypt
-          - api: CryptDecrypt 
+          - api: CryptDecrypt

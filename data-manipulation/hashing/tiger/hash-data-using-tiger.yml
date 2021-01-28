@@ -6,7 +6,7 @@ rule:
     scope: basic block
     mbc:
       - Cryptography::Cryptographic Hash::Tiger [C0029.005]
-    examples: 
+    examples:
       - 0761142efbda6c4b1e801223de723578:0x65471B97
   features:
     - or:
@@ -21,6 +21,6 @@ rule:
           - number: 0x0123456789abcdef
           - number: 0x13
           - number: 0x17
-          - count(mnemonic(shr)) : 2 or more
-          - count(mnemonic(shl)) : 2 or more
+          - count(mnemonic(shr)): 2 or more
+          - count(mnemonic(shl)): 2 or more
           - characteristic: nzxor

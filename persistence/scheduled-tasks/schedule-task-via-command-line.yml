@@ -10,9 +10,9 @@ rule:
       - 79cde1aa711e321b4939805d27e160be:0x401440
   features:
     - and:
-        - match: create process
-        - or:
-          - and:
-            - string: /schtasks/i
-            - string: /\/create /i
-          - string: /Register-ScheduledTask /i
+      - match: create process
+      - or:
+        - and:
+          - string: /schtasks/i
+          - string: /\/create /i
+        - string: /Register-ScheduledTask /i

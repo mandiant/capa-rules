@@ -6,10 +6,10 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
-    examples:
     references:
       - https://www.fireeye.com/blog/threat-research/2012/11/precalculated-string-hashes-reverse-engineering-shellcode.html
       - https://pastebin.com/ci5XYW4P
+    examples:
   features:
     - or:
       - number: 0x6a4abc5b = ROR13(kernel32.dll)
