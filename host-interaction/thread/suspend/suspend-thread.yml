@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: suspend thread
+    namespace: host-interaction/thread/suspend
+    author: 0x534a@mailbox.org
+    scope: basic block
+    mbc:
+      - Process::Suspend Thread [C0055]
+    examples:
+      - 787cbc8a6d1bc58ea169e51e1ad029a637f22560660cc129ab8a099a745bd50e:0x502f4c
+  features:
+    - or:
+      - api: kernel32.SuspendThread
+      - api: ntdll.NtSuspendThread
+      - api: ntdll.ZwSuspendThread

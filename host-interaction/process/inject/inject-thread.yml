@@ -2,7 +2,9 @@ rule:
   meta:
     name: inject thread
     namespace: host-interaction/process/inject
-    author: anamaria.martinezgom@fireeye.com
+    author: 
+      - anamaria.martinezgom@fireeye.com
+      - 0x534a@mailbox.org
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Thread Execution Hijacking [T1055.003]
@@ -12,15 +14,12 @@ rule:
   features:
     - and:
       - or:
-        - api: kernel32.VirtualAlloc
-        - api: kernel32.VirtualAllocEx
-        - api: kernel32.VirtualAllocExNuma
+        - match: allocate RWX memory
+        - match: allocate RW memory
       - match: write process memory
-      - or:
-        - api: kernel32.CreateRemoteThread
-        - api: ntdll.RtlCreateUserThread
+      - match: create thread
       - optional:
         - or:
-          - api: kernel32.OpenProcess
-          - number: 0x40 = PAGE_EXECUTE_READWRITE
+          - match: open process
+          - match: create process
           - number: 0x3000 = MEM_COMMIT or MEM_RESERVE

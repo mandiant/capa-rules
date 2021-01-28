@@ -8,11 +8,11 @@ rule:
       - Defense Evasion::Process Injection::Process Hollowing [T1055.012]
     examples:
       - Practical Malware Analysis Lab 12-02.exe_:0x4010EA
+    references:
+      - http://www.autosectools.com/process-hollowing.pdf
+      - https://www.andreafortuna.org/2017/10/09/understanding-process-hollowing/
   features:
     - and:
       - match: create process suspended
-      - and:
-        - match: write process memory
-        - or:
-          - api: kernel32.ResumeThread
-          - api: ntdll.NtResumeThread
+      - match: write process memory
+      - match: resume thread

@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: open thread
+    author: 0x534a@mailbox.org
+    lib: True
+    scope: basic block
+    examples:
+      - 787cbc8a6d1bc58ea169e51e1ad029a637f22560660cc129ab8a099a745bd50e:00502F4C
+  features:
+    - or:
+      - api: kernel32.OpenThread
+      - api: ntdll.NtOpenThread
+      - api: ntdll.ZwOpenThread
