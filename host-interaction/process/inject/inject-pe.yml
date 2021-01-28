@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: inject a pe
+    name: inject pe
     namespace: host-interaction/process/inject
     author: 0x534a@mailbox.org
     scope: function
@@ -15,7 +15,7 @@ rule:
       - characteristic: loop
       - optional:
         - or:
-          - match: open a process
+          - match: open process
           - match: create process
       - match: allocate RWX memory
       - basic block:

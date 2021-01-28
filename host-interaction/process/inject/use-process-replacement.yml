@@ -15,4 +15,4 @@ rule:
     - and:
       - match: create process suspended
       - match: write process memory
-      - match: resume a thread
+      - match: resume thread

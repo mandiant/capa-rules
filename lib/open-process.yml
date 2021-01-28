@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: open a process
+    name: open process
     author: 0x534a@mailbox.org
     lib: True
     scope: basic block

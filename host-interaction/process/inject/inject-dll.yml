@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: inject a dll
+    name: inject dll
     namespace: host-interaction/process/inject
     author: 0x534a@mailbox.org
     scope: function
@@ -20,7 +20,7 @@ rule:
     - and:
       - optional:
         - or:
-          - match: open a process
+          - match: open process
           - match: create process
       - match: allocate RW memory
       - match: write process memory

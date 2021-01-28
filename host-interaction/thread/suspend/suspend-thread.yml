@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: suspend a thread
+    name: suspend thread
     namespace: host-interaction/thread/suspend
     author: 0x534a@mailbox.org
     scope: basic block

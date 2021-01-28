@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: open a thread
+    name: open thread
     author: 0x534a@mailbox.org
     lib: True
     scope: basic block

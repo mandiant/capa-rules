@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: inject a thread
+    name: inject thread
     namespace: host-interaction/process/inject
     author: 
       - anamaria.martinezgom@fireeye.com
@@ -18,6 +18,6 @@ rule:
       - match: create thread
       - optional:
         - or:
-          - match: open a process
+          - match: open process
           - match: create process
           - number: 0x3000 = MEM_COMMIT or MEM_RESERVE

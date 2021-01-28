@@ -7,17 +7,17 @@ rule:
     att&ck:
       - Defense Evasion::Process Injection::Thread Execution Hijacking [T1055.003]
     examples:
-      - 787cbc8a6d1bc58ea169e51e1ad029a637f22560660cc129ab8a099a745bd50e:0x4044C7
+      - 77d87e9937546aebc1595039d730352b15fab32c72a76913f04262c6802d098f:0x401000
   features:
     - and:
       - optional:
         - or:
-          - match: open a thread
+          - match: open thread
           - match: create thread
-      - match: suspend a thread
+      - match: suspend thread
       - api: kernel32.GetThreadContext
       - match: allocate RWX memory
       - optional:
         - match: write process memory
       - api: kernel32.SetThreadContext
-      - match: resume a thread
+      - match: resume thread

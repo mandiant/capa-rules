@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: resume a thread
+    name: resume thread
     namespace: host-interaction/thread/resume
     author: 0x534a@mailbox.org
     scope: basic block
