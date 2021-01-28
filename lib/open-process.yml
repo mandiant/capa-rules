@@ -2,7 +2,7 @@ rule:
   meta:
     name: open process
     author: 0x534a@mailbox.org
-    lib: True
+    lib: true
     scope: basic block
     examples:
       - Practical Malware Analysis Lab 17-02.dll_:0x1000D10D

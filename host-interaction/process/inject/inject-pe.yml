@@ -6,10 +6,10 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Portable Executable Injection [T1055.002]
-    examples:
-      - ce8d7590182db2e51372a4a04d6a0927a65b2640739f9ec01cfd6c143b1110da:0x4014E0
     references:
       - https://www.elastic.co/de/blog/ten-process-injection-techniques-technical-survey-common-and-trending-process
+    examples:
+      - ce8d7590182db2e51372a4a04d6a0927a65b2640739f9ec01cfd6c143b1110da:0x4014E0
   features:
     - and:
       - characteristic: loop

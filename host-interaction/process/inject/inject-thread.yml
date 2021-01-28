@@ -2,7 +2,7 @@ rule:
   meta:
     name: inject thread
     namespace: host-interaction/process/inject
-    author: 
+    author:
       - anamaria.martinezgom@fireeye.com
       - 0x534a@mailbox.org
     scope: function

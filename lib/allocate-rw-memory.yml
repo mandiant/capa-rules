@@ -1,8 +1,8 @@
 rule:
   meta:
     name: allocate RW memory
-    lib: True
     author: 0x534a@mailbox.org
+    lib: true
     scope: basic block
     mbc:
       - Memory::Allocate Memory [C0007]
