@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt-data-using-camellia
+    name: encrypt data using camellia
     namespace: data-manipulation/encryption/camellia
     author: '@_re_fox'
     scope: basic block
