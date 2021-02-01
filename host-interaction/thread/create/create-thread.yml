@@ -20,6 +20,7 @@ rule:
       - api: SHCreateThread
       - api: SHCreateThreadWithHandle
       - api: kernel32.CreateRemoteThread
+      - api: kernel32.CreateRemoteThreadEx
       - api: ntdll.RtlCreateUserThread
       - api: ntdll.NtCreateThread
       - api: ntdll.NtCreateThreadEx

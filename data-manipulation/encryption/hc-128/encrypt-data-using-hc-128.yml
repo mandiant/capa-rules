@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt-data-using-hc-128
+    name: encrypt data using HC-128
     namespace: data-manipulation/encryption/hc-128
     author: '@recvfrom'
     description: Looks for instruction mnemonics associated with initialization of the HC-128 stream cipher
