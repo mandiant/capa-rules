@@ -1,0 +1,48 @@
+rule:
+  meta:
+    name: patch process command line
+    namespace: anti-analysis/anti-forensic
+    author: william.ballenthin@fireeye.com
+    scope: function
+    references:
+      - https://stackoverflow.com/q/24754844/87207
+      - https://blog.xpnsec.com/how-to-argue-like-cobalt-strike/
+    examples:
+      # - CostaRicto
+    - and:
+      - basic block:
+        # example:
+        #   mov     rbx, gs:60h
+        #   lea     r9, [rsp+4A0h+flOldProtect] ; lpflOldProtect
+        #   mov     edx, 8          ; dwSize
+        #   mov     rcx, [rbx+20h]
+        #   add     rcx, 70h ; 'p'  ; lpAddress
+        #   lea     r8d, [rdx-4]    ; flNewProtect
+        #   call    cs:VirtualProtect
+        #   test    eax, eax
+        - and:
+          - characteristic: gs access
+          - offset/x64: 0x60 = PEB
+          - offset/x64: 0x20 = PEB->ProcessParameters
+          - offset/x64: 0x70 = PEB->ProcessParameters->CommandLine
+          - api: VirtualProtect
+      - count(api(VirtualProtect)): 2 or more
+
+    - and:
+      - basic block:
+        # example:
+        #   mov     rbx, gs:60h
+        #   lea     r9, [rsp+4A0h+flOldProtect] ; lpflOldProtect
+        #   mov     edx, 8          ; dwSize
+        #   mov     rcx, [rbx+20h]
+        #   add     rcx, 70h ; 'p'  ; lpAddress
+        #   lea     r8d, [rdx-4]    ; flNewProtect
+        #   call    cs:VirtualProtect
+        #   test    eax, eax
+        - characteristic: gs access
+        - offset/x64: 0x60  # PEB
+        - offset/x64: 0x20  # PEB->ProcessParameters
+        - offset/x64: 0x70  # PEB->ProcessParameters->CommandLine
+        - api: VirtualProtect
+
+      - count(api(VirtualProtect)): 2 or more
