@@ -22,7 +22,7 @@ rule:
               - number: 0x25A207B9
               - number: 0x4660DDF3
               - number: 0xE576E98E
-              - number: 0x3E06748C        
+              - number: 0x3E06748C
           - basic block:
             - and:
               - api: WSAIoctl
