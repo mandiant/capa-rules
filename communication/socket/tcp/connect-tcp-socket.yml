@@ -35,4 +35,3 @@ rule:
           # socket must be bound to ConnectEx
           # https://gist.github.com/joeyadams/4158972
           - api: bind
-          
