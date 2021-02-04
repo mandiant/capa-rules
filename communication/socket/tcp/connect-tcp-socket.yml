@@ -17,6 +17,7 @@ rule:
         - api: ConnectEx
         - and:
           - api: WSAIoctl
+          - number: 0xC8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
           - basic block:
             # candidate for GUID: WSAID_CONNECTEX/25a207b9-ddf3-4660-8ee9-76e58c74063e
             - and:
