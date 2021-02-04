@@ -15,3 +15,15 @@ rule:
         - api: ws2_32.connect
         - api: ws2_32.WSAConnect
         - api: ConnectEx
+        - and:
+          - api: WSAIoctl
+          - basic block:
+            # candidate for GUID: WSAID_CONNECTEX/25a207b9-ddf3-4660-8ee9-76e58c74063e
+            - number: 0x25A207B9
+            - number: 0x4660DDF3
+            - number: 0xE576E98E
+            - number: 0x3E06748C
+          # socket must be bound to ConnectEx
+          # https://gist.github.com/joeyadams/4158972
+          - api: bind
+          
