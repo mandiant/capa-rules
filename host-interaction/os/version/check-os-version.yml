@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get OS version
+    name: check OS version
     namespace: host-interaction/os/version
     author: michael.hunhoff@fireeye.com
     scope: function
