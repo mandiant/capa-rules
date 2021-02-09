@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: references DNS over HTTPS endpoints
+    name: reference DNS over HTTPS endpoints
     namespace: communication/dns
     author: markus.neis@swisscom.com / @markus_neis
     scope: file
