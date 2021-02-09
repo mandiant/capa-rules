@@ -17,7 +17,7 @@ rule:
     - or:
       - string: /HARDWARE\\ACPI\\(DSDT|FADT|RSDT)\\BOCHS/i
       - string: /HARDWARE\\DESCRIPTION\\System\\(SystemBiosVersion|VideoBiosVersion)/i
-      - string: /HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\.*ProcessorNameString/i
+      - string: /HARDWARE\\DESCRIPTION\\System\\CentralProcessor/i
       - string: /HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0/i
       - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Enum\\IDE/i
       - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Services\\Disk\\Enum\\/i
