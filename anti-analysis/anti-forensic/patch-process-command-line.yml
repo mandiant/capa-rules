@@ -2,7 +2,7 @@ rule:
   meta:
     name: patch process command line
     namespace: anti-analysis/anti-forensic
-    author: 
+    author:
       - william.ballenthin@fireeye.com
       - "@_re_fox"
     scope: function
@@ -36,7 +36,7 @@ rule:
         - api: GetProcAddress
         - string: NtQueryInformationProcess
         - api: ReadProcessMemory
-        - or: 
+        - or:
           - and:
             - offset/x32: 0x10 = PEB->ProcessParameters
             - offset/x32: 0x40 = PEB->ProcessParameters->CommandLine
