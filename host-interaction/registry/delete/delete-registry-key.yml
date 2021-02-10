@@ -5,11 +5,12 @@ rule:
     author:
       - moritz.raabe@fireeye.com
       - michael.hunhoff@fireeye.com
+      - johnk3r
     scope: function
     mbc:
       - Operating System::Registry::Delete Registry Key [C0036.002]
     examples:
-      - 034B7231A49387604E81A5A5D2FE7E08F6982C418A28B719D2FAACE3C312EBB5:0x4012A8
+      - 4f11bdb380dafa2518053c6d20147a05:0x402A36
       - 493167E85E45363D09495D0841C30648:0x404D60
   features:
     - and:
