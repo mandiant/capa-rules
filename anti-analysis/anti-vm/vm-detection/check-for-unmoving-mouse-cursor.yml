@@ -11,7 +11,7 @@ rule:
     references:
       - https://www.joesecurity.org/blog/5852460122427342172
     examples:
-      - 7E17F0F35D50F49407841372F24FBD38:0x4010f6
+      - d7ff81ff775d4ab50d31ac1e962c8c4dea7ff9f280aa2b42ddd06760a5665002:0x401118
   features:
     - and:
       - count(api(user32.GetCursorPos)): 2 or more
