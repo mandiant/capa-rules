@@ -2,12 +2,14 @@ rule:
   meta:
     name: simulate CTRL ALT DEL
     namespace: host-interaction/hardware/keyboard
-    author: michael.hunhoff@fireeye.com
+    author:
+      - michael.hunhoff@fireeye.com
+      - johnk3r
     scope: function
     mbc:
       - Hardware::Simulate Hardware::Ctrl-Alt-Del [C0057.001]
     examples:
-      - 50D5EE1CE2CA5E30C6B1019EE64EEEC2:0x407C27
+      - b766cc43d649d30e9f27aff8f7ee7de0:0x406153
   features:
     - and:
       - optional:
