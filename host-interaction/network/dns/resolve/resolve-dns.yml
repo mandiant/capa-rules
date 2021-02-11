@@ -2,13 +2,15 @@ rule:
   meta:
     name: resolve DNS
     namespace: host-interaction/network/dns/resolve
-    author: william.ballenthin@fireeye.com
+    author:
+      - william.ballenthin@fireeye.com
+      - johnk3r
     scope: function
     mbc:
       - Communication::DNS Communication::Resolve [C0011.001]
     examples:
-      - 82986A4302421ABA1DB9DB34A8BC2BA1:0x401530  # winternals networking lab
-      - Practical Malware Analysis Lab 01-01.dll_:0x10001010
+      - 17264e3126a97c319a6a0c61e6da951e:0x5FDC25D0
+      - bab17c3bc9d0231a5c154f8a5899fc4f:0x100089F0
   features:
     - or:
       - api: ws2_32.gethostbyname
