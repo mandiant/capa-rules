@@ -10,7 +10,6 @@ rule:
       - Communication::DNS Communication::Resolve [C0011.001]
     examples:
       - 17264e3126a97c319a6a0c61e6da951e:0x5FDC25D0
-      - f681265ad53019cfdd42672103e31d25:0x48580B
   features:
     - or:
       - api: ws2_32.gethostbyname
