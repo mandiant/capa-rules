@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
     examples:
-      - 03B236B23B1EC37C663527C1F53AF3FE:0x18002956B
+      - 9879D201DC5ACA863F357184CD1F170E:0x10003643
   features:
     - or:
       - api: shell32.IsUserAnAdmin
