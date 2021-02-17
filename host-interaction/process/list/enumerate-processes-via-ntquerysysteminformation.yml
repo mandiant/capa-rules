@@ -12,4 +12,4 @@ rule:
   features:
     - and:
       - number: 0x5 = SYSTEM_PROCESS_INFORMATION
-      - api: ntdll.NtQuerySystemInformation
+      - api: NtQuerySystemInformation

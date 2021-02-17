@@ -21,12 +21,12 @@ rule:
           - and:
             - number: 0x2 = FILE_WRITE_DATA
             - or:
-              - api: ntdll.NtCreateFile
+              - api: NtCreateFile
               - api: ZwCreateFile
       - or:
         - api: kernel32.WriteFile
         - api: kernel32.WriteFileEx
-        - api: ntdll.NtWriteFile
+        - api: NtWriteFile
         - api: ZwWriteFile
         - api: _fwrite
         - api: fwrite

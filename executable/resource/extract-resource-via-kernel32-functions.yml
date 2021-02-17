@@ -15,7 +15,7 @@ rule:
         - or:
           - api: kernel32.LoadResource
           - api: kernel32.LockResource
-          - api: ntdll.LdrAccessResource
+          - api: LdrAccessResource
         - optional:
           - match: contain a resource (.rsrc) section
           - api: kernel32.GetModuleHandle
@@ -23,8 +23,8 @@ rule:
           - or:
             - api: kernel32.FindResource
             - api: kernel32.FindResourceEx
-            - api: ntdll.LdrFindResource_U
-            - api: ntdll.LdrFindResourceEx_U
+            - api: LdrFindResource_U
+            - api: LdrFindResourceEx_U
           - api: kernel32.SizeofResource
           - api: kernel32.FreeResource
       - api: user32.LoadString

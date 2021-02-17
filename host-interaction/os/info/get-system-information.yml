@@ -12,8 +12,8 @@ rule:
     - or:
       - api: kernel32.GetSystemInfo
       - api: kernel32.GetNativeSystemInfo
-      - api: ntdll.NtQuerySystemInformation
-      - api: ntdll.NtQuerySystemInformationEx
+      - api: NtQuerySystemInformation
+      - api: NtQuerySystemInformationEx
       - api: ntdll.RtlGetNativeSystemInformation
       - api: ZwQuerySystemInformation
       - api: ZwQuerySystemInformationEx
