@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: use go library for registry
+    namespace: host-interaction/registry
+    description: Uses a go library for interacting with the Windows registry.
+    author:
+      - joakim@intezer.com
+    scope: file
+    references:
+      - https://github.com/golang/sys
+  features:
+    - and:
+      - match: compiled with Go
+      - or:
+        - string: golang.org/x/sys/windows/registry
+        - string: github.com/golang/sys/windows/registry
+

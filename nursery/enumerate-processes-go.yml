@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: enumerate processes (Go)
+    namespace: host-interaction/process/list
+    description: Enumerating processes using a Go library
+    author:
+      - joakim@intezer.com
+    scope: file
+    references:
+      - https://pkg.go.dev/github.com/mitchellh/go-ps
+  features:
+    - and:
+      - match: compiled with Go
+      - or:
+        - or:
+          - string: github.com/mitchellh/go-ps.FindProcess
+          - string: github.com/mitchellh/go-ps.Processes
+

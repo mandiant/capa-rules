@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: compiled with WMI go library
+    namespace: collection/database/wmi
+    description: StaxExchange's WMI library is used to interact with WMI.
+    author:
+      - joakim@intezer.com
+    scope: file
+    references:
+      - https://github.com/StackExchange/wmi
+    att&ck:
+      - Collection::Data from Information Repositories [T1213]
+  features:
+    - and:
+      - match: compiled with Go
+      - or:
+        - and:
+          - string: github.com/StackExchange/wmi.CreateQuery
+          - string: github.com/StackExchange/wmi.Query
+
