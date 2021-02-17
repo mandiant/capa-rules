@@ -13,7 +13,7 @@ rule:
       - or:
         - match: write process memory
         - api: kernel32.MapViewOfSection
-        - api: ntdll.NtMapViewOfSection
+        - api: NtMapViewOfSection
         - api: ntdll.ZwMapViewOfSection
         - api: kernel32.MapViewOfFile
       - or:

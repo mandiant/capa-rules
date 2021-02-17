@@ -17,7 +17,7 @@ rule:
       - api: kernel32.VirtualAllocExNuma
       - api: kernel32.VirtualProtect
       - api: kernel32.VirtualProtectEx
-      - api: ntdll.NtAllocateVirtualMemory
-      - api: ntdll.ZwAllocateVirtualMemory
-      - api: ntdll.NtMapViewOfSection
-      - api: ntdll.ZwMapViewOfSection
+      - api: NtAllocateVirtualMemory
+      - api: ZwAllocateVirtualMemory
+      - api: NtMapViewOfSection
+      - api: ZwMapViewOfSection

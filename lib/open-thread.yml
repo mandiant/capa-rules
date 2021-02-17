@@ -9,5 +9,5 @@ rule:
   features:
     - or:
       - api: kernel32.OpenThread
-      - api: ntdll.NtOpenThread
-      - api: ntdll.ZwOpenThread
+      - api: NtOpenThread
+      - api: ZwOpenThread

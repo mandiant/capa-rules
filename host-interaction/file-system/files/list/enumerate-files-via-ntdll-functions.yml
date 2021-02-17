@@ -18,6 +18,6 @@ rule:
           - api: ntdll.NtOpenDirectoryObject
       - api: ntdll.NtQueryDirectoryObject
       - optional:
-        - api: ntdll.RtlAllocateHeap
+        - api: RtlAllocateHeap
         - match: contain loop
         - characteristic: indirect call
