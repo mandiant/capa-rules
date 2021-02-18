@@ -15,7 +15,8 @@ rule:
       - match: compiled with Go
       - or:
         - and:
-          - string: syscall.NewLazyDLL # Dynamic loading of DLLs
+          - string: syscall.NewLazyDLL
+            description: Dynamic loading of DLLs
           - or:
             - and:
               - string: /user32.dll/
@@ -28,4 +29,3 @@ rule:
                 - string: /BitBlt/
                 - string: /GetDIBits/
           - string: /CreateCompatibleDC/
-

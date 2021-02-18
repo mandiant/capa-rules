@@ -1,8 +1,8 @@
 rule:
   meta:
-    name: compiled with WMI go library
+    name: compiled with WMI Go library
     namespace: collection/database/wmi
-    description: StaxExchange's WMI library is used to interact with WMI.
+    description: StackExchange's WMI library is used to interact with WMI.
     author:
       - joakim@intezer.com
     scope: file
@@ -17,4 +17,3 @@ rule:
         - and:
           - string: github.com/StackExchange/wmi.CreateQuery
           - string: github.com/StackExchange/wmi.Query
-

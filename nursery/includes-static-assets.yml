@@ -35,7 +35,8 @@ rule:
           - string: github.com/GeertJohan/go.rice.FindBox
           - string: github.com/GeertJohan/go.rice.MustFindBox
         - and:
-          - string: '/\/bindata\.go/' # go-bindata
+          - string: '/\/bindata\.go/'
+            description: go-bindata
           - string: '/\.bindataRead/'
           - string: '/\.Asset/'
         - and:
@@ -44,4 +45,3 @@ rule:
           - string: github.com/omeid/go-resources
         - and:
           - string: github.com/pyros2097/go-embed
-
