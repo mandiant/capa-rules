@@ -8,7 +8,6 @@ rule:
       - 4BDD67FF852C221112337FECD0681EAC
   features:
     - or:
-      - string: This program must be run under Win32
       - string: Borland C++ - Copyright 2002 Borland Corporation
       - string: /SOFTWARE\\Borland\\Delphi\\RTL/
       - string: Sysutils::Exception
