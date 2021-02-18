@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: compiled with dmd
+    namespace: compiler/d
+    author: "@_re_fox"
+    scope: file
+    references:
+      - https://github.com/dlang/dmd
+    examples:
+      - cc410e6c24d8bd6d645029dbb08cfc79
+  features:
+    - or:
+      - section: ._deh
+      - section: .tp
+      - section: .dp
+      - section: .minfo
