@@ -3,7 +3,7 @@ rule:
     name: compiled with exe4j
     namespace: compiler/exe4j
     author: johnk3r
-    scope: function
+    scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Compile After Delivery [T1027.004]
     examples:
