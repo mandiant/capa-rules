@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: compiled with exe4j
+    namespace: compiler/exe4j
+    author: johnk3r
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information::Compile After Delivery [T1027.004]
+    examples:
+      - 6b25f1e754ef486bbb28a66d46bababe:0x404EDE
+  features:
+    - or:
+      - string: /exe4j_log/i
+      - string: /install4j_log/i
+      - string: /exe4j_java_home/i
+      - string: /install4j/i
+      - string: /exe4j.isinstall4j/i
+      - string: /com/exe4j/runtime/exe4jcontroller/i
+      - string: /com/exe4j/runtime/winlauncher/i
