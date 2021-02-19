@@ -37,7 +37,6 @@ rule:
         - and:
           - string: '/\/bindata\.go/'
             description: go-bindata
-          - string: '/\.bindataRead/'
           - string: '/\.Asset/'
         - and:
           - string: github.com/lu4p/binclude.Include
