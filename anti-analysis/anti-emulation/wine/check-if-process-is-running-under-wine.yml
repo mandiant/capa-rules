@@ -14,6 +14,7 @@ rule:
       - ccbf7cba35bab56563c0fbe4237fdc41:0x40d750
   features:
     - or:
+      - string: /SOFTWARE\\Wine/i
       - and:
         - api: GetModuleHandle
         - api: GetProcAddress
@@ -21,6 +22,3 @@ rule:
         - or:
           - string: kernel32.dll
           - string: ntdll.dll
-      - or:
-        - string: /Wine/i
-        - string: /SOFTWARE\\Wine/i
