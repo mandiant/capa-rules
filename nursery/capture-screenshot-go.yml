@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: capture screenshot (Go)
+    name: capture screenshot in Go
     namespace: collection/screenshot
     description: Detects screenshot capability via WinAPI for Go files.
     author:

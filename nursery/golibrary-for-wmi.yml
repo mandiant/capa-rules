@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: compiled with WMI Go library
+    name: linked against Go WMI library
     namespace: collection/database/wmi
     description: StackExchange's WMI library is used to interact with WMI.
     author:

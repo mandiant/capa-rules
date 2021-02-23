@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: enumerate processes (Go)
+    name: linked against Go process enumeration library
     namespace: host-interaction/process/list
     description: Enumerating processes using a Go library
     author:
