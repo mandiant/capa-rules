@@ -147,8 +147,10 @@ By convention, the rule name should complete one of the following sentences:
   - "The program was..."
 
 To focus rule names we try to omit articles (the/a/an).
+For example, prefer `make HTTP request` over `make an HTTP request`.
 
-When the rule describes a specific means to implement a techinque, this is typically specified by "via XYZ".
+When the rule describes a specific means to implement a technique, this is typically specified by "via XYZ".
+For example, `make HTTP request via WinInet` or `make HTTP request via libcurl`.
 
 When the rule describes a specific programming language or run time, this is typically specified by "in ABC".
   
