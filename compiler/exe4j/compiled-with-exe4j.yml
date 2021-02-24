@@ -22,5 +22,3 @@ rule:
       - string: EXE4J_JAVA_HOME
       - string: INSTALL4J
       - string: EXE4J.ISINSTALL4J
-      - string: /COM/EXE4J/RUNTIME/EXE4JCONTROLLER/i
-      - string: /COM/EXE4J/RUNTIME/WINLAUNCHER/i
