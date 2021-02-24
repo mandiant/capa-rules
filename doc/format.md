@@ -145,13 +145,20 @@ It can be referenced in other rules, so if you change a rule name, be sure to se
 By convention, the rule name should complete one of the following sentences:
   - "The program/function may..."
   - "The program was..."
-  
-When the rule describes a specific means to implement a techinque, this is typically specified by "via XYZ".
+
+To focus rule names we try to omit articles (the/a/an).
+For example, prefer `make HTTP request` over `make an HTTP request`.
+
+When the rule describes a specific means to implement a technique, this is typically specified by "via XYZ".
+For example, `make HTTP request via WinInet` or `make HTTP request via libcurl`.
+
+When the rule describes a specific programming language or run time, this is typically specified by "in ABC".
   
 Therefore, these are good rule names:
-  - (The function may) "**make an HTTP request via WinInet**"
+  - (The function may) "**make HTTP request via WinInet**"
   - (The function may) "**encrypt data using RC4 via WinCrypt**"
   - (The program was)  "**compiled by MSVC**"
+  - (The program may)  "**capture screenshot in Go**"
   
 ...and, these are bad rule names:
   - "UPX"
