@@ -4,8 +4,6 @@ rule:
     namespace: compiler/exe4j
     author: johnk3r
     scope: file
-    att&ck:
-      - Defense Evasion::Obfuscated Files or Information::Compile After Delivery [T1027.004]
     examples:
       - 6b25f1e754ef486bbb28a66d46bababe:0x404EDE
   features:
