@@ -1,0 +1,43 @@
+rule:
+  meta:
+    name: offline registry manipulation
+    namespace: host-interaction/registry
+    authOR: johnk3r
+    scope: file
+    att&ck:
+      - Discovery::Query Registry [T1012]
+    mbc:
+      - Operating System::Registry::Query Registry Value [C0036.006]
+      - Operating System::Registry::Create Registry Key [C0036.004]
+      - Operating System::Registry::Open Registry Key [C0036.003]
+    examples:
+      - 3edc06a4784d1038c999b984d558b60d:0xEE20
+  features:
+    - and:
+      - or:
+        - string: offreg.dll
+        - string: OFFREG.dll
+      - or:
+        - string: ORCloseHive
+        - string: ORCloseHive
+        - string: ORCloseKey
+        - string: ORCreateHive
+        - string: ORCreateKey
+        - string: ORDeleteKey
+        - string: ORDeleteValue
+        - string: OREnumKey
+        - string: OREnumValue
+        - string: ORGetKeySecurity
+        - string: ORGetValue
+        - string: ORGetVersion
+        - string: ORGetVirtualFlags
+        - string: ORMergeHives
+        - string: OROpenHive
+        - string: OROpenHiveByHandle
+        - string: OROpenKey
+        - string: ORQueryInfoKey
+        - string: ORRenameKey
+        - string: ORSaveHive
+        - string: ORSetKeySecurity
+        - string: ORSetValue
+        - string: ORSetVirtualFlags
