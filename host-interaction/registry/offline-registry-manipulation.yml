@@ -3,7 +3,7 @@ rule:
     name: offline registry manipulation
     namespace: host-interaction/registry
     authOR: johnk3r
-    scope: file
+    scope: function
     att&ck:
       - Discovery::Query Registry [T1012]
     mbc:
@@ -11,33 +11,29 @@ rule:
       - Operating System::Registry::Create Registry Key [C0036.004]
       - Operating System::Registry::Open Registry Key [C0036.003]
     examples:
-      - 3edc06a4784d1038c999b984d558b60d:0xEE20
+      - ee8daedce51559f8e7f27a667f114d32:0x100481A0
   features:
-    - and:
-      - or:
-        - string: offreg.dll
-        - string: OFFREG.dll
-      - or:
-        - export: ORCloseHive
-        - export: ORCloseHive
-        - export: ORCloseKey
-        - export: ORCreateHive
-        - export: ORCreateKey
-        - export: ORDeleteKey
-        - export: ORDeleteValue
-        - export: OREnumKey
-        - export: OREnumValue
-        - export: ORGetKeySecurity
-        - export: ORGetValue
-        - export: ORGetVersion
-        - export: ORGetVirtualFlags
-        - export: ORMergeHives
-        - export: OROpenHive
-        - export: OROpenHiveByHandle
-        - export: OROpenKey
-        - export: ORQueryInfoKey
-        - export: ORRenameKey
-        - export: ORSaveHive
-        - export: ORSetKeySecurity
-        - export: ORSetValue
-        - export: ORSetVirtualFlags
+    - or:
+        - api: ORCloseHive
+        - api: ORCloseHive
+        - api: ORCloseKey
+        - api: ORCreateHive
+        - api: ORCreateKey
+        - api: ORDeleteKey
+        - api: ORDeleteValue
+        - api: OREnumKey
+        - api: OREnumValue
+        - api: ORGetKeySecurity
+        - api: ORGetValue
+        - api: ORGetVersion
+        - api: ORGetVirtualFlags
+        - api: ORMergeHives
+        - api: OROpenHive
+        - api: OROpenHiveByHandle
+        - api: OROpenKey
+        - api: ORQueryInfoKey
+        - api: ORRenameKey
+        - api: ORSaveHive
+        - api: ORSetKeySecurity
+        - api: ORSetValue
+        - api: ORSetVirtualFlags
