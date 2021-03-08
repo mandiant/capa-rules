@@ -2,9 +2,9 @@ rule:
   meta:
     name: linked against Go registry library
     namespace: host-interaction/registry
-    description: Uses a Go library for interacting with the Windows registry.
     author:
       - joakim@intezer.com
+    description: Uses a Go library for interacting with the Windows registry.
     scope: file
     references:
       - https://github.com/golang/sys

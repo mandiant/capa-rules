@@ -2,14 +2,14 @@ rule:
   meta:
     name: linked against Go WMI library
     namespace: collection/database/wmi
-    description: StackExchange's WMI library is used to interact with WMI.
     author:
       - joakim@intezer.com
+    description: StackExchange's WMI library is used to interact with WMI.
     scope: file
-    references:
-      - https://github.com/StackExchange/wmi
     att&ck:
       - Collection::Data from Information Repositories [T1213]
+    references:
+      - https://github.com/StackExchange/wmi
   features:
     - and:
       - match: compiled with Go

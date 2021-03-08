@@ -2,9 +2,9 @@ rule:
   meta:
     name: linked against Go static asset library
     namespace: executable/resource
-    description: Detects if the Go file includes an static assets.
     author:
       - joakim@intezer.com
+    description: Detects if the Go file includes an static assets.
     scope: file
     references:
       - https://github.com/rakyll/statik
