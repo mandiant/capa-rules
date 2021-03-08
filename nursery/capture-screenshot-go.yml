@@ -2,9 +2,9 @@ rule:
   meta:
     name: capture screenshot in Go
     namespace: collection/screenshot
-    description: Detects screenshot capability via WinAPI for Go files.
     author:
       - joakim@intezer.com
+    description: Detects screenshot capability via WinAPI for Go files.
     scope: file
     att&ck:
       - Collection::Screen Capture [T1113]
