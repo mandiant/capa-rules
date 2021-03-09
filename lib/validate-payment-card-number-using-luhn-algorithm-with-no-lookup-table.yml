@@ -10,19 +10,19 @@ rule:
       - 6fcc13563aad936c7d0f3165351cb453:0x4026C0
   features:
     - and:
-      - not:
-        - characteristic: nzxor
       - characteristic: loop
         description: Iterate over CC digits
       - or:
         - basic block:
           - and:
             - or:
-              - and:
-                - mnemonic: add
+              - mnemonic: add
               - and:
                 - mnemonic: shl
                 - number: 0x1
+              - and:
+                - mnemonic: imul
+                - number: 0x2
             - mnemonic: cmp
             - number: 0x9
             - description: Digital Root check number*2 < 0x9
@@ -35,6 +35,9 @@ rule:
           - basic block:
             - or:
               - mnemonic: add
+              - and:
+                - mnemonic: imul
+                - number: 0x2
               - and:
                 - mnemonic: shl
                 - number: 0x1
@@ -52,8 +55,11 @@ rule:
       - basic block:
         - or:
           - and:
-            - mnemonic: idiv
-            - mnemonic: cdq
+            - or:
+              - mnemonic: div
+              - and:
+                - mnemonic: idiv
+                - mnemonic: cdq
             - number: 0xa
             - optional:
               - mnemonic: neg
