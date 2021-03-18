@@ -26,4 +26,3 @@ rule:
           - number: 1 = PROV_RSA_FULL
           - api: CryptAcquireContext
           - api: CryptEncrypt
-
