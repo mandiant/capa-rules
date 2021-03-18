@@ -9,7 +9,8 @@ rule:
     mbc:
       - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
       - Cryptography::Encrypt Data::RC4 [C0027.009]
-    references: https://www.phdcc.com/cryptorc4.htm
+    references: 
+      - https://www.phdcc.com/cryptorc4.htm
     examples:
       - 4E9C546A54E40D0DA89BB4616DD7F8C4:0x140007B70
       - A563C50C5FA0FD541248ACAF72CC4E7D:0x401AF0
