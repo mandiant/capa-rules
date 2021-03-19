@@ -14,12 +14,12 @@ rule:
       - and:
         - mnemonic: cmp
         - or:
-          - number: 0x4550 = IMAGE_DOS_SIGNATURE (MZ)
+          - number: 0x4550 = IMAGE_NT_SIGNATURE (PE)
           - and:
             - number: 0x50
             - number: 0x45
         - or:
-          - number: 0x5A4D = IMAGE_NT_SIGNATURE (PE)
+          - number: 0x5A4D = IMAGE_DOS_SIGNATURE (MZ)
           - and:
             - number: 0x4D
             - number: 0x5A

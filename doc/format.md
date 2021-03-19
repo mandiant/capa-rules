@@ -522,7 +522,7 @@ For all features except for [strings](#string), the description can be specified
 For example:
 
 ```
-- number: 0x4550 = IMAGE_DOS_SIGNATURE (MZ)
+- number: 0x5A4D = IMAGE_DOS_SIGNATURE (MZ)
 ```
 
 The inline syntax is preferred.
@@ -537,7 +537,7 @@ For example:
 - or:
   - string: This program cannot be run in DOS mode.
     description: MS-DOS stub message
-  - number: 0x4550
+  - number: 0x5A4D
     description: IMAGE_DOS_SIGNATURE (MZ)
   - and:
     - description: documentation of this `and` statement
