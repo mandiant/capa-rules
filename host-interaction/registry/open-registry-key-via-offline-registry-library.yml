@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: offline open registry
+    name: open registry key via offline registry library
     namespace: host-interaction/registry
     author: johnk3r
     scope: function
@@ -12,5 +12,3 @@ rule:
     - or:
         - api: OROpenHive
         - api: OROpenKey
-        - api: ORCloseHive
-        - api: ORCloseKey
