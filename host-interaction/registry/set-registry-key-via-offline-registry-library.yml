@@ -10,6 +10,6 @@ rule:
       - 5fbbfeed28b258c42e0cfeb16718b31c:0x43A6C8
   features:
     - and:
-        - api: ORSetValue
-        - optional:
-          - api: ORSaveHive
+      - api: ORSetValue
+      - optional:
+        - api: ORSaveHive
