@@ -10,5 +10,5 @@ rule:
       - 5fbbfeed28b258c42e0cfeb16718b31c:0x100481A0
   features:
     - or:
-        - api: ORCreateHive
-        - api: ORCreateKey
+      - api: ORCreateHive
+      - api: ORCreateKey
