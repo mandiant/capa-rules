@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: offline set registry
+    name: set registry key via offline registry library
     namespace: host-interaction/registry
     author: johnk3r
     scope: function
@@ -9,8 +9,7 @@ rule:
     examples:
       - 5fbbfeed28b258c42e0cfeb16718b31c:0x43A6C8
   features:
-    - or:
-        - api: ORSetKeySecurity
-        - api: ORSetVirtualFlags
-        - api: ORSaveHive
+    - and:
         - api: ORSetValue
+        - optional:
+          - api: ORSaveHive
