@@ -11,5 +11,5 @@ rule:
     examples:
       - 5fbbfeed28b258c42e0cfeb16718b31c:0x42388C
   features:
-    - or:
+    - and:
       - api: ORGetValue
