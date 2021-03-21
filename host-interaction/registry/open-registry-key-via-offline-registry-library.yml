@@ -10,5 +10,5 @@ rule:
       - 5fbbfeed28b258c42e0cfeb16718b31c:0x4071E1
   features:
     - or:
-        - api: OROpenHive
-        - api: OROpenKey
+      - api: OROpenHive
+      - api: OROpenKey
