@@ -3,7 +3,7 @@ rule:
     name: check for OutputDebugString error
     namespace: anti-analysis/anti-debugging/debugger-detection
     author: michael.hunhoff@fireeye.com
-    scope: function
+    scope: basic block
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::OutputDebugString [B0001.016]
     examples:
