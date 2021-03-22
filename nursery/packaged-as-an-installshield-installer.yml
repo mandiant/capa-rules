@@ -10,4 +10,4 @@ rule:
       # which we want to avoid FP'ing on,
       # so do an exact match for this string.
       # ok to relax if there are counterexamples.
-      - string: InstallShield
+      - string: "InstallShield"

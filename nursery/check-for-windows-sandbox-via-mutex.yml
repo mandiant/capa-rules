@@ -13,4 +13,4 @@ rule:
   features:
     - and:
       - match: check mutex
-      - string: WindowsSandboxMutex
+      - string: "WindowsSandboxMutex"

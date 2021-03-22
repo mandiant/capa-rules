@@ -11,6 +11,6 @@ rule:
   features:
     - and:
       - match: compiled to the .NET platform
-      - string: PS2EXEApp
-      - string: PS2EXE
-      - string: PS2EXE_Host
+      - string: "PS2EXEApp"
+      - string: "PS2EXE"
+      - string: "PS2EXE_Host"

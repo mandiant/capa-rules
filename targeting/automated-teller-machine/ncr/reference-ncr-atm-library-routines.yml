@@ -11,34 +11,34 @@ rule:
       # 971e599e6e707349eccea2fd4c8e5f67  # packed with vmprotect
   features:
     - or:
-      - string: msxfs.dll    # Extension for Financial Services (XFS)
+      - string: "msxfs.dll"    # Extension for Financial Services (XFS)
 
       - api: msxfs.WFSCleanUp
-      - string: WFSCleanUp
+      - string: "WFSCleanUp"
 
       - api: msxfs.WFSClose
-      - string: WFSClose
+      - string: "WFSClose"
 
       - api: msxfs.WFSExecute
-      - string: WFSExecute
+      - string: "WFSExecute"
 
       - api: msxfs.WFSFreeResult
-      - string: WFSFreeResult
+      - string: "WFSFreeResult"
 
       - api: msxfs.WFSGetInfo
-      - string: WFSGetInfo
+      - string: "WFSGetInfo"
 
       - api: msxfs.WFSLock
-      - string: WFSLock
+      - string: "WFSLock"
 
       - api: msxfs.WFSOpen
-      - string: WFSOpen
+      - string: "WFSOpen"
 
       - api: msxfs.WFSRegister
-      - string: WFSRegister
+      - string: "WFSRegister"
 
       - api: msxfs.WFSStartUp
-      - string: WFSStartUp
+      - string: "WFSStartUp"
 
       - api: msxfs.WFSUnlock
-      - string: WFSUnlock
+      - string: "WFSUnlock"

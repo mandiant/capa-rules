@@ -9,4 +9,4 @@ rule:
   features:
     - and:
       - match: create or open registry key
-      - string: ProxyServer
+      - string: "ProxyServer"

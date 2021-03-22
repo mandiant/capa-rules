@@ -15,6 +15,6 @@ rule:
   features:
     - and:
       - api: GetAdaptersAddresses
-      - string: mshome.net
+      - string: "mshome.net"
       - offset: 0x38 = DnsSuffix
       - match: contain loop

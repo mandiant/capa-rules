@@ -12,4 +12,4 @@ rule:
       - b9f5bd514485fb06da39beff051b9fdc
   features:
     - or:
-      - string: ConfusedByAttribute
+      - string: "ConfusedByAttribute"

@@ -16,5 +16,5 @@ rule:
       - match: compiled with Go
       - or:
         - or:
-          - string: github.com/mitchellh/go-ps.FindProcess
-          - string: github.com/mitchellh/go-ps.Processes
+          - string: "github.com/mitchellh/go-ps.FindProcess"
+          - string: "github.com/mitchellh/go-ps.Processes"

@@ -12,5 +12,5 @@ rule:
     - and:
       - api: winmm.mciSendString
       - or:
-        - string: set cdaudio door closed wait
-        - string: set cdaudio door open
+        - string: "set cdaudio door closed wait"
+        - string: "set cdaudio door open"

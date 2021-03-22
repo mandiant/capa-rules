@@ -8,8 +8,8 @@ rule:
       - 4BDD67FF852C221112337FECD0681EAC
   features:
     - or:
-      - string: Borland C++ - Copyright 2002 Borland Corporation
+      - string: "Borland C++ - Copyright 2002 Borland Corporation"
       - string: /SOFTWARE\\Borland\\Delphi\\RTL/
-      - string: Sysutils::Exception
-      - string: TForm1
-      - import: BORLNDMM.DLL
+      - string: "Sysutils::Exception"
+      - string: "TForm1"
+      - import: "BORLNDMM.DLL"

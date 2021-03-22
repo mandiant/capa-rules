@@ -12,7 +12,7 @@ rule:
       - 2f43138aa75fb12ac482b486cbc98569:0x180001B48
   features:
     - and:
-      - string: wusa.exe
+      - string: "wusa.exe"
       - api: ShellExecuteExW
       - api: ImpersonateLoggedOnUser
       - api: GetStartupInfoW

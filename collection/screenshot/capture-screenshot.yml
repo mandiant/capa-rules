@@ -23,7 +23,7 @@ rule:
           - api: user32.GetDC
           - and:
             - api: gdi32.CreateDCA
-            - string: DISPLAY
+            - string: "DISPLAY"
         - or:
           - api: gdi32.BitBlt
           - api: gdi32.GetDIBits

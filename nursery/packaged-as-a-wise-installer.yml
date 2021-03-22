@@ -6,5 +6,5 @@ rule:
     scope: file
   features:
     - or:
-      - string: WiseMain
+      - string: "WiseMain"
       - string: /Wise Installation Wizard/

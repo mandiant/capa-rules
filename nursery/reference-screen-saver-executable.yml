@@ -9,8 +9,8 @@ rule:
       - Persistence::Event Triggered Execution::Screensaver [T1546.002]
   features:
     - and:
-      - string: SCRNSAVE.EXE
+      - string: "SCRNSAVE.EXE"
       - optional:
-        - string: ScreenSaveTimeOut
-        - string: Control Panel\Desktop
+        - string: "ScreenSaveTimeOut"
+        - string: "Control Panel\\Desktop"
         - match: set registry value

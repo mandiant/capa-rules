@@ -11,11 +11,11 @@ rule:
       - https://enigma0x3.net/2016/07/22/bypassing-uac-on-windows-10-using-disk-cleanup
   features:
     - and:
-      - string: schtasks.exe
+      - string: "schtasks.exe"
       - string: /Microsoft\\Windows\\DiskCleanup\\SilentCleanup/i
       - match: create process
       - optional:
         - or:
-          - string: Environment
-          - string: windir
+          - string: "Environment"
+          - string: "windir"
           - match: set registry value

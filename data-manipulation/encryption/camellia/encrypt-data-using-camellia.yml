@@ -43,7 +43,7 @@ rule:
         - and:
           - string: /A09E667F3BCC908B/i
             description: sigma1_str
-          - string: /B67AE8584CAA73B
+          - string: "/B67AE8584CAA73B"
             description: sigma2_str
           - string: /C6EF372FE94F82BE/i
             description: sigma3_str

@@ -10,7 +10,7 @@ rule:
       - 39C05B15E9834AC93F206BC114D0A00C357C888DB567BA8F5345DA0529CBED41:0x100070A0
   features:
     - and:
-      - string: \\.\PHYSICALDRIVE0
+      - string: "\\\\.\\PHYSICALDRIVE0"
       - api: kernel32.WriteFile
       # MBR/sector size in bytes
       - number: 0x200

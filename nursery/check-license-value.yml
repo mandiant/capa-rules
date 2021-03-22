@@ -11,4 +11,4 @@ rule:
   features:
     - and:
       - api: NtQueryLicenseValue
-      - string: Kernel-VMDetection-Private
+      - string: "Kernel-VMDetection-Private"

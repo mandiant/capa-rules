@@ -20,4 +20,4 @@ rule:
       - basic block:
         - and:
           - api: UuidFromString
-          - string: 55c92734-d682-4d71-983e-d6ec3f16059f
+          - string: "55c92734-d682-4d71-983e-d6ec3f16059f"

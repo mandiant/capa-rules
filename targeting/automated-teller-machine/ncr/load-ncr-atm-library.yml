@@ -16,5 +16,5 @@ rule:
   features:
     - or:
       - import: msxfs.dll  # Extension for Financial Services (XFS)
-      - string: MSXFS.dll
-      - string: msxfs.dll
+      - string: "MSXFS.dll"
+      - string: "msxfs.dll"
