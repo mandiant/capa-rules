@@ -10,8 +10,11 @@ rule:
       - 54ac78733552a62d1d05ea4ba3fc604bb49fe000d7fc948da45335b726e64d75:0x10001a20
   features:
     - and:
-      - number: 0x20000013 = HTTP_QUERY_FLAG_NUMBER | HTTP_QUERY_STATUS_CODE
+      - or:
+        - number: 0x20000013 = HTTP_QUERY_FLAG_NUMBER | HTTP_QUERY_STATUS_CODE
+        - number: 0x13 = HTTP_QUERY_STATUS_CODE
       - optional:
+        - api: atoi
         - api: wininet.HttpQueryInfo
       - basic block:
         - and:
