@@ -1,0 +1,36 @@
+rule:
+  meta:
+    name: decompress data using aPLib
+    namespace: data-manipulation/compression
+    author: "@r3c0nst (Frank Boldewin)"
+    description: detects decompression function of library aPLib
+    scope: function
+    references:
+      - https://ibsensoftware.com/files/aPLib-1.1.1.zip
+    examples:
+      - B43FCA5283BFC7022553EFF663683834:0x424
+      - DAA13AE302FE8B618DDBF590537443EF:0x419F50
+      - 6CE584F4F2157C63D5DD239A12A3DCEC:0x40AC20
+  features:
+    - and:
+      - basic block:
+        - and:
+          - description: aP_depack
+          - mnemonic: mov
+          - mnemonic: cld
+          - number: 0x80
+          - mnemonic: xor
+      - basic block:
+        - and:
+          - mnemonic: xchg
+          - mnemonic: shl
+          - number: 8
+          - mnemonic: lods
+          - mnemonic: cmp
+      - basic block:
+          - and:
+              - mnemonic: push
+              - mnemonic: mov
+              - mnemonic: sub
+              - mnemonic: pop
+              - mnemonic: jmp
