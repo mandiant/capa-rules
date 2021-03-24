@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: set registry key via offline registry library
+    namespace: host-interaction/registry
+    author: johnk3r
+    scope: function
+    mbc:
+      - Operating System::Registry::Set Registry Key [C0036.001]
+    examples:
+      - 5fbbfeed28b258c42e0cfeb16718b31c:0x43A6C8
+  features:
+    - and:
+      - api: ORSetValue
+      - optional:
+        - api: ORSaveHive
