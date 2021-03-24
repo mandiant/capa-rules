@@ -5,6 +5,7 @@ rule:
     author:
       - moritz.raabe@fireeye.com
       - "@_re_fox"
+      - michael.hunhoff@fireeye.com
     description: can be any Fowler-Noll-Vo (FNV) hash variant, including FNV-1, FNV-1a, FNV-0
     scope: function
     mbc:
@@ -20,11 +21,11 @@ rule:
       - optional:
         - characteristic: loop
         # FNV-0 hash does not use these initialization values
-        - number/x64: 0xcbf29ce484222325 = FNV_offset_basis
-        - number/x32: 0x811c9dc5 = FNV_offset_basis
+        - number: 0xcbf29ce484222325 = FNV_offset_basis
+        - number: 0x811c9dc5 = FNV_offset_basis
       - or:
-        - number/x64: 0x100000001b3 = FNV prime
-        - number/x32: 0x01000193 = FNV prime
+        - number: 0x100000001b3 = FNV prime
+        - number: 0x01000193 = FNV prime
       - basic block:
         # FNV-1 hash does multiply then XOR
         # FNV-1a hash does XOR then multiply
