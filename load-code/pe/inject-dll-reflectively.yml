@@ -18,3 +18,5 @@ rule:
           - offset: 0x28 = IMAGE_NT_HEADERS.OptionalHeader.AddressOfEntryPoint
           - number: 0x1 = DLL_PROCESS_ATTACH
           - characteristic: indirect call = call entry point
+      - optional:
+        - match: translate characteristic into permission
