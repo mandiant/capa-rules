@@ -2,7 +2,9 @@ rule:
   meta:
     name: connect pipe
     namespace: communication/named-pipe/connect
-    author: moritz.raabe@fireeye.com
+    author:
+      - moritz.raabe@fireeye.com
+      - michael.hunhoff@fireeye.com
     scope: function
     mbc:
       - Communication::Interprocess Communication::Connect Pipe [C0003.002]
@@ -12,3 +14,4 @@ rule:
   features:
     - or:
       - api: kernel32.ConnectNamedPipe
+      - api: kernel32.CallNamedPipe  # connects, writes, and reads from pipe in single operation
