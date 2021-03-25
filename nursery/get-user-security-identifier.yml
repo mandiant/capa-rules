@@ -1,0 +1,12 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: get user security identifier
+    namespace: host-interaction/sid
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - or:
+      - api: advapi32.LookupAccountName
+      - api: advapi32.LsaLookupNames
+      - api: advapi32.LsaLookupNames2
