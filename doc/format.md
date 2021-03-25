@@ -316,7 +316,15 @@ This is probably a pointer to an ASCII or Unicode string.
 This could also be an obfuscated string, for example a stack string.
 
 The parameter is a string describing the string.
-This can be the verbatim value, or a regex matching the string.
+This can be the verbatim value or a regex matching the string.
+
+Verbatim values must be surrounded by double quotes and special characters must be escaped.
+
+A special character is one of:
+  - a backslash, which should be represented as `string: "\\"`
+  - a newline or other non-space whitespace (e.g. tab, CR, LF, etc), which should be represented like `string: "\n"`
+  - a double quote, which should be represented as `string: "\""`
+
 Regexes should be surrounded with `/` characters. 
 By default, capa uses case-sensitive matching and assumes leading and trailing wildcards.
 To perform case-insensitive matching append an `i`. To anchor the regex at the start or end of a string, use `^` and/or `$`.
@@ -327,12 +335,13 @@ See the [description section](#descriptions) for more details.
 Examples:
 
 ```
-- string: Firefox 64.0
-- string: This program cannot be run in DOS mode.
+- string: "Firefox 64.0"
+- string: "Hostname:\t\t\t%s\nIP adress:\t\t\t%s\nOS version:\t\t\t%s\n"
+- string: "This program cannot be run in DOS mode."
   description: MS-DOS stub message
-- string: '{3E5FC7F9-9A51-4367-9063-A120244FBEC7}'
+- string: "{3E5FC7F9-9A51-4367-9063-A120244FBEC7}"
   description: CLSID_CMSTPLUA
-- string: '/SELECT.*FROM.*WHERE/'
+- string: /SELECT.*FROM.*WHERE/
   description: SQL WHERE Clause
 - string: /Hardware\\Description\\System\\CentralProcessor/i
 ```
@@ -434,14 +443,13 @@ These are the features supported at the file-scope:
 An ASCII or UTF-16 LE string present in the file.
 
 The parameter is a string describing the string.
-This can be the verbatim value, or a regex matching the string.
-Regexes should be surrounded with `/` characters. By default, capa uses case-sensitive matching.
-To perform case-insensitive matching append an `i`.
+This can be the verbatim value, or a regex matching the string and should use the same formatting used for
+[string](#string) features.
 
 Examples:
 
-    string: Z:\Dev\dropper\dropper.pdb
-    string: [ENTER]
+    string: "Z:\\Dev\\dropper\\dropper.pdb"
+    string: "[ENTER]"
     string: /.*VBox.*/
     string: /.*Software\Microsoft\Windows\CurrentVersion\Run.*/i
 
@@ -535,7 +543,7 @@ For example:
 
 ```
 - or:
-  - string: This program cannot be run in DOS mode.
+  - string: "This program cannot be run in DOS mode."
     description: MS-DOS stub message
   - number: 0x5A4D
     description: IMAGE_DOS_SIGNATURE (MZ)

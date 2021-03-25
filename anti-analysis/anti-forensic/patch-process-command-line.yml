@@ -34,7 +34,7 @@ rule:
       - and:
         - characteristic: indirect call
         - api: GetProcAddress
-        - string: NtQueryInformationProcess
+        - string: "NtQueryInformationProcess"
         - api: ReadProcessMemory
         - or:
           - and:

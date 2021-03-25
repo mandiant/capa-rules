@@ -13,4 +13,4 @@ rule:
   features:
     - and:
       - string: /SELECT\s+\*\s+FROM\s+Win32_Processor/
-      - string: NumberOfCores
+      - string: "NumberOfCores"

@@ -12,5 +12,5 @@ rule:
     - and:
       - match: compiled with Go
       - or:
-        - string: golang.org/x/sys/windows/registry.Key.Close
-        - string: github.com/golang/sys/windows/registry.Key.Close
+        - string: "golang.org/x/sys/windows/registry.Key.Close"
+        - string: "github.com/golang/sys/windows/registry.Key.Close"

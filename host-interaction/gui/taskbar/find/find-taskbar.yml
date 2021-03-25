@@ -10,5 +10,5 @@ rule:
       - B7841B9D5DC1F511A93CC7576672EC0C:0x10007250
   features:
     - and:
-      - string: Shell_TrayWnd
+      - string: "Shell_TrayWnd"
       - match: find graphical window

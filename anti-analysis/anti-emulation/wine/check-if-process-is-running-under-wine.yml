@@ -18,7 +18,7 @@ rule:
       - and:
         - api: GetModuleHandle
         - api: GetProcAddress
-        - string: wine_get_unix_file_name
+        - string: "wine_get_unix_file_name"
         - or:
-          - string: kernel32.dll
-          - string: ntdll.dll
+          - string: "kernel32.dll"
+          - string: "ntdll.dll"

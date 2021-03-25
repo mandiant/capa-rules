@@ -12,7 +12,7 @@ rule:
       - a0fb20bc9aa944c3a0a6c4545c195818
   features:
     - or:
-      - string: pyarmor_runtimesh
-      - string: PYARMOR
-      - string: __pyarmor__
-      - string: PYARMOR_SIGNATURE
+      - string: "pyarmor_runtimesh"
+      - string: "PYARMOR"
+      - string: "__pyarmor__"
+      - string: "PYARMOR_SIGNATURE"

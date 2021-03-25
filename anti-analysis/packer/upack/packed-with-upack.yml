@@ -16,4 +16,4 @@ rule:
     - or:
       - section: .Upack
       - section: .ByDwing
-      - string: UpackByDwing@
+      - string: "UpackByDwing@"

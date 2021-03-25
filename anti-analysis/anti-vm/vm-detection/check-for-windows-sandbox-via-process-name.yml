@@ -15,4 +15,4 @@ rule:
   features:
     - and:
       - match: enumerate processes
-      - string: CExecSvc.exe
+      - string: "CExecSvc.exe"

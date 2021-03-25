@@ -15,5 +15,5 @@ rule:
       - match: compiled with Go
       - or:
         - or:
-          - string: github.com/StackExchange/wmi.CreateQuery
-          - string: github.com/StackExchange/wmi.Query
+          - string: "github.com/StackExchange/wmi.CreateQuery"
+          - string: "github.com/StackExchange/wmi.Query"

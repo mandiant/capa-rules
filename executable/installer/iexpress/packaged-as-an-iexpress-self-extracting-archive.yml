@@ -13,6 +13,6 @@ rule:
   features:
     - or:
       - and:
-        - string: wextract_cleanup%d
-        - string: Software\Microsoft\Windows\CurrentVersion\RunOnce
-      - string: '  <description>IExpress extraction tool</description>'
+        - string: "wextract_cleanup%d"
+        - string: "Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce"
+      - string: "  <description>IExpress extraction tool</description>"

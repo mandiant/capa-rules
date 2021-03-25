@@ -13,7 +13,7 @@ rule:
   features:
     - or:
       - import: cscwcng.dll
-      - string: CSCWCNG.dll
+      - string: "CSCWCNG.dll"
       - import: cscwcng.CscCngStatusWrite
       - import: cscwcng.CscCngCasRefInit
       - import: cscwcng.CscCngEncryption
@@ -41,30 +41,30 @@ rule:
       - import: cscwcng.CscCngOptimization
       - import: cscwcng.CscCngSelftest
       - import: cscwcng.CscCngEco
-      - string: CscCngStatusWrite
-      - string: CscCngCasRefInit
-      - string: CscCngEncryption
-      - string: CscCngRecovery
-      - string: CscCngService
-      - string: CscCngOpen
-      - string: CscCngReset
-      - string: CscCngClose
-      - string: CscCngDispense
-      - string: CscCngTransport
-      - string: CscCngStatusRead
-      - string: CscCngInit
-      - string: CscCngGetRelease
-      - string: CscCngLock
-      - string: CscCngUnlock
-      - string: CscCngShutter
-      - string: CscCngPowerOff
-      - string: CscCngSelStatus
-      - string: CscCngBim
-      - string: CscCngConfigure
-      - string: CscCngStatistics
-      - string: CscCngControl
-      - string: CscCngPsm
-      - string: CscCngGetTrace
-      - string: CscCngOptimization
-      - string: CscCngSelftest
-      - string: CscCngEco
+      - string: "CscCngStatusWrite"
+      - string: "CscCngCasRefInit"
+      - string: "CscCngEncryption"
+      - string: "CscCngRecovery"
+      - string: "CscCngService"
+      - string: "CscCngOpen"
+      - string: "CscCngReset"
+      - string: "CscCngClose"
+      - string: "CscCngDispense"
+      - string: "CscCngTransport"
+      - string: "CscCngStatusRead"
+      - string: "CscCngInit"
+      - string: "CscCngGetRelease"
+      - string: "CscCngLock"
+      - string: "CscCngUnlock"
+      - string: "CscCngShutter"
+      - string: "CscCngPowerOff"
+      - string: "CscCngSelStatus"
+      - string: "CscCngBim"
+      - string: "CscCngConfigure"
+      - string: "CscCngStatistics"
+      - string: "CscCngControl"
+      - string: "CscCngPsm"
+      - string: "CscCngGetTrace"
+      - string: "CscCngOptimization"
+      - string: "CscCngSelftest"
+      - string: "CscCngEco"

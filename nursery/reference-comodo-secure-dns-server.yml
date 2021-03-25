@@ -9,5 +9,5 @@ rule:
     examples:
   features:
     - or:
-      - string: 8.26.56.26
-      - string: 8.20.247.20
+      - string: "8.26.56.26"
+      - string: "8.20.247.20"

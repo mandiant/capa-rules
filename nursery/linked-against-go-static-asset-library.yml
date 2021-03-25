@@ -21,26 +21,26 @@ rule:
       - match: compiled with Go
       - or:
         - or:
-          - string: github.com/rakyll/statik/fs.IsDefaultNamespace
-          - string: github.com/rakyll/statik/fs.RegisterWithNamespace
-          - string: github.com/rakyll/statik/fs.NewWithNamespace
-          - string: github.com/rakyll/statik/fs.Register
+          - string: "github.com/rakyll/statik/fs.IsDefaultNamespace"
+          - string: "github.com/rakyll/statik/fs.RegisterWithNamespace"
+          - string: "github.com/rakyll/statik/fs.NewWithNamespace"
+          - string: "github.com/rakyll/statik/fs.Register"
         - and:
-          - string: github.com/gobuffalo/packr.NewBox
+          - string: "github.com/gobuffalo/packr.NewBox"
         - or:
-          - string: github.com/markbates/pkger.Open
-          - string: github.com/markbates/pkger.Include
-          - string: github.com/markbates/pkger.Parse
+          - string: "github.com/markbates/pkger.Open"
+          - string: "github.com/markbates/pkger.Include"
+          - string: "github.com/markbates/pkger.Parse"
         - or:
-          - string: github.com/GeertJohan/go.rice.FindBox
-          - string: github.com/GeertJohan/go.rice.MustFindBox
+          - string: "github.com/GeertJohan/go.rice.FindBox"
+          - string: "github.com/GeertJohan/go.rice.MustFindBox"
         - and:
-          - string: '/\/bindata\.go/'
+          - string: /\/bindata\.go/
             description: go-bindata
-          - string: '/\.Asset/'
+          - string: /\.Asset/
         - and:
-          - string: github.com/lu4p/binclude.Include
+          - string: "github.com/lu4p/binclude.Include"
         - and:
-          - string: github.com/omeid/go-resources
+          - string: "github.com/omeid/go-resources"
         - and:
-          - string: github.com/pyros2097/go-embed
+          - string: "github.com/pyros2097/go-embed"

@@ -9,9 +9,9 @@ rule:
     examples:
   features:
     - or:
-      - string: 4.2.2.1
-      - string: 4.2.2.2
-      - string: 4.2.2.3
-      - string: 4.2.2.4
-      - string: 4.2.2.5
-      - string: 4.2.2.6
+      - string: "4.2.2.1"
+      - string: "4.2.2.2"
+      - string: "4.2.2.3"
+      - string: "4.2.2.4"
+      - string: "4.2.2.5"
+      - string: "4.2.2.6"

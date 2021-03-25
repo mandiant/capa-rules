@@ -10,6 +10,6 @@ rule:
       - 6cc148363200798a12091b97a17181a1
   features:
     - or:
-      - string: RC4 for x86_64, CRYPTOGAMS by <appro@openssl.org>
-      - string: AES for x86_64, CRYPTOGAMS by <appro@openssl.org>
-      - string: DSA-SHA1-old
+      - string: "RC4 for x86_64, CRYPTOGAMS by <appro@openssl.org>"
+      - string: "AES for x86_64, CRYPTOGAMS by <appro@openssl.org>"
+      - string: "DSA-SHA1-old"

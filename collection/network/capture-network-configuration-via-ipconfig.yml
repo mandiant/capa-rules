@@ -14,6 +14,6 @@ rule:
       - api: msvcr100.system
       - optional:
         - and:
-          - string: ipconfig.txt
+          - string: "ipconfig.txt"
           - string: /\[Windows IP Configuration\]/
             description: Arkei Stealer Filename and Banner

@@ -15,7 +15,7 @@ rule:
       - match: compiled with Go
       - or:
         - and:
-          - string: syscall.NewLazyDLL
+          - string: "syscall.NewLazyDLL"
             description: Dynamic loading of DLLs
           - or:
             - and:

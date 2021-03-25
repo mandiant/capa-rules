@@ -15,16 +15,16 @@ rule:
       # these APIs are not typically intended for user mode programs.
       # they're only accessible via GetProcAddress on ntoskrnl/ntdll.
       - api: RtlDecompressBuffer
-      - string: RtlDecompressBuffer
+      - string: "RtlDecompressBuffer"
 
       - api: RtlDecompressBufferEx
-      - string: RtlDecompressBufferEx
+      - string: "RtlDecompressBufferEx"
 
       - api: RtlDecompressBufferEx2
-      - string: RtlDecompressBufferEx2
+      - string: "RtlDecompressBufferEx2"
 
       - api: RtlCompressBuffer
-      - string: RtlCompressBuffer
+      - string: "RtlCompressBuffer"
 
       - api: RtlCompressBufferLZNT1
-      - string: RtlCompressBufferLZNT1
+      - string: "RtlCompressBufferLZNT1"

@@ -10,6 +10,6 @@ rule:
       - Practical Malware Analysis Lab 01-04.exe_:0x401174
   features:
     - and:
-      - string: sfc_os.dll              #   System File Checker
+      - string: "sfc_os.dll"              #   System File Checker
       - number: 0x2                     #   SfcTerminateWatcherThread
       - match: link function at runtime

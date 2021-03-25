@@ -15,4 +15,4 @@ rule:
   features:
     - and:
       - api: CreateFile
-      - string: \\.\GLOBALROOT\device\vmsmb
+      - string: "\\\\.\\GLOBALROOT\\device\\vmsmb"

@@ -13,6 +13,6 @@ rule:
     - and:
       - string: /CreateFileTransacted./
       - or:
-        - string: ZwCreateSection
-        - string: NtCreateSection
-      - string: RollbackTransaction
+        - string: "ZwCreateSection"
+        - string: "NtCreateSection"
+      - string: "RollbackTransaction"

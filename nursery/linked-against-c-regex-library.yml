@@ -6,5 +6,5 @@ rule:
     scope: file
   features:
     - or:
-      - string: regex_error(error_syntax)    # from C++ STL regex, ref: http://www.cplusplus.com/reference/regex/regex_error/
-      - string: 'regex_error(error_collate): The expression contained an invalid collating element name.'
+      - string: "regex_error(error_syntax)"    # from C++ STL regex, ref: http://www.cplusplus.com/reference/regex/regex_error/
+      - string: "regex_error(error_collate): The expression contained an invalid collating element name."

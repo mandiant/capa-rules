@@ -14,4 +14,4 @@ rule:
       - basic block:
         - and:
           - api: GetProcAddress
-          - string: RunPerl
+          - string: "RunPerl"
