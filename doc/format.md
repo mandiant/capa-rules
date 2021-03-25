@@ -318,7 +318,7 @@ This could also be an obfuscated string, for example a stack string.
 The parameter is a string describing the string.
 This can be the verbatim value or a regex matching the string.
 
-Verbatim values should be surrounded by double quotes and special characters should be escaped.
+Verbatim values must be surrounded by double quotes and special characters must be escaped.
 
 A special character is one of:
   - a backslash, which should be represented as `string: "\\"`
@@ -443,21 +443,12 @@ These are the features supported at the file-scope:
 An ASCII or UTF-16 LE string present in the file.
 
 The parameter is a string describing the string.
-This can be the verbatim value, or a regex matching the string.
-
-Verbatim values should be surrounded by double quotes and special characters should be escaped.
-
-A special character is one of:
-  - a backslash, which should be represented as `string: "\\"`
-  - a newline or other non-space whitespace (e.g. tab, CR, LF, etc), which should be represented like `string: "\n"`
-  - a double quote, which should be represented as `string: "\""`
-
-Regexes should be surrounded with `/` characters. By default, capa uses case-sensitive matching.
-To perform case-insensitive matching append an `i`.
+This can be the verbatim value, or a regex matching the string and should use the same formatting used for
+[string](#string) features.
 
 Examples:
 
-    string: "Z:\Dev\dropper\dropper.pdb"
+    string: "Z:\\Dev\\dropper\\dropper.pdb"
     string: "[ENTER]"
     string: /.*VBox.*/
     string: /.*Software\Microsoft\Windows\CurrentVersion\Run.*/i
