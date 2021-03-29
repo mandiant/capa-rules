@@ -19,4 +19,4 @@ rule:
           - number: 0x1 = DLL_PROCESS_ATTACH
           - characteristic: indirect call = call entry point
       - optional:
-        - match: translate characteristic into permission
+        - match: inspect section memory permissions
