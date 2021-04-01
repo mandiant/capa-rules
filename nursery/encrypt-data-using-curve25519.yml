@@ -3,7 +3,7 @@ rule:
     name: encrypt data using Curve25519
     namespace: data-manipulation/encryption/curve25519
     author: dimiter.andonov@fireeye.com
-    scope: function
+    scope: basic block
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     examples:
