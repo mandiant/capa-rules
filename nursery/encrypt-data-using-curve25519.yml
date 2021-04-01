@@ -7,7 +7,8 @@ rule:
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     examples:
-      - 0a0882b8da225406cc838991b5f67d11:0x4135f6, 0x416f51
+      - 0a0882b8da225406cc838991b5f67d11:0x4135f6
+      - 0a0882b8da225406cc838991b5f67d11:0x416f51
       - 80372de850597bd9e7e021a94f13f0a1:0x406480, 0x4086f4
   features:
     # initializes a 32-byte array with 
