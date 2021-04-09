@@ -9,7 +9,7 @@ rule:
       - https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf
       - https://raw.githubusercontent.com/fboldewin/YARA-rules/master/Shellcode.APIHashing.FIN8.yar
     examples:
-      - B43FCA5283BFC7022553EFF663683834:0x140
+      - B43FCA5283BFC7022553EFF663683834:0x12F
       - 4BF70EA92979DD88C9761EE848370050:0x28b
   features:
     - or:
@@ -20,19 +20,18 @@ rule:
           - number: 0x880355F21E6D1965
           - number: 0x2127599BF4325C37
           - mnemonic: add
-      - or:
-          # 32-bit constants
-        - basic block:
-          - and:
-            - mnemonic: push
-            - number: 0x880355F2
-            - number: 0x1E6D1965
-            - mnemonic: shr
-            - mnemonic: xor
-        - basic block:
-          - and:
-            - mnemonic: push
-            - number: 0x2127599B
-            - mnemonic: shr
-            - mnemonic: xor
-            - number: 0xF4325C37
+        # 32-bit constants
+      - basic block:
+        - and:
+          - mnemonic: push
+          - number: 0x880355F2
+          - number: 0x1E6D1965
+          - mnemonic: shr
+          - mnemonic: xor
+      - basic block:
+        - and:
+          - mnemonic: push
+          - number: 0x2127599B
+          - mnemonic: shr
+          - mnemonic: xor
+          - number: 0xF4325C37
