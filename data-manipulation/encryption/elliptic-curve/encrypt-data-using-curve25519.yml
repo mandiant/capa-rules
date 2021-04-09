@@ -1,7 +1,7 @@
 rule:
   meta:
     name: encrypt data using Curve25519
-    namespace: data-manipulation/encryption/curve25519
+    namespace: data-manipulation/encryption/elliptic-curve
     author: dimiter.andonov@fireeye.com
     scope: basic block
     att&ck:
@@ -24,4 +24,4 @@ rule:
         - mnemonic: and
       - and:
         - number: 0x40
-        - mnemonic: or 
+        - mnemonic: or

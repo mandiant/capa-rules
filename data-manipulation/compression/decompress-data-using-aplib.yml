@@ -1,0 +1,30 @@
+rule:
+  meta:
+    name: decompress data using aPLib
+    namespace: data-manipulation/compression
+    author:
+      - "@r3c0nst (Frank Boldewin)"
+      - moritz.raabe@fireeye.com
+    description: detects decompression function of library aPLib
+    scope: function
+    references:
+      - https://ibsensoftware.com/files/aPLib-1.1.1.zip
+    examples:
+      - DAA13AE302FE8B618DDBF590537443EF:0x419F50
+      - B43FCA5283BFC7022553EFF663683834:0x424
+      - 6CE584F4F2157C63D5DD239A12A3DCEC:0x40AC20
+  features:
+    - and:
+      - description: aP_depack
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - number: 32000
+      - basic block:
+        - and:
+          - mnemonic: cmp
+          - or:
+            - number: 127
+            - number: 128
+      - count(characteristic(calls from)): 2 or more  # calls aP_getbit and aP_getgamma
+      - match: contain loop
