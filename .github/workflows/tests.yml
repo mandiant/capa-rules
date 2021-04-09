@@ -24,10 +24,10 @@ jobs:
       with:
         repository: fireeye/capa-testfiles
         path: tests/data
-    - name: Set up Python 2.7
+    - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
-        python-version: 2.7
+        python-version: 3.9
     - name: Install capa
       run: pip install -e .
     # Regular lint is fast, so do this first
