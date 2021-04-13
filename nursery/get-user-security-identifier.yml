@@ -5,6 +5,8 @@ rule:
     namespace: host-interaction/sid
     author: michael.hunhoff@fireeye.com
     scope: basic block
+    att&ck:
+        - Discovery::Account Discovery [T1087]
   features:
     - or:
       - api: advapi32.LookupAccountName

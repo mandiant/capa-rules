@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
-      - Anti-Behavioral Analysis::Virtual Machine Detection::Unique Hardware/Firmware Check
+      - Anti-Behavioral Analysis::Virtual Machine Detection::Instruction Testing - CPUID [B0009.034]
     references:
       - https://en.wikipedia.org/wiki/CPUID
   features:

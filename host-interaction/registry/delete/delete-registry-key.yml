@@ -7,6 +7,8 @@ rule:
       - michael.hunhoff@fireeye.com
       - johnk3r
     scope: function
+    att&ck:
+      - Defense Evasion::Modify Registry [T1112]
     mbc:
       - Operating System::Registry::Delete Registry Key [C0036.002]
     examples:
