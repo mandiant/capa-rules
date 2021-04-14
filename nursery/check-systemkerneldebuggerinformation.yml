@@ -5,7 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: basic block
     mbc:
-      - Anti-Behavioral Analysis::Detect Debugger
+      - Anti-Behavioral Analysis::Debugger Detection
     references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtQuerySystemInformation_SystemKernelDebuggerInformation.cpp
   features:

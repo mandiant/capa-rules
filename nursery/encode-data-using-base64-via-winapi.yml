@@ -4,6 +4,8 @@ rule:
     namespace: data-manipulation/encoding/base64
     author: moritz.raabe@fireeye.com
     scope: basic block
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
   features:
     - and:
       - number: 1 = CRYPT_STRING_BASE64

@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/registry/delete
     author: michael.hunhoff@fireeye.com
     scope: function
+    att&ck:
+      - Defense Evasion::Modify Registry [T1112]
     mbc:
       - Operating System::Registry::Delete Registry Value [C0036.007]
     examples:

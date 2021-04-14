@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/registry
     author: johnk3r
     scope: function
+    att&ck:
+      - Defense Evasion::Modify Registry [T1112]
     mbc:
       - Operating System::Registry::Create Registry Key [C0036.004]
     examples:

@@ -4,8 +4,10 @@ rule:
     namespace: data-manipulation/encoding/base64
     author: moritz.raabe@fireeye.com
     scope: file
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
-      - Data::Encoding::Base64 [C0026.001]
+      - Data::Encode Data::Base64 [C0026.001]
       - Data::Check String [C0019]
     examples:
       - BFB9B5391A13D0AFD787E87AB90F14F5

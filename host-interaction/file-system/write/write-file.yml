@@ -5,7 +5,7 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: function
     mbc:
-      - File System::Write File [C0052]
+      - File System::Writes File [C0052]
     examples:
       - Practical Malware Analysis Lab 01-04.exe_:0x4011FC
       # ntdll
