@@ -2,6 +2,7 @@
 name: Rule idea
 about: Suggest a new rule for capa
 title: "[RULE NAME]"
+labels: rule idea
 
 ---
 
