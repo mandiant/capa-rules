@@ -12,4 +12,4 @@ rule:
       - bb7922d368a9a9c8d981837b5ad988f1
   features:
     - or:
-      - string: Amber - Reflective PE Packer
+      - string: "Amber - Reflective PE Packer"
