@@ -1,7 +1,7 @@
 rule:
   meta:
     name: potential shellcode loader
-    namespace: load-code/shellcode
+    namespace: load-code/pe
     author: "john.gorman@fireeye.com"
     scope: function
     att&ck:
