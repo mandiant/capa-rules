@@ -5,7 +5,9 @@ rule:
     author: "john.gorman@fireeye.com"
     scope: file
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027]
+      - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
+    mbc:
+      - Anti-Static Analysis::Software Packing [F0001]
     references:
       - https://github.com/EgeBalci/amber
     examples:
