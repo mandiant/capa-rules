@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: gather flashfxp information
+    namespace: collection/file-managers
+    author: "@_re_fox"
+    scope: function
+    att&ck:
+      - Credential Access::Credentials from Password Stores [T1555]
+    references:
+      - https://www.flashfxp.com/
+    examples:
+      - 5a2f620f29ca2f44fc22df67b674198f:0x4055ED
+  features:
+    - or:
+      - and:
+        - string: /Software\\FlashFXP/
+        - string: /DataFolder/
+        - string: /Install Path/
+      - and:
+        - string: /\\Sites.dat/
+        - string: /\\Quick.dat/
+        - string: /\\History.dat/

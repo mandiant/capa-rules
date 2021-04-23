@@ -1,0 +1,33 @@
+rule:
+  meta:
+    name: gather filezilla information
+    namespace: collection/file-managers
+    author: "@_re_fox"
+    scope: function
+    att&ck:
+      - Credential Access::Credentials from Password Stores [T1555]
+    references:
+      - https://filezilla-project.org/
+    examples:
+      - 5a2f620f29ca2f44fc22df67b674198f:0x4057A7
+  features:
+    - or:
+      - and:
+        - string: /\\sitemanager\.xml/
+        - string: /\\recentservers\.xml/
+        - string: /\\filezilla.xml/
+      - and:
+        - string: /Software\\FileZilla/
+        - string: "Install_Dir"
+        - string: /Software\\FileZilla Client/
+      - 3 or more:
+        - string: "Server Type"
+        - string: "Remote Dir"
+        - string: "Server.Port"
+        - string: "Server.Host"
+        - string: "Server.User"
+        - string: "Last Server Type"
+        - string: "Last Server Port"
+        - string: "Last Server User"
+        - string: "Last Server Host"
+        - string: "Last Server Pass"
