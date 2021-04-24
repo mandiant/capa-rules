@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: get domain information
+    namespace: host-interaction/network/domain
+    author: '@recvfrom'
+    description: Looks for imported Windows APIs that can be used to collect information about the Windows domain that a computer is connected to.
+    scope: function
+    att&ck:
+      - Discovery::System Network Configuration Discovery [T1016]
+    examples:
+      - 9B7CCAA2AE6A5B96E3110EBCBC4311F6:0x1001C184
+  features:
+    - api: netapi32.DsRoleGetPrimaryDomainInformation

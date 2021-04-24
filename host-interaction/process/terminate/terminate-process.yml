@@ -8,10 +8,12 @@ rule:
       - Process::Terminate Process [C0018]
     examples:
       - C91887D861D9BD4A5872249B641BC9F9:0x401A77
+      - 9B7CCAA2AE6A5B96E3110EBCBC4311F6:0x10010307
   features:
     - and:
       - optional:
         - api: kernel32.OpenProcess
+        - api: ntdll.NtOpenProcess
       - or:
         - api: kernel32.TerminateProcess
         - api: ntdll.NtTerminateProcess
