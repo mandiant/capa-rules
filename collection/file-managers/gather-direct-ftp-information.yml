@@ -1,0 +1,34 @@
+rule:
+  meta:
+    name: gather direct-ftp information
+    namespace: collection/file-managers
+    author: "@_re_fox"
+    scope: function
+    att&ck:
+      - Credential Access::Credentials from Password Stores [T1555]
+    references:
+      - https://www.coffeecup.com/software/
+    examples:
+      - 5a2f620f29ca2f44fc22df67b674198f:0x40DC62
+  features:
+    - or:
+      - string: /Software\\CoffeeCup Software\\Internet\\Profiles/
+      - string: /\\CoffeeCup Software/
+      - and:
+        - string: "Password"
+        - string: "HostName"
+        - string: "Port"
+        - string: "Username"
+        - string: "HostDirName"
+      - 2 or more:
+        - string: /\\SharedSettings\.ccs/
+        - string: /\\SharedSettings\.sqlite/
+        - string: /\\SharedSettings[0-9_\.]{2,7}\.ccs/
+        - string: /\\SharedSettings[0-9_\.]{2,7}\.sqlite/
+      - and:
+        - string: "FTP destination server"
+        - string: "FTP destination user"
+        - string: "FTP destination password"
+        - string: "FTP destination port"
+        - string: "FTP destination catalog"
+        - string: "FTP profiles"
