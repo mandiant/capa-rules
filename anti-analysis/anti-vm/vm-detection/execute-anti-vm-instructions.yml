@@ -12,7 +12,7 @@ rule:
       - Practical Malware Analysis Lab 17-03.exe_:0x401A80
   features:
     - or:
-      - mnemonic: sdit
+      - mnemonic: sidt
       - mnemonic: sgdt
       - mnemonic: sldt
       - mnemonic: smsw
