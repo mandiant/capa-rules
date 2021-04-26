@@ -7,6 +7,7 @@ rule:
     att&ck:
       - Credential Access::Credentials from Password Stores [T1555]
     references:
+      - https://en.wikipedia.org/wiki/CuteFTP
       - https://www.globalscape.com/cuteftp
     examples:
       - 5a2f620f29ca2f44fc22df67b674198f:0x40531A
