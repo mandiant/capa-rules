@@ -12,8 +12,7 @@ rule:
   features:
     - and:
       - optional:
-        - api: kernel32.OpenProcess
-        - api: ntdll.NtOpenProcess
+        - match: open process
       - or:
         - api: kernel32.TerminateProcess
         - api: ntdll.NtTerminateProcess
