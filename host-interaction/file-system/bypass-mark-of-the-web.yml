@@ -12,7 +12,7 @@ rule:
     - and:
       - api: DeleteFile
       - or:
-        - string: ":ZoneIdentifier"
+        - string: ":Zone.Identifier"
           description: NTFS ADS name recognized by Windows Defender SmartScreen
-        - string: "%s:ZoneIdentifier"
+        - string: "%s:Zone.Identifier"
           description: NTFS ADS name recognized by Windows Defender SmartScreen
