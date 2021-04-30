@@ -11,7 +11,7 @@ rule:
       - https://docs.docker.com/engine/api/v1.24/
   features:
     - or:
-      - string: /^docker ps/
+      - string: /^docker(\.exe)? ps/
       - and:
         - match: send HTTP request
         - string: /\/v1\.[0-9]{1,2}\/containers\/json

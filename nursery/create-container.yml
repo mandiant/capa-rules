@@ -11,8 +11,8 @@ rule:
       - https://docs.docker.com/engine/api/v1.24/
   features:
     - or:
-      - string: /^docker create/
-      - string: /^docker start/
+      - string: /^docker(\.exe)? create/
+      - string: /^docker(\.exe)? start/
       - and:
         - match: send HTTP request
         - string: /\/v1\.[0-9]{1,2}\/containers\/create/

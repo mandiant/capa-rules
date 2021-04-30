@@ -11,9 +11,9 @@ rule:
       - https://docs.docker.com/engine/api/v1.24/
   features:
     - or:
-      - string: /^docker exec/
-      - string: /^kubectl exec/
-      - string: /^kubectl run/
+      - string: /^docker(\.exe)? exec/
+      - string: /^kubectl(\.exe)? exec/
+      - string: /^kubectl(\.exe)? run/
       - and:
         - match: send HTTP request
         - string: /\/v1\.[0-9]{1,2}\/containers\/[0-9a-fA-F]+\/exec/
