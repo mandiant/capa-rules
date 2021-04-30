@@ -14,7 +14,6 @@ rule:
     - and:
       - or:
         - match: set registry value
-        - number: 0x80000001 = HKEY_CURRENT_USER
         - number: 0x80000002 = HKEY_LOCAL_MACHINE
       - string: /Software\\Microsoft\\Active Setup\\Installed Components/i
       - string: "StubPath"
