@@ -1,7 +1,7 @@
 rule:
   meta:
     name: persist via Active Setup registry key
-    namespace: persistence/registry/run
+    namespace: persistence/registry
     author: moritz.raabe@fireeye.com
     scope: function
     att&ck:
