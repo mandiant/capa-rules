@@ -6,9 +6,9 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Build Image on Host [T1612]
-    examples:
     references:
       - https://docs.docker.com/engine/api/v1.24/
+    examples:
   features:
     - or:
       - string: /^docker(\.exe)? build/

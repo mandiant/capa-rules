@@ -6,9 +6,9 @@ rule:
     scope: function
     att&ck:
       - Execution::Deploy Container [T1610]
-    examples:
     references:
       - https://docs.docker.com/engine/api/v1.24/
+    examples:
   features:
     - or:
       - string: /^docker(\.exe)? create/

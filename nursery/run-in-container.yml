@@ -6,9 +6,9 @@ rule:
     scope: function
     att&ck:
       - Execution::Container Administration Command [T1609]
-    examples:
     references:
       - https://docs.docker.com/engine/api/v1.24/
+    examples:
   features:
     - or:
       - string: /^docker(\.exe)? exec/
