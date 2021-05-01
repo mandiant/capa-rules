@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/bootloader
     author: william.ballenthin@fireeye.com
     scope: function
-    references: 
+    references:
       - https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdedit-command-line-options
     examples:
       - 7FBC17A09CF5320C515FC1C5BA42C8B3:0x40CA00
