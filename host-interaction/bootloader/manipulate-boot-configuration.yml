@@ -20,6 +20,6 @@ rule:
           - api: kernel32.GetPrivateProfileStringA
           - api: kernel32.WritePrivateProfileString
           - or:
-            - string: default
-            - string: boot loader
-            - string: operating systems
+            - string: "default"
+            - string: "boot loader"
+            - string: "operating systems"
