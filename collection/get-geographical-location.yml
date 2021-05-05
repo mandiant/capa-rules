@@ -13,21 +13,19 @@ rule:
     - or:
       - api: GetLocaleInfo
       - api: GetLocaleInfoEx
-      - api: GetKeyboardLayout
-      - api: GetKeyboardLayoutList
-      - api: GetKeyboardLayoutName
       # strings part of requests or parsed from response
-      # geo and zip are too short
+      # "geo" and "zip" are too short
+      # "region" results in FPs mostly related to memory
       - string: /geolocation/i
       - string: /geo-location/i
-      - string: /city/i
-      - string: /region/i
+      - string: /^city/i
       - string: /region_code/i
       - string: /region_name/i
-      - string: /country/i
+      - string: /^country/i
       - string: /country_code/i
+      - string: /countrycode/i
       - string: /country_name/i
       - string: /continent_code/i
       - string: /continent_name/i
-      - string: /latitude/i
-      - string: /longitude/i
+      - string: /^latitude/i
+      - string: /^longitude/i
