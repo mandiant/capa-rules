@@ -14,8 +14,8 @@ rule:
       - api: InternetOpenUrl
       - api: InternetReadFile
       - or:
-        - string: /bot\.whatismyipaddress.com/
-        - string: /ipinfo.io\/ip/
+        - string: /bot\.whatismyipaddress\.com/
+        - string: /ipinfo\.io\/ip/
         - string: /checkip\.dyndns\.org/
         - string: /ifconfig\.me/
         - string: /ipecho\.net\/plain/
