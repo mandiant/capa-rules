@@ -10,7 +10,7 @@ rule:
       - 7FBC17A09CF5320C515FC1C5BA42C8B3:0x40CA00
   features:
     - or:
-      - or:
+      - and:
         - string: /bcdedit.exe/i
         - optional:
           - string: "/deletevalue safeboot"
