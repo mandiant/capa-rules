@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: check Internet connectivity via WinINet
+    namespace: host-interaction/network/connectivity
+    author:
+      - matthew.williams@fireeye.com
+      - michael.hunhoff@fireeye.com
+    scope: basic block
+    att&ck:
+      - Discovery::System Network Configuration Discovery::Internet Connection Discovery [T1016.001]
+    examples:
+      - 648FC498110B11B4313A47A776E6BA40:0x6633F0
+  features:
+    - and:
+      - or:
+        - api: wininet.InternetGetConnectedState
+        - api: wininet.InternetCheckConnection
+      - optional:
+        - mnemonic: cmp
+        - or:
+          - number: 0
+          - number: 1
