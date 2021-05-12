@@ -173,20 +173,20 @@ Furthermore, output from capa is ordered by namespace, so all `communication` ma
 Namespaces are hierarchical, so the children of a namespace encodes its specific techniques.
 In a few words each, the top level namespaces are:
 
-  - [anti-analysis](https://github.com/fireeye/capa-rules/anti-analysis/) - packing, obfuscation, anti-X, etc.
-  - [c2](https://github.com/fireeye/capa-rules/c2/) - commands that may be issued by a controller, such as interactive shell or file transfer
-  - [collection](https://github.com/fireeye/capa-rules/collection/) - data that may be enumerated and collected for exfiltration
-  - [communication](https://github.com/fireeye/capa-rules/communication/) - HTTP, TCP, etc.
-  - [compiler](https://github.com/fireeye/capa-rules/compiler/) - detection of build environments, such as MSVC, Delphi, or AutoIT
-  - [data-manipulation](https://github.com/fireeye/capa-rules/data-manipulation/) - encryption, hashing, etc.
-  - [executable](https://github.com/fireeye/capa-rules/executable/) - characteristics of the executable, such as PE sections or debug info
-  - [host-interaction](https://github.com/fireeye/capa-rules/host-interaction/) - access or manipulation of system resources, like processes or the Registry
-  - [impact](https://github.com/fireeye/capa-rules/impact/) - end goal
-  - [linking](https://github.com/fireeye/capa-rules/linking/) - detection of dependencies, such as OpenSSL or Zlib
-  - [load-code](https://github.com/fireeye/capa-rules/load-code/) - runtime load and execution of code, such as embedded PE or shellcode
-  - [persistence](https://github.com/fireeye/capa-rules/persistence/) - all sorts of ways to maintain access
-  - [runtime](https://github.com/fireeye/capa-rules/runtime/) - detection of language runtimes, such as the .NET platform or Go
-  - [targeting](https://github.com/fireeye/capa-rules/targeting/) - special handling of systems, such as ATM machines
+  - [anti-analysis](https://github.com/fireeye/capa-rules/tree/master/anti-analysis/) - packing, obfuscation, anti-X, etc.
+  - [c2](https://github.com/fireeye/capa-rules/tree/master/c2/) - commands that may be issued by a controller, such as interactive shell or file transfer
+  - [collection](https://github.com/fireeye/capa-rules/tree/master/collection/) - data that may be enumerated and collected for exfiltration
+  - [communication](https://github.com/fireeye/capa-rules/tree/master/communication/) - HTTP, TCP, etc.
+  - [compiler](https://github.com/fireeye/capa-rules/tree/master/compiler/) - detection of build environments, such as MSVC, Delphi, or AutoIT
+  - [data-manipulation](https://github.com/fireeye/capa-rules/tree/master/data-manipulation/) - encryption, hashing, etc.
+  - [executable](https://github.com/fireeye/capa-rules/tree/master/executable/) - characteristics of the executable, such as PE sections or debug info
+  - [host-interaction](https://github.com/fireeye/capa-rules/tree/master/host-interaction/) - access or manipulation of system resources, like processes or the Registry
+  - [impact](https://github.com/fireeye/capa-rules/tree/master/impact/) - end goal
+  - [linking](https://github.com/fireeye/capa-rules/tree/master/linking/) - detection of dependencies, such as OpenSSL or Zlib
+  - [load-code](https://github.com/fireeye/capa-rules/tree/master/load-code/) - runtime load and execution of code, such as embedded PE or shellcode
+  - [persistence](https://github.com/fireeye/capa-rules/tree/master/persistence/) - all sorts of ways to maintain access
+  - [runtime](https://github.com/fireeye/capa-rules/tree/master/runtime/) - detection of language runtimes, such as the .NET platform or Go
+  - [targeting](https://github.com/fireeye/capa-rules/tree/master/targeting/) - special handling of systems, such as ATM machines
   
 We can easily add more top level namespaces as the need arises. 
 
@@ -231,14 +231,14 @@ There are five structural expressions that may be nested:
   - `or` - match at least one of the children
   - `not` - match when the child expression does not
   - `N or more` - match at least `N` or more of the children
-    - `optional` is an alias for `0 or more`, which is useful for documenting related features. See [write-file.yml](/rules/machine-access-control/file-manipulation/write-file.yml) for an example.
+    - `optional` is an alias for `0 or more`, which is useful for documenting related features. See [write-file.yml](/host-interaction/file-system/write/write-file.yml) for an example.
 
 To add context to a statement, you can add *one* nested description entry in the form `- description: DESCRIPTION STRING`.
 Check the [description section](#descriptions) for more details.
 
 For example, consider the following rule:
 
-```
+```yaml
       - and:
         - description: core of CRC-32 algorithm
         - mnemonic: shr
@@ -334,7 +334,7 @@ See the [description section](#descriptions) for more details.
 
 Examples:
 
-```
+```yaml
 - string: "Firefox 64.0"
 - string: "Hostname:\t\t\t%s\nIP adress:\t\t\t%s\nOS version:\t\t\t%s\n"
 - string: "This program cannot be run in DOS mode."
@@ -451,7 +451,7 @@ Examples:
     string: "Z:\\Dev\\dropper\\dropper.pdb"
     string: "[ENTER]"
     string: /.*VBox.*/
-    string: /.*Software\Microsoft\Windows\CurrentVersion\Run.*/i
+    string: /.*Software\\Microsoft\Windows\\CurrentVersion\\Run.*/i
 
 Note that regex matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
 
@@ -505,11 +505,11 @@ These rules can be expressed like:
 capa rules can specify logic for matching on other rule matches or namespaces.
 This allows a rule author to refactor common capability patterns into their own reusable components.
 You can specify a rule match expression like so:
-
-    - and:
+```yaml
+  - and:
       - match: create process
       - match: host-interaction/file-system/write
-
+```
 Rules are uniquely identified by their `rule.meta.name` property;
 this is the value that should appear on the right-hand side of the `match` expression.
 
@@ -529,7 +529,7 @@ All features and statements support an optional description which helps with doc
 For all features except for [strings](#string), the description can be specified inline preceded by ` = `: ` = DESCRIPTION STRING`.
 For example:
 
-```
+```yaml
 - number: 0x5A4D = IMAGE_DOS_SIGNATURE (MZ)
 ```
 
@@ -541,7 +541,7 @@ For [statements](#features-block) you can add *one* nested description entry to 
 
 For example:
 
-```
+```yaml
 - or:
   - string: "This program cannot be run in DOS mode."
     description: MS-DOS stub message
