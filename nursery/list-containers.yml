@@ -5,7 +5,7 @@ rule:
     author: william.ballenthin@fireeye.com
     scope: function
     att&ck:
-      - Discovery::Container and Resource Discovery [T1609]
+      - Discovery::Container and Resource Discovery [T1613]
     references:
       - https://docs.docker.com/engine/api/v1.24/
     examples:
