@@ -2,8 +2,8 @@
 rule:
   meta:
     name: create BITS job
-    namespace: communication
-    author: moritz.raabe
+    namespace: communication/http/client
+    author: "@mr-tz"
     description: BITS jobs can be used to download data or achieve persistence (via SetNotifyCmdLine)
     scope: function
     references:
