@@ -15,14 +15,14 @@ rule:
     - or:
       - basic block:
         - and:
-            # 64-bit constants
+          - description: 64-bit constants
           - mnemonic: mov
           - number: 0x880355F21E6D1965
           - number: 0x2127599BF4325C37
           - mnemonic: add
-        # 32-bit constants
       - basic block:
         - and:
+          - description: 32-bit constants
           - mnemonic: push
           - number: 0x880355F2
           - number: 0x1E6D1965

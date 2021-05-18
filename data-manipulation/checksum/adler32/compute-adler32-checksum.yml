@@ -21,10 +21,10 @@ rule:
           - mnemonic: imul
           - or:
             - and:
-              - number: 0xFFFF000F  # -65521
+              - number: 0xFFFF000F = -65521
               - mnemonic: add
             - and:
-              - number: 0xFFF1      # 65521
+              - number: 0xFFF1 = 65521
               - mnemonic: sub
         # Examples:
         # The sequence below performs mod 65521 using the example 262089 % 65521 = 5:

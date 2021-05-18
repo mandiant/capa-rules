@@ -12,7 +12,7 @@ rule:
         - api: version.GetFileVersionInfo
         - api: version.GetFileVersionInfoEx
       - optional:
-        # retrieves specified version information from the specified version-information resource
+        - description: retrieve specified version information from the version-information resource
         - api: version.VerQueryValue
         - or:
           - api: version.GetFileVersionInfoSize

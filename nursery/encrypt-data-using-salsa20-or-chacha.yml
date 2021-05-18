@@ -22,7 +22,7 @@ rule:
         - string: "2-by"
         - string: "te k"
       - and:
-        - number: 0x61707865  # apxe
-        - number: 0x3320646E  # 3 dn
-        - number: 0x79622D32  # yb-2
-        - number: 0x6B206574  # k et
+        - number: 0x61707865 = "apxe"
+        - number: 0x3320646E = "3 dn"
+        - number: 0x79622D32 = "yb-2"
+        - number: 0x6B206574 = "k et"

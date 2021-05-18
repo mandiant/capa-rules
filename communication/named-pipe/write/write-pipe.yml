@@ -17,5 +17,7 @@ rule:
           - match: create pipe
           - match: connect pipe
         - api: kernel32.WriteFile
-      - api: kernel32.TransactNamedPipe  # writes and reads pipe in single operation
-      - api: kernel32.CallNamedPipe  # connects, writes, and reads pipe in single operation
+      - api: kernel32.TransactNamedPipe
+        description: writes and reads pipe in single operation
+      - api: kernel32.CallNamedPipe
+        description: connects, writes, and reads pipe in single operation

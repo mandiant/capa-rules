@@ -9,4 +9,5 @@ rule:
   features:
     - and:
       - string: "Mingw runtime failure:"
-      - string: "_Jv_RegisterClasses"  # from GCC
+      - string: "_Jv_RegisterClasses"
+        description: from GCC

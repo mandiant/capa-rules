@@ -18,7 +18,7 @@ rule:
     - and:
       - mnemonic: shl
       - mnemonic: shr
-      - number: 0x3F  # modulo 64
+      - number: 0x3F = modulo 64
       - or:
         - number: 0x3D = '='
         - number: 0x3D3D = '=='

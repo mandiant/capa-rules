@@ -31,8 +31,8 @@ rule:
         - api: gdi32.CreateCompatibleBitmap
         - optional:
           - or:
-            - api: user32.GetSystemMetrics  # fetch screen dimensions
-            - api: user32.GetDesktopWindow  # get entire desktop
+            - api: user32.GetSystemMetrics = fetch screen dimensions
+            - api: user32.GetDesktopWindow = get entire desktop
       - basic block:
         - and:
           - api: BitBlt

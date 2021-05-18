@@ -12,7 +12,7 @@ rule:
       - 66602B5FAB602CB4E6F754748D249542:0x4097D0
   features:
     - or:
-      - mnemonic: aesdec  # Perform One Round of an AES Decryption Flow
+      - mnemonic: aesdec = Perform One Round of an AES Decryption Flow
       - mnemonic: vaesdec
-      - mnemonic: aesdeclast  # Perform Last Round of an AES Decryption Flow
+      - mnemonic: aesdeclast = Perform Last Round of an AES Decryption Flow
       - mnemonic: vaesdeclast
