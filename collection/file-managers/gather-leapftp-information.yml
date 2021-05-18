@@ -19,8 +19,7 @@ rule:
         - or:
           - string: /SOFTWARE\\LeapWare/
           - string: /\\LeapWare\\LeapFTP/
-        - or:
-          - 2 or more:
-            - string: "sites.dat"
-            - string: "sites.ini"
-            - string: "leapftp"
+        - 2 or more:
+          - string: "sites.dat"
+          - string: "sites.ini"
+          - string: "leapftp"

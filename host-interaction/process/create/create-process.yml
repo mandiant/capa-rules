@@ -23,6 +23,6 @@ rule:
       - api: ntdll.NtCreateProcess
       - api: ntdll.NtCreateProcessEx
       - api: ntdll.ZwCreateProcess
-      - api: ntdll.ZwCreateProcessEx
+      - api: ZwCreateProcessEx
       - api: ntdll.ZwCreateUserProcess
       - api: ntdll.RtlCreateUserProcess

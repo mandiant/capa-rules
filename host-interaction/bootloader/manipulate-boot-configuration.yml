@@ -10,7 +10,7 @@ rule:
       - 7FBC17A09CF5320C515FC1C5BA42C8B3:0x40CA00
   features:
     - or:
-      - or:
+      - and:
         - string: /bcdedit.exe/i
         - optional:
           - string: "/deletevalue safeboot"
@@ -20,6 +20,6 @@ rule:
           - api: kernel32.GetPrivateProfileStringA
           - api: kernel32.WritePrivateProfileString
           - or:
-            - string: "default"
-            - string: "boot loader"
-            - string: "operating systems"
+            - string: /default/i
+            - string: /boot loader/i
+            - string: /operating systems/i

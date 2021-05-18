@@ -42,10 +42,35 @@ jobs:
         # one which triggered the action)
         ref: master
         path: rules
+        fetch-depth: 100 # needed so that `git diff` finds `github.event.before`
     - name: Update rules number badge in README
       run: |
         num_rules=$(find rules -type f -name '*.yml' -not -path 'rules/.github/*' | wc -l)
         sed -i "s/rules-[0-9]*-blue\.svg/rules-$num_rules-blue.svg/" README.md
+    - name: Update number of new rules in CHANGELOG
+      run: |
+        new_rules=$(git -C rules diff -M --summary ${{ github.event.before }} | grep create | wc -l)
+        old_rules=$(grep -m 1 "### New Rules.*" CHANGELOG.md | sed -r 's/.*\((.*)\)/\1/')
+        rules=$(($old_rules + $new_rules))
+        sed -ir "0,/### New Rules.*/s//### New Rules \($rules\)/" CHANGELOG.md
+    - name: Get modified files
+      id: files
+      uses: jitterbit/get-changed-files@v1
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install Python dependencies
+      run:
+        pip install pyyaml
+    - name: Add new rules to CHANGELOG
+      run: |
+        for added_file in ${{ steps.files.outputs.added }}; do
+          [[ $added_file != *.yml ]] && continue # Skip files that are not rules
+          author=$(python rules/.github/scripts/changelog_author.py rules/$added_file)
+          rule=$(echo $added_file | sed 's/\//\\\//g' | sed 's/\.yml//')
+          sed -i "0,/- *$/s//- $rule $author\n-/" CHANGELOG.md
+        done
     - name: Commit changes
       run: |
         git config user.email 'capa-dev@fireeye.com'
