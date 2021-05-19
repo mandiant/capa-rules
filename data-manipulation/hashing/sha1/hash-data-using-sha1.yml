@@ -11,13 +11,12 @@ rule:
   features:
     - or:
       - and:
-        # Magic initialization constants used in SHA1
-        # The first four are also used in MD4 and MD5
-        - number: 0x67452301
-        - number: 0xEFCDAB89
-        - number: 0x98BADCFE
-        - number: 0x10325476
-        - number: 0xC3D2E1F0
+        - description: Magic initialization constants used in SHA1
+        - number: 0x67452301 = A, also used by MD5
+        - number: 0xEFCDAB89 = B, also used by MD5
+        - number: 0x98BADCFE = C, also used by MD5
+        - number: 0x10325476 = D, also used by MD5
+        - number: 0xC3D2E1F0 = specific to SHA1, not MD4 nor MD5
       - basic block:
         - and:
           - number: 0x8004 = CALG_SHA1

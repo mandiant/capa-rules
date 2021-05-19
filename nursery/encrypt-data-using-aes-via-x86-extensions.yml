@@ -9,15 +9,13 @@ rule:
     mbc:
       - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
       - Cryptography::Encrypt Data::AES [C0027.001]
-    examples:
-      - 8BA66E4B618FFDC8255F1DF01F875DDE6FD0561305D9F8307BE7BB11D02AE363:0x436E20
   features:
     - or:
-      - mnemonic: aesenc  # Perform One Round of an AES Encryption Flow
+      - mnemonic: aesenc = Perform One Round of an AES Encryption Flow
       - mnemonic: vaesenc
-      - mnemonic: aesenclast  # Perform Last Round of an AES Encryption Flow
+      - mnemonic: aesenclast = Perform Last Round of an AES Encryption Flow
       - mnemonic: vaesenclast
-      - mnemonic: aesimc  # Perform the AES InvMixColumn Transformation
+      - mnemonic: aesimc = Perform the AES InvMixColumn Transformation
       - mnemonic: vaesimc
-      - mnemonic: aeskeygenassist  # AES Round Key Generation Assist
+      - mnemonic: aeskeygenassist = AES Round Key Generation Assist
       - mnemonic: vaeskeygenassist

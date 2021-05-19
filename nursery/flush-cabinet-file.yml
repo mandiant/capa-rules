@@ -7,5 +7,5 @@ rule:
     references: https://docs.microsoft.com/en-us/windows/win32/msi/cabinet-files
   features:
     - or:
-      - api: cabinet.FCIFlushFolder # flush current folder under construction
-      - api: cabinet.FCIFlushCabinet # completes current cabinet
+      - api: cabinet.FCIFlushFolder = flush current folder under construction
+      - api: cabinet.FCIFlushCabinet = completes current cabinet

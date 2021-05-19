@@ -20,5 +20,5 @@ rule:
       - and:
         - api: httpapi.HttpReceiveRequestEntityBody
         - or:
-          - number: 0 # Windows Server 2003 with SP1 and Windows XP with SP2:  This parameter is reserved and must be zero
+          - number: 0 = Must be zero on Windows Server 2003 with SP1 and Windows XP with SP2
           - number: 1 = HTTP_RECEIVE_REQUEST_ENTITY_BODY_FLAG_FILL_BUFFER

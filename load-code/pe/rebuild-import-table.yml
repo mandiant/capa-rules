@@ -19,7 +19,8 @@ rule:
           - api: LoadLibraryA
       - offset: 0x10 = IMAGE_IMPORT_DESCRIPTOR.FirstThunk
       - api: GetProcAddress
-      - optional: # Optional as may only support import by ordinal or import by name
+      - optional:
+        - description: import by ordinal
         - or:
           - number/x32: 0x80000000 = IMAGE_SNAP_BY_ORDINAL32
           - number/x64: 0x8000000000000000 = IMAGE_SNAP_BY_ORDINAL64

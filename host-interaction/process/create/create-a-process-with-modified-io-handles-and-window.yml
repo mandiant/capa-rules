@@ -13,7 +13,7 @@ rule:
   features:
     - and:
       - or:
-        # API functions below accept a pointer to a STARTUPINFO structure (see StartupInfo.cb feature below)
+        - description: API functions that accept a pointer to a STARTUPINFO structure
         - api: kernel32.CreateProcess
         - api: kernel32.CreateProcessInternal
         - api: advapi32.CreateProcessAsUser
@@ -25,6 +25,6 @@ rule:
       - or:
         - number/x32: 0x44 = StartupInfo.cb (size)
         - number/x64: 0x68 = StartupInfo.cb (size)
-        # STARTUPINFOEX size values not currently supported
+        # STARTUPINFOEX size values not currently supported by this rule.
       - optional:
         - api: kernel32.GetStartupInfo

@@ -26,5 +26,6 @@ rule:
           - or:
             - number: 127
             - number: 128
-      - count(characteristic(calls from)): 2 or more  # calls aP_getbit and aP_getgamma
+      - count(characteristic(calls from)): 2 or more
+        description: calls aP_getbit and aP_getgamma
       - match: contain loop

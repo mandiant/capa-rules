@@ -14,8 +14,8 @@ rule:
     - and:
       - match: get COMSPEC environment variable
       - match: create process
-      # /c del
       - string: /\/c\s*del\s*/
+        description: "/c del"
       - optional:
-        # > nul
         - string: /\s*>\s*nul\s*/
+          description: "> nul"
