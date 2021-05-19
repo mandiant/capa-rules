@@ -10,7 +10,6 @@ rule:
       - Discovery::System Information Discovery [T1082]
     examples:
       - 493167E85E45363D09495D0841C30648:0x401000
-      - 477743976643213d96b66ed5041a3b12:0x43CFF6
   features:
     - and:
       - or:
