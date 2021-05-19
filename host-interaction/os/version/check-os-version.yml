@@ -10,7 +10,6 @@ rule:
       - Discovery::System Information Discovery [T1082]
     examples:
       - 493167E85E45363D09495D0841C30648:0x401000
-      - 477743976643213d96b66ed5041a3b12:0x43CFF6
   features:
     - and:
       - or:
@@ -23,21 +22,21 @@ rule:
       - mnemonic: cmp
       - or:
         - and:
-          - number: 5 # Windows 2000
+          - number: 5 = Windows 2000
           - optional:
             - or:
               - number: 0
-              - number: 1 # Windows XP
-              - number: 2 # Windows XP 64-bit / Windows Server 2003 / Windows Server 2003 R2
+              - number: 1 = Windows XP
+              - number: 2 = Windows XP 64-bit / Windows Server 2003 / Windows Server 2003 R2
         - and:
-          - number: 6 # Windows Vista / Windows Server 2008
+          - number: 6 = Windows Vista / Windows Server 2008
           - optional:
             - or:
               - number: 0
-              - number: 1 # Windows Server 2008 R2 / Windows 7
-              - number: 2 # Windows Server 2012 / Windows 8
-              - number: 3 # Windows Server 2012 R2 / Windows 8.1
+              - number: 1 = Windows Server 2008 R2 / Windows 7
+              - number: 2 = Windows Server 2012 / Windows 8
+              - number: 3 = Windows Server 2012 R2 / Windows 8.1
         - and:
-          - number: 10 # Windows Server 2016 / Windows Server 2019 / Windows 10
+          - number: 10 = Windows Server 2016 / Windows Server 2019 / Windows 10
           - optional:
             - number: 0
