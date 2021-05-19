@@ -13,19 +13,18 @@ rule:
   features:
     - and:
       - match: compiled with Go
-      - or:
-        - and:
-          - string: "syscall.NewLazyDLL"
-            description: Dynamic loading of DLLs
-          - or:
-            - and:
-              - string: /user32.dll/
-              - or:
-                - string: /GetWindowDC/
-                - string: /GetDC/
-            - and:
-              - string: /gdi32.dll/
-              - or:
-                - string: /BitBlt/
-                - string: /GetDIBits/
-          - string: /CreateCompatibleDC/
+      - and:
+        - string: "syscall.NewLazyDLL"
+          description: Dynamic loading of DLLs
+        - or:
+          - and:
+            - string: /user32.dll/
+            - or:
+              - string: /GetWindowDC/
+              - string: /GetDC/
+          - and:
+            - string: /gdi32.dll/
+            - or:
+              - string: /BitBlt/
+              - string: /GetDIBits/
+        - string: /CreateCompatibleDC/
