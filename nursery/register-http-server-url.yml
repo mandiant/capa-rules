@@ -1,0 +1,11 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: register HTTP server URL
+    namespace: communication/http/server
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - or:
+      - api: httpapi.HttpAddUrl
+      - api: httpapi.HttpAddUrlToUrlGroup
