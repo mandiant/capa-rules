@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: hash data using djb2
+    namespace: data-manipulation/hashing/djb2
+    author: awillia2@cisco.com
+    scope: function
+    mbc:
+      - Data::Non-Cryptographic Hash [C0030]
+    references:
+      - https://twitter.com/r3c0nst/status/1392405576131436546
+      - http://www.cse.yorku.ca/~oz/hash.html
+    examples:
+      - 6be0ae5cb7c3155f70d608fc7670d2d9:0x41DD19
+  features:
+    - and:
+      - basic block:
+        - and:
+          - description: hash = 5381
+          - mnemonic: mov
+          - number: 5381
+      - basic block:
+        - and:
+          - description: hash << 5
+          - mnemonic: shl
+          - number: 5
