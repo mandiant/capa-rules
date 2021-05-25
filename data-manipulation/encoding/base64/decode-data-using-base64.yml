@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: decode data using Base64
+    name: decode data using Base64 via dword translation table
     namespace: data-manipulation/encoding/base64
     author: gilbert.elliot@fireeye.com
     scope: function
