@@ -1,0 +1,10 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: list TCP connections and listeners
+    namespace: collection/network
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - or:
+      - api: iphlpapi.GetExtendedTcpTable

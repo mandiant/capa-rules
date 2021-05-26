@@ -11,12 +11,14 @@ rule:
     examples:
       - 648FC498110B11B4313A47A776E6BA40:0x6633F0
   features:
-    - and:
-      - or:
-        - api: wininet.InternetGetConnectedState
-        - api: wininet.InternetCheckConnection
-      - optional:
-        - mnemonic: cmp
+    - or:
+      - and:
         - or:
-          - number: 0
-          - number: 1
+          - api: wininet.InternetGetConnectedState
+          - api: wininet.InternetCheckConnection
+        - optional:
+          - mnemonic: cmp
+          - or:
+            - number: 0 = FALSE
+            - number: 1 = TRUE
+      - api: wininet.InternetAttemptConnect
