@@ -49,6 +49,7 @@ We'll start at the high level structure and then dig into the logic structures a
     - [export](#export)
     - [import](#import)
     - [section](#section)
+    - [function-name](#function-name)
   - [counting](#counting)
   - [matching prior rule matches and namespaces](#matching-prior-rule-matches-and-namespaces)
   - [descriptions](#descriptions)
@@ -437,6 +438,7 @@ These are the features supported at the file-scope:
   - [export](#export)
   - [import](#import)
   - [section](#section)
+  - [function-name](#function-name)
 
 
 ### file string
@@ -472,6 +474,15 @@ Examples:
     import: kernel32.WinExec
     import: WinExec           # wildcard module name
     import: kernel32.#22      # by ordinal
+
+### function-name
+
+The name of a recognized statically-linked library, such as recovered via FLIRT.
+This lets you write rules describing functionality from third party libraries, such as "encrypts data with AES via CryptoPP".
+
+Examples:
+
+    function-name: "?FillEncTable@Base@Rijndael@CryptoPP@@KAXXZ"
 
 ### section
 
