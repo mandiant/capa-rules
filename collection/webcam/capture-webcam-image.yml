@@ -16,4 +16,6 @@ rule:
         - api: capGetDriverDescription
         - api: capDriverConnect
         - api: capCaptureSequence
-        - string: AVICAP32.dll
+        - api: WM_CAP_DRIVER_CONNECT
+        - api: WM_CAP_FILE_SAVEDIB
+        - string: "AVICAP32.dll"
