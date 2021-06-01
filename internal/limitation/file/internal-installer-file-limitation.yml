@@ -3,13 +3,13 @@ rule:
     name: (internal) installer file limitation
     # capa will likely detect installer specific functionality.
     # this is probably not what the user wants.
-    description: |
-      This sample appears to be an installer.
-      
-      capa cannot handle installers well. This means the results may be misleading or incomplete.
-      You should try to understand the install mechanism and analyze created files with capa.
     namespace: internal/limitation/file
     author: william.ballenthin@fireeye.com
+    description: |
+      This sample appears to be an installer.
+
+      capa cannot handle installers well. This means the results may be misleading or incomplete.
+      You should try to understand the install mechanism and analyze created files with capa.
     scope: file
     examples:
       - 70FD3347786ED7A4A43910E6778EF296
