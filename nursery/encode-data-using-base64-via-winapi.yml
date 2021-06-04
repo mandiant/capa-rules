@@ -8,5 +8,5 @@ rule:
       - Defense Evasion::Obfuscated Files or Information [T1027]
   features:
     - and:
-      - number: 1 = CRYPT_STRING_BASE64
+      - number: 1 = dwFlags=CRYPT_STRING_BASE64
       - api: CryptBinaryToString
