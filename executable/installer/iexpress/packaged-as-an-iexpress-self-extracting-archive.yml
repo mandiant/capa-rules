@@ -2,7 +2,7 @@ rule:
   meta:
     name: packaged as an IExpress self-extracting archive
     namespace: executable/installer/iexpress
-    author: '@recvfrom'
+    author: awillia2@cisco.com
     scope: file
     references:
       - https://en.wikipedia.org/wiki/IExpress
