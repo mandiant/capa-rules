@@ -13,7 +13,6 @@ rule:
       - string: "Not found the kernel library or the kernel library is invalid!"
       - string: "Failed to allocate memory!"
       - string: "/ MADE BY E COMPILER – WUTAO"
-      - section: .ecode
       - section: .edata
       - import: krnln.fne
       - import: krnln.fnr

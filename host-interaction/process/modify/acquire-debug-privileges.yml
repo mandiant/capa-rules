@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Privilege Escalation::Access Token Manipulation [T1134]
     examples:
-      # - unpacked Cl0p ransomware
+      - Practical Malware Analysis Lab 01-04.exe_:0x401174
   features:
     - and:
       - string: "SeDebugPrivilege"

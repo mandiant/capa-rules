@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/gui/console
     author: michael.hunhoff@fireeye.com
     scope: function
+    examples:
+      - mimikatz.exe_:0x44570F
   features:
     - or:
       - api: kernel32.SetConsoleTitle

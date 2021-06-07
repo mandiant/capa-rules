@@ -8,6 +8,8 @@ rule:
       - https://tools.ietf.org/html/rfc2104
       - https://tools.ietf.org/html/rfc4634
       - https://github.com/ogay/hmac
+    examples:
+      - mimikatz.exe_:0x403408
   features:
     - and:
       # block-sized inner padding, consisting of repeated bytes valued 0x36
