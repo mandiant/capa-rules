@@ -21,8 +21,8 @@ rule:
         - optional:
           - description: specific compilation from https://github.com/rwfpl/rewolf-x86-virtualizer/blob/master/src/test_app/main.cpp
           - and:
-            - offset: 0x28955B88
-            - offset: 0x173848AA
+            - offset: -0x28955B88
+            - offset: -0x173848AA
       - basic block:
         - and:
           - number: 0x8003 = CALG_MD5
