@@ -18,7 +18,6 @@ rule:
         - api: kernel32.WriteConsoleOutputCharacter
         - api: kernel32.WriteConsoleOutput
         - api: kernel32.WriteConsoleInput
-      # see https://github.com/fireeye/capa/issues/348
       - optional:
         - api: kernel32.GetStdHandle
         - number: 0xfffffff5 = STD_OUTPUT_HANDLE
