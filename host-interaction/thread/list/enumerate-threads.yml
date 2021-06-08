@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/thread/list
     author: moritz.raabe@fireeye.com
     scope: function
+    examples:
+      - Practical Malware Analysis Lab 05-01.dll_:0x10006BD5
   features:
     - and:
       - api: kernel32.Thread32First
