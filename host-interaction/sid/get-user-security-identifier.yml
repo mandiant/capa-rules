@@ -7,6 +7,8 @@ rule:
     scope: basic block
     att&ck:
       - Discovery::Account Discovery [T1087]
+    examples:
+      - mimikatz.exe_:0x40DC42
   features:
     - or:
       - api: advapi32.LookupAccountName
