@@ -2,7 +2,7 @@
 rule:
   meta:
     name: get user security identifier
-    namespace: host-interaction/sid
+    namespace: host-interaction/session
     author: michael.hunhoff@fireeye.com
     scope: basic block
     att&ck:
