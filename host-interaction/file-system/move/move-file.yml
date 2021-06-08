@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/move
     author: moritz.raabe@fireeye.com
     scope: function
+    examples:
+      - Practical Malware Analysis Lab 04-01.exe_:0x401350
   features:
     - or:
       - api: kernel32.MoveFile
