@@ -8,6 +8,8 @@ rule:
       - Anti-Behavioral Analysis::Debugger Detection
     references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtQueryInformationProcess_ProcessDebugPort.cpp
+    examples:
+      - kernel32.dll_:0x7DD97899
   features:
     - and:
       - api: NtQueryInformationProcess
