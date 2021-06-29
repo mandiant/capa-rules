@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ master ]
 
+# save workspaces to speed up testing
+env:
+  CAPA_SAVE_WORKSPACE: "True"
+
 jobs:
   rule_linter:
     runs-on: ubuntu-20.04
@@ -41,9 +45,6 @@ jobs:
       # however, it still gets the modified files and we can continue
       # Error: The head commit for this pull_request event is not ahead of the base commit.
       continue-on-error: true
-    # save workspaces to speed up testing
-    - name: set CAPA_SAVE_WORKSPACE environment variable
-      run: echo "CAPA_SAVE_WORKSPACE=True" >> $GITHUB_ENV
     - name: Run thorough lint on modified rule files
       run: |
         cd rules/
