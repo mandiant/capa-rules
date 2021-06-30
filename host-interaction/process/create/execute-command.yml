@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: execute command
+    namespace: host-interaction/process/create
+    author: "@mr-tz"
+    scope: function
+    mbc:
+      - Process::Create Process [C0017]
+    examples:
+      - Practical Malware Analysis Lab 11-03.exe_:0x4012D0
+  features:
+    - or:
+      - api: system
+      - api: _system
+      - api: wsystem
+      - api: _wsystem
