@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: duplicate stdin and stdout
+    author: joakim@intezer.com
+    lib: true
+    scope: basic block
+  features:
+    - and:
+      - api: dup2
+      - number: 0 = STDIN
+      - number: 1 = STDOUT

@@ -5,6 +5,7 @@ rule:
     author:
       - william.ballenthin@fireeye.com
       - johnk3r
+      - joakim@intezer.com
     scope: function
     mbc:
       - Communication::DNS Communication::Resolve [C0011.001]
@@ -20,3 +21,7 @@ rule:
       - api: getaddrinfo
       - api: GetAddrInfo
       - api: GetAddrInfoEx
+      - api: gethostbyname
+      - api: getaddrinfo
+      - api: getnameinfo
+      - api: gethostent

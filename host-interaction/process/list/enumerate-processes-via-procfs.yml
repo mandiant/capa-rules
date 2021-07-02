@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: enumerate processes via procfs
+    namespace: host-interaction/process/list
+    author: joakim@intezer.com
+    scope: function
+    att&ck:
+      - Discovery::Process Discovery [T1057]
+      - Discovery::Software Discovery [T1518]
+  features:
+    - and:
+      - string: "/proc"
+      - or:
+        - and:
+          - match: create or open file
+          - or:
+            - api: getdents
+            - api: getdents64
+        - and:
+          - api: opendir
+          - api: readdir

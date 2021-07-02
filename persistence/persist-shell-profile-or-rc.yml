@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: persist via shell profile or rc file
+    namespace: persistence
+    author: joakim@intezer.com
+    scope: function
+    att&ck:
+      - Persistence::Event Triggered Execution::Unix Shell Configuration Modification [T1546.004]
+  features:
+    - and:
+      - match: write file
+      - or:
+        - string: /\/\.bash_profile/
+        - string: /\/\.bash_login/
+        - string: /\/\.bashrc/
+        - string: /\/\.profile/
+        - string: "/etc/profile"
+        - string: /\/etc\/profile\.d\//

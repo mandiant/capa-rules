@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: create unix reverse shell
+    namespace: c2/shell
+    author: joakim@intezer.com
+    scope: function
+    att&ck:
+      - Execution::Command and Scripting Interpreter::Unix Shell [T1059.004]
+    mbc:
+      - Impact::Remote Access::Reverse Shell [B0022.001]
+  features:
+    - or:
+      - and:
+        - match: duplicate stdin and stdout
+        - match: create process

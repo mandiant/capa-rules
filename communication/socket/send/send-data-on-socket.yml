@@ -2,7 +2,9 @@ rule:
   meta:
     name: send data on socket
     namespace: communication/socket/send
-    author: moritz.raabe@fireeye.com
+    author: 
+      - moritz.raabe@fireeye.com
+      - joakim@intezer.com
     scope: function
     mbc:
       - Communication::Socket Communication::Send Data [C0001.007]
@@ -15,3 +17,4 @@ rule:
       - api: ws2_32.WSASend
       - api: ws2_32.WSASendMsg
       - api: ws2_32.WSASendTo
+      - api: send

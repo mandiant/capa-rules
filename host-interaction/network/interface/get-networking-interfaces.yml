@@ -2,7 +2,9 @@ rule:
   meta:
     name: get networking interfaces
     namespace: host-interaction/network/interface
-    author: moritz.raabe@fireeye.com
+    author: 
+      - moritz.raabe@fireeye.com
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
@@ -12,3 +14,4 @@ rule:
     - or:
       - api: iphlpapi.GetIfTable
       - api: iphlpapi.GetAdaptersInfo
+      - api: getifaddrs

@@ -2,7 +2,9 @@ rule:
   meta:
     name: create TCP socket
     namespace: communication/socket/tcp
-    author: william.ballenthin@fireeye.com
+    author: 
+      - william.ballenthin@fireeye.com
+      - joakim@intezer.com
     scope: basic block
     mbc:
       - Communication::Socket Communication::Create TCP Socket [C0001.011]
@@ -16,3 +18,4 @@ rule:
       - or:
         - api: ws2_32.socket
         - api: ws2_32.WSASocket
+        - api: socket

@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: change file permission
+    namespace: host-interaction/file-system
+    author: joakim@intezer.com
+    scope: basic block
+  features:
+    - or:
+      - api: chown
+      - api: fchown
+      - api: lchown
+      - api: fchownat

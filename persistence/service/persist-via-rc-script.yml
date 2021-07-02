@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: persist via rc script
+    namespace: persistence/service
+    author: joakim@intezer.com
+    scope: function
+    att&ck:
+      - Persistence::Boot or Logon Initialization Scripts::RC Scripts [T1037.004]
+  features:
+    - and:
+      - match: write file
+      - or:
+        - string: /\/etc\/init.d\//
+        - string: /\/etc\/rc[0-9].d\//

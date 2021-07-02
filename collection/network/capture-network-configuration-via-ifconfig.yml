@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: capture network configuration via ifconfig
+    namespace: collection/network
+    author: joakim@intezeer.com
+    scope: basic block
+    att&ck:
+      - Discovery::System Network Configuration Discovery [T1016]
+  features:
+    - and:
+      - string: /ifconfig/
+      - api: system
