@@ -12,12 +12,9 @@ rule:
       - https://docs.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontexta
     examples:
       - E5369AC309F1BE6D77AFEEB3EDAB0ED8:0x401350
-      - 849945BB1D222607446C7A917F0D935A:0x405482
   features:
     - and:
-      - or:
-        - api: crypt32.CryptAcquireContextA
-        - api: crypt32.CryptAcquireContextW
+      - api: crypt32.CryptAcquireContext
       - or:
         - number: 0x8 = CRYPT_NEWKEYSET
         - number: 0x18 = CRYPT_NEWKEYSET | CRYPT_DELETEKEYSET
