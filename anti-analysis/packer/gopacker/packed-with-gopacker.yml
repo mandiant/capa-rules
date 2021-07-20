@@ -23,6 +23,6 @@ rule:
       - string: "ZSTDCompression"
         description: This packer is set to use ZSTD.
       - string: "gopacker"
-      - string: "LALALALA"
-        description: LALALALA is a unique and default magic footer for this packing. This footer can be changed, however, by default it is not.
-      - count(string(LALALALA)): 2
+      - optional:
+        - string: "LALALALA"
+          description: LALALALA is a unique and default magic footer for this packing. This footer can be changed, however, by default it is not.
