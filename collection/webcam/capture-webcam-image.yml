@@ -16,12 +16,11 @@ rule:
           - and:
             - api: SendMessage
             - number: 0x40a = WM_CAP_DRIVER_CONNECT
-        - basic block:
-          - and:
-            - api: SendMessage
-            - number: 0x40B = WM_CAP_DRIVER_DISCONNECT
         - optional:
-          - api: capGetDriverDescription
+          - basic block:
+            - and:
+              - api: SendMessage
+              - number: 0x40B = WM_CAP_DRIVER_DISCONNECT
       - basic block:
         - and:
           - api: SendMessage
