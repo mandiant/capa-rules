@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: compiled with Nim
+    namespace: compiler/nim
+    author: michael.hunhoff@fireeye.com
+    scope: file
+    examples:
+      - 580c37831fe98a254eb6c61c692c70d8.exe_
+  features:
+    - or:
+      - string: /NimMain/
+      - string: /NimMainModule/
+      - string: /NimMainInner/
+      - string: /io.nim$/
+      - string: /fatal.nim$/
+      - string: /system.nim$/
+      - string: /alloc.nim$/
+      - string: /osalloc.nim$/

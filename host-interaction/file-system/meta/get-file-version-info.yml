@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: get file version info
+    namespace: host-interaction/file-system/meta
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
+    examples:
+      - mimikatz.exe_:0x45E308
+  features:
+    - and:
+      - or:
+        - api: version.GetFileVersionInfo
+        - api: version.GetFileVersionInfoEx
+      - optional:
+        - description: retrieve specified version information from the version-information resource
+        - api: version.VerQueryValue
+        - or:
+          - api: version.GetFileVersionInfoSize
+          - api: version.GetFileVersionInfoSizeEx

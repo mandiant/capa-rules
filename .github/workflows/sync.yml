@@ -49,7 +49,7 @@ jobs:
         sed -i "s/rules-[0-9]*-blue\.svg/rules-$num_rules-blue.svg/" README.md
     - name: Update number of new rules in CHANGELOG
       run: |
-        new_rules=$(git -C rules diff -M --summary ${{ github.event.before }} | grep create | wc -l)
+        new_rules=$(git -C rules diff -M --summary ${{ github.event.before }} | grep create | grep .yml | wc -l)
         old_rules=$(grep -m 1 "### New Rules.*" CHANGELOG.md | sed -r 's/.*\((.*)\)/\1/')
         rules=$(($old_rules + $new_rules))
         sed -ir "0,/### New Rules.*/s//### New Rules \($rules\)/" CHANGELOG.md

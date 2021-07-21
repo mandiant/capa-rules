@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: encode data using Base64 via WinAPI
+    namespace: data-manipulation/encoding/base64
+    author: moritz.raabe@fireeye.com
+    scope: basic block
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    examples:
+      - mimikatz.exe_:0x40622D
+  features:
+    - and:
+      - number: 1 = dwFlags=CRYPT_STRING_BASE64
+      - api: CryptBinaryToString
