@@ -1,0 +1,10 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: monitor local IPv4 address changes
+    namespace: host-interaction/network/address
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - and:
+      - api: iphlpapi.NotifyAddrChange
