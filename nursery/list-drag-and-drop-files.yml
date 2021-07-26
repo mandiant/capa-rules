@@ -2,7 +2,7 @@
 rule:
   meta:
     name: list drag and drop files
-    namespace: host-interaction/file-system/files
+    namespace: host-interaction/clipboard
     author: michael.hunhoff@fireeye.com
     scope: function
     att&ck:
