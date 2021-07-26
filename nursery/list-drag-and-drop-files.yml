@@ -1,0 +1,15 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: list drag and drop files
+    namespace: host-interaction/clipboard
+    author: michael.hunhoff@fireeye.com
+    scope: function
+    att&ck:
+      - Collection::Clipboard Data [T1115]
+  features:
+    - and:
+      - api: shell32.DragQueryFile
+      - and:
+        - api: user32.GetClipboardData
+        - number: 0xF = HDROP
