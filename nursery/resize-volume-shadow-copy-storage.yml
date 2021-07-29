@@ -1,0 +1,11 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: resize volume shadow copy storage
+    namespace: impact/inhibit-system-recovery
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - and:
+      - api: kernel32.DeviceIoControl
+      - number: 0x53C028 = IOCTL_VOLSNAP_SET_MAX_DIFF_AREA_SIZE
