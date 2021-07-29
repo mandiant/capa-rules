@@ -1,0 +1,11 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: delete user account group
+    namespace: host-interaction/accounts
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - or:
+      - api: netapi32.NetLocalGroupDel
+      - api: netapi32.NetGroupDel

@@ -1,0 +1,12 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: delete user account from group
+    namespace: host-interaction/accounts
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - or:
+      - api: netapi32.NetLocalGroupDelMembers
+      - api: netapi32.NetLocalGroupDelMember
+      - api: netapi32.NetGroupDelUser

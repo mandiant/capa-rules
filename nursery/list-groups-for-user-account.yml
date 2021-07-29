@@ -1,0 +1,11 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: list groups for user account
+    namespace: host-interaction/accounts
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - or:
+      - api: netapi32.NetUserGetGroups
+      - api: netapi32.NetUserGetLocalGroups

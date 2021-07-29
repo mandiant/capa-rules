@@ -1,0 +1,10 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: list user accounts
+    namespace: host-interaction/accounts
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - or:
+      - api: netapi32.NetUserEnum
