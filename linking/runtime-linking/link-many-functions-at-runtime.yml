@@ -2,9 +2,9 @@ rule:
   meta:
     name: link many functions at runtime
     namespace: linking/runtime-linking
-    author: 
-     - moritz.raabe@fireeye.com
-     - joakim@intezer.com
+    author:
+      - moritz.raabe@fireeye.com
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Execution::Shared Modules [T1129]

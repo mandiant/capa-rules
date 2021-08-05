@@ -2,7 +2,7 @@ rule:
   meta:
     name: get networking interfaces
     namespace: host-interaction/network/interface
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function

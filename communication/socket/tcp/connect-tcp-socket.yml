@@ -2,7 +2,7 @@ rule:
   meta:
     name: connect TCP socket
     namespace: communication/socket/tcp
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function

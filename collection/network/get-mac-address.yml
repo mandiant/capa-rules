@@ -2,7 +2,7 @@ rule:
   meta:
     name: get MAC address
     namespace: collection/network
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function

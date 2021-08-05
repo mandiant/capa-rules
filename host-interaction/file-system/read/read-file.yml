@@ -2,7 +2,7 @@ rule:
   meta:
     name: read file
     namespace: host-interaction/file-system/read
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function

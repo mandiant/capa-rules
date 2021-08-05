@@ -2,7 +2,7 @@ rule:
   meta:
     name: write file
     namespace: host-interaction/file-system/write
-    author: 
+    author:
       - william.ballenthin@fireeye.com
       - joakim@intezer.com
     scope: function

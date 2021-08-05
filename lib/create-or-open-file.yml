@@ -1,7 +1,7 @@
 rule:
   meta:
     name: create or open file
-    author: 
+    author:
       - michael.hunhoff@fireeye.com
       - joakim@intezer.com
     lib: true

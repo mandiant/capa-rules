@@ -2,7 +2,7 @@ rule:
   meta:
     name: create process
     namespace: host-interaction/process/create
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: basic block

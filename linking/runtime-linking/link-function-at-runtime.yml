@@ -2,7 +2,7 @@ rule:
   meta:
     name: link function at runtime
     namespace: linking/runtime-linking
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function

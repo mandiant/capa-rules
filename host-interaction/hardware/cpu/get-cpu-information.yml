@@ -2,7 +2,7 @@ rule:
   meta:
     name: get CPU information
     namespace: host-interaction/hardware/cpu
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function

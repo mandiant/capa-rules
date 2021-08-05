@@ -2,7 +2,7 @@ rule:
   meta:
     name: send data on socket
     namespace: communication/socket/send
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function

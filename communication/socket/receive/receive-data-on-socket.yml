@@ -2,7 +2,7 @@ rule:
   meta:
     name: receive data on socket
     namespace: communication/socket/receive
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function

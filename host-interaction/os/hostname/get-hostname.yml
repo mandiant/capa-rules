@@ -2,7 +2,7 @@ rule:
   meta:
     name: get hostname
     namespace: host-interaction/os/hostname
-    author: 
+    author:
       - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function
@@ -10,6 +10,7 @@ rule:
       - Discovery::System Information Discovery [T1082]
     examples:
       - 9324D1A8AE37A36AE560C37448C9705A:0x4052A0
+      - 7351f8a40c5450557b24622417fc478d:0x405438
   features:
     - or:
       - api: kernel32.GetComputerName
@@ -17,3 +18,4 @@ rule:
       - api: GetComputerObjectName
       - api: ws2_32.gethostname
       - api: gethostname
+
