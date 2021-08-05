@@ -18,4 +18,3 @@ rule:
       - api: GetComputerObjectName
       - api: ws2_32.gethostname
       - api: gethostname
-

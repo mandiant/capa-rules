@@ -22,5 +22,4 @@ rule:
       - api: sysconf
       - and:
         - api: system
-        - string: lshw
-
+        - string: "lshw"
