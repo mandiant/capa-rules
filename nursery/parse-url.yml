@@ -1,7 +1,7 @@
 # generated using capa explorer for IDA Pro
 rule:
   meta:
-    name: parse HTTP URL
+    name: parse URL
     namespace: communication/http
     author: michael.hunhoff@fireeye.com
     scope: basic block

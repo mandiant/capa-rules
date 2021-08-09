@@ -5,6 +5,8 @@ rule:
     namespace: host-interaction/accounts
     author: michael.hunhoff@fireeye.com
     scope: basic block
+    att&ck:
+      - Persistence::Account Manipulation [T1098]
   features:
     - or:
       - api: netapi32.NetLocalGroupAddMembers
