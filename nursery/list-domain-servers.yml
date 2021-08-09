@@ -1,0 +1,10 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: list domain servers
+    namespace: host-interaction/domain
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+  features:
+    - or:
+      - api: netapi32.NetServerEnum
