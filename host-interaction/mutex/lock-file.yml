@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: create locked file
+    name: lock file
     namespace: host-interaction/mutex
     author: joakim@intezer.com
     scope: basic block

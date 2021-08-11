@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get distribution
+    name: get Linux distribution
     namespace: host-interaction/os/version
     author: joakim@intezer.com
     scope: function
