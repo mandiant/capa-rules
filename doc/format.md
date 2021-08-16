@@ -295,7 +295,7 @@ For example, a crypto constant.
 
 The parameter is a number; if prefixed with `0x` then in hex format, otherwise, decimal format.
 
-If the number is only relevant for a particular architecture, then you can use one of the architecture flavors: `number/x32` or `number/x64`.
+If the number is only relevant for a particular bitness, then you can use one of the bitness flavors: `number/x32` or `number/x64`.
 
 To help humans understand the meaning of a number, such that the constant `0x40` means `PAGE_EXECUTE_READWRITE`, you may provide a description alongside the definition.
 Use the inline syntax (preferred) by ending the line with ` = DESCRIPTION STRING`.
@@ -491,6 +491,105 @@ The name of a section in a structured file.
 Examples:
 
     section: .rsrc
+
+
+## global features
+
+capa extracts a handful features at all scopes, which we call "global features".
+These are features that may be useful to both disassembly and file structure interpretation, such as the targeted OS or architecture.
+These are the global features:
+
+  - [os](#os)
+  - [arch](#arch)
+
+### os
+
+The name of the OS on which the sample runs. This is determined via heuristics applied to the file format (e.g. PE files are for Windows, header fields and notes sections in ELF files indicate Linux/*BSD/etc.).
+This lets you group logic that should only be found on some platforms, such as Windows APIs are found only in Windows exectuables.
+
+Examples:
+
+```yml
+- or:
+  - and:
+    description: Windows-specific APIs
+    os: windows
+    api: CreateFile
+
+  - and:
+    description: POSIX-specific APIs
+    or:
+      - os: linux
+      - os: macos 
+      - ...
+    api: fopen
+```
+
+Valid OSes:
+  - `windows`
+  - `linux`
+  - `macos`
+  - `hpux`
+  - `netbsd`
+  - `hurd`
+  - `86open`
+  - `solaris`
+  - `aix`
+  - `irix`
+  - `freebsd`
+  - `tru64`
+  - `modesto`
+  - `openbsd`
+  - `openvms`
+  - `nsk`
+  - `aros`
+  - `fenixos`
+  - `cloud`
+  - `syllable`
+  - `nacl`
+
+### arch
+
+The name of the CPU architecture on which the sample runs.
+This lets you group logic that should only be found on some architectures, such as assembly instructions for Intel CPUs.
+
+Valid architectures:
+  - `i386` Intel 32-bit
+  - `amd64` Intel 64-bit
+
+Note: today capa only explicitly supports Intel architectures (`i386` and `amd64`). 
+Therefore, most rules assume Intel instructions and mnemonics.
+You don't have to explicitly include this condition in your rules:
+
+```yml
+- and:
+  - mnem: lea
+  - or:
+    # this block is not necessary!
+    - arch: i386
+    - arch: amd64
+```
+
+However, this can be useful if you have groups of many architecture-specific offsets, such as:
+
+```yml
+- or:
+  - and:
+    - description: 32-bit structure fields
+    - arch: i386
+    - offset: 0x12
+    - offset: 0x1C
+    - offset: 0x20
+  - and:
+    - description: 64-bit structure fields
+    - arch: amd64
+    - offset: 0x28
+    - offset: 0x30
+    - offset: 0x40
+```
+
+This can be easier to understand than using many `offset/x32` or `offset/x64` features.
+
 
 ## counting
 
