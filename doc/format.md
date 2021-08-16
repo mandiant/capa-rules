@@ -45,11 +45,15 @@ We'll start at the high level structure and then dig into the logic structures a
     - [mnemonic](#mnemonic)
     - [characteristic](#characteristic)
   - [file features](#file-features)
+    - [format](#format)
     - [string](#file-string)
     - [export](#export)
     - [import](#import)
     - [section](#section)
     - [function-name](#function-name)
+  - [global features](#global-features)
+    - [os](#os)
+    - [arch](#arch)
   - [counting](#counting)
   - [matching prior rule matches and namespaces](#matching-prior-rule-matches-and-namespaces)
   - [descriptions](#descriptions)
@@ -434,12 +438,21 @@ capa extracts features from the file data.
 File features stem from the file structure, i.e. PE structure or the raw file data.
 These are the features supported at the file-scope:
 
+  - [format](#format)
   - [string](#file-string)
   - [export](#export)
   - [import](#import)
   - [section](#section)
   - [function-name](#function-name)
 
+
+### format
+
+The name of the file format.
+
+Valid formats:
+  - `pe`
+  - `elf`
 
 ### file string
 An ASCII or UTF-16 LE string present in the file.
