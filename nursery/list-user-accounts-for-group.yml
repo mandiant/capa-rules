@@ -6,7 +6,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: basic block
     att&ck:
-      - Discovery::Account Discovery [T1087]
+      - Discovery::Permission Groups Discovery [T1069]
   features:
     - or:
       - api: netapi32.NetLocalGroupGetMembers
