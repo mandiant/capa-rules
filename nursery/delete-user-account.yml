@@ -6,7 +6,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: basic block
     att&ck:
-      - Persistence::Account Manipulation [T1098]
+      - Impact::Account Access Removal [T1531]
   features:
     - or:
       - api: netapi32.NetUserDel
