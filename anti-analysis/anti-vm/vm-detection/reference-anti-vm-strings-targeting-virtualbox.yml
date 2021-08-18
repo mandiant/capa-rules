@@ -27,23 +27,23 @@ rule:
       - string: /SYSTEM\\ControlSet001\\Services\\VBoxService/i
       - string: /SYSTEM\\ControlSet001\\Services\\VBoxSF/i
       - string: /SYSTEM\\ControlSet001\\Services\\VBoxVideo/i
-      - string: /VBoxMouse.sys/i
-      - string: /VBoxGuest.sys/i
-      - string: /VBoxSF.sys/i
-      - string: /VBoxVideo.sys/i
-      - string: /vboxdisp.dll/i
-      - string: /vboxhook.dll/i
-      - string: /vboxmrxnp.dll/i
-      - string: /vboxogl.dll/i
-      - string: /vboxoglarrayspu.dll/i
-      - string: /vboxoglcrutil.dll/i
-      - string: /vboxoglerrorspu.dll/i
-      - string: /vboxoglfeedbackspu.dll/i
-      - string: /vboxoglpackspu.dll/i
-      - string: /vboxoglpassthroughspu.dll/i
-      - string: /vboxservice.exe/i
-      - string: /vboxtray.exe/i
-      - string: /VBoxControl.exe/i
+      - string: /VBoxMouse\.sys/i
+      - string: /VBoxGuest\.sys/i
+      - string: /VBoxSF\.sys/i
+      - string: /VBoxVideo\.sys/i
+      - string: /vboxdisp\.dll/i
+      - string: /vboxhook\.dll/i
+      - string: /vboxmrxnp\.dll/i
+      - string: /vboxogl\.dll/i
+      - string: /vboxoglarrayspu\.dll/i
+      - string: /vboxoglcrutil\.dll/i
+      - string: /vboxoglerrorspu\.dll/i
+      - string: /vboxoglfeedbackspu\.dll/i
+      - string: /vboxoglpackspu\.dll/i
+      - string: /vboxoglpassthroughspu\.dll/i
+      - string: /vboxservice\.exe/i
+      - string: /vboxtray\.exe/i
+      - string: /VBoxControl\.exe/i
       - string: /oracle\\virtualbox guest additions\\/i
       - string: /\\\\.\\VBoxMiniRdrDN/i
       - string: /\\\\.\\VBoxGuest/i
@@ -52,7 +52,7 @@ rule:
       - string: /\\\\.\\pipe\\VBoxTrayIPC/i
       - string: /VBoxTrayToolWndClass/i
       - string: /VBoxTrayToolWnd/i
-      - string: /vboxservice.exe/i
+      - string: /vboxservice\.exe/i
       - string: /vboxtray.exe/i
       - string: /vboxvideo/i
       - string: /VBoxVideoW8/i

@@ -17,26 +17,26 @@ rule:
       - string: /VMWare/i
       - string: /VMTools/i
       - string: /SOFTWARE\\VMware, Inc\.\\VMware Tools/i
-      - string: /vmnet.sys/i
-      - string: /vmmouse.sys/i
-      - string: /vmusb.sys/i
-      - string: /vm3dmp.sys/i
-      - string: /vmci.sys/i
-      - string: /vmhgfs.sys/i
-      - string: /vmmemctl.sys/i
-      - string: /vmx86.sys/i
-      - string: /vmrawdsk.sys/i
-      - string: /vmusbmouse.sys/i
-      - string: /vmkdb.sys/i
-      - string: /vmnetuserif.sys/i
-      - string: /vmnetadapter.sys/i
+      - string: /vmnet\.sys/i
+      - string: /vmmouse\.sys/i
+      - string: /vmusb\.sys/i
+      - string: /vm3dmp\.sys/i
+      - string: /vmci\.sys/i
+      - string: /vmhgfs\.sys/i
+      - string: /vmmemctl\.sys/i
+      - string: /vmx86\.sys/i
+      - string: /vmrawdsk\.sys/i
+      - string: /vmusbmouse\.sys/i
+      - string: /vmkdb\.sys/i
+      - string: /vmnetuserif\.sys/i
+      - string: /vmnetadapter\.sys/i
       - string: /\\\\.\\HGFS/i
       - string: /\\\\.\\vmci/i
-      - string: /vmtoolsd.exe/i
-      - string: /vmwaretray.exe/i
-      - string: /vmwareuser.exe/i
-      - string: /VGAuthService.exe/i
-      - string: /vmacthlp.exe/i
+      - string: /vmtoolsd\.exe/i
+      - string: /vmwaretray\.exe/i
+      - string: /vmwareuser\.exe/i
+      - string: /VGAuthService\.exe/i
+      - string: /vmacthlp\.exe/i
       - string: /vmci/i
         description: VMWare VMCI Bus Driver
       - string: /vmhgfs/i
@@ -50,4 +50,4 @@ rule:
       - string: /vmxnet/i
       - string: /vmx86/i
       - string: /VMwareVMware/i
-      - string: /vmGuestLib.dll/i
+      - string: /vmGuestLib\.dll/i
