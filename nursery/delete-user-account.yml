@@ -1,0 +1,12 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: delete user account
+    namespace: host-interaction/accounts
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+    att&ck:
+      - Impact::Account Access Removal [T1531]
+  features:
+    - or:
+      - api: netapi32.NetUserDel

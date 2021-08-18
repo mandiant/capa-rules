@@ -1,0 +1,12 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: add user account
+    namespace: host-interaction/accounts
+    author: michael.hunhoff@fireeye.com
+    scope: basic block
+    att&ck:
+      - Persistence::Create Account [T1136]
+  features:
+    - or:
+      - api: netapi32.NetUserAdd

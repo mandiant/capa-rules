@@ -1,11 +1,11 @@
 rule:
   meta:
-    name: use process doppelganging
+    name: use process Doppelgänging
     namespace: host-interaction/process/inject
     author: moritz.raabe@fireeye.com
     scope: file
     att&ck:
-      - Defense Evasion::Process Injection::Process Doppelganging [T1055.013]
+      - Defense Evasion::Process Injection::Process Doppelgänging [T1055.013]
     examples:
       # proc_doppel64.exe from https://github.com/hasherezade/process_doppelganging/releases/tag/0.2
       - A5D66324DAAEE5672B913AA461D4BD3A
