@@ -330,9 +330,12 @@ A special character is one of:
   - a newline or other non-space whitespace (e.g. tab, CR, LF, etc), which should be represented like `string: "\n"`
   - a double quote, which should be represented as `string: "\""`
 
+capa only matches on the verbatim string, e.g. `"Mozilla"` does NOT match on `"User-Agent: Mozilla/5.0"`. Use the regex syntax described below for loose matching.
+
 Regexes should be surrounded with `/` characters. 
 By default, capa uses case-sensitive matching and assumes leading and trailing wildcards.
 To perform case-insensitive matching append an `i`. To anchor the regex at the start or end of a string, use `^` and/or `$`.
+As an example `/mozilla/i` matches on `"User-Agent: Mozilla/5.0"`.
 
 To add context to a string, use the two-line syntax `...description: DESCRIPTION STRING` shown below. The inline syntax is not supported here.
 See the [description section](#descriptions) for more details.
