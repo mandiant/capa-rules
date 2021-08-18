@@ -11,12 +11,16 @@ rule:
       - basic block:
         - and:
           - api: kernel32.MapViewOfFile
-          - number: 4 = FILE_MAP_READ
+          - or:
+            - number: 4 = FILE_MAP_READ
+            - number: 6 = FILE_MAP_WRITE | FILE_MAP_READ
       - optional:
         - api: kernel32.UnmapViewOfFile
         - and:
           - match: get file size
-          - basic block:
-            - and:
-              - api: kernel32.CreateFileMapping
+        - basic block:
+          - and:
+            - api: kernel32.CreateFileMapping
+            - or:
               - number: 2 = PAGE_READONLY
+              - number: 4 = PAGE_READWRITE

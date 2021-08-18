@@ -4,6 +4,8 @@ rule:
     namespace: load-code/shellcode
     author: moritz.raabe@fireeye.com
     scope: function
+    examples:
+      - Practical Malware Analysis Lab 19-02.exe_:0x401230
   features:
     - and:
       - match: allocate RWX memory
