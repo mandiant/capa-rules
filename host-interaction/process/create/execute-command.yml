@@ -7,7 +7,7 @@ rule:
     mbc:
       - Process::Create Process [C0017]
     examples:
-      - Practical Malware Analysis Lab 11-03.exe_:0x4012D0
+      - e353d3fbfb5c3738a77a622adff9a416:0x401626
   features:
     - or:
       - api: system
