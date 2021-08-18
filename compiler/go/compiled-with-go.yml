@@ -8,6 +8,6 @@ rule:
       - 49a34cfbeed733c24392c9217ef46bb6
   features:
     - or:
-      - string: /Go build ID:/
-      - string: /go.buildid/
-      - string: /Go buildinf:/
+      - string: /^Go build ID:/
+      - string: /go\.buildid/
+      - string: /^Go buildinf:/

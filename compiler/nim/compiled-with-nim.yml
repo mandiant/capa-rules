@@ -11,8 +11,8 @@ rule:
       - string: /NimMain/
       - string: /NimMainModule/
       - string: /NimMainInner/
-      - string: /io.nim$/
-      - string: /fatal.nim$/
-      - string: /system.nim$/
-      - string: /alloc.nim$/
-      - string: /osalloc.nim$/
+      - string: /io\.nim$/
+      - string: /fatal\.nim$/
+      - string: /system\.nim$/
+      - string: /alloc\.nim$/
+      - string: /osalloc\.nim$/
