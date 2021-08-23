@@ -6,6 +6,9 @@ rule:
     author: "@mr-tz"
     description: BITS jobs can be used to download data or achieve persistence (via SetNotifyCmdLine)
     scope: function
+    att&ck:
+      - Defense Evasion::BITS Jobs [T1197]
+      - Persistence::BITS Jobs [T1197]
     references:
       - https://www.fireeye.com/blog/threat-research/2021/03/attacker-use-of-windows-background-intelligent-transfer-service.html
     examples:
