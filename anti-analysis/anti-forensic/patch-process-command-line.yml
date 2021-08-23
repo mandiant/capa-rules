@@ -6,6 +6,8 @@ rule:
       - william.ballenthin@fireeye.com
       - "@_re_fox"
     scope: function
+    att&ck:
+      - Defense Evasion::Masquerading::Masquerade Task or Service [T1036.004]
     references:
       - https://stackoverflow.com/q/24754844/87207
       - https://blog.xpnsec.com/how-to-argue-like-cobalt-strike/
