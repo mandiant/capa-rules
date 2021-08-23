@@ -4,6 +4,10 @@ rule:
     namespace: host-interaction/environment-variable
     author: matthew.williams@fireeye.com
     scope: function
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+    mbc:
+      - Operating System::Environment Variable::{method} [C0034.xxx]
     examples:
       - Practical Malware Analysis Lab 14-02.exe_:0x401880
   features:

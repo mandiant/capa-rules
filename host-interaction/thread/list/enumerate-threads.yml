@@ -4,6 +4,10 @@ rule:
     namespace: host-interaction/thread/list
     author: moritz.raabe@fireeye.com
     scope: function
+    att&ck:
+      - Discovery::Process Discovery [T1057]
+    mbc:
+      - Process::{micro-behavior] [C00xx]
     examples:
       - Practical Malware Analysis Lab 05-01.dll_:0x10006BD5
   features:

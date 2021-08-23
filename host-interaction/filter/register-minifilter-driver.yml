@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/filter
     author: michael.hunhoff@fireeye.com
     scope: basic block
+    mbc:
     references:
       - https://docs.microsoft.com/en-us/windows-hardware/drivers/ifs/filter-manager-concepts
     examples:

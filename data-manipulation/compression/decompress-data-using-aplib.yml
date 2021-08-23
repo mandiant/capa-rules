@@ -7,6 +7,8 @@ rule:
       - moritz.raabe@fireeye.com
     description: detects decompression function of library aPLib
     scope: function
+    mbc:
+      - Data::Decompress Data::{Method} [C0025.xxx]
     references:
       - https://ibsensoftware.com/files/aPLib-1.1.1.zip
     examples:

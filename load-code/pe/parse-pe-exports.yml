@@ -4,6 +4,8 @@ rule:
     namespace: load-code/pe
     author: "@Ana06"
     scope: function
+    mbc:
+     - Memory::{Micro-objective}::{Method} [C00xx]
     references:
       - Practical Malware Analysis, Chapter 19
     examples:

@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/move
     author: moritz.raabe@fireeye.com
     scope: function
+    mbc:
+      - File System::{micro-behavior}[C00xx]
     examples:
       - Practical Malware Analysis Lab 01-04.exe_:0x401350
   features:

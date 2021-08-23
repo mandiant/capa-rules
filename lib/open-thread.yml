@@ -3,7 +3,9 @@ rule:
     name: open thread
     author: 0x534a@mailbox.org
     lib: true
-    scope: basic block
+    scope: basic block    
+    mbc:
+      - Process::{Micro-objective}::{Method} [C00xx]
     examples:
       - 787cbc8a6d1bc58ea169e51e1ad029a637f22560660cc129ab8a099a745bd50e:00502F4C
   features:

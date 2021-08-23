@@ -5,6 +5,8 @@ rule:
     author: "@Ana06"
     description: "translate section memory permissions (specified in the 'Characteristics' field of the image section header) into page protection constants"
     scope: function
+    mbc:
+     - Memory::{Micro-objective}::{Method} [C00xx]
     examples:
       - E4C33AC3638EEF68311F8AC0D72483C7:0x401480
   features:
