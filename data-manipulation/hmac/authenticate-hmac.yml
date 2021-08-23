@@ -5,7 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     mbc:
-      - Cryptography::{Micro Behavior}
+      - Cryptography::{Micro Behavior} []
     references:
       - https://tools.ietf.org/html/rfc2104
       - https://tools.ietf.org/html/rfc4634
