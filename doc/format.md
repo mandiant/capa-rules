@@ -330,7 +330,9 @@ A special character is one of:
   - a newline or other non-space whitespace (e.g. tab, CR, LF, etc), which should be represented like `string: "\n"`
   - a double quote, which should be represented as `string: "\""`
 
-capa only matches on the verbatim string, e.g. `"Mozilla"` does NOT match on `"User-Agent: Mozilla/5.0"`. Use the regex syntax described below for loose matching.
+capa only matches on the verbatim string, e.g. `"Mozilla"` does NOT match on `"User-Agent: Mozilla/5.0"`. 
+To match verbatim substrings with leading/trailing wildcards, use a substring feature, e.g. `substring: Mozilla`.
+For more complex patterns, use the regex syntax described below.
 
 Regexes should be surrounded with `/` characters. 
 By default, capa uses case-sensitive matching and assumes leading and trailing wildcards.
@@ -352,9 +354,10 @@ Examples:
 - string: /SELECT.*FROM.*WHERE/
   description: SQL WHERE Clause
 - string: /Hardware\\Description\\System\\CentralProcessor/i
+- substring: "CurrentVersion"
 ```
 
-Note that regex matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
+Note that regex and substring matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
 
 ### bytes
 A sequence of bytes referenced by the logic of the program. 
@@ -461,7 +464,7 @@ Valid formats:
 An ASCII or UTF-16 LE string present in the file.
 
 The parameter is a string describing the string.
-This can be the verbatim value, or a regex matching the string and should use the same formatting used for
+This can be the verbatim value, a verbatim substring, or a regex matching the string and should use the same formatting used for
 [string](#string) features.
 
 Examples:
@@ -470,8 +473,9 @@ Examples:
     string: "[ENTER]"
     string: /.*VBox.*/
     string: /.*Software\\Microsoft\Windows\\CurrentVersion\\Run.*/i
+    substring: "CurrentVersion"
 
-Note that regex matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
+Note that regex and substring matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
 
 ### export
 
