@@ -39,14 +39,14 @@ We'll start at the high level structure and then dig into the logic structures a
   - [function features](#function-features)
     - [api](#api)
     - [number](#number)
-    - [string](#string)
+    - [string and substring](#string-and-substring)
     - [bytes](#bytes)
     - [offset](#offset)
     - [mnemonic](#mnemonic)
     - [characteristic](#characteristic)
   - [file features](#file-features)
     - [format](#format)
-    - [string](#file-string)
+    - [string and substring](#file-string-and-substring)
     - [export](#export)
     - [import](#import)
     - [section](#section)
@@ -271,7 +271,7 @@ These are the features supported at the function-scope:
 
   - [api](#api)
   - [number](#number)
-  - [string](#string)
+  - [string and substring](#string-and-substring)
   - [bytes](#bytes)
   - [offset](#offset)
   - [mnemonic](#mnemonic)
@@ -315,7 +315,7 @@ Examples:
 Note that capa treats all numbers as unsigned values. A negative number is not a valid feature value.
 To match a negative number you may specify its two's complement representation. For example, `0xFFFFFFF0` (`-2`) in a 32-bit file.
 
-### string
+### string and substring
 A string referenced by the logic of the program.
 This is probably a pointer to an ASCII or Unicode string.
 This could also be an obfuscated string, for example a stack string.
@@ -330,7 +330,9 @@ A special character is one of:
   - a newline or other non-space whitespace (e.g. tab, CR, LF, etc), which should be represented like `string: "\n"`
   - a double quote, which should be represented as `string: "\""`
 
-capa only matches on the verbatim string, e.g. `"Mozilla"` does NOT match on `"User-Agent: Mozilla/5.0"`. Use the regex syntax described below for loose matching.
+capa only matches on the verbatim string, e.g. `"Mozilla"` does NOT match on `"User-Agent: Mozilla/5.0"`. 
+To match verbatim substrings with leading/trailing wildcards, use a substring feature, e.g. `substring: "Mozilla"`.
+For more complex patterns, use the regex syntax described below.
 
 Regexes should be surrounded with `/` characters. 
 By default, capa uses case-sensitive matching and assumes leading and trailing wildcards.
@@ -352,9 +354,10 @@ Examples:
 - string: /SELECT.*FROM.*WHERE/
   description: SQL WHERE Clause
 - string: /Hardware\\Description\\System\\CentralProcessor/i
+- substring: "CurrentVersion"
 ```
 
-Note that regex matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
+Note that regex and substring matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
 
 ### bytes
 A sequence of bytes referenced by the logic of the program. 
@@ -442,7 +445,7 @@ File features stem from the file structure, i.e. PE structure or the raw file da
 These are the features supported at the file-scope:
 
   - [format](#format)
-  - [string](#file-string)
+  - [string and substring](#file-string-and-substring)
   - [export](#export)
   - [import](#import)
   - [section](#section)
@@ -457,11 +460,11 @@ Valid formats:
   - `pe`
   - `elf`
 
-### file string
+### file string and substring
 An ASCII or UTF-16 LE string present in the file.
 
 The parameter is a string describing the string.
-This can be the verbatim value, or a regex matching the string and should use the same formatting used for
+This can be the verbatim value, a verbatim substring, or a regex matching the string and should use the same formatting used for
 [string](#string) features.
 
 Examples:
@@ -470,8 +473,9 @@ Examples:
     string: "[ENTER]"
     string: /.*VBox.*/
     string: /.*Software\\Microsoft\Windows\\CurrentVersion\\Run.*/i
+    substring: "CurrentVersion"
 
-Note that regex matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
+Note that regex and substring matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
 
 ### export
 
