@@ -11,7 +11,7 @@ rule:
       - A5D66324DAAEE5672B913AA461D4BD3A
   features:
     - and:
-      - string: /CreateFileTransacted./
+      - substring: "CreateFileTransacted"
       - or:
         - string: "ZwCreateSection"
         - string: "NtCreateSection"

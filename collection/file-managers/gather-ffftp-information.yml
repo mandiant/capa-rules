@@ -14,11 +14,11 @@ rule:
     - or:
       - and:
         - or:
-          - string: /Software\\Sota\\FFFTP\\Options/
-          - string: /Software\\Sota\\FFFTP/
+          - substring: "Software\\Sota\\FFFTP\\Options"
+          - substring: "Software\\Sota\\FFFTP"
         - or:
-          - string: /CredentialSalt/
-          - string: /CredentialCheck/
+          - substring: "CredentialSalt"
+          - substring: "CredentialCheck"
       - and:
         - string: "Password"
         - string: "UserName"

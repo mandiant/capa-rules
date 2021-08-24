@@ -19,7 +19,7 @@ rule:
       - or:
         - api: activeds.ADsOpenObject
         - api: activeds.#9
-      - string: /LDAP:\/\//
+      - substring: "LDAP://"
       - or:
-        - string: /\(objectClass=computer\)/
-        - string: /\(objectCategory=computer\)/
+        - string: "(objectClass=computer)"
+        - string: "(objectCategory=computer)"

@@ -17,11 +17,11 @@ rule:
         - string: ".bps"
       - and:
         - or:
-          - string: /Software\\BPFTP\\Bullet Proof FTP\\Main/
-          - string: /Software\\BulletProof Software\\BulletProof FTP Client\\Main/
-          - string: /Software\\BulletProof Software\\BulletProof FTP Client\\Options/
-          - string: /Software\\BPFTP\\Bullet Proof FTP\\Options/
-          - string: /Software\\BPFTP/
+          - substring: "Software\\BPFTP\\Bullet Proof FTP\\Main"
+          - substring: "Software\\BulletProof Software\\BulletProof FTP Client\\Main"
+          - substring: "Software\\BulletProof Software\\BulletProof FTP Client\\Options"
+          - substring: "Software\\BPFTP\\Bullet Proof FTP\\Options"
+          - substring: "Software\\BPFTP"
         - or:
           - string: "LastSessionFile"
           - string: "SitesDir"

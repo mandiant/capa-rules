@@ -18,13 +18,13 @@ rule:
           description: Dynamic loading of DLLs
         - or:
           - and:
-            - string: /user32.dll/
+            - substring: "user32.dll"
             - or:
-              - string: /GetWindowDC/
-              - string: /GetDC/
+              - substring: "GetWindowDC"
+              - substring: "GetDC"
           - and:
-            - string: /gdi32.dll/
+            - substring: "gdi32.dll"
             - or:
-              - string: /BitBlt/
-              - string: /GetDIBits/
-        - string: /CreateCompatibleDC/
+              - substring: "BitBlt"
+              - substring: "GetDIBits"
+        - substring: "CreateCompatibleDC"

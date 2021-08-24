@@ -9,6 +9,6 @@ rule:
   features:
     - and:
       - basic block:
-        - string: /run with \`RUST_BACKTRACE=1\` environment variable/
+        - substring: "run with `RUST_BACKTRACE=1` environment variable"
       - basic block:
-        - string: /thread '' panicked at '',/
+        - substring: "thread '' panicked at '',"

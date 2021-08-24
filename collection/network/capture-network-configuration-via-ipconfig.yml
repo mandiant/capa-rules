@@ -15,5 +15,5 @@ rule:
       - optional:
         - and:
           - string: "ipconfig.txt"
-          - string: /\[Windows IP Configuration\]/
+          - substring: "[Windows IP Configuration]"
             description: Arkei Stealer Filename and Banner

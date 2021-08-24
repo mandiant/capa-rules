@@ -13,4 +13,4 @@ rule:
   features:
     - and:
       - string: "servers.xml"
-      - string: /\\FTPGetter/
+      - substring: "\\FTPGetter"

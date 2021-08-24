@@ -35,9 +35,9 @@ rule:
           - string: "github.com/GeertJohan/go.rice.FindBox"
           - string: "github.com/GeertJohan/go.rice.MustFindBox"
         - and:
-          - string: /\/bindata\.go/
+          - substring: "/bindata.go"
             description: go-bindata
-          - string: /\.Asset/
+          - substring: ".Asset"
         - and:
           - string: "github.com/lu4p/binclude.Include"
         - and:

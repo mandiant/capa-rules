@@ -13,10 +13,10 @@ rule:
   features:
     - or:
       - and:
-        - string: /SOFTWARE\\Robo-FTP/
+        - substring: "SOFTWARE\\Robo-FTP"
         - or:
-          - string: /\\FTPServers/
-          - string: /FTP File/
+          - substring: "\\FTPServers"
+          - substring: "FTP File"
           - string: "FTP Count"
       - and:
         - string: "Password"
