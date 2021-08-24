@@ -19,5 +19,5 @@ rule:
       - number: 0x17 # 23 from line 153: tem0 = rotrFixed((ctx->T[(v)]),23);
       - number: 0xA # 10 from line 154: tem1 = rotrFixed((ctx->X[(c)]),10);
       - number: 0x8 # 8 from line 155: tem2 = rotrFixed((ctx->X[(b)]),8);
-      - number: 0x3FC # Compiler optimized size for ANDs for the 1024 sized buffer
+      - number: 0x3FC # Compiler optimized size used in ANDs for the 1024 sized buffer
       - count(mnemonic(rol)): 48
