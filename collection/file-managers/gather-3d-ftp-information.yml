@@ -15,4 +15,4 @@ rule:
       - string: "3D-FTP"
       - string: "sites.ini"
       - optional:
-        - string: /\\SiteDesigner/
+        - substring: "\\SiteDesigner"

@@ -7,4 +7,4 @@ rule:
   features:
     - or:
       - string: "WiseMain"
-      - string: /Wise Installation Wizard/
+      - substring: "Wise Installation Wizard"

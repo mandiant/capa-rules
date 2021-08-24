@@ -9,7 +9,7 @@ rule:
   features:
     - or:
       - string: "Borland C++ - Copyright 2002 Borland Corporation"
-      - string: /SOFTWARE\\Borland\\Delphi\\RTL/
+      - substring: "SOFTWARE\\Borland\\Delphi\\RTL"
       - string: "Sysutils::Exception"
       - string: "TForm1"
       - import: "BORLNDMM.DLL"

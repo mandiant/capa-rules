@@ -13,8 +13,8 @@ rule:
   features:
     - or:
       - and:
-        - string: /Software\\Nico Mak Computing\\WinZip\\FTP/
-        - string: /Software\\Nico Mak Computing\\WinZip\\mru\\jobs/
+        - substring: "Software\\Nico Mak Computing\\WinZip\\FTP"
+        - substring: "Software\\Nico Mak Computing\\WinZip\\mru\\jobs"
       - and:
         - string: "Site"
         - string: "UserID"

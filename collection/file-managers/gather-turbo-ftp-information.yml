@@ -16,7 +16,7 @@ rule:
         - string: "addrbk.dat"
         - string: "quick.dat"
       - and:
-        - string: /installpath/
+        - substring: "installpath"
         - or:
-          - string: /Software\\TurboFTP/
-          - string: /\\TurboFTP/
+          - substring: "Software\\TurboFTP"
+          - substring: "\\TurboFTP"

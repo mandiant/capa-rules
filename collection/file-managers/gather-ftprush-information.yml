@@ -12,5 +12,5 @@ rule:
       - 5a2f620f29ca2f44fc22df67b674198f:0x406AE0
   features:
     - and:
-      - string: /\\FTPRush/
-      - string: /RushSite\.xml/
+      - substring: "\\FTPRush"
+      - substring: "RushSite.xml"

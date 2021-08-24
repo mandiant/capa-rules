@@ -13,4 +13,4 @@ rule:
         - string: / iex /i
         - string: /Invoke-Expression/i
       - optional:
-        - string: /powershell.exe /
+        - substring: "powershell.exe "

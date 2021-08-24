@@ -8,11 +8,11 @@ rule:
       - 580c37831fe98a254eb6c61c692c70d8.exe_
   features:
     - or:
-      - string: /NimMain/
-      - string: /NimMainModule/
-      - string: /NimMainInner/
-      - string: /io\.nim$/
-      - string: /fatal\.nim$/
-      - string: /system\.nim$/
-      - string: /alloc\.nim$/
-      - string: /osalloc\.nim$/
+      - substring: "NimMain"
+      - substring: "NimMainModule"
+      - substring: "NimMainInner"
+      - substring: "io.nim"
+      - substring: "fatal.nim"
+      - substring: "system.nim"
+      - substring: "alloc.nim"
+      - substring: "osalloc.nim"

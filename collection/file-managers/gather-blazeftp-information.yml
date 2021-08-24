@@ -19,4 +19,4 @@ rule:
         - string: "LastAddress"
         - string: "LastUser"
         - string: "LastPort"
-        - string: /Software\\FlashPeak\\BlazeFtp\\Settings/
+        - substring: "Software\\FlashPeak\\BlazeFtp\\Settings"

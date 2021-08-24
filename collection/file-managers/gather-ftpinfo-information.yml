@@ -15,5 +15,5 @@ rule:
       - string: "ServerList.xml"
       - string: "DataDir"
       - or:
-        - string: /Software\\MAS-Soft\\FTPInfo\\Setup/
-        - string: /FTPInfo/
+        - substring: "Software\\MAS-Soft\\FTPInfo\\Setup"
+        - substring: "FTPInfo"

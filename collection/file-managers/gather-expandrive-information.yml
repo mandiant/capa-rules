@@ -13,8 +13,8 @@ rule:
   features:
     - and:
       - or:
-        - string: /Software\\ExpanDrive\\Sessions/
-        - string: /Software\\ExpanDrive/
+        - substring: "Software\\ExpanDrive\\Sessions"
+        - substring: "Software\\ExpanDrive"
       - or:
-        - string: /ExpanDrive_Home/
-        - string: /\\drives\.js/
+        - substring: "ExpanDrive_Home"
+        - substring: "\\drives.js"

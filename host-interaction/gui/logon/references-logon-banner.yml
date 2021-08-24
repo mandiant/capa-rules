@@ -8,7 +8,7 @@ rule:
       - c3341b7dfbb9d43bca8c812e07b4299f:0x4066FC
   features:
     - and:
-      - string: /\\Microsoft\\Windows\\CurrentVersion\\Policies\\System/
+      - substring: "\\Microsoft\\Windows\\CurrentVersion\\Policies\\System"
       - or:
-        - string: /LegalNoticeCaption/
-        - string: /LegalNoticeText/
+        - substring: "LegalNoticeCaption"
+        - substring: "LegalNoticeText"

@@ -14,14 +14,14 @@ rule:
       - api: InternetOpenUrl
       - api: InternetReadFile
       - or:
-        - string: /bot\.whatismyipaddress\.com/
-        - string: /ipinfo\.io\/ip/
-        - string: /checkip\.dyndns\.org/
-        - string: /ifconfig\.me/
-        - string: /ipecho\.net\/plain/
-        - string: /api\.ipify\.org/
-        - string: /checkip\.amazonaws\.com/
-        - string: /icanhazip\.com/
-        - string: /wtfismyip\.com/text/
-        - string: /api\.myip\.com/
-        - string: /ip\-api\.com\/line/
+        - substring: "bot.whatismyipaddress.com"
+        - substring: "ipinfo.io/ip"
+        - substring: "checkip.dyndns.org"
+        - substring: "ifconfig.me"
+        - substring: "ipecho.net/plain"
+        - substring: "api.ipify.org"
+        - substring: "checkip.amazonaws.com"
+        - substring: "icanhazip.com"
+        - substring: "wtfismyip.com/text"
+        - substring: "api.myip.com"
+        - substring: "ip-api.com/line"

@@ -25,7 +25,7 @@ rule:
           description: WindBG
         - string: /api_log\.dll/i
           description: iDefense Lab
-        - string: /dir_watch\.dll/
+        - string: /dir_watch\.dll/i
           description: iDefense Lab
         - string: /pstorec\.dll/i
           description: SunBelt Sandbox

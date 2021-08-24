@@ -13,10 +13,10 @@ rule:
   features:
     - or:
       - and:
-        - string: /Software\\FlashFXP/
-        - string: /DataFolder/
-        - string: /Install Path/
+        - substring: "Software\\FlashFXP"
+        - substring: "DataFolder"
+        - substring: "Install Path"
       - and:
-        - string: /\\Sites.dat/
-        - string: /\\Quick.dat/
-        - string: /\\History.dat/
+        - substring: "\\Sites.dat"
+        - substring: "\\Quick.dat"
+        - substring: "\\History.dat"

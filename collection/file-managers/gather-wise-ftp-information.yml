@@ -19,5 +19,5 @@ rule:
       - and:
         - string: "wiseftpsrvs.bin"
         - or:
-          - string: /\\AceBIT/
-          - string: /Software\\AceBIT/
+          - substring: "\\AceBIT"
+          - substring: "Software\\AceBIT"

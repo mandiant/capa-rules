@@ -9,5 +9,5 @@ rule:
   features:
     - or:
       - string: /^Go build ID:/
-      - string: /go\.buildid/
+      - substring: "go.buildid"
       - string: /^Go buildinf:/

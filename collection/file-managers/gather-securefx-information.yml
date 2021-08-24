@@ -12,9 +12,9 @@ rule:
       - 5a2f620f29ca2f44fc22df67b674198f:0x4069DB
   features:
     - and:
-      - string: /\\Sessions/
+      - substring: "\\Sessions"
       - string: ".ini"
-      - string: /Config Path/
+      - substring: "Config Path"
       - or:
-        - string: /_VanDyke\\Config\\Sessions/
-        - string: /Software\\VanDyke\\SecureFX/
+        - substring: "_VanDyke\\Config\\Sessions"
+        - substring: "Software\\VanDyke\\SecureFX"

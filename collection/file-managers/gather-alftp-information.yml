@@ -15,4 +15,4 @@ rule:
     - and:
       - string: "ESTdb2.dat"
       - string: "QData.dat"
-      - string: /\\Estsoft\\ALFTP/
+      - substring: "\\Estsoft\\ALFTP"

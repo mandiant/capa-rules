@@ -8,4 +8,4 @@ rule:
       - https://nsis.sourceforge.io/Main_Page
   features:
     - or:
-      - string: /http://nsis\.sf\.net/
+      - substring: "http://nsis.sf.net"

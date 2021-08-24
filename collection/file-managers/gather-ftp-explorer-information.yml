@@ -13,11 +13,11 @@ rule:
   features:
     - or:
       - and:
-        - string: /profiles\.xml/
+        - substring: "profiles.xml"
         - or:
-          - string: /Software\\FTP Explorer\\FTP Explorer\\Workspace\\MFCToolBar-224/
-          - string: /Software\\FTP Explorer\\Profiles/
-          - string: /\\FTP Explorer/
+          - substring: "Software\\FTP Explorer\\FTP Explorer\\Workspace\\MFCToolBar-224"
+          - substring: "Software\\FTP Explorer\\Profiles"
+          - substring: "\\FTP Explorer"
       - and:
         - string: "Password"
         - string: "Host"

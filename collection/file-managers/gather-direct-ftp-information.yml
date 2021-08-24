@@ -12,8 +12,8 @@ rule:
       - 5a2f620f29ca2f44fc22df67b674198f:0x40DC62
   features:
     - or:
-      - string: /Software\\CoffeeCup Software\\Internet\\Profiles/
-      - string: /\\CoffeeCup Software/
+      - substring: "Software\\CoffeeCup Software\\Internet\\Profiles"
+      - substring: "\\CoffeeCup Software"
       - and:
         - string: "Password"
         - string: "HostName"
@@ -21,8 +21,8 @@ rule:
         - string: "Username"
         - string: "HostDirName"
       - 2 or more:
-        - string: /\\SharedSettings\.ccs/
-        - string: /\\SharedSettings\.sqlite/
+        - substring: "\\SharedSettings.ccs"
+        - substring: "\\SharedSettings.sqlite"
         - string: /\\SharedSettings[0-9_\.]{2,7}\.ccs/
         - string: /\\SharedSettings[0-9_\.]{2,7}\.sqlite/
       - and:

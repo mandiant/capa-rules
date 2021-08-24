@@ -13,4 +13,4 @@ rule:
   features:
     - and:
       - string: ".xfp"
-      - string: /\\NetSarang/
+      - substring: "\\NetSarang"

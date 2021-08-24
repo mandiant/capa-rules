@@ -14,9 +14,9 @@ rule:
       - or:
         - string: "CiInitialize"
           description: exported symbol name used to resolve code integrity configuration
-        - string: /g_CiEnabled/
+        - substring: "g_CiEnabled"
           description: non-exported name for code integrity flag
-        - string: /g_CiOptions/
+        - substring: "g_CiOptions"
           description: non-exported name for code integrity settings
       - optional:
         - string: /CI.dll/i
