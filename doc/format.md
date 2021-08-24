@@ -39,14 +39,14 @@ We'll start at the high level structure and then dig into the logic structures a
   - [function features](#function-features)
     - [api](#api)
     - [number](#number)
-    - [string](#string)
+    - [string and substring](#string-and-substring)
     - [bytes](#bytes)
     - [offset](#offset)
     - [mnemonic](#mnemonic)
     - [characteristic](#characteristic)
   - [file features](#file-features)
     - [format](#format)
-    - [string](#file-string)
+    - [string and substring](#file-string-and-substring)
     - [export](#export)
     - [import](#import)
     - [section](#section)
@@ -271,7 +271,7 @@ These are the features supported at the function-scope:
 
   - [api](#api)
   - [number](#number)
-  - [string](#string)
+  - [string and substring](#string-and-substring)
   - [bytes](#bytes)
   - [offset](#offset)
   - [mnemonic](#mnemonic)
@@ -315,7 +315,7 @@ Examples:
 Note that capa treats all numbers as unsigned values. A negative number is not a valid feature value.
 To match a negative number you may specify its two's complement representation. For example, `0xFFFFFFF0` (`-2`) in a 32-bit file.
 
-### string
+### string and substring
 A string referenced by the logic of the program.
 This is probably a pointer to an ASCII or Unicode string.
 This could also be an obfuscated string, for example a stack string.
@@ -445,7 +445,7 @@ File features stem from the file structure, i.e. PE structure or the raw file da
 These are the features supported at the file-scope:
 
   - [format](#format)
-  - [string](#file-string)
+  - [string and substring](#file-string-and-substring)
   - [export](#export)
   - [import](#import)
   - [section](#section)
@@ -460,7 +460,7 @@ Valid formats:
   - `pe`
   - `elf`
 
-### file string
+### file string and substring
 An ASCII or UTF-16 LE string present in the file.
 
 The parameter is a string describing the string.
