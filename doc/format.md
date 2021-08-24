@@ -331,7 +331,7 @@ A special character is one of:
   - a double quote, which should be represented as `string: "\""`
 
 capa only matches on the verbatim string, e.g. `"Mozilla"` does NOT match on `"User-Agent: Mozilla/5.0"`. 
-To match verbatim substrings with leading/trailing wildcards, use a substring feature, e.g. `substring: Mozilla`.
+To match verbatim substrings with leading/trailing wildcards, use a substring feature, e.g. `substring: "Mozilla"`.
 For more complex patterns, use the regex syntax described below.
 
 Regexes should be surrounded with `/` characters. 
