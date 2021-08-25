@@ -14,4 +14,4 @@ rule:
     - and:
       - os: linux
       - match: duplicate stdin and stdout
-      - match: create process
+      - match: host-interaction/process/create
