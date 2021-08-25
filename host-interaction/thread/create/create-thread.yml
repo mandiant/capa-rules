@@ -5,6 +5,7 @@ rule:
     author:
       - moritz.raabe@fireeye.com
       - michael.hunhoff@fireeye.com
+      - joakim@intezer.com
     scope: basic block
     mbc:
       - Process::Create Thread [C0038]
@@ -26,3 +27,4 @@ rule:
       - api: ntdll.NtCreateThreadEx
       - api: ntdll.ZwCreateThread
       - api: ntdll.ZwCreateThreadEx
+      - api: pthread_create

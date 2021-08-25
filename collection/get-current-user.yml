@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: get current user
+    namespace: collection
+    author: joakim@intezer.com
+    scope: function
+    examples:
+      - 7351f8a40c5450557b24622417fc478d:0x405438
+  features:
+    - or:
+      - and:
+        - api: geteuid
+        - api: getpwuid
+      - api: getlogin
+      - api: getlogin_r
+      - api: cuserid

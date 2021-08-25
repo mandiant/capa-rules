@@ -2,7 +2,9 @@ rule:
   meta:
     name: create process
     namespace: host-interaction/process/create
-    author: moritz.raabe@fireeye.com
+    author:
+      - moritz.raabe@fireeye.com
+      - joakim@intezer.com
     scope: basic block
     mbc:
       - Process::Create Process [C0017]
@@ -26,3 +28,13 @@ rule:
       - api: ZwCreateProcessEx
       - api: ntdll.ZwCreateUserProcess
       - api: ntdll.RtlCreateUserProcess
+      - api: execve
+      - api: execl
+      - api: execlp
+      - api: execle
+      - api: execv
+      - api: execvp
+      - api: execvpe
+      - api: posix_spawn
+      - api: posix_spawnp
+      - api: popen

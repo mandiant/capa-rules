@@ -2,7 +2,9 @@ rule:
   meta:
     name: receive data on socket
     namespace: communication/socket/receive
-    author: moritz.raabe@fireeye.com
+    author:
+      - moritz.raabe@fireeye.com
+      - joakim@intezer.com
     scope: function
     mbc:
       - Communication::Socket Communication::Receive Data [C0001.006]
@@ -17,3 +19,4 @@ rule:
       - api: ws2_32.WSARecvEx
       - api: ws2_32.WSARecvFrom
       - api: ws2_32.WSARecvMsg
+      - api: recv

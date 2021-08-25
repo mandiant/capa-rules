@@ -2,7 +2,9 @@ rule:
   meta:
     name: get system information
     namespace: host-interaction/os/info
-    author: moritz.raabe@fireeye.com
+    author:
+      - moritz.raabe@fireeye.com
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]
@@ -17,3 +19,7 @@ rule:
       - api: ntdll.RtlGetNativeSystemInformation
       - api: ZwQuerySystemInformation
       - api: ZwQuerySystemInformationEx
+      - api: sysconf
+      - and:
+        - api: system
+        - string: "lshw"

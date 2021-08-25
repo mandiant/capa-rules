@@ -1,7 +1,9 @@
 rule:
   meta:
     name: create or open file
-    author: michael.hunhoff@fireeye.com
+    author:
+      - michael.hunhoff@fireeye.com
+      - joakim@intezer.com
     lib: true
     scope: basic block
     mbc:
@@ -18,3 +20,9 @@ rule:
       - api: ZwCreateFile
       - api: NtOpenFile
       - api: NtCreateFile
+      - api: fopen
+      - api: fopen64
+      - api: fdopen
+      - api: freopen
+      - api: open
+      - api: openat

@@ -2,7 +2,9 @@ rule:
   meta:
     name: get local IPv4 addresses
     namespace: host-interaction/network/address
-    author: moritz.raabe@fireeye.com
+    author:
+      - moritz.raabe@fireeye.com
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
@@ -11,6 +13,7 @@ rule:
       - 4C0553285D724DCAF5909924B4E3E90A:0x402010
   features:
     - or:
+      - api: getsockname
       - and:
         - api: GetAdaptersInfo
         - offset: 0x1B0 = IP_ADAPTER_INFO.IpAddressList.IpAddress

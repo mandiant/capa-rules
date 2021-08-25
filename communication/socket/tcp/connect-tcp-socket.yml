@@ -2,7 +2,9 @@ rule:
   meta:
     name: connect TCP socket
     namespace: communication/socket/tcp
-    author: moritz.raabe@fireeye.com
+    author:
+      - moritz.raabe@fireeye.com
+      - joakim@intezer.com
     scope: function
     mbc:
       - Communication::Socket Communication::Connect Socket [C0001.004]
@@ -12,6 +14,7 @@ rule:
     - and:
       - match: create TCP socket
       - or:
+        - api: connect
         - api: ws2_32.connect
         - api: ws2_32.WSAConnect
         - api: ConnectEx

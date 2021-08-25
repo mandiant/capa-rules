@@ -2,7 +2,9 @@ rule:
   meta:
     name: create UDP socket
     namespace: communication/socket/udp/send
-    author: moritz.raabe@fireeye.com
+    author:
+      - moritz.raabe@fireeye.com
+      - joakim@intezer.com
     scope: basic block
     mbc:
       - Communication::Socket Communication::Create UDP Socket [C0001.010]
@@ -14,3 +16,4 @@ rule:
       - or:
         - api: ws2_32.socket
         - api: ws2_32.WSASocket
+        - api: socket
