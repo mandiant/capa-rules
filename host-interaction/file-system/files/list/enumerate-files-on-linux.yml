@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: enumerate files on Linux
+    namespace: host-interaction/file-system/files/list
+    author: william.ballenthin@fireeye.com
+    scope: function
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
+  features:
+    - and:
+      - os: linux
+      - or:
+        - and:
+          - match: create or open file
+          - or:
+            - api: getdents
+            - api: getdents64
+        - and:
+          - api: opendir
+          - api: readdir

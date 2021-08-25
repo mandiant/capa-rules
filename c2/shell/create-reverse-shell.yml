@@ -19,12 +19,12 @@ rule:
         - api: kernel32.ReadFile
         - api: kernel32.WriteFile
       - and:
-        - match: create process
+        - match: host-interaction/process/create
         - match: read pipe
         - match: write pipe
       - and:
         - match: create pipe
-        - match: create process
+        - match: host-interaction/process/create
         - basic block:
           - and:
             - count(api(SetHandleInformation)): 2 or more

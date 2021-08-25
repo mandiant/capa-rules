@@ -10,11 +10,12 @@ rule:
       - 7351f8a40c5450557b24622417fc478d:0x407D11
   features:
     - and:
-      - match: write file
+      - os: linux
+      - match: host-interaction/file-system/write
       - or:
-        - string: /\/\.bash_profile/
-        - string: /\/\.bash_login/
-        - string: /\/\.bashrc/
-        - string: /\/\.profile/
+        - substring: "/.bash_profile"
+        - substring: "/.bash_login"
+        - substring: "/.bashrc"
+        - substring: "/.profile"
+        - substring: "/etc/profile.d/"
         - string: "/etc/profile"
-        - string: /\/etc\/profile\.d\//

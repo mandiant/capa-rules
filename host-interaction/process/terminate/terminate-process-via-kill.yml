@@ -10,6 +10,7 @@ rule:
       - 7351f8a40c5450557b24622417fc478d:0x402424
   features:
     - and:
+      - os: linux
       - api: kill
       - or:
         - number: 1 = SIGHUP - controlling terminal closed

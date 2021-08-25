@@ -14,17 +14,22 @@ rule:
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x408020
   features:
     - or:
-      - api: kernel32.CreateThread
-      - api: _beginthread
-      - api: _beginthreadex
-      - api: PsCreateSystemThread
-      - api: SHCreateThread
-      - api: SHCreateThreadWithHandle
-      - api: kernel32.CreateRemoteThread
-      - api: kernel32.CreateRemoteThreadEx
-      - api: ntdll.RtlCreateUserThread
-      - api: ntdll.NtCreateThread
-      - api: ntdll.NtCreateThreadEx
-      - api: ntdll.ZwCreateThread
-      - api: ntdll.ZwCreateThreadEx
-      - api: pthread_create
+      - and:
+        - os: windows
+        - or:
+          - api: kernel32.CreateThread
+          - api: _beginthread
+          - api: _beginthreadex
+          - api: PsCreateSystemThread
+          - api: SHCreateThread
+          - api: SHCreateThreadWithHandle
+          - api: kernel32.CreateRemoteThread
+          - api: kernel32.CreateRemoteThreadEx
+          - api: ntdll.RtlCreateUserThread
+          - api: ntdll.NtCreateThread
+          - api: ntdll.NtCreateThreadEx
+          - api: ntdll.ZwCreateThread
+          - api: ntdll.ZwCreateThreadEx
+      - and:
+        - os: linux
+        - api: pthread_create

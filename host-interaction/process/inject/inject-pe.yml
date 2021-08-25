@@ -16,7 +16,7 @@ rule:
       - optional:
         - or:
           - match: open process
-          - match: create process
+          - match: host-interaction/process/create
       - match: allocate RWX memory
       - basic block:
         - description: virtual address offset calculation

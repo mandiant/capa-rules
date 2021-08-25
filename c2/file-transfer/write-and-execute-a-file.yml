@@ -12,5 +12,5 @@ rule:
       - Practical Malware Analysis Lab 01-04.exe_:0x4011FC
   features:
     - and:
-      - match: write file
-      - match: create process
+      - match: host-interaction/file-system/write
+      - match: host-interaction/process/create

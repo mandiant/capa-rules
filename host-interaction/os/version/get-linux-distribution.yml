@@ -10,8 +10,9 @@ rule:
       - 7351f8a40c5450557b24622417fc478d:0x405438
   features:
     - and:
+      - os: linux
+      - match: host-interaction/file-system/read
       - or:
         - string: "/etc/os-release"
         - string: "/etc/lsb-release"
         - string: "/etc/issue"
-      - match: read file

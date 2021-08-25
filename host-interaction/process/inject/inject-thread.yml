@@ -20,6 +20,6 @@ rule:
       - match: create thread
       - optional:
         - or:
+          - match: host-interaction/process/create
           - match: open process
-          - match: create process
           - number: 0x3000 = MEM_COMMIT or MEM_RESERVE

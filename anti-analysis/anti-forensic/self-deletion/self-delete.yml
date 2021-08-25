@@ -15,7 +15,7 @@ rule:
       - or:
         - match: get COMSPEC environment variable
         - string: "cmd.exe"
-      - match: create process
+      - match: host-interaction/process/create
       - string: /\/c\s*del\s*/
         description: "/c del"
       - optional:
