@@ -3,13 +3,12 @@ rule:
     name: read file on Linux
     namespace: host-interaction/file-system/read
     author:
-      - moritz.raabe@fireeye.com
       - joakim@intezer.com
     scope: function
     mbc:
       - File System::Read File [C0051]
     examples:
-      - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314567B
+      - 7351f8a40c5450557b24622417fc478d:0x4059AD
   features:
     - and:
       - os: linux
