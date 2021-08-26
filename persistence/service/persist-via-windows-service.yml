@@ -21,7 +21,7 @@ rule:
             - api: advapi32.OpenService
             - api: advapi32.StartService
       - and:
-        - match: create process
+        - match: host-interaction/process/create
         - or:
           - and:
             - string: /^sc(|\.exe)$/i

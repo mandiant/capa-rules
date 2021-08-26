@@ -1,14 +1,16 @@
 rule:
   meta:
-    name: change file permission
+    name: change file permission on Linux
     namespace: host-interaction/file-system
     author: joakim@intezer.com
     scope: basic block
     examples:
       - 7351f8a40c5450557b24622417fc478d:0x407C68
   features:
-    - or:
-      - api: chown
-      - api: fchown
-      - api: lchown
-      - api: fchownat
+    - and:
+      - os: linux
+      - or:
+        - api: chown
+        - api: fchown
+        - api: lchown
+        - api: fchownat

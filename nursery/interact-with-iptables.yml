@@ -9,5 +9,6 @@ rule:
       - Defense Evasion::Impair Defenses::Disable or Modify System Firewall [T1562.004]
   features:
     - and:
+      - os: linux
       - api: system
-      - string: /iptables/
+      - substring: "iptables"

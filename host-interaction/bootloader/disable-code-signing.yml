@@ -10,5 +10,5 @@ rule:
       - 0596C4EA5AA8DEF47F22C85D75AACA95:0x10710B3  # old Necurs rootkit
   features:
     - and:
-      - match: create process
+      - match: host-interaction/process/create
       - string: /^bcdedit(\.exe)? -set TESTSIGNING ON/i

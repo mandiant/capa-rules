@@ -12,6 +12,10 @@ rule:
       - B7841B9D5DC1F511A93CC7576672EC0C:0x1000EBF0
   features:
     - or:
-      - api: iphlpapi.GetIfTable
-      - api: iphlpapi.GetAdaptersInfo
-      - api: getifaddrs
+      - and:
+        - os: windows
+        - api: iphlpapi.GetIfTable
+        - api: iphlpapi.GetAdaptersInfo
+      - and:
+        - os: linux
+        - api: getifaddrs

@@ -8,5 +8,6 @@ rule:
       - Discovery::System Network Configuration Discovery [T1016]
   features:
     - and:
-      - string: /ifconfig/
+      - os: linux
       - api: system
+      - substring: "ifconfig"

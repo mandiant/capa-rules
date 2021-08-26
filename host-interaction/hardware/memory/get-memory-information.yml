@@ -11,10 +11,12 @@ rule:
   features:
     - or:
       - and:
-        - match: read file
+        - os: linux
+        - match: host-interaction/file-system/read
         - string: "/proc/meminfo"
       - and:
+        - os: linux
         - api: system
         - or:
-          - string: /\/proc\/meminfo/
+          - substring: "/proc/meminfo"
           - string: /^free/

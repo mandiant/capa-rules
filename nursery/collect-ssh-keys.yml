@@ -8,6 +8,6 @@ rule:
       - Credential Access::Unsecured Credentials::Private Keys [T1552.004]
   features:
     - and:
-      - match: read file
+      - match: host-interaction/file-system/read
       - or:
-        - string: /\/\.ssh\/id_rsa/
+        - substring: "/.ssh/id_rsa"

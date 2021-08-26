@@ -13,7 +13,7 @@ rule:
     - and:
       - string: "schtasks.exe"
       - string: /Microsoft\\Windows\\DiskCleanup\\SilentCleanup/i
-      - match: create process
+      - match: host-interaction/process/create
       - optional:
         - or:
           - string: "Environment"

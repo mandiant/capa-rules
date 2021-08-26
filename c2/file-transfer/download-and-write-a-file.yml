@@ -14,4 +14,4 @@ rule:
   features:
     - and:
       - match: receive data
-      - match: write file
+      - match: host-interaction/file-system/write

@@ -21,7 +21,7 @@ rule:
       - optional:
         - or:
           - match: open process
-          - match: create process
+          - match: host-interaction/process/create
       - match: allocate RW memory
       - match: write process memory
       - and:

@@ -6,5 +6,5 @@ rule:
     scope: function
   features:
     - and:
-      - match: read file
+      - match: host-interaction/file-system/read
       - match: send data

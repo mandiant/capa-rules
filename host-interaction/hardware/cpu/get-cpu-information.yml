@@ -13,11 +13,14 @@ rule:
   features:
     - or:
       - and:
+        - os: windows
         - match: query or enumerate registry value
         - string: /Hardware\\Description\\System\\CentralProcessor/i
       - and:
-        - match: read file
+        - os: linux
+        - match: host-interaction/file-system/read
         - string: "/proc/cpuinfo"
       - and:
+        - os: linux
         - api: system
-        - string: /\/proc\/cpuinfo/
+        - substring: "/proc/cpuinfo"

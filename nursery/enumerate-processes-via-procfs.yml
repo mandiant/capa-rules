@@ -9,13 +9,6 @@ rule:
       - Discovery::Software Discovery [T1518]
   features:
     - and:
+      - os: linux
+      - match: host-interaction/file-system/files/list
       - string: "/proc"
-      - or:
-        - and:
-          - match: create or open file
-          - or:
-            - api: getdents
-            - api: getdents64
-        - and:
-          - api: opendir
-          - api: readdir

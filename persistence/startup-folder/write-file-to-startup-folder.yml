@@ -14,4 +14,4 @@ rule:
       - or:
         - match: copy file
         - match: move file
-        - match: write file
+        - match: host-interaction/file-system/write

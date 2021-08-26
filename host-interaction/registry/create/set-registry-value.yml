@@ -30,5 +30,5 @@ rule:
           - api: SHRegSetUSValue
           - api: SHRegWriteUSValue
       - and:
-        - match: create process
+        - match: host-interaction/process/create
         - string: /reg(|.exe) add /i
