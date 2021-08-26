@@ -2,7 +2,9 @@ rule:
   meta:
     name: send data
     namespace: communication
-    author: william.ballenthin@fireeye.com
+    author: 
+      - william.ballenthin@fireeye.com
+      - joakim@intezer.com
     description: all known techniques for sending data to a potential C2 server
     scope: function
     mbc:
@@ -11,6 +13,18 @@ rule:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x13145D60
   features:
     - or:
-      - match: send HTTP request
-      - match: send data on socket
-      - match: send file via HTTP
+      - and:
+        - os: windows
+        - or:
+          - match: send HTTP request
+          - match: send data on socket
+          - match: send file via HTTP
+      - and:
+        - os: linux
+        - or: # Require network bound socket.
+          - match: create TCP socket
+          - match: create UDP socket
+        - or:
+          - match: send HTTP request
+          - match: send data on socket
+          - match: send file via HTTP
