@@ -14,7 +14,7 @@ rule:
         - match: write process memory
         - api: kernel32.MapViewOfSection
         - api: NtMapViewOfSection
-        - api: ntdll.ZwMapViewOfSection
+        - api: ZwMapViewOfSection
         - api: kernel32.MapViewOfFile
       - or:
         - api: kernel32.QueueUserAPC

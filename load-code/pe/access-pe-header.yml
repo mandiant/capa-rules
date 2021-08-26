@@ -11,4 +11,4 @@ rule:
   features:
     - or:
       - api: RtlImageNtHeader
-      - api: ntdll.RtlImageNtHeaderEx
+      - api: RtlImageNtHeaderEx
