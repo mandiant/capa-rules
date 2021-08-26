@@ -2,7 +2,7 @@ rule:
   meta:
     name: send data
     namespace: communication
-    author: 
+    author:
       - william.ballenthin@fireeye.com
       - joakim@intezer.com
     description: all known techniques for sending data to a potential C2 server
