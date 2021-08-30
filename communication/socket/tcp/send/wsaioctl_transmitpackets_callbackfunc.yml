@@ -1,7 +1,11 @@
 rule:
   meta:
     name: obtains TransmitPackets callback function via WSAIoctl  
-    description: The TransmitPackets function transmits in-memory data or file data over a connected socket. The TransmitPackets function uses the operating system cache manager to retrieve file data, locking memory for the minimum time required to transmit and resulting in efficient, high-performance transmission.
+    description: >-
+      The TransmitPackets function transmits in-memory data or file data over a connected socket. 
+      The TransmitPackets function uses the operating system cache manager to 
+      retrieve file data, locking memory for the minimum time required to transmit and 
+      resulting in efficient, high-performance transmission.
     namespace: communication/socket/tcp/send
     author: jonathan.lepore@mandiant.com
     scope: function 
