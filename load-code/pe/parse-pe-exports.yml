@@ -5,7 +5,7 @@ rule:
     author: "@Ana06"
     scope: function
     mbc:
-     - Memory::{Micro-objective}::{Method} [C00xx]
+      - Data::Code::Parse PE Exports [C0062.003]
     references:
       - Practical Malware Analysis, Chapter 19
     examples:

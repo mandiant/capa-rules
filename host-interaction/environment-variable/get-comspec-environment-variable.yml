@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Discovery::System Information Discovery [T1082]
     mbc:
-      - Operating System::Environment Variable::{method} [C0034.xxx]
+      - Operating System::Environment Variable::Get Variable [C0034.002]
     examples:
       - Practical Malware Analysis Lab 14-02.exe_:0x401880
   features:

@@ -5,7 +5,7 @@ rule:
     author: "@Ana06"
     scope: function
     mbc:
-     - Memory::{Micro-objective}::{Method} [C00xx]
+      - Data::Code::Rebuild Import Table [C0062.004]
     references:
       - https://0x00sec.org/t/reflective-dll-injection/3080
       - https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection

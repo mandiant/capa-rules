@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Discovery::Process Discovery [T1057]
     mbc:
-      - Process::{micro-behavior] [C00xx]
+      - Process::Enumerate Threads [C0064]
     examples:
       - Practical Malware Analysis Lab 05-01.dll_:0x10006BD5
   features:

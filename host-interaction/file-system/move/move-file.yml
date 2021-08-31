@@ -5,7 +5,7 @@ rule:
     author: moritz.raabe@fireeye.com
     scope: function
     mbc:
-      - File System::{micro-behavior}[C00xx]
+      - File System::Move File [C0063]
     examples:
       - Practical Malware Analysis Lab 01-04.exe_:0x401350
   features:

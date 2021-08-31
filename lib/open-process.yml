@@ -5,7 +5,7 @@ rule:
     lib: true
     scope: basic block
     mbc:
-      - Process::{Micro-objective}::{Method} [C00xx]
+      - Process::Open Process [C0065]
     examples:
       - Practical Malware Analysis Lab 17-02.dll_:0x1000D10D
   features:

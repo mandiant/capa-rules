@@ -5,6 +5,7 @@ rule:
     author: michael.hunhoff@fireeye.com
     scope: basic block
     mbc:
+      - Hardware::Install Driver::Minifilter [C0037.001]
     references:
       - https://docs.microsoft.com/en-us/windows-hardware/drivers/ifs/filter-manager-concepts
     examples:

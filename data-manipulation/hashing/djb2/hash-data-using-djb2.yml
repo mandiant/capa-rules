@@ -5,7 +5,7 @@ rule:
     author: awillia2@cisco.com
     scope: function
     mbc:
-      - Data::Non-Cryptographic Hash::{Method} [C0030.xxx]
+      - Data::Non-Cryptographic Hash [C0030]
     references:
       - https://twitter.com/r3c0nst/status/1392405576131436546
       - http://www.cse.yorku.ca/~oz/hash.html
