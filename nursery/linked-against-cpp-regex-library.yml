@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: linked against C++ regex library
+    name: linked against CPP regex library
     namespace: linking/static/cppregex
     author: william.ballenthin@fireeye.com
     scope: file
