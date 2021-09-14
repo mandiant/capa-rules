@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: manipulate Linux process memory
+    namespace: host-interaction/hardware/memory
+    author: alyssa.rahman@fireeye.com
+    scope: file
+    examples:
+      - 3db3e55b16a7b1b1afb970d5e77c5d98
+  features:
+    - and:
+      - os: linux
+      - or:
+        - function:
+          - or:
+            - api: malloc
+            - api: memcpy
+            - api: memmove
+            - api: memset
+        - import: free
