@@ -8,5 +8,5 @@ rule:
       - https://github.com/yhirose/cpp-httplib
   features:
     - or:
-      - string: /cpp-httplib\//
+      - substring: "cpp-httplib/"
       - string: /\(HTTP\/1\\\.\[01\]\) \(\\d/
