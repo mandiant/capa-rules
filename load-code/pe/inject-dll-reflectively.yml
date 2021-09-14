@@ -13,6 +13,7 @@ rule:
       - E4C33AC3638EEF68311F8AC0D72483C7:0x401510
   features:
     - and:
+      - os: windows
       - match: enumerate PE sections
       - match: rebuild import table
       - basic block:

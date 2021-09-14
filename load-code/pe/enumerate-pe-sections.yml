@@ -11,6 +11,7 @@ rule:
       - E4C33AC3638EEF68311F8AC0D72483C7:0x401510
   features:
     - and:
+      - os: windows
       - offset: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
       - basic block:
         - or:

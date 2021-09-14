@@ -10,6 +10,7 @@ rule:
       - E4C33AC3638EEF68311F8AC0D72483C7:0x401390
   features:
     - and:
+      - os: windows
       - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
       - or:
         - offset/x32: 0x78 = IMAGE_NT_HEADERS32.OptionalHeader.DataDirectory.VirtualAddress
