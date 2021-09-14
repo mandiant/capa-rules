@@ -13,5 +13,12 @@ rule:
       - Practical Malware Analysis Lab 01-02.exe_:0x0401000
   features:
     - or:
-      - section: UPX0
-      - section: UPX1
+      - and:
+        - format: pe
+        - or:
+          - section: UPX0
+          - section: UPX1
+      - and:
+        - format: elf
+        - or:
+          - string: "UPX!"
