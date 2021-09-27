@@ -33,7 +33,7 @@ jobs:
     - name: Checkout capa
       uses: actions/checkout@v2
       with:
-        repository: fireeye/capa
+        repository: mandiant/capa
         token: ${{ secrets.CAPA_TOKEN }}
     - name: Checkout capa-rules
       uses: actions/checkout@v2
@@ -79,6 +79,6 @@ jobs:
     - name: Push changes to capa
       uses: ad-m/github-push-action@master
       with:
-        repository: fireeye/capa
+        repository: mandiant/capa
         github_token: ${{ secrets.CAPA_TOKEN }}
 

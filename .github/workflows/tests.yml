@@ -18,7 +18,7 @@ jobs:
     - name: Checkout capa without submodules
       uses: actions/checkout@v2
       with:
-        repository: fireeye/capa
+        repository: mandiant/capa
     - name: Checkout capa-rules
       uses: actions/checkout@v2
       with:
@@ -26,7 +26,7 @@ jobs:
     - name: Checkout capa-testfiles
       uses: actions/checkout@v2
       with:
-        repository: fireeye/capa-testfiles
+        repository: mandiant/capa-testfiles
         path: tests/data
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
@@ -65,16 +65,16 @@ jobs:
     - name: Checkout capa-testfiles
       uses: actions/checkout@v2
       with:
-        repository: fireeye/capa-testfiles
+        repository: mandiant/capa-testfiles
         path: tests/data
     - name: Get latest release executable name
-      run: echo "zip_name=capa-$(curl -s https://api.github.com/repos/fireeye/capa/releases/latest |
+      run: echo "zip_name=capa-$(curl -s https://api.github.com/repos/mandiant/capa/releases/latest |
                  jq .name |
                  tr -d '"')-linux.zip" >> $GITHUB_ENV
     - name: Fetch latest capa release executable
       uses: robinraju/release-downloader@v1
       with:
-        repository: "fireeye/capa"
+        repository: "mandiant/capa"
         latest: true
         fileName: ${{ env.zip_name }}
     - name: Unzip

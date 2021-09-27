@@ -12,7 +12,7 @@ rule:
   meta:
     name: hash data with CRC32
     namespace: data-manipulation/checksum/crc32
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
@@ -64,9 +64,9 @@ We'll start at the high level structure and then dig into the logic structures a
 Rules are YAML files that follow a certain schema.
 You should be able to use any YAML editor/syntax highlighting to assist you.
 
-Once you have a draft rule, you can use the [linter](https://github.com/fireeye/capa/blob/master/scripts/lint.py) 
+Once you have a draft rule, you can use the [linter](https://github.com/mandiant/capa/blob/master/scripts/lint.py) 
  to check that your rule adheres to best practices.
-Then, you should use the [formatter](https://github.com/fireeye/capa/blob/master/scripts/capafmt.py)
+Then, you should use the [formatter](https://github.com/mandiant/capa/blob/master/scripts/capafmt.py)
  to reformat the rule into a style that's consistent with all other capa rules.
 This way, you don't have to worry about the width of indentation while you're focused on logic.
 We run the linter and formatter in our Continuous Integration setup so that we can be sure all rules are consistent.
@@ -92,7 +92,7 @@ Here's an example:
 meta:
   name: packed with UPX
   namespace: anti-analysis/packer/upx
-  author: william.ballenthin@fireeye.com
+  author: william.ballenthin@mandiant.com
   description: the sample appears to be packed with UPX
   scope: file
   att&ck:
@@ -135,7 +135,7 @@ like the ATT&CK list.
 
   - `examples` is a *required* list of references to samples that the rule should match.
 The linter verifies that each rule correctly fires on each sample referenced in a rule's `examples` list.
-These example files are stored in the [github.com/fireeye/capa-testfiles](https://github.com/fireeye/capa-testfiles) repository.
+These example files are stored in the [github.com/mandiant/capa-testfiles](https://github.com/mandiant/capa-testfiles) repository.
 `function` and `basic block` scope rules must contain offsets to the respective match locations using the format `<sample name>:<function or basic block offset>`.
 
   - `references` lists related information found in a book, article, blog post, etc.
@@ -178,20 +178,20 @@ Furthermore, output from capa is ordered by namespace, so all `communication` ma
 Namespaces are hierarchical, so the children of a namespace encodes its specific techniques.
 In a few words each, the top level namespaces are:
 
-  - [anti-analysis](https://github.com/fireeye/capa-rules/tree/master/anti-analysis/) - packing, obfuscation, anti-X, etc.
-  - [c2](https://github.com/fireeye/capa-rules/tree/master/c2/) - commands that may be issued by a controller, such as interactive shell or file transfer
-  - [collection](https://github.com/fireeye/capa-rules/tree/master/collection/) - data that may be enumerated and collected for exfiltration
-  - [communication](https://github.com/fireeye/capa-rules/tree/master/communication/) - HTTP, TCP, etc.
-  - [compiler](https://github.com/fireeye/capa-rules/tree/master/compiler/) - detection of build environments, such as MSVC, Delphi, or AutoIT
-  - [data-manipulation](https://github.com/fireeye/capa-rules/tree/master/data-manipulation/) - encryption, hashing, etc.
-  - [executable](https://github.com/fireeye/capa-rules/tree/master/executable/) - characteristics of the executable, such as PE sections or debug info
-  - [host-interaction](https://github.com/fireeye/capa-rules/tree/master/host-interaction/) - access or manipulation of system resources, like processes or the Registry
-  - [impact](https://github.com/fireeye/capa-rules/tree/master/impact/) - end goal
-  - [linking](https://github.com/fireeye/capa-rules/tree/master/linking/) - detection of dependencies, such as OpenSSL or Zlib
-  - [load-code](https://github.com/fireeye/capa-rules/tree/master/load-code/) - runtime load and execution of code, such as embedded PE or shellcode
-  - [persistence](https://github.com/fireeye/capa-rules/tree/master/persistence/) - all sorts of ways to maintain access
-  - [runtime](https://github.com/fireeye/capa-rules/tree/master/runtime/) - detection of language runtimes, such as the .NET platform or Go
-  - [targeting](https://github.com/fireeye/capa-rules/tree/master/targeting/) - special handling of systems, such as ATM machines
+  - [anti-analysis](https://github.com/mandiant/capa-rules/tree/master/anti-analysis/) - packing, obfuscation, anti-X, etc.
+  - [c2](https://github.com/mandiant/capa-rules/tree/master/c2/) - commands that may be issued by a controller, such as interactive shell or file transfer
+  - [collection](https://github.com/mandiant/capa-rules/tree/master/collection/) - data that may be enumerated and collected for exfiltration
+  - [communication](https://github.com/mandiant/capa-rules/tree/master/communication/) - HTTP, TCP, etc.
+  - [compiler](https://github.com/mandiant/capa-rules/tree/master/compiler/) - detection of build environments, such as MSVC, Delphi, or AutoIT
+  - [data-manipulation](https://github.com/mandiant/capa-rules/tree/master/data-manipulation/) - encryption, hashing, etc.
+  - [executable](https://github.com/mandiant/capa-rules/tree/master/executable/) - characteristics of the executable, such as PE sections or debug info
+  - [host-interaction](https://github.com/mandiant/capa-rules/tree/master/host-interaction/) - access or manipulation of system resources, like processes or the Registry
+  - [impact](https://github.com/mandiant/capa-rules/tree/master/impact/) - end goal
+  - [linking](https://github.com/mandiant/capa-rules/tree/master/linking/) - detection of dependencies, such as OpenSSL or Zlib
+  - [load-code](https://github.com/mandiant/capa-rules/tree/master/load-code/) - runtime load and execution of code, such as embedded PE or shellcode
+  - [persistence](https://github.com/mandiant/capa-rules/tree/master/persistence/) - all sorts of ways to maintain access
+  - [runtime](https://github.com/mandiant/capa-rules/tree/master/runtime/) - detection of language runtimes, such as the .NET platform or Go
+  - [targeting](https://github.com/mandiant/capa-rules/tree/master/targeting/) - special handling of systems, such as ATM machines
   
 We can easily add more top level namespaces as the need arises. 
 
