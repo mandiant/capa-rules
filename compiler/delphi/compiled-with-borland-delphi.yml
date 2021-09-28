@@ -2,7 +2,7 @@ rule:
   meta:
     name: compiled with Borland Delphi
     namespace: compiler/delphi
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     examples:
       - 4BDD67FF852C221112337FECD0681EAC

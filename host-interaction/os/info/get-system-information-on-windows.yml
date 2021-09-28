@@ -3,7 +3,7 @@ rule:
     name: get system information on Windows
     namespace: host-interaction/os/info
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: function
     att&ck:

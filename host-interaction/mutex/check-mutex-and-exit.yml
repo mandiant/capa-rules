@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/mutex
     author:
       - "@_re_fox"
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Process::Check Mutex [C0043]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: hide the Windows taskbar
     namespace: host-interaction/gui/taskbar/hide
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Hide Artifacts [T1564]

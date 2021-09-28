@@ -2,7 +2,7 @@ rule:
   meta:
     name: decompress data via IEncodingFilterFactory
     namespace: data-manipulation/compression
-    author: matthew.williams@fireeye.com
+    author: matthew.williams@mandiant.com
     scope: function
     mbc:
       - Data::Decompress Data::IEncodingFilterFactory [C0025.002]

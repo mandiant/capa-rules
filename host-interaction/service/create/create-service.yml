@@ -2,7 +2,7 @@ rule:
   meta:
     name: create service
     namespace: host-interaction/service/create
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]

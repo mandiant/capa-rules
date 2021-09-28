@@ -2,7 +2,7 @@ rule:
   meta:
     name: swap mouse buttons
     namespace: host-interaction/hardware/mouse
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Impact::Modify Hardware::Mouse [B0042.002]

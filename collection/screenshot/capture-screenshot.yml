@@ -3,9 +3,9 @@ rule:
     name: capture screenshot
     namespace: collection/screenshot
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
       - "@_re_fox"
-      - michael.hunhoff@fireeye.com
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Collection::Screen Capture [T1113]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: enumerate network shares
     namespace: host-interaction/network
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::Network Share Discovery [T1135]

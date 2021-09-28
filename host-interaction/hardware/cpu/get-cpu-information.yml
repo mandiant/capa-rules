@@ -3,7 +3,7 @@ rule:
     name: get CPU information
     namespace: host-interaction/hardware/cpu
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: function
     att&ck:

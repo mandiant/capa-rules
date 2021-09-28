@@ -2,7 +2,7 @@ rule:
   meta:
     name: reference L3 DNS server
     namespace: communication/dns
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     references:
       - https://www.quora.com/What-is-a-4-2-2-1-DNS-server

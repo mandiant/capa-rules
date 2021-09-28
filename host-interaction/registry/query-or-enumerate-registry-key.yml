@@ -2,7 +2,7 @@ rule:
   meta:
     name: query or enumerate registry key
     namespace: host-interaction/registry
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::Query Registry [T1012]

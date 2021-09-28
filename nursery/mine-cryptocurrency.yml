@@ -2,7 +2,7 @@ rule:
   meta:
     name: mine cryptocurrency
     namespace: impact/cryptocurrency
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: file
     att&ck:
       - Impact::Resource Hijacking [T1496]

@@ -3,7 +3,7 @@ rule:
     name: link many functions at runtime
     namespace: linking/runtime-linking
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: function
     att&ck:

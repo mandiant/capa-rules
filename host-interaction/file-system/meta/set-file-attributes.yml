@@ -3,8 +3,8 @@ rule:
     name: set file attributes
     namespace: host-interaction/file-system/meta
     author:
-      - moritz.raabe@fireeye.com
-      - michael.hunhoff@fireeye.com
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Defense Evasion::File and Directory Permissions Modification [T1222]

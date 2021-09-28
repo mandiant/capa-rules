@@ -2,7 +2,7 @@ rule:
   meta:
     name: encrypt or decrypt data via BCrypt
     namespace: data-manipulation/encryption
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

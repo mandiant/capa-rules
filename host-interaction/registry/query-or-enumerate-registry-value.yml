@@ -3,8 +3,8 @@ rule:
     name: query or enumerate registry value
     namespace: host-interaction/registry
     author:
-      - william.ballenthin@fireeye.com
-      - michael.hunhoff@fireeye.com
+      - william.ballenthin@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::Query Registry [T1012]

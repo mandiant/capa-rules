@@ -2,7 +2,7 @@ rule:
   meta:
     name: receive data
     namespace: communication
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     description: all known techniques for receiving data from a potential C2 server
     scope: function
     mbc:

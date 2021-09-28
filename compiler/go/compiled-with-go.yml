@@ -2,7 +2,7 @@ rule:
   meta:
     name: compiled with Go
     namespace: compiler/go
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: file
     examples:
       - 49a34cfbeed733c24392c9217ef46bb6

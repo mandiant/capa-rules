@@ -3,7 +3,7 @@ rule:
   meta:
     name: connect to WMI namespace via WbemLocator
     namespace: host-interaction/wmi
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Execution::Windows Management Instrumentation [T1047]

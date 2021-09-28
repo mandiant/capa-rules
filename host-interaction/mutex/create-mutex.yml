@@ -2,7 +2,7 @@ rule:
   meta:
     name: create mutex
     namespace: host-interaction/mutex
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Process::Create Mutex [C0042]

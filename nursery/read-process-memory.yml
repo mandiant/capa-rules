@@ -3,7 +3,7 @@ rule:
     name: read process memory
     namespace: host-interaction/process
     author:
-      - matthew.williams@fireeye.com
+      - matthew.williams@mandiant.com
       - "@_re_fox"
     scope: function
   features:

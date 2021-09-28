@@ -3,7 +3,7 @@ rule:
   meta:
     name: list user account groups
     namespace: host-interaction/accounts
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     description: enumerates all the groups present on the system/domain
     scope: basic block
     att&ck:

@@ -2,7 +2,7 @@ rule:
   meta:
     name: packed with GoPacker
     namespace: anti-analysis/packer/gopacker
-    author: jared.wilson@fireeye.com
+    author: jared.wilson@mandiant.com
     description: The sample appears to be packed with GoPacker.
     scope: file
     att&ck:

@@ -2,7 +2,7 @@ rule:
   meta:
     name: encrypt data using RC4 PRGA
     namespace: data-manipulation/encryption/rc4
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

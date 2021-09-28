@@ -3,7 +3,7 @@ rule:
   meta:
     name: list drag and drop files
     namespace: host-interaction/clipboard
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Collection::Clipboard Data [T1115]

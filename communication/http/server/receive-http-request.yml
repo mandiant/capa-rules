@@ -2,7 +2,7 @@ rule:
   meta:
     name: receive HTTP request
     namespace: communication/http/server
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Receive Request [C0002.015]

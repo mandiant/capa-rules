@@ -3,7 +3,7 @@ rule:
     name: create TCP socket
     namespace: communication/socket/tcp
     author:
-      - william.ballenthin@fireeye.com
+      - william.ballenthin@mandiant.com
       - joakim@intezer.com
     scope: basic block
     mbc:

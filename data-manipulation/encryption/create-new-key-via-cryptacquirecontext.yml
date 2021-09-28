@@ -2,7 +2,7 @@ rule:
   meta:
     name: create new key via CryptAcquireContext
     namespace: data-manipulation/encryption
-    author: chuong.dong@fireeye.com
+    author: chuong.dong@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

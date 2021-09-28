@@ -3,7 +3,7 @@ rule:
     name: create UDP socket
     namespace: communication/socket/udp/send
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: basic block
     mbc:

@@ -2,7 +2,7 @@ rule:
   meta:
     name: disable driver code integrity
     namespace: host-interaction/driver
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     references:
       - https://www.fuzzysecurity.com/tutorials/28.html

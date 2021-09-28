@@ -3,7 +3,7 @@ rule:
     name: query environment variable
     namespace: host-interaction/environment-variable
     author:
-      - michael.hunhoff@fireeye.com
+      - michael.hunhoff@mandiant.com
       - "@_re_fox"
     scope: function
     att&ck:

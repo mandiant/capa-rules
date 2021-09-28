@@ -2,7 +2,7 @@ rule:
   meta:
     name: add file to cabinet file
     namespace: host-interaction/file-system
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     references: https://docs.microsoft.com/en-us/windows/win32/msi/cabinet-files
   features:

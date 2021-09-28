@@ -2,7 +2,7 @@ rule:
   meta:
     name: get memory capacity
     namespace: host-interaction/hardware/memory
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]

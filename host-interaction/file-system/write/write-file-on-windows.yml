@@ -3,7 +3,7 @@ rule:
     name: write file on Windows
     namespace: host-interaction/file-system/write
     author:
-      - william.ballenthin@fireeye.com
+      - william.ballenthin@mandiant.com
     scope: function
     mbc:
       - File System::Writes File [C0052]

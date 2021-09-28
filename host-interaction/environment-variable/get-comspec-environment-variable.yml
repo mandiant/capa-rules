@@ -2,7 +2,7 @@ rule:
   meta:
     name: get COMSPEC environment variable
     namespace: host-interaction/environment-variable
-    author: matthew.williams@fireeye.com
+    author: matthew.williams@mandiant.com
     scope: function
     examples:
       - Practical Malware Analysis Lab 14-02.exe_:0x401880

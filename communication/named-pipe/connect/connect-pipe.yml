@@ -3,8 +3,8 @@ rule:
     name: connect pipe
     namespace: communication/named-pipe/connect
     author:
-      - moritz.raabe@fireeye.com
-      - michael.hunhoff@fireeye.com
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::Interprocess Communication::Connect Pipe [C0003.002]

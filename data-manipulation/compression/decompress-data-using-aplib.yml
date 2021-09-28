@@ -4,7 +4,7 @@ rule:
     namespace: data-manipulation/compression
     author:
       - "@r3c0nst (Frank Boldewin)"
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
     description: detects decompression function of library aPLib
     scope: function
     references:

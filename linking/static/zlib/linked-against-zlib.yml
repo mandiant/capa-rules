@@ -2,7 +2,7 @@ rule:
   meta:
     name: linked against ZLIB
     namespace: linking/static/zlib
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     mbc:
       - Data::Compression Library [C0060]

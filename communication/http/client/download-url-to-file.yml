@@ -2,7 +2,7 @@ rule:
   meta:
     name: download URL to file
     namespace: communication/http/client
-    author: matthew.williams@fireeye.com
+    author: matthew.williams@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Download URL [C0002.006]

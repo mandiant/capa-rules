@@ -3,8 +3,8 @@ rule:
     name: terminate thread
     namespace: host-interaction/thread/terminate
     author:
-      - moritz.raabe@fireeye.com
-      - michael.hunhoff@fireeye.com
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: basic block
     mbc:
       - Process::Terminate Thread [C0039]

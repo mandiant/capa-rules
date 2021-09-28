@@ -2,7 +2,7 @@ rule:
   meta:
     name: encrypt data using RC6
     namespace: data-manipulation/encryption/rc6
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

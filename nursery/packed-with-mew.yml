@@ -2,7 +2,7 @@ rule:
   meta:
     name: packed with MEW
     namespace: anti-analysis/packer/mew
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]

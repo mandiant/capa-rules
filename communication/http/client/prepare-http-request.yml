@@ -2,7 +2,7 @@ rule:
   meta:
     name: prepare HTTP request
     namespace: communication/http/client
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Create Request [C0002.012]

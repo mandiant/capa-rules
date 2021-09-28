@@ -2,7 +2,7 @@ rule:
   meta:
     name: read file via mapping
     namespace: host-interaction/file-system/read
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     examples:
       - Practical Malware Analysis Lab 01-01.exe_:0x401440

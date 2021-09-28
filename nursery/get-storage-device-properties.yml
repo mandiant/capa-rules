@@ -3,7 +3,7 @@ rule:
   meta:
     name: get storage device properties
     namespace: host-interaction/hardware/storage
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     references: https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-ioctl_storage_query_property
   features:

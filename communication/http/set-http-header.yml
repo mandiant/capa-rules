@@ -2,7 +2,7 @@ rule:
   meta:
     name: set HTTP header
     namespace: communication/http
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Set Header [C0002.013]

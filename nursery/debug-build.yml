@@ -2,7 +2,7 @@ rule:
   meta:
     name: debug build
     namespace: executable/pe/debug
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
   features:
     - or:

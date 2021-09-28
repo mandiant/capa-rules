@@ -2,7 +2,7 @@ rule:
   meta:
     name: compiled with AutoIt
     namespace: compiler/autoit
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     att&ck:
       - Execution::Command and Scripting Interpreter [T1059]

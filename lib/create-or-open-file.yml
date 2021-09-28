@@ -2,7 +2,7 @@ rule:
   meta:
     name: create or open file
     author:
-      - michael.hunhoff@fireeye.com
+      - michael.hunhoff@mandiant.com
       - joakim@intezer.com
     lib: true
     scope: basic block

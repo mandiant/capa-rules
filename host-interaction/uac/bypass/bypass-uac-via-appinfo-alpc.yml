@@ -2,7 +2,7 @@ rule:
   meta:
     name: bypass UAC via AppInfo ALPC
     namespace: host-interaction/uac/bypass
-    author: richard.cole@fireeye.com
+    author: richard.cole@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Account Control [T1548.002]

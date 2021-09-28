@@ -2,7 +2,7 @@ rule:
   meta:
     name: delete registry value
     namespace: host-interaction/registry/delete
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Modify Registry [T1112]

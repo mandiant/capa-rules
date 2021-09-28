@@ -2,7 +2,7 @@ rule:
   meta:
     name: crash the Windows event logging service
     namespace: anti-analysis/anti-forensic
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Defense Evasion::Impair Defenses::Disable Windows Event Logging [T1562.002]

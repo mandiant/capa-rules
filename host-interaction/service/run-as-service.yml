@@ -3,8 +3,8 @@ rule:
     name: run as service
     namespace: host-interaction/service
     author:
-      - moritz.raabe@fireeye.com
-      - michael.hunhoff@fireeye.com
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: file
     mbc:
       - Anti-Behavioral Analysis::Execution Guardrails::Runs as Service [E1480.m07]

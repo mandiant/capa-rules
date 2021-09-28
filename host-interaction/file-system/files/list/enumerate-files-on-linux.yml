@@ -2,7 +2,7 @@ rule:
   meta:
     name: enumerate files on Linux
     namespace: host-interaction/file-system/files/list
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]

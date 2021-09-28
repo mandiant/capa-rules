@@ -2,7 +2,7 @@ rule:
   meta:
     name: overwrite Master Boot Record (MBR)
     namespace: impact/wipe-disk/wipe-mbr
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Impact::Disk Wipe::Disk Structure Wipe [T1561.002]

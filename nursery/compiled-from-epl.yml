@@ -2,7 +2,7 @@ rule:
   meta:
     name: compiled from EPL
     namespace: compiler/epl
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     references:
       - https://www.hexacorn.com/blog/2019/02/13/pe-files-and-the-easy-programming-language-epl/

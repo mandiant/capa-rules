@@ -2,7 +2,7 @@ rule:
   meta:
     name: enumerate services
     namespace: host-interaction/service/list
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Service Discovery [T1007]

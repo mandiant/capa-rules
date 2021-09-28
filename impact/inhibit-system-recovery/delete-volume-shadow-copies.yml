@@ -2,7 +2,7 @@ rule:
   meta:
     name: delete volume shadow copies
     namespace: impact/inhibit-system-recovery
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Impact::Inhibit System Recovery [T1490]

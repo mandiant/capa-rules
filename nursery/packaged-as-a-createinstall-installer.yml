@@ -2,7 +2,7 @@ rule:
   meta:
     name: packaged as a CreateInstall installer
     namespace: executable/installer/createinstall
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     references:
       - https://www.createinstall.com/

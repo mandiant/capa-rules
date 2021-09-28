@@ -2,7 +2,7 @@ rule:
   meta:
     name: enumerate threads
     namespace: host-interaction/thread/list
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     examples:
       - Practical Malware Analysis Lab 05-01.dll_:0x10006BD5

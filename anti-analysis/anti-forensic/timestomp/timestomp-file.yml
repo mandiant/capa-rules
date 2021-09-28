@@ -2,7 +2,7 @@ rule:
   meta:
     name: timestomp file
     namespace: anti-analysis/anti-forensic/timestomp
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Indicator Removal on Host::Timestomp [T1070.006]

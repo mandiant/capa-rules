@@ -2,7 +2,7 @@ rule:
   meta:
     name: reference SQL statements
     namespace: collection/database/sql
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Collection::Data from Information Repositories [T1213]

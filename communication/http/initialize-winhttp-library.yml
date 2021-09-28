@@ -2,7 +2,7 @@ rule:
   meta:
     name: initialize WinHTTP library
     namespace: communication/http
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::WinHTTP [C0002.008]

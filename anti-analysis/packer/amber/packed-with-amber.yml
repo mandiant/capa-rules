@@ -2,7 +2,7 @@ rule:
   meta:
     name: packed with amber
     namespace: anti-analysis/packer/amber
-    author: "john.gorman@fireeye.com"
+    author: "john.gorman@mandiant.com"
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]

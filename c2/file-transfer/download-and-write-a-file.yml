@@ -3,7 +3,7 @@ rule:
     name: download and write a file
     namespace: c2/file-transfer
     maec/malware-category: downloader
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Command and Control::Ingress Tool Transfer [T1105]

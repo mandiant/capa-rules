@@ -2,7 +2,7 @@ rule:
   meta:
     name: read HTTP header
     namespace: communication/http
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Read Header [C0002.014]

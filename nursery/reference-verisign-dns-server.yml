@@ -2,7 +2,7 @@ rule:
   meta:
     name: reference Verisign DNS server
     namespace: communication/dns
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     references:
       - https://www.techradar.com/news/best-dns-server

@@ -3,7 +3,7 @@ rule:
   meta:
     name: delete user account group
     namespace: host-interaction/accounts
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Persistence::Account Manipulation [T1098]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: start TCP server
     namespace: communication/tcp/serve
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     mbc:
       - Communication::Socket Communication::Start TCP Server [C0001.005]

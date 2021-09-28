@@ -3,8 +3,8 @@ rule:
     name: linked against OpenSSL
     namespace: linking/static/openssl
     author:
-      - william.ballenthin@fireeye.com
-      - michael.hunhoff@fireeye.com
+      - william.ballenthin@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: file
     mbc:
       - Cryptography::Crypto Library [C0059]

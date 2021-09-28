@@ -3,7 +3,7 @@ rule:
     name: send data on socket
     namespace: communication/socket/send
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: function
     mbc:

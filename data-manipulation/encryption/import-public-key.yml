@@ -2,7 +2,7 @@ rule:
   meta:
     name: import public key
     namespace: data-manipulation/encryption
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     mbc:
       - Cryptography::Encryption Key::Import Public Key [C0028.001]

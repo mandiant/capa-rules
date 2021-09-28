@@ -2,7 +2,7 @@ rule:
   meta:
     name: send ICMP echo request
     namespace: communication/icmp
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::ICMP Communication::Echo Request [C0014.002]

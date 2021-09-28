@@ -2,7 +2,7 @@ rule:
   meta:
     name: check for unexpected memory writes
     namespace: anti-analysis/anti-debugging/debugger-detection
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: basic block
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Memory Write Watching [B0001.010]

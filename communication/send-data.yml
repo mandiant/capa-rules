@@ -3,7 +3,7 @@ rule:
     name: send data
     namespace: communication
     author:
-      - william.ballenthin@fireeye.com
+      - william.ballenthin@mandiant.com
       - joakim@intezer.com
     description: all known techniques for sending data to a potential C2 server
     scope: function

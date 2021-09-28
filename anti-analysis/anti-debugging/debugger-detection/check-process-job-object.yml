@@ -2,7 +2,7 @@ rule:
   meta:
     name: check process job object
     namespace: anti-analysis/anti-debugging/debugger-detection
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection [B0001]

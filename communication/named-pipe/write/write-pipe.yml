@@ -3,8 +3,8 @@ rule:
     name: write pipe
     namespace: communication/named-pipe/write
     author:
-      - moritz.raabe@fireeye.com
-      - michael.hunhoff@fireeye.com
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::Interprocess Communication::Write Pipe [C0003.004]

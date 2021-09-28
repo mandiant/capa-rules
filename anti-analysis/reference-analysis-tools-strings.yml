@@ -2,7 +2,7 @@ rule:
   meta:
     name: reference analysis tools strings
     namespace: anti-analysis
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: file
     mbc:
       - Discovery::Analysis Tool Discovery::Process Detection [B0013.001]

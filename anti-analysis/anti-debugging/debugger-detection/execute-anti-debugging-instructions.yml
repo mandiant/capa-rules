@@ -2,7 +2,7 @@ rule:
   meta:
     name: execute anti-debugging instructions
     namespace: anti-analysis/anti-debugging/debugger-detection
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Anti-debugging Instructions [B0001.034]
