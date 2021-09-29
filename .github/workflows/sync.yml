@@ -14,7 +14,7 @@ jobs:
         sed -i "s/rules-[0-9]*-blue\.svg/rules-$num_rules-blue.svg/" README.md
     - name: Commit changes
       run: |
-        git config user.email 'capa-dev@fireeye.com'
+        git config user.email 'capa-dev@mandiant.com'
         git config user.name 'Capa Bot'
         # Do not fail the action if rules number doesn't change
         git add -A
@@ -73,7 +73,7 @@ jobs:
         done
     - name: Commit changes
       run: |
-        git config user.email 'capa-dev@fireeye.com'
+        git config user.email 'capa-dev@mandiant.com'
         git config user.name 'Capa Bot'
         git commit -am 'Sync capa rules submodule'
     - name: Push changes to capa
