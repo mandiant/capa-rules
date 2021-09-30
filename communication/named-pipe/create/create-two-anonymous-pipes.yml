@@ -2,7 +2,7 @@ rule:
   meta:
     name: create two anonymous pipes
     namespace: communication/named-pipe/create
-    author: matthew.williams@fireeye.com
+    author: matthew.williams@mandiant.com
     scope: function
     mbc:
       - Communication::Interprocess Communication::Create Pipe [C0003.001]

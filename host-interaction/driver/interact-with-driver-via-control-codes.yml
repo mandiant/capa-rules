@@ -2,7 +2,7 @@ rule:
   meta:
     name: interact with driver via control codes
     namespace: host-interaction/driver
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Execution::System Services::Service Execution [T1569.002]

@@ -3,7 +3,7 @@ rule:
     name: create process on Windows
     namespace: host-interaction/process/create
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
     scope: basic block
     mbc:
       - Process::Create Process [C0017]

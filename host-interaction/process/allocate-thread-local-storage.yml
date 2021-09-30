@@ -2,7 +2,7 @@ rule:
   meta:
     name: allocate thread local storage
     namespace: host-interaction/process
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Process::Allocate Thread Local Storage [C0040]

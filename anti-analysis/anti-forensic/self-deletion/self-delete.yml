@@ -2,7 +2,7 @@ rule:
   meta:
     name: self delete
     namespace: anti-analysis/anti-forensic/self-deletion
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Indicator Removal on Host::File Deletion [T1070.004]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: get file attributes
     namespace: host-interaction/file-system/meta
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: basic block
     mbc:
       - File System::Get File Attributes [C0049]

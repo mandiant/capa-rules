@@ -2,7 +2,7 @@ rule:
   meta:
     name: reference public RSA key
     namespace: data-manipulation/encryption/rsa
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Cryptography::Encryption Key [C0028]

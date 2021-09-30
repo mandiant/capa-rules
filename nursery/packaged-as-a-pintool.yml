@@ -2,7 +2,7 @@ rule:
   meta:
     name: packaged as a Pintool
     namespace: executable/pintool
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     references:
       - https://software.intel.com/content/www/us/en/develop/articles/pin-a-dynamic-binary-instrumentation-tool.html

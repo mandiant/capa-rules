@@ -2,7 +2,7 @@ rule:
   meta:
     name: build Docker image
     namespace: host-interaction/container/docker
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Build Image on Host [T1612]

@@ -3,7 +3,7 @@ rule:
     name: inject thread
     namespace: host-interaction/process/inject
     author:
-      - anamaria.martinezgom@fireeye.com
+      - anamaria.martinezgom@mandiant.com
       - 0x534a@mailbox.org
     scope: function
     att&ck:

@@ -3,8 +3,8 @@ rule:
     name: set registry value
     namespace: host-interaction/registry/create
     author:
-      - moritz.raabe@fireeye.com
-      - michael.hunhoff@fireeye.com
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Operating System::Registry::Set Registry Key [C0036.001]

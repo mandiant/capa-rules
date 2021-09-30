@@ -2,7 +2,7 @@ rule:
   meta:
     name: linked against CPP regex library
     namespace: linking/static/cppregex
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     references:
       - http://www.cplusplus.com/reference/regex/regex_error/

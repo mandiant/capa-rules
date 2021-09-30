@@ -1,7 +1,7 @@
 rule:
   meta:
     name: get service handle
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     lib: true
     scope: function
     examples:

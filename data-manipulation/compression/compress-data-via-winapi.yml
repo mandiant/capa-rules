@@ -2,7 +2,7 @@ rule:
   meta:
     name: compress data via WinAPI
     namespace: data-manipulation/compression
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Collection::Archive Collected Data::Archive via Library [T1560.002]

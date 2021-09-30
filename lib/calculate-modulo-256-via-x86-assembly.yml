@@ -1,7 +1,7 @@
 rule:
   meta:
     name: calculate modulo 256 via x86 assembly
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     lib: true
     scope: basic block
     mbc:

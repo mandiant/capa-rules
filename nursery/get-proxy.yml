@@ -2,7 +2,7 @@ rule:
   meta:
     name: get proxy
     namespace: host-interaction/network/proxy
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]

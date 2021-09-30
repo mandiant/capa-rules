@@ -3,7 +3,7 @@ rule:
     name: get local IPv4 addresses
     namespace: host-interaction/network/address
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: function
     att&ck:

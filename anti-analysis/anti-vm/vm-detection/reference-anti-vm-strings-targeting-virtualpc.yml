@@ -2,7 +2,7 @@ rule:
   meta:
     name: reference anti-VM strings targeting VirtualPC
     namespace: anti-analysis/anti-vm/vm-detection
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: file
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]

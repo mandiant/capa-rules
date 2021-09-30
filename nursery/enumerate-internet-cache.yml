@@ -2,7 +2,7 @@ rule:
   meta:
     name: enumerate internet cache
     namespace: host-interaction/internet/cache
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
   features:
     - and:

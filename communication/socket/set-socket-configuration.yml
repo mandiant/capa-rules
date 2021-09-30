@@ -2,7 +2,7 @@ rule:
   meta:
     name: set socket configuration
     namespace: communication/socket
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::Socket Communication::Set Socket Config [C0001.001]

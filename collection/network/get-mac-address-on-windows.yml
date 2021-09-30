@@ -3,7 +3,7 @@ rule:
     name: get MAC address on Windows
     namespace: collection/network
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]

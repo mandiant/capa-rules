@@ -2,7 +2,7 @@ rule:
   meta:
     name: identify ATM dispenser service provider
     namespace: targeting/automated-teller-machine
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     references:
       - https://doc.axxonsoft.com/confluence/display/atm70en/Configuring+the+connection+to+the+dispenser+service+provider

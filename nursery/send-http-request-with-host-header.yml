@@ -2,7 +2,7 @@ rule:
   meta:
     name: send HTTP request with Host header
     namespace: communication/http
-    author: anamaria.martinezgom@fireeye.com
+    author: anamaria.martinezgom@mandiant.com
     scope: function
   features:
     - and:

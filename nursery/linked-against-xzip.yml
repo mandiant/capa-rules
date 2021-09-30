@@ -2,7 +2,7 @@ rule:
   meta:
     name: linked against XZip
     namespace: linking/static/xzip
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: file
     mbc:
       - Data::Compression Library [C0060]

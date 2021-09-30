@@ -2,7 +2,7 @@ rule:
   meta:
     name: find graphical window
     namespace: host-interaction/gui/window/find
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::Application Window Discovery [T1010]

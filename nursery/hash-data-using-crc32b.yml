@@ -2,7 +2,7 @@ rule:
   meta:
     name: hash data using CRC32b
     namespace: data-manipulation/checksum/crc32
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
   features:
     - and:

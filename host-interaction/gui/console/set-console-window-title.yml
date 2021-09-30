@@ -2,7 +2,7 @@ rule:
   meta:
     name: set console window title
     namespace: host-interaction/gui/console
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     examples:
       - mimikatz.exe_:0x44570F

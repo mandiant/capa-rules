@@ -2,7 +2,7 @@ rule:
   meta:
     name: modify access privileges
     namespace: host-interaction/process/modify
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Privilege Escalation::Access Token Manipulation [T1134]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: get installed programs
     namespace: host-interaction/software
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::Software Discovery [T1518]

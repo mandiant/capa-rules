@@ -2,7 +2,7 @@ rule:
   meta:
     name: manipulate console
     namespace: host-interaction/console
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     mbc:
       - Operating System::Console [C0033]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: resolve function by hash
     namespace: linking/runtime-linking
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]

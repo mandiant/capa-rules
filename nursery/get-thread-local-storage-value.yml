@@ -2,7 +2,7 @@ rule:
   meta:
     name: get thread local storage value
     namespace: host-interaction/process
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
   features:
     - and:

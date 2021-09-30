@@ -2,7 +2,7 @@ rule:
   meta:
     name: empty the recycle bin
     namespace: host-interaction/recycle-bin
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
   features:
     - or:

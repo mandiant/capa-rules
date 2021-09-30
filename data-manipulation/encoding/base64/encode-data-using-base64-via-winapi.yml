@@ -2,7 +2,7 @@ rule:
   meta:
     name: encode data using Base64 via WinAPI
     namespace: data-manipulation/encoding/base64
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: basic block
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

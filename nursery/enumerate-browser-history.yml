@@ -2,7 +2,7 @@ rule:
   meta:
     name: enumerate browser history
     namespace: host-interaction/browser/history/list
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
   features:
     - and:

@@ -7,17 +7,17 @@ labels: rule idea
 ---
 
 <!--
-Please use your proposed rule name as issue title. See convention at https://github.com/fireeye/capa-rules/blob/master/doc/format.md#rule-name.
+Please use your proposed rule name as issue title. See convention at https://github.com/mandiant/capa-rules/blob/master/doc/format.md#rule-name.
 
 The more information you can provide the better. However, we would rather collect more ideas than miss an interesting rule because of the amount of required data. So in that case you submit whatever you can.    
 
-Have you read capa's Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://github.com/fireeye/capa/blob/master/CODE_OF_CONDUCT.md
+Have you read capa's Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://github.com/mandiant/capa/blob/master/CODE_OF_CONDUCT.md
 -->
 
 ## Prerequisites
 
 * [ ] Put an X between the brackets on this line if you have done all of the following:
-    * Checked that your rule idea isn't already filed: [search](https://github.com/fireeye/capa-rules/issues?q=is%3Aissue+is%3Aopen+)
+    * Checked that your rule idea isn't already filed: [search](https://github.com/mandiant/capa-rules/issues?q=is%3Aissue+is%3Aopen+)
 
 ## Summary
 
@@ -29,7 +29,7 @@ Have you read capa's Code of Conduct? By filing an Issue, you are expected to co
 
 ## Features
 
-<!-- What combination of features can be used to identify the capability? See https://github.com/fireeye/capa-rules/blob/master/doc/format.md#extracted-features. -->
+<!-- What combination of features can be used to identify the capability? See https://github.com/mandiant/capa-rules/blob/master/doc/format.md#extracted-features. -->
 
 ## Additional context
 
@@ -38,7 +38,7 @@ Have you read capa's Code of Conduct? By filing an Issue, you are expected to co
 ## Rule details
 
 ### Namespace
-<!-- What rule namespace do you propose? See convention at https://github.com/fireeye/capa-rules/blob/master/doc/format.md#rule-namespace. -->
+<!-- What rule namespace do you propose? See convention at https://github.com/mandiant/capa-rules/blob/master/doc/format.md#rule-namespace. -->
 
 ### References
 
@@ -46,4 +46,4 @@ Have you read capa's Code of Conduct? By filing an Issue, you are expected to co
 
 ### Other rule meta information
 
-<!-- capability and technique tagging via `att&ck`, `mbc`, etc. See https://github.com/fireeye/capa-rules/blob/master/doc/format.md#meta-block. -->
+<!-- capability and technique tagging via `att&ck`, `mbc`, etc. See https://github.com/mandiant/capa-rules/blob/master/doc/format.md#meta-block. -->

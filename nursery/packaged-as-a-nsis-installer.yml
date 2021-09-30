@@ -2,7 +2,7 @@ rule:
   meta:
     name: packaged as a NSIS installer
     namespace: executable/installer/nsis
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: file
     references:
       - https://nsis.sourceforge.io/Main_Page

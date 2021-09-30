@@ -2,7 +2,7 @@ rule:
   meta:
     name: authenticate HMAC
     namespace: data-manipulation/hmac
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     references:
       - https://tools.ietf.org/html/rfc2104

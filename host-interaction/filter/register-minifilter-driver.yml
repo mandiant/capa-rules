@@ -2,7 +2,7 @@ rule:
   meta:
     name: register minifilter driver
     namespace: host-interaction/filter
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: basic block
     references:
       - https://docs.microsoft.com/en-us/windows-hardware/drivers/ifs/filter-manager-concepts

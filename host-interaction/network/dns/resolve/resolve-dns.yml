@@ -3,7 +3,7 @@ rule:
     name: resolve DNS
     namespace: host-interaction/network/dns/resolve
     author:
-      - william.ballenthin@fireeye.com
+      - william.ballenthin@mandiant.com
       - johnk3r
       - joakim@intezer.com
     scope: function

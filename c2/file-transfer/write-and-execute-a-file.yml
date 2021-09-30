@@ -3,7 +3,7 @@ rule:
     name: write and execute a file
     namespace: c2/file-transfer
     maec/malware-category: launcher
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Execution::Install Additional Program [B0023]

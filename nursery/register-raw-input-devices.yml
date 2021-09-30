@@ -3,7 +3,7 @@ rule:
   meta:
     name: register raw input devices
     namespace: host-interaction/hardware
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: basic block
   features:
     - or:

@@ -2,7 +2,7 @@ rule:
   meta:
     name: check for kernel debugger via shared user data structure
     namespace: anti-analysis/anti-debugging/debugger-detection
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection [B0001]

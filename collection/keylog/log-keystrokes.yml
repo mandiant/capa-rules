@@ -2,7 +2,7 @@ rule:
   meta:
     name: log keystrokes
     namespace: collection/keylog
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Collection::Input Capture::Keylogging [T1056.001]

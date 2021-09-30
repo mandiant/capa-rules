@@ -1,10 +1,10 @@
 # capa rules
 
-[![Rule linter status](https://github.com/fireeye/capa-rules/workflows/CI/badge.svg)](https://github.com/fireeye/capa-rules/actions?query=workflow%3A%22CI%22)
+[![Rule linter status](https://github.com/mandiant/capa-rules/workflows/CI/badge.svg)](https://github.com/mandiant/capa-rules/actions?query=workflow%3A%22CI%22)
 [![Number of rules](https://img.shields.io/badge/rules-633-blue.svg)](rules)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)](LICENSE.txt)
 
-This is the standard collection of rules for [capa](https://github.com/fireeye/capa) - the tool to automatically identify capabilities of programs.
+This is the standard collection of rules for [capa](https://github.com/mandiant/capa) - the tool to automatically identify capabilities of programs.
 
 ## philosophy
 Rule writing should be easy and fun! 
@@ -27,7 +27,7 @@ rule:
   meta:
     name: hash data with CRC32
     namespace: data-manipulation/checksum/crc32
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
@@ -126,7 +126,7 @@ Capa will only attempt to match lib rules that are referenced by other rules,
  so there's no performance overhead for defining many reusable library rules.
 
 ### rule nursery
-The rule [nursery](https://github.com/fireeye/capa-rules/tree/master/nursery) is a staging ground for rules that are not quite polished. Nursery rule logic should still be solid, though metadata may be incomplete. For example, rules that miss a public example of the technique.
+The rule [nursery](https://github.com/mandiant/capa-rules/tree/master/nursery) is a staging ground for rules that are not quite polished. Nursery rule logic should still be solid, though metadata may be incomplete. For example, rules that miss a public example of the technique.
 
 The rule engine matches regularly on nursery rules. However, our rule linter only enumerates missing rule data, but will not fail the CI build, because its understood that the rule is incomplete.
 

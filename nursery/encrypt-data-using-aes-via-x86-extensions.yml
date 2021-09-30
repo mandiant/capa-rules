@@ -2,7 +2,7 @@ rule:
   meta:
     name: encrypt data using AES via x86 extensions
     namespace: data-manipulation/encryption/aes
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

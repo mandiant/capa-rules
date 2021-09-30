@@ -2,7 +2,7 @@ rule:
   meta:
     name: create reverse shell
     namespace: c2/shell
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter::Windows Command Shell [T1059.003]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: hide graphical window
     namespace: host-interaction/gui/window/hide
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Defense Evasion::Hide Artifacts::Hidden Window [T1564.003]

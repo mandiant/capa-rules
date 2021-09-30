@@ -2,7 +2,7 @@ rule:
   meta:
     name: connect to URL
     namespace: communication/http/client
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Open URL [C0002.004]

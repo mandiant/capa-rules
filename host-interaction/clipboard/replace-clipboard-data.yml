@@ -2,7 +2,7 @@ rule:
   meta:
     name: replace clipboard data
     namespace: host-interaction/clipboard
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Impact::Clipboard Modification [E1510]

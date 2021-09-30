@@ -2,7 +2,7 @@ rule:
   meta:
     name: check license value
     namespace: anti-analysis/anti-vm/vm-detection
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]

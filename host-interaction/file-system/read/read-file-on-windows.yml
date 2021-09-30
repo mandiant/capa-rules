@@ -3,7 +3,7 @@ rule:
     name: read file on Windows
     namespace: host-interaction/file-system/read
     author:
-      - moritz.raabe@fireeye.com
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - File System::Read File [C0051]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: make an HTTP request with a Cookie
     namespace: communication/http/client
-    author: anamaria.martinezgom@fireeye.com
+    author: anamaria.martinezgom@mandiant.com
     scope: function
   features:
     - and:

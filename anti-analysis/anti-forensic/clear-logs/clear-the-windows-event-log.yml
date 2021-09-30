@@ -2,7 +2,7 @@ rule:
   meta:
     name: clear the Windows event log
     namespace: anti-analysis/anti-forensic/clear-logs
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Indicator Removal on Host::Clear Windows Event Logs [T1070.001]

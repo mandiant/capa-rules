@@ -2,7 +2,7 @@ rule:
   meta:
     name: hash data with MD5
     namespace: data-manipulation/hashing/md5
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     references:
       - https://github.com/rwfpl/rewolf-x86-virtualizer/blob/master/src/test_app/main.cpp

@@ -2,7 +2,7 @@ rule:
   meta:
     name: find taskbar
     namespace: host-interaction/gui/taskbar/find
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Discovery::Taskbar Discovery [B0043]

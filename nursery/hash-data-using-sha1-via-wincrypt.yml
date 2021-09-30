@@ -2,7 +2,7 @@ rule:
   meta:
     name: hash data using SHA1 via WinCrypt
     namespace: data-manipulation/hashing/sha1
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: function
   features:
     - or:

@@ -3,7 +3,7 @@ rule:
   meta:
     name: resize volume shadow copy storage
     namespace: impact/inhibit-system-recovery
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: basic block
   features:
     - and:

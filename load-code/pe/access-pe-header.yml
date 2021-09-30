@@ -2,7 +2,7 @@ rule:
   meta:
     name: access PE header
     namespace: load-code/pe
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Execution::Shared Modules [T1129]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: encrypt or decrypt via WinCrypt
     namespace: data-manipulation/encryption
-    author: moritz.raabe@fireeye.com
+    author: moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

@@ -3,8 +3,8 @@ rule:
     name: delete registry key
     namespace: host-interaction/registry/delete
     author:
-      - moritz.raabe@fireeye.com
-      - michael.hunhoff@fireeye.com
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
       - johnk3r
     scope: function
     att&ck:

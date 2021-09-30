@@ -3,7 +3,7 @@ rule:
   meta:
     name: register HTTP server URL
     namespace: communication/http/server
-    author: michael.hunhoff@fireeye.com
+    author: michael.hunhoff@mandiant.com
     scope: basic block
   features:
     - or:

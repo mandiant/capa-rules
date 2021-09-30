@@ -2,7 +2,7 @@ rule:
   meta:
     name: load NCR ATM library
     namespace: targeting/automated-teller-machine/ncr
-    author: william.ballenthin@fireeye.com
+    author: william.ballenthin@mandiant.com
     scope: file
     references:
       - https://www.pcworld.com/article/2824572/leaked-programming-manual-may-help-criminals-develop-more-atm-malware.html
