@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: resolve function by FNV hash
+    name: resolve function by FNV-1a hash
     namespace: linking/runtime-linking
     author: still@teamt5.org
     scope: function
@@ -8,6 +8,8 @@ rule:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     references:
       - https://blog.xorhex.com/blog/reddeltaplugxchangeup/
+    description:
+      - known import name hashes calculated using the non-cryptographic FNV-1a hashing algorithm
   features:
     - or:
       - number: 0x53b2070f = FNV(LoadLibraryA)
