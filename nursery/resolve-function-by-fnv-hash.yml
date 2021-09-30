@@ -8,7 +8,6 @@ rule:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     references:
       - https://blog.xorhex.com/blog/reddeltaplugxchangeup/
-    examples:
   features:
     - or:
       - number: 0x53b2070f = FNV(LoadLibraryA)
