@@ -12,7 +12,6 @@ rule:
     examples:
       - DAA13AE302FE8B618DDBF590537443EF:0x419F50
       - B43FCA5283BFC7022553EFF663683834:0x424
-      - 6CE584F4F2157C63D5DD239A12A3DCEC:0x40AC20
   features:
     - and:
       - description: aP_depack
