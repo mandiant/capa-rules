@@ -7,7 +7,7 @@ rule:
     mbc:
       - Operating System::Environment Variable::Set Variable [C0034.001]
     examples:
-      - Practical Malware Analysis Lab 11-03.exe_:0x406580
+      - 0731679c5f99e8ee65d8b29a3cabfc6b:0x43EA81
   features:
     - or:
       - api: kernel32.SetEnvironmentStrings
