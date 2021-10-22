@@ -19,7 +19,12 @@ rule:
       - or:
         - api: activeds.ADsOpenObject
         - api: activeds.#9
-      - substring: "LDAP://"
+      - optional:
+        - string: "{001677D0-FD16-11CE-ABC4-02608C9E7553}"
+          description: IID_IADsContainer
+        - string: "{109BA8EC-92F0-11D0-A790-00C04FD8D5A8}"
+          description: IID_IDirectorySearch
+        - substring: "LDAP://"
       - or:
-        - string: "(objectClass=computer)"
-        - string: "(objectCategory=computer)"
+        - substring: "(objectClass=computer)"
+        - substring: "(objectCategory=computer)"

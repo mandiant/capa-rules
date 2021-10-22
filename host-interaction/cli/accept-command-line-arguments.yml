@@ -7,8 +7,7 @@ rule:
     att&ck:
       - Execution::Command and Scripting Interpreter [T1059]
     examples:
-      - Practical Malware Analysis Lab 10-03.exe_:0x401140
-      - AFB6EC3D721A5CB67863487B0E51A34C167F629CF701F8BC7A038C117B4DDA44:0x407D50
+      - e5369ac309f1be6d77afeeb3edab0ed8:0x402760
   features:
     - or:
       - api: GetCommandLine
