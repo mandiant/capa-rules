@@ -7,11 +7,11 @@ rule:
     mbc:
       - Communication::HTTP Communication::Send Data [C0002.005]
     examples:
-      - EAAD7DFC78304B977D3844CC63577152:0x4500CB
+      - 3d760b6fc84571c928bed835863fc302:0x403687
   features:
     - and:
+      - api: wininet.InternetWriteFile
       - optional:
         - or:
           - match: connect to HTTP server
           - match: connect to URL
-      - api: wininet.InternetWriteFile
