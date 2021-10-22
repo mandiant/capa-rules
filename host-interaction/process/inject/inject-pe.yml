@@ -6,6 +6,7 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Portable Executable Injection [T1055.002]
+      - Defense Evasion::Reflective Code Loading [T1620]
     references:
       - https://www.elastic.co/de/blog/ten-process-injection-techniques-technical-survey-common-and-trending-process
     examples:

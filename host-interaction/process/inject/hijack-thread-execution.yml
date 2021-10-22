@@ -6,6 +6,7 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Thread Execution Hijacking [T1055.003]
+      - Defense Evasion::Reflective Code Loading [T1620]
     examples:
       - 77d87e9937546aebc1595039d730352b15fab32c72a76913f04262c6802d098f:0x401000
   features:
