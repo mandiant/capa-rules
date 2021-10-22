@@ -8,8 +8,6 @@ rule:
     references:
       - https://docs.microsoft.com/en-us/windows/win32/api/clfsw32/
       - https://github.com/libyal/libfsclfs/blob/main/documenation/Common%20Log%20File%20System%20(CLFS).asciidoc
-    examples:
-      - 0C605276FF21B5150365B7D1991F5904:0x40F3EF
   features:
     - and:
       - api: clfsw32.CreateLogFile
