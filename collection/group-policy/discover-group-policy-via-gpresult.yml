@@ -5,7 +5,7 @@
     author: william.ballenthin@mandiant.com
     scope: function
     att&ck:
-      - Discovery::Group Policy Discovery
+      - Discovery::Group Policy Discovery [T1615]
     examples:
       - 9e4d06759f278255073f9ac7b31a115a:0x100068B7
   features:
