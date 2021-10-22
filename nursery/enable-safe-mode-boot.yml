@@ -1,4 +1,4 @@
- rule:
+rule:
   meta:
     name: enable safe mode boot
     namespace: host-interaction/bootloader
