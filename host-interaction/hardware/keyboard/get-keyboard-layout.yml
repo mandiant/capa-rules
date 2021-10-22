@@ -1,11 +1,11 @@
 rule:
   meta:
     name: get keyboard layout
-    namespace: host-interaction/hardware/keyboard/layout
+    namespace: host-interaction/hardware/keyboard
     author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
-      - Discovery::System Information Discovery [T1082]
+      - Discovery::System Location Discovery::System Language Discovery [T1614.001]
     examples:
       - 6F99A2C8944CB02FF28C6F9CED59B161:0x4193C0
       - C91887D861D9BD4A5872249B641BC9F9:0x4015FD
