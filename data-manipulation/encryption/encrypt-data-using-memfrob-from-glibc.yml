@@ -12,4 +12,6 @@ rule:
     examples:
       - 055da8e6ccfe5a9380231ea04b850e18:0x1189
   features:
-    - api: memfrob
+    - and:
+      - os: linux
+      - api: memfrob
