@@ -9,6 +9,8 @@ rule:
     examples:
       - 9e4d06759f278255073f9ac7b31a115a:0x100068B7
   features:
-    - or:
-      - substring: "gpresult"
-      - substring: "GPRESULT"
+    - and:
+      - os: windows
+      - or:
+        - substring: "gpresult"
+        - substring: "GPRESULT"
