@@ -9,7 +9,9 @@ rule:
     examples:
       - 9b7ccaa2ae6a5b96e3110ebcbc4311f6:0x10001F96
   features:
-    - or:
-      - api: GetUserDefaultUILanguage
-      - api: GetSystemDefaultUILanguage
-      - api: GetUserDefaultLangID
+    - and:
+      - os: windows
+      - or:
+        - api: GetUserDefaultUILanguage
+        - api: GetSystemDefaultUILanguage
+        - api: GetUserDefaultLangID
