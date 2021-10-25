@@ -6,6 +6,7 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Dynamic-link Library Injection [T1055.001]
+      - Defense Evasion::Reflective Code Loading [T1620]
     references:
       - https://0x00sec.org/t/reflective-dll-injection/3080
       - https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection
