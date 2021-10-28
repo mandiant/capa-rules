@@ -12,7 +12,6 @@ rule:
       - https://ibsensoftware.com/files/aPLib-1.1.1.zip
     examples:
       - DAA13AE302FE8B618DDBF590537443EF:0x419F50
-      - B43FCA5283BFC7022553EFF663683834:0x424
       - 757139E76FAE876AE50DD2C3AC11D5D8:0x413074
   features:
     - and:
