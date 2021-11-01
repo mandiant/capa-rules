@@ -12,3 +12,6 @@ rule:
     - or:
       - api: user32.ExitWindowsEx
       - api: user32.ExitWindows
+      - api: advapi32.InitiateSystemShutdownEx
+      - api: advapi32.InitiateSystemShutdown
+      - api: advapi32.InitiateShutdown
