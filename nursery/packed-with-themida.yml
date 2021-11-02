@@ -15,4 +15,5 @@ rule:
     - or:
       - section: Themida
       - section: .Themida
+      - section: .themida
       - section: WinLicen
