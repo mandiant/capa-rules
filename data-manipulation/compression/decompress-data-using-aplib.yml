@@ -5,6 +5,7 @@ rule:
     author:
       - "@r3c0nst (Frank Boldewin)"
       - moritz.raabe@mandiant.com
+      - cdong49@gatech.edu
     description: detects decompression function of library aPLib
     scope: function
     references:
@@ -12,19 +13,33 @@ rule:
     examples:
       - DAA13AE302FE8B618DDBF590537443EF:0x419F50
       - B43FCA5283BFC7022553EFF663683834:0x424
+      - 757139E76FAE876AE50DD2C3AC11D5D8:0x413074
   features:
     - and:
       - description: aP_depack
+      - match: contain loop
       - basic block:
+        - description: line 138, if (offs >= 32000)
         - and:
           - mnemonic: cmp
           - number: 32000
       - basic block:
+        - description: line 144, if (offs < 128)
         - and:
           - mnemonic: cmp
           - or:
             - number: 127
             - number: 128
-      - count(characteristic(calls from)): 2 or more
-        description: calls aP_getbit and aP_getgamma
-      - match: contain loop
+      - basic block:
+        - description: line 133, offs <<= 8;
+        - and:
+          - mnemonic: shl
+          - number: 8
+      - basic block:
+        - description: line 96, offs >>= 1;
+        - and:
+          - mnemonic: shr
+          - number: 1
+      - optional:
+        - count(characteristic(calls from)): 2 or more
+          description: calls aP_getbit and aP_getgamma
