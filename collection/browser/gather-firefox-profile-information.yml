@@ -9,12 +9,13 @@ rule:
     examples:
       - 7204e3efc2434012e13ca939db0d0b02:0x4073c0
   features:
-    - 2 or more:
-      - string: /\\Mozilla\\Firefox\\profiles(\.ini)?/i
-      - string: /\\signons\.sqlite/i
-      - string: /SELECT\s+[a-z,\s]{5,}FROM moz_(logins|cookies)/i
-      - string: /FROM moz_(logins|cookies)/i
-      - substring: "WHERE moz_cookies.host LIKE"
+    - and:
+      - 2 or more:
+        - string: /\\Mozilla\\Firefox\\profiles(\.ini)?/i
+        - string: /\\signons\.sqlite/i
+        - string: /SELECT\s+[a-z,\s]{5,}FROM moz_(logins|cookies)/i
+        - string: /FROM moz_(logins|cookies)/i
+        - substring: "WHERE moz_cookies.host LIKE"
       - optional:
         - or:
           - string: "encryptedUsername"
