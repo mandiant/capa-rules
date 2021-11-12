@@ -5,7 +5,7 @@ rule:
     author: "@Ana06"
     scope: function
     mbc:
-      - Data::Code::Parse PE Exports [C0062.003]
+      - Discovery::Code Discovery::Parse PE Header [B0046.003]
     references:
       - Practical Malware Analysis, Chapter 19
     examples:
