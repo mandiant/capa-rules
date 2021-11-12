@@ -7,7 +7,7 @@ rule:
       - "@_re_fox"
     scope: function
     att&ck:
-      - Defense Evasion::Masquerading::Masquerade Task or Service [T1036.004]
+      - Defense Evasion::Process Injection [T1055]
     mbc:
       - Defense Evasion::Process Injection::Patch Process Command Line [E1055.m04]
     references:
