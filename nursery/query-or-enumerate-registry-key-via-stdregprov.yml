@@ -9,5 +9,4 @@ rule:
   features:
     - and:
       - string: "StdRegProv"
-      - or:
-        - string: "EnumKey"
+      - string: "EnumKey"
