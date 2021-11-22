@@ -4,6 +4,8 @@ rule:
     namespace: communication/dns
     author: markus.neis@swisscom.com / @markus_neis
     scope: file
+    mbc:
+      - Communication::DNS Communication::Server Connect [C0011.002]
     references:
       - https://github.com/curl/curl/wiki/DNS-over-HTTPS
     examples:

@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/move
     author: moritz.raabe@mandiant.com
     scope: function
+    mbc:
+      - File System::Move File [C0063]
     examples:
       - Practical Malware Analysis Lab 01-04.exe_:0x401350
   features:

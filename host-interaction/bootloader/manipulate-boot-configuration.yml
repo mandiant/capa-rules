@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/bootloader
     author: william.ballenthin@mandiant.com
     scope: function
+    att&ck:
+      - Impact::Inhibit System Recovery [T1490]
     references:
       - https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdedit-command-line-options
     examples:

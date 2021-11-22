@@ -8,6 +8,8 @@ rule:
       - cdong49@gatech.edu
     description: detects decompression function of library aPLib
     scope: function
+    mbc:
+      - Data::Decompress Data::aPLib [C0025.003]
     references:
       - https://ibsensoftware.com/files/aPLib-1.1.1.zip
     examples:

@@ -4,6 +4,8 @@ rule:
     namespace: data-manipulation/hashing/md5
     author: moritz.raabe@mandiant.com
     scope: function
+    mbc:
+      - Cryptography::Cryptographic Hash::MD5 [C0029.001]
     references:
       - https://github.com/rwfpl/rewolf-x86-virtualizer/blob/master/src/test_app/main.cpp
     examples:

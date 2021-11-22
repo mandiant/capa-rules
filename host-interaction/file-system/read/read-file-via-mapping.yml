@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system/read
     author: michael.hunhoff@mandiant.com
     scope: function
+    mbc:
+      - File System::Read File [C0051]
     examples:
       - Practical Malware Analysis Lab 01-01.exe_:0x401440
   features:
