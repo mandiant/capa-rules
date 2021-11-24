@@ -3,7 +3,7 @@ rule:
     name: open thread
     author: 0x534a@mailbox.org
     lib: true
-    scope: basic block    
+    scope: basic block
     mbc:
       - Process::Open Thread [C0066]
     examples:
