@@ -5,6 +5,8 @@ rule:
     author: "@Ana06"
     description: "translate section memory permissions (specified in the 'Characteristics' field of the image section header) into page protection constants"
     scope: function
+    mbc:
+      - Discovery::Code Discovery::Inspect Section Memory Permissions [B0046.002]
     examples:
       - E4C33AC3638EEF68311F8AC0D72483C7:0x401480
   features:

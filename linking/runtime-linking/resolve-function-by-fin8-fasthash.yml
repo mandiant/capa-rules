@@ -5,6 +5,8 @@ rule:
     author: "@r3c0nst (Frank Boldewin)"
     description: APIHashing algorithm derived from a fasthash implementation in OpenCPN using seeds
     scope: function
+    mbc:
+      - Cryptography::Cryptographic Hash [C0029]
     references:
       - https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf
       - https://raw.githubusercontent.com/fboldewin/YARA-rules/master/Shellcode.APIHashing.FIN8.yar

@@ -5,6 +5,8 @@ rule:
     namespace: host-interaction/process/dump
     author: michael.hunhoff@mandiant.com
     scope: basic block
+    mbc:
+      - File System::Write File [C0052]
     examples:
       - 91a12a4cf437589ba70b1687f5acad19:0x43E1C9
   features:

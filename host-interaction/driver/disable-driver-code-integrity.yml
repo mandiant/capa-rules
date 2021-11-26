@@ -4,6 +4,10 @@ rule:
     namespace: host-interaction/driver
     author: william.ballenthin@mandiant.com
     scope: function
+    att&ck:
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools::Disable Code Integrity [F0004.009]
     references:
       - https://www.fuzzysecurity.com/tutorials/28.html
       - https://j00ru.vexillium.org/2010/06/insight-into-the-driver-signature-enforcement/

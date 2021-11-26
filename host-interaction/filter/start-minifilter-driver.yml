@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/filter
     author: michael.hunhoff@mandiant.com
     scope: basic block
+    mbc:
+      - Hardware::Load Driver::Minifilter [C0023.001]
     references:
       - https://docs.microsoft.com/en-us/windows-hardware/drivers/ifs/filter-manager-concepts
     examples:

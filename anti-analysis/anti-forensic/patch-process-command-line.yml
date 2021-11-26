@@ -6,6 +6,10 @@ rule:
       - william.ballenthin@mandiant.com
       - "@_re_fox"
     scope: function
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection::Patch Process Command Line [E1055.m04]
     references:
       - https://stackoverflow.com/q/24754844/87207
       - https://blog.xpnsec.com/how-to-argue-like-cobalt-strike/
