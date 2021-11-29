@@ -15,7 +15,7 @@ rule:
         - and:
           - api: SendMessage
           - number: 0x43E = WM_CAP_SEQUENCE
-      - or:          
+      - or:
         - basic block:
           - and:
             - api: SendMessage
