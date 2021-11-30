@@ -2,7 +2,9 @@ rule:
   meta:
     name: reference anti-VM strings targeting VMWare
     namespace: anti-analysis/anti-vm/vm-detection
-    author: michael.hunhoff@mandiant.com
+    author:
+      - michael.hunhoff@mandiant.com
+      - "@johnk3r"
     scope: file
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
@@ -12,6 +14,7 @@ rule:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/VMWare.cpp
     examples:
       - al-khaser_x86.exe_
+      - b83480162ede09d4aa6d4850f9faa0a4c3834152752fd04cfdb22d647aa1f825:0x17D80
   features:
     - or:
       - string: /VMWare/i
@@ -51,3 +54,5 @@ rule:
       - string: /vmx86/i
       - string: /VMwareVMware/i
       - string: /vmGuestLib\.dll/i
+      - string: /vmGuestLib\.dll/i
+      - string: /Applications\\VMwareHostOpen\.exe/i
