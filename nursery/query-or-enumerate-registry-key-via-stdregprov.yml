@@ -1,0 +1,12 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: query or enumerate registry key via StdRegProv
+    namespace: host-interaction/registry
+    author: michael.hunhoff@mandiant.com
+    scope: function
+    references: https://docs.microsoft.com/en-us/previous-versions/windows/desktop/regprov/stdregprov#methods
+  features:
+    - and:
+      - string: "StdRegProv"
+      - string: "EnumKey"
