@@ -13,4 +13,4 @@ rule:
     - or:
       - match: receive data on socket
       - match: read data from Internet
-      - match: download URL to file
+      - match: download URL

@@ -1,8 +1,10 @@
 rule:
   meta:
-    name: download URL to file
+    name: download URL
     namespace: communication/http/client
-    author: matthew.williams@mandiant.com
+    author:
+      - matthew.williams@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Download URL [C0002.006]
@@ -13,3 +15,6 @@ rule:
     - or:
       - api: urlmon.URLDownloadToFile
       - api: urlmon.URLDownloadToCacheFile
+      - api: urlmon.URLOpenBlockingStream
+      - api: urlmon.URLOpenPullStream
+      - api: urlmon.URLOpenStream
