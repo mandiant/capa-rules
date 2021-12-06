@@ -56,3 +56,11 @@ rule:
       - string: /vmGuestLib\.dll/i
       - string: /vmGuestLib\.dll/i
       - string: /Applications\\VMwareHostOpen\.exe/i
+      - string: /vm3dgl\.dll/i
+      - string: /vmdum\.dll/i
+      - string: /vm3dver\.dll/i
+      - string: /vmtray\.dll/i
+      - string: /VMToolsHook\.dll/i
+      - string: /vmmousever\.dll/i
+      - string: /VmGuestLibJava\.dll/i
+      - string: /vmscsi\.sys/i
