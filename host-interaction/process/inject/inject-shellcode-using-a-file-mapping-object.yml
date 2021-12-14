@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: inject shellcode using Mapping Injection
+    name: inject shellcode using a file mapping object
     namespace: host-interaction/process/inject
     author: jakub.jozwiak@mandiant.com
     scope: function
