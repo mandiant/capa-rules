@@ -5,6 +5,8 @@ rule:
     namespace: host-interaction/log/clfs/read
     author: blaine.stancill@mandiant.com
     scope: function
+    mbc:
+      - Discovery::File and Directory Discovery::Log File [E1083.m01]
     references:
       - https://docs.microsoft.com/en-us/windows/win32/api/clfsw32/
       - https://github.com/libyal/libfsclfs/blob/main/documenation/Common%20Log%20File%20System%20(CLFS).asciidoc

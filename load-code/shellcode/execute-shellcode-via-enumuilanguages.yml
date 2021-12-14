@@ -4,6 +4,8 @@ rule:
     namespace: load-code/shellcode
     author: jakub.jozwiak@mandiant.com
     scope: function
+    mbc:
+      - Defense Evasion::Hijack Execution Flow::Abuse Windows Function Calls [F0015.006]
     references:
       - http://ropgadget.com/posts/abusing_win_functions.html
       - https://github.com/S4R1N/AlternativeShellcodeExec/blob/master/EnumUILanguagesW/EnumUILanguagesW.cpp

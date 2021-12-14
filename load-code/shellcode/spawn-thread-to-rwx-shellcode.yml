@@ -4,6 +4,9 @@ rule:
     namespace: load-code/shellcode
     author: moritz.raabe@mandiant.com
     scope: function
+    mbc:
+      - Memory::Allocate Memory [C0007]
+      - Process::Create Thread [C0038]
     examples:
       - Practical Malware Analysis Lab 19-02.exe_:0x401230
   features:
