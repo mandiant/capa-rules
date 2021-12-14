@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/file-system
     author: joakim@intezer.com
     scope: basic block
+    mbc:
+      - File System::Set File Attributes [C0050]
     examples:
       - 7351f8a40c5450557b24622417fc478d:0x407C68
   features:

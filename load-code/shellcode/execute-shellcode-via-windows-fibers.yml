@@ -4,6 +4,8 @@ rule:
     namespace: load-code/shellcode
     author: jakub.jozwiak@mandiant.com
     scope: function
+    mbc:
+      - Defense Evasion::Process Injection::Injection via Windows Fibers [E1055.m05]
     references:
       - https://www.ired.team/offensive-security/code-injection-process-injection/executing-shellcode-with-createfiber
       - https://github.com/S4R1N/AlternativeShellcodeExec/blob/master/FiberContextEdit/Source.cpp

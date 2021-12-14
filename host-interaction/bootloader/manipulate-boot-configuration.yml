@@ -4,6 +4,8 @@ rule:
     namespace: host-interaction/bootloader
     author: william.ballenthin@mandiant.com
     scope: function
+    att&ck:
+      - Defense Evasion::Impair Defenses [T1562]
     references:
       - https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdedit-command-line-options
     examples:
