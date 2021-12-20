@@ -6,9 +6,9 @@ rule:
     scope: file
   features:
     - or:
-      - substring: go.buildid
+      - substring: "go.buildid"
       - substring: "Go build ID:"
-      - substring: go1.
-      - substring: runtime.main
-      - substring: main.main
-      - substring: runtime.gcWork
+      - substring: "go1."
+      - substring: "runtime.main"
+      - substring: "main.main"
+      - substring: "runtime.gcWork"
