@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: golang
+    name: compiled to the standard golang runtime
     namespace: runtime/golang
     author: stephen.eckels@mandiant.com
     scope: file
