@@ -11,3 +11,7 @@ rule:
       - string: /^Go build ID:/
       - substring: "go.buildid"
       - string: /^Go buildinf:/
+      - substring: "go1."
+      - substring: "runtime.main"
+      - substring: "main.main"
+      - substring: "runtime.gcWork"
