@@ -5,7 +5,7 @@ rule:
     author: michael.hunhoff@mandiant.com
     scope: function
     att&ck:
-      - Persistence/Scheduled Task/Job/Scheduled Task [T1053.005]
+      - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
   features:
     - and:
       - basic block:

@@ -6,7 +6,7 @@ rule:
     description: Looks for an LDAP query and related Windows API calls used to enumerate other computers on the Windows domain that a computer is connected to.
     scope: function
     att&ck:
-      - Discovery::System Network Configuration Discovery  [T1016]
+      - Discovery::System Network Configuration Discovery [T1016]
     references:
       - https://docs.microsoft.com/en-us/windows/win32/api/adshlp/nf-adshlp-adsopenobject
       - https://www.vkremez.com/2017/12/lets-learn-introducing-new-trickbot.html
