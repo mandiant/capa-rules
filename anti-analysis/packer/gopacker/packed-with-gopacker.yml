@@ -6,7 +6,7 @@ rule:
     description: The sample appears to be packed with GoPacker.
     scope: file
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027.002]
+      - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
       - Anti-Static Analysis::Software Packing::Standard Compression [OB0002.F0001.002]
     references:
