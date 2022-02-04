@@ -22,7 +22,7 @@ rule:
           - api: user32.GetWindowDC
           - api: user32.GetDC
           - and:
-            - api: gdi32.CreateDCA
+            - api: gdi32.CreateDC
             - string: "DISPLAY"
         - or:
           - api: gdi32.BitBlt
