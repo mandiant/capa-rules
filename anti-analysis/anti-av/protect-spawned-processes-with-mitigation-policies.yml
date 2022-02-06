@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
     mbc:
-      - Defense Evasion::Impair Defenses::Disable or Modify Tools [OB0006.F0004]
+      - Defense Evasion::Disable or Evade Security Tools::Modify Policy [F0004.005]
     references:
       - https://blog.xpnsec.com/protecting-your-malware/
       - https://github.com/byt3bl33d3r/OffensiveNim/blob/master/src/blockdlls_acg_ppid_spoof_bin.nim
