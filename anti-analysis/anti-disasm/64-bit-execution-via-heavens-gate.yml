@@ -19,7 +19,8 @@ rule:
           - mnemonic: push = 'push 33h'
           - mnemonic: mov = cover any mov ESP / EBP equivalents
         - number: 0x33 = set up retf to push 0x33 to CS indicating 64-bit mode
-      - mnemonic: call = 'call $+5' pushes the current EIP onto the stack, +5 to jump past call insn bytes
+      - characteristic: call $+5
+        description: call $+5 pushes the current EIP onto the stack, +5 to jump past call insn bytes
       - and:
         - mnemonic: add = 'add dword ptr[esp], 5' updates the return address to point after retf
         - number: 0x5 = length of add + retf insn bytes
