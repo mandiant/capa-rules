@@ -8,7 +8,7 @@ rule:
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
-      - Anti-Static Analysis::Software Packing::Standard Compression [OB0002.F0001.002]
+      - Anti-Static Analysis::Software Packing::Standard Compression [F0001.002]
     references:
       - https://github.com/nirhaas/gopacker
     examples:

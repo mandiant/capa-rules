@@ -11,3 +11,7 @@ rule:
   features:
     - and:
       - count(api(kernel32.GetTickCount)): 2 or more
+      - basic block:
+        - and:
+          - mnemonic: sub
+          - mnemonic: cmp

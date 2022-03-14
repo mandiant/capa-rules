@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
     mbc:
-      - Defense Evasion::Impair Defenses::Disable or Modify Tools [OB0006.F0004]
+      - Defense Evasion::Disable or Evade Security Tools::Modify Policy [F0004.005]
     references:
       - https://blog.xpnsec.com/protecting-your-malware/
       - https://blogs.windows.com/msedgedev/2017/02/23/mitigating-arbitrary-native-code-execution/

@@ -437,6 +437,7 @@ capa does not support instruction pattern matching,
 | `characteristic: cross section flow` | basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
 | `characteristic: tight loop`         | basic block           | A tight loop where a basic block branches to itself. |
 | `characteristic: indirect call`      | basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
+| `characteristic: call $+5`           | basic block, function | Call just past the current instruction. |
 
 ## file features
 
