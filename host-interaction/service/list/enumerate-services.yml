@@ -2,7 +2,9 @@ rule:
   meta:
     name: enumerate services
     namespace: host-interaction/service/list
-    author: moritz.raabe@mandiant.com
+    author:
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Service Discovery [T1007]
@@ -12,3 +14,4 @@ rule:
     - or:
       - api: advapi32.EnumServicesStatus
       - api: advapi32.EnumServicesStatusEx
+      - api: advapi32.EnumDependentServices
