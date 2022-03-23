@@ -2,7 +2,9 @@ rule:
   meta:
     name: hijack thread execution
     namespace: host-interaction/process/inject
-    author: 0x534a@mailbox.org
+    author:
+      - 0x534a@mailbox.org
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Thread Execution Hijacking [T1055.003]
@@ -17,8 +19,8 @@ rule:
           - match: create thread
       - match: suspend thread
       - api: kernel32.GetThreadContext
-      - match: allocate RWX memory
       - optional:
+        - match: allocate RWX memory
         - match: write process memory
       - api: kernel32.SetThreadContext
       - match: resume thread
