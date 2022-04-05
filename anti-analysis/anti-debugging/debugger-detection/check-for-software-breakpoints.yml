@@ -12,12 +12,7 @@ rule:
       - al-khaser_x86.exe_:0x431020
   features:
     - and:
-      - basic block:
-        - and:
-          - mnemonic: cmp
-          - or:
-            - number: 0xCC
-            - and:
-              - number: 0xCD
-              - number: 0x3
+      - instruction:
+        - mnemonic: cmp
+        - number: 0xCC
       - match: contain loop

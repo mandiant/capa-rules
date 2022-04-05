@@ -37,10 +37,10 @@ rule:
           - mnemonic: idiv
       - and:
         - description: optimized, writes DWORDs instead of bytes
-        - or:
-          - number: 0xFFFEFDFC
+        - instruction:
           - mnemonic: sub
-        - or:
-          - number: 0x03020100
+          - number: 0xFFFEFDFC
+        - instruction:
           - mnemonic: add
+          - number: 0x03020100
         - number: 0x4040404

@@ -14,16 +14,19 @@ rule:
     - and:
       - basic block:
         - and:
+          - instruction:
+            - mnemonic: shr
+            - operand[1].number: 0xF
+
           - number: 0x80078071
-          - number: 0xF
-          - mnemonic: shr
           - mnemonic: mul
           - mnemonic: imul
+
           - or:
-            - and:
-              - number: 0xFFFF000F = -65521
+            - instruction:
               - mnemonic: add
-            - and:
+              - number: 0xFFFF000F = -65521
+            - instruction:
               - number: 0xFFF1 = 65521
               - mnemonic: sub
         # Examples:
@@ -43,8 +46,7 @@ rule:
         # shr     edx, 0Fh          ; edx = 0x2002 >> 0xF = 4
         # imul    eax, edx, 0FFF1h  ; eax = 4 * 65521 (0xFFF1) = 262084 (3FFC4)
         # sub     ebx, eax          ; ebx = 0x3FFC9 - 0x3FFC4 = 5
-      - basic block:
-        - and:
-          - mnemonic: shl
-          - number: 0x10
+      - instruction:
+        - mnemonic: shl
+        - number: 0x10
       - count(characteristic(tight loop)): 2 or more

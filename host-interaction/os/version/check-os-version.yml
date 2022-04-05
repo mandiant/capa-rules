@@ -19,24 +19,35 @@ rule:
         - api: GetVersionEx
         - api: VerifyVersionInfo
         - api: VerSetConditionMask
-      - mnemonic: cmp
       - or:
         - and:
-          - number: 5 = Windows 2000
+          - instruction:
+            - mnemonic: cmp
+            - number: 5 = Windows 2000
           - optional:
-            - or:
-              - number: 0
-              - number: 1 = Windows XP
-              - number: 2 = Windows XP 64-bit / Windows Server 2003 / Windows Server 2003 R2
+            - instruction:
+              - mnemonic: cmp
+              - or:
+                - number: 0
+                - number: 1 = Windows XP
+                - number: 2 = Windows XP 64-bit / Windows Server 2003 / Windows Server 2003 R2
         - and:
-          - number: 6 = Windows Vista / Windows Server 2008
+          - instruction:
+            - mnemonic: cmp
+            - number: 6 = Windows Vista / Windows Server 2008
           - optional:
-            - or:
-              - number: 0
-              - number: 1 = Windows Server 2008 R2 / Windows 7
-              - number: 2 = Windows Server 2012 / Windows 8
-              - number: 3 = Windows Server 2012 R2 / Windows 8.1
+            - instruction:
+              - mnemonic: cmp
+              - or:
+                - number: 0
+                - number: 1 = Windows Server 2008 R2 / Windows 7
+                - number: 2 = Windows Server 2012 / Windows 8
+                - number: 3 = Windows Server 2012 R2 / Windows 8.1
         - and:
-          - number: 10 = Windows Server 2016 / Windows Server 2019 / Windows 10
+          - instruction:
+            - mnemonic: cmp
+            - number: 10 = Windows Server 2016 / Windows Server 2019 / Windows 10
           - optional:
-            - number: 0
+            - instruction:
+              - mnemonic: cmp
+              - number: 0

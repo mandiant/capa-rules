@@ -29,10 +29,11 @@ rule:
           #   call    cs:VirtualProtect
           #   test    eax, eax
           - and:
+            - arch: amd64
             - characteristic: gs access
-            - offset/x64: 0x60 = PEB
-            - offset/x64: 0x20 = PEB->ProcessParameters
-            - offset/x64: 0x70 = PEB->ProcessParameters->CommandLine
+            - offset: 0x60 = PEB
+            - offset: 0x20 = PEB->ProcessParameters
+            - offset: 0x70 = PEB->ProcessParameters->CommandLine
             - api: VirtualProtect
         - count(api(VirtualProtect)): 2 or more
       - and:
@@ -42,8 +43,10 @@ rule:
         - api: ReadProcessMemory
         - or:
           - and:
-            - offset/x32: 0x10 = PEB->ProcessParameters
-            - offset/x32: 0x40 = PEB->ProcessParameters->CommandLine
+            - arch: i386
+            - offset: 0x10 = PEB->ProcessParameters
+            - offset: 0x40 = PEB->ProcessParameters->CommandLine
           - and:
-            - offset/x64: 0x20 = PEB->ProcessParameters
-            - offset/x64: 0x70 = PEB->ProcessParameters->CommandLine
+            - arch: amd64
+            - offset: 0x20 = PEB->ProcessParameters
+            - offset: 0x70 = PEB->ProcessParameters->CommandLine

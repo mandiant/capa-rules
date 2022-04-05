@@ -13,9 +13,10 @@ rule:
   features:
     - or:
       - and:
-        - mnemonic: shr
+        - instruction:
+          - mnemonic: shr
+          - number: 8
         - number: 0xEDB88320
-        - number: 8
         - characteristic: nzxor
       - and:
         - number: 0x8320

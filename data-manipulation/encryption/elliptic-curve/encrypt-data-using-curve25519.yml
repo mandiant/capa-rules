@@ -16,12 +16,12 @@ rule:
     #   array[0] = 0xf8, 
     #   array[31] = array[31] & 0x3f | 0x40
     - and:
-      - and:
+      - instruction:
+        - mnemonic: and
         - number: 0xf8
+      - instruction:
         - mnemonic: and
-      - and:
         - number: 0x3f
-        - mnemonic: and
-      - and:
-        - number: 0x40
+      - instruction:
         - mnemonic: or
+        - number: 0x40

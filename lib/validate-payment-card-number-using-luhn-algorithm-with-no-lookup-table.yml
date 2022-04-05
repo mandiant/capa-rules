@@ -16,29 +16,27 @@ rule:
         - basic block:
           - and:
             - or:
-              - mnemonic: add
-              - and:
+              - instruction:
                 - mnemonic: shl
                 - number: 0x1
-              - and:
+              - instruction:
                 - mnemonic: imul
                 - number: 0x2
-            - mnemonic: cmp
-            - number: 0x9
-            - description: Digital Root check number*2 < 0x9
-        - and:
-          - basic block:
-            - and:
+            - instruction:
               - mnemonic: cmp
               - number: 0x9
-              - description: Compare number to 0x9 for Digital Root
+            - description: Digital Root check number*2 < 0x9
+        - and:
+          - instruction:
+            - mnemonic: cmp
+            - number: 0x9
+            - description: Compare number to 0x9 for Digital Root
           - basic block:
             - or:
-              - mnemonic: add
-              - and:
+              - instruction:
                 - mnemonic: imul
                 - number: 0x2
-              - and:
+              - instruction:
                 - mnemonic: shl
                 - number: 0x1
               - description: 2*Number for Digital Root

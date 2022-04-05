@@ -3,7 +3,7 @@ rule:
     name: calculate modulo 256 via x86 assembly
     author: moritz.raabe@mandiant.com
     lib: true
-    scope: basic block
+    scope: instruction
     mbc:
       - Data::Modulo [C0058]
     examples:

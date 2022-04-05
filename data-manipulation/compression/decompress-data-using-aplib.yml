@@ -20,28 +20,24 @@ rule:
     - and:
       - description: aP_depack
       - match: contain loop
-      - basic block:
+      - instruction:
         - description: line 138, if (offs >= 32000)
-        - and:
-          - mnemonic: cmp
-          - number: 32000
-      - basic block:
+        - mnemonic: cmp
+        - number: 32000
+      - instruction:
         - description: line 144, if (offs < 128)
-        - and:
-          - mnemonic: cmp
-          - or:
-            - number: 127
-            - number: 128
-      - basic block:
+        - mnemonic: cmp
+        - or:
+          - number: 127
+          - number: 128
+      - instruction:
         - description: line 133, offs <<= 8;
-        - and:
-          - mnemonic: shl
-          - number: 8
-      - basic block:
+        - mnemonic: shl
+        - number: 8
+      - instruction:
         - description: line 96, offs >>= 1;
-        - and:
-          - mnemonic: shr
-          - number: 1
+        - mnemonic: shr
+        - number: 1
       - optional:
         - count(characteristic(calls from)): 2 or more
           description: calls aP_getbit and aP_getgamma
