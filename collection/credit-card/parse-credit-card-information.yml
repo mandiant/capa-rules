@@ -10,7 +10,7 @@ rule:
       - 1d8fd13c890060464019c0f07b928b1a:0x402860
   features:
     - and:
-      - 4 or more:
+      - 3 or more:
         - instruction:
           - mnemonic: cmp
           - number: 0x5E = '^' (Track 1 separator)
