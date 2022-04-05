@@ -20,15 +20,15 @@ rule:
 
           - number: 0x80078071
           - mnemonic: mul
-          - mnemonic: imul
 
-          - or:
-            - instruction:
-              - mnemonic: add
+          - instruction:
+            - mnemonic: imul
+            - or:
               - number: 0xFFFF000F = -65521
-            - instruction:
               - number: 0xFFF1 = 65521
-              - mnemonic: sub
+          - or:
+            - mnemonic: add
+            - mnemonic: sub
         # Examples:
         # The sequence below performs mod 65521 using the example 262089 % 65521 = 5:
         # mov     eax, 80078071h  ; ecx = 262089 (0x3FFC9)
