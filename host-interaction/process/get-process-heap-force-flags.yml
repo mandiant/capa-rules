@@ -7,7 +7,7 @@ rule:
     att&ck:
       - Discovery::Process Discovery [T1057]
     references:
-      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/ProcessHeap_ForceFlags.cpp
+      - https://github.com/LordNoteworthy/al-khaser/blob/bed03d2f849d9060c68f8d5905bd204d0cb3f593/al-khaser/AntiDebug/ProcessHeap_ForceFlags.cpp#L14
     examples:
       - al-khaser_x86.exe_:0x425470
   features:
@@ -15,12 +15,14 @@ rule:
       - match: PEB access
       - or:
         - and:
-          - number/x32: 0x18 = offset process heap
+          - arch: i386
+          - number: 0x18 = PEB->ProcessHeap
           - or:
-            - number/x32: 0x44 = offset force flags >= Vista
-            - number/x32: 0x10 = offset force flags < Vista
+            - number: 0x44 = ProcessHeap->ForceFlags >= Vista
+            - number: 0x10 = ProcessHeap->ForceFlags < Vista
         - and:
-          - number/x64: 0x30 = offset process heap
+          - arch: amd64
+          - number: 0x30 = PEB->ProcessHeap
           - or:
-            - number/x64: 0x74 = offset force flags >= Vista
-            - number/x64: 0x18 = offset force flags < Vista
+            - number: 0x74 = ProcessHeap->ForceFlags >= Vista
+            - number: 0x18 = ProcessHeap->ForceFlags < Vista

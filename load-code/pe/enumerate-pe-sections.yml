@@ -25,8 +25,12 @@ rule:
             - description: (DWORD)dll_raw + dos_header->e_lfanew + sizeof(IMAGE_NT_HEADERS) + sizeof(IMAGE_SECTION_HEADER) * i
             - number: 0x28 = sizeof(IMAGE_SECTION_HEADER)
             - or:
-              - offset/x32: 0xF8 = sizeof(IMAGE_NT_HEADERS32)
-              - offset/x64: 0x108 = sizeof(IMAGE_NT_HEADERS64)
+              - and:
+                - arch: i386
+                - offset: 0xF8 = sizeof(IMAGE_NT_HEADERS32)
+              - and:
+                - arch: amd64
+                - offset: 0x108 = sizeof(IMAGE_NT_HEADERS64)
       - basic block:
         - and:
           - offset: 0xC = IMAGE_SECTION_HEADER.VirtualAddress

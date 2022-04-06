@@ -17,36 +17,36 @@ rule:
       - e69a8eb94f65480980deaf1ff5a431a6:0x405D0D
   features:
     - and:
-      - and:
+      - instruction:
+        - mnemonic: shl
         - number: 0x0F = (v << (32 - 17)) from ROTR32(x, 17) in F2(x)
-        - mnemonic: shl
-      - and:
+      - instruction:
+        - mnemonic: shr
         - number: 0x11 = (v >> 17) from ROTR32(x, 17) in F2(x)
-        - mnemonic: shr
-      - and:
+      - instruction:
+        - mnemonic: shl
         - number: 0xD = (v << (32 - 19)) from ROTR32(x, 19) in F2(x)
-        - mnemonic: shl
-      - and:
+      - instruction:
+        - mnemonic: shr
         - number: 0x13 = (v >> 19) from ROTR32(x, 19) in F2(x)
+      - instruction:
         - mnemonic: shr
-      - and:
         - number: 0xA = (v >> 10) in F2(x)
-        - mnemonic: shr
-      - and:
+      - instruction:
+        - mnemonic: shl
         - number: 0x19 = (v << (32 - 7)) from ROTR32(x, 7) in F1(x)
-        - mnemonic: shl
-      - and:
+      - instruction:
+        - mnemonic: shr
         - number: 0x7 = (v >> 7) from ROTR32(x, 7) in F1(x)
-        - mnemonic: shr
-      - and:
-        - number: 0xE = (v << (32 - 18)) from ROTR32(x, 18) in F1(x)
+      - instruction:
         - mnemonic: shl
-      - and:
+        - number: 0xE = (v << (32 - 18)) from ROTR32(x, 18) in F1(x)
+      - instruction:
+        - mnemonic: shr
         - number: 0x12 = (v >> 18) from ROTR32(x, 18) in F1(X)
+      - instruction:
         - mnemonic: shr
-      - and:
         - number: 0x3 = (x >> 3) in F1(x)
-        - mnemonic: shr
       - count(mnemonic(shl)): 4
       - count(mnemonic(shr)): 6
       - count(mnemonic(or)): 4

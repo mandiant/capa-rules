@@ -23,8 +23,12 @@ rule:
         # STARTF_USESTDHANDLES indicates the hStdInput, hStdOutput, and hStdError members contain additional information
         # STARTF_USESHOWWINDOW indicates the wShowWindow member contains additional information
       - or:
-        - number/x32: 0x44 = StartupInfo.cb (size)
-        - number/x64: 0x68 = StartupInfo.cb (size)
+        - and:
+          - arch: i386
+          - number: 0x44 = StartupInfo.cb (size)
+        - and:
+          - arch: amd64
+          - number: 0x68 = StartupInfo.cb (size)
         # STARTUPINFOEX size values not currently supported by this rule.
       - optional:
         - api: kernel32.GetStartupInfo
