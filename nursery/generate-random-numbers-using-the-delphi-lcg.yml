@@ -11,7 +11,6 @@ rule:
       - https://community.osr.com/discussion/130410/generating-random-numbers
   features:
     - and:
-      - instruction:
-        - mnemonic: imul
-        - number: 0x8088405 = multiplier a
+      - mnemonic: imul
+      - number: 0x8088405 = multiplier a
       - mnemonic: inc = increment c

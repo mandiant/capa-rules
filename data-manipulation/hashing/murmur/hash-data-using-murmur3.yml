@@ -33,22 +33,20 @@ rule:
         - and:
           - description: 'hash >> 16; hash >> 13; hash >> 16'
           - count(mnemonic(shr)): 3
-          - instruction:
-            - mnemonic: shr
-            - number: 16
-          - instruction:
-            - mnemonic: shr
-            - number: 13
+          - number: 16
+          - number: 13
           - optional:
             - count(characteristic(nzxor)): 3 or more
       - and:
         # Group this two blocks under an `and` as on their own they are not
         # unique enough and would cause false positives
-        - instruction:
-          - description: k ROL r1
-          - mnemonic: rol
-          - number: 15 = r1
-        - instruction:
-          - description: hash ROL r2
-          - mnemonic: rol
-          - number: 13 = r2
+        - basic block:
+          - and:
+            - description: k ROL r1
+            - mnemonic: rol
+            - number: 15 = r1
+        - basic block:
+          - and:
+            - description: hash ROL r2
+            - mnemonic: rol
+            - number: 13 = r2

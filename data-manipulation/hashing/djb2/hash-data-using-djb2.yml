@@ -13,11 +13,13 @@ rule:
       - 6be0ae5cb7c3155f70d608fc7670d2d9:0x41DD19
   features:
     - and:
-      - instruction:
-        - description: hash = 5381
-        - mnemonic: mov
-        - number: 5381
-      - instruction:
-        - description: hash << 5
-        - mnemonic: shl
-        - number: 5
+      - basic block:
+        - and:
+          - description: hash = 5381
+          - mnemonic: mov
+          - number: 5381
+      - basic block:
+        - and:
+          - description: hash << 5
+          - mnemonic: shl
+          - number: 5

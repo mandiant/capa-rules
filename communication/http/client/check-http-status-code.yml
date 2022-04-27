@@ -17,7 +17,7 @@ rule:
       - optional:
         - api: atoi
         - api: wininet.HttpQueryInfo
-      - instruction:
+      - basic block:
         - and:
           - or:
             - mnemonic: cmp

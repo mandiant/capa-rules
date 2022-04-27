@@ -14,9 +14,11 @@ rule:
   features:
     - and:
       - number: 0x7FFE02D4 = UserSharedData->KdDebuggerEnabled
-      - instruction:
-        - mnemonic: and
-        - number: 0x2 = KdDebuggerNotPresent
-      - instruction:
-        - mnemonic: and
-        - number: 0x1 = KdDebuggerEnabled
+      - basic block:
+        - and:
+          - mnemonic: and
+          - number: 0x2 = KdDebuggerNotPresent
+      - basic block:
+        - and:
+          - mnemonic: and
+          - number: 0x1 = KdDebuggerEnabled

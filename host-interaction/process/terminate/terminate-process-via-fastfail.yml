@@ -3,7 +3,7 @@ rule:
     name: terminate process via fastfail
     namespace: host-interaction/process/terminate
     author: "@_re_fox"
-    scope: instruction
+    scope: basic block
     mbc:
       - Process::Terminate Process [C0018]
     references:

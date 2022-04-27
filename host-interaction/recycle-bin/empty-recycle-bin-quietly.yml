@@ -13,11 +13,9 @@ rule:
   features:
     - and:
       - api: SHEmptyRecycleBin
-      - instruction:
-        - or:
-          - and:
-            - mnemonic: cmp
-            - number: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION
-          - and:
-            - mnemonic: lea
-            - offset: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION
+      - or:
+        - and:
+          - mnemonic: lea
+          - offset: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION
+          - description: accounts for argument loaded via LEA (lea r8d, [rdx+7])
+        - number: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION

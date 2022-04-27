@@ -40,15 +40,16 @@ rule:
             - number: 0xfffffffd
             - number: 0xfffffffe
             - number: 0xffffffff
-      - or:
-        - instruction:
-          - description: Conversion of chr to int (SUB 0x30)
-          - number: 0x30
-          - mnemonic: sub
-        - instruction:
-          - description: Conversion of chr to int (LEA REG,[REG+ -0x30])
-          - mnemonic: lea
-          - offset: -0x30
+      - basic block:
+        - or:
+          - and:
+            - description: Conversion of chr to int (SUB 0x30)
+            - number: 0x30
+            - mnemonic: sub
+          - and:
+            - description: Conversion of chr to int (LEA REG,[REG+ -0x30])
+            - mnemonic: lea
+            - offset: -0x30
       - basic block:
         - or:
           - and:

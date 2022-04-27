@@ -20,11 +20,8 @@ rule:
             # lea     r9d, [rcx+40h]  ; flProtect
             # call    cs:VirtualAlloc
             - match: allocate memory
-            - or:
-              - number: 0x40
-              - instruction:
-                - mnemonic: lea
-                - offset: 0x40
+            - mnemonic: lea
+            - offset: 0x40
       - api: CopyFile2
       - api: DeleteFileW
       - number: 0x00000001 = COPY_FILE_FAIL_IF_EXISTS
