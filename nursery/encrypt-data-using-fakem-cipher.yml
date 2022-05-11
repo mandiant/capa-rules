@@ -11,7 +11,8 @@ rule:
     mbc:
       - Cryptography::Decrypt Data [C0031]
       - Cryptography::Encrypt Data [C0027]
-    references: https://attack.mitre.org/software/S0076/
+    references:
+      - https://attack.mitre.org/software/S0076/
   features:
     - and:
       - characteristic: tight loop

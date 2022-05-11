@@ -7,7 +7,8 @@ rule:
     scope: basic block
     att&ck:
       - Defense Evasion::Access Token Manipulation::Parent PID Spoofing [T1134.004]
-    references: https://blog.f-secure.com/detecting-parent-pid-spoofing/
+    references:
+      - https://blog.f-secure.com/detecting-parent-pid-spoofing/
     examples:
       - 2ebadd04f0ada89c36c1409b6e96423a68dd77b513db8db3da203c36d3753e5f:0x140002291
   features:
