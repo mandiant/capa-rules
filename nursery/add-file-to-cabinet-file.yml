@@ -4,7 +4,8 @@ rule:
     namespace: host-interaction/file-system
     author: michael.hunhoff@mandiant.com
     scope: function
-    references: https://docs.microsoft.com/en-us/windows/win32/msi/cabinet-files
+    references:
+      - https://docs.microsoft.com/en-us/windows/win32/msi/cabinet-files
   features:
     - or:
       - api: cabinet.FCIAddFile

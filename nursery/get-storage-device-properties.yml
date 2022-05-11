@@ -5,7 +5,8 @@ rule:
     namespace: host-interaction/hardware/storage
     author: michael.hunhoff@mandiant.com
     scope: function
-    references: https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-ioctl_storage_query_property
+    references:
+      - https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-ioctl_storage_query_property
   features:
     - and:
       - match: interact with driver via control codes

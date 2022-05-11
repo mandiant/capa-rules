@@ -138,7 +138,7 @@ The linter verifies that each rule correctly fires on each sample referenced in 
 These example files are stored in the [github.com/mandiant/capa-testfiles](https://github.com/mandiant/capa-testfiles) repository.
 `function` and `basic block` scope rules must contain offsets to the respective match locations using the format `<sample name>:<function or basic block offset>`.
 
-  - `references` lists related information found in a book, article, blog post, etc.
+  - `references` A list of related information found in a book, article, blog post, etc.
 
 Other fields are not allowed, and the linter will complain about them.
 
