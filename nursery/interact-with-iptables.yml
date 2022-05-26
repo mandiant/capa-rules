@@ -2,7 +2,8 @@ rule:
   meta:
     name: interact with iptables
     namespace: host-interaction/firewall
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     scope: basic block
     att&ck:
       - Discovery::Software Discovery::Security Software Discovery [T1518.001]

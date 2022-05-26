@@ -2,7 +2,8 @@ rule:
   meta:
     name: reference Quad9 DNS server
     namespace: communication/dns
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     references:
       - https://www.techradar.com/news/best-dns-server

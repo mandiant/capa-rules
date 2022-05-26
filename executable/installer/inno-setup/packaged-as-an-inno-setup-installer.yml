@@ -2,7 +2,8 @@ rule:
   meta:
     name: packaged as an Inno Setup installer
     namespace: executable/installer/inno-setup
-    author: awillia2@cisco.com
+    authors:
+      - awillia2@cisco.com
     scope: file
     references:
       - https://jrsoftware.org/isinfo.php

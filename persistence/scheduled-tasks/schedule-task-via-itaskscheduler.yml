@@ -2,7 +2,8 @@ rule:
   meta:
     name: schedule task via ITaskScheduler
     namespace: persistence/scheduled-tasks
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]

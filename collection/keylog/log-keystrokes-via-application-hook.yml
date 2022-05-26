@@ -2,7 +2,8 @@ rule:
   meta:
     name: log keystrokes via application hook
     namespace: collection/keylog
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Collection::Input Capture::Keylogging [T1056.001]

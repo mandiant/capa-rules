@@ -2,7 +2,8 @@ rule:
   meta:
     name: query service status
     namespace: host-interaction/service
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Service Discovery [T1007]

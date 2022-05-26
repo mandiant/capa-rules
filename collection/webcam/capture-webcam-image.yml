@@ -2,7 +2,8 @@ rule:
   meta:
     name: capture webcam image
     namespace: collection/webcam
-    author: johnk3r
+    authors:
+      - johnk3r
     scope: function
     att&ck:
       - Collection::Video Capture [T1125]

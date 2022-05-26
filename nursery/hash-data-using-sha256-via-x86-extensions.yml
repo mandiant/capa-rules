@@ -2,7 +2,8 @@ rule:
   meta:
     name: hash data using sha256 via x86 extensions
     namespace: data-manipulation/hashing/sha256
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: basic block
   features:
     - or:

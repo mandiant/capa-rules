@@ -2,7 +2,8 @@ rule:
   meta:
     name: inject dll
     namespace: host-interaction/process/inject
-    author: 0x534a@mailbox.org
+    authors:
+      - 0x534a@mailbox.org
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Dynamic-link Library Injection [T1055.001]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: check if process is running under wine
     namespace: anti-analysis/anti-emulation/wine
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]

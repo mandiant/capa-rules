@@ -2,7 +2,8 @@ rule:
   meta:
     name: validate payment card number using luhn algorithm
     namespace: data-manipulation/checksum/luhn
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     mbc:
       - Data::Checksum::Luhn [C0032.002]

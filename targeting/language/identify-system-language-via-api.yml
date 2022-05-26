@@ -2,7 +2,8 @@ rule:
   meta:
     name: identify system language via API
     namespace: targeting/language
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Location Discovery::System Language Discovery [T1614.001]

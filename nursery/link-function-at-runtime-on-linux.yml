@@ -2,7 +2,7 @@ rule:
   meta:
     name: link function at runtime on Linux
     namespace: linking/runtime-linking
-    author:
+    authors:
       - joakim@intezer.com
     scope: function
     att&ck:

@@ -2,7 +2,8 @@ rule:
   meta:
     name: move file
     namespace: host-interaction/file-system/move
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - File System::Move File [C0063]

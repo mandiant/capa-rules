@@ -2,7 +2,8 @@ rule:
   meta:
     name: copy network traffic
     namespace: host-interaction/network/traffic/copy
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::Network Sniffing [T1040]

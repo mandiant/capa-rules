@@ -2,7 +2,8 @@ rule:
   meta:
     name: get logon sessions
     namespace: host-interaction/session
-    author: awillia2@cisco.com
+    authors:
+      - awillia2@cisco.com
     description: Looks for imported Windows APIs being called to enumerate user sessions.
     scope: function
     att&ck:

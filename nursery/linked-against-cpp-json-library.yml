@@ -2,7 +2,8 @@ rule:
   meta:
     name: linked against CPP JSON library
     namespace: linking/static/jsoncpp
-    author: "@mr-tz"
+    authors:
+      - "@mr-tz"
     scope: file
     references:
       - https://github.com/open-source-parsers/jsoncpp

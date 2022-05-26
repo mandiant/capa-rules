@@ -2,7 +2,8 @@ rule:
   meta:
     name: register minifilter driver
     namespace: host-interaction/filter
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     mbc:
       - Hardware::Install Driver::Minifilter [C0037.001]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: enumerate domain computers via LDAP
     namespace: host-interaction/network/domain
-    author: awillia2@cisco.com
+    authors:
+      - awillia2@cisco.com
     description: Looks for an LDAP query and related Windows API calls used to enumerate other computers on the Windows domain that a computer is connected to.
     scope: function
     att&ck:

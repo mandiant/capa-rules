@@ -2,7 +2,8 @@ rule:
   meta:
     name: check HTTP status code
     namespace: communication/http/client
-    author: "@mr-tz"
+    authors:
+      - "@mr-tz"
     scope: function
     mbc:
       - Communication::HTTP Communication::Read Header [C0002.014]

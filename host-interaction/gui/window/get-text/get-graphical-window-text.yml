@@ -2,7 +2,8 @@ rule:
   meta:
     name: get graphical window text
     namespace: host-interaction/gui/window/get-text
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Discovery::Application Window Discovery::Window Text [E1010.m01]

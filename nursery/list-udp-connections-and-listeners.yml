@@ -3,7 +3,8 @@ rule:
   meta:
     name: list UDP connections and listeners
     namespace: collection/network
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
   features:
     - or:

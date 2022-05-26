@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via GinaDLL registry key
     namespace: persistence/registry/ginadll
-    author: michael.hunhoff@fireye.com
+    authors:
+      - michael.hunhoff@fireye.com
     scope: function
     att&ck:
       - Persistence::Event Triggered Execution [T1546]

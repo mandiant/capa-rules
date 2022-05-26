@@ -2,7 +2,8 @@ rule:
   meta:
     name: resume thread
     namespace: host-interaction/thread/resume
-    author: 0x534a@mailbox.org
+    authors:
+      - 0x534a@mailbox.org
     scope: basic block
     mbc:
       - Process::Resume Thread [C0054]

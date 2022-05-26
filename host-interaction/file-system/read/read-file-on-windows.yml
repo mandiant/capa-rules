@@ -2,7 +2,7 @@ rule:
   meta:
     name: read file on Windows
     namespace: host-interaction/file-system/read
-    author:
+    authors:
       - moritz.raabe@mandiant.com
     scope: function
     mbc:

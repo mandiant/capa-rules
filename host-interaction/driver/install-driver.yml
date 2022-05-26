@@ -2,7 +2,8 @@ rule:
   meta:
     name: install driver
     namespace: host-interaction/driver
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: basic block
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]

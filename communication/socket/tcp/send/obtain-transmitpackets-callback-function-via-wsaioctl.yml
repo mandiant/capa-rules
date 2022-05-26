@@ -2,7 +2,8 @@ rule:
   meta:
     name: obtain TransmitPackets callback function via WSAIoctl
     namespace: communication/socket/tcp/send
-    author: jonathan.lepore@mandiant.com
+    authors:
+      - jonathan.lepore@mandiant.com
     description: The TransmitPackets function transmits in-memory data or file data over a connected socket. The TransmitPackets function uses the operating system cache manager to retrieve file data, locking memory for the minimum time required to transmit and resulting in efficient, high-performance transmission.
     scope: function
     mbc:

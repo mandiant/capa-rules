@@ -3,7 +3,8 @@ rule:
   meta:
     name: execute shell command via Windows Remote Management
     namespace: host-interaction/process/create
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
   features:
     - and:

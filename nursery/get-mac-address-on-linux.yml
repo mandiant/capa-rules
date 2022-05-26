@@ -2,7 +2,7 @@ rule:
   meta:
     name: get MAC address on Linux
     namespace: collection/network
-    author:
+    authors:
       - joakim@intezer.com
     scope: function
     att&ck:

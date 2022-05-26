@@ -2,7 +2,8 @@ rule:
   meta:
     name: enumerate processes via NtQuerySystemInformation
     namespace: host-interaction/process/list
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: basic block
     att&ck:
       - Discovery::Process Discovery [T1057]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: get socket status
     namespace: communication/socket
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]

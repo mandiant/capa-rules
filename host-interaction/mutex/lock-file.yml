@@ -2,7 +2,8 @@ rule:
   meta:
     name: lock file
     namespace: host-interaction/mutex
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     scope: basic block
     mbc:
       - Process::Create Mutex [C0042]

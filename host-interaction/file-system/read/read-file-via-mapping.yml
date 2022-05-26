@@ -2,7 +2,8 @@ rule:
   meta:
     name: read file via mapping
     namespace: host-interaction/file-system/read
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - File System::Read File [C0051]

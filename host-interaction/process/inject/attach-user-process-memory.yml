@@ -2,7 +2,8 @@ rule:
   meta:
     name: attach user process memory
     namespace: host-interaction/process/inject
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Process Injection [T1055]

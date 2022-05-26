@@ -2,7 +2,7 @@ rule:
   meta:
     name: resolve DNS
     namespace: host-interaction/network/dns/resolve
-    author:
+    authors:
       - william.ballenthin@mandiant.com
       - johnk3r
       - joakim@intezer.com

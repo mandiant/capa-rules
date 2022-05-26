@@ -2,7 +2,8 @@ rule:
   meta:
     name: encrypt data using Sosemanuk
     namespace: data-manipulation/encryption/sosemanuk
-    author: awillia2@cisco.com
+    authors:
+      - awillia2@cisco.com
     description: Looks for cryptographic constants associated with the Sosemanuk stream cipher
     scope: basic block
     att&ck:

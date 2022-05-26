@@ -2,7 +2,8 @@ rule:
   meta:
     name: delete registry key via offline registry library
     namespace: host-interaction/registry
-    author: johnk3r
+    authors:
+      - johnk3r
     scope: function
     att&ck:
       - Defense Evasion::Modify Registry [T1112]

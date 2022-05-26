@@ -2,7 +2,8 @@ rule:
   meta:
     name: hash data via BCrypt
     namespace: data-manipulation/hashing
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

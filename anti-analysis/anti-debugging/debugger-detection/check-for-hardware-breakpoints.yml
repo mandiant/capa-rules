@@ -2,7 +2,8 @@ rule:
   meta:
     name: check for hardware breakpoints
     namespace: anti-analysis/anti-debugging/debugger-detection
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Hardware Breakpoints [B0001.005]

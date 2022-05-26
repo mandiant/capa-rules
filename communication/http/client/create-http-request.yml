@@ -2,7 +2,8 @@ rule:
   meta:
     name: create HTTP request
     namespace: communication/http/client
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Create Request [C0002.012]

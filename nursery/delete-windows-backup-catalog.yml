@@ -2,7 +2,8 @@ rule:
   meta:
     name: delete Windows backup catalog
     namespace: impact/inhibit-system-recovery
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Impact::Inhibit System Recovery [T1490]

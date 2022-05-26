@@ -2,7 +2,8 @@ rule:
   meta:
     name: contain anti-disasm techniques
     namespace: anti-analysis/anti-disasm
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: file
     mbc:
       - Anti-Static Analysis::Disassembler Evasion [B0012]

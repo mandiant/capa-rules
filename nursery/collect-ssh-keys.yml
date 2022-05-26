@@ -2,7 +2,8 @@ rule:
   meta:
     name: collect ssh keys
     namespace: collection
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Credential Access::Unsecured Credentials::Private Keys [T1552.004]

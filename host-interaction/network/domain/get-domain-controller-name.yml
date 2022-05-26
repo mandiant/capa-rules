@@ -2,7 +2,8 @@ rule:
   meta:
     name: get domain controller name
     namespace: host-interaction/network/domain
-    author: awillia2@cisco.com
+    authors:
+      - awillia2@cisco.com
     description: Looks for calls to Windows APIs that can be used to determine the name of the domain controller for a Windows domain that a computer is connected to.
     scope: function
     att&ck:

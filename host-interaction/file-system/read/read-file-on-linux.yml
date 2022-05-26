@@ -2,7 +2,7 @@ rule:
   meta:
     name: read file on Linux
     namespace: host-interaction/file-system/read
-    author:
+    authors:
       - joakim@intezer.com
     scope: function
     mbc:

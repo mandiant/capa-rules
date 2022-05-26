@@ -2,7 +2,8 @@ rule:
   meta:
     name: create directory
     namespace: host-interaction/file-system/create
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - File System::Create Directory [C0046]

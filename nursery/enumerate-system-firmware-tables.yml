@@ -2,7 +2,8 @@ rule:
   meta:
     name: enumerate system firmware tables
     namespace: host-interaction/hardware/firmware
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/Shared/Utils.cpp#L843

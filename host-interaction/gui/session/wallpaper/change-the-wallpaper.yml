@@ -2,7 +2,8 @@ rule:
   meta:
     name: change the wallpaper
     namespace: host-interaction/gui/session
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: basic block
     mbc:
       - Operating System::Wallpaper [C0035]

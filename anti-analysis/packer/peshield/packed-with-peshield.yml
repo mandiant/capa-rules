@@ -2,7 +2,8 @@ rule:
   meta:
     name: packed with peshield
     namespace: anti-analysis/packer/peshield
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]

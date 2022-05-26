@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via .desktop autostart
     namespace: persistence
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::XDG Autostart Entries [T1547.013]

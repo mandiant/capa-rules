@@ -2,7 +2,8 @@ rule:
   meta:
     name: obfuscated with callobfuscator
     namespace: anti-analysis/obfuscation
-    author: johnk3r
+    authors:
+      - johnk3r
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

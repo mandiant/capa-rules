@@ -2,7 +2,8 @@ rule:
   meta:
     name: hash data using djb2
     namespace: data-manipulation/hashing/djb2
-    author: awillia2@cisco.com
+    authors:
+      - awillia2@cisco.com
     scope: function
     mbc:
       - Data::Non-Cryptographic Hash [C0030]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: hijack thread execution
     namespace: host-interaction/process/inject
-    author:
+    authors:
       - 0x534a@mailbox.org
       - michael.hunhoff@mandiant.com
     scope: function

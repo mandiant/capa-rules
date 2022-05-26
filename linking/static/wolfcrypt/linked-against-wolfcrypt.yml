@@ -2,7 +2,8 @@ rule:
   meta:
     name: linked against wolfCrypt
     namespace: linking/static/wolfcrypt
-    author: jakub.jozwiak@mandiant.com
+    authors:
+      - jakub.jozwiak@mandiant.com
     scope: file
     mbc:
       - Cryptography::Crypto Library [C0059]

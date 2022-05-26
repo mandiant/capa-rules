@@ -2,7 +2,7 @@ rule:
   meta:
     name: connect pipe
     namespace: communication/named-pipe/connect
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
     scope: function

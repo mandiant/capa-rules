@@ -2,7 +2,8 @@ rule:
   meta:
     name: reference DNS over HTTPS endpoints
     namespace: communication/dns
-    author: markus.neis@swisscom.com / @markus_neis
+    authors:
+      - markus.neis@swisscom.com / @markus_neis
     scope: file
     mbc:
       - Communication::DNS Communication::Server Connect [C0011.002]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: enumerate threads
     namespace: host-interaction/thread/list
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::Process Discovery [T1057]

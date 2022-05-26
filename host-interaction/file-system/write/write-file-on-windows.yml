@@ -2,7 +2,7 @@ rule:
   meta:
     name: write file on Windows
     namespace: host-interaction/file-system/write
-    author:
+    authors:
       - william.ballenthin@mandiant.com
     scope: function
     mbc:

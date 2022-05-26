@@ -2,7 +2,8 @@ rule:
   meta:
     name: execute shellcode via EnumUILanguages
     namespace: load-code/shellcode
-    author: jakub.jozwiak@mandiant.com
+    authors:
+      - jakub.jozwiak@mandiant.com
     scope: function
     mbc:
       - Defense Evasion::Hijack Execution Flow::Abuse Windows Function Calls [F0015.006]

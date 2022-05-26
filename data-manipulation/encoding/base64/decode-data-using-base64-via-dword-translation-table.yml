@@ -2,7 +2,8 @@ rule:
   meta:
     name: decode data using Base64 via dword translation table
     namespace: data-manipulation/encoding/base64
-    author: gilbert.elliot@mandiant.com
+    authors:
+      - gilbert.elliot@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

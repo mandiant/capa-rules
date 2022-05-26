@@ -2,7 +2,8 @@ rule:
   meta:
     name: initialize Winsock library
     namespace: communication/socket
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::Socket Communication::Initialize Winsock Library [C0001.009]

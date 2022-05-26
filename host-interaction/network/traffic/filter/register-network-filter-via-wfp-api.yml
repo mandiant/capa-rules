@@ -2,7 +2,8 @@ rule:
   meta:
     name: register network filter via WFP API
     namespace: host-interaction/network/traffic/filter
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Impact::Data Manipulation::Transmitted Data Manipulation [T1565.002]

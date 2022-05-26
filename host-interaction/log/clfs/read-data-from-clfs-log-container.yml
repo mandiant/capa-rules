@@ -3,7 +3,8 @@ rule:
   meta:
     name: read data from CLFS log container
     namespace: host-interaction/log/clfs/read
-    author: blaine.stancill@mandiant.com
+    authors:
+      - blaine.stancill@mandiant.com
     scope: function
     mbc:
       - Discovery::File and Directory Discovery::Log File [E1083.m01]

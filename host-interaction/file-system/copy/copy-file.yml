@@ -2,7 +2,8 @@ rule:
   meta:
     name: copy file
     namespace: host-interaction/file-system/copy
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - File System::Copy File [C0045]

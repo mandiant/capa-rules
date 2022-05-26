@@ -2,7 +2,8 @@ rule:
   meta:
     name: compiled to the .NET platform
     namespace: runtime/dotnet
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: file
     examples:
       - b9f5bd514485fb06da39beff051b9fdc

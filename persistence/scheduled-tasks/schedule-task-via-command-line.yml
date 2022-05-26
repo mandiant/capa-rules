@@ -2,7 +2,8 @@ rule:
   meta:
     name: schedule task via command line
     namespace: persistence/scheduled-tasks
-    author: 0x534a@mailbox.org
+    authors:
+      - 0x534a@mailbox.org
     scope: function
     att&ck:
       - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]

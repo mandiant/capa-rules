@@ -2,7 +2,7 @@ rule:
   meta:
     name: create TCP socket
     namespace: communication/socket/tcp
-    author:
+    authors:
       - william.ballenthin@mandiant.com
       - joakim@intezer.com
     scope: basic block

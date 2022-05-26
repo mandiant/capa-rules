@@ -2,7 +2,8 @@ rule:
   meta:
     name: create container
     namespace: host-interaction/container/docker
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Execution::Deploy Container [T1610]

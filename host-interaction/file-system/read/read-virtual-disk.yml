@@ -2,7 +2,8 @@ rule:
   meta:
     name: read virtual disk
     namespace: host-interaction/file-system/read
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     mbc:
       - File System::Read Virtual Disk [C0056]

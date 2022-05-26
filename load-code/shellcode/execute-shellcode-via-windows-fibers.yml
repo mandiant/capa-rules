@@ -2,7 +2,8 @@ rule:
   meta:
     name: execute shellcode via Windows fibers
     namespace: load-code/shellcode
-    author: jakub.jozwiak@mandiant.com
+    authors:
+      - jakub.jozwiak@mandiant.com
     scope: function
     mbc:
       - Defense Evasion::Process Injection::Injection via Windows Fibers [E1055.m05]

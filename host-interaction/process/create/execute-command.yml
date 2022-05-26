@@ -2,7 +2,8 @@ rule:
   meta:
     name: execute command
     namespace: host-interaction/process/create
-    author: "@mr-tz"
+    authors:
+      - "@mr-tz"
     scope: function
     mbc:
       - Process::Create Process [C0017]

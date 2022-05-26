@@ -1,7 +1,8 @@
 rule:
   meta:
     name: PEB access
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     lib: true
     scope: basic block
     mbc:

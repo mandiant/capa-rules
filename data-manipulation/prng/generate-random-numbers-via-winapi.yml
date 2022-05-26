@@ -2,7 +2,7 @@ rule:
   meta:
     name: generate random numbers via WinAPI
     namespace: data-manipulation/prng
-    author:
+    authors:
       - michael.hunhoff@mandiant.com
       - johnk3r
     scope: function

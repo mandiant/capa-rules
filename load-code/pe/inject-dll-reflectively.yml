@@ -2,7 +2,8 @@ rule:
   meta:
     name: inject DLL reflectively
     namespace: load-code/pe
-    author: "@Ana06"
+    authors:
+      - "@Ana06"
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Dynamic-link Library Injection [T1055.001]

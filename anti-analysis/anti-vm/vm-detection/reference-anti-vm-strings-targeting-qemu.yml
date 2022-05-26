@@ -2,7 +2,8 @@ rule:
   meta:
     name: reference anti-VM strings targeting Qemu
     namespace: anti-analysis/anti-vm/vm-detection
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: file
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]

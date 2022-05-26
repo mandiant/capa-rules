@@ -2,7 +2,8 @@ rule:
   meta:
     name: encrypt data using AES via .NET
     namespace: data-manipulation/encryption/aes
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: compiled with dmd
     namespace: compiler/d
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: file
     references:
       - https://github.com/dlang/dmd

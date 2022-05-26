@@ -2,7 +2,8 @@ rule:
   meta:
     name: extract resource via kernel32 functions
     namespace: executable/resource
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     examples:
       - BF88E1BD4A3BDE10B419A622278F1FF7:0x401000
