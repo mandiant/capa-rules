@@ -2,7 +2,7 @@ rule:
   meta:
     name: check OS version
     namespace: host-interaction/os/version
-    author:
+    authors:
       - michael.hunhoff@mandiant.com
       - johnk3r
     scope: function

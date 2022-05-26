@@ -2,7 +2,7 @@ rule:
   meta:
     name: set file attributes
     namespace: host-interaction/file-system/meta
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
     scope: basic block

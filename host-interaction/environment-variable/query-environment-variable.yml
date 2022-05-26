@@ -2,7 +2,7 @@ rule:
   meta:
     name: query environment variable
     namespace: host-interaction/environment-variable
-    author:
+    authors:
       - michael.hunhoff@mandiant.com
       - "@_re_fox"
     scope: function

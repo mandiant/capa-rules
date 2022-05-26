@@ -2,7 +2,7 @@ rule:
   meta:
     name: check mutex and exit
     namespace: host-interaction/mutex
-    author:
+    authors:
       - "@_re_fox"
       - moritz.raabe@mandiant.com
     scope: function

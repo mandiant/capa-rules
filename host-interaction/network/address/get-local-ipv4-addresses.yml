@@ -2,7 +2,7 @@ rule:
   meta:
     name: get local IPv4 addresses
     namespace: host-interaction/network/address
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: function

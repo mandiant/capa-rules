@@ -2,7 +2,7 @@ rule:
   meta:
     name: write file on Linux
     namespace: host-interaction/file-system/write
-    author:
+    authors:
       - joakim@intezer.com
     scope: function
     mbc:

@@ -2,7 +2,7 @@ rule:
   meta:
     name: linked against Go WMI library
     namespace: collection/database/wmi
-    author:
+    authors:
       - joakim@intezer.com
     description: StackExchange's WMI library is used to interact with WMI.
     scope: file

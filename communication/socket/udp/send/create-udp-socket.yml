@@ -2,7 +2,7 @@ rule:
   meta:
     name: create UDP socket
     namespace: communication/socket/udp/send
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: basic block

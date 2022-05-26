@@ -2,7 +2,7 @@ rule:
   meta:
     name: write pipe
     namespace: communication/named-pipe/write
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
     scope: function

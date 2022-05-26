@@ -2,7 +2,7 @@ rule:
   meta:
     name: create thread
     namespace: host-interaction/thread/create
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
       - joakim@intezer.com

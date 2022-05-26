@@ -2,7 +2,7 @@ rule:
   meta:
     name: delete registry key
     namespace: host-interaction/registry/delete
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
       - johnk3r

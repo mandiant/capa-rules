@@ -2,7 +2,7 @@ rule:
   meta:
     name: get system information on Linux
     namespace: host-interaction/os/info
-    author:
+    authors:
       - joakim@intezer.com
     scope: function
     att&ck:

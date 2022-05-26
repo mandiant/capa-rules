@@ -2,7 +2,7 @@ rule:
   meta:
     name: query or enumerate registry value
     namespace: host-interaction/registry
-    author:
+    authors:
       - william.ballenthin@mandiant.com
       - michael.hunhoff@mandiant.com
     scope: function
