@@ -2,7 +2,8 @@ rule:
   meta:
     name: access firewall settings via INetFwMgr
     namespace: host-interaction/firewall/modify
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::Software Discovery::Security Software Discovery [T1518.001]

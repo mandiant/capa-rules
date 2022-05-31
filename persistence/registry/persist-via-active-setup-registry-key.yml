@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via Active Setup registry key
     namespace: persistence/registry
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Active Setup [T1547.014]

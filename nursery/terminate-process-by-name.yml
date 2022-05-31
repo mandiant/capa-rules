@@ -2,7 +2,8 @@ rule:
   meta:
     name: terminate process by name
     namespace: host-interaction/process/terminate
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     examples:
       # - unpacked Cl0p ransomware

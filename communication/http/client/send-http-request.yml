@@ -2,7 +2,8 @@ rule:
   meta:
     name: send HTTP request
     namespace: communication/http/client
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Send Request [C0002.003]

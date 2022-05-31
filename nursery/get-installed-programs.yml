@@ -2,7 +2,8 @@ rule:
   meta:
     name: get installed programs
     namespace: host-interaction/software
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::Software Discovery [T1518]

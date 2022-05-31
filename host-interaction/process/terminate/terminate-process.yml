@@ -2,7 +2,8 @@ rule:
   meta:
     name: terminate process
     namespace: host-interaction/process/terminate
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Process::Terminate Process [C0018]

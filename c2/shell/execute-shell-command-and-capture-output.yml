@@ -2,7 +2,8 @@ rule:
   meta:
     name: execute shell command and capture output
     namespace: c2/shell
-    author: matthew.williams@mandiant.com
+    authors:
+      - matthew.williams@mandiant.com
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter::Windows Command Shell [T1059.003]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: packaged as an InstallShield installer
     namespace: executable/installer/installshield
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: file
   features:
     - or:

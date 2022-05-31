@@ -2,7 +2,8 @@ rule:
   meta:
     name: reference Base64 string
     namespace: data-manipulation/encoding/base64
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

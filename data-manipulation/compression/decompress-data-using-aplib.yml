@@ -2,7 +2,7 @@ rule:
   meta:
     name: decompress data using aPLib
     namespace: data-manipulation/compression
-    author:
+    authors:
       - "@r3c0nst (Frank Boldewin)"
       - moritz.raabe@mandiant.com
       - cdong49@gatech.edu

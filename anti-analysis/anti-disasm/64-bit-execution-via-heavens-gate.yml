@@ -2,7 +2,8 @@ rule:
   meta:
     name: 64-bit execution via heavens gate
     namespace: anti-analysis/anti-disasm
-    author: awillia2@cisco.com
+    authors:
+      - awillia2@cisco.com
     description: Looks for instructions related to executing 64-bit code from a 32-bit process (Heaven's Gate)
     scope: function
     mbc:

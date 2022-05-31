@@ -2,7 +2,8 @@ rule:
   meta:
     name: disable driver code integrity
     namespace: host-interaction/driver
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]

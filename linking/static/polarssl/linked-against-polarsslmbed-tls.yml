@@ -2,7 +2,8 @@ rule:
   meta:
     name: linked against PolarSSL/mbed TLS
     namespace: linking/static/polarssl
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: file
     mbc:
       - Cryptography::Crypto Library [C0059]

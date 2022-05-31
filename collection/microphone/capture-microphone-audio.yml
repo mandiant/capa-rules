@@ -2,7 +2,8 @@ rule:
   meta:
     name: capture microphone audio
     namespace: collection/microphone
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     att&ck:
       - Collection::Audio Capture [T1123]

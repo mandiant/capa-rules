@@ -2,7 +2,8 @@ rule:
   meta:
     name: get file size
     namespace: host-interaction/file-system/meta
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: get system information on Windows
     namespace: host-interaction/os/info
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: function

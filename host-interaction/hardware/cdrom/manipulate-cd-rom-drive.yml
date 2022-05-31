@@ -2,7 +2,8 @@ rule:
   meta:
     name: manipulate CD-ROM drive
     namespace: host-interaction/hardware/cdrom
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Impact::Modify Hardware::CDROM [B0042.001]

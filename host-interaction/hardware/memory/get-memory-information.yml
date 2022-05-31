@@ -2,7 +2,8 @@ rule:
   meta:
     name: get memory information
     namespace: host-interaction/hardware/memory
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]

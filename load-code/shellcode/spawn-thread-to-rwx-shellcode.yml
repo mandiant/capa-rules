@@ -2,7 +2,8 @@ rule:
   meta:
     name: spawn thread to RWX shellcode
     namespace: load-code/shellcode
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Memory::Allocate Memory [C0007]

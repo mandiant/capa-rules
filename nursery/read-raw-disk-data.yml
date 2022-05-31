@@ -2,7 +2,8 @@ rule:
   meta:
     name: read raw disk data
     namespace: host-interaction/file-system
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: file
   features:
     - or:

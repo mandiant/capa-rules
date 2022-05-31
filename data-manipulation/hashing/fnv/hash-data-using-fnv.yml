@@ -2,7 +2,7 @@ rule:
   meta:
     name: hash data using fnv
     namespace: data-manipulation/hashing/fnv
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - "@_re_fox"
       - michael.hunhoff@mandiant.com

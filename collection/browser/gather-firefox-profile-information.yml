@@ -2,7 +2,8 @@ rule:
   meta:
     name: gather firefox profile information
     namespace: collection/browser
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     att&ck:
       - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]

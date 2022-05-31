@@ -2,7 +2,7 @@ rule:
   meta:
     name: link function at runtime on Windows
     namespace: linking/runtime-linking
-    author:
+    authors:
       - moritz.raabe@mandiant.com
     scope: function
     att&ck:

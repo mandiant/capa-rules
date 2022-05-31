@@ -2,7 +2,7 @@ rule:
   meta:
     name: run as service
     namespace: host-interaction/service
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
     scope: file

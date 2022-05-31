@@ -2,7 +2,8 @@ rule:
   meta:
     name: delete directory
     namespace: host-interaction/file-system/delete
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - File System::Delete Directory [C0048]

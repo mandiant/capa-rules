@@ -3,7 +3,8 @@ rule:
   meta:
     name: create process memory minidump
     namespace: host-interaction/process/dump
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     mbc:
       - File System::Writes File [C0052]

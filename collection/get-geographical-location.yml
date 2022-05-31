@@ -3,7 +3,8 @@ rule:
   meta:
     name: get geographical location
     namespace: collection
-    author: moritz.raabe
+    authors:
+      - moritz.raabe
     scope: function
     att&ck:
       - Discovery::System Location Discovery [T1614]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: hash data using SHA1
     namespace: data-manipulation/hashing/sha1
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Cryptography::Cryptographic Hash::SHA1 [C0029.002]

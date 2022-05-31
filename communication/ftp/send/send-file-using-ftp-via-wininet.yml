@@ -2,7 +2,8 @@ rule:
   meta:
     name: send file using FTP via wininet
     namespace: communication/ftp/send
-    author: michael.hunhof@mandiant.com
+    authors:
+      - michael.hunhof@mandiant.com
     scope: function
     mbc:
       - Communication::FTP Communication::Send File [C0004.001]

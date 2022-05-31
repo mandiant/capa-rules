@@ -2,7 +2,8 @@ rule:
   meta:
     name: compiled with perl2exe
     namespace: compiler/perl2exe
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     examples:
       - 873275ce8bf88ef66e9fa0c74b5c2a1e:0x4011C9

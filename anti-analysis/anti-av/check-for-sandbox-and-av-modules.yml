@@ -2,7 +2,8 @@ rule:
   meta:
     name: check for sandbox and av modules
     namespace: anti-analysis/anti-av
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: basic block
     mbc:
       - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]

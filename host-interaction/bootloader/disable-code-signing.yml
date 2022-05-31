@@ -2,7 +2,8 @@ rule:
   meta:
     name: disable code signing
     namespace: host-interaction/bootloader
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Subvert Trust Controls::Code Signing Policy Modification [T1553.006]

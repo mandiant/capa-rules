@@ -2,7 +2,8 @@ rule:
   meta:
     name: lock the desktop
     namespace: host-interaction/gui/session/lock
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Impact::Endpoint Denial of Service [T1499]

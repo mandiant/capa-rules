@@ -2,7 +2,8 @@ rule:
   meta:
     name: bypass Windows File Protection
     namespace: host-interaction/file-system/windows-file-protection
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Defense Evasion::Disable or Evade Security Tools::Bypass Windows File Protection [F0004.007]

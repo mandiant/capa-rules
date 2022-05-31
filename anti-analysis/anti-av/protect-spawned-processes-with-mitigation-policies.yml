@@ -2,7 +2,8 @@ rule:
   meta:
     name: protect spawned processes with mitigation policies
     namespace: anti-analysis/anti-av
-    author: jakub.jozwiak@mandiant.com
+    authors:
+      - jakub.jozwiak@mandiant.com
     scope: basic block
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]

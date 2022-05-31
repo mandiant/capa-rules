@@ -2,7 +2,8 @@ rule:
   meta:
     name: execute shellcode via CopyFile2
     namespace: load-code/shellcode
-    author: jakub.jozwiak@mandiant.com
+    authors:
+      - jakub.jozwiak@mandiant.com
     scope: function
     references:
       - https://github.com/S4R1N/AlternativeShellcodeExec/blob/master/CopyFile2/CopyFile2.cpp

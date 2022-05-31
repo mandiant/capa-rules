@@ -2,7 +2,8 @@ rule:
   meta:
     name: create shortcut via IShellLink
     namespace: host-interaction/file-system/write
-    author: matthew.williams@mandiant.com
+    authors:
+      - matthew.williams@mandiant.com
     scope: function
     references:
       - https://docs.microsoft.com/en-us/windows/win32/shell/links#creating-a-shortcut-and-a-folder-shortcut-to-a-file

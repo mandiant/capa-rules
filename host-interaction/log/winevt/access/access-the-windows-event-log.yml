@@ -2,7 +2,8 @@ rule:
   meta:
     name: access the Windows event log
     namespace: host-interaction/log/winevt/access
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Discovery::File and Directory Discovery::Log File [E1083.m01]

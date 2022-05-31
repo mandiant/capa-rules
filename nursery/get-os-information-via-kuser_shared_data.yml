@@ -3,7 +3,8 @@ rule:
   meta:
     name: get OS information via KUSER_SHARED_DATA
     namespace: host-interaction/os/version
-    author: "@mr-tz"
+    authors:
+      - "@mr-tz"
     scope: function
     references:
       - https://www.geoffchappell.com/studies/windows/km/ntoskrnl/inc/api/ntexapi_x/kuser_shared_data/index.htm

@@ -2,7 +2,8 @@ rule:
   meta:
     name: encrypt data using Curve25519
     namespace: data-manipulation/encryption/elliptic-curve
-    author: dimiter.andonov@mandiant.com
+    authors:
+      - dimiter.andonov@mandiant.com
     scope: basic block
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

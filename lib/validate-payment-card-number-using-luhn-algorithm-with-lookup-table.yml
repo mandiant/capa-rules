@@ -1,7 +1,8 @@
 rule:
   meta:
     name: validate payment card number using luhn algorithm with lookup table
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     lib: true
     scope: function
     mbc:

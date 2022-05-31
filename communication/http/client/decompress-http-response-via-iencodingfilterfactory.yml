@@ -2,7 +2,8 @@ rule:
   meta:
     name: decompress HTTP response via IEncodingFilterFactory
     namespace: communication/http/client
-    author: matthew.williams@mandiant.com
+    authors:
+      - matthew.williams@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Get Response [C0002.017]

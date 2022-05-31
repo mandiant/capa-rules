@@ -27,7 +27,8 @@ rule:
   meta:
     name: hash data with CRC32
     namespace: data-manipulation/checksum/crc32
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD

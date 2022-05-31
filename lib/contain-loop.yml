@@ -1,7 +1,8 @@
 rule:
   meta:
     name: contain loop
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     lib: true
     scope: function
     examples:

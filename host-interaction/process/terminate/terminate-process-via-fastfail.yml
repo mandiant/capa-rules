@@ -2,7 +2,8 @@ rule:
   meta:
     name: terminate process via fastfail
     namespace: host-interaction/process/terminate
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: basic block
     mbc:
       - Process::Terminate Process [C0018]

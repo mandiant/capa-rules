@@ -2,7 +2,8 @@ rule:
   meta:
     name: get file system object information
     namespace: host-interaction/file-system
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Discovery::File and Directory Discovery [T1083]

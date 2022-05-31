@@ -2,7 +2,7 @@ rule:
   meta:
     name: linked against OpenSSL
     namespace: linking/static/openssl
-    author:
+    authors:
       - william.ballenthin@mandiant.com
       - michael.hunhoff@mandiant.com
     scope: file

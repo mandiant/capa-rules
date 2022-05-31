@@ -2,7 +2,8 @@ rule:
   meta:
     name: inject APC
     namespace: host-interaction/process/inject
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Process Injection::Asynchronous Procedure Call [T1055.004]

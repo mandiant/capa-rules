@@ -2,7 +2,8 @@ rule:
   meta:
     name: get kernel version
     namespace: host-interaction/os/version
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]

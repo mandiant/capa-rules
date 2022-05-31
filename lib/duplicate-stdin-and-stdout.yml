@@ -1,7 +1,8 @@
 rule:
   meta:
     name: duplicate stdin and stdout
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     lib: true
     scope: basic block
     examples:

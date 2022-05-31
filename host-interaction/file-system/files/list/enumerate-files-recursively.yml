@@ -2,7 +2,8 @@ rule:
   meta:
     name: enumerate files recursively
     namespace: host-interaction/file-system/files/list
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]

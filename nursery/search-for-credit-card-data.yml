@@ -2,7 +2,8 @@ rule:
   meta:
     name: search for credit card data
     namespace: collection/credit-card
-    author: matthew.williams@mandiant.com
+    authors:
+      - matthew.williams@mandiant.com
     scope: function
   features:
     - and:

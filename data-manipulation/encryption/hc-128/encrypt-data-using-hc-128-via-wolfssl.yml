@@ -3,7 +3,8 @@ rule:
   meta:
     name: encrypt data using HC-128 via WolfSSL
     namespace: data-manipulation/encryption/hc-128
-    author: blaine.stancill@mandiant.com
+    authors:
+      - blaine.stancill@mandiant.com
     scope: basic block
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

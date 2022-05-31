@@ -2,7 +2,8 @@ rule:
   meta:
     name: hash data with MD5
     namespace: data-manipulation/hashing/md5
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Cryptography::Cryptographic Hash::MD5 [C0029.001]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: rebuild import table
     namespace: load-code/pe
-    author: "@Ana06"
+    authors:
+      - "@Ana06"
     scope: function
     mbc:
       - Defense Evasion::Hijack Execution Flow::Import Address Table (IAT) Hooking [F0015.003]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: reference AES constants
     namespace: data-manipulation/encryption/aes
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

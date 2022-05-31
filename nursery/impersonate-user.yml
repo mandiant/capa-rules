@@ -2,7 +2,8 @@ rule:
   meta:
     name: impersonate user
     namespace: host-interaction/user
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Privilege Escalation::Access Token Manipulation::Token Impersonation/Theft [T1134.001]

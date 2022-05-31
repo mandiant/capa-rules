@@ -2,7 +2,7 @@ rule:
   meta:
     name: read .ini file
     namespace: host-interaction/file-system/read
-    author:
+    authors:
       - "@_re_fox"
       - michael.hunhoff@mandiant.com
     scope: function

@@ -2,7 +2,8 @@ rule:
   meta:
     name: allocate RWX memory
     namespace: host-interaction/process/inject
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: basic block
     mbc:
       - Memory::Allocate Memory [C0007]

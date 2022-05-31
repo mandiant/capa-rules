@@ -2,7 +2,8 @@ rule:
   meta:
     name: run PowerShell expression
     namespace: load-code/powershell/
-    author: anamaria.martinezgom@mandiant.com
+    authors:
+      - anamaria.martinezgom@mandiant.com
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter::PowerShell [T1059.001]

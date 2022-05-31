@@ -2,7 +2,8 @@ rule:
   meta:
     name: check for unmoving mouse cursor
     namespace: anti-analysis/anti-vm/vm-detection
-    author: BitsOfBinary
+    authors:
+      - BitsOfBinary
     scope: function
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::User Activity Based Checks [T1497.002]

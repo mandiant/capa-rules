@@ -2,7 +2,8 @@ rule:
   meta:
     name: get kernel32 base address
     namespace: linking/runtime-linking
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: basic block
     att&ck:
       - Execution::Shared Modules [T1129]

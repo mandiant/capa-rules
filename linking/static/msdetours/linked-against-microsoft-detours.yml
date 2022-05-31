@@ -2,7 +2,8 @@ rule:
   meta:
     name: linked against Microsoft Detours
     namespace: linking/static/msdetours
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: file
     att&ck:
       - Defense Evasion::Hijack Execution Flow [T1574]

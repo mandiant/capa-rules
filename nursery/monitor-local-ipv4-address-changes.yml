@@ -3,7 +3,8 @@ rule:
   meta:
     name: monitor local IPv4 address changes
     namespace: host-interaction/network/address
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]

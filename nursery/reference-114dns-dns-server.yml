@@ -2,7 +2,8 @@ rule:
   meta:
     name: reference 114DNS DNS server
     namespace: communication/dns
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     references:
       - https://www.114dns.com/

@@ -2,7 +2,8 @@ rule:
   meta:
     name: create pipe
     namespace: communication/named-pipe/create
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Communication::Interprocess Communication::Create Pipe [C0003.001]

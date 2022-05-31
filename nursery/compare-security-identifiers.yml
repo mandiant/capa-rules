@@ -3,7 +3,8 @@ rule:
   meta:
     name: compare security identifiers
     namespace: host-interaction/sid
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
   features:
     - or:

@@ -2,7 +2,7 @@ rule:
   meta:
     name: set registry value
     namespace: host-interaction/registry/create
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
     scope: function

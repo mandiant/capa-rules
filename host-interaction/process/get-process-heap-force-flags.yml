@@ -2,7 +2,8 @@ rule:
   meta:
     name: get process heap force flags
     namespace: host-interaction/process
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Discovery::Process Discovery [T1057]

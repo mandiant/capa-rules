@@ -2,7 +2,8 @@ rule:
   meta:
     name: reference AliDNS DNS server
     namespace: communication/dns
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     references:
       - https://www.alidns.com/

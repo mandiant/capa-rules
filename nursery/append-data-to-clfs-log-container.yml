@@ -3,7 +3,8 @@ rule:
   meta:
     name: append data to CLFS log container
     namespace: host-interaction/log/clfs/append
-    author: blaine.stancill@mandiant.com
+    authors:
+      - blaine.stancill@mandiant.com
     scope: function
     references:
       - https://docs.microsoft.com/en-us/windows/win32/api/clfsw32/

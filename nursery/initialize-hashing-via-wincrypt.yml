@@ -2,7 +2,8 @@ rule:
   meta:
     name: initialize hashing via WinCrypt
     namespace: data-manipulation/hashing
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
   features:
     - and:

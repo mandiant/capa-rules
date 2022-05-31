@@ -2,7 +2,8 @@ rule:
   meta:
     name: manually build AES constants
     namespace: data-manipulation/encryption/aes
-    author: huynh.t.nhan@gmail.com
+    authors:
+      - huynh.t.nhan@gmail.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

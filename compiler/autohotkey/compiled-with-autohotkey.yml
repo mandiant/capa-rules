@@ -2,7 +2,8 @@ rule:
   meta:
     name: compiled with AutoHotKey
     namespace: compiler/autohotkey
-    author: awillia2@cisco.com
+    authors:
+      - awillia2@cisco.com
     scope: file
     att&ck:
       - Execution::Command and Scripting Interpreter [T1059]

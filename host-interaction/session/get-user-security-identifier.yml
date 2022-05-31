@@ -3,7 +3,8 @@ rule:
   meta:
     name: get user security identifier
     namespace: host-interaction/session
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Discovery::Account Discovery [T1087]

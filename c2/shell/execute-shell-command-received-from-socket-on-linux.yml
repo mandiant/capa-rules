@@ -2,7 +2,8 @@ rule:
   meta:
     name: execute shell command received from socket on Linux
     namespace: c2/shell
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter::Unix Shell [T1059.004]

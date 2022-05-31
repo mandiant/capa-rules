@@ -2,7 +2,8 @@ rule:
   meta:
     name: encrypt data using Salsa20 or ChaCha
     namespace: data-manipulation/encryption/salsa20
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

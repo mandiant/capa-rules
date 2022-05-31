@@ -2,7 +2,8 @@ rule:
   meta:
     name: load Diebold Nixdorf ATM library
     namespace: targeting/automated-teller-machine/diebold-nixdorf
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: file
     references:
       - https://www.vkremez.com/2017/12/lets-learn-cutlet-atm-malware-internals.html

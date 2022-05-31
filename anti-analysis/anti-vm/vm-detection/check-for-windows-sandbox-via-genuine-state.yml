@@ -2,7 +2,8 @@ rule:
   meta:
     name: check for windows sandbox via genuine state
     namespace: anti-analysis/anti-vm/vm-detection
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]

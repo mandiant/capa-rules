@@ -2,7 +2,7 @@ rule:
   meta:
     name: capture screenshot
     namespace: collection/screenshot
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - "@_re_fox"
       - michael.hunhoff@mandiant.com

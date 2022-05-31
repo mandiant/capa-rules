@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via IIS module
     namespace: persistence
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     description: IIS 7.0 introduced modules that provide the same unrestricted access to HTTP requests and responses as ISAPI extensions and filters.
     scope: file
     att&ck:

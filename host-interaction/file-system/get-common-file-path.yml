@@ -2,7 +2,8 @@ rule:
   meta:
     name: get common file path
     namespace: host-interaction/file-system
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]

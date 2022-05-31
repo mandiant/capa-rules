@@ -2,7 +2,8 @@ rule:
   meta:
     name: enumerate PE sections
     namespace: load-code/pe
-    author: "@Ana06"
+    authors:
+      - "@Ana06"
     scope: function
     mbc:
       - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]

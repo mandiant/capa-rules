@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via ISAPI extension
     namespace: persistence
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     description: Internet Server Application Programming Interface (ISAPI) extensions and filters can be installed to examine and/or modify incoming and outgoing IIS web requests.
     scope: file
     att&ck:

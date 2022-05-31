@@ -2,7 +2,8 @@ rule:
   meta:
     name: set thread local storage value
     namespace: host-interaction/process
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Process::Set Thread Local Storage Value [C0041]
