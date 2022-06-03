@@ -6,6 +6,9 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Encrypt Data::AES [C0027.001]
     examples:
       - 8333822ed41d9f2b302cf8e21b126efc:0x40646a
       - 5553bbc23dea546192d07f268c4764a9:0x1149
