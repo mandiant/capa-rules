@@ -9,6 +9,7 @@ rule:
       - File System::Create Directory [C0046]
     examples:
       - Practical Malware Analysis Lab 17-02.dll_:0x10008f62
+      - 692f7fd6d198e804d6af98eb9e390d61:0x6000003
   features:
     - or:
       - api: kernel32.CreateDirectory
@@ -20,3 +21,4 @@ rule:
       - api: SHCreateDirectoryEx
       - api: _mkdir
       - api: _wmkdir
+      - api: System.IO.Directory::CreateDirectory

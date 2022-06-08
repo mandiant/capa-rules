@@ -14,6 +14,7 @@ rule:
       - 493167E85E45363D09495D0841C30648:0x404D60
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4045F2
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x40433E
+      - 692f7fd6d198e804d6af98eb9e390d61:0x6000003
   features:
     - or:
       - api: advapi32.RegOpenKey
@@ -35,3 +36,4 @@ rule:
       - api: SHRegOpenUSKey
       - api: SHRegCreateUSKey
       - api: RtlCreateRegistryKey
+      - api: Microsoft.Win32.RegistryKey::OpenSubKey
