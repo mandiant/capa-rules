@@ -1,0 +1,9 @@
+rule:
+  meta:
+    name: mixed mode dotnet
+    namespace: runtime/dotnet
+    author: michael.hunhoff@mandiant.com
+    scope: file
+  features:
+    - or:
+      - characteristic: mixed mode

@@ -2,7 +2,9 @@ rule:
   meta:
     name: delete file
     namespace: host-interaction/file-system/delete
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - File System::Delete File [C0047]
@@ -20,6 +22,7 @@ rule:
       - api: ZwDeleteFile
       - api: remove
       - api: _wremove
+      - api: System.IO.File::Delete
       - basic block:
         - and:
           - number: 3 = FO_DELETE

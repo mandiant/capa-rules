@@ -2,7 +2,9 @@ rule:
   meta:
     name: copy file
     namespace: host-interaction/file-system/copy
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - File System::Copy File [C0045]
@@ -14,6 +16,8 @@ rule:
       - api: kernel32.CopyFileEx
       - api: CopyFile2
       - api: CopyFileTransacted
+      - api: System.IO.FileInfo::CopyTo
+      - api: System.IO.File::Copy
       - basic block:
         - and:
           - number: 2 = FO_COPY
