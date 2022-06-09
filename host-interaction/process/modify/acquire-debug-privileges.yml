@@ -2,7 +2,8 @@ rule:
   meta:
     name: acquire debug privileges
     namespace: host-interaction/process/modify
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: basic block
     att&ck:
       - Privilege Escalation::Access Token Manipulation [T1134]

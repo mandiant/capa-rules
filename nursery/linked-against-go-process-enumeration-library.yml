@@ -2,7 +2,7 @@ rule:
   meta:
     name: linked against Go process enumeration library
     namespace: host-interaction/process/list
-    author:
+    authors:
       - joakim@intezer.com
     description: Enumerating processes using a Go library
     scope: file

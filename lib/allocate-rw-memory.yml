@@ -1,7 +1,8 @@
 rule:
   meta:
     name: allocate RW memory
-    author: 0x534a@mailbox.org
+    authors:
+      - 0x534a@mailbox.org
     lib: true
     scope: basic block
     mbc:

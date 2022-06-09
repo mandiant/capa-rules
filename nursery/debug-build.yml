@@ -2,7 +2,8 @@ rule:
   meta:
     name: debug build
     namespace: executable/pe/debug
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: file
   features:
     - or:

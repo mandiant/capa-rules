@@ -2,7 +2,8 @@ rule:
   meta:
     name: enable safe mode boot
     namespace: host-interaction/bootloader
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Impair Defenses::Safe Mode Boot [T1562.009]

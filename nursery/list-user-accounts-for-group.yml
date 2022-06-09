@@ -3,7 +3,8 @@ rule:
   meta:
     name: list user accounts for group
     namespace: host-interaction/accounts
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Discovery::Permission Groups Discovery [T1069]

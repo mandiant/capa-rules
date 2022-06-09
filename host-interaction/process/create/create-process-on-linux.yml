@@ -2,7 +2,7 @@ rule:
   meta:
     name: create process on Linux
     namespace: host-interaction/process/create
-    author:
+    authors:
       - joakim@intezer.com
     scope: basic block
     mbc:

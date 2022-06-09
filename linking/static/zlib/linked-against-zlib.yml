@@ -2,7 +2,8 @@ rule:
   meta:
     name: linked against ZLIB
     namespace: linking/static/zlib
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: file
     mbc:
       - Data::Compression Library [C0060]

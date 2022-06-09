@@ -2,7 +2,8 @@ rule:
   meta:
     name: hash data using SHA224
     namespace: data-manipulation/hashing/sha224
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Cryptography::Cryptographic Hash::SHA224 [C0029.004]

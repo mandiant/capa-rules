@@ -2,7 +2,8 @@ rule:
   meta:
     name: packed with y0da crypter
     namespace: anti-analysis/packer/y0da
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]

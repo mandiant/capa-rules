@@ -2,7 +2,7 @@ rule:
   meta:
     name: download URL
     namespace: communication/http/client
-    author:
+    authors:
       - matthew.williams@mandiant.com
       - michael.hunhoff@mandiant.com
     scope: function

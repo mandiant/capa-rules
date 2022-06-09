@@ -2,7 +2,8 @@ rule:
   meta:
     name: create device object
     namespace: host-interaction/driver
-    author: "@mr-tz"
+    authors:
+      - "@mr-tz"
     scope: function
     examples:
       - Practical Malware Analysis Lab 10-03.sys_:0x00010706

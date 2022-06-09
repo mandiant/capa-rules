@@ -2,7 +2,7 @@ rule:
   meta:
     name: patch process command line
     namespace: anti-analysis/anti-forensic
-    author:
+    authors:
       - william.ballenthin@mandiant.com
       - "@_re_fox"
     scope: function

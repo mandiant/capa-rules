@@ -2,7 +2,8 @@ rule:
   meta:
     name: manipulate boot configuration
     namespace: host-interaction/bootloader
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     references:
       - https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdedit-command-line-options

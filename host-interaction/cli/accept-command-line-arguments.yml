@@ -2,7 +2,8 @@ rule:
   meta:
     name: accept command line arguments
     namespace: host-interaction/cli
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter [T1059]

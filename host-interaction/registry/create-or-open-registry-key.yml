@@ -2,7 +2,8 @@ rule:
   meta:
     name: create or open registry key
     namespace: host-interaction/registry
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     mbc:
       - Operating System::Registry::Create Registry Key [C0036.004]

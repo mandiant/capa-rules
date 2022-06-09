@@ -2,7 +2,8 @@ rule:
   meta:
     name: contain an embedded PE file
     namespace: executable/subfile/pe
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: file
     mbc:
       - Execution::Install Additional Program [B0023]

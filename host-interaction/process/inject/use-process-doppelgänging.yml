@@ -2,7 +2,8 @@ rule:
   meta:
     name: use process Doppelgänging
     namespace: host-interaction/process/inject
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: file
     att&ck:
       - Defense Evasion::Process Injection::Process Doppelgänging [T1055.013]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: compiled with ps2exe
     namespace: compiler/ps2exe
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: file
     references:
       - https://github.com/ikarstein/ps2exe

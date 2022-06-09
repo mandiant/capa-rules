@@ -2,7 +2,8 @@ rule:
   meta:
     name: compiled with Zig
     namespace: compiler/zig
-    author: jakub.jozwiak@mandiant.com
+    authors:
+      - jakub.jozwiak@mandiant.com
     scope: file
     references:
       - https://ziglang.org

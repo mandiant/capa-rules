@@ -2,7 +2,8 @@ rule:
   meta:
     name: get session user name
     namespace: host-interaction/session
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]

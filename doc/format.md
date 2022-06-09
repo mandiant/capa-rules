@@ -12,7 +12,8 @@ rule:
   meta:
     name: hash data with CRC32
     namespace: data-manipulation/checksum/crc32
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
@@ -92,7 +93,8 @@ Here's an example:
 meta:
   name: packed with UPX
   namespace: anti-analysis/packer/upx
-  author: william.ballenthin@mandiant.com
+  authors:
+      - william.ballenthin@mandiant.com
   description: the sample appears to be packed with UPX
   scope: file
   att&ck:
@@ -138,7 +140,7 @@ The linter verifies that each rule correctly fires on each sample referenced in 
 These example files are stored in the [github.com/mandiant/capa-testfiles](https://github.com/mandiant/capa-testfiles) repository.
 `function` and `basic block` scope rules must contain offsets to the respective match locations using the format `<sample name>:<function or basic block offset>`.
 
-  - `references` lists related information found in a book, article, blog post, etc.
+  - `references` A list of related information found in a book, article, blog post, etc.
 
 Other fields are not allowed, and the linter will complain about them.
 
@@ -437,7 +439,6 @@ capa does not support instruction pattern matching,
 | `characteristic: cross section flow` | basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
 | `characteristic: tight loop`         | basic block           | A tight loop where a basic block branches to itself. |
 | `characteristic: indirect call`      | basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
-| `characteristic: call $+5`           | basic block, function | Call just past the current instruction. |
 
 ## file features
 

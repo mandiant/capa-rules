@@ -2,7 +2,8 @@ rule:
   meta:
     name: reference WMI statements
     namespace: collection/database/wmi
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Collection::Data from Information Repositories [T1213]

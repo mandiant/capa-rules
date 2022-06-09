@@ -3,7 +3,8 @@ rule:
   meta:
     name: inspect load icon resource
     namespace: anti-analysis
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
   features:
     # check if call to LoadIcon fails when first argument is NULL

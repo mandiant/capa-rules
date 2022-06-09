@@ -2,7 +2,8 @@ rule:
   meta:
     name: parse PE header
     namespace: load-code/pe
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Execution::Shared Modules [T1129]

@@ -2,7 +2,7 @@ rule:
   meta:
     name: execute syscall instruction
     namespace: anti-analysis
-    author:
+    authors:
       - "@kulinacs"
       - "@mr-tz"
     description: may be used to evade hooks or hinder analysis

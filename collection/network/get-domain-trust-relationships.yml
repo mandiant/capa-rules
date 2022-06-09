@@ -2,7 +2,8 @@ rule:
   meta:
     name: get domain trust relationships
     namespace: collection/network
-    author: johnk3r
+    authors:
+      - johnk3r
     scope: function
     att&ck:
       - Discovery::Domain Trust Discovery [T1482]

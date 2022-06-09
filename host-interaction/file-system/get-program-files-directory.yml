@@ -2,7 +2,8 @@ rule:
   meta:
     name: get Program Files directory
     namespace: host-interaction/file-system
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: basic block
     att&ck:
       - Discovery::File and Directory Discovery [T1083]

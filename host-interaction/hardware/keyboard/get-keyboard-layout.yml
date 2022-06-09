@@ -2,7 +2,8 @@ rule:
   meta:
     name: get keyboard layout
     namespace: host-interaction/hardware/keyboard
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Location Discovery::System Language Discovery [T1614.001]

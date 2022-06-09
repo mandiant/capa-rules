@@ -2,7 +2,8 @@ rule:
   meta:
     name: capture webcam video
     namespace: collection/webcam
-    author: "@johnk3r"
+    authors:
+      - "@johnk3r"
     description: Rule that detects a system's webcam being used to capture video
     scope: function
     att&ck:

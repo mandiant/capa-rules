@@ -2,7 +2,8 @@ rule:
   meta:
     name: suspend thread
     namespace: host-interaction/thread/suspend
-    author: 0x534a@mailbox.org
+    authors:
+      - 0x534a@mailbox.org
     scope: basic block
     mbc:
       - Process::Suspend Thread [C0055]

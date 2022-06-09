@@ -2,7 +2,8 @@ rule:
   meta:
     name: encrypt data using HC-128
     namespace: data-manipulation/encryption/hc-128
-    author: awillia2@cisco.com
+    authors:
+      - awillia2@cisco.com
     description: Looks for instruction mnemonics associated with initialization of the HC-128 stream cipher
     scope: basic block
     att&ck:

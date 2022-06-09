@@ -2,7 +2,8 @@ rule:
   meta:
     name: hash data using MD4
     namespace: data-manipulation/hashing/md4
-    author: anamaria.martinezgom@mandiant.com
+    authors:
+      - anamaria.martinezgom@mandiant.com
     scope: basic block
   features:
     - and:

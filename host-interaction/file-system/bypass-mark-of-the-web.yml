@@ -2,7 +2,8 @@ rule:
   meta:
     name: bypass Mark of the Web
     namespace: host-interaction/file-system
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Subvert Trust Controls::Mark-of-the-Web Bypass [T1553.005]

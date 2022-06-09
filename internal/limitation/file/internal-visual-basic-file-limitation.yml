@@ -2,7 +2,8 @@ rule:
   meta:
     name: (internal) Visual Basic file limitation
     namespace: internal/limitation/file
-    author: "@mr-tz"
+    authors:
+      - "@mr-tz"
     description: |
       This sample appears to be compiled from Visual Basic.
 

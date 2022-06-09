@@ -2,7 +2,8 @@ rule:
   meta:
     name: hash data using tiger
     namespace: data-manipulation/hashing/tiger
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: basic block
     mbc:
       - Cryptography::Cryptographic Hash::Tiger [C0029.005]

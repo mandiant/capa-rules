@@ -2,7 +2,8 @@ rule:
   meta:
     name: set application hook
     namespace: host-interaction/gui
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     examples:
       - Practical Malware Analysis Lab 12-03.exe_:0x401000

@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via Winlogon Helper DLL registry key
     namespace: persistence/registry/winlogon-helper
-    author: 0x534a@mailbox.org
+    authors:
+      - 0x534a@mailbox.org
     scope: function
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Winlogon Helper DLL [T1547.004]

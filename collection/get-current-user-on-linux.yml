@@ -2,7 +2,8 @@ rule:
   meta:
     name: get current user on Linux
     namespace: collection
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]

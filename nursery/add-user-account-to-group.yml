@@ -3,7 +3,8 @@ rule:
   meta:
     name: add user account to group
     namespace: host-interaction/accounts
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: basic block
     att&ck:
       - Persistence::Account Manipulation [T1098]

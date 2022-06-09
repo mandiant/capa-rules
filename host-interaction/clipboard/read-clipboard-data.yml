@@ -2,7 +2,8 @@ rule:
   meta:
     name: read clipboard data
     namespace: host-interaction/clipboard
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Collection::Clipboard Data [T1115]

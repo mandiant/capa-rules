@@ -2,7 +2,8 @@ rule:
   meta:
     name: packaged as a Wise installer
     namespace: executable/installer/wiseinstall
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: file
   features:
     - or:

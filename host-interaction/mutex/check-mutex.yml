@@ -2,7 +2,8 @@ rule:
   meta:
     name: check mutex
     namespace: host-interaction/mutex
-    author: moritz.raabem@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: basic block
     mbc:
       - Process::Check Mutex [C0043]

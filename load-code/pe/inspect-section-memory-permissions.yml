@@ -2,7 +2,8 @@ rule:
   meta:
     name: inspect section memory permissions
     namespace: load-code/pe
-    author: "@Ana06"
+    authors:
+      - "@Ana06"
     description: "translate section memory permissions (specified in the 'Characteristics' field of the image section header) into page protection constants"
     scope: function
     mbc:

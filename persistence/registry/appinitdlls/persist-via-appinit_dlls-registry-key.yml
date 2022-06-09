@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via AppInit_DLLs registry key
     namespace: persistence/registry/appinitdlls
-    author: michael.hunhoff@fireye.com
+    authors:
+      - michael.hunhoff@fireye.com
     scope: function
     att&ck:
       - Persistence::Event Triggered Execution::AppInit DLLs [T1546.010]

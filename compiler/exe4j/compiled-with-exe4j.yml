@@ -2,7 +2,8 @@ rule:
   meta:
     name: compiled with exe4j
     namespace: compiler/exe4j
-    author: johnk3r
+    authors:
+      - johnk3r
     scope: file
     examples:
       - 6b25f1e754ef486bbb28a66d46bababe:0x404EDE

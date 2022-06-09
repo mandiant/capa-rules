@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via Run registry key
     namespace: persistence/registry/run
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]

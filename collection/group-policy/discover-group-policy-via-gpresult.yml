@@ -2,7 +2,8 @@ rule:
   meta:
     name: discover Group Policy via gpresult
     namespace: collection/group-policy
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     att&ck:
       - Discovery::Group Policy Discovery [T1615]

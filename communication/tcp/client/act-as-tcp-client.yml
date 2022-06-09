@@ -2,7 +2,8 @@ rule:
   meta:
     name: act as TCP client
     namespace: communication/tcp/client
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
     mbc:
       - Communication::Socket Communication::TCP Client [C0001.008]

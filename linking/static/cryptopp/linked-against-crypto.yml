@@ -2,7 +2,8 @@ rule:
   meta:
     name: linked against Crypto++
     namespace: linking/static/cryptopp
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: file
     mbc:
       - Cryptography::Crypto Library [C0059]

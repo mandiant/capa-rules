@@ -2,7 +2,8 @@ rule:
   meta:
     name: check for debugger via API
     namespace: anti-analysis/anti-debugging/debugger-detection
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::CheckRemoteDebuggerPresent [B0001.002]

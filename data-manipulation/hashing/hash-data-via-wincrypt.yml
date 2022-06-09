@@ -2,7 +2,8 @@ rule:
   meta:
     name: hash data via WinCrypt
     namespace: data-manipulation/hashing
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Cryptography::Cryptographic Hash [C0029]

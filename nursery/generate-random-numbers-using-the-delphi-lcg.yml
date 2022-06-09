@@ -2,7 +2,8 @@ rule:
   meta:
     name: generate random numbers using the Delphi LCG
     namespace: data-manipulation/prng/lcg
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: basic block
     mbc:
       - Cryptography::Generate Pseudo-random Sequence [C0021]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: extract HTTP body
     namespace: communication/http/client
-    author: matthew.williams@mandiant.com
+    authors:
+      - matthew.williams@mandiant.com
     scope: function
     mbc:
       - Communication::HTTP Communication::Extract Body [C0002.011]

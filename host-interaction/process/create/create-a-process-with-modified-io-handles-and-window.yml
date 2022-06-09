@@ -2,7 +2,8 @@ rule:
   meta:
     name: create a process with modified I/O handles and window
     namespace: host-interaction/process/create
-    author: matthew.williams@mandiant.com
+    authors:
+      - matthew.williams@mandiant.com
     scope: function
     mbc:
       - Process::Create Process [C0017]

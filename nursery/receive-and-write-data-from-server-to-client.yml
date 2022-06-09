@@ -2,7 +2,8 @@ rule:
   meta:
     name: receive and write data from server to client
     namespace: c2/file-transfer
-    author: william.ballenthin@mandiant.com
+    authors:
+      - william.ballenthin@mandiant.com
     scope: function
   features:
     - and:

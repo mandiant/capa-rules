@@ -2,7 +2,8 @@ rule:
   meta:
     name: resolve function by FIN8 fasthash
     namespace: linking/runtime-linking
-    author: "@r3c0nst (Frank Boldewin)"
+    authors:
+      - "@r3c0nst (Frank Boldewin)"
     description: APIHashing algorithm derived from a fasthash implementation in OpenCPN using seeds
     scope: function
     mbc:

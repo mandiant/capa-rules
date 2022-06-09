@@ -2,7 +2,8 @@ rule:
   meta:
     name: shutdown system
     namespace: host-interaction/os
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Impact::System Shutdown/Reboot [T1529]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: authenticate HMAC
     namespace: data-manipulation/hmac
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     mbc:
       - Cryptography::Hashed Message Authentication Code [C0061]

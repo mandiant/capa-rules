@@ -2,7 +2,8 @@ rule:
   meta:
     name: obfuscated with ADVobfuscator
     namespace: anti-analysis/obfuscation
-    author: jakub.jozwiak@mandiant.com
+    authors:
+      - jakub.jozwiak@mandiant.com
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

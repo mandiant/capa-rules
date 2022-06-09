@@ -2,7 +2,7 @@ rule:
   meta:
     name: get hostname
     namespace: host-interaction/os/hostname
-    author:
+    authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
     scope: function

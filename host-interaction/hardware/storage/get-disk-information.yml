@@ -2,7 +2,8 @@ rule:
   meta:
     name: get disk information
     namespace: host-interaction/hardware/storage
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]

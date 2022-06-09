@@ -2,7 +2,8 @@ rule:
   meta:
     name: decompress data using UCL
     namespace: data-manipulation/compression
-    author: jakub.jozwiak@mandiant.com
+    authors:
+      - jakub.jozwiak@mandiant.com
     scope: function
     mbc:
       - Data::Decompress Data [C0025]

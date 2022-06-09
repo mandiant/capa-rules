@@ -2,7 +2,8 @@ rule:
   meta:
     name: check for PEB BeingDebugged flag
     namespace: anti-analysis/anti-debugging/debugger-detection
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: basic block
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Process Environment Block BeingDebugged [B0001.035]

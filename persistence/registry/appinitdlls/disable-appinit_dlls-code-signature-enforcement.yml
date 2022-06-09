@@ -2,7 +2,8 @@ rule:
   meta:
     name: disable AppInit_DLLs code signature enforcement
     namespace: persistence/registry/appinitdlls
-    author: william.ballenthin@fireye.com
+    authors:
+      - william.ballenthin@fireye.com
     scope: function
     att&ck:
       - Persistence::Event Triggered Execution::AppInit DLLs [T1546.010]

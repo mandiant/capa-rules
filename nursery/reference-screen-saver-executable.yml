@@ -2,7 +2,8 @@ rule:
   meta:
     name: reference screen saver executable
     namespace: persistence/screensaver
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     description: SCRNSAVE.EXE registry value specifies the name of the screen saver executable file
     scope: function
     att&ck:

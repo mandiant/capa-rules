@@ -2,7 +2,8 @@ rule:
   meta:
     name: decrypt data using AES via x86 extensions
     namespace: data-manipulation/encryption/aes
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]

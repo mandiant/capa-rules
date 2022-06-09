@@ -2,7 +2,8 @@ rule:
   meta:
     name: gather southriver-webdrive information
     namespace: collection/file-managers
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     att&ck:
       - Credential Access::Credentials from Password Stores [T1555]

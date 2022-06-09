@@ -2,7 +2,7 @@ rule:
   meta:
     name: get MAC address on Windows
     namespace: collection/network
-    author:
+    authors:
       - moritz.raabe@mandiant.com
     scope: function
     att&ck:

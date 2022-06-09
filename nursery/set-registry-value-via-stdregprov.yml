@@ -3,9 +3,11 @@ rule:
   meta:
     name: set registry value via StdRegProv
     namespace: host-interaction/registry
-    author: michael.hunhoff@mandiant.com
+    authors:
+      - michael.hunhoff@mandiant.com
     scope: function
-    references: https://docs.microsoft.com/en-us/previous-versions/windows/desktop/regprov/stdregprov#methods
+    references:
+      - https://docs.microsoft.com/en-us/previous-versions/windows/desktop/regprov/stdregprov#methods
   features:
     - and:
       - string: "StdRegProv"

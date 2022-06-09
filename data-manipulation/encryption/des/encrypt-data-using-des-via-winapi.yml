@@ -2,7 +2,8 @@ rule:
   meta:
     name: encrypt data using DES via WinAPI
     namespace: data-manipulation/encryption/des
-    author: "@_re_fox"
+    authors:
+      - "@_re_fox"
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via rc script
     namespace: persistence/service
-    author: joakim@intezer.com
+    authors:
+      - joakim@intezer.com
     scope: function
     att&ck:
       - Persistence::Boot or Logon Initialization Scripts::RC Scripts [T1037.004]

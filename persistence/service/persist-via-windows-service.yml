@@ -2,7 +2,8 @@ rule:
   meta:
     name: persist via Windows service
     namespace: persistence/service
-    author: moritz.raabe@mandiant.com
+    authors:
+      - moritz.raabe@mandiant.com
     scope: function
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
