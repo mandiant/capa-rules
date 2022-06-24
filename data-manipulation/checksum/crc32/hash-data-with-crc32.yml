@@ -15,7 +15,9 @@ rule:
     - or:
       - and:
         - mnemonic: shr
-        - number: 0xEDB88320
+        - or:
+          - number: 0xEDB88320
+          - bytes: 00 00 00 00 96 30 07 77 2C 61 0E EE BA 51 09 99 19 C4 6D 07 8F F4 6A 70 35 A5 63 E9 A3 95 64 9E = crc32_tab
         - number: 8
         - characteristic: nzxor
       - and:
