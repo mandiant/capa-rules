@@ -305,8 +305,8 @@ The parameter is a string describing the namespace name, specified like `namespa
 
 Example:
 
+    namespace: System.IO
     namespace: System.Net
-    namespace: System.Reflection
 
 ### class
 A named class used by the logic of the program. This must include class's namespace if recoverable.
