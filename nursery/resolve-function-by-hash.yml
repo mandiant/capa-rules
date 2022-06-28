@@ -8,7 +8,7 @@ rule:
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     references:
-      - https://www.fireeye.com/blog/threat-research/2012/11/precalculated-string-hashes-reverse-engineering-shellcode.html
+      - https://www.mandiant.com/resources/precalculated-string-hashes-reverse-engineering-shellcode
       - https://pastebin.com/ci5XYW4P
     examples:
   features:
