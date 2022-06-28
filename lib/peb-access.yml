@@ -16,22 +16,31 @@ rule:
       - characteristic: peb access
       - and:
         # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtGlobalFlag.cpp#L41
+        - arch: i386
         - characteristic: fs access
         - or:
-          - offset/x32: 0x30
-          - and:
-            - number/x32: 0x30
+          # in 0f5d5d07c6533bc6d991836ce79daaa1
+          # then we have:
+          #
+          #     xor edx, edx
+          #     mov edx, fs:[edx+30h]
+          - offset: 0x30
+          - instruction:
+            # in the case of CallObfuscator, gs:[rax]
             - mnemonic: add
+            - number: 0x30
       - and:
+        - arch: amd64
         - characteristic: gs access
         - or:
-          - offset/x64: 0x60
-          - and:
-            - number/x64: 0x60
+          - offset: 0x60
+          - instruction:
             - mnemonic: add
+            - number: 0x60
       - and:
         # WoW64 PEB address is fetched via the WoW64 Thread Environment Block (TEB) at FS:[0x18]-0x2000
         # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtGlobalFlag.cpp#L45
         - characteristic: fs access
-        - mnemonic: sub
-        - number: 0x2000
+        - instruction:
+          - mnemonic: sub
+          - number: 0x2000

@@ -13,7 +13,6 @@ rule:
     - and:
       - api: NtYieldExecution
       - match: contain loop
-      - basic block:
-        - and:
-          - mnemonic: cmp
-          - number: 0x40000024 = STATUS_NO_YIELD_PERFORMED
+      - instruction:
+        - mnemonic: cmp
+        - number: 0x40000024 = STATUS_NO_YIELD_PERFORMED

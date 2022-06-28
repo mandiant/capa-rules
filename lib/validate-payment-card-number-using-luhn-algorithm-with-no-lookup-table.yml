@@ -16,46 +16,48 @@ rule:
       - or:
         - basic block:
           - and:
+            # 6fcc13563aad936c7d0f3165351cb453:402842
             - or:
-              - mnemonic: add
-              - and:
+              - instruction:
                 - mnemonic: shl
                 - number: 0x1
-              - and:
+              - instruction:
                 - mnemonic: imul
                 - number: 0x2
-            - mnemonic: cmp
-            - number: 0x9
-            - description: Digital Root check number*2 < 0x9
-        - and:
-          - basic block:
-            - and:
+              - mnemonic: add = add al, al
+            - instruction:
               - mnemonic: cmp
               - number: 0x9
-              - description: Compare number to 0x9 for Digital Root
+            - description: Digital Root check number*2 < 0x9
+        - and:
+          - instruction:
+            - mnemonic: cmp
+            - number: 0x9
+            - description: Compare number to 0x9 for Digital Root
           - basic block:
             - or:
-              - mnemonic: add
-              - and:
+              - instruction:
                 - mnemonic: imul
                 - number: 0x2
-              - and:
+              - instruction:
                 - mnemonic: shl
                 - number: 0x1
+              - mnemonic: add = add al, al
               - description: 2*Number for Digital Root
+      - or:
+        - instruction:
+          # 6fcc13563aad936c7d0f3165351cb453:0x402820
+          - mnemonic: sub
+          - number: 0x30
+          - description: Conversion of chr to int (SUB 0x30)
+        - instruction:
+          - offset: -0x30
+          - mnemonic: lea
+          - description: Conversion of chr to int (LEA REG,[REG+ -0x30])
       - basic block:
         - or:
           - and:
-            - number: 0x30
-            - mnemonic: sub
-            - description: Conversion of chr to int (SUB 0x30)
-          - and:
-            - mnemonic: lea
-            - offset: -0x30
-            - description: Conversion of chr to int (LEA REG,[REG+ -0x30])
-      - basic block:
-        - or:
-          - and:
+            # 6fcc13563aad936c7d0f3165351cb453:0x402857
             - or:
               - mnemonic: div
               - and:

@@ -25,8 +25,12 @@ rule:
           - number: 0x11D31F90 = WSAID_TRANSMITPACKETS guid part
           - number: 0xD9689DA0 = WSAID_TRANSMITPACKETS guid part
       - or:
-        - number/x64: 0x8 = 64-bit function ptr
-        - number/x32: 0x4 = 32-bit function ptr
+        - and:
+          - arch: i386
+          - number: 0x4 = 32-bit function ptr
+        - and:
+          - arch: amd64
+          - number: 0x8 = 64-bit function ptr
       - optional:
         - api: WSAIoctl
         - api: WSAGetLastError

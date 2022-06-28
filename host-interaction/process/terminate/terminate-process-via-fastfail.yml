@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/process/terminate
     authors:
       - "@_re_fox"
-    scope: basic block
+    scope: instruction
     mbc:
       - Process::Terminate Process [C0018]
     references:
