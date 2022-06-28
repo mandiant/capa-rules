@@ -37,14 +37,17 @@ We'll start at the high level structure and then dig into the logic structures a
   - [meta block](#meta-block)
   - [features block](#features-block)
 - [extracted features](#extracted-features)
-  - [function features](#function-features)
+  - [instruction features](#instruction-features)
     - [api](#api)
     - [number](#number)
     - [string and substring](#string-and-substring)
     - [bytes](#bytes)
     - [offset](#offset)
     - [mnemonic](#mnemonic)
+    - [operand](#operand)
     - [characteristic](#characteristic)
+  - [basic block](#basic-block-features)
+  - [function features](#function-features)
   - [file features](#file-features)
     - [format](#format)
     - [string and substring](#file-string-and-substring)
@@ -119,10 +122,12 @@ Here are the common fields:
 
   - `scope` indicates to which feature set this rule applies.
     Here are the legal values:
+    - **`file`**: matches features across the whole file.
+    - **`function`** (default): match features within each function.
     - **`basic block`**: matches features within each basic block.
       This is used to achieve locality in rules (for example for parameters of a function).
-    - **`function`** (default): match features within each function.
-    - **`file`**: matches features across the whole file.
+    - **`instruction`**: matches features found at a single instruction.
+      This is great to identify structure access or comparisons against magic constants.
       
   - `att&ck` is an optional list of [ATT&CK framework](https://attack.mitre.org/) techniques that the rule implies, like 
 `Discovery::Query Registry [T1012]` or `Persistence::Create or Modify System Process::Windows Service [T1543.003]`.
@@ -265,7 +270,21 @@ If only one of these features is found in a function, the rule will not match.
 
 # extracted features
 
-## function features
+capa extracts features from multiple scope, starting with the most specific (instruction) and working towards most general:
+
+| scope       | best for...                                                                              |
+|-------------|------------------------------------------------------------------------------------------|
+| instruction | specific combinations of mnemonics, operands, constants, etc. to find magic values       |
+| basic block | closely related instructions, such as structure access or function call arguments        |
+| function    | collections of API calls, constants, etc. that suggest complete capabilities             |
+| file        | high level conclusions, like encryptor, backdoor, or statically linked with some library |
+| (global)    | the features available at every scope, like arch or OS                                   |
+
+In general, capa collects and merges the features from lower scopes into higher scopes;
+for example, features extracted from individual instructions are merged into the function scope that contains the instructions.
+This way, you can use the match results against instructions ("the constant X is for crypto algorithm Y") to recognize function-level capabilities ("crypto function Z").
+
+## instruction features
 
 capa extracts features from the disassembly of a function, such as which API functions are called.
 The tool also reasons about the code structure to guess at function-level constructs.
@@ -277,6 +296,7 @@ These are the features supported at the function-scope:
   - [bytes](#bytes)
   - [offset](#offset)
   - [mnemonic](#mnemonic)
+  - [operand](#operand)
   - [characteristic](#characteristic)
 
 ### api
@@ -301,8 +321,6 @@ For example, a crypto constant.
 
 The parameter is a number; if prefixed with `0x` then in hex format, otherwise, decimal format.
 
-If the number is only relevant for a particular bitness, then you can use one of the bitness flavors: `number/x32` or `number/x64`.
-
 To help humans understand the meaning of a number, such that the constant `0x40` means `PAGE_EXECUTE_READWRITE`, you may provide a description alongside the definition.
 Use the inline syntax (preferred) by ending the line with ` = DESCRIPTION STRING`.
 Check the [description section](#descriptions) for more details.
@@ -312,10 +330,17 @@ Examples:
     number: 16
     number: 0x10
     number: 0x40 = PAGE_EXECUTE_READWRITE
-    number/x32: 0x20 = number of bits
 
 Note that capa treats all numbers as unsigned values. A negative number is not a valid feature value.
 To match a negative number you may specify its two's complement representation. For example, `0xFFFFFFF0` (`-2`) in a 32-bit file.
+
+If the number is only relevant on a particular architecture, don't hesitate to use a pattern like:
+
+```yml
+- and:
+  - arch: i386
+  - number: 4 = size of pointer
+```
 
 ### string and substring
 A string referenced by the logic of the program.
@@ -399,9 +424,14 @@ Examples:
 offset: 0xC
 offset: 0x14 = PEB.BeingDebugged
 offset: -0x4
-or:
-  offset/x32: 0x68 = PEB.NtGlobalFlag
-  offset/x64: 0xBC = PEB.NtGlobalFlag
+```
+
+If the offset is only relevant on a particular architecture (such as 32- or 64-bit Intel), don't hesitate to use a pattern like:
+
+```yml
+- and:
+  - arch: i386
+  - offset: 0xC = offset to linked list head
 ```
 
 ### mnemonic
@@ -415,30 +445,61 @@ Examples:
     mnemonic: xor
     mnemonic: shl
     
-    
+
+### operand
+
+Number and offset values for specific operand indices.
+Use these features when you want to specify the flow of data from a source/destination, like move from a structure or compare against a constant.
+
+Examples:
+
+    operand[0].number: 0x10
+    operand[1].offset: 0x2C
+
+
 ### characteristic
 
 Characteristics are features that are extracted by the analysis engine.
 They are one-off features that seem interesting to the authors.
 
 For example, the `characteristic: nzxor` feature describes non-zeroing XOR instructions.
-capa does not support instruction pattern matching,
- so a select set of interesting instructions are pulled out as characteristics.
 
-| characteristic                             | scope                 | description |
-|--------------------------------------------|-----------------------|-------------|
-| `characteristic: embedded pe`        | file                  | (XOR encoded) embedded PE files. |
-| `characteristic: loop`               | function              | Function contains a loop. |
-| `characteristic: recursive call`     | function              | Function is recursive. |
-| `characteristic: calls from`         | function              | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
-| `characteristic: calls to`           | function              | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
-| `characteristic: nzxor`              | basic block, function | Non-zeroing XOR instruction |
-| `characteristic: peb access`         | basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h] |
-| `characteristic: fs access`          | basic block, function | Access to memory via the `fs` segment. |
-| `characteristic: gs access`          | basic block, function | Access to memory via the `gs` segment. |
-| `characteristic: cross section flow` | basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
-| `characteristic: tight loop`         | basic block           | A tight loop where a basic block branches to itself. |
-| `characteristic: indirect call`      | basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
+| characteristic                       | scope                              | description |
+|--------------------------------------|------------------------------------|-------------|
+| `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files. |
+| `characteristic: loop`               | function                           | Function contains a loop. |
+| `characteristic: recursive call`     | function                           | Function is recursive. |
+| `characteristic: calls from`         | function                           | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
+| `characteristic: calls to`           | function                           | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
+| `characteristic: tight loop`         | basic block, function              | A tight loop where a basic block branches to itself. |
+| `characteristic: stack string`       | basic block, function              | There is a sequence of instructions that looks like stack string construction. |
+| `characteristic: nzxor`              | instruction, basic block, function | Non-zeroing XOR instruction |
+| `characteristic: peb access`         | instruction, basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h] |
+| `characteristic: fs access`          | instruction, basic block, function | Access to memory via the `fs` segment. |
+| `characteristic: gs access`          | instruction, basic block, function | Access to memory via the `gs` segment. |
+| `characteristic: cross section flow` | instruction, basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
+| `characteristic: indirect call`      | instruction, basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
+| `characteristic: call $+5`           | instruction, basic block, function | Call just past the current instruction. |
+
+## basic block features
+
+Use combinations of features from the instruction scope that are found within the same basic block.
+
+Also, two additional [characteristics](#characteristic) relevant at this scope and above:
+  - `tight loop`
+  - `stack string`
+
+
+## function features
+
+Use combinations of features from the instruction and basic block scopes that are found within the same function.
+
+Also, four additional [characteristics](#characteristic) relevant at this scope and above:
+  - `loop`
+  - `recursive call`
+  - `calls from`
+  - `calls to`
+
 
 ## file features
 

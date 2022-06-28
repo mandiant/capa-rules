@@ -4,7 +4,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     lib: true
-    scope: basic block
+    scope: instruction
     mbc:
       - Data::Modulo [C0058]
     examples:

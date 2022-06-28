@@ -30,11 +30,13 @@ rule:
             - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
             - or:
               - and:
-                - offset/x32: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
-                - offset/x32: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
+                - arch: i386
+                - offset: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
+                - offset: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
               - and:
-                - offset/x64: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
-                - offset/x64: 0x30 = IMAGE_NT_HEADERS64.OptionalHeader.ImageBase
+                - arch: amd64
+                - offset: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
+                - offset: 0x30 = IMAGE_NT_HEADERS64.OptionalHeader.ImageBase
           - basic block:
             - and:
               - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
@@ -44,7 +46,12 @@ rule:
                 - offset: 0x14 = IMAGE_NT_HEADERS.FileHeader.SizeOfOptionalHeader
                 - offset: 0x16 = IMAGE_NT_HEADERS.FileHeader.Characteristics
                 - offset: 0x28 = IMAGE_NT_HEADERS.OptionalHeader.AddressOfEntryPoint  # for 32 and 64 bit
-                - offset/x32: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
-                - offset/x32: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
-                - offset/x64: 0x30 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
-                - offset/x64: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
+                - or:
+                  - and:
+                    - arch: i386
+                    - offset: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
+                    - offset: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
+                  - and:
+                    - arch: amd64
+                    - offset: 0x30 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
+                    - offset: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage

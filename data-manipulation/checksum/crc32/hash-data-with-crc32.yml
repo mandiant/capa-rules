@@ -14,14 +14,20 @@ rule:
   features:
     - or:
       - and:
-        - mnemonic: shr
-        - or:
-          - number: 0xEDB88320
-          - bytes: 00 00 00 00 96 30 07 77 2C 61 0E EE BA 51 09 99 19 C4 6D 07 8F F4 6A 70 35 A5 63 E9 A3 95 64 9E = crc32_tab
-        - number: 8
-        - characteristic: nzxor
+        - number: 1 = bits in a byte
+        - instruction:
+          - description: is bit set?
+          - mnemonic: test
+          - operand[1].number: 1
+        - instruction:
+          - mnemonic: shr
+          - number: 1
+        - instruction:
+          - mnemonic: xor
+          - operand[1].number: 0xEDB88320
       - and:
         - number: 0x8320
         - number: 0xEDB8
         - characteristic: nzxor
       - api: RtlComputeCrc32
+      - bytes: 00 00 00 00 96 30 07 77 2C 61 0E EE BA 51 09 99 19 C4 6D 07 8F F4 6A 70 35 A5 63 E9 A3 95 64 9E = crc32_tab
