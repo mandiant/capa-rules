@@ -12,6 +12,7 @@ rule:
       - or:
         - characteristic: loop
         - mnemonic: movzx
+        - mnemonic: mov
       - and:
         - offset: 0x3C = IMAGE_DOS_HEADER.PE.e_lfanew
         - or:
