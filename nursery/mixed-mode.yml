@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: mixed mode
+    namespace: runtime
+    author: michael.hunhoff@mandiant.com
+    scope: file
+    description: file contains managed and unmanaged (native) code, often seen in .NET
+  features:
+    - or:
+      - characteristic: mixed mode

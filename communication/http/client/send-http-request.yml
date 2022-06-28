@@ -14,6 +14,7 @@ rule:
   features:
     - or:
       - api: System.Net.WebRequest::GetResponse
+      - api: System.Net.WebRequest::GetResponseAsync
       - and:
         - or:
           - api: wininet.HttpOpenRequest
