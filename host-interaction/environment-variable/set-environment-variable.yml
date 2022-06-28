@@ -13,3 +13,4 @@ rule:
     - or:
       - api: kernel32.SetEnvironmentStrings
       - api: kernel32.SetEnvironmentVariable
+      - api: System.Environment::SetEnvironmentVariable

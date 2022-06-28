@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/file-system
     authors:
       - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
@@ -28,3 +29,4 @@ rule:
       - api: shell32.SHGetFolderLocation
       - api: shell32.SHGetSpecialFolderPath
       - api: shell32.SHGetSpecialFolderLocation
+      - api: System.IO.Directory::GetCurrentDirectory

@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/file-system/exists
     authors:
       - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
@@ -22,3 +23,4 @@ rule:
           - mnemonic: cmp
           - number: 2 = ERROR_FILE_NOT_FOUND
       - api: shlwapi.PathFileExists
+      - api: System.IO.File::Exists

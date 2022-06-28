@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: encrypt data using RSA
+    namespace: data-manipulation/encryption/rsa
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: function
+  features:
+    - or:
+      - api: System.Security.Cryptography.RSACryptoServiceProvider::Encrypt
