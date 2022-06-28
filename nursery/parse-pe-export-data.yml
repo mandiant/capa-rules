@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: find RVA from a function by parsing the PE Export Data
+    name: resolve function by parsing PE exports
     namespace: load-code/pe
     author: sara-rn
     scope: function
