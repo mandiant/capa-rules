@@ -11,7 +11,7 @@ rule:
       - Defense Evasion::BITS Jobs [T1197]
       - Persistence::BITS Jobs [T1197]
     references:
-      - https://www.fireeye.com/blog/threat-research/2021/03/attacker-use-of-windows-background-intelligent-transfer-service.html
+      - https://www.mandiant.com/resources/attacker-use-of-windows-background-intelligent-transfer-service
     examples:
       - 08ac667c65d36d6542917655571e61c8.exe_:0x401E78
   features:
