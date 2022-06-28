@@ -8,7 +8,6 @@ rule:
     references:
       - https://www.techradar.com/news/best-dns-server
       - https://developers.google.com/speed/public-dns/docs/using
-    examples:
   features:
     - or:
       - string: "8.8.8.8"
