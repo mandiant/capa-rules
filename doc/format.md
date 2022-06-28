@@ -288,9 +288,9 @@ capa extracts features from the disassembly of a function, such as which API fun
 The tool also reasons about the code structure to guess at function-level constructs.
 These are the features supported at the function-scope:
 
-  - [api](#api)
   - [namespace](#namespace)
   - [class](#class)
+  - [api](#api)
   - [number](#number)
   - [string and substring](#string-and-substring)
   - [bytes](#bytes)
