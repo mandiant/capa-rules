@@ -14,6 +14,5 @@ rule:
       - b9f5bd514485fb06da39beff051b9fdc
   features:
     - and:
-      - string: "RijndaelManaged"
-      - string: "CryptoStream"
-      - string: "System.Security.Cryptography"
+      - class: System.Security.Cryptography.RijndaelManaged
+      - class: System.Security.Cryptography.CryptoStream
