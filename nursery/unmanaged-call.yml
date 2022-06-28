@@ -4,8 +4,8 @@ rule:
     namespace: runtime
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
     description: managed code calls unmanaged (native) code, often seen in .NET
+    scope: function
   features:
     - or:
       - characteristic: unmanaged call

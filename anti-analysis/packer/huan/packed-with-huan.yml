@@ -2,7 +2,8 @@ rule:
   meta:
     name: packed with Huan
     namespace: anti-analysis/packer/huan
-    author: jakub.jozwiak@mandiant.com
+    authors:
+      - jakub.jozwiak@mandiant.com
     scope: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
