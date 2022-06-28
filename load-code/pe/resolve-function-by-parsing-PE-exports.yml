@@ -2,17 +2,17 @@ rule:
   meta:
     name: resolve function by parsing PE exports
     namespace: load-code/pe
-    author: sara-rn
+    authors:
+      - sara-rn
     scope: function
     examples:
-      - 73CE04892E5F39EC82B00C02FC04C70F
+      - 73CE04892E5F39EC82B00C02FC04C70F:0x406BA1
   features:
     - and:
       - os: windows
       - or:
         - characteristic: loop
         - mnemonic: movzx
-        - mnemonic: mov
       - and:
         - offset: 0x3C = IMAGE_DOS_HEADER.PE.e_lfanew
         - or:
