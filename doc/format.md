@@ -206,7 +206,7 @@ In a few words each, the top level namespaces are:
   - [lib](https://github.com/mandiant/capa-rules/tree/master/lib/) - building blocks to create other rules
   - [linking](https://github.com/mandiant/capa-rules/tree/master/linking/) - detection of dependencies, such as OpenSSL or Zlib
   - [load-code](https://github.com/mandiant/capa-rules/tree/master/load-code/) - runtime load and execution of code, such as embedded PE or shellcode
-   - [malware-family](https://github.com/mandiant/capa-rules/tree/master/malware-family/) - detection of malware families
+  - [malware-family](https://github.com/mandiant/capa-rules/tree/master/malware-family/) - detection of malware families
   - [nursery](https://github.com/mandiant/capa-rules/tree/master/nursery/) - staging ground for rules that are not quite polished
   - [persistence](https://github.com/mandiant/capa-rules/tree/master/persistence/) - all sorts of ways to maintain access
   - [runtime](https://github.com/mandiant/capa-rules/tree/master/runtime/) - detection of language runtimes, such as the .NET platform or Go
