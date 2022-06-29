@@ -630,7 +630,7 @@ Examples:
 
 ## global features
 
-capa extracts a handful features at all scopes, which we call "global features".
+Global features are extracted at all scopes.
 These are features that may be useful to both disassembly and file structure interpretation, such as the targeted OS or architecture.
 The following features are supported at this scope:
 
