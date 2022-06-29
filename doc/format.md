@@ -503,35 +503,16 @@ Characteristics are features that are extracted by the analysis engine.
 They are one-off features that seem interesting to the authors.
 
 For example, the `characteristic: nzxor` feature describes non-zeroing XOR instructions.
-<<<<<<< HEAD
-capa does not support instruction pattern matching,
- so a select set of interesting instructions are pulled out as characteristics.
-
-| characteristic                             | scope                 | description |
-|--------------------------------------------|-----------------------|-------------|
-| `characteristic: embedded pe`        | file                  | (XOR encoded) embedded PE files. |
-| `characteristic: mixed mode` | file | File contains both managed and unmanaged (native) code, often seen in .NET |
-| `characteristic: loop`               | function              | Function contains a loop. |
-| `characteristic: recursive call`     | function              | Function is recursive. |
-| `characteristic: calls from`         | function              | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
-| `characteristic: calls to`           | function              | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
-| `characteristic: unmanaged call` | function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET |
-| `characteristic: nzxor`              | basic block, function | Non-zeroing XOR instruction |
-| `characteristic: peb access`         | basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h] |
-| `characteristic: fs access`          | basic block, function | Access to memory via the `fs` segment. |
-| `characteristic: gs access`          | basic block, function | Access to memory via the `gs` segment. |
-| `characteristic: cross section flow` | basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
-| `characteristic: tight loop`         | basic block           | A tight loop where a basic block branches to itself. |
-| `characteristic: indirect call`      | basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
-=======
 
 | characteristic                       | scope                              | description |
 |--------------------------------------|------------------------------------|-------------|
 | `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files. |
+| `characteristic: mixed mode` | file | File contains both managed and unmanaged (native) code, often seen in .NET |
 | `characteristic: loop`               | function                           | Function contains a loop. |
 | `characteristic: recursive call`     | function                           | Function is recursive. |
 | `characteristic: calls from`         | function                           | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
 | `characteristic: calls to`           | function                           | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
+| `characteristic: unmanaged call` | function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET |
 | `characteristic: tight loop`         | basic block, function              | A tight loop where a basic block branches to itself. |
 | `characteristic: stack string`       | basic block, function              | There is a sequence of instructions that looks like stack string construction. |
 | `characteristic: nzxor`              | instruction, basic block, function | Non-zeroing XOR instruction |
@@ -561,7 +542,6 @@ Also, four additional [characteristics](#characteristic) relevant at this scope 
   - `calls from`
   - `calls to`
 
->>>>>>> master
 
 ## file features
 
