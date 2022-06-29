@@ -309,7 +309,7 @@ Example:
     namespace: System.Net
 
 ### class
-A named class used by the logic of the program. This must include class's namespace if recoverable.
+A named class used by the logic of the program. This must include the class's namespace if recoverable.
 
 The parameter is a string describing the class, specified like `namespace.class` or `namespace.nestednamespace.class`.
 
@@ -331,7 +331,8 @@ Example:
     api: kernel32.CreateFile  # matches both Ansi (CreateFileA) and Unicode (CreateFileW) versions
     api: CreateFile
     api: GetEnvironmentVariableW  # only matches on Unicode version
-    api: System.IO.Directory::Delete
+    api: System.IO.File::Delete
+    api: System.Net.WebResponse::GetResponseStream
 
 ### number
 A number used by the logic of the program.
