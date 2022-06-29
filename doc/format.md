@@ -531,7 +531,7 @@ Examples:
     operand[0].number: 0x10
     operand[1].offset: 0x2C
 
-## basic block feature
+## basic block features
 Basic block features stem from combinations of features from the instruction scope that are found within the same basic block.
 
 Also, the following [characteristics](#characteristic) are relevant at this scope and above:
