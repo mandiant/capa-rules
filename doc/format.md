@@ -551,7 +551,6 @@ Also, the following [characteristics](#characteristic) are relevant at this scop
 
 ## file features
 
-capa extracts features from the file data.
 File features stem from the file structure, i.e. PE structure or the raw file data.
 The following features are supported at this scope:
 
