@@ -18,7 +18,7 @@ rule:
           - operand[0].number: 0x2C = VK_SNAPSHOT
           - count(api(user32.keybd_event)): 2
           - or:
-            - operand[0].number: 0x3 #KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
-            - operand[0].number: 0x2 #KEYEVENTF_KEYUP
+            - operand[0].number: 0x3 = KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
+            - operand[0].number: 0x2 = KEYEVENTF_KEYUP
       - match: read clipboard data
       - match: open clipboard
