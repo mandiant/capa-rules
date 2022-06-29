@@ -57,7 +57,7 @@ We'll start at the high level structure and then dig into the logic structures a
     - [mnemonic](#mnemonic)
     - [operand](#operand)
     - [characteristic](#characteristic)
-  - [basic block](#basic-block-features)
+  - [basic block features](#basic-block-features)
   - [function features](#function-features)
   - [file features](#file-features)
     - [format](#format)
@@ -287,7 +287,7 @@ If only one of these features is found in a function, the rule will not match.
 
 # extracted features
 
-capa extracts features from multiple scope, starting with the most specific (instruction) and working towards most general:
+capa extracts features from multiple scopes, starting with the most specific (instruction) and working towards the most general:
 
 | scope       | best for...                                                                              |
 |-------------|------------------------------------------------------------------------------------------|
@@ -301,11 +301,37 @@ In general, capa collects and merges the features from lower scopes into higher 
 for example, features extracted from individual instructions are merged into the function scope that contains the instructions.
 This way, you can use the match results against instructions ("the constant X is for crypto algorithm Y") to recognize function-level capabilities ("crypto function Z").
 
+
+### characteristic
+
+Characteristics are features that are extracted by the analysis engine.
+They are one-off features that seem interesting to the authors.
+
+For example, the `characteristic: nzxor` feature describes non-zeroing XOR instructions.
+
+| characteristic                       | scope                              | description |
+|--------------------------------------|------------------------------------|-------------|
+| `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files. |
+| `characteristic: mixed mode` | file | File contains both managed and unmanaged (native) code, often seen in .NET |
+| `characteristic: loop`               | function                           | Function contains a loop. |
+| `characteristic: recursive call`     | function                           | Function is recursive. |
+| `characteristic: calls from`         | function                           | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
+| `characteristic: calls to`           | function                           | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
+| `characteristic: tight loop`         | basic block, function              | A tight loop where a basic block branches to itself. |
+| `characteristic: stack string`       | basic block, function              | There is a sequence of instructions that looks like stack string construction. |
+| `characteristic: nzxor`              | instruction, basic block, function | Non-zeroing XOR instruction |
+| `characteristic: peb access`         | instruction, basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h] |
+| `characteristic: fs access`          | instruction, basic block, function | Access to memory via the `fs` segment. |
+| `characteristic: gs access`          | instruction, basic block, function | Access to memory via the `gs` segment. |
+| `characteristic: cross section flow` | instruction, basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
+| `characteristic: indirect call`      | instruction, basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
+| `characteristic: call $+5`           | instruction, basic block, function | Call just past the current instruction. |
+| `characteristic: unmanaged call` | instruction, basic block, function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET |
+
 ## instruction features
 
-capa extracts features from the disassembly of a function, such as which API functions are called.
-The tool also reasons about the code structure to guess at function-level constructs.
-These are the features supported at the function-scope:
+Instruction features stem from individual instructions, such as mnemonics, string references, or function calls.
+The following features are relevant at this scope and above:
 
   - [namespace](#namespace)
   - [class](#class)
@@ -316,7 +342,16 @@ These are the features supported at the function-scope:
   - [offset](#offset)
   - [mnemonic](#mnemonic)
   - [operand](#operand)
-  - [characteristic](#characteristic)
+
+Also, the following [characteristics](#characteristic) are relevant at this scope and above:
+  - `nzxor`
+  - `peb access`
+  - `fs access`
+  - `gs access`
+  - `cross section flow`
+  - `indirect call`
+  - `call $+5`
+  - `unmanaged call`
 
 ### namespace
 A named namespace used by the logic of the program.
@@ -496,47 +531,18 @@ Examples:
     operand[0].number: 0x10
     operand[1].offset: 0x2C
 
+## basic block feature
+Basic block features stem from combinations of features from the instruction scope that are found within the same basic block.
 
-### characteristic
-
-Characteristics are features that are extracted by the analysis engine.
-They are one-off features that seem interesting to the authors.
-
-For example, the `characteristic: nzxor` feature describes non-zeroing XOR instructions.
-
-| characteristic                       | scope                              | description |
-|--------------------------------------|------------------------------------|-------------|
-| `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files. |
-| `characteristic: mixed mode` | file | File contains both managed and unmanaged (native) code, often seen in .NET |
-| `characteristic: loop`               | function                           | Function contains a loop. |
-| `characteristic: recursive call`     | function                           | Function is recursive. |
-| `characteristic: calls from`         | function                           | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
-| `characteristic: calls to`           | function                           | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
-| `characteristic: unmanaged call` | function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET |
-| `characteristic: tight loop`         | basic block, function              | A tight loop where a basic block branches to itself. |
-| `characteristic: stack string`       | basic block, function              | There is a sequence of instructions that looks like stack string construction. |
-| `characteristic: nzxor`              | instruction, basic block, function | Non-zeroing XOR instruction |
-| `characteristic: peb access`         | instruction, basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h] |
-| `characteristic: fs access`          | instruction, basic block, function | Access to memory via the `fs` segment. |
-| `characteristic: gs access`          | instruction, basic block, function | Access to memory via the `gs` segment. |
-| `characteristic: cross section flow` | instruction, basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
-| `characteristic: indirect call`      | instruction, basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
-| `characteristic: call $+5`           | instruction, basic block, function | Call just past the current instruction. |
-
-## basic block features
-
-Use combinations of features from the instruction scope that are found within the same basic block.
-
-Also, two additional [characteristics](#characteristic) relevant at this scope and above:
+Also, the following [characteristics](#characteristic) are relevant at this scope and above:
   - `tight loop`
   - `stack string`
 
 
 ## function features
+Function features stem from combinations of features from the instruction and basic block scopes that are found within the same function.
 
-Use combinations of features from the instruction and basic block scopes that are found within the same function.
-
-Also, four additional [characteristics](#characteristic) relevant at this scope and above:
+Also, the following [characteristics](#characteristic) are relevant at this scope and above:
   - `loop`
   - `recursive call`
   - `calls from`
@@ -547,7 +553,7 @@ Also, four additional [characteristics](#characteristic) relevant at this scope 
 
 capa extracts features from the file data.
 File features stem from the file structure, i.e. PE structure or the raw file data.
-These are the features supported at the file-scope:
+The following features are supported at this scope:
 
   - [format](#format)
   - [string and substring](#file-string-and-substring)
@@ -627,7 +633,7 @@ Examples:
 
 capa extracts a handful features at all scopes, which we call "global features".
 These are features that may be useful to both disassembly and file structure interpretation, such as the targeted OS or architecture.
-These are the global features:
+The following features are supported at this scope:
 
   - [os](#os)
   - [arch](#arch)
