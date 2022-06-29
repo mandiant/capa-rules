@@ -27,9 +27,9 @@ rule:
           - mnemonic: popfq
       - or:
         - description: set trap flag
-        - and:
+        - instruction:
           - mnemonic: or
           - number: 0x100
-        - and:
+        - instruction:
           - mnemonic: bts
           - number: 0x8

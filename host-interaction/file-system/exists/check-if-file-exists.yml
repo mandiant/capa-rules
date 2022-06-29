@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/file-system/exists
     authors:
       - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
@@ -14,11 +15,14 @@ rule:
       - basic block:
         - and:
           - api: kernel32.GetFileAttributes
-          - mnemonic: cmp
-          - number: 0xFFFFFFFF = INVALID_FILE_ATTRIBUTES
+          - instruction:
+            - mnemonic: cmp
+            - number: 0xFFFFFFFF = INVALID_FILE_ATTRIBUTES
       - basic block:
         - and:
           - api: kernel32.GetLastError
-          - mnemonic: cmp
-          - number: 2 = ERROR_FILE_NOT_FOUND
+          - instruction:
+            - mnemonic: cmp
+            - number: 2 = ERROR_FILE_NOT_FOUND
       - api: shlwapi.PathFileExists
+      - api: System.IO.File::Exists

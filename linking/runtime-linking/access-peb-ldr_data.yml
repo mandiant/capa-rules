@@ -14,47 +14,33 @@ rule:
       - 3FDFB2D522E7DEECAAAF2F87420F7E75:0x4117B7
   features:
     - or:
-      - description: x32
       - and:
-        - description: resolve the PEB
-        - or:
-          - match: PEB access
+        - arch: i386
+        - description: x32
+
+        - match: PEB access
 
         # x86 Windows uses fs:0 to access the TIB which contains SEH information at offset 0
         # checking for fs:0 and a (possibly unrelated) number or offset often results in false positives
 
-        - offset/x32: 0x0C = PEB.LDR_DATA
+        - offset: 0x0C = PEB.LDR_DATA
 
         - or:
           - description: resolve a module list
-          - offset/x32: 0x0C = PEB.LDR_DATA.InLoadOrderModuleList
-          - offset/x32: 0x14 = PEB.LDR_DATA.InMemoryOrderModuleList
-          - offset/x32: 0x1C = PEB.LDR_DATA.InInitializationOrderModuleList
+          - offset: 0x0C = PEB.LDR_DATA.InLoadOrderModuleList
+          - offset: 0x14 = PEB.LDR_DATA.InMemoryOrderModuleList
+          - offset: 0x1C = PEB.LDR_DATA.InInitializationOrderModuleList
 
       - and:
+        - arch: amd64
         - description: x64
 
-        - or:
-          - description: resolve the PEB
+        - match: PEB access
 
-          - match: PEB access
-          # in the case of CallObfuscator, gs:[rax]
-          - and:
-            - number/x64: 0x60
-            - characteristic: gs access
-          # in 0f5d5d07c6533bc6d991836ce79daaa1
-          # then we have:
-          #
-          #     xor edx, edx
-          #     mov edx, fs:[edx+30h]
-          - and:
-            - offset/x64: 0x60 = PEB
-            - characteristic: gs access
-
-        - offset/x64: 0x18 = PEB.LDR_DATA
+        - offset: 0x18 = PEB.LDR_DATA
 
         - or:
           - description: resolve a module list
-          - offset/x64: 0x10 = PEB.LDR_DATA.InLoadOrderModuleList
-          - offset/x64: 0x20 = PEB.LDR_DATA.InMemoryOrderModuleList
-          - offset/x64: 0x30 = PEB.LDR_DATA.InInitializationOrderModuleList
+          - offset: 0x10 = PEB.LDR_DATA.InLoadOrderModuleList
+          - offset: 0x20 = PEB.LDR_DATA.InMemoryOrderModuleList
+          - offset: 0x30 = PEB.LDR_DATA.InInitializationOrderModuleList

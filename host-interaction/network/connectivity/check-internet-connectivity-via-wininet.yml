@@ -17,8 +17,9 @@ rule:
           - api: wininet.InternetGetConnectedState
           - api: wininet.InternetCheckConnection
         - optional:
-          - mnemonic: cmp
-          - or:
-            - number: 0 = FALSE
-            - number: 1 = TRUE
+          - instruction:
+            - mnemonic: cmp
+            - or:
+              - number: 0 = FALSE
+              - number: 1 = TRUE
       - api: wininet.InternetAttemptConnect

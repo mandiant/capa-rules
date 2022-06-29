@@ -18,3 +18,4 @@ rule:
       - api: kernel32.ExpandEnvironmentStrings
       - api: msvcr90.getenv
       - api: msvcrt.getenv
+      - api: System.Environment::GetEnvironmentVariable

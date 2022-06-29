@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/file-system/delete
     authors:
       - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - File System::Delete Directory [C0048]
@@ -16,3 +17,4 @@ rule:
       - api: RemoveDirectoryTransacted
       - api: _rmdir
       - api: _wrmdir
+      - api: System.IO.DirectoryInfo::Delete
