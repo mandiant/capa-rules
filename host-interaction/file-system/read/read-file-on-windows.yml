@@ -33,4 +33,3 @@ rule:
       - api: System.IO.File::ReadAllText
       - api: System.IO.File::ReadAllTextAsync
       - api: System.IO.File::ReadLines
-      - api: System.IO.File::ReadAllBytes
