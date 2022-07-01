@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: invoke dotnet assembly method
+    name: invoke .NET assembly method
     namespace: load-code/dotnet
     authors:
       - anushka.virgaonkar@mandiant.com
