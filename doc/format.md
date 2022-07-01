@@ -15,15 +15,24 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     scope: function
+    mbc:
+      - Data::Checksum::CRC32 [C0032.001]
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
       - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
+      - 7EFF498DE13CC734262F87E6B3EF38AB:0x100084A6
   features:
     - or:
       - and:
         - mnemonic: shr
-        - number: 0xEDB88320
+        - or:
+          - number: 0xEDB88320
+          - bytes: 00 00 00 00 96 30 07 77 2C 61 0E EE BA 51 09 99 19 C4 6D 07 8F F4 6A 70 35 A5 63 E9 A3 95 64 9E = crc32_tab
         - number: 8
+        - characteristic: nzxor
+      - and:
+        - number: 0x8320
+        - number: 0xEDB8
         - characteristic: nzxor
       - api: RtlComputeCrc32
 ```
@@ -37,7 +46,10 @@ We'll start at the high level structure and then dig into the logic structures a
   - [meta block](#meta-block)
   - [features block](#features-block)
 - [extracted features](#extracted-features)
-  - [instruction features](#instruction-features)
+  - [characteristic](#characteristic)
+  - [instruction features](#function-features)
+    - [namespace](#namespace)
+    - [class](#class)
     - [api](#api)
     - [number](#number)
     - [string and substring](#string-and-substring)
@@ -45,8 +57,7 @@ We'll start at the high level structure and then dig into the logic structures a
     - [offset](#offset)
     - [mnemonic](#mnemonic)
     - [operand](#operand)
-    - [characteristic](#characteristic)
-  - [basic block](#basic-block-features)
+  - [basic block features](#basic-block-features)
   - [function features](#function-features)
   - [file features](#file-features)
     - [format](#format)
@@ -55,6 +66,8 @@ We'll start at the high level structure and then dig into the logic structures a
     - [import](#import)
     - [section](#section)
     - [function-name](#function-name)
+    - [namespace](#namespace)
+    - [class](#class)
   - [global features](#global-features)
     - [os](#os)
     - [arch](#arch)
@@ -116,7 +129,7 @@ Here are the common fields:
 
   - `namespace` is required when a rule describes a technique, and helps us group rules into buckets. More details below.
 
-  - `author` specifies the name or handle of the rule author.
+  - `authors` is a list of names or handles of the rule authors.
   
   - `description` is optional text that describes the intent or interpretation of the rule.
 
@@ -194,8 +207,12 @@ In a few words each, the top level namespaces are:
   - [executable](https://github.com/mandiant/capa-rules/tree/master/executable/) - characteristics of the executable, such as PE sections or debug info
   - [host-interaction](https://github.com/mandiant/capa-rules/tree/master/host-interaction/) - access or manipulation of system resources, like processes or the Registry
   - [impact](https://github.com/mandiant/capa-rules/tree/master/impact/) - end goal
+  - [internal](https://github.com/mandiant/capa-rules/tree/master/internal/) - used internally by capa to guide analysis
+  - [lib](https://github.com/mandiant/capa-rules/tree/master/lib/) - building blocks to create other rules
   - [linking](https://github.com/mandiant/capa-rules/tree/master/linking/) - detection of dependencies, such as OpenSSL or Zlib
   - [load-code](https://github.com/mandiant/capa-rules/tree/master/load-code/) - runtime load and execution of code, such as embedded PE or shellcode
+  - [malware-family](https://github.com/mandiant/capa-rules/tree/master/malware-family/) - detection of malware families
+  - [nursery](https://github.com/mandiant/capa-rules/tree/master/nursery/) - staging ground for rules that are not quite polished
   - [persistence](https://github.com/mandiant/capa-rules/tree/master/persistence/) - all sorts of ways to maintain access
   - [runtime](https://github.com/mandiant/capa-rules/tree/master/runtime/) - detection of language runtimes, such as the .NET platform or Go
   - [targeting](https://github.com/mandiant/capa-rules/tree/master/targeting/) - special handling of systems, such as ATM machines
@@ -270,7 +287,7 @@ If only one of these features is found in a function, the rule will not match.
 
 # extracted features
 
-capa extracts features from multiple scope, starting with the most specific (instruction) and working towards most general:
+capa extracts features from multiple scopes, starting with the most specific (instruction) and working towards the most general:
 
 | scope       | best for...                                                                              |
 |-------------|------------------------------------------------------------------------------------------|
@@ -284,12 +301,40 @@ In general, capa collects and merges the features from lower scopes into higher 
 for example, features extracted from individual instructions are merged into the function scope that contains the instructions.
 This way, you can use the match results against instructions ("the constant X is for crypto algorithm Y") to recognize function-level capabilities ("crypto function Z").
 
+
+### characteristic
+
+Characteristics are features that are extracted by the analysis engine.
+They are one-off features that seem interesting to the authors.
+
+For example, the `characteristic: nzxor` feature describes non-zeroing XOR instructions.
+
+| characteristic                       | scope                              | description |
+|--------------------------------------|------------------------------------|-------------|
+| `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files. |
+| `characteristic: mixed mode` | file | File contains both managed and unmanaged (native) code, often seen in .NET |
+| `characteristic: loop`               | function                           | Function contains a loop. |
+| `characteristic: recursive call`     | function                           | Function is recursive. |
+| `characteristic: calls from`         | function                           | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
+| `characteristic: calls to`           | function                           | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
+| `characteristic: tight loop`         | basic block, function              | A tight loop where a basic block branches to itself. |
+| `characteristic: stack string`       | basic block, function              | There is a sequence of instructions that looks like stack string construction. |
+| `characteristic: nzxor`              | instruction, basic block, function | Non-zeroing XOR instruction |
+| `characteristic: peb access`         | instruction, basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h] |
+| `characteristic: fs access`          | instruction, basic block, function | Access to memory via the `fs` segment. |
+| `characteristic: gs access`          | instruction, basic block, function | Access to memory via the `gs` segment. |
+| `characteristic: cross section flow` | instruction, basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
+| `characteristic: indirect call`      | instruction, basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
+| `characteristic: call $+5`           | instruction, basic block, function | Call just past the current instruction. |
+| `characteristic: unmanaged call` | instruction, basic block, function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET |
+
 ## instruction features
 
-capa extracts features from the disassembly of a function, such as which API functions are called.
-The tool also reasons about the code structure to guess at function-level constructs.
-These are the features supported at the function-scope:
+Instruction features stem from individual instructions, such as mnemonics, string references, or function calls.
+The following features are relevant at this scope and above:
 
+  - [namespace](#namespace)
+  - [class](#class)
   - [api](#api)
   - [number](#number)
   - [string and substring](#string-and-substring)
@@ -297,13 +342,42 @@ These are the features supported at the function-scope:
   - [offset](#offset)
   - [mnemonic](#mnemonic)
   - [operand](#operand)
-  - [characteristic](#characteristic)
+
+Also, the following [characteristics](#characteristic) are relevant at this scope and above:
+  - `nzxor`
+  - `peb access`
+  - `fs access`
+  - `gs access`
+  - `cross section flow`
+  - `indirect call`
+  - `call $+5`
+  - `unmanaged call`
+
+### namespace
+A named namespace used by the logic of the program.
+
+The parameter is a string describing the namespace name, specified like `namespace` or `namespace.nestednamespace`.
+
+Example:
+
+    namespace: System.IO
+    namespace: System.Net
+
+### class
+A named class used by the logic of the program. This must include the class's namespace if recoverable.
+
+The parameter is a string describing the class, specified like `namespace.class` or `namespace.nestednamespace.class`.
+
+Example:
+
+    class: System.IO.File
+    class: System.Net.WebResponse
 
 ### api
 A call to a named function, probably an import,
 though possibly a local function (like `malloc`) extracted via function signature matching like FLIRT.
 
-The parameter is a string describing the function name, specified like `module.functionname` or `functionname`.
+The parameter is a string describing the function name, specified like  `functionname`, `module.functionname`, or `namespace.class::functioname`.
 
 Windows API functions that take string arguments come in two API versions. For example, `CreateProcessA` takes ANSI strings and `CreateProcessW` takes Unicode strings. capa extracts these API features both with and without the suffix character `A` or `W`. That means you can write a rule to match on both APIs using the base name. If you want to match a specific API version, you can include the suffix.
 
@@ -312,7 +386,8 @@ Example:
     api: kernel32.CreateFile  # matches both Ansi (CreateFileA) and Unicode (CreateFileW) versions
     api: CreateFile
     api: GetEnvironmentVariableW  # only matches on Unicode version
-
+    api: System.IO.File::Delete
+    api: System.Net.WebResponse::GetResponseStream
 
 ### number
 A number used by the logic of the program.
@@ -456,45 +531,18 @@ Examples:
     operand[0].number: 0x10
     operand[1].offset: 0x2C
 
-
-### characteristic
-
-Characteristics are features that are extracted by the analysis engine.
-They are one-off features that seem interesting to the authors.
-
-For example, the `characteristic: nzxor` feature describes non-zeroing XOR instructions.
-
-| characteristic                       | scope                              | description |
-|--------------------------------------|------------------------------------|-------------|
-| `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files. |
-| `characteristic: loop`               | function                           | Function contains a loop. |
-| `characteristic: recursive call`     | function                           | Function is recursive. |
-| `characteristic: calls from`         | function                           | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
-| `characteristic: calls to`           | function                           | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
-| `characteristic: tight loop`         | basic block, function              | A tight loop where a basic block branches to itself. |
-| `characteristic: stack string`       | basic block, function              | There is a sequence of instructions that looks like stack string construction. |
-| `characteristic: nzxor`              | instruction, basic block, function | Non-zeroing XOR instruction |
-| `characteristic: peb access`         | instruction, basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h] |
-| `characteristic: fs access`          | instruction, basic block, function | Access to memory via the `fs` segment. |
-| `characteristic: gs access`          | instruction, basic block, function | Access to memory via the `gs` segment. |
-| `characteristic: cross section flow` | instruction, basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
-| `characteristic: indirect call`      | instruction, basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
-| `characteristic: call $+5`           | instruction, basic block, function | Call just past the current instruction. |
-
 ## basic block features
+Basic block features stem from combinations of features from the instruction scope that are found within the same basic block.
 
-Use combinations of features from the instruction scope that are found within the same basic block.
-
-Also, two additional [characteristics](#characteristic) relevant at this scope and above:
+Also, the following [characteristics](#characteristic) are relevant at this scope and above:
   - `tight loop`
   - `stack string`
 
 
 ## function features
+Function features stem from combinations of features from the instruction and basic block scopes that are found within the same function.
 
-Use combinations of features from the instruction and basic block scopes that are found within the same function.
-
-Also, four additional [characteristics](#characteristic) relevant at this scope and above:
+Also, the following [characteristics](#characteristic) are relevant at this scope and above:
   - `loop`
   - `recursive call`
   - `calls from`
@@ -503,9 +551,8 @@ Also, four additional [characteristics](#characteristic) relevant at this scope 
 
 ## file features
 
-capa extracts features from the file data.
 File features stem from the file structure, i.e. PE structure or the raw file data.
-These are the features supported at the file-scope:
+The following features are supported at this scope:
 
   - [format](#format)
   - [string and substring](#file-string-and-substring)
@@ -513,6 +560,8 @@ These are the features supported at the file-scope:
   - [import](#import)
   - [section](#section)
   - [function-name](#function-name)
+  - [namespace](#namespace)
+  - [class](#class)
 
 
 ### format
@@ -522,6 +571,7 @@ The name of the file format.
 Valid formats:
   - `pe`
   - `elf`
+  - `dotnet`
 
 ### file string and substring
 An ASCII or UTF-16 LE string present in the file.
@@ -557,15 +607,17 @@ Examples:
     import: kernel32.WinExec
     import: WinExec           # wildcard module name
     import: kernel32.#22      # by ordinal
+    import: System.IO.File::Exists
 
 ### function-name
 
-The name of a recognized statically-linked library, such as recovered via FLIRT.
+The name of a recognized statically-linked library, such as recovered via FLIRT, or a name extracted from information contained in the file, such as .NET metadata.
 This lets you write rules describing functionality from third party libraries, such as "encrypts data with AES via CryptoPP".
 
 Examples:
 
     function-name: "?FillEncTable@Base@Rijndael@CryptoPP@@KAXXZ"
+    function-name: Malware.Backdoor::Beacon
 
 ### section
 
@@ -578,9 +630,9 @@ Examples:
 
 ## global features
 
-capa extracts a handful features at all scopes, which we call "global features".
+Global features are extracted at all scopes.
 These are features that may be useful to both disassembly and file structure interpretation, such as the targeted OS or architecture.
-These are the global features:
+The following features are supported at this scope:
 
   - [os](#os)
   - [arch](#arch)

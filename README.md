@@ -1,7 +1,7 @@
 # capa rules
 
 [![Rule linter status](https://github.com/mandiant/capa-rules/workflows/CI/badge.svg)](https://github.com/mandiant/capa-rules/actions?query=workflow%3A%22CI%22)
-[![Number of rules](https://img.shields.io/badge/rules-677-blue.svg)](rules)
+[![Number of rules](https://img.shields.io/badge/rules-681-blue.svg)](rules)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)](LICENSE.txt)
 
 This is the standard collection of rules for [capa](https://github.com/mandiant/capa) - the tool to automatically identify capabilities of programs.
@@ -30,15 +30,24 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     scope: function
+    mbc:
+      - Data::Checksum::CRC32 [C0032.001]
     examples:
       - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
       - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
+      - 7EFF498DE13CC734262F87E6B3EF38AB:0x100084A6
   features:
     - or:
       - and:
         - mnemonic: shr
-        - number: 0xEDB88320
+        - or:
+          - number: 0xEDB88320
+          - bytes: 00 00 00 00 96 30 07 77 2C 61 0E EE BA 51 09 99 19 C4 6D 07 8F F4 6A 70 35 A5 63 E9 A3 95 64 9E = crc32_tab
         - number: 8
+        - characteristic: nzxor
+      - and:
+        - number: 0x8320
+        - number: 0xEDB8
         - characteristic: nzxor
       - api: RtlComputeCrc32
 ```
@@ -66,8 +75,12 @@ In a few words each, the top level namespaces are:
   - [executable](./executable/) - characteristics of the executable, such as PE sections or debug info
   - [host-interaction](./host-interaction/) - access or manipulation of system resources, like processes or the Registry
   - [impact](./impact/) - end goal
+  - [internal](./internal/) - used internally by capa to guide analysis
+  - [lib](./lib/) - building blocks to create other rules
   - [linking](./linking/) - detection of dependencies, such as OpenSSL or Zlib
   - [load-code](./load-code/) - runtime load and execution of code, such as embedded PE or shellcode
+  - [malware-family](./malware-family/) - detection of malware families
+  - [nursery](./nursery/) - staging ground for rules that are not quite polished
   - [persistence](./persistence/) - all sorts of ways to maintain access
   - [runtime](./runtime/) - detection of language runtimes, such as the .NET platform or Go
   - [targeting](./targeting/) - special handling of systems, such as ATM machines
