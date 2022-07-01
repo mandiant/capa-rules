@@ -4,6 +4,7 @@ rule:
     namespace: data-manipulation/hashing/sha256
     authors:
       - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     mbc:
       - Cryptography::Cryptographic Hash::SHA256 [C0029.003]
@@ -11,12 +12,20 @@ rule:
       - C0CFFCF211035A839E28D542DE300298:0x180011400
       - 6CC148363200798A12091B97A17181A1:0x140120240
   features:
-    - and:
-      - number: 0x6A09E667
-      - number: 0xBB67AE85
-      - number: 0x3C6EF372
-      - number: 0xA54FF53A
-      - number: 0x510E527F
-      - number: 0x9B05688C
-      - number: 0x1F83D9AB
-      - number: 0x5BE0CD19
+    - or:
+      - and:
+        - number: 0x6A09E667
+        - number: 0xBB67AE85
+        - number: 0x3C6EF372
+        - number: 0xA54FF53A
+        - number: 0x510E527F
+        - number: 0x9B05688C
+        - number: 0x1F83D9AB
+        - number: 0x5BE0CD19
+      - and:
+        - or:
+          - api: System.Security.Cryptography.SHA256Managed::Initialize
+          - api: System.Security.Cryptography.SHA256CryptoServiceProvider::Initialize
+          - api: System.Security.Cryptography.SHA256::Create
+        - or:
+          - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
