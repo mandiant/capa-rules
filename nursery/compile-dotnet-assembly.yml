@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: compile dotnet assembly
+    name: compile .NET assembly
     namespace: load-code/dotnet
     authors:
       - anushka.virgaonkar@mandiant.com
