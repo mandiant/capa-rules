@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: enumerate files in dotnet
+    namespace: host-interaction/file-system/files/list
+    authors:
+      - anushka.virgaonkar@mandiant.com
+    scope: function
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
+  features:
+    - and:
+      - or:
+        - api: System.IO.DirectoryInfo::GetFiles
+        - api: System.IO.DirectoryInfo::EnumerateFiles
+        - api: System.IO.Directory::GetFiles
+        - api: System.IO.Directory::EnumerateFiles
+        - api: System.IO.Directory::EnumerateFileSystemEntries
+      - optional:
+        - api: System.IO.DirectoryInfo::GetDirectories
+        - api: System.IO.DirectoryInfo::EnumerateDirectories
+        - api: System.IO.Directory::GetDirectories
+        - api: System.IO.Directory::EnumerateDirectories
+        - match: contain loop
