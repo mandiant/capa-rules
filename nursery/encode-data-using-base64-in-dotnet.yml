@@ -9,5 +9,4 @@ rule:
       - Defense Evasion::Obfuscated Files or Information [T1027]
   features:
     - and:
-      - api: System.Security.Cryptography.MD5::Create
-      - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
+      - api: System.Convert::ToBase64String
