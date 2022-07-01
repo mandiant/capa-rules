@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: basic block
     mbc:
       - Process::Terminate Thread [C0039]
@@ -15,3 +16,4 @@ rule:
     - or:
       - api: kernel32.TerminateThread
       - api: PsTerminateSystemThread
+      - api: System.Threading.Thread.Abort
