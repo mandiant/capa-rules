@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/registry
     authors:
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: basic block
     mbc:
       - Operating System::Registry::Create Registry Key [C0036.004]
@@ -37,3 +38,6 @@ rule:
       - api: SHRegCreateUSKey
       - api: RtlCreateRegistryKey
       - api: Microsoft.Win32.RegistryKey::OpenSubKey
+      - api: Microsoft.Win32.RegistryKey::OpenBaseKey
+      - api: Microsoft.Win32.RegistryKey::OpenRemoteBaseKey
+      - api: Microsoft.Win32.RegistryKey::CreateSubKey
