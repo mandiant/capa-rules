@@ -20,8 +20,7 @@ rule:
           - or:
             - and:
               - number: 0x40000000 = GENERIC_WRITE
-              - or:
-                - api: kernel32.CreateFile
+              - api: kernel32.CreateFile
             - and:
               - number: 0x2 = FILE_WRITE_DATA
               - or:
