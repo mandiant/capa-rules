@@ -6,6 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
       - joakim@intezer.com
+      - anushka.virgaonkar@mandiant.com
     scope: basic block
     mbc:
       - Process::Create Thread [C0038]
@@ -33,3 +34,4 @@ rule:
       - and:
         - os: linux
         - api: pthread_create
+      - api: System.Threading.Thread::Start
