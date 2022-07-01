@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encode data using Base64 in dotnet
+    name: encode data using Base64 in .NET
     namespace: data-manipulation/encoding/base64
     authors:
       - anushka.virgaonkar@mandiant.com
