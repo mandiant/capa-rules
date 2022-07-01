@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: terminate process by name in dotnet
+    name: terminate process by name in .NET
     namespace: host-interaction/process/terminate
     authors:
       - anushka.virgaonkar@mandiant.com
