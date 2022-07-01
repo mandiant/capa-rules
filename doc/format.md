@@ -151,6 +151,8 @@ like the ATT&CK list.
 
   - `maec/malware-category` is required when the rule describes a role, such as `dropper` or `backdoor`.
 
+  - `maec/malware-family` is required when the rule describes a malware family, such as `PlugX` or `Beacon`.
+  
   - `maec/analysis-conclusion` is required when the rule describes a disposition, such as `benign` or `malicious`.
 
   - `examples` is a *required* list of references to samples that the rule should match.
