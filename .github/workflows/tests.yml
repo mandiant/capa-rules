@@ -5,6 +5,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    # trigger workflow on edited as well (opened and synchronize are default)
+    types: [opened, edited, synchronize]
 
 # save workspaces to speed up testing
 env:
@@ -13,6 +15,9 @@ env:
 jobs:
   rule_linter:
     runs-on: ubuntu-20.04
+    env:
+      # expect this text in the PR body to trigger thorough lint of all rules
+      LINT_THOROUGH: '[x] lint thorough all'
     steps:
     # We check the submodules separately as the rules submodule's reference may not be our PR/master
     - name: Checkout capa without submodules
@@ -45,7 +50,21 @@ jobs:
       # however, it still gets the modified files and we can continue
       # Error: The head commit for this pull_request event is not ahead of the base commit.
       continue-on-error: true
+    - name: Check PR text body contains LINT_THOROUGH
+      id: lint_thorough
+      env:
+        PR_BODY: ${{ github.event.pull_request.body }}
+      # grep returns 0 (success) if string is found
+      run: echo $PR_BODY | grep -qiF "$LINT_THOROUGH"
+      # otherwise not finding LINT_THOROUGH would fail this step
+      continue-on-error: true
+    - name: Run thorough lint on all rule files
+      # if $LINT_THOROUGH is provided in the PR body
+      if: steps.lint_thorough.outcome == 'success'
+      run: python scripts/lint.py --thorough -v rules/
     - name: Run thorough lint on modified rule files
+      # otherwise only lint modified rules thoroughly
+      if: steps.lint_thorough.outcome != 'success'
       run: |
         cd rules/
         for changed_file in ${{ steps.files.outputs.added_modified }} ${{ steps.files.outputs.renamed }}; do
