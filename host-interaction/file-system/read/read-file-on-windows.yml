@@ -17,8 +17,7 @@ rule:
         - optional:
           - and:
             - number: 0x80000000 = GENERIC_READ
-            - or:
-              - api: kernel32.CreateFile
+            - api: kernel32.CreateFile
         - or:
           - api: kernel32.ReadFile
           - api: ReadFileEx
@@ -33,7 +32,3 @@ rule:
       - api: System.IO.File::ReadAllText
       - api: System.IO.File::ReadAllTextAsync
       - api: System.IO.File::ReadLines
-      - api: System.IO.File::ReadAllBytes
-      - api: System.IO.File::ReadAllBytes
-      - api: System.IO.File::ReadAllBytes
-      - api: System.IO.File::ReadAllBytes

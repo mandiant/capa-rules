@@ -32,5 +32,6 @@ rule:
           - number: 0x8003 = CALG_MD5
           - api: advapi32.CryptCreateHash
       - and:
+        - format: dotnet
         - api: System.Security.Cryptography.MD5::Create
         - api: System.Security.Cryptography.HashAlgorithm::ComputeHash

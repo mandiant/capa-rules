@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encode data using Base64 in dotnet
+    name: encode data using Base64 in .NET
     namespace: data-manipulation/encoding/base64
     authors:
       - anushka.virgaonkar@mandiant.com
@@ -9,5 +9,4 @@ rule:
       - Defense Evasion::Obfuscated Files or Information [T1027]
   features:
     - and:
-      - api: System.Security.Cryptography.MD5::Create
-      - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
+      - api: System.Convert::ToBase64String

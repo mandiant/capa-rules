@@ -23,9 +23,9 @@ rule:
         - number: 0x1F83D9AB
         - number: 0x5BE0CD19
       - and:
+        - format: dotnet
         - or:
           - api: System.Security.Cryptography.SHA256Managed::Initialize
           - api: System.Security.Cryptography.SHA256CryptoServiceProvider::Initialize
           - api: System.Security.Cryptography.SHA256::Create
-        - or:
-          - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
+        - api: System.Security.Cryptography.HashAlgorithm::ComputeHash

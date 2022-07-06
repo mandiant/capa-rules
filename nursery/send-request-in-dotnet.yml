@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: send request in dotnet
+    name: send request in .NET
     namespace: communication/http/client
     authors:
       - anushka.virgaonakr@mandiant.com
