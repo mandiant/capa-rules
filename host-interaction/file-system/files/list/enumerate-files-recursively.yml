@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/file-system/files/list
     authors:
       - "@_re_fox"
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
@@ -12,6 +13,5 @@ rule:
   features:
     - and:
       - or:
-        - match: enumerate files via kernel32 functions
-        - match: enumerate files via ntdll functions
+        - match: enumerate files on windows
       - characteristic: recursive call
