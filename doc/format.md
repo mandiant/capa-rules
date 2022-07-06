@@ -60,7 +60,6 @@ We'll start at the high level structure and then dig into the logic structures a
   - [basic block features](#basic-block-features)
   - [function features](#function-features)
   - [file features](#file-features)
-    - [format](#format)
     - [string and substring](#file-string-and-substring)
     - [export](#export)
     - [import](#import)
@@ -71,6 +70,7 @@ We'll start at the high level structure and then dig into the logic structures a
   - [global features](#global-features)
     - [os](#os)
     - [arch](#arch)
+    - [format](#format)
   - [counting](#counting)
   - [matching prior rule matches and namespaces](#matching-prior-rule-matches-and-namespaces)
   - [descriptions](#descriptions)
@@ -554,7 +554,6 @@ Also, the following [characteristics](#characteristic) are relevant at this scop
 File features stem from the file structure, i.e. PE structure or the raw file data.
 The following features are supported at this scope:
 
-  - [format](#format)
   - [string and substring](#file-string-and-substring)
   - [export](#export)
   - [import](#import)
@@ -563,15 +562,6 @@ The following features are supported at this scope:
   - [namespace](#namespace)
   - [class](#class)
 
-
-### format
-
-The name of the file format.
-
-Valid formats:
-  - `pe`
-  - `elf`
-  - `dotnet`
 
 ### file string and substring
 An ASCII or UTF-16 LE string present in the file.
@@ -636,6 +626,7 @@ The following features are supported at this scope:
 
   - [os](#os)
   - [arch](#arch)
+  - [format](#format)
 
 ### os
 
@@ -725,6 +716,14 @@ However, this can be useful if you have groups of many architecture-specific off
 
 This can be easier to understand than using many `offset/x32` or `offset/x64` features.
 
+### format
+
+The name of the file format.
+
+Valid formats:
+  - `pe`
+  - `elf`
+  - `dotnet`
 
 ## counting
 
