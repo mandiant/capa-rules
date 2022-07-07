@@ -12,6 +12,7 @@ rule:
       - or:
         - api: System.Reflection.Assembly::GetType
         - api: System.Reflection.Assembly::GetTypes
+        - api: System.Object::GetType
       - or:
         - api: System.Type::GetMethod
         - api: System.Type::GetMethodImpl

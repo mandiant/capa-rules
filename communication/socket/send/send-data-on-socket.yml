@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     mbc:
       - Communication::Socket Communication::Send Data [C0001.007]
@@ -18,3 +19,7 @@ rule:
       - api: ws2_32.WSASendMsg
       - api: ws2_32.WSASendTo
       - api: send
+      - api: System.Net.Sockets.Socket::Send
+      - api: System.Net.Sockets.Socket::SendAsync
+      - api: System.Net.Sockets.Socket::SendTo
+      - api: System.Net.Sockets.Socket::SendToAsync

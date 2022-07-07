@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/process/list
     authors:
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::Process Discovery [T1057]
@@ -11,6 +12,8 @@ rule:
       - 493167E85E45363D09495D0841C30648:0x404B00
   features:
     - and:
-      - api: ntoskrnl.PsLookupProcessByProcessId
+      - or:
+        - api: ntoskrnl.PsLookupProcessByProcessId
+        - api: System.Diagnostics.Process::GetProcessById
       - optional:
         - api: ntoskrnl.ObfDereferenceObject

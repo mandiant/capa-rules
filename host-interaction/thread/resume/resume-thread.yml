@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/thread/resume
     authors:
       - 0x534a@mailbox.org
+      - anushka.virgaonkar@mandiant.com
     scope: basic block
     mbc:
       - Process::Resume Thread [C0054]
@@ -15,3 +16,4 @@ rule:
       - api: kernel32.ResumeThread
       - api: ntdll.NtResumeThread
       - api: ntdll.ZwResumeThread
+      - api: System.Threading.Thread::Resume

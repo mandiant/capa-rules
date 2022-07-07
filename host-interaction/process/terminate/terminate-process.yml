@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     mbc:
       - Process::Terminate Process [C0018]
@@ -14,6 +15,8 @@ rule:
   features:
     - or:
       - api: System.Diagnostics.Process::Kill
+      - api: System.Diagnostics.Process::WaitForExit
+      - api: System.Diagnostics.Process::WaitForExitAsync
       - and:
         - optional:
           - match: open process

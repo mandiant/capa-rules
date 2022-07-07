@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/registry/delete
     authors:
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Modify Registry [T1112]
@@ -23,3 +24,4 @@ rule:
         - api: RtlDeleteRegistryValue
         - api: SHDeleteValue
         - api: SHRegDeleteUSValue
+        - api: Microsoft.Win32.RegistryKey::DeleteValue

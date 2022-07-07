@@ -5,6 +5,7 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::Query Registry [T1012]
@@ -42,3 +43,4 @@ rule:
         - api: SHRegGetBoolUSValue
         - api: SHRegGetValueFromHKCUHKLM
         - api: SHRegGetBoolValueFromHKCUHKLM
+        - api: Microsoft.Win32.RegistryKey::GetValue
