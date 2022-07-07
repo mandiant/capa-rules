@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
@@ -19,3 +20,10 @@ rule:
       - and:
         - os: linux
         - api: getifaddrs
+      - and:
+        - or:
+          - api: System.Net.NetworkInformation.NetworkInterface::GetIPProperties
+          - api: System.Net.NetworkInformation.NetworkInterface::GetIPStatistics
+          - api: System.Net.NetworkInformation.NetworkInterface::GetIPv4Statistics
+        - optional:
+          - api: System.Net.NetworkInformation.NetworkInterface::GetAllNetworkInterfaces

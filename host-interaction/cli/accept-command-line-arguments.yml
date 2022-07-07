@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/cli
     authors:
       - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter [T1059]
@@ -13,3 +14,4 @@ rule:
     - or:
       - api: GetCommandLine
       - api: CommandLineToArgv
+      - api: System.Environment::GetCommandLineArgs
