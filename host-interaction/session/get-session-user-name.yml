@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/session
     authors:
       - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
@@ -19,3 +20,4 @@ rule:
           # - match: get session information (see #463)
           - api: wtsapi32.WTSQuerySessionInformation
           - number: 5 = WTSUserName
+      - api: System.Security.Principal.WindowsIdentity::GetCurrent
