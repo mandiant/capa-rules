@@ -15,9 +15,9 @@ rule:
     - and:
       - basic block:
         - and:
-          - api: SetupAPI.SetupDiGetClassDevs
+          - api: setupapi.SetupDiGetClassDevs
           - bytes: 67 E9 36 4D 25 E3 CE 11 BF C1 08 00 2B E1 03 18 = GUID_DEVCLASS_DISKDRIVE
-      - api: SetupAPI.SetupDiEnumDeviceInfo
-      - api: SetupAPI.SetupDiGetDeviceRegistryProperty
+      - api: setupapi.SetupDiEnumDeviceInfo
+      - api: setupapi.SetupDiGetDeviceRegistryProperty
       - optional:
-        - api: SetupAPI.SetupDiDestroyDeviceInfoList
+        - api: setupapi.SetupDiDestroyDeviceInfoList
