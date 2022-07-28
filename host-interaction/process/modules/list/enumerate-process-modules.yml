@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/process/modules/list
     authors:
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::Process Discovery [T1057]
@@ -36,3 +37,6 @@ rule:
                 - number: 0x10 = TH32CS_SNAPMODULE32
                 - number: 0x18 = TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32
               - api: kernel32.CreateToolhelp32Snapshot
+      - and:
+        - property: System.Diagnostics.Process::Modules
+        - property: System.Diagnostics.ProcessModuleCollection::Item

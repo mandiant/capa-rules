@@ -26,3 +26,4 @@ rule:
       - api: System.IO.File::GetLastAccessTimeUtc
       - api: System.IO.File::GetLastWriteTime
       - api: System.IO.File::GetLastWriteTimeUtc
+      - property: System.IO.FileSystemInfo::Attributes

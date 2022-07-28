@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]
@@ -18,3 +19,4 @@ rule:
       - api: GetComputerObjectName
       - api: ws2_32.gethostname
       - api: gethostname
+      - property: System.Environment::MachineName

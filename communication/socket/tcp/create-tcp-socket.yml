@@ -11,11 +11,13 @@ rule:
     examples:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
-    - and:
-      - number: 6 = IPPROTO_TCP
-      - number: 1 = SOCK_STREAM
-      - number: 2 = AF_INET
-      - or:
-        - api: ws2_32.socket
-        - api: ws2_32.WSASocket
-        - api: socket
+    - or:
+      - and:
+        - number: 6 = IPPROTO_TCP
+        - number: 1 = SOCK_STREAM
+        - number: 2 = AF_INET
+        - or:
+          - api: ws2_32.socket
+          - api: ws2_32.WSASocket
+          - api: socket
+      - property: System.Net.Sockets.TcpClient::Client

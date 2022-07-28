@@ -6,5 +6,6 @@ rule:
       - michael.hunhoff@mandiant.com
     scope: function
   features:
-    - and:
+    - or:
       - api: System.Net.CookieContainer::SetCookies
+      - property: System.Net.HttpWebRequest::CookieContainer

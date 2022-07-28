@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/hardware/cpu
     authors:
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]
@@ -12,12 +13,14 @@ rule:
     examples:
       - al-khaser_x86.exe_:0x432CB0
   features:
-    - and:
-      - match: PEB access
-      - or:
-        - and:
-          - arch: i386
-          - number: 0x64 = PEB->NumberOfProcessors
-        - and:
-          - arch: amd64
-          - number: 0xB8 = PEB->NumberOfProcessors
+    - or:
+      - and:
+        - match: PEB access
+        - or:
+          - and:
+            - arch: i386
+            - number: 0x64 = PEB->NumberOfProcessors
+          - and:
+            - arch: amd64
+            - number: 0xB8 = PEB->NumberOfProcessors
+      - property: System.Environment::ProcessorCount

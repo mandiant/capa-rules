@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/file-system/meta
     authors:
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
@@ -13,3 +14,4 @@ rule:
     - or:
       - api: kernel32.GetFileSize
       - api: kernel32.GetFileSizeEx
+      - property: System.IO.FileInfo::Length
