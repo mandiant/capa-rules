@@ -4,11 +4,13 @@ rule:
     namespace: load-code/powershell/
     authors:
       - anamaria.martinezgom@mandiant.com
+      - adam.storek@mandiant.com
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter::PowerShell [T1059.001]
     examples:
       - 692f7fd6d198e804d6af98eb9e390d61:0x6000004
+      - 4f6fa6a45017397c7e1c9cd5a17235ccb1ff0f5087dfa6b7384552bf507e7fe1.aspx_
   features:
     - and:
       - or:

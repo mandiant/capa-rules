@@ -4,6 +4,7 @@ rule:
     namespace: c2/shell
     authors:
       - moritz.raabe@mandiant.com
+      - adam.storek@mandiant.com
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter::Windows Command Shell [T1059.003]
@@ -11,6 +12,8 @@ rule:
       - Impact::Remote Access::Reverse Shell [B0022.001]
     examples:
       - C91887D861D9BD4A5872249B641BC9F9:0x401A77
+      - 2b71dd245520d9eb5f1e4c633fee61c7d83687591d9f64f9390c26dc95057c3c.aspx_
+      - 2e8c7eacd739ca3f3dc4112b41a024157035096b8d0c26ba79d8b893136391bc.aspx_
   features:
     - or:
       - and:
@@ -30,3 +33,8 @@ rule:
           - and:
             - count(api(SetHandleInformation)): 2 or more
             - number: 1 = HANDLE_FLAG_INHERIT
+      - and:
+        - match: create process on Windows
+        - or:
+          - substring: "cmd.exe"
+          - substring: "powershell.exe"

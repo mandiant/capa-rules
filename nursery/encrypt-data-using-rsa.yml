@@ -4,7 +4,16 @@ rule:
     namespace: data-manipulation/encryption/rsa
     authors:
       - michael.hunhoff@mandiant.com
+      - adam.storek@mandiant.com
     scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Encrypt Data::RSA [C0027.011]
+    examples:
+      - d460cae7d34c51059ef57c5aadb3de099469efbac5fffcf76d0528a511192a28.aspx_
   features:
-    - or:
+    - and:
+      - api: "System.Security.Cryptography.RSACryptoServiceProvider"
       - api: System.Security.Cryptography.RSACryptoServiceProvider::Encrypt

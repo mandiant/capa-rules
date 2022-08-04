@@ -4,7 +4,8 @@ rule:
     namespace: data-manipulation/encryption/aes
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+      - adam.storek@mandiant.com
+    scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
@@ -13,6 +14,15 @@ rule:
     examples:
       - b9f5bd514485fb06da39beff051b9fdc
   features:
-    - and:
-      - class: System.Security.Cryptography.RijndaelManaged
-      - class: System.Security.Cryptography.CryptoStream
+    - or:
+      - and:
+        - api: System.Security.Cryptography.RijndaelManaged
+        - or:
+          - api: System.Security.Cryptography.CryptoStream
+          - api: System.Security.Cryptography.RijndaelManaged::CreateEncryptor
+      - and:
+        - and:
+          - or:
+            - api: System.Security.Cryptography.Rijndael
+            - api: System.Security.Cryptography.Rijndael::Create
+          - api: System.Security.Cryptography.Rijndael::CreateEncryptor
