@@ -17,9 +17,9 @@ rule:
     - or:
       - api: kernel32.GetDiskFreeSpace
       - api: kernel32.GetDiskFreeSpaceEx
-      - property: System.IO.DriveInfo::TotalSize
-      - property: System.IO.DriveInfo::TotalFreeSpace
-      - property: System.IO.DriveInfo::AvailableFreeSpace
+      - property/read: System.IO.DriveInfo::TotalSize
+      - property/read: System.IO.DriveInfo::TotalFreeSpace
+      - property/read: System.IO.DriveInfo::AvailableFreeSpace
       - basic block:
         - and:
           - api: DeviceIoControl

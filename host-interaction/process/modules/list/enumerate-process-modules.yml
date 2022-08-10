@@ -38,5 +38,5 @@ rule:
                 - number: 0x18 = TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32
               - api: kernel32.CreateToolhelp32Snapshot
       - and:
-        - property: System.Diagnostics.Process::Modules
-        - property: System.Diagnostics.ProcessModuleCollection::Item
+        - property/read: System.Diagnostics.Process::Modules
+        - property/read: System.Diagnostics.ProcessModuleCollection::Item

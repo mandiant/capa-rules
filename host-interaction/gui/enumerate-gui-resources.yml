@@ -4,7 +4,6 @@ rule:
     namespace: host-interaction/gui
     authors:
       - johnk3r
-      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::Application Window Discovery [T1010]
@@ -19,4 +18,4 @@ rule:
       - api: EnumWindowStations
       - api: EnumDesktops
       - api: EnumWindows
-      - property: System.Windows.Forms.Screen::AllScreens
+      - property/read: System.Windows.Forms.Screen::AllScreens

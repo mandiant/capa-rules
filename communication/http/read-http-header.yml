@@ -13,4 +13,4 @@ rule:
   features:
     - or:
       - api: winhttp.WinHttpQueryHeaders
-      - property: System.Net.WebClient::Headers
+      - property/read: System.Net.WebClient::Headers

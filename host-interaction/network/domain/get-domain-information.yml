@@ -14,4 +14,4 @@ rule:
   features:
     - or:
       - api: netapi32.DsRoleGetPrimaryDomainInformation
-      - property: System.Net.NetworkInformation.IPGlobalProperties::DomainName
+      - property/read: System.Net.NetworkInformation.IPGlobalProperties::DomainName

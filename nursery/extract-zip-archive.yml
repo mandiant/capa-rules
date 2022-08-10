@@ -10,5 +10,5 @@ rule:
   features:
     - and:
       - api: System.IO.Compression.ZipFile::Open
-      - property: System.IO.Compression.ZipArchive::Entries
+      - property/read: System.IO.Compression.ZipArchive::Entries
       - api: System.IO.Compression.ZipFileExtensions::ExtractToFile

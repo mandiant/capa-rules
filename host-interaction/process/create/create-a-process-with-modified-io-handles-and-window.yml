@@ -38,9 +38,14 @@ rule:
       - and:
         - api: System.Diagnostics.Process::Start
         - or:
-          - property: System.Diagnostics.ProcessStartInfo::UseShellExecute
-          - property: System.Diagnostics.ProcessStartInfo::Verb
-          - property: System.Diagnostics.ProcessStartInfo::WindowStyle
-          - property: System.Diagnostics.ProcessStartInfo::WorkingDirectory
-          - property: System.Diagnostics.ProcessStartInfo::FileName
-          - property: System.Diagnostics.ProcessStartInfo::Arguments
+          - property/write: System.Diagnostics.ProcessStartInfo::UseShellExecute
+          - property/write: System.Diagnostics.ProcessStartInfo::Verb
+          - property/write: System.Diagnostics.ProcessStartInfo::WindowStyle
+          - property/write: System.Diagnostics.ProcessStartInfo::WorkingDirectory
+          - property/write: System.Diagnostics.ProcessStartInfo::FileName
+          - property/write: System.Diagnostics.ProcessStartInfo::Arguments
+          - property/write: System.Diagnostics.ProcessStartInfo::CreateNoWindow
+          - property/write: System.Diagnostics.ProcessStartInfo::RedirectStandardOutput
+          - property/write: System.Diagnostics.ProcessStartInfo::RedirectStandardInput
+          - property/read: System.Diagnostics.Process::StandardOutput
+          - property/read: System.Diagnostics.Process::StandardInput

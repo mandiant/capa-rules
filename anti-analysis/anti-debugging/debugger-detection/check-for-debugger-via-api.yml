@@ -19,4 +19,4 @@ rule:
       - api: WUDFPlatform.WudfIsAnyDebuggerPresent
       - api: WUDFPlatform.WudfIsKernelDebuggerPresent
       - api: WUDFPlatform.WudfIsUserDebuggerPresent
-      - property: System.Diagnostics.Debugger::IsAttached
+      - property/read: System.Diagnostics.Debugger::IsAttached

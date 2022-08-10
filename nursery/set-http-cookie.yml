@@ -8,4 +8,4 @@ rule:
   features:
     - or:
       - api: System.Net.CookieContainer::SetCookies
-      - property: System.Net.HttpWebRequest::CookieContainer
+      - property/write: System.Net.HttpWebRequest::CookieContainer
