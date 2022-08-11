@@ -9,7 +9,6 @@ rule:
       - Discovery::Container and Resource Discovery [T1613]
     references:
       - https://docs.docker.com/engine/api/v1.24/
-    examples:
   features:
     - or:
       - string: /^docker(\.exe)? ps/

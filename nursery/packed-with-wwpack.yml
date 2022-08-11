@@ -11,7 +11,6 @@ rule:
       - Anti-Static Analysis::Software Packing [F0001]
     references:
       - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
-    examples:
   features:
     - or:
       - section: .WWPACK

@@ -8,7 +8,6 @@ rule:
     references:
       - https://dns.he.net/
       - https://dnslytics.com/ip/216.66.1.2
-    examples:
   features:
     - or:
       - string: "216.218.130.2"

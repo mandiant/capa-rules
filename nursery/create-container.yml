@@ -9,7 +9,6 @@ rule:
       - Execution::Deploy Container [T1610]
     references:
       - https://docs.docker.com/engine/api/v1.24/
-    examples:
   features:
     - or:
       - string: /^docker(\.exe)? create/

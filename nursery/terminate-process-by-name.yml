@@ -5,7 +5,7 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
     scope: function
-    examples:
+    # examples:
       # - unpacked Cl0p ransomware
   features:
     - and:

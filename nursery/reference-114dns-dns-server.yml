@@ -8,7 +8,7 @@ rule:
     references:
       - https://www.114dns.com/
       - https://www.amazon.com/ask/questions/Tx27CUHKMM403NP
-    examples:
+    # examples:
       # - ab57d3c179355bf2bcdb7935483d84d4
   features:
     - or:
