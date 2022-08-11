@@ -23,6 +23,5 @@ rule:
               - number: 0x15 = IPPORT_FTP
       - and:
         - api: System.Net.WebRequest::Create
-        - class: System.Net.FtpWebRequest
         - string: STOR
         - property/write: System.Net.WebRequest::Method
