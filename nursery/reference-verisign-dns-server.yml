@@ -7,7 +7,6 @@ rule:
     scope: function
     references:
       - https://www.techradar.com/news/best-dns-server
-    examples:
   features:
     - or:
       - string: "64.6.64.6"

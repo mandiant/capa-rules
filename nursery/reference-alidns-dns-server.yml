@@ -7,7 +7,7 @@ rule:
     scope: function
     references:
       - https://www.alidns.com/
-    examples:
+    # examples:
       # - ab57d3c179355bf2bcdb7935483d84d4
   features:
     - or:

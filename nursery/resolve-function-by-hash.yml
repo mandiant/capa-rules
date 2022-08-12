@@ -10,7 +10,6 @@ rule:
     references:
       - https://www.mandiant.com/resources/precalculated-string-hashes-reverse-engineering-shellcode
       - https://pastebin.com/ci5XYW4P
-    examples:
   features:
     - or:
       - number: 0x6a4abc5b = ROR13(kernel32.dll)

@@ -7,7 +7,6 @@ rule:
     scope: function
     references:
       - https://www.quora.com/What-is-a-4-2-2-1-DNS-server
-    examples:
   features:
     - or:
       - string: "4.2.2.1"

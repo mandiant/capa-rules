@@ -9,7 +9,6 @@ rule:
       - Defense Evasion::Build Image on Host [T1612]
     references:
       - https://docs.docker.com/engine/api/v1.24/
-    examples:
   features:
     - or:
       - string: /^docker(\.exe)? build/

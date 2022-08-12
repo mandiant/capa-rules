@@ -7,7 +7,6 @@ rule:
     scope: instruction
     references:
       - https://github.com/abrandoned/murmur2/blob/master/MurmurHash2.c
-    examples:
   features:
     - and:
       - mnemonic: imul

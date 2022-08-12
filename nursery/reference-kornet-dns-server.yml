@@ -7,7 +7,7 @@ rule:
     scope: function
     references:
       - https://whatismyipaddress.com/ip/168.126.63.1
-    examples:
+    # examples:
       # - ab57d3c179355bf2bcdb7935483d84d4
   features:
     - or:

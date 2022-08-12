@@ -11,7 +11,7 @@ rule:
       - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
       - Cryptography::Encrypt Data::RC6 [C0027.010]
     references:
-      - ref: https://github.com/stamparm/cryptospecs/blob/master/symmetrical/sources/rc6.c#L66
+      - https://github.com/stamparm/cryptospecs/blob/master/symmetrical/sources/rc6.c#L66
     examples:
       - D87BA0BFCE1CDB17FD243B8B1D247E88:0x402390
   features:
