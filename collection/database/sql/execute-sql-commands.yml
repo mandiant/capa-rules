@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: execute SQL commands
+    namespace: collection/database/sql
+    authors:
+      - adam.storek@mandiant.com
+    scope: function
+    att&ck:
+      - Collection::Data from Information Repositories [T1213]
+    examples:
+      - 6f3261eaaabf369bd928d179641b73ffd768184dfd4e00124da462a3075d4239.aspx_
+  features:
+    - and:
+      - api: "System.Data.SqlClient.SqlConnection"
+      - api: "System.Data.SqlClient.SqlConnection::Open"
+      - api: "System.Data.SqlClient.SqlCommand"
+      - api: "System.Data.SqlClient.SqlCommand::ExecuteReader"

@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: decrypt data using AES
+    namespace: data-manipulation/encryption/aes
+    authors:
+      - adam.storek@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
+    mbc:
+      - Cryptography::Decrypt Data::AES [C0031.001]
+    examples:
+      - 1f8f4054932ed1d5d055e9a92aa1e2abba49af3370506674cb1b2c70146ae81a.aspx_
+  features:
+    - or:
+      - and:
+        - api: System.Security.Cryptography.RijndaelManaged
+        - api: System.Security.Cryptography.RijndaelManaged::CreateDecryptor
+      - or:
+        - api: System.Security.Cryptography.Rijndael::Create
+        - and:
+          - api: System.Security.Cryptography.Rijndael
+          - api: System.Security.Cryptography.Rijndael::CreateDecryptor

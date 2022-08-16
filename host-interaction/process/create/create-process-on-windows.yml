@@ -4,13 +4,15 @@ rule:
     namespace: host-interaction/process/create
     authors:
       - moritz.raabe@mandiant.com
-    scope: basic block
+      - adam.storek@mandiant.com
+    scope: function
     mbc:
       - Process::Create Process [C0017]
     examples:
       - 9324D1A8AE37A36AE560C37448C9705A:0x406DB0
       - Practical Malware Analysis Lab 01-04.exe_:0x4011FC
       - 692f7fd6d198e804d6af98eb9e390d61:0x6000003
+      - 03bb5cab46b406bb8613ca6e32991ab3e10b5cd759d5c7813191e9e62868ea73.aspx_
   features:
     - or:
       - api: kernel32.WinExec
@@ -29,3 +31,12 @@ rule:
       - api: ntdll.ZwCreateUserProcess
       - api: ntdll.RtlCreateUserProcess
       - api: System.Diagnostics.Process::Start
+      - and:
+        - or:
+          - and:
+            - api: System.Diagnostics.ProcessStartInfo
+            - property: System.Diagnostics.ProcessStartInfo::FileName
+          - and:
+            - api: System.Diagnostics.Process
+            - property: System.Diagnostics.Process.StartInfo::FileName
+        - api: System.Diagnostics.Process::Start
