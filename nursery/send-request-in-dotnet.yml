@@ -5,6 +5,8 @@ rule:
     authors:
       - anushka.virgaonakr@mandiant.com
     scope: function
+    att&ck:
+      - Command and Control::Application Layer Protocol::Web Protocols [T1071.001]
     mbc:
       - Communication::HTTP Communication::Send Request [C0002.003]
   features:
