@@ -14,11 +14,11 @@ rule:
     - and:
       - match: compiled to the .NET platform
       - or:
-        - string: ProcessedByFody #Used to load every other third-party tool, or trojan component, such as LoadSystem in version 0.0.4.
-        - string: SharpVectors.Converters.Wpf #Used to load SVG images contained in resources. These images are logos of several banks used by the fake pop-up windows.
-        - string: Newtonsoft.Json #Used to parse the data returned by the geoPlugin web service.
-        - string: RijndaelEncryptDecrypt #Used to encrypt and decrypt its strings. Functions were modified to contain the key, so it’s not present in the trojan’s code.
-        - string: SharpClipboard #Used for clipboard hijacking: when the user copies a bitcoin address, Janeleiro replaces it with one randomly chosen from a list of its own.
+        - string: "ProcessedByFody" #Used to load every other third-party tool, or trojan component, such as LoadSystem in version 0.0.4.
+        - string: "SharpVectors.Converters.Wpf" #Used to load SVG images contained in resources. These images are logos of several banks used by the fake pop-up windows.
+        - string: "Newtonsoft.Json" #Used to parse the data returned by the geoPlugin web service.
+        - string: "RijndaelEncryptDecrypt" #Used to encrypt and decrypt its strings. Functions were modified to contain the key, so it’s not present in the trojan’s code.
+        - string: "SharpClipboard" #Used for clipboard hijacking: when the user copies a bitcoin address, Janeleiro replaces it with one randomly chosen from a list of its own.
         - class: ProcessedByFody #Used to load every other third-party tool, or trojan component
         - class: Costura.AssemblyLoader #Costura is an add-in for Fody
         - namespace: Costura #Costura is an add-in for Fody
