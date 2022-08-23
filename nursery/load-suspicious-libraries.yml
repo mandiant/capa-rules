@@ -2,14 +2,14 @@ rule:
   meta:
     name: load suspicious libraries
     namespace: nursery
+    authors:
+      - johnk3r
     scope: file
     references:
       - https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/
     examples:
       - 387f15043f0198fd3a637b0758c2b6dde9ead795c3ed70803426fc355731b173
       - 7f4ba9fc95b30baf8922a6933a4ff1c6a7fef41fae487bb31014c4963357770f
-    authors:
-      - johnk3r
   features:
     - and:
       - match: compiled to the .NET platform
