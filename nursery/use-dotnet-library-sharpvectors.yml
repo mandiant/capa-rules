@@ -12,4 +12,4 @@ rule:
   features:
     - and:
       - match: compiled to the .NET platform
-      - string: "SharpVectors.Converters.Wpf"
+      - string: SharpVectors.Converters.Wpf
