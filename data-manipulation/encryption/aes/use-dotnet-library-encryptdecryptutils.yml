@@ -1,7 +1,7 @@
 rule:
   meta:
     name: use .NET library EncryptDecryptUtils
-    namespace: anti-analysis/obfuscation
+    namespace: data-manipulation/encryption/aes
     authors:
       - johnk3r
     scope: file
