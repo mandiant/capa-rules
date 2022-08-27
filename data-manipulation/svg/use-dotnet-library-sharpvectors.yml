@@ -1,7 +1,7 @@
 rule:
   meta:
     name: use .NET library SharpVectors
-    namespace: nursery
+    namespace: data-manipulation/svg
     authors:
       - johnk3r
     scope: file
