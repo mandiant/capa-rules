@@ -1,7 +1,7 @@
 rule:
   meta:
     name: use .NET library Newtonsoft.Json
-    namespace: nursery
+    namespace: data-manipulation/json
     authors:
       - johnk3r
     scope: file
