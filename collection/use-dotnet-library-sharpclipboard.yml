@@ -16,4 +16,4 @@ rule:
   features:
     - and:
       - match: compiled to the .NET platform
-      - string: SharpClipboard
+      - string: "SharpClipboard"
