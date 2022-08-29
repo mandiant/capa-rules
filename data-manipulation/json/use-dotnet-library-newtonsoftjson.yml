@@ -3,7 +3,7 @@ rule:
     name: use .NET library Newtonsoft.Json
     namespace: data-manipulation/json
     authors:
-      - johnk3r
+      - "@johnk3r"
     scope: file
     references:
       - https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/
