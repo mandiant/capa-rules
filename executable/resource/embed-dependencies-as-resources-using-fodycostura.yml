@@ -3,7 +3,8 @@ rule:
     name: embed dependencies as resources using Fody/Costura
     namespace: executable/resource
     authors:
-      - johnk3r, moritz.raabe@mandiant.com
+      - "@johnk3r"
+      - "@mr-tz"
     scope: file
     references:
       - https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/
