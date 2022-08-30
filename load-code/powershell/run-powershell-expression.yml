@@ -7,6 +7,8 @@ rule:
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter::PowerShell [T1059.001]
+    mbc:
+      - Execution::Command and Scripting Interpreter [E1059]
     examples:
       - 692f7fd6d198e804d6af98eb9e390d61:0x6000004
   features:
