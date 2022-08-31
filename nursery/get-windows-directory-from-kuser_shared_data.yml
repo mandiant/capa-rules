@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: obtain Windows directory from KUSER_SHARED_DATA
+    name: get Windows directory from KUSER_SHARED_DATA
     namespace: host-interaction/file-system
     authors:
       - david.cannings@pwc.com
@@ -16,12 +16,12 @@ rule:
       - or:
         - mnemonic: push
         - mnemonic: mov
-      
+
       # Fixed offset of Windows directory path in KUSER_SHARED_DATA structure.
-      - number: 0x7ffe0030 = KUSER_SHARED_DATA.NtSystemRoot     
-      
+      - number: 0x7ffe0030 = KUSER_SHARED_DATA.NtSystemRoot
+
       # Typically to a string copy function or memcpy equivalent
       - mnemonic: call
-      
+
       # We could also look for a fixed length (for string / memcpy) but these vary, 
       # typically from MAX_PATH to MAX_PATH*2 with subtle variations thereof.
