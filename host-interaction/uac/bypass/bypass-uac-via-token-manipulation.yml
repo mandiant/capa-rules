@@ -17,12 +17,12 @@ rule:
     - and:
       # Could expand this to include other processes that run elevated by default.
       - string: "wusa.exe"
-      
+
       # APIs to run an elevated program. Could expand this to process enumeration.
       - or:
         - api: ShellExecuteEx
         - api: ShellExecuteExW
-      
+
       # Functions designed to obtain the token
       - or:
         - api: NtOpenProcessToken
@@ -31,7 +31,7 @@ rule:
         # Some samples import the Nt* APIs dynamically, this constant is relatively
         # unique.
         - number: 0xF01FF = TOKEN_ALL_ACCESS
-      
+
       # Functions designed to (ab)use the token
       - or:
         - api: NtSetInformationToken
