@@ -17,14 +17,15 @@ rule:
         - number: 1 = bits in a byte
         - instruction:
           - description: is bit set?
-          - mnemonic: test
+          - or:
+            - mnemonic: and
+            - mnemonic: test
           - operand[1].number: 1
         - instruction:
           - mnemonic: shr
           - number: 1
-        - instruction:
-          - mnemonic: xor
-          - operand[1].number: 0xEDB88320
+        - characteristic: nzxor
+        - operand[1].number: 0xEDB88320
       - and:
         - number: 0x8320
         - number: 0xEDB8
