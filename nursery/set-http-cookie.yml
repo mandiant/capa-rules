@@ -4,6 +4,7 @@ rule:
     namespace: communication/http
     authors:
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
   features:
     - or:
