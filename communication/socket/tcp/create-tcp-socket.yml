@@ -5,6 +5,7 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
       - joakim@intezer.com
+      - anushka.virgaonkar@mandiant.com
     scope: basic block
     mbc:
       - Communication::Socket Communication::Create TCP Socket [C0001.011]
