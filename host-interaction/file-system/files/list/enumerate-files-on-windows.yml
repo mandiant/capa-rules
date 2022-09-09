@@ -8,6 +8,8 @@ rule:
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
+    mbc:
+      - Discovery::File and Directory Discovery [E1083]
     references:
       - https://github.com/hfiref0x/TDL/blob/cc4b46ae1c939b14a22a734a727b163f873a41b5/Source/Furutaka/sup.c#L315
     examples:
