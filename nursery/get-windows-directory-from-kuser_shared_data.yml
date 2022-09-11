@@ -12,16 +12,5 @@ rule:
       - 7f15b1a47bbe031334e23653879e9661f4b8cde80c307548328fdd3aed87ca46:0x01019080
   features:
     - and:
-      # Allow for both 32 and 64 bit calling convention.
-      - or:
-        - mnemonic: push
-        - mnemonic: mov
-
       # Fixed offset of Windows directory path in KUSER_SHARED_DATA structure.
       - number: 0x7ffe0030 = KUSER_SHARED_DATA.NtSystemRoot
-
-      # Typically to a string copy function or memcpy equivalent
-      - mnemonic: call
-
-      # We could also look for a fixed length (for string / memcpy) but these vary, 
-      # typically from MAX_PATH to MAX_PATH*2 with subtle variations thereof.
