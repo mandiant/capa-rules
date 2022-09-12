@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, "*-dev" ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, "*-dev" ]
     # trigger workflow on edited as well (opened and synchronize are default)
     types: [opened, edited, synchronize]
 
@@ -75,6 +75,7 @@ jobs:
         done
   # Ensure that new rules are compatible with latest release
   rules_latest_release:
+    if: github.base_ref == 'master'
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout capa-rules
