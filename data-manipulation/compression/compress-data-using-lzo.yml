@@ -1,16 +1,18 @@
 rule:
   meta:
-    name: decompress data using LZO
+    name: compress data using LZO
     namespace: data-manipulation/compression
     authors:
       - david@edeca.net
       - david.cannings@pwc.com
     description: detects the compression routine from LZO
     scope: function
+    mbc:
+      - Data::Decompress Data [C0024]
     references:
       - https://github.com/zenzhang/msgclient/blob/f7c346287022dd41b21aedc8664a281b32e4a1f1/src/framework/string/Compress.cpp
     examples:
-      - TODO
+      - ee3b869b668abec332d07c66d1a39f6dbf3a598cc1325b57a0504f8d24ac2e28:0x10026370
   features:
     - or:
       - and:
