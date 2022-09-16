@@ -8,7 +8,7 @@ rule:
     description: detects the compression routine from LZO
     scope: function
     mbc:
-      - Data::Decompress Data [C0024]
+      - Data::Compress Data [C0024]
     references:
       - https://github.com/zenzhang/msgclient/blob/f7c346287022dd41b21aedc8664a281b32e4a1f1/src/framework/string/Compress.cpp
     examples:
