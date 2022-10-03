@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
@@ -30,3 +31,5 @@ rule:
       - api: shell32.SHGetSpecialFolderPath
       - api: shell32.SHGetSpecialFolderLocation
       - api: System.IO.Directory::GetCurrentDirectory
+      - property/read: System.Environment::SystemDirectory
+      - property/read: System.Environment::CurrentDirectory

@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/hardware/storage
     authors:
       - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]
@@ -19,3 +20,7 @@ rule:
       - api: kernel32.GetVolumePathNamesForVolumeName
       - api: kernel32.GetLogicalDriveStrings
       - api: kernel32.QueryDosDevice
+      - property/read: System.IO.DriveInfo::VolumeLabel
+      - property/read: System.IO.DriveInfo::DriveType
+      - property/read: System.IO.DriveInfo::DriveFormat
+      - property/read: System.IO.DriveInfo::Name

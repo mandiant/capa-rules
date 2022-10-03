@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/network/domain
     authors:
       - awillia2@cisco.com
+      - anushka.virgaonkar@mandiant.com
     description: Looks for imported Windows APIs being called to collect information about the Windows domain that a computer is connected to.
     scope: function
     att&ck:
@@ -11,4 +12,6 @@ rule:
     examples:
       - 9B7CCAA2AE6A5B96E3110EBCBC4311F6:0x1001C184
   features:
-    - api: netapi32.DsRoleGetPrimaryDomainInformation
+    - or:
+      - api: netapi32.DsRoleGetPrimaryDomainInformation
+      - property/read: System.Net.NetworkInformation.IPGlobalProperties::DomainName

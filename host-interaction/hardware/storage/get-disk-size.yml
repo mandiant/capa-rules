@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/hardware/storage
     authors:
       - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]
@@ -16,6 +17,9 @@ rule:
     - or:
       - api: kernel32.GetDiskFreeSpace
       - api: kernel32.GetDiskFreeSpaceEx
+      - property/read: System.IO.DriveInfo::TotalSize
+      - property/read: System.IO.DriveInfo::TotalFreeSpace
+      - property/read: System.IO.DriveInfo::AvailableFreeSpace
       - basic block:
         - and:
           - api: DeviceIoControl
