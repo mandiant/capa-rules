@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: force memory garbage collection in .NET
+    namespace: anti-analysis/anti-forensic
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: function
+  features:
+    - or:
+      - api: System.GC::Collect

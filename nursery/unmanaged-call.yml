@@ -9,3 +9,4 @@ rule:
   features:
     - or:
       - characteristic: unmanaged call
+      - api: System.Runtime.InteropServices.Marshal::GetDelegateForFunctionPointer
