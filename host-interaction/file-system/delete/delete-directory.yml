@@ -18,3 +18,4 @@ rule:
       - api: _rmdir
       - api: _wrmdir
       - api: System.IO.DirectoryInfo::Delete
+      - api: System.IO.Directory::Delete
