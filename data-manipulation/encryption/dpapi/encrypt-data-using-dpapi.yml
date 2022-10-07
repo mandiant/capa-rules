@@ -4,6 +4,7 @@ rule:
     namespace: data-manipulation/encryption/dpapi
     authors:
       - william.ballenthin@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
@@ -17,3 +18,5 @@ rule:
       - api: CryptUnprotectMemory
       - api: crypt32.CryptProtectData
       - api: crypt32.CryptUnprotectData
+      - api: System.Security.Cryptography.ProtectedData::Unprotect
+      - api: System.Security.Cryptography.ProtectedData::Protect

@@ -17,6 +17,8 @@ rule:
       - api: System.Diagnostics.Process::Kill
       - api: System.Diagnostics.Process::WaitForExit
       - api: System.Diagnostics.Process::WaitForExitAsync
+      - api: System.Environment::Exit
+      - api: System.Windows.Forms.Application::Exit
       - and:
         - optional:
           - match: open process

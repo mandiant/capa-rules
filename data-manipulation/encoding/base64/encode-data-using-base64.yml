@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - anushka.virgaonkar@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
@@ -34,3 +35,5 @@ rule:
           - number: 0xF
           - string: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
       - api: System.Convert::ToBase64String
+      - api: System.Convert::ToBase64CharArray
+      - api: System.Convert::TryToBase64Chars

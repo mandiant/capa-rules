@@ -19,3 +19,5 @@ rule:
       - api: msvcr90.getenv
       - api: msvcrt.getenv
       - api: System.Environment::GetEnvironmentVariable
+      - api: System.Environment::GetEnvironmentVariables
+      - api: System.Environment::ExpandEnvironmentVariables

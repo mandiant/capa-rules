@@ -28,3 +28,5 @@ rule:
         - api: SHDeleteKey
         - api: SHDeleteEmptyKey
         - api: SHRegDeleteEmptyUSKey
+        - api: Microsoft.Win32.RegistryKey::DeleteSubKey
+        - api: Microsoft.Win32.RegistryKey::DeleteSubKeyTree

@@ -37,3 +37,4 @@ rule:
         - and:
           - api: BitBlt
           - characteristic: tight loop
+      - api: System.Drawing.Graphics::CopyFromScreen

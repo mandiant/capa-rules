@@ -29,6 +29,7 @@ rule:
           - api: SHRegSetValue
           - api: SHRegSetUSValue
           - api: SHRegWriteUSValue
+          - api: Microsoft.Win32.RegistryKey::SetValue
       - and:
         - match: host-interaction/process/create
         - string: /reg(|.exe) add /i
