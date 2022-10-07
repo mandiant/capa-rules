@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: format image in .NET
+    name: save image in .NET
     namespace: collection
     authors:
       - michael.hunhoff@mandiant.com
