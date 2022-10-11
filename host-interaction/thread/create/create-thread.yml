@@ -34,4 +34,7 @@ rule:
       - and:
         - os: linux
         - api: pthread_create
-      - api: System.Threading.Thread::Start
+      - and:
+        - api: System.Threading.Thread::Start
+        - optional:
+          - api: System.Threading.Thread::ctor

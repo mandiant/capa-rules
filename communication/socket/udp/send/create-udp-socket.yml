@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
+      - michael.hunhoff@mandiant.com
     scope: basic block
     mbc:
       - Communication::Socket Communication::Create UDP Socket [C0001.010]
@@ -17,3 +18,4 @@ rule:
         - api: ws2_32.socket
         - api: ws2_32.WSASocket
         - api: socket
+        - api: System.Net.Sockets.Socket::ctor
