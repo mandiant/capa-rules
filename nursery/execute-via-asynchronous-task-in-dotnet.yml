@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: exeute via asynchronous task in .NET
+    name: execute via asynchronous task in .NET
     namespace: host-interaction/thread/task
     authors:
       - michael.hunhoff@mandiant.com
