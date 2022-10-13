@@ -4,11 +4,13 @@ rule:
     namespace: communication/tcp/client
     authors:
       - william.ballenthin@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::Socket Communication::TCP Client [C0001.008]
     examples:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
-    - and:
+    - or:
       - match: connect TCP socket
+      - api: System.Net.Sockets.TcpClient::ctor

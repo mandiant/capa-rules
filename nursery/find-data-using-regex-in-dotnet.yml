@@ -13,3 +13,4 @@ rule:
       - api: System.Text.RegularExpressions.Regex::EnumerateMatches
       - api: System.Text.RegularExpressions.Regex::Replace
       - api: System.Text.RegularExpressions.Regex::Split
+      - api: System.Text.RegularExpressions.Regex::ctor

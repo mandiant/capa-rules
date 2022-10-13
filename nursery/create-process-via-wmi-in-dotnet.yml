@@ -1,7 +1,7 @@
 rule:
   meta:
-    name: create process via wmi
-    namespace: host-interaction/wmi/dotnet
+    name: create process via WMI in .NET
+    namespace: host-interaction/wmi
     authors:
       - anushka.virgaonkar@mandiant.com
     scope: function

@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: execute WMI query in .NET
+    namespace: host-interaction/wmi
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: function
+    att&ck:
+      - Execution::Windows Management Instrumentation [T1047]
+  features:
+    - and:
+      - api: System.Management.ManagementObjectSearcher::Get
+      - optional:
+        - api: System.Management.ManagementObjectSearcher::ctor

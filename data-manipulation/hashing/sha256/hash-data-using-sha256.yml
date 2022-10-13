@@ -28,4 +28,5 @@ rule:
           - api: System.Security.Cryptography.SHA256Managed::Initialize
           - api: System.Security.Cryptography.SHA256CryptoServiceProvider::Initialize
           - api: System.Security.Cryptography.SHA256::Create
+          - api: System.Security.Cryptography.SHA256Managed::ctor
         - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
