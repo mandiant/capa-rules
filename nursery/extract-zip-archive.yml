@@ -6,7 +6,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scope: function
     att&ck:
-      - Discovery::File and Directory Discovery [T1083]
+      - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
   features:
     - and:
       - api: System.IO.Compression.ZipFile::Open
