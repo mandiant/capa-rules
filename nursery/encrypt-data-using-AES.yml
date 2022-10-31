@@ -1,0 +1,25 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: encrypt data using AES
+    namespace: data-manipulation/encryption/aes
+    authors:
+      - william.ballenthin@mandiant.com
+      - Ivan Kwiatkowski (@JusticeRage)
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Encrypt Data::AES [C0027.001]
+    references:
+      - https://github.com/JusticeRage/Manalyze/blob/8e77642c911d5d82b5f43b198667ab8c77a88763/bin/yara_rules/findcrypt.yara#L360
+    examples:
+      - D6EFF9EFA6F93CDE95E7A4194C1BC6EE:0x180002F50
+  features:
+    - or:
+      - bytes: a7 f4 51 50 65 41 7e 53 a4 17 1a c3 5e 27 3a 96 = AES_TD1
+      - bytes: 50 a7 f4 51 53 65 41 7e c3 a4 17 1a 96 5e 27 3a = AES_TD0
+      - bytes: f4 51 50 a7 41 7e 53 65 17 1a c3 a4 27 3a 96 5e = AES_TD2
+      - bytes: 51 50 a7 f4 7e 53 65 41 1a c3 a4 17 3a 96 5e 27 = AES_TD3
+      - bytes: 52 52 52 52 09 09 09 09 6a 6a 6a 6a d5 d5 d5 d5 = AES_TD4
