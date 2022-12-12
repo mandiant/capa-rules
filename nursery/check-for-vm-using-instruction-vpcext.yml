@@ -1,6 +1,7 @@
 rule:
   meta:
     name: check for VM using instruction VPCEXT
+    # Please be aware: Vivisect does not support "VPCEXT" currently, so this rule works in IDA only.
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - richard.weiss@mandiant.com
