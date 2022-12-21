@@ -1,0 +1,21 @@
+name: release
+
+on:
+  push:
+    tags:
+      # alternatively, use '*' here for all tag names
+      - v[0-9]+.[0-9]+.[0-9]+
+
+jobs:
+
+  create_release:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Create Release
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        body: "Rules for capa ${{ github.ref_name }}"
