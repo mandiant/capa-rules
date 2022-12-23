@@ -15,7 +15,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    - name: Create Release
+      with:
+        # get all history and tags
+        fetch-depth: 0
+    - name: Get release text
+      run: python .github/scripts/create_releases.py ${{ github.ref_name }} > release_body.txt
+    - name: Create GitHub release
       uses: ncipollo/release-action@v1.12.0
       with:
-        body: "Rules for capa ${{ github.ref_name }}"
+        bodyFile: release_body.txt
