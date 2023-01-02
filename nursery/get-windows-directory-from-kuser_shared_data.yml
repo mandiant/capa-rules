@@ -11,5 +11,5 @@ rule:
     examples:
       - 7f15b1a47bbe031334e23653879e9661f4b8cde80c307548328fdd3aed87ca46:0x01019080
   features:
-    # Fixed offset of Windows directory path in KUSER_SHARED_DATA structure.
+    # Fixed offset of Windows directory path in KUSER_SHARED_DATA structure; same for 32- and 64-bit Windows.
     - number: 0x7ffe0030 = KUSER_SHARED_DATA.NtSystemRoot
