@@ -5,7 +5,8 @@ rule:
     authors:
       - awillia2@cisco.com
       - anushka.virgaonkar@mandiant.com
-    description: Looks for imported Windows APIs being called to collect information about the Windows domain that a computer is connected to.
+      - michael.hunhoff@mandiant.com
+    description: Detect collection of Windows domain information
     scope: function
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
@@ -14,4 +15,5 @@ rule:
   features:
     - or:
       - api: netapi32.DsRoleGetPrimaryDomainInformation
+      - api: System.DirectoryServices.ActiveDirectory.Domain::GetComputerDomain
       - property/read: System.Net.NetworkInformation.IPGlobalProperties::DomainName
