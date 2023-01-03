@@ -12,7 +12,7 @@ on:
       thorough:
         description: 'lint --thorough'
         type: boolean
-        default: false
+        required: true
 
 # save workspaces to speed up testing
 env:
@@ -71,12 +71,9 @@ jobs:
         echo ${{ steps.lint_thorough.outcome }}
         echo ${{ github.event_name }}
         echo ${{ github.event.inputs.thorough }}
-        echo ${{ github.event_name != 'workflow_dispatch' }} && ${{ steps.lint_thorough.outcome == 'success' }}
-        echo ${{ github.event_name == 'workflow_dispatch' }} && ${{ github.event.inputs.thorough == 'true' }}
-        echo ${{ github.event_name == 'workflow_dispatch' }} && ${{ github.event.inputs.thorough }} == 'true'
     - name: Run thorough lint on all rule files
       # if $LINT_THOROUGH is provided in the PR body or manual run specifies it
-      if: ${{ github.event_name != 'workflow_dispatch' }} && ${{ steps.lint_thorough.outcome == 'success' }} || ${{ github.event_name == 'workflow_dispatch' }} && ${{ github.event.inputs.thorough }} == 'true'
+      if: github.event_name != 'workflow_dispatch' && steps.lint_thorough.outcome == 'success' || github.event_name == 'workflow_dispatch' && github.event.inputs.thorough == 'true'
       run: python scripts/lint.py --thorough -v rules/
     - name: Run thorough lint on modified rule files
       # otherwise only lint modified rules thoroughly
