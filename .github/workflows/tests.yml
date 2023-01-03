@@ -7,6 +7,12 @@ on:
     branches: [ master, 'v[0-9]+' ]
     # trigger workflow on edited as well (opened and synchronize are default)
     types: [opened, edited, synchronize]
+  workflow_dispatch:
+    inputs:
+      thorough:
+        description: 'Lint --thorough'
+        type: boolean
+        default: false
 
 # save workspaces to speed up testing
 env:
@@ -60,11 +66,11 @@ jobs:
       continue-on-error: true
     - name: Run thorough lint on all rule files
       # if $LINT_THOROUGH is provided in the PR body
-      if: steps.lint_thorough.outcome == 'success'
+      if: steps.lint_thorough.outcome == 'success' || {{ github.event.inputs.thorough }}
       run: python scripts/lint.py --thorough -v rules/
     - name: Run thorough lint on modified rule files
       # otherwise only lint modified rules thoroughly
-      if: steps.lint_thorough.outcome != 'success'
+      if: steps.lint_thorough.outcome != 'success' || ! {{ github.event.inputs.thorough }}
       run: |
         cd rules/
         for changed_file in ${{ steps.files.outputs.added_modified }} ${{ steps.files.outputs.renamed }}; do
