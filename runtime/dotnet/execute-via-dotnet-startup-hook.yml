@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: .NET hook module
+    name: execute via .NET startup hook
     namespace: runtime/dotnet
     authors:
       - william.ballenthin@mandiant.com
