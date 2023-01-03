@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get system information via WMI in .NET
+    name: access WMI data in .NET
     namespace: host-interaction/wmi
     authors:
       - michael.hunhoff@mandiant.com
