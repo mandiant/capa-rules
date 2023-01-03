@@ -21,20 +21,20 @@ jobs:
     steps:
     # We check the submodules separately as the rules submodule's reference may not be our PR/master
     - name: Checkout capa without submodules
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: mandiant/capa
     - name: Checkout capa-rules
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         path: rules
     - name: Checkout capa-testfiles
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: mandiant/capa-testfiles
         path: tests/data
     - name: Set up Python 3.9
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Install capa
@@ -45,7 +45,7 @@ jobs:
     # Then run thorough lint
     - name: Get modified files
       id: files
-      uses: jitterbit/get-changed-files@v1
+      uses: Ana06/get-changed-files@v2.2.0
       # this Action may throw the below error, e.g. when not properly rebased
       # however, it still gets the modified files and we can continue
       # Error: The head commit for this pull_request event is not ahead of the base commit.
@@ -86,12 +86,12 @@ jobs:
         echo "zip_name=capa-$v-linux.zip" >> $GITHUB_ENV
         echo "major_version=$(echo $v | cut -d. -f1)" >> $GITHUB_ENV
     - name: Checkout capa-rules
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         ref: ${{ env.major_version }}
         path: rules
     - name: Checkout capa-testfiles
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: mandiant/capa-testfiles
         path: tests/data
