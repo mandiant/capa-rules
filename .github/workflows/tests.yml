@@ -7,6 +7,11 @@ on:
     branches: [ master, 'v[0-9]+' ]
     # trigger workflow on edited as well (opened and synchronize are default)
     types: [opened, edited, synchronize]
+  workflow_dispatch:
+    inputs:
+      thorough:
+        description: 'Lint --thorough'
+        type: boolean
 
 # save workspaces to speed up testing
 env:
@@ -18,6 +23,7 @@ jobs:
     env:
       # expect this text in the PR body to trigger thorough lint of all rules
       LINT_THOROUGH: '[x] lint thorough all'
+      INPUT_THOROUGH: {{ inputs.thorough }}
     steps:
     # We check the submodules separately as the rules submodule's reference may not be our PR/master
     - name: Checkout capa without submodules
@@ -60,11 +66,11 @@ jobs:
       continue-on-error: true
     - name: Run thorough lint on all rule files
       # if $LINT_THOROUGH is provided in the PR body
-      if: steps.lint_thorough.outcome == 'success'
+      if: steps.lint_thorough.outcome == 'success' || $INPUT_THOROUGH
       run: python scripts/lint.py --thorough -v rules/
     - name: Run thorough lint on modified rule files
       # otherwise only lint modified rules thoroughly
-      if: steps.lint_thorough.outcome != 'success'
+      if: steps.lint_thorough.outcome != 'success' || ! $INPUT_THOROUGH
       run: |
         cd rules/
         for changed_file in ${{ steps.files.outputs.added_modified }} ${{ steps.files.outputs.renamed }}; do
