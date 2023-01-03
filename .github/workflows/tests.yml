@@ -50,6 +50,7 @@ jobs:
       run: python scripts/lint.py rules/
     # Then run thorough lint
     - name: Get modified files
+      if: ${{ github.event_name != 'workflow_dispatch' }}
       id: files
       uses: Ana06/get-changed-files@v2.2.0
       # this Action may throw the below error, e.g. when not properly rebased
@@ -57,6 +58,7 @@ jobs:
       # Error: The head commit for this pull_request event is not ahead of the base commit.
       continue-on-error: true
     - name: Check PR text body contains LINT_THOROUGH
+      if: ${{ github.event_name != 'workflow_dispatch' }}
       id: lint_thorough
       env:
         PR_BODY: ${{ github.event.pull_request.body }}
@@ -70,7 +72,7 @@ jobs:
       run: python scripts/lint.py --thorough -v rules/
     - name: Run thorough lint on modified rule files
       # otherwise only lint modified rules thoroughly
-      if: steps.lint_thorough.outcome != 'success' || ! {{ github.event.inputs.thorough }}
+      if: steps.lint_thorough.outcome != 'success'
       run: |
         cd rules/
         for changed_file in ${{ steps.files.outputs.added_modified }} ${{ steps.files.outputs.renamed }}; do
