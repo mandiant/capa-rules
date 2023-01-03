@@ -69,7 +69,7 @@ jobs:
         cd rules/
         for changed_file in ${{ steps.files.outputs.added_modified }} ${{ steps.files.outputs.renamed }}; do
           if [[ ! $changed_file =~ .git|.md ]]; then
-            tag=$(grep 'name:' $changed_file | sed 's/^.*: //')
+            tag=$(grep '\sname:' $changed_file | sed 's/^.*: //')
             python ../scripts/lint.py --thorough -t "$tag" -v .
           fi
         done
