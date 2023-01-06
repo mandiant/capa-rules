@@ -17,12 +17,12 @@ rule:
           - api: kernel32.GetFileAttributes
           - instruction:
             - mnemonic: cmp
-            - number: 0xFFFFFFFF = INVALID_FILE_ATTRIBUTES
+            - operand[1].number: 0xFFFFFFFF = INVALID_FILE_ATTRIBUTES
       - basic block:
         - and:
           - api: kernel32.GetLastError
           - instruction:
             - mnemonic: cmp
-            - number: 2 = ERROR_FILE_NOT_FOUND
+            - operand[1].number: 2 = ERROR_FILE_NOT_FOUND
       - api: shlwapi.PathFileExists
       - api: System.IO.File::Exists
