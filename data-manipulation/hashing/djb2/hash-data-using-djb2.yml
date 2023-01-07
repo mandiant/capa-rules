@@ -4,6 +4,7 @@ rule:
     namespace: data-manipulation/hashing/djb2
     authors:
       - awillia2@cisco.com
+      - still@teamt5.org
     scope: function
     mbc:
       - Data::Non-Cryptographic Hash [C0030]
@@ -18,7 +19,12 @@ rule:
         - description: hash = 5381
         - mnemonic: mov
         - number: 5381
-      - instruction:
-        - description: hash << 5
-        - mnemonic: shl
-        - number: 5
+      - or:
+        - instruction:
+          - description: hash << 5
+          - mnemonic: shl
+          - number: 5
+        - instruction:
+          - description: hash * 33
+          - mnemonic: imul
+          - number: 33
