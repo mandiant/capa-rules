@@ -26,5 +26,7 @@ rule:
           - number: 5
         - instruction:
           - description: hash * 33
-          - mnemonic: imul
+          - or:
+            - mnemonic: mul
+            - mnemonic: imul
           - number: 33
