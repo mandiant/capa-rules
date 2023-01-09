@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
+      - william.ballenthin@mandiant.com
     scope: function
     mbc:
       - Cryptography::Cryptographic Hash::SHA1 [C0029.002]
