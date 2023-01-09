@@ -28,4 +28,3 @@ rule:
             - api: LdrFindResourceEx_U
           - api: kernel32.SizeofResource
           - api: kernel32.FreeResource
-      - api: user32.LoadString
