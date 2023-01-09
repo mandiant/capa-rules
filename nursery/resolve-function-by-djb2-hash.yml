@@ -20,4 +20,4 @@ rule:
       - number: 0xEB96C5FA = djb2(CreateFileA)
       - number: 0xEB96C610 = djb2(CreateFileW)
       - number: 0x71019921 = djb2(ReadFile)
-      - number: 0xE19E5FE = djb2(Sleep)
+      - number: 0x0E19E5FE = djb2(Sleep)
