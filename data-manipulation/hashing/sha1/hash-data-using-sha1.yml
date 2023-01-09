@@ -19,6 +19,11 @@ rule:
         - number: 0x98BADCFE = C, also used by MD5
         - number: 0x10325476 = D, also used by MD5
         - number: 0xC3D2E1F0 = specific to SHA1, not MD4 nor MD5
+      - and:
+        - number: 0x5A827999 = K(t) (0 <= t <= 19)
+        - number: 0x6ED9EBA1 = K(t) (20 <= t <= 39)
+        - number: 0x8F1BBCDC = K(t) (40 <= t <= 59)
+        - number: 0xCA62C1D6 = K(t) (60 <= t <= 79)
       - basic block:
         - and:
           - number: 0x8004 = CALG_SHA1
