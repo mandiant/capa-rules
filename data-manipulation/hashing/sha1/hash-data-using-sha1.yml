@@ -10,6 +10,7 @@ rule:
       - Cryptography::Cryptographic Hash::SHA1 [C0029.002]
     examples:
       - D063B1804E8D2BB26BD2E097141C1BBC:0x4344D0
+      - 91B08896FBDA9EDB8B6F93A6BC811EC6:0x180004878
   features:
     - or:
       - and:
