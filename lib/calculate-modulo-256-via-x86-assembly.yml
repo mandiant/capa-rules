@@ -15,5 +15,5 @@ rule:
     - and:
       - mnemonic: and
       - or:
-        - operand: 0x800000FF
-        - operand: 0xFF
+        - number: 0x800000FF
+        - number: 0xFF
