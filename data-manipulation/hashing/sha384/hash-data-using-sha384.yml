@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: hash data using SHA384
+    namespace: data-manipulation/hashing/sha384
+    authors:
+      - william.ballenthin@mandiant.com
+    scope: function
+  features:
+    - and:
+      - number: 0xcbbb9d5dc1059ed8 = H(0)0
+      - number: 0x629a292a367cd507 = H(0)1
+      - number: 0x9159015a3070dd17 = H(0)2
+      - number: 0x152fecd8f70e5939 = H(0)3
+      - number: 0x67332667ffc00b31 = H(0)4
+      - number: 0x8eb44a8768581511 = H(0)5
+      - number: 0xdb0c2e0d64f98fa7 = H(0)6
+      - number: 0x47b5481dbefa4fa4 = H(0)7
