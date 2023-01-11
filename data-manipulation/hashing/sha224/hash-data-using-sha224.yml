@@ -7,6 +7,8 @@ rule:
     scope: function
     mbc:
       - Cryptography::Cryptographic Hash::SHA224 [C0029.004]
+    references:
+      - https://www.rfc-editor.org/rfc/rfc6234
     examples:
       - 6CC148363200798A12091B97A17181A1:0x14011FEB0
   features:

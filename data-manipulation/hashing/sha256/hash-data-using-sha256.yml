@@ -9,11 +9,11 @@ rule:
     scope: function
     mbc:
       - Cryptography::Cryptographic Hash::SHA256 [C0029.003]
+    references:
+      - https://www.rfc-editor.org/rfc/rfc6234
     examples:
       - C0CFFCF211035A839E28D542DE300298:0x180011400
       - 6CC148363200798A12091B97A17181A1:0x140120240
-    references:
-      - https://www.rfc-editor.org/rfc/rfc6234
   features:
     - or:
       - and:
@@ -27,17 +27,17 @@ rule:
         - number: 0x5BE0CD19 = H(0)7
       - and:
         # there are 64 constants but we'll only include 8 here for simplicity
-        - number: 0x428a2f98 
+        - number: 0x428a2f98
         - number: 0x71374491
         - number: 0xb5c0fbcf
         - number: 0xe9b5dba5
-        - number: 0x3956c25b 
+        - number: 0x3956c25b
         - number: 0x59f111f1
         - number: 0x923f82a4
         - number: 0xab1c5ed5
         - not:
           - or:
-            - number: 0xd728ae22 = lower half of SHA512 constant, 0x428a2f98d728ae22 
+            - number: 0xd728ae22 = lower half of SHA512 constant, 0x428a2f98d728ae22
             - number: 0x23ef65cd = lower half of SHA512 constant, 0x7137449123ef65cd
       - and:
         - format: dotnet

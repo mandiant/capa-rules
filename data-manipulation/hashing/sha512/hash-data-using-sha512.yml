@@ -5,11 +5,11 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
     scope: function
-    examples:
-      - 1195d0d18be9362fb8dd9e1738404c9d:0x404FC0
     references:
       - https://www.rfc-editor.org/rfc/rfc6234
-  features:
+    examples:
+      - 1195d0d18be9362fb8dd9e1738404c9d:0x404FC0
+   features:
     - or:
       - and:
         - number: 0x6a09e667f3bcc908 = H(0)0
@@ -24,7 +24,7 @@ rule:
         - or:
           - number: 0x428a2f98d728ae22
           - and:
-            - number: 0x428a2f98 
+            - number: 0x428a2f98
             - number: 0xd728ae22
         - or:
           - number: 0x7137449123ef65cd
@@ -44,7 +44,7 @@ rule:
         - or:
           - number: 0x3956c25bf348b538
           - and:
-            - number: 0x3956c25b 
+            - number: 0x3956c25b
             - number: 0xf348b538
         - or:
           - number: 0x59f111f1b605d019
