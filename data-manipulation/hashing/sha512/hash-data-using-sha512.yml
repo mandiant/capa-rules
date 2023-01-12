@@ -9,7 +9,7 @@ rule:
       - https://www.rfc-editor.org/rfc/rfc6234
     examples:
       - 1195d0d18be9362fb8dd9e1738404c9d:0x404FC0
-   features:
+  features:
     - or:
       - and:
         - number: 0x6a09e667f3bcc908 = H(0)0
