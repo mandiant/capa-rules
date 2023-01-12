@@ -8,7 +8,7 @@ rule:
     references:
       - https://www.rfc-editor.org/rfc/rfc6234
     examples:
-      - 0d8dc135b4328447bbc9a2c308121526:0x1002A170
+      - 44d40faf3f1fe4ed969befab7afcd2f0:0x1003D970
   features:
     - or:
       - and:
