@@ -13,6 +13,9 @@ on:
         description: 'lint --thorough'
         type: boolean
         required: true
+  schedule:
+    # run every week at 04:05 on Sunday
+    - cron: '5 4 * * 0'
 
 # save workspaces to speed up testing
 env:
@@ -50,7 +53,7 @@ jobs:
       run: python scripts/lint.py rules/
     # Then run thorough lint
     - name: Get modified files
-      if: github.event_name != 'workflow_dispatch'
+      if: github.event_name != 'workflow_dispatch' && github.event_name != 'schedule'
       id: files
       uses: Ana06/get-changed-files@v2.2.0
       # this Action may throw the below error, e.g. when not properly rebased
@@ -58,7 +61,7 @@ jobs:
       # Error: The head commit for this pull_request event is not ahead of the base commit.
       continue-on-error: true
     - name: Check PR text body contains LINT_THOROUGH
-      if: github.event_name != 'workflow_dispatch'
+      if: github.event_name != 'workflow_dispatch' && github.event_name != 'schedule'
       id: lint_thorough
       env:
         PR_BODY: ${{ github.event.pull_request.body }}
@@ -67,12 +70,12 @@ jobs:
       # otherwise not finding LINT_THOROUGH would fail this step
       continue-on-error: true
     - name: Run thorough lint on all rule files
-      # if $LINT_THOROUGH is provided in the PR body or manual run specifies it
-      if: github.event_name != 'workflow_dispatch' && steps.lint_thorough.outcome == 'success' || github.event_name == 'workflow_dispatch' && github.event.inputs.thorough == 'true'
+      # if $LINT_THOROUGH is provided in the PR body, manual run specifies it, or this is a scheduled run
+      if: github.event_name != 'workflow_dispatch' && github.event_name != 'schedule' && steps.lint_thorough.outcome == 'success' || github.event_name == 'workflow_dispatch' && github.event.inputs.thorough == 'true' || github.event_name == 'schedule'
       run: python scripts/lint.py --thorough -v rules/
     - name: Run thorough lint on modified rule files
       # otherwise only lint modified rules thoroughly
-      if: github.event_name != 'workflow_dispatch' && steps.lint_thorough.outcome != 'success'
+      if: github.event_name != 'workflow_dispatch' && github.event_name != 'schedule' && steps.lint_thorough.outcome != 'success'
       run: |
         cd rules/
         for changed_file in ${{ steps.files.outputs.added_modified }} ${{ steps.files.outputs.renamed }}; do
