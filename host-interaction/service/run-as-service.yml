@@ -18,3 +18,4 @@ rule:
           - api: RegisterServiceCtrlHandler
           - api: RegisterServiceCtrlHandlerEx
           - api: StartServiceCtrlDispatcher
+          - api: System.ServiceProcess.ServiceBase::Run
