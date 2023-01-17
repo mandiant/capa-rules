@@ -7,6 +7,8 @@ rule:
     scope: function
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]
+    mbc:
+      - Persistence::Registry Run Keys / Startup Folder
     examples:
       - Practical Malware Analysis Lab 06-03.exe_:0x401130
       - b87e9dd18a5533a09d3e48a7a1efbcf6:0x1400070E0
