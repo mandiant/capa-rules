@@ -1,7 +1,7 @@
 rule:
   meta:
     name: manipulate user privileges
-    namespace: communication/authentication
+    namespace: host-interaction/user
     authors:
       - michael.hunhoff@mandiant.com
     scope: function
