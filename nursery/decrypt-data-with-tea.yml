@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt data using TEA
+    name: decrypt data using TEA
     namespace: data-manipulation/encryption/tea
     authors:
       - william.ballenthin@mandiant.com
@@ -14,5 +14,4 @@ rule:
   features:
     - and:
       - number: 0x9E3779B9 = delta
-      - not:
-        - number: 0xC6EF3720 = sum, only used in decryption
+      - number: 0xC6EF3720 = sum
