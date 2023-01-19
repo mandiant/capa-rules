@@ -5,10 +5,8 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
     scope: function
-    att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
-      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Cryptographic Hash [C0029]
     references:
       - https://github.com/jzelinskie/whirlpool/blob/master/const.go
     #examples:
