@@ -8,6 +8,8 @@ rule:
     scope: function
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
+    mbc:
+      - Discovery::File and Directory Discovery [E1083]
     examples:
       - mimikatz.exe_:0x45E308
   features:

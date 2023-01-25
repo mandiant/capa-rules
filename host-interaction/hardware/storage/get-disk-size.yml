@@ -8,6 +8,8 @@ rule:
     scope: function
     att&ck:
       - Discovery::System Information Discovery [T1082]
+    mbc:
+      - Discovery::System Information Discovery [E1082]
     references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L347
     examples:

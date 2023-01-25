@@ -8,6 +8,8 @@ rule:
     scope: function
     att&ck:
       - Execution::Command and Scripting Interpreter [T1059]
+    mbc:
+      - Execution::Command and Scripting Interpreter [E1059]
     examples:
       - e5369ac309f1be6d77afeeb3edab0ed8:0x402760
   features:
