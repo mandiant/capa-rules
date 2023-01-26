@@ -1,7 +1,7 @@
 # capa rules
 
 [![Rule linter status](https://github.com/mandiant/capa-rules/workflows/CI/badge.svg)](https://github.com/mandiant/capa-rules/actions?query=workflow%3A%22CI%22)
-[![Number of rules](https://img.shields.io/badge/rules-751-blue.svg)](rules)
+[![Number of rules](https://img.shields.io/badge/rules-759-blue.svg)](rules)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)](LICENSE.txt)
 
 This is the standard collection of rules for [capa](https://github.com/mandiant/capa) - the tool to automatically identify capabilities of programs.

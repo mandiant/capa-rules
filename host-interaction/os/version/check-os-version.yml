@@ -14,13 +14,7 @@ rule:
       - 493167E85E45363D09495D0841C30648:0x401000
   features:
     - and:
-      - or:
-        - api: RtlGetVersion
-        - api: ntoskrnl.PsGetVersion
-        - api: GetVersion
-        - api: GetVersionEx
-        - api: VerifyVersionInfo
-        - api: VerSetConditionMask
+      - match: get OS version
       - or:
         - and:
           - instruction:
