@@ -12,9 +12,8 @@ rule:
       - Cryptography::Encryption Key::RC4 KSA [C0028.002]
     examples:
       - 34404A3FB9804977C6AB86CB991FB130:0x403D40
-      - C805528F6844D7CAF5793C025B56F67D:0x4067AE
       - 9324D1A8AE37A36AE560C37448C9705A:0x404950
-      - 782A48821D88060ADF0F7EF3E8759FEE3DDAD49E942DAAD18C5AF8AE0E9EB51E:0x405C42
+      - 2B8BEC5BCB1777EAA155D832F7AFC797:0x405C42
       - 73CE04892E5F39EC82B00C02FC04C70F:0x40646E
   features:
     - or:
@@ -29,19 +28,29 @@ rule:
               - number: 0xFF
               - number: 0x100
         - or:
+          - description: modulo 256
           - match: calculate modulo 256 via x86 assembly
-          # compiler may do this via zero-extended mov from 8-bit register
-          - count(mnemonic(movzx)): 2 or more
+          - basic block:
+            - and:
+              - description: modulo via zero-extended mov from 8-bit register
+              - count(mnemonic(movzx)): 2 or more
+              # avoid false positives; filter out unexpected instructions
+              - not:
+                - or:
+                  - mnemonic: shl
+                  - mnemonic: rol
+                  - characteristic: nzxor
         - or:
           - description: modulo key length
           - mnemonic: div
           - mnemonic: idiv
       - and:
-        - description: optimized, writes DWORDs instead of bytes
-        - instruction:
-          - mnemonic: sub
+        - description: write DWORDs instead of bytes
+        - or:
+          - number: 0x03020100
           - number: 0xFFFEFDFC
         - instruction:
-          - mnemonic: add
-          - number: 0x03020100
-        - number: 0x4040404
+          - or:
+            - mnemonic: add
+            - mnemonic: sub
+          - number: 0x04040404
