@@ -7,7 +7,7 @@ rule:
     description: Looks for Windows API calls associated with reading and then writing file version information of executables on disk. Malware can use these calls to overwrite its own version information with that of a legitimate executable on the system (for instance, explorer.exe) to make it appear to be a legitimate application.
     scope: function
     att&ck:
-      - Defense Evasion::Indicator Removal on Host [T1070]
+      - Defense Evasion::Indicator Removal [T1070]
     references:
       - https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-updateresourcea
       - https://www.carbonblack.com/blog/threat-analysis-dont-forget-about-kangaroo-ransomware/

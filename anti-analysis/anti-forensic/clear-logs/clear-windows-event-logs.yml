@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
-      - Defense Evasion::Indicator Removal on Host::Clear Windows Event Logs [T1070.001]
+      - Defense Evasion::Indicator Removal::Clear Windows Event Logs [T1070.001]
     examples:
       - 82BF6347ACF15E5D883715DC289D8A2B:0x14005E0C0
       - mimikatz.exe_:0x45228B

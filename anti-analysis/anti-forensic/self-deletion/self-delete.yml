@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
-      - Defense Evasion::Indicator Removal on Host::File Deletion [T1070.004]
+      - Defense Evasion::Indicator Removal::File Deletion [T1070.004]
     mbc:
       - Defense Evasion::Self Deletion::COMSPEC Environment Variable [F0007.001]
     examples:
