@@ -7,7 +7,7 @@ rule:
       - still@teamt5.org
     scope: function
     mbc:
-      - Data::Non-Cryptographic Hash [C0030.006]
+      - Data::Non-Cryptographic Hash::djb2 [C0030.006]
     references:
       - https://twitter.com/r3c0nst/status/1392405576131436546
       - http://www.cse.yorku.ca/~oz/hash.html

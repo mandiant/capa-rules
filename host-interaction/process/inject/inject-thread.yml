@@ -9,8 +9,6 @@ rule:
     att&ck:
       - Defense Evasion::Process Injection::Thread Execution Hijacking [T1055.003]
       - Defense Evasion::Reflective Code Loading [T1620]
-    mbc:
-      - Defense Evasion::Process Injection::Thread Execution Hijacking [E1055.003]
     examples:
       - Practical Malware Analysis Lab 12-01.exe_:0x4010D0
       - 2D3EDC218A90F03089CC01715A9F047F:0x4027CF

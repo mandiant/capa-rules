@@ -8,8 +8,6 @@ rule:
     att&ck:
       - Defense Evasion::Process Injection::Process Hollowing [T1055.012]
       - Defense Evasion::Reflective Code Loading [T1620]
-    mbc:
-      - Defense Evasion::Process Injection::Process Hollowing [E1055.012]
     references:
       - http://www.autosectools.com/process-hollowing.pdf
       - https://www.andreafortuna.org/2017/10/09/understanding-process-hollowing/
