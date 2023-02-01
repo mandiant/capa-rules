@@ -7,7 +7,7 @@ rule:
     scope: function
     att&ck:
       - Impact::Inhibit System Recovery [T1490]
-      - Defense Evasion::Indicator Removal on Host::File Deletion [T1070.004]
+      - Defense Evasion::Indicator Removal::File Deletion [T1070.004]
     mbc:
       - Impact::Data Destruction::Delete Shadow Copies [E1485.m04]
     examples:

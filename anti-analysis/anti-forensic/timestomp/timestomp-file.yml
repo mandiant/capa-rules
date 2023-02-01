@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scope: function
     att&ck:
-      - Defense Evasion::Indicator Removal on Host::Timestomp [T1070.006]
+      - Defense Evasion::Indicator Removal::Timestomp [T1070.006]
     examples:
       - Practical Malware Analysis Lab 03-04.exe_:0x4014e0
   features:

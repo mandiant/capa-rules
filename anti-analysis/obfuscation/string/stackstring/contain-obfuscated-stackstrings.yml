@@ -8,7 +8,7 @@ rule:
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     mbc:
-      - Anti-Static Analysis::Disassembler Evasion::Argument Obfuscation [B0012.001]
+      - Anti-Static Analysis::Executable Code Obfuscation::Argument Obfuscation [B0032.020]
       - Anti-Static Analysis::Executable Code Obfuscation::Stack Strings [B0032.017]
     examples:
       - Practical Malware Analysis Lab 16-03.exe_:0x4013D0

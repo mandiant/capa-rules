@@ -6,7 +6,7 @@ rule:
       - "@Ana06"
     scope: function
     mbc:
-      - Defense Evasion::Hijack Execution Flow::Import Address Table (IAT) Hooking [F0015.003]
+      - Defense Evasion::Hijack Execution Flow::Import Address Table Hooking [F0015.003]
     references:
       - https://0x00sec.org/t/reflective-dll-injection/3080
       - https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection
