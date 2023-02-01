@@ -1,7 +1,6 @@
 rule:
   meta:
     name: create or open section object
-    namespace: host-interaction/process
     authors:
       - william.ballenthin@mandiant.com
     lib: true
