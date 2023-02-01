@@ -16,4 +16,4 @@ rule:
       - optional:
         - api: NtUnmapViewOfSection
         - api: ZwUnmapViewOfSection
-        - match: access section object
+        - match: create or open section object
