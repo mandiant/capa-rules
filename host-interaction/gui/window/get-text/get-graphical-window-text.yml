@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scope: function
     mbc:
-      - Discovery::Application Window Discovery::Window Text [E1010.m01]
+      - Discovery::Application Window Discovery [E1010]
     examples:
       - B7841B9D5DC1F511A93CC7576672EC0C:0x10007A50
       - Practical Malware Analysis Lab 11-03.dll_:0x10001000
