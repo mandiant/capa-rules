@@ -13,9 +13,7 @@ rule:
     - and:
       - or:
         - match: write process memory
-        - api: kernel32.MapViewOfSection
-        - api: NtMapViewOfSection
-        - api: ZwMapViewOfSection
+        - match: create or open section object
         - api: kernel32.MapViewOfFile
       - or:
         - api: kernel32.QueueUserAPC
