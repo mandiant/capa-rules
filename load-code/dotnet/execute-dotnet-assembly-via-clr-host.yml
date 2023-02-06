@@ -16,4 +16,13 @@ rule:
       - bytes: 23 67 2F CB 3A AB D2 11 9C 40 00 C0 4F A3 0A 3E = CLSID_CorRuntimeHost
       - bytes: 22 67 2F CB 3A AB D2 11 9C 40 00 C0 4F A3 0A 3E = IID_ICorRuntimeHost
       - api: CorBindToRuntime
+      - optional:
+        - basic block:
+          - or:
+            - and:
+              - operand[0].offset: 0x50 = Start
+              - characteristic: indirect call
+            - and:
+              - operand[0].offset: 0x68 = GetDefaultDomain
+              - characteristic: indirect call
       - api: SafeArrayCreate
