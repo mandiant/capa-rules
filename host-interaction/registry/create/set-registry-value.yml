@@ -12,6 +12,7 @@ rule:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x13147AF0
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x40433E
       - B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x40415E
+      - 98c37c3c23bbfb362dac7754c6ba48e75cf24d73bc963a4cdfca557b9e016909:0x40294D
   features:
     - or:
       - and:
@@ -32,4 +33,10 @@ rule:
           - api: Microsoft.Win32.RegistryKey::SetValue
       - and:
         - match: host-interaction/process/create
-        - string: /reg(|.exe) add /i
+        - string: "/add/i"
+        - or:
+          - string: "/reg(|.exe)/i"
+          - string: "/hklm/i"
+          - string: "/HKEY_LOCAL_MACHINE/i"
+          - string: "/hkcu/i"
+          - string: "/HKEY_CURRENT_USER/i"
