@@ -18,4 +18,4 @@ rule:
       - string: /Qemu/i
       - string: /qemu-ga.exe/i
       - string: /BOCHS/i
-      - string: /BXPC/i
+      - string: /^BXPC/i
