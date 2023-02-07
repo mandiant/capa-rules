@@ -1,7 +1,7 @@
 rule:
   meta:
     name: read and send data from client to server
-    namespace: c2/file-transfer
+    namespace: communication/c2/file-transfer
     authors:
       - william.ballenthin@mandiant.com
     scope: function
