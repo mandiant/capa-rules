@@ -67,9 +67,8 @@ Namespaces are hierarchical, so the children of a namespace encodes its specific
 In a few words each, the top level namespaces are:
 
   - [anti-analysis](./anti-analysis/) - packing, obfuscation, anti-X, etc.
-  - [c2](./c2/) - commands that may be issued by a controller, such as interactive shell or file transfer
   - [collection](./collection/) - data that may be enumerated and collected for exfiltration
-  - [communication](./communication/) - HTTP, TCP, etc.
+  - [communication](./communication/) - HTTP, TCP, command and control (C2) traffic, etc.
   - [compiler](./compiler/) - detection of build environments, such as MSVC, Delphi, or AutoIT
   - [data-manipulation](./data-manipulation/) - encryption, hashing, etc.
   - [executable](./executable/) - characteristics of the executable, such as PE sections or debug info
