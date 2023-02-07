@@ -1,0 +1,28 @@
+rule:
+  meta:
+    name: reference absolute stream path on Windows
+    namespace: host-interaction/file-system
+    authors:
+      - blas.kojusner@mandiant.com
+    scope: basic block
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/fileio/file-streams
+    examples:
+      - 51828683DC26BFABD3994494099AE97D:0x11A9
+  features:
+    - and:
+      - string: /(..\?\\)?([\w]\:|\\)(\\((?![\<\>\"\/\|\*\?])[\x20-\x7E])+)+:(((?![\<\>\"\/\|\*\?])[\x20-\x7E])+)+$/
+        # (..\?\\)? -> Check for path starting with "\\?\"
+        # ([\w]\:|\\) -> Check for absolute path beginning
+        # (\\((?![\<\>\"\/\|\*\?])[\x20-\x7E])+)+ -> Check for valid path and filename
+        # : -> Check for start of stream filename
+        # (((?![\<\>\"\/\|\*\?])[\x20-\x7E])+)+ -> Check for valid stream filename
+        ### Example Matches:
+        ### \\\\server\share\\file:stream
+        ### \\\\server\share\dir.ext\\file.ext:stream 
+        ### \\\\server\share\dir.ext\\file.tar.gz:stream
+        ### \\\\server\share\dir.ext\\file:stream.tar.gz
+        ### \\\\server\share\dir\\file.ext:stream.ext
+        ### \\\\?\C:\dir1\dir2\\file:stream
+        ### C:\dir\\file:stream.ext
+        ### C:\dir\\file:}{+,.';[]-=-0987654321`~!@#$%^&()_+-.ext
