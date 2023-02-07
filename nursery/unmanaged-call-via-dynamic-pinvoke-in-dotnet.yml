@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: unmanaged call via dynamic PInvoke in .NET
+    namespace: runtime/dotnet
+    authors:
+      - michael.hunhoff@mandiant.com
+    description: https://github.com/bohops/DynamicDotNet/blob/main/dynamic_pinvoke/dynamic_pinvoke_definepinvokemethod_shellcode_runner.cs
+    scope: function
+  features:
+    - and:
+      - or:
+        - api: System.Reflection.Emit.ModuleBuilder::DefinePInvokeMethod
+        - api: System.Reflection.Emit.TypeBuilder::DefinePInvokeMethod
+      - optional:
+        - api: System.Reflection.MethodBase::Invoke

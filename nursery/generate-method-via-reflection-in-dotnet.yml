@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: generate method via reflection in .NET
+    namespace: load-code/dotnet
+    authors:
+      - michael.hunhoff@mandiant.com
+    description: https://github.com/bohops/DynamicDotNet/blob/main/assembly_loader/DynamicAssemblyLoader.cs
+    scope: function
+  features:
+    - or:
+      - api: System.Reflection.Emit.DynamicMethod::ctor
+      - api: System.Reflection.Emit.DynamicMethod::GetILGenerator
+      - api: System.Reflection.Emit.ILGenerator::Emit
+      - api: System.Reflection.Emit.ILGenerator::EmitCall
+      - api: System.Reflection.Emit.ILGenerator::EmitCalli
+      - api: System.Reflection.Emit.ILGenerator::EmitWriteLine
