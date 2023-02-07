@@ -1,7 +1,7 @@
 rule:
   meta:
     name: execute shell command and capture output
-    namespace: c2/shell
+    namespace: communication/c2/shell
     authors:
       - matthew.williams@mandiant.com
     scope: function

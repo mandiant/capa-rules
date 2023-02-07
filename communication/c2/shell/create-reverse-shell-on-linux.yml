@@ -1,7 +1,7 @@
 rule:
   meta:
     name: create reverse shell on Linux
-    namespace: c2/shell
+    namespace: communication/c2/shell
     authors:
       - joakim@intezer.com
     scope: function
