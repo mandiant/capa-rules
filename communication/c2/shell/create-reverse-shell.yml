@@ -1,7 +1,7 @@
 rule:
   meta:
     name: create reverse shell
-    namespace: c2/shell
+    namespace: communication/c2/shell
     authors:
       - moritz.raabe@mandiant.com
     scope: function

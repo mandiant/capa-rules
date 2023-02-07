@@ -201,9 +201,8 @@ Namespaces are hierarchical, so the children of a namespace encodes its specific
 In a few words each, the top level namespaces are:
 
   - [anti-analysis](https://github.com/mandiant/capa-rules/tree/master/anti-analysis/) - packing, obfuscation, anti-X, etc.
-  - [c2](https://github.com/mandiant/capa-rules/tree/master/c2/) - commands that may be issued by a controller, such as interactive shell or file transfer
   - [collection](https://github.com/mandiant/capa-rules/tree/master/collection/) - data that may be enumerated and collected for exfiltration
-  - [communication](https://github.com/mandiant/capa-rules/tree/master/communication/) - HTTP, TCP, etc.
+  - [communication](https://github.com/mandiant/capa-rules/tree/master/communication/) - HTTP, TCP, command and control (C2) traffic, etc.
   - [compiler](https://github.com/mandiant/capa-rules/tree/master/compiler/) - detection of build environments, such as MSVC, Delphi, or AutoIT
   - [data-manipulation](https://github.com/mandiant/capa-rules/tree/master/data-manipulation/) - encryption, hashing, etc.
   - [executable](https://github.com/mandiant/capa-rules/tree/master/executable/) - characteristics of the executable, such as PE sections or debug info

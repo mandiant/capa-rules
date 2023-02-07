@@ -1,7 +1,7 @@
 rule:
   meta:
     name: download and write a file
-    namespace: c2/file-transfer
+    namespace: communication/c2/file-transfer
     maec/malware-category: downloader
     authors:
       - moritz.raabe@mandiant.com

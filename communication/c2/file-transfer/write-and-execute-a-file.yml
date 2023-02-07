@@ -1,7 +1,7 @@
 rule:
   meta:
     name: write and execute a file
-    namespace: c2/file-transfer
+    namespace: communication/c2/file-transfer
     maec/malware-category: launcher
     authors:
       - moritz.raabe@mandiant.com
