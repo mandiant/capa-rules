@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: reference absolute stream path Windows
+    name: reference absolute stream path on Windows
     namespace: host-interaction/file-system
     authors:
       - blas.kojusner@mandiant.com
