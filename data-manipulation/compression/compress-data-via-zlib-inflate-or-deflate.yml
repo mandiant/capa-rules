@@ -1,0 +1,43 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: compress data via ZLIB inflate or deflate
+    namespace: data-manipulation/compression
+    authors:
+      - blas.kojusner@mandiant.com
+    scope: function
+    references:
+      - https://github.com/madler/zlib/blob/cacf7f1d4e3d44d871b605da3b647f07d718623f/inflate.c#L622
+      - https://github.com/madler/zlib/blob/cacf7f1d4e3d44d871b605da3b647f07d718623f/deflate.c#L763
+    examples:
+      - 6EE9BB8B897C2D69F797646D5F94DE0F:0x65C0
+      - 6EE9BB8B897C2D69F797646D5F94DE0F:0x7930
+  features:
+    - or:
+      - and:
+        - description: Captures artifacts in ZLIB inflate
+        - bytes: 10 05 01 00 17 05 01 01 13 05 11 00 1B 05 01 10 = Distance of fixed Huffman table
+        - bytes: 60 07 00 00 00 08 50 00 00 08 10 00 14 08 73 00 = Length of fixed Huffman table
+      - and:
+        - description: Captures artifacts in ZLIB deflate
+        - operand[1].number: 0x2A = INIT_STATE
+        - basic block:
+          - and:
+            - description: Write ZLIB Header
+            - mnemonic: shl
+            - operand[1].number: 0xC = Shift s->w_bits
+            - mnemonic: sub
+            - operand[1].number: 0x7800 = Offset to header
+        - operand[1].number: 0x08 = Z_DEFLATED
+        - operand[1].number: 0x06 = level_flags
+        - operand[1].number: 0x20 = PRESET_DICT
+        - operand[1].number: 0x49 = NAME_STATE
+        - characteristic: loop
+        - basic block:
+          - and:
+            - description: flush_pending - flushes as much pending deflate output as possible
+            - count(mnemonic(mov)): 4
+            - mnemonic: call
+            - count(mnemonic(add)): 3
+            - count(mnemonic(sub)): 2
+            - mnemonic: jnz
