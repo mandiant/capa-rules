@@ -24,20 +24,14 @@ rule:
         - basic block:
           - and:
             - description: Write ZLIB Header
-            - mnemonic: shl
-            - operand[1].number: 0xC = Shift s->w_bits
-            - mnemonic: sub
-            - operand[1].number: 0x7800 = Offset to header
+            - instruction:
+              - mnemonic: shl
+              - operand[1].number: 0xC = Shift s->w_bits
+            - instruction:
+              - mnemonic: sub
+              - operand[1].number: 0x7800 = Offset to header
         - operand[1].number: 0x08 = Z_DEFLATED
         - operand[1].number: 0x06 = level_flags
         - operand[1].number: 0x20 = PRESET_DICT
         - operand[1].number: 0x49 = NAME_STATE
         - characteristic: loop
-        - basic block:
-          - and:
-            - description: flush_pending - flushes as much pending deflate output as possible
-            - count(mnemonic(mov)): 4
-            - mnemonic: call
-            - count(mnemonic(add)): 3
-            - count(mnemonic(sub)): 2
-            - mnemonic: jnz
