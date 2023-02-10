@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: schedule task via at
+    namespace: persistence/scheduled-tasks
+    authors:
+      - joren485
+    scope: function
+    att&ck:
+      - Persistence::Scheduled Task/Job::At [T1053.002]
+    examples:
+      - 0ce3bfa972ced61884ae7c1d77c7d4c45e17c7d767e669610cf2ef72b636b464:0x4051AF
+  features:
+    - and:
+      - match: host-interaction/process/create
+      - string: /at(|\.exe)/i
+      - or:
+        - string: "//every:/i"
+        - string: "//next:/i"
+        - string: "/\\d:\\d/i"

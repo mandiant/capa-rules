@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: schedule task via command line
+    name: schedule task via schtasks
     namespace: persistence/scheduled-tasks
     authors:
       - 0x534a@mailbox.org
