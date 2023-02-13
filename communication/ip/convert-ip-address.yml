@@ -1,7 +1,7 @@
 # generated using capa explorer for IDA Pro
 rule:
   meta:
-    name: convert IP address
+    name: convert IP address from string
     namespace: communication/ip
     authors:
       - "@mr-tz"
