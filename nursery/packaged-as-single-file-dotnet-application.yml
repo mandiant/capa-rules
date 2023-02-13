@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: packaged as single-file .NET application
+    namespace: executable/installer/dotnet
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: file
+    description: https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli
+  features:
+    - and:
+      - string: "Failure processing application bundle; possible file corruption."
+      - string: "Failure processing application bundle."
+      - string: "Bundle header version compatibility check failed"
+      - string: "A fatal error was encountered. Could not extract contents of the bundle"
