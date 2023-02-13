@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: generate random numbers via RtlGenRandom
+    namespace: data-manipulation/prng
+    authors:
+      - william.ballenthin@mandiant.com
+    scope: function
+    mbc:
+      - Cryptography::Generate Pseudo-random Sequence::Use API [C0021.003]
+    examples:
+      - b7841b9d5dc1f511a93cc7576672ec0c:0x10002B80
+      - 0a0882b8da225406cc838991b5f67d11:0x416F35
+  features:
+    - or:
+      - api: SystemFunction036
+      - and:
+        - match: link function at runtime on Windows
+        - string: "SystemFunction036"
+        - optional:
+          - string: "advapi32.dll"
+          - string: "Advapi32.dll"
+          - characteristic: indirect call
