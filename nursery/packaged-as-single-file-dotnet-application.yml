@@ -4,8 +4,8 @@ rule:
     namespace: executable/installer/dotnet
     authors:
       - michael.hunhoff@mandiant.com
-    scope: file
     description: https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli
+    scope: file
   features:
     - and:
       - string: "Failure processing application bundle; possible file corruption."
