@@ -4,8 +4,9 @@ rule:
     namespace: executable/installer/dotnet
     authors:
       - michael.hunhoff@mandiant.com
-    description: https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli
+    description: Single binary containing target .NET application and all application-dependent files
     scope: file
+    reference: https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli
   features:
     - and:
       # the installer portion of a single-file application is native code (in the samples I have seen) so format(dotnet) does not apply here.
