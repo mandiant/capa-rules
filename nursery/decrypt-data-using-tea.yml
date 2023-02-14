@@ -35,7 +35,7 @@ rule:
       - not:
         - basic block:
           - and:
-            - description: q setup for XXTEA
+            - description: q setup only in XXTEA
             - instruction:
               - mnemonic: mov
               - operand[1].number: 0x34
