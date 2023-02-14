@@ -6,7 +6,8 @@ rule:
       - michael.hunhoff@mandiant.com
     description: Single binary containing target .NET application and all application-dependent files
     scope: file
-    reference: https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli
+    references:
+      - https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli
   features:
     - and:
       # the installer portion of a single-file application is native code (in the samples I have seen) so format(dotnet) does not apply here.
