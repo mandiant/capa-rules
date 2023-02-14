@@ -8,6 +8,7 @@ rule:
     scope: file
   features:
     - and:
+      # the installer portion of a single-file application is native code (in the samples I have seen) so format(dotnet) does not apply here.
       - string: "Failure processing application bundle; possible file corruption."
       - string: "Failure processing application bundle."
       - string: "Bundle header version compatibility check failed"
