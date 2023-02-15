@@ -16,8 +16,8 @@ rule:
     - and:
       - or:
         - api: socket
-        - api: WSASocketA
+        - api: ws2_32.WSASocketA
       - or:
-        - operand[1].number: 2 = AF_INET
-        - operand[1].number: 23 = AF_INET6
-      - operand[1].number: 3 = SOCK_RAW
+        - number: 2 = AF_INET
+        - number: 23 = AF_INET6
+      - number: 3 = SOCK_RAW
