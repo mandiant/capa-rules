@@ -1,0 +1,23 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: create raw socket
+    namespace: communication/socket
+    authors:
+      - blas.kojusner@mandiant.com
+    scope: basic block
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/winsock/tcp-ip-raw-sockets-2
+      - https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket
+      - https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-wsasocketa
+    examples:
+      - 10EBCF8C20403457A08762200015B151:0x140001000
+  features:
+    - and:
+      - or:
+        - api: socket
+        - api: ws2_32.WSASocketA
+      - or:
+        - number: 2 = AF_INET
+        - number: 23 = AF_INET6
+      - number: 3 = SOCK_RAW
