@@ -1,7 +1,7 @@
 # generated using capa explorer for IDA Pro
 rule:
   meta:
-    name: create raw socket in Windows
+    name: create raw socket
     namespace: communication/socket
     authors:
       - blas.kojusner@mandiant.com
