@@ -14,7 +14,6 @@ rule:
       - https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm
     examples:
       - 44461306A604D2CD9883C2BB623AF276:0x10004810
-      - CD6C824903FC9023C83CED867BE4A4CC:0x100015A0
   features:
     - and:
       - basic block:
