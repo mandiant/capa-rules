@@ -449,7 +449,7 @@ Examples:
 
 ```yaml
 - string: "Firefox 64.0"
-- string: "Hostname:\t\t\t%s\nIP adress:\t\t\t%s\nOS version:\t\t\t%s\n"
+- string: "Hostname:\t\t\t%s\nIP address:\t\t\t%s\nOS version:\t\t\t%s\n"
 - string: "This program cannot be run in DOS mode."
   description: MS-DOS stub message
 - string: "{3E5FC7F9-9A51-4367-9063-A120244FBEC7}"
