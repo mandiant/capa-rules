@@ -4,6 +4,7 @@ rule:
     namespace: linking/runtime-linking
     authors:
       - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Execution::Shared Modules [T1129]
@@ -14,12 +15,11 @@ rule:
     - and:
       - os: windows
       - or:
-        - api: kernel32.LoadLibrary
-        - api: kernel32.GetModuleHandle
-        - api: kernel32.GetModuleHandleEx
-        - api: ntdll.LdrLoadDll
-      - or:
         - api: kernel32.GetProcAddress
         - api: ntdll.LdrGetProcedureAddress
       - optional:
         - characteristic: indirect call
+        - api: kernel32.LoadLibrary
+        - api: kernel32.GetModuleHandle
+        - api: kernel32.GetModuleHandleEx
+        - api: ntdll.LdrLoadDll
