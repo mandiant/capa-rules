@@ -1,0 +1,19 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: reference HTTP User-Agent string
+    namespace: communication/http
+    authors:
+      - "@mr-tz"
+    scope: function
+    references:
+      - https://www.useragents.me/
+      - https://www.whatismybrowser.com/guides/the-latest-user-agent/
+    examples:
+      - 0796F1C1EA0A142FC1EB7109A44C86CB:0x4043F0
+  features:
+    - or:
+      - substring: "Mozilla/5.0"
+      - substring: "like Gecko"
+      - api: urlmon.ObtainUserAgentString
+      - property/read: System.Net.HttpWebRequest::UserAgent
