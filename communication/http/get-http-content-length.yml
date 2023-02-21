@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: get HTTP content length
+    namespace: communication/http
+    authors:
+      - william.ballenthin@mandiant.com
+    scope: basic block
+    mbc:
+      - Communication::HTTP Communication [C0002]
+    examples:
+      - 0596c4ea5aa8def47f22c85d75aaca95:0x1079C70
+  features:
+    - and:
+      - api: wininet.HttpQueryInfo
+      - number: 0x20000005 = HTTP_QUERY_FLAG_NUMBER | HTTP_QUERY_CONTENT_LENGTH
