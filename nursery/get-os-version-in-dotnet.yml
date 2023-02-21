@@ -10,3 +10,4 @@ rule:
   features:
     - or:
       - property/read: System.Environment::OSVersion
+      - property/read: System.Environment::Is64BitOperatingSystem
