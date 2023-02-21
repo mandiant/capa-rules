@@ -12,4 +12,4 @@ rule:
   features:
     - and:
       - api: wininet.HttpQueryInfo
-      - number: 0x20000005 = HTTP_QUERY_CONTENT_LENGTH
+      - number: 0x20000005 = HTTP_QUERY_FLAG_NUMBER | HTTP_QUERY_CONTENT_LENGTH
