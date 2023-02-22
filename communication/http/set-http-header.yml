@@ -14,3 +14,7 @@ rule:
     - or:
       - api: winhttp.WinHttpAddRequestHeaders
       - property/write: System.Net.WebClient::Headers
+      - and:
+        - api: System.Net.WebHeaderCollection::Add
+        - optional:
+          - property/read: System.Net.WebClient::Headers

@@ -23,3 +23,4 @@ rule:
       - api: System.Net.Sockets.Socket::SendAsync
       - api: System.Net.Sockets.Socket::SendTo
       - api: System.Net.Sockets.Socket::SendToAsync
+      - api: System.Net.Sockets.UdpClient::Send

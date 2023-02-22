@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
       - johnk3r
       - joakim@intezer.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::DNS Communication::Resolve [C0011.001]
@@ -25,3 +26,4 @@ rule:
       - api: getaddrinfo
       - api: getnameinfo
       - api: gethostent
+      - api: System.Net.Dns::GetHostAddresses
