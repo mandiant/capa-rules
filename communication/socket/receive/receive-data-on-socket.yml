@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::Socket Communication::Receive Data [C0001.006]
@@ -20,3 +21,15 @@ rule:
       - api: ws2_32.WSARecvFrom
       - api: ws2_32.WSARecvMsg
       - api: recv
+      - api: System.Net.Sockets.Socket::Receive
+      - api: System.Net.Sockets.Socket::ReceiveAsync
+      - api: System.Net.Sockets.Socket::ReceiveFrom
+      - api: System.Net.Sockets.Socket::ReceiveFromAsync
+      - api: System.Net.Sockets.Socket::ReceiveMessageFrom
+      - api: System.Net.Sockets.Socket::ReceiveMessageFromAsync
+      - api: System.Net.Sockets.Socket::BeginReceive
+      - api: System.Net.Sockets.Socket::BeginReceiveFrom
+      - api: System.Net.Sockets.Socket::BeginReceiveMessageFrom
+      - api: System.Net.Sockets.Socket::EndReceive
+      - api: System.Net.Sockets.Socket::EndReceiveFrom
+      - api: System.Net.Sockets.Socket::EndReceiveMessageFrom
