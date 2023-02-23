@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: move directory
+    namespace: host-interaction/file-system/move
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: function
+  features:
+    - or:
+      - api: System.IO.DirectoryInfo::MoveTo
+      - api: System.IO.Directory::Move

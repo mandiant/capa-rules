@@ -23,6 +23,7 @@ rule:
       - api: remove
       - api: _wremove
       - api: System.IO.File::Delete
+      - api: System.IO.FileSystemInfo::Delete
       - basic block:
         - and:
           - number: 3 = FO_DELETE
