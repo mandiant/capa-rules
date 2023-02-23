@@ -675,6 +675,8 @@ Valid OSes:
   - `syllable`
   - `nacl`
 
+Note: you can match any valid OS by not specifying an `os` feature or by using `any`, e.g. `- os: any`.
+
 ### arch
 
 The name of the CPU architecture on which the sample runs.
