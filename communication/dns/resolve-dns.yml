@@ -1,7 +1,7 @@
 rule:
   meta:
     name: resolve DNS
-    namespace: host-interaction/network/dns/resolve
+    namespace: communication/dns
     authors:
       - william.ballenthin@mandiant.com
       - johnk3r
