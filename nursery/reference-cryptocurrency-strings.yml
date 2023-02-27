@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: mine cryptocurrency
+    name: reference cryptocurrency strings
     namespace: impact/cryptocurrency
     authors:
       - moritz.raabe@mandiant.com
@@ -19,7 +19,6 @@ rule:
       - string: "minergate"
       - string: "xmr."
       - string: "monero."
-      - string: "Bitcoin"
       - string: "Bitcoin"
       - string: "BitcoinGold"
       - string: "BtcCash"
@@ -44,7 +43,3 @@ rule:
       - string: "Monero"
       - string: "Graft"
       - string: "Zcash"
-      - string: "Ya.money"
-      - string: "Ya.disc"
-      - string: "Steam"
-      - string: "vk.cc"
