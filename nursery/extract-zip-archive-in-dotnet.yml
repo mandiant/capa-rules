@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: extract zip archive in .NET
+    namespace: data-manipulation/compression
+    authors:
+      - anushka.virgaonkar@mandiant.com
+      - michael.hunhoff@mandiant.com
+    scope: basic block
+    att&ck:
+      - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
+  features:
+    - and:
+      - optional:
+        - api: System.IO.Compression.ZipFile::Open
+        - api: System.IO.Compression.ZipFile::OpenRead
+      - or:
+        - api: System.IO.Compression.ZipFileExtensions::ExtractToFile
+        - api: System.IO.Compression.ZipFileExtensions::ExtractToDirectory
+        - api: System.IO.Compression.ZipFile::ExtractToDirectory
