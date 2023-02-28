@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get HTTP query URI
+    name: get HTTP request URI
     namespace: communication/http
     authors:
       - william.ballenthin@mandiant.com
