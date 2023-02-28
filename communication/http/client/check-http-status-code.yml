@@ -9,6 +9,7 @@ rule:
       - Communication::HTTP Communication::Read Header [C0002.014]
     examples:
       - 54ac78733552a62d1d05ea4ba3fc604bb49fe000d7fc948da45335b726e64d75:0x10001a20
+      - Practical Malware Analysis Lab 03-02.dll_:0x10004452
   features:
     - and:
       - os: windows

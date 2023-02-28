@@ -7,8 +7,6 @@ rule:
     scope: basic block
     mbc:
       - Communication::HTTP Communication [C0002]
-    examples:
-      - Practical Malware Analysis Lab 03-02.dll_:0x10004452
   features:
     - and:
       - api: wininet.HttpQueryInfo
