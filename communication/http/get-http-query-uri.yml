@@ -12,4 +12,4 @@ rule:
   features:
     - and:
       - api: wininet.HttpQueryInfo
-      - number: 0x13 = HTTP_QUERY_URI
+      - number: 0xD = HTTP_QUERY_URI
