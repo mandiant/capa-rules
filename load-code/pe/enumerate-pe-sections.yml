@@ -15,25 +15,32 @@ rule:
   features:
     - and:
       - os: windows
-      - offset: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
+      # there should be some complexity to functions like this
+      - count(basic blocks): 3 or more
+      - optional:
+        - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
+      - operand[1].offset: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
       - basic block:
         - or:
           - and:
             - description: IMAGE_FIRST_SECTION(nt_header)
-            - offset: 0x14 = IMAGE_NT_HEADERS.FileHeader.SizeOfOptionalHeader
-            - offset: 0x18 = FileHeader.SizeOfOptionalHeader
+            - operand[1].offset: 0x14 = IMAGE_NT_HEADERS.FileHeader.SizeOfOptionalHeader
+            - operand[1].offset: 0x18 = FileHeader.SizeOfOptionalHeader
           - and:
             - description: (DWORD)dll_raw + dos_header->e_lfanew + sizeof(IMAGE_NT_HEADERS) + sizeof(IMAGE_SECTION_HEADER) * i
             - number: 0x28 = sizeof(IMAGE_SECTION_HEADER)
             - or:
               - and:
                 - arch: i386
-                - offset: 0xF8 = sizeof(IMAGE_NT_HEADERS32)
+                - operand[1].offset: 0xF8 = sizeof(IMAGE_NT_HEADERS32)
               - and:
                 - arch: amd64
-                - offset: 0x108 = sizeof(IMAGE_NT_HEADERS64)
+                - operand[1].offset: 0x108 = sizeof(IMAGE_NT_HEADERS64)
       - basic block:
         - and:
-          - offset: 0xC = IMAGE_SECTION_HEADER.VirtualAddress
-          - offset: 0x14 = IMAGE_SECTION_HEADER.PointerToRawData
-          - offset: 0x10 = IMAGE_SECTION_HEADER.SizeOfRawData
+          - operand[1].offset: 0xC = IMAGE_SECTION_HEADER.VirtualAddress
+          - operand[1].offset: 0x14 = IMAGE_SECTION_HEADER.PointerToRawData
+          - operand[1].offset: 0x10 = IMAGE_SECTION_HEADER.SizeOfRawData
+          - not:
+            # non-zeroing XOR was observed in FPs
+            - characteristic: nzxor
