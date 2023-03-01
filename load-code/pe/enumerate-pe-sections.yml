@@ -19,12 +19,21 @@ rule:
       - count(basic blocks): 3 or more
       - optional:
         - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
-      - operand[1].offset: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
+      - instruction:
+        - or:
+          - mnemonic: mov
+          - mnemonic: movzx
+        - operand[1].offset: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
       - basic block:
         - or:
           - and:
             - description: IMAGE_FIRST_SECTION(nt_header)
-            - operand[1].offset: 0x14 = IMAGE_NT_HEADERS.FileHeader.SizeOfOptionalHeader
+            - instruction:
+              - or:
+                - mnemonic: add
+                - mnemonic: mov
+                - mnemonic: movzx
+              - operand[1].offset: 0x14 = IMAGE_NT_HEADERS.FileHeader.SizeOfOptionalHeader
             - operand[1].offset: 0x18 = FileHeader.SizeOfOptionalHeader
           - and:
             - description: (DWORD)dll_raw + dos_header->e_lfanew + sizeof(IMAGE_NT_HEADERS) + sizeof(IMAGE_SECTION_HEADER) * i
