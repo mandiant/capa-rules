@@ -17,8 +17,8 @@ rule:
         # ([\w]\:|\\) -> Check for absolute path beginning
         # (\\+((?![\<\>\"\/\|\*\?\\])[\x20-\x5B\x5D-\x7E])+)+ -> Check for valid path and filename
         #   \\+ -> Check for at least one backslash path separator
-        #   (?![\<\>\"\/\|\*\?\\]) -> filename must not start with <, >, ", ...
-        #   [\x20-\x5B\x5D-\x7E] -> filename must be printable ASCII, except backslash path separator
+        #   (?![\<\>\"\/\|\*\?\\]) -> path component must not start with <, >, ", ...
+        #   [\x20-\x5B\x5D-\x7E] -> path component must be printable ASCII, except backslash path separator
         # : -> Check for start of stream filename
         # (((?![\<\>\"\/\|\*\?\\])[\x20-\x5B\x5D-\x7E])+)+ -> Check for valid stream filename
         ### Example Matches:
