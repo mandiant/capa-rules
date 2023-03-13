@@ -9,4 +9,4 @@ rule:
     - and:
       - property/write: System.Net.WebRequest::Proxy
       - optional:
-          - api: System.Net.WebProxy::ctor
+        - api: System.Net.WebProxy::ctor
