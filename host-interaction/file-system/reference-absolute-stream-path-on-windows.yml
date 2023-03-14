@@ -13,14 +13,14 @@ rule:
   features:
     - and:
       - string: /^(..\?\\)?([\w]\:|\\)(\\+((?![\<\>\"\/\|\*\?\:\\])[\x20-\x5B\x5D-\x7E])+)+(\:\$?([a-zA-Z0-9_]+))?/
-        # (..\?\\)? -> Check for path starting with "\\?\"
+        # ^(..\?\\)? -> Check for path starting with "\\?\"
         # ([\w]\:|\\) -> Check for absolute path beginning
         # (\\+((?![\<\>\"\/\|\*\?\:\\])[\x20-\x5B\x5D-\x7E])+)+ -> Check for valid path and filename
         #   \\+ -> Check for at least one backslash path separator
         #   (?![\<\>\"\/\|\*\?\:\\]) -> path component must not start with <, >, ", ...
         #   [\x20-\x5B\x5D-\x7E] -> path component must be printable ASCII, except backslash path separator
         # : -> Check for start of stream filename
-        # \$?([a-zA-Z0-9_]+))?$ -> Check for valid stream filename
+        # \$?([a-zA-Z0-9_]+))? -> Check for valid stream filename
         ### Example Matches:
         ### \\\\server\share\\file:stream
         ### \\\\server\share\dir.ext\\file.ext:stream 
