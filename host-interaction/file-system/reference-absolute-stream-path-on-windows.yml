@@ -12,7 +12,7 @@ rule:
       - 51828683DC26BFABD3994494099AE97D:0x11A9
   features:
     - and:
-      - string: /(..\?\\)?([\w]\:|\\)(\\+((?![\<\>\"\/\|\*\?\:\\])[\x20-\x5B\x5D-\x7E])+)+(\:\$?([a-zA-Z0-9_]+))?$/
+      - string: /^(..\?\\)?([\w]\:|\\)(\\+((?![\<\>\"\/\|\*\?\:\\])[\x20-\x5B\x5D-\x7E])+)+(\:\$?([a-zA-Z0-9_]+))?/
         # (..\?\\)? -> Check for path starting with "\\?\"
         # ([\w]\:|\\) -> Check for absolute path beginning
         # (\\+((?![\<\>\"\/\|\*\?\:\\])[\x20-\x5B\x5D-\x7E])+)+ -> Check for valid path and filename
