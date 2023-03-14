@@ -13,4 +13,8 @@ rule:
   features:
     - and:
       - number: 0x5 = SYSTEM_PROCESS_INFORMATION
-      - api: NtQuerySystemInformation
+      - or:
+        - api: NtQuerySystemInformation
+        - api: NtQuerySystemInformationEx
+        - api: ZwQuerySystemInformation
+        - api: ZwQuerySystemInformationEx

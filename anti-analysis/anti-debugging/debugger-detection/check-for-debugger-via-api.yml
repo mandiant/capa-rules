@@ -15,6 +15,9 @@ rule:
       - al-khaser_x86.exe_:0x420000
   features:
     - or:
+      # We're not including kernel32.IsDebuggerPresent here because some exception handlers and other compiler-inserted
+      # code may add calls to it, especially in debug builds. So, likely even with pretty good library code detection
+      # this feature could result in many false positives.
       - api: kernel32.CheckRemoteDebuggerPresent
       - api: WUDFPlatform.WudfIsAnyDebuggerPresent
       - api: WUDFPlatform.WudfIsKernelDebuggerPresent

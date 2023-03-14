@@ -6,10 +6,14 @@ rule:
       - michael.hunhoff@mandiant.com
     scope: basic block
     mbc:
-      - Anti-Behavioral Analysis::Debugger Detection::NtQueryInformationProcess [B0001.012]
+      - Anti-Behavioral Analysis::Debugger Detection [B0001]
     references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtQuerySystemInformation_SystemKernelDebuggerInformation.cpp
   features:
     - and:
-      - api: NtQueryInformationProcess
+      - or:
+        - api: NtQuerySystemInformation
+        - api: NtQuerySystemInformationEx
+        - api: ZwQuerySystemInformation
+        - api: ZwQuerySystemInformationEx
       - number: 0x23 = SystemKernelDebuggerInformation

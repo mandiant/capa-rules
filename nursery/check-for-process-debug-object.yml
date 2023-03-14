@@ -11,8 +11,12 @@ rule:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtQueryInformationProcess_ProcessDebugObject.cpp
   features:
     - and:
-      - api: kernel32.GetCurrentProcess
+      - or:
+        - api: kernel32.GetCurrentProcess
+        - api: System.Diagnostics.Process::GetCurrentProcess
       - basic block:
         - and:
-          - api: NtQueryInformationProcess
+          - or:
+            - api: NtQueryInformationProcess
+            - api: ZwQueryInformationProcess
           - number: 0x1E = ProcessDebugObjectHandle
