@@ -44,4 +44,6 @@ rule:
         - api: SHRegGetValueFromHKCUHKLM
         - api: SHRegGetBoolValueFromHKCUHKLM
         - api: Microsoft.Win32.RegistryKey::GetValue
+        - api: Microsoft.Win32.RegistryKey::GetValueKind
         - api: Microsoft.Win32.RegistryKey::GetValueNames
+        - api: Microsoft.Win32.Registry::GetValue

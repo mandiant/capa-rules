@@ -30,3 +30,6 @@ rule:
         - api: SHRegEnumUSKey
         - api: SHRegQueryInfoUSKey
         - api: Microsoft.Win32.RegistryKey::GetSubKeyNames
+        - api: Microsoft.Win32.RegistryKey::OpenBaseKey
+        - api: Microsoft.Win32.RegistryKey::OpenRemoteBaseKey
+        - api: Microsoft.Win32.RegistryKey::OpenSubKey
