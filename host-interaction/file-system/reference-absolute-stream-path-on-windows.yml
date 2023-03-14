@@ -12,15 +12,15 @@ rule:
       - 51828683DC26BFABD3994494099AE97D:0x11A9
   features:
     - and:
-      - string: /(..\?\\)?([\w]\:|\\)(\\+((?![\<\>\"\/\|\*\?\\])[\x20-\x5B\x5D-\x7E])+)+:(((?![\<\>\"\/\|\*\?\\])[\x20-\x5B\x5D-\x7E])+)+$/
+      - string: /(..\?\\)?([\w]\:|\\)(\\+((?![\<\>\"\/\|\*\?\:\\])[\x20-\x5B\x5D-\x7E])+)+(\:\$?([a-zA-Z0-9_]+))?$/
         # (..\?\\)? -> Check for path starting with "\\?\"
         # ([\w]\:|\\) -> Check for absolute path beginning
-        # (\\+((?![\<\>\"\/\|\*\?\\])[\x20-\x5B\x5D-\x7E])+)+ -> Check for valid path and filename
+        # (\\+((?![\<\>\"\/\|\*\?\:\\])[\x20-\x5B\x5D-\x7E])+)+ -> Check for valid path and filename
         #   \\+ -> Check for at least one backslash path separator
-        #   (?![\<\>\"\/\|\*\?\\]) -> path component must not start with <, >, ", ...
+        #   (?![\<\>\"\/\|\*\?\:\\]) -> path component must not start with <, >, ", ...
         #   [\x20-\x5B\x5D-\x7E] -> path component must be printable ASCII, except backslash path separator
         # : -> Check for start of stream filename
-        # (((?![\<\>\"\/\|\*\?\\])[\x20-\x5B\x5D-\x7E])+)+ -> Check for valid stream filename
+        # \$?([a-zA-Z0-9_]+))?$ -> Check for valid stream filename
         ### Example Matches:
         ### \\\\server\share\\file:stream
         ### \\\\server\share\dir.ext\\file.ext:stream 
