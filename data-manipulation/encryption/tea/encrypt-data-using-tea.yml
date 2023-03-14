@@ -1,0 +1,45 @@
+rule:
+  meta:
+    name: encrypt data using TEA
+    namespace: data-manipulation/encryption/tea
+    authors:
+      - william.ballenthin@mandiant.com
+      - raymond.leong@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+    references:
+      - https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm
+    examples:
+      - 44461306A604D2CD9883C2BB623AF276:0x10004810
+  features:
+    - and:
+      - basic block:
+        - and:
+          - instruction:
+            - mnemonic: shr
+            - operand[1].number: 0x5
+          - instruction:
+            - mnemonic: shl
+            - operand[1].number: 0x4
+          - count(mnemonic(shr)): 0x2
+          - characteristic: nzxor
+      - or:
+        - operand[1].number: 0x9E3779B9 = key schedule constant
+        - operand[1].number: 0x61C88647 = key schedule constant two's complement
+      - not:
+        - or:
+          - number: 0xC6EF3720 = sum, only used in decryption
+          - basic block:
+            - and:
+              - description: q setup only in XXTEA
+              - instruction:
+                - mnemonic: mov
+                - operand[1].number: 0x34
+              - instruction:
+                - mnemonic: add
+                - operand[1].number: 0x6
+              - instruction:
+                - mnemonic: idiv

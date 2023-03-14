@@ -17,12 +17,12 @@ rule:
     - or:
       - and:
         - description: magic initialization constants from MD4 and MD5
-        - number: 0x67452301 = A
-        - number: 0xefcdab89 = B
-        - number: 0x98badcfe = C
-        - number: 0x10325476 = D
+        - number: 0x67452301 = A, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - number: 0xefcdab89 = B, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - number: 0x98badcfe = C, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - number: 0x10325476 = D, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
         - not:
-          - number: 0xc3d2e1f0 = likely SHA1
+          - number: 0xc3d2e1f0 = likely SHA1 but also used in RIPEMD-160 and RIPEMD-320
         - optional:
           - description: specific compilation from https://github.com/rwfpl/rewolf-x86-virtualizer/blob/master/src/test_app/main.cpp
           - and:

@@ -1,0 +1,36 @@
+rule:
+  meta:
+    name: encrypt data using XTEA
+    namespace: data-manipulation/encryption/xtea
+    authors:
+      - raymond.leong@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+    references:
+      - https://en.wikipedia.org/wiki/XTEA
+    examples:
+      - 4B9EFD882C49EF7525370FFB5197AD86:0x00001E54
+      - A1451E3108E85769302AD25C74757180:0x00408EE0
+  features:
+    - and:
+      - basic block:
+        - and:
+          - instruction:
+            - mnemonic: shl
+            - operand[1].number: 0x4
+          - instruction:
+            - mnemonic: shr
+            - operand[1].number: 0x5
+          - instruction:
+            - mnemonic: shr
+            - operand[1].number: 0xB
+          - instruction:
+            - mnemonic: and
+            - operand[1].number: 0x3
+          - characteristic: nzxor
+      - or:
+        - operand[1].number: 0x9E3779B9 = key schedule constant
+        - operand[1].number: 0x61C88647 = key schedule constant two's complement

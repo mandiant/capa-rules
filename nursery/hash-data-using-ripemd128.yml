@@ -1,0 +1,34 @@
+rule:
+  meta:
+    name: hash data using RIPEMD128
+    namespace: data-manipulation/hashing/ripemd128
+    authors:
+      - raymond.leong@mandiant.com
+    scope: file
+    references:
+      - https://en.wikipedia.org/wiki/RIPEMD-128
+  features:
+    - and:
+      - function:
+        - and:
+          - or:
+            - and:
+              - description: Magic initialization constants used in RIPEMD-128
+              - number: 0x67452301 = also used in MD5, SHA1, RIPEMD-128, RIPEMD-256, and RIPEMD-320
+              - number: 0xEFCDAB89 = also used in MD5, SHA1, RIPEMD-128, RIPEMD-256, and RIPEMD-320
+              - number: 0x98BADCFE = also used in MD5, SHA1, RIPEMD-128, RIPEMD-256, and RIPEMD-320
+              - number: 0x10325476 = also used in MD5, SHA1, RIPEMD-128, RIPEMD-256, and RIPEMD-320
+            - bytes: 01 23 45 67 89 AB CD EF FE DC BA 98 76 54 32 10
+          - not:
+            - or:
+              - number: 0x76543210 = RIPEMD-256 and RIPEMD-320 constant
+              - number: 0xFEDCBA98 = RIPEMD-256 and RIPEMD-320 constant
+              - number: 0xC3D2E1F0 = RIPEMD-160, RIPEMD-320, SHA1 constant
+              - number: 0x3C2D1E0F = RIPEMD-320 constant
+      - function:
+        - and:
+          - description: Magic K-array constants not present in MD5
+          - number: 0xA953FD4E
+          - number: 0x50A28BE6
+          - number: 0x5C4DD124
+          - number: 0x6D703EF3

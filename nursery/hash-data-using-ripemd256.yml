@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: hash data using RIPEMD256
+    namespace: data-manipulation/hashing/ripemd256
+    authors:
+      - raymond.leong@mandiant.com
+    scope: function
+    references:
+      - https://en.wikipedia.org/wiki/RIPEMD-256
+  features:
+    - and:
+      - or:
+        - and:
+          - description: Magic initialization constants used in RIPEMD-256
+          - number: 0x67452301 = also used in MD5, SHA1, RIPEMD-128, RIPEMD-256, and RIPEMD-320
+          - number: 0xEFCDAB89 = also used in MD5, SHA1, RIPEMD-128, RIPEMD-256, and RIPEMD-320
+          - number: 0x98BADCFE = also used in MD5, SHA1, RIPEMD-128, RIPEMD-256, and RIPEMD-320
+          - number: 0x10325476 = also used in MD5, SHA1, RIPEMD-128, RIPEMD-256, and RIPEMD-320
+          - number: 0x76543210 = also used in RIPEMD-320
+          - number: 0xFEDCBA98 = also used in RIPEMD-320
+          - number: 0x89ABCDEF = also used in RIPEMD-320
+          - number: 0x01234567 = also used in RIPEMD-320
+        - bytes: 01 23 45 67 89 AB CD EF FE DC BA 98 76 54 32 10 10 32 54 76 98 BA DC FE EF CD AB 89 67 45 23 01
+      - not:
+        - or:
+          - number: 0xC3D2E1F0 = RIPEMD-160, RIPEMD-320, SHA1 constant
+          - number: 0x3C2D1E0F = RIPEMD-320 constant
