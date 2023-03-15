@@ -13,3 +13,4 @@ rule:
       - property/read: System.Environment::Is64BitOperatingSystem
       - property/read: System.OperatingSystem::Version
       - property/read: Microsoft.VisualBasic.Devices.ComputerInfo::OSFullName
+      - property/read: System.Runtime.InteropServices.RuntimeInformation::OSDescription
