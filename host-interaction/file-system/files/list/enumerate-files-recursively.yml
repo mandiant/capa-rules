@@ -15,5 +15,5 @@ rule:
   features:
     - and:
       - or:
-        - match: enumerate files on windows
+        - match: enumerate files on Windows
       - characteristic: recursive call
