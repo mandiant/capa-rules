@@ -398,7 +398,7 @@ Example:
 ### property
 A member of a class or struct used by the logic of a program. This must include the member's class and namespace if recoverable.
 
-The paramerter is a string describing the member, specificed like `namespace.class::member` or `namespace.nestednamespace.class::member`. You may also specify a `/read` accessor, if you intend a match to occur when the referenced property is read, or a `/write` accessor, if you intend a match to occur when the referenced property is written.
+The parameter is a string describing the member, specificed like `namespace.class::member` or `namespace.nestednamespace.class::member`. You may also specify a `/read` accessor, if you intend a match to occur when the referenced property is read, or a `/write` accessor, if you intend a match to occur when the referenced property is written.
 
 Example:
 
