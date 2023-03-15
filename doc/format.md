@@ -47,10 +47,11 @@ We'll start at the high level structure and then dig into the logic structures a
   - [features block](#features-block)
 - [extracted features](#extracted-features)
   - [characteristic](#characteristic)
-  - [instruction features](#function-features)
+  - [instruction features](#instruction-features)
     - [namespace](#namespace)
     - [class](#class)
     - [api](#api)
+    - [property](#property)
     - [number](#number)
     - [string and substring](#string-and-substring)
     - [bytes](#bytes)
@@ -337,6 +338,7 @@ The following features are relevant at this scope and above:
   - [namespace](#namespace)
   - [class](#class)
   - [api](#api)
+  - [property](#property)
   - [number](#number)
   - [string and substring](#string-and-substring)
   - [bytes](#bytes)
@@ -382,6 +384,8 @@ The parameter is a string describing the function name, specified like  `functio
 
 Windows API functions that take string arguments come in two API versions. For example, `CreateProcessA` takes ANSI strings and `CreateProcessW` takes Unicode strings. capa extracts these API features both with and without the suffix character `A` or `W`. That means you can write a rule to match on both APIs using the base name. If you want to match a specific API version, you can include the suffix.
 
+.NET classes and structures implement constructor (`.ctor`) and static constructor (`.cctor`) methods. capa extracts these constructor methods as `namespace.class::ctor` and `namespace.class::cctor`, respectively.
+
 Example:
 
     api: kernel32.CreateFile  # matches both Ansi (CreateFileA) and Unicode (CreateFileW) versions
@@ -389,6 +393,17 @@ Example:
     api: GetEnvironmentVariableW  # only matches on Unicode version
     api: System.IO.File::Delete
     api: System.Net.WebResponse::GetResponseStream
+    api: System.Threading.Mutex::ctor # match creation System.Threading.Mutex object
+
+### property
+A member of a class or struct used by the logic of a program. This must include the member's class and namespace if recoverable.
+
+The paramerter is a string describing the member, specificed like `namespace.class::member` or `namespace.nestednamespace.class::member`. You may also specify a `/read` accessor, if you intend a match to occur when the referenced property is read, or a `/write` accessor, if you intend a match to occur when the referenced property is written.
+
+Example:
+
+    property/read: System.Environment::OSVersion
+    property/write: System.Net.WebRequest::Proxy
 
 ### number
 A number used by the logic of the program.
