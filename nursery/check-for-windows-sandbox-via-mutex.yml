@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: check for windows sandbox via mutex
+    name: check for Windows sandbox via mutex
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - "@_re_fox"

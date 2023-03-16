@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: enumerate files on windows
+    name: enumerate files on Windows
     namespace: host-interaction/file-system/files/list
     authors:
       - moritz.raabe@mandiant.com
