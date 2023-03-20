@@ -1,9 +1,10 @@
 rule:
   meta:
-    name: check for sandbox username
+    name: check for sandbox username or hostname
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - "@_re_fox"
+      - "echernofsky@google.com"
     scope: function
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion [T1497]
@@ -15,7 +16,9 @@ rule:
       - ccbf7cba35bab56563c0fbe4237fdc41:0x402B90
   features:
     - and:
-      - api: GetUserName
+      - or:
+        - api: GetUserName
+        - match: get hostname
       - or:
         - string: /MALTEST/i
           description: Betabot Username Check
@@ -37,7 +40,7 @@ rule:
           description: Gookit Username Check
         - string: /FORTINET/i
           description: Shifu Username Check
-        - string: /John\sDoe/i
+        - string: /John\s?Doe/i
           description: Emotet Username Check
         - string: /Emily/i
           description: Trickbot Downloader Username Check
@@ -67,3 +70,7 @@ rule:
           description: Trickbot Downloader Username Check
         - string: /WDAGUtilityAccount/i
           description: Windows Defender Application Guard
+        - string: /HAL9TH/i
+          description: Windows Defender Emulator
+        - string: /REM/i
+          description: SANS REM VM
