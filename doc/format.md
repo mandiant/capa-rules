@@ -75,7 +75,7 @@ We'll start at the high level structure and then dig into the logic structures a
   - [counting](#counting)
   - [matching prior rule matches and namespaces](#matching-prior-rule-matches-and-namespaces)
   - [descriptions](#descriptions)
-
+  - [comments](#comments)
 
 ## yaml
 
