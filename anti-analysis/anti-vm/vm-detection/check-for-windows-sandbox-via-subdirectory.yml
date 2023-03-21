@@ -17,6 +17,6 @@ rule:
   features:
     - and:
       - or:
-        - api: CreateFile
+        - match: create or open file
         - api: GetFileAttributes
       - string: "C:\\INTERNAL\\__empty"
