@@ -75,7 +75,7 @@ We'll start at the high level structure and then dig into the logic structures a
   - [counting](#counting)
   - [matching prior rule matches and namespaces](#matching-prior-rule-matches-and-namespaces)
   - [descriptions](#descriptions)
-
+  - [comments](#comments)
 
 ## yaml
 
@@ -817,3 +817,29 @@ For example:
     - offset: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
     - offset: 0x30 = IMAGE_NT_HEADERS64.OptionalHeader.ImageBase
 ```
+
+## comments
+
+Capa rules support both inline/end-of-line and block comments
+
+For example:
+
+```yaml
+features:
+    # The constant words spell "expand 32-byte k" in ASCII (i.e. the 4 words are "expa", "nd 3", "2-by", and "te k")
+    - or:
+      - description: part of key setup
+      - string: "expand 32-byte k = sigma"
+      - string: "expand 16-byte k = tau"
+      - string: "expand 32-byte kexpand 16-byte k"  # if sigma and tau are in contiguous memory, may result in concatenated string
+      - and:
+        - string: "expa"
+        - string: "nd 3"
+        - string: "2-by"
+        - string: "te k"
+      - and:
+        - number: 0x61707865 = "apxe"
+        - number: 0x3320646E = "3 dn"
+        - number: 0x79622D32 = "yb-2"
+        - number: 0x6B206574 = "k et"
+```      
