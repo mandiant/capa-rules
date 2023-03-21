@@ -16,5 +16,4 @@ rule:
         - api: System.IntPtr::ToInt32
       - api: System.Runtime.InteropServices.Marshal::ReadInt32
       - number: 0x3C = IMAGE_DOS_HEADER.e_lfanew
-      - api: System.Runtime.InteropServices.Marshal::ReadInt32
       - number: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
