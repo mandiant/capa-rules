@@ -12,7 +12,7 @@ rule:
     references:
       - https://www.elastic.co/security-labs/qbot-malware-analysis
     examples:
-      - ffaf9cd085434fd5230511ab895ba494:0x10015A6A
+      - c2ba065654f13612ae63bca7f972ea91c6fe97291caeaaa3a28a180fb1912b3a:0x10015A6A
   features:
     - and:
       - or:
