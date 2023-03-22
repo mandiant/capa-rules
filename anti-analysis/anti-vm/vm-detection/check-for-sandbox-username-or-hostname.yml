@@ -73,5 +73,3 @@ rule:
           description: Windows Defender Application Guard
         - string: /HAL9TH/i
           description: Windows Defender Emulator
-        - string: /REM/i
-          description: SANS REM VM
