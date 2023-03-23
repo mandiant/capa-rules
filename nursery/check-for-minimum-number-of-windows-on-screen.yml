@@ -17,4 +17,4 @@ rule:
       - api: EnumWindows
       - instruction:
         - mnemonic: cmp
-        - number: 0xC
+        - number: 0xC = minimum number of windows expected
