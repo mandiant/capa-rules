@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: check for windows sandbox via subdirectory
+    namespace: anti-analysis/anti-vm/vm-detection
+    authors:
+      - "echernofsky@google.com"
+    scope: basic block
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
+    mbc:
+      - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]
+    references:
+      - https://www.elastic.co/security-labs/qbot-malware-analysis
+    # examples:
+      # - c2ba065654f13612ae63bca7f972ea91c6fe97291caeaaa3a28a180fb1912b3a:0x10015A6A   # Encrypted String
+      # - b37467936eba9ea53f0c5cdec4f3fe30b878ef2643b752fe1645c331b8569e38:0x1000656E   # Encrypted String
+  features:
+    - and:
+      - or:
+        - match: create or open file
+        - api: GetFileAttributes
+      - string: "C:\\INTERNAL\\__empty"
