@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: enumerate PE sections in .NET
+    namespace: load-code/pe
+    authors:
+      - "@mr-tz"
+    scope: function
+    mbc:
+      - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
+  features:
+    - and:
+      - format: dotnet
+      - optional:
+        - api: System.Diagnostics.Process::GetCurrentProcess
+        - property/read: System.Diagnostics.ProcessModule::BaseAddress
+        - api: System.IntPtr::ToInt32
+      - api: System.Runtime.InteropServices.Marshal::ReadInt32
+      - number: 0x3C = IMAGE_DOS_HEADER.e_lfanew
+      - number: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
