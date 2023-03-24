@@ -34,6 +34,6 @@ rule:
           - api: NtQueryInformationProcess
           - api: ZwQueryInformationProcess
         - or:
-          - number: 0x7 = ProcessDebugPort
+          - number: 0x7 = ProcessDebugPort  # This is already being checked by "check ProcessDebugPort" rule
           - number: 0x1E = ProcessDebugObjectHandle
           - number: 0x1F = ProcessDebugFlags
