@@ -5,12 +5,17 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
+      - echernofsky@google.com
     scope: function
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::CheckRemoteDebuggerPresent [B0001.002]
       - Anti-Behavioral Analysis::Debugger Detection::WudfIsAnyDebuggerPresent [B0001.031]
+      - Anti-Behavioral Analysis::Debugger Detection::NtQueryInformationProcess [B0001.012]
     references:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/CheckRemoteDebuggerPresent.cpp
+      - https://github.com/LordNoteworthy/al-khaser/wiki/Anti-Debugging-Tricks
+      - https://www.microsoft.com/en-us/security/blog/2018/03/01/finfisher-exposed-a-researchers-tale-of-defeating-traps-tricks-and-complex-virtual-machines/
+      - https://unprotect.it/technique/ntqueryinformationprocess/
     examples:
       - al-khaser_x86.exe_:0x420000
   features:
@@ -23,3 +28,11 @@ rule:
       - api: WUDFPlatform.WudfIsKernelDebuggerPresent
       - api: WUDFPlatform.WudfIsUserDebuggerPresent
       - property/read: System.Diagnostics.Debugger::IsAttached
+      - and:
+        - or:
+          - api: NtQueryInformationProcess
+          - api: ZwQueryInformationProcess
+        - or:
+          - number: 0x7 = ProcessDebugPort
+          - number: 0x1E = ProcessDebugObjectHandle
+          - number: 0x1F = ProcessDebugFlags
