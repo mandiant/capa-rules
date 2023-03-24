@@ -16,6 +16,7 @@ rule:
       - https://github.com/LordNoteworthy/al-khaser/wiki/Anti-Debugging-Tricks
       - https://www.microsoft.com/en-us/security/blog/2018/03/01/finfisher-exposed-a-researchers-tale-of-defeating-traps-tricks-and-complex-virtual-machines/
       - https://unprotect.it/technique/ntqueryinformationprocess/
+      - https://www.apriorit.com/dev-blog/367-anti-reverse-engineering-protection-techniques-to-use-before-releasing-software#p5
     examples:
       - al-khaser_x86.exe_:0x420000
   features:
