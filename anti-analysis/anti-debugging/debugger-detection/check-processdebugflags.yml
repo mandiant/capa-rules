@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: check ProcessDebugFlags
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    authors:
+      - echernofsky@google.com
+    scope: basic block
+    mbc:
+      - Anti-Behavioral Analysis::Debugger Detection::NtQueryInformationProcess [B0001.012]
+    references:
+      - https://www.microsoft.com/en-us/security/blog/2018/03/01/finfisher-exposed-a-researchers-tale-of-defeating-traps-tricks-and-complex-virtual-machines/
+      - https://unprotect.it/technique/ntqueryinformationprocess/
+      - https://www.apriorit.com/dev-blog/367-anti-reverse-engineering-protection-techniques-to-use-before-releasing-software#p5
+    examples:
+      - kernel32.dll_:0x7DD97899
+  features:
+    - and:
+      - or:
+        - api: NtQueryInformationProcess
+        - api: ZwQueryInformationProcess
+      - number: 0x1F = ProcessDebugFlags

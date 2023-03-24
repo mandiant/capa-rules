@@ -13,5 +13,7 @@ rule:
       - kernel32.dll_:0x7DD97899
   features:
     - and:
-      - api: NtQueryInformationProcess
+      - or:
+        - api: NtQueryInformationProcess
+        - api: ZwQueryInformationProcess
       - number: 0x7 = ProcessDebugPort
