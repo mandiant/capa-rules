@@ -5,6 +5,7 @@ rule:
     namespace: collection
     authors:
       - moritz.raabe
+      - michael.hunhoff@mandiant.com
     scope: function
     att&ck:
       - Discovery::System Location Discovery [T1614]
@@ -14,6 +15,8 @@ rule:
     - or:
       - api: GetLocaleInfo
       - api: GetLocaleInfoEx
+      - api: kernel32.GetUserGeoID
+      - api: kernel32.GetGeoInfo
       # strings part of requests or parsed from response
       # "geo" and "zip" are too short
       # "region" results in FPs mostly related to memory
