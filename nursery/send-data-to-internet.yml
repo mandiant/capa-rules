@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: send data to Internet
+    namespace: communication/http/client
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: function
+  features:
+    - and:
+      - optional:
+        - or:
+          - match: connect to HTTP server
+          - match: connect to URL
+      - or:
+        - api: System.Net.WebClient::UploadValues
+        - api: System.Net.WebClient::UploadData
+        - api: System.Net.WebClient::UploadDataAsync
+        - api: System.Net.WebClient::UploadDataTaskAsync
+        - api: System.Net.WebClient::UploadFile
+        - api: System.Net.WebClient::UploadFileAsync
+        - api: System.Net.WebClient::UploadFileTaskAsync
+        - api: System.Net.WebClient::UploadString
+        - api: System.Net.WebClient::UploadStringAsync
+        - api: System.Net.WebClient::UploadStringTaskAsync
+        - api: System.Net.WebClient::UploadValues
+        - api: System.Net.WebClient::UploadValuesAsync
+        - api: System.Net.WebClient::UploadValuesTaskAsync
