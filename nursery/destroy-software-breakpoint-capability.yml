@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: destroy software breakpoint capability
+    namespace: anti-analysis/anti-debugging
+    authors:
+      - echernofsky@google.com
+    scope: function
+    references:
+      - https://www.microsoft.com/en-us/security/blog/2018/03/01/finfisher-exposed-a-researchers-tale-of-defeating-traps-tricks-and-complex-virtual-machines/
+      - https://anti-debug.checkpoint.com/techniques/assembly.html
+      - https://www.mandiant.com/sites/default/files/2021-10/09-evil.pdf
+    # examples:
+    #   - al-khaser_x86.exe_:0x431020
+  features:
+    - and:
+      - api: VirtualProtect
+      - api: DbgBreakPoint    # This API is used as an argument to VirtualProtect to allow modification.
