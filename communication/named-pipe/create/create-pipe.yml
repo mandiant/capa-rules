@@ -4,6 +4,7 @@ rule:
     namespace: communication/named-pipe/create
     authors:
       - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: function
     mbc:
       - Communication::Interprocess Communication::Create Pipe [C0003.001]
@@ -13,3 +14,9 @@ rule:
     - or:
       - api: kernel32.CreatePipe
       - api: kernel32.CreateNamedPipe
+      - api: System.IO.Pipes.AnonymousPipeClientStream::ctor
+      - api: System.IO.Pipes.NamedPipeClientStream::ctor
+      - api: System.IO.Pipes.AnonymousPipeServerStream::ctor
+      - api: System.IO.Pipes.AnonymousPipeServerStreamAcl::Create
+      - api: System.IO.Pipes.NamedPipeServerStream::ctor
+      - api: System.IO.Pipes.NamedPipeServerStreamAcl::Create
