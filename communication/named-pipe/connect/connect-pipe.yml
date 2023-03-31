@@ -16,3 +16,5 @@ rule:
       - api: kernel32.ConnectNamedPipe
       - api: kernel32.CallNamedPipe
         description: connect, read, write from pipe in single operation
+      - api: System.IO.Pipes.NamedPipeClientStream::Connect
+      - api: System.IO.Pipes.NamedPipeClientStream::ConnectAsync
