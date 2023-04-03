@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: contain a thread local storage (.tls) section in .NET
+    namespace: executable/pe/section/tls
+    authors:
+      - michael.hunhoff@mandiant.com
+    description: .NET file contains uncommon TLS section
+    scope: file
+    references:
+      - https://washi.dev/blog/posts/entry-points/
+  features:
+    - and:
+      - match: contain a thread local storage (.tls) section
+      - format: dotnet
