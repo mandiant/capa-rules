@@ -1,0 +1,36 @@
+rule:
+  meta:
+    name: execute shellcode via callback functions
+    namespace: load-code/shellcode
+    authors:
+      - ervin.ocampo@mandiant.com
+    description: Looking for usage of various WinAPI functions that accepts callback functions as parameter in order to execute arbitrary shellcode
+    scope: function
+    att&ck:
+      - Defense Evasion::Reflective Code Loading [T1620]
+    references:
+      - https://github.com/ChaitanyaHaritash/Callback_Shellcode_Injection
+      - https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html
+    examples:
+      - 10cd7afd580ee9c222b0a87ff241d306:0x10008BE0
+      - 268d61837aa248c1d49a973612a129ce:0x1000CEC0
+      - 4a2992b4c7a1573bf7c74065e3bf5b0d:0x1000D050
+  features:
+    - and:
+      - match: allocate RWX memory
+      - or:
+        - api: EnumDateFormatsA
+        - api: GrayStringW
+        - api: LineDDA
+        - api: EnumChildWindows
+        - api: EnumDesktopsW
+        - api: EnumDesktopWindows
+        - api: EnumSystemCodePagesA
+        - api: EnumSystemCodePagesW
+        - api: EnumSystemGeoID
+        - api: EnumSystemLanguageGroupsA
+        - api: EnumSystemLocalesA
+        - api: EnumThreadWindows
+        - api: EnumUILanguagesA
+        - api: EnumWindows
+        - api: EnumChildWindows
