@@ -28,7 +28,6 @@ rule:
         - api: EnumDesktops
         - api: EnumDesktopWindows
         - api: EnumSystemCodePages
-        - api: EnumSystemCodePages
         - api: EnumSystemGeoID
         - api: EnumSystemLanguageGroups
         - api: EnumSystemLocales
@@ -36,3 +35,4 @@ rule:
         - api: EnumUILanguages
         - api: EnumWindows
         - api: EnumChildWindows
+        - api: EnumTimeFormats
