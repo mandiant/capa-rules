@@ -4,7 +4,7 @@ rule:
     namespace: load-code/shellcode
     authors:
       - ervin.ocampo@mandiant.com
-    description: Looking for usage of various WinAPI functions that accepts callback functions as parameter in order to execute arbitrary shellcode
+    description: Detect usage of various WinAPI functions that accept callback functions as parameters in order to execute arbitrary shellcode
     scope: function
     att&ck:
       - Defense Evasion::Reflective Code Loading [T1620]
