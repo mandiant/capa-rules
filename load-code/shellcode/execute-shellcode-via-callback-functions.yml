@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: execute shellcode via callback functions
+    name: execute shellcode via Windows callback function
     namespace: load-code/shellcode
     authors:
       - ervin.ocampo@mandiant.com
