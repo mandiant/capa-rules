@@ -21,18 +21,18 @@ rule:
     - and:
       - match: allocate RWX memory
       - or:
-        - api: EnumDateFormatsA
-        - api: GrayStringW
+        - api: EnumDateFormats
+        - api: GrayString
         - api: LineDDA
         - api: EnumChildWindows
-        - api: EnumDesktopsW
+        - api: EnumDesktops
         - api: EnumDesktopWindows
-        - api: EnumSystemCodePagesA
-        - api: EnumSystemCodePagesW
+        - api: EnumSystemCodePages
+        - api: EnumSystemCodePages
         - api: EnumSystemGeoID
-        - api: EnumSystemLanguageGroupsA
-        - api: EnumSystemLocalesA
+        - api: EnumSystemLanguageGroups
+        - api: EnumSystemLocales
         - api: EnumThreadWindows
-        - api: EnumUILanguagesA
+        - api: EnumUILanguages
         - api: EnumWindows
         - api: EnumChildWindows
