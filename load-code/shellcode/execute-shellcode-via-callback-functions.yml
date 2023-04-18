@@ -8,6 +8,8 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Reflective Code Loading [T1620]
+    mbc:
+      - Defense Evasion::Hijack Execution Flow::Abuse Windows Function Calls [F0015.006]
     references:
       - https://github.com/ChaitanyaHaritash/Callback_Shellcode_Injection
       - https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html
