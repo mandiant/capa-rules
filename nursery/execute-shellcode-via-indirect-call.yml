@@ -7,8 +7,6 @@ rule:
     scope: function
     mbc:
       - Memory::Allocate Memory [C0007]
-    examples:
-      - 74BC2D0B6680FAA1A5A76B27E5479CBC:0X18004DE60
   features:
     - and:
       - match: allocate RWX memory
