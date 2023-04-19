@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: execute shellcode via indirect call
+    namespace: load-code/shellcode
+    authors:
+      - ronnie.salomonsen@mandiant.com
+    scope: function
+    mbc:
+      - Memory::Allocate Memory [C0007]
+  features:
+    - and:
+      - match: allocate RWX memory
+      - or:
+        - characteristic: indirect call
+        - characteristic: cross section flow
