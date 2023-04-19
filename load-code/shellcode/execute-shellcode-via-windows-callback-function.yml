@@ -1,0 +1,42 @@
+rule:
+  meta:
+    name: execute shellcode via Windows callback function
+    namespace: load-code/shellcode
+    authors:
+      - ervin.ocampo@mandiant.com
+      - jakub.jozwiak@mandiant.com
+    description: Detect usage of various WinAPI functions that accept callback functions as parameters in order to execute arbitrary shellcode
+    scope: function
+    att&ck:
+      - Defense Evasion::Reflective Code Loading [T1620]
+    mbc:
+      - Defense Evasion::Hijack Execution Flow::Abuse Windows Function Calls [F0015.006]
+    references:
+      - https://github.com/ChaitanyaHaritash/Callback_Shellcode_Injection
+      - https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html
+      - http://ropgadget.com/posts/abusing_win_functions.html
+      - https://github.com/aahmad097/AlternativeShellcodeExec/
+    examples:
+      - 10cd7afd580ee9c222b0a87ff241d306:0x10008BE0
+      - 268d61837aa248c1d49a973612a129ce:0x1000CEC0
+      - 4a2992b4c7a1573bf7c74065e3bf5b0d:0x1000D050
+      - 43db867967c71bd3aaba9a9a3084e7fa:0x140001000
+  features:
+    - and:
+      - match: allocate RWX memory
+      - or:
+        - api: EnumDateFormats
+        - api: GrayString
+        - api: LineDDA
+        - api: EnumChildWindows
+        - api: EnumDesktops
+        - api: EnumDesktopWindows
+        - api: EnumSystemCodePages
+        - api: EnumSystemGeoID
+        - api: EnumSystemLanguageGroups
+        - api: EnumSystemLocales
+        - api: EnumThreadWindows
+        - api: EnumUILanguages
+        - api: EnumWindows
+        - api: EnumChildWindows
+        - api: EnumTimeFormats
