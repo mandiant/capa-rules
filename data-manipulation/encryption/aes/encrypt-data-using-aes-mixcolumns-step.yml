@@ -38,6 +38,6 @@ rule:
       - optional:
         - instruction:
           - and:
-            - description: b[c] = ...
+            - description: **b[c] =** r[c] << 1; **b[c] ^=** h * 0x1B;
             - mnemonic: mov
             - operand[0].offset: 0x0
