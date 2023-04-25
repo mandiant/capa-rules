@@ -1,0 +1,43 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: encrypt data using AES MixColumns step
+    namespace: data-manipulation/encryption/aes
+    authors:
+      - "@mr-tz"
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Encrypt Data::AES [C0027.001]
+    references:
+      - https://en.wikipedia.org/wiki/Rijndael_MixColumns
+    examples:
+      - 1e9fc7f32bd5522dd0222932eb9f1d8bd0a2e132c7b46cfcc622ad97831e6128:0x40e3de
+  features:
+    - and:
+      # for (c = 0; c < 4; c++)
+      - characteristic: loop
+      - instruction:
+        - and:
+          - mnemonic: cmp
+          - operand[1].number: 0x4
+      # b[c] = r[c] << 1;
+      - instruction:
+        - and:
+          - description: implicitly removes high bit
+          - mnemonic: shl
+          - operand[1].number: 0x1
+      # b[c] ^= h * 0x1B;
+      - instruction:
+        - and:
+          - description: Rijndael's Galois field
+          - mnemonic: xor
+          - operand[1].number: 0x1B
+      - optional:
+        - instruction:
+          - and:
+            - description: "byte assignment, e.g., in: b[c] = r[c] << 1; b[c] ^= h * 0x1B;"
+            - mnemonic: mov
+            - operand[0].offset: 0x0
