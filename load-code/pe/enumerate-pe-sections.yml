@@ -4,6 +4,7 @@ rule:
     namespace: load-code/pe
     authors:
       - "@Ana06"
+      - "@mr-tz"
     scope: function
     mbc:
       - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
@@ -45,11 +46,11 @@ rule:
               - and:
                 - arch: amd64
                 - operand[1].offset: 0x108 = sizeof(IMAGE_NT_HEADERS64)
-      - basic block:
-        - and:
-          - operand[1].offset: 0xC = IMAGE_SECTION_HEADER.VirtualAddress
-          - operand[1].offset: 0x14 = IMAGE_SECTION_HEADER.PointerToRawData
-          - operand[1].offset: 0x10 = IMAGE_SECTION_HEADER.SizeOfRawData
-          - not:
-            # non-zeroing XOR was observed in FPs
-            - characteristic: nzxor
+      - 2 or more:
+        - operand[1].offset: 0xC = IMAGE_SECTION_HEADER.VirtualAddress
+        - operand[1].offset: 0x14 = IMAGE_SECTION_HEADER.PointerToRawData
+        - operand[1].offset: 0x10 = IMAGE_SECTION_HEADER.SizeOfRawData
+        # there's also offset 0x8 = IMAGE_SECTION_HEADER.Misc.PhysicalAddress, but it's likely too common
+      - not:
+        # non-zeroing XOR was observed in FPs
+        - characteristic: nzxor
