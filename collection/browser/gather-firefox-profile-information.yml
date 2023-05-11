@@ -4,16 +4,18 @@ rule:
     namespace: collection/browser
     authors:
       - "@_re_fox"
+      - still@teamt5.org
     scope: function
     att&ck:
       - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
     examples:
       - 7204e3efc2434012e13ca939db0d0b02:0x4073c0
+      - 54390bda109aab7fc006b8b4ead5b6c2
   features:
     - and:
       - 2 or more:
         - string: /\\Mozilla\\Firefox\\profiles(\.ini)?/i
-        - string: /\\signons\.sqlite/i
+        - string: /\\(signons|cookies)\.sqlite/i
         - string: /SELECT\s+[a-z,\s]{5,}FROM moz_(logins|cookies)/i
         - string: /FROM moz_(logins|cookies)/i
         - substring: "WHERE moz_cookies.host LIKE"
