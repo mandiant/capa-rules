@@ -17,7 +17,7 @@ rule:
         - optional:
           - and:
             - number: 0x80000000 = GENERIC_READ
-            - api: kernel32.CreateFile
+            - match: create or open file
         - or:
           - api: kernel32.ReadFile
           - api: ReadFileEx

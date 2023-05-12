@@ -18,4 +18,4 @@ rule:
       - substring: "OfficePackagesForWDAG"
       - api: GetWindowsDirectory
       - optional:
-        - api: CreateFile
+        - match: create or open file

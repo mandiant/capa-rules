@@ -17,15 +17,11 @@ rule:
       - and:
         - os: windows
         - optional:
-          - or:
-            - and:
+          - basic block:
+            - or:
               - number: 0x40000000 = GENERIC_WRITE
-              - api: kernel32.CreateFile
-            - and:
               - number: 0x2 = FILE_WRITE_DATA
-              - or:
-                - api: NtCreateFile
-                - api: ZwCreateFile
+              - match: create or open file
         - or:
           - api: kernel32.WriteFile
           - api: kernel32.WriteFileEx

@@ -18,4 +18,4 @@ rule:
         - number: 0x55 = MBR signature constant
         - number: 0xAA = MBR signature constant
       - optional:
-        - api: kernel32.CreateFile
+        - match: create or open file
