@@ -15,5 +15,5 @@ rule:
       - 773290480d5445f11d3dc1b800728966:0x140001140
   features:
     - and:
-      - api: CreateFile
+      - match: create or open file
       - string: "\\\\.\\GLOBALROOT\\device\\vmsmb"
