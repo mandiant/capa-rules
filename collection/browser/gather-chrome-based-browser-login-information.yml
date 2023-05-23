@@ -14,11 +14,11 @@ rule:
   features:
     - and:
       - or:
-        - substring: /\\+(Edge|Chrome|Chromium|Brave\-Browser|YandexBrowser|Kometa|Orbitum|Dragon|Torch|Amigo)\\+User Data\\+Default(\\+Network)?\\+(Cookies|Login Data)/i
-        - substring: /\\Opera Software\\Opera Stable\\(Login Data|Cookies)/i
+        - string: /\\+(Edge|Chrome|Chromium|Brave\-Browser|YandexBrowser|Kometa|Orbitum|Dragon|Torch|Amigo)\\+User Data\\+Default(\\+Network)?\\+(Cookies|Login Data)/i
+        - string: /\\Opera Software\\Opera Stable\\(Login Data|Cookies)/i
       - or:
-        - substring: /SELECT ((date_created|username_element|password_element|origin_url|signon_realm|action_url|username_value|password_value),?\s?)+ FROM logins/i
-        - substring: /SELECT ((creation_utc|encrypted_value),?\s?)+ FROM cookies/i
+        - string: /SELECT ((date_created|username_element|password_element|origin_url|signon_realm|action_url|username_value|password_value),?\s?)+ FROM logins/i
+        - string: /SELECT ((creation_utc|encrypted_value),?\s?)+ FROM cookies/i
         - 2 or more:
           - string: /date_created/i
           - string: /username_element/i
