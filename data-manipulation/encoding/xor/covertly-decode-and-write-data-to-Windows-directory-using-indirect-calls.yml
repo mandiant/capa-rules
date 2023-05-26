@@ -3,7 +3,7 @@ rule:
     name: covertly decode and write data to Windows directory using indirect calls
     namespace: data-manipulation/encoding/xor
     authors:
-      - dna.kelly@mandiant.com
+      - dan.kelly@mandiant.com
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
