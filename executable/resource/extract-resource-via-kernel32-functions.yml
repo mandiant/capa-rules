@@ -18,7 +18,6 @@ rule:
           - api: kernel32.LockResource
           - api: LdrAccessResource
         - optional:
-          - match: contain a resource (.rsrc) section
           - api: kernel32.GetModuleHandle
           # may occur in parent function, see 0664B09A86EC2DF7DFE01A93E184A1FA23DF66EA82CAB39000944E418EC1F7B2
           - or:
