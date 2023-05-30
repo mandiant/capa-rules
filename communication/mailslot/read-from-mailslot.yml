@@ -10,7 +10,7 @@ rule:
     references:
       - https://learn.microsoft.com/en-us/windows/win32/ipc/reading-from-a-mailslot
     examples:
-      - CC870A35C6840987DCB8C2DD46BC230A
+      - CC870A35C6840987DCB8C2DD46BC230A:0x4010F0
   features:
     - and:
       - api: kernel32.GetMailslotInfo
