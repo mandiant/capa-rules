@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: read from mailslot
+    namespace: communication/mailslot
+    authors:
+      - nick.simonian@mandiant.com
+    scope: function
+    mbc:
+      - Communication::Interprocess Communication [C0003]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/ipc/reading-from-a-mailslot
+    examples:
+      - CC870A35C6840987DCB8C2DD46BC230A
+  features:
+    - and:
+      - api: kernel32.GetMailslotInfo
+      - or:
+        - api: kernel32.ReadFile
+        - api: kernel32.ReadFileEx
