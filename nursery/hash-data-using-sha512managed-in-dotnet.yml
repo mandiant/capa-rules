@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: hash data using SHA512Managed in .NET
+    namespace: data-manipulation/hashing/sha512
+    authors:
+      - jonathanlepore@google.com
+    scope: function
+    references:
+      - https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.sha512managed
+  features:
+    - and:
+      - api: System.Security.Cryptography.SHA512Managed::ctor
+      - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
