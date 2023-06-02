@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: compiled with ExeScript
+    namespace: compiler/exescript
+    authors:
+      - jonathanlepore@google.com
+    scope: file
+    references:
+      - https://www.hide-folder.com/overview/hf_7.html
+  features:
+    - and:
+      - format: pe
+      - section: .rsrc
+      - 9 or more:
+        - string: "ExeScript Host"
+        - string: "Everstrike Software"
+        - string: "#ES.exe.pathname"
+        - string: "#ES.script.path"
+        - string: "<!-- ----- ExeScript Options Begin -----"
+        - string: "----- ExeScript Options End ----- -->"
+        - string: "wscript.exe"
+        - string: "mshta.exe"
+        - string: "cscript.exe"
+        - string: "powershell.exe"
+        - string: " -Command -"
+      - match: execute VBScript Javascript or JScript in memory
