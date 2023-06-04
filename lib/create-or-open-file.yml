@@ -20,6 +20,8 @@ rule:
       - api: ZwCreateFile
       - api: NtOpenFile
       - api: NtCreateFile
+      - api: LZCreateFile
+      - api: LZOpenFile
       - api: fopen
       - api: fopen64
       - api: fdopen

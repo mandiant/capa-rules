@@ -16,6 +16,7 @@ rule:
       - api: kernel32.CopyFileEx
       - api: CopyFile2
       - api: CopyFileTransacted
+      - api: LZCopy
       - api: System.IO.FileInfo::CopyTo
       - api: System.IO.File::Copy
       - basic block:
