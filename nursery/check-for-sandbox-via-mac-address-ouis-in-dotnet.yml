@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: check for sandbox via mac address ouis in .NET
+    name: check for sandbox via MAC address OUIs in .NET
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - jonathanlepore@google.com
