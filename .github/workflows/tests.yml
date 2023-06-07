@@ -84,6 +84,16 @@ jobs:
             python ../scripts/lint.py --thorough -t "$tag" -v .
           fi
         done
+    - name: Check feature overlaps on modified rules
+      run: |
+        cd rules/
+        for changed_file in ${{ steps.files.outputs.added_modified }} ${{ steps.files.outputs.renamed }}; do
+          if [[ ! $changed_file =~ (.git|.md) ]]; then
+            python ../scripts/detect_duplicate_features.py . "$changed_file"
+          fi
+        done
+      continue-on-error: true
+
   # On update of version branch, ensure that branch rules are compatible with latest respective release
   # assume we only update the branch that corresponds to the latest release
   rules_latest_release:
