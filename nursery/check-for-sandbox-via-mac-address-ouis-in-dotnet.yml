@@ -23,6 +23,6 @@ rule:
             - string: /00[:-]?50[:-]?56/i
               description: VMware OUIs
             - string: /08[:-]?00[:-]?27/i
-              description: PCS Systemtechnik GmbH OUI
+              description: PCS Systemtechnik GmbH OUI, potentially related to VirtualBox
           - api: System.Net.NetworkInformation.NetworkInterface::GetPhysicalAddress
           - api: System.Net.NetworkInformation.NetworkInterface::GetAllNetworkInterfaces
