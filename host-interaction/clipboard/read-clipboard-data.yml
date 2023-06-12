@@ -17,16 +17,18 @@ rule:
     - and:
       - optional:
         - match: open clipboard
+        - match: contain loop
         - api: kernel32.GlobalAlloc
         - api: kernel32.GlobalLock
         - api: kernel32.GlobalUnlock
       - or:
-        - and:
-          - api: user32.GetClipboardData
-          - optional:
-            - number: 0x1 = CF_TEXT
-            - number: 0x7 = CF_OEMTEXT
-            - number: 0xD = CF_UNICODETEXT
+        - basic block:
+          - and:
+            - api: user32.GetClipboardData
+            - optional:
+              - number: 0x1 = CF_TEXT
+              - number: 0x7 = CF_OEMTEXT
+              - number: 0xD = CF_UNICODETEXT
         - api: System.Windows.Forms.Clipboard::GetAudioStream
         - api: System.Windows.Forms.Clipboard::GetData
         - api: System.Windows.Forms.Clipboard::GetDataObject
