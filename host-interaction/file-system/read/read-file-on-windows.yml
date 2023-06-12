@@ -23,6 +23,7 @@ rule:
           - api: ReadFileEx
           - api: NtReadFile
           - api: ZwReadFile
+          - api: LZRead
           - api: _read
           - api: fread
       - api: System.IO.File::ReadAllBytes
