@@ -13,7 +13,9 @@ rule:
     - and:
       - optional:
         - match: get service handle
-      - number: 0x2 = SERVICE_CONTROL_PAUSE
-      - or:
-        - api: advapi32.ControlService
-        - api: advapi32.ControlServiceEx
+      - basic block:
+        - and:
+          - number: 0x2 = SERVICE_CONTROL_PAUSE
+          - or:
+            - api: advapi32.ControlService
+            - api: advapi32.ControlServiceEx
