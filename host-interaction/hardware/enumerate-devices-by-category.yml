@@ -19,3 +19,4 @@ rule:
       - optional:
         - description: class identifier (CLSID) of the device category
         - bytes: 10 B3 0B 86 01 5D D0 11 BD 3B 00 A0 C9 11 CE 86 = CVidCapClassManager
+        - bytes: 62 A7 D9 33 C8 90 D0 11 BD 43 00 A0 C9 11 CE 86 = CWaveinClassManager
