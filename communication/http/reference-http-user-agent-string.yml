@@ -6,6 +6,8 @@ rule:
     authors:
       - "@mr-tz"
     scope: function
+    mbc:
+      - Communication::HTTP Communication [C0002]
     references:
       - https://www.useragents.me/
       - https://www.whatismybrowser.com/guides/the-latest-user-agent/
