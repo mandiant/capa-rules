@@ -6,6 +6,8 @@ rule:
     authors:
       - blas.kojusner@mandiant.com
     scope: basic block
+    mbc:
+      - Communication::Socket Communication::Create Socket [C0001.003]
     references:
       - https://learn.microsoft.com/en-us/windows/win32/winsock/tcp-ip-raw-sockets-2
       - https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket

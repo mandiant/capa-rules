@@ -6,6 +6,8 @@ rule:
     authors:
       - blas.kojusner@mandiant.com
     scope: function
+    mbc:
+      - Data::Compress Data [C0024]
     references:
       - https://github.com/madler/zlib/blob/cacf7f1d4e3d44d871b605da3b647f07d718623f/inflate.c#L622
       - https://github.com/madler/zlib/blob/cacf7f1d4e3d44d871b605da3b647f07d718623f/deflate.c#L763
