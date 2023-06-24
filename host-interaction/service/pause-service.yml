@@ -1,22 +1,21 @@
 rule:
   meta:
-    name: stop service
-    namespace: host-interaction/service/stop
+    name: pause service
+    namespace: host-interaction/service
     authors:
-      - moritz.raabe@mandiant.com
+      - "@mr-tz"
     scope: function
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
-      - Impact::Service Stop [T1489]
     examples:
-      - E544A4D616B60147D9774B48C2B65EF2:0x402140
+      - Practical Malware Analysis Lab 17-02.dll_:0x1000bccd
   features:
     - and:
       - optional:
         - match: get service handle
       - basic block:
         - and:
-          - number: 0x1 = SERVICE_CONTROL_STOP
+          - number: 0x2 = SERVICE_CONTROL_PAUSE
           - or:
             - api: advapi32.ControlService
             - api: advapi32.ControlServiceEx
