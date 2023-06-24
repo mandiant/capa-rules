@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: query service configuration
+    namespace: host-interaction/service
+    authors:
+      - "@mr-tz"
+    scope: function
+    att&ck:
+      - Discovery::System Service Discovery [T1007]
+    examples:
+      - Practical Malware Analysis Lab 17-02.dll_:0x1000bf52
+  features:
+    - or:
+      - api: advapi32.QueryServiceConfigA
+      - api: advapi32.QueryServiceConfig2A
