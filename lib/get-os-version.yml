@@ -17,3 +17,4 @@ rule:
       - api: VerifyVersionInfo
       - api: VerSetConditionMask
       - api: RtlGetNtVersionNumbers
+      - api: GetProductInfo
