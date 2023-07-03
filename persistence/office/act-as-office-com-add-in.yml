@@ -14,6 +14,7 @@ rule:
       - 0831bb382211a67c57a392955138808526aa15e55531091841706aae2cb89613
   features:
     - and:
+      - format: dotnet
       - class: "Extensibility.IDTExtensibility2"
       - or:
         - string: "OnAddInsUpdate"
