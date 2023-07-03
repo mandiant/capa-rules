@@ -13,30 +13,32 @@ rule:
     examples:
       - a301eadd2b665b696803e143dd4d657d71c56bbded2a3a1b96c5bcb83cc6796a:0x600000E
   features:
-    - or:
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnConnectEvent
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnHeloCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnEhloCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnStartTlsCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnAuthCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnProcessAuthentication
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnEndOfAuthentication
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnXSessionParamsCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnMailCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnRcptToCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnDataCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnEndOfHeaders
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnProxyInboundMessage
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnEndOfData
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnHelpCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnNoopCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnReject
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnRsetCommand
-      - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnDisconnectEvent
-      - api: Microsoft.Exchange.Data.Transport.Routing.RoutingAgent::add_OnSubmittedMessage
-      - api: Microsoft.Exchange.Data.Transport.Routing.RoutingAgent::add_OnResolvedMessage
-      - api: Microsoft.Exchange.Data.Transport.Routing.RoutingAgent::add_OnRoutedMessage
-      - api: Microsoft.Exchange.Data.Transport.Routing.RoutingAgent::add_OnCategorizedMessage
-      - api: Microsoft.Exchange.Data.Transport.Delivery.DeliveryAgent::add_OnCloseConnection
-      - api: Microsoft.Exchange.Data.Transport.Delivery.DeliveryAgent::add_OnDeliverMailItem
-      - api: Microsoft.Exchange.Data.Transport.Delivery.DeliveryAgent::add_OnOpenConnection
+    - and:
+      - format: dotnet
+      - or:
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnConnectEvent
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnHeloCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnEhloCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnStartTlsCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnAuthCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnProcessAuthentication
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnEndOfAuthentication
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnXSessionParamsCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnMailCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnRcptToCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnDataCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnEndOfHeaders
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnProxyInboundMessage
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnEndOfData
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnHelpCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnNoopCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnReject
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnRsetCommand
+        - api: Microsoft.Exchange.Data.Transport.Smtp.SmtpReceiveAgent::add_OnDisconnectEvent
+        - api: Microsoft.Exchange.Data.Transport.Routing.RoutingAgent::add_OnSubmittedMessage
+        - api: Microsoft.Exchange.Data.Transport.Routing.RoutingAgent::add_OnResolvedMessage
+        - api: Microsoft.Exchange.Data.Transport.Routing.RoutingAgent::add_OnRoutedMessage
+        - api: Microsoft.Exchange.Data.Transport.Routing.RoutingAgent::add_OnCategorizedMessage
+        - api: Microsoft.Exchange.Data.Transport.Delivery.DeliveryAgent::add_OnCloseConnection
+        - api: Microsoft.Exchange.Data.Transport.Delivery.DeliveryAgent::add_OnDeliverMailItem
+        - api: Microsoft.Exchange.Data.Transport.Delivery.DeliveryAgent::add_OnOpenConnection
