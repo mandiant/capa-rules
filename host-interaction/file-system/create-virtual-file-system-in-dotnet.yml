@@ -12,5 +12,6 @@ rule:
     examples:
       - be619015f1d5fb13d3bcd48d1b0843759a5e040d8af3da50f2d8f55b5a680e02:0x600000F
   features:
-    - or:
+    - and:
+      - format: dotnet
       - api: System.Web.Hosting.VirtualPathProvider::ctor
