@@ -1,0 +1,43 @@
+rule:
+  meta:
+    name: compiled with cx_Freeze
+    namespace: compiler/cx_freeze
+    authors:
+      - "@mr-tz"
+      - jakub.jozwiak@mandiant.com
+    scope: file
+    att&ck:
+      - Execution::Command and Scripting Interpreter::Python [T1059.006]
+      - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
+    references:
+      - https://github.com/marcelotduarte/cx_Freeze
+    examples:
+      - 573174640974b288d9d161cf4d29387cd7dbf7d80a80f5547df887f9836df8fb
+  features:
+    - or:
+      - and:
+        - os: windows
+        - 3 or more:
+          - string: "cx_Freeze Fatal Error"
+          - string: "cx_Freeze: Python error in main script"
+          - string: "cx_Freeze: Application Terminated"
+          - string: "%ls\\lib\\library.zip;%ls\\lib"
+          - string: "Unable to calculate directory of executable!"
+          - string: "Unable to load python3.dll!"
+          - string: "Unable to change DLL search path!"
+          - string: "initializing with config file %ls"
+          - string: "%ls --install <NAME> [<CONFIGFILE>]"
+          - string: "exception calling session_changed method"
+      - and:
+        - or:
+          - os: linux
+          - os: macos
+        - 3 or more:
+          - string: "PATH environment variable not defined!"
+          - string: "Unable to determine absolute path for executable!"
+          - string: "Unable to convert path to string!"
+          - string: "Unable to calculate directory of executable!"
+          - string: "Out of memory creating sys.path!"
+          - string: "Out of memory converting arguments!"
+          - string: "Unable to convert argument to string!"
+          - string: "%ls/lib/library.zip:%ls/lib"
