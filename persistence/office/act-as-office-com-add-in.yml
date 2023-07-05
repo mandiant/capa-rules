@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: act as Office COM add-in
+    namespace: persistence/office
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scope: file
+    att&ck:
+      - Persistence::Office Application Startup::Add-ins [T1137.006]
+    references:
+      - https://labs.withsecure.com/publications/add-in-opportunities-for-office-persistence
+      - https://learn.microsoft.com/en-us/dotnet/api/extensibility.idtextensibility2?view=visualstudiosdk-2022
+    examples:
+      - 0831bb382211a67c57a392955138808526aa15e55531091841706aae2cb89613
+  features:
+    - and:
+      - format: dotnet
+      - class: Extensibility.IDTExtensibility2
+      - or:
+        - string: "OnAddInsUpdate"
+        - string: "OnAddInsUpdate"
+        - string: "OnBeginShutdown"
+        - string: "OnConnection"
+        - string: "OnDisconnection"
+        - string: "OnStartupComplete"

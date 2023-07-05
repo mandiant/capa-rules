@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: act as Excel XLL add-in
+    namespace: persistence/office
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scope: file
+    att&ck:
+      - Persistence::Office Application Startup::Add-ins [T1137.006]
+    references:
+      - https://learn.microsoft.com/en-us/office/client-developer/excel/xlautoopen
+    examples:
+      - c29513e5a51dd24ca840f7628b872cba921976cba89dcbffd5028ba15481108c
+  features:
+    - or:
+      - export: xlAutoOpen
