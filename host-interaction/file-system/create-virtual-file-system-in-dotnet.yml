@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: create virtual file system in .NET
+    namespace: host-interaction/file-system
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Hide Artifacts::Hidden File System [T1564.005]
+    references:
+      - https://learn.microsoft.com/en-us/dotnet/api/system.web.hosting.virtualpathprovider?view=netframework-4.8.1
+    examples:
+      - be619015f1d5fb13d3bcd48d1b0843759a5e040d8af3da50f2d8f55b5a680e02:0x600000F
+  features:
+    - and:
+      - format: dotnet
+      - api: System.Web.Hosting.VirtualPathProvider::ctor
