@@ -28,6 +28,6 @@ rule:
         - or:
           - string: "NtSetInformationThread"
           - string: "ZwSetInformationThread"
-        - api: GetProcAddress
+        - match: link function at runtime on Windows
         - api: GetCurrentThread
         - number: 0x11 = ThreadHideFromDebugger
