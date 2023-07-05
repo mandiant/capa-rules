@@ -1,0 +1,33 @@
+rule:
+  meta:
+    name: hide thread from debugger
+    namespace: anti-analysis/anti-debugging/debugger-evasion
+    authors:
+      - michael.hunhoff@mandiant.com
+      - jakub.jozwiak@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Debugger Evasion [T1622]
+    mbc:
+      - Anti-Behavioral Analysis::Debugger Evasion [B0002]
+    references:
+      - https://anti-debug.checkpoint.com/techniques/interactive.html#ntsetinformationthread
+      - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtSetInformationThread_ThreadHideFromDebugger.cpp
+      - https://github.com/jaeyung1001/Anti-Debugging/blob/master/Code/NtSetInformationThread.cpp
+    examples:
+      - 26beba7352a32b803aa19e0782011a383a1df19549910e7b2f2f244e49678524:0x10001670
+  features:
+    - or:
+      - basic block:
+        - and:
+          - or:
+            - api: NtSetInformationThread
+            - api: ZwSetInformationThread
+          - number: 0x11 = ThreadHideFromDebugger
+      - and:
+        - or:
+          - string: "NtSetInformationThread"
+          - string: "ZwSetInformationThread"
+        - match: link function at runtime on Windows
+        - api: GetCurrentThread
+        - number: 0x11 = ThreadHideFromDebugger
