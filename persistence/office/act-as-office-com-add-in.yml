@@ -15,7 +15,7 @@ rule:
   features:
     - and:
       - format: dotnet
-      - class: "Extensibility.IDTExtensibility2"
+      - class: Extensibility.IDTExtensibility2
       - or:
         - string: "OnAddInsUpdate"
         - string: "OnAddInsUpdate"
