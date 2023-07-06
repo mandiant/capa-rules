@@ -20,7 +20,7 @@ rule:
       - match: find graphical window
       - match: open process
       - match: write process memory
-      - api: SetProp
+      - api: user32.SetProp
       - or:
         - api: PostMessage
         - api: SendNotifyMessage
