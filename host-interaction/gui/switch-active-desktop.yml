@@ -1,7 +1,7 @@
 rule:
   meta:
     name: switch active desktop
-    namespace: anti-analysis/anti-debugging/debugger-evasion
+    namespace: host-interaction/gui
     authors:
       - jakub.jozwiak@mandiant.com
     scope: function
@@ -17,4 +17,3 @@ rule:
     - and:
       - api: user32.CreateDesktop
       - api: user32.SwitchDesktop
-      - number: 0x182 = DESKTOP_CREATEWINDOW | DESKTOP_WRITEOBJECTS | DESKTOP_SWITCHDESKTOP
