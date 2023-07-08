@@ -10,8 +10,12 @@ rule:
     examples:
       - a70052c45e907820187c7e6bcdc7ecca:0x405B40
   features:
-    - and:
-      - api: mciSendString
-      - string: /^open/i
-      - string: /waveaudio/i
-      - string: /^record/i
+    - or:
+      - and:
+        - api: mciSendString
+        - string: /^open/i
+        - string: /waveaudio/i
+        - string: /^record/i
+      - api: winmm.waveInOpen
+      - api: winmm.waveInAddBuffer
+      - api: winmm.waveInStart
