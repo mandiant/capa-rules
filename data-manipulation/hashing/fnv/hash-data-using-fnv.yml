@@ -29,9 +29,9 @@ rule:
       - or:
         - number: 0x100000001b3 = FNV prime
         - number: 0x01000193 = FNV prime
-      - and:
-        - number: 0x100 = FNV prime 64 bits, split in DWORD
-        - number: 0x1b3 = FNV prime 64 bits, split in DWORD
+        - and:
+          - number: 0x100 = FNV prime 64 bits, split in DWORD
+          - number: 0x1b3 = FNV prime 64 bits, split in DWORD
       - basic block:
         # FNV-1 hash does multiply then XOR
         # FNV-1a hash does XOR then multiply
