@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: act as SubAuthentication Package DLL
+    namespace: persistence/authentication-process
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scope: file
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution::Authentication Package [T1547.002]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/secauthn/subauthentication-packages
+    examples:
+      - 36f506a34b99bf4c199b3c9ec8aa02bd631feafdca20e69e33e714c269ddb8c5
+  features:
+    - or:
+      - export: Msv1_0SubAuthenticationFilter
+      - export: Msv1_0SubAuthenticationRoutine
+      - export: Msv1_0SubAuthenticationRoutineEx
+      - export: Msv1_0SubAuthenticationRoutineGeneric
