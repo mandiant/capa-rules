@@ -1,0 +1,30 @@
+rule:
+  meta:
+    name: inject shellcode using window subclass procedure
+    namespace: host-interaction/process/inject
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection [E1055]
+    references:
+      - https://www.hexacorn.com/blog/2017/10/26/propagate-a-new-code-injection-trick/
+      - https://modexp.wordpress.com/2018/08/23/process-injection-propagate/
+      - https://github.com/Fahersto/code_injection/blob/master/shellcode_injection/propagate_injection.cpp
+    examples:
+      - 6c440a5ce8509984dcc4e703d0e4dd9bffc4efd769dc8543f8d2e0cd86452822:0x25D7F1425
+  features:
+    - and:
+      - match: find graphical window
+      - match: open process
+      - match: write process memory
+      - api: user32.SetProp
+      - or:
+        - api: PostMessage
+        - api: SendNotifyMessage
+      - string: "UxSubclassInfo"
+      - or:
+        - string: "ToolbarWindow32"
+        - string: "SHELLDLL_DefView"
