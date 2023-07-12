@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: enumerate minifilter drivers
+    namespace: host-interaction/filter
+    authors:
+      - aseel.kayal@mandiant.com
+    scope: function
+    references:
+      - https://posts.specterops.io/mimidrv-in-depth-4d273d19e148
+      - https://learn.microsoft.com/en-us/windows-hardware/drivers/ifs/filter-manager-concepts
+    examples:
+      - 3E528207CA374123F63789195A4AEDDE:0x12F49
+  features:
+    - and:
+      - api: fltmgr.FltEnumerateFilters
+      - api: fltmgr.FltGetFilterInformation
