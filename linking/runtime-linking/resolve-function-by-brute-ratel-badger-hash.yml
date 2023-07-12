@@ -17,9 +17,13 @@ rule:
       - basic block:
         - and:
           - mnemonic: add
-          - instruction:
-            - mnemonic: imul
-            - operand[2].number: 0x801
+          - or:
+            - instruction:
+              - mnemonic: imul
+              - operand[2].number: 0x801
+            - and:
+              - mnemonic: mul
+              - number: 0x801
           - instruction:
             - mnemonic: or
             - operand[1].number: 0x2800000
