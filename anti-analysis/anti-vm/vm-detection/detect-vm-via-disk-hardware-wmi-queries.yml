@@ -1,7 +1,7 @@
 # generated using capa explorer for IDA Pro
 rule:
   meta:
-    name: detect VM via disk hardware WMI queries 
+    name: detect VM via disk hardware WMI queries
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - anders.vejlby@mandiant.com

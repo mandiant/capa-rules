@@ -10,8 +10,6 @@ rule:
     mbc:
       - Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]
       - Data::Encode Data::XOR [C0026.002]
-    examples:
-      - 9176F177BD88686C6BEB29D8BB05F20C:0x180001000
   features:
     - and:
       - match: write file on Windows
