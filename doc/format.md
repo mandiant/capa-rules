@@ -314,7 +314,8 @@ For example, the `characteristic: nzxor` feature describes non-zeroing XOR instr
 | characteristic                       | scope                              | description |
 |--------------------------------------|------------------------------------|-------------|
 | `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files. |
-| `characteristic: mixed mode` | file | File contains both managed and unmanaged (native) code, often seen in .NET |
+| `characteristic: forwarded export`   | file                               | PE file that forward export. |
+| `characteristic: mixed mode`         | file                               | File contains both managed and unmanaged (native) code, often seen in .NET |
 | `characteristic: loop`               | function                           | Function contains a loop. |
 | `characteristic: recursive call`     | function                           | Function is recursive. |
 | `characteristic: calls from`         | function                           | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
@@ -328,7 +329,7 @@ For example, the `characteristic: nzxor` feature describes non-zeroing XOR instr
 | `characteristic: cross section flow` | instruction, basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
 | `characteristic: indirect call`      | instruction, basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
 | `characteristic: call $+5`           | instruction, basic block, function | Call just past the current instruction. |
-| `characteristic: unmanaged call` | instruction, basic block, function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET |
+| `characteristic: unmanaged call`     | instruction, basic block, function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET |
 
 ## instruction features
 
@@ -603,6 +604,11 @@ The name of a routine exported from a shared library.
 Examples:
 
     export: InstallA
+
+And for forwarded exports:
+
+    export: "c:/windows/system32/version.GetFileVersionInfoA"
+    export: "vresion.GetFileVersionInfoA"
 
 ### import
 
