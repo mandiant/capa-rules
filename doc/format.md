@@ -314,7 +314,7 @@ For example, the `characteristic: nzxor` feature describes non-zeroing XOR instr
 | characteristic                       | scope                              | description |
 |--------------------------------------|------------------------------------|-------------|
 | `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files. |
-| `characteristic: forwarded export`   | file                               | PE file that forward export. |
+| `characteristic: forwarded export`   | file                               | PE file has a forwarded export. |
 | `characteristic: mixed mode`         | file                               | File contains both managed and unmanaged (native) code, often seen in .NET |
 | `characteristic: loop`               | function                           | Function contains a loop. |
 | `characteristic: recursive call`     | function                           | Function is recursive. |
