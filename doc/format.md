@@ -605,7 +605,7 @@ Examples:
 
     export: InstallA
 
-And for forwarded exports:
+To specify a [forwarded export](https://devblogs.microsoft.com/oldnewthing/20060719-24/?p=30473) use the format `<DLL path, lowercase>.<symbol name>`. Note that the path can be either implicit, relative, or absolute:
 
     export: "c:/windows/system32/version.GetFileVersionInfoA"
     export: "vresion.GetFileVersionInfoA"
