@@ -4,6 +4,7 @@ rule:
     namespace: anti-analysis/anti-forensic/self-deletion
     authors:
       - michael.hunhoff@mandiant.com
+      - "@mr-tz"
     scope: function
     att&ck:
       - Defense Evasion::Indicator Removal::File Deletion [T1070.004]
@@ -16,9 +17,12 @@ rule:
       - or:
         - match: get COMSPEC environment variable
         - string: "cmd.exe"
-      - match: host-interaction/process/create
-      - string: /\/c\s*del\s*/
-        description: "/c del"
+        - match: host-interaction/process/create
+      - or:
+        - string: /\/c\s*del\s*/
+          description: "/c del"
+        - string: /del\s*\S/
+          description: "del \"%s\""
       - optional:
         - string: /\s*>\s*nul\s*/i
           description: "> nul"
