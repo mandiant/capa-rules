@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: covertly decode and write data to Windows directory using indirect calls
+    namespace: data-manipulation/encoding/xor
+    authors:
+      - dan.kelly@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]
+      - Data::Encode Data::XOR [C0026.002]
+  features:
+    - and:
+      - match: write file on Windows
+      - match: encode data using XOR
+      - match: create or open file
+      - match: reference absolute stream path on Windows
+      - match: contain loop
+      - characteristic: indirect call

@@ -1,0 +1,38 @@
+rule:
+  meta:
+    name: resolve function by Brute Ratel Badger hash
+    namespace: linking/runtime-linking
+    authors:
+      - jakub.jozwiak@mandiant.com
+    description: Custom API hashing algorithm used in Brute Ratel Badger (version 1.3 or higher)
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information::Dynamic API Resolution [T1027.007]
+    references:
+      - https://bruteratel.com/release_notes/releases.txt
+    examples:
+      - 64ce9ab801d9bef5284b408c3373dd30ba2dc6952c0950c8049be067b5f24530:0x6DB42430
+  features:
+    - or:
+      - basic block:
+        - and:
+          - mnemonic: add
+          - or:
+            - instruction:
+              - mnemonic: imul
+              - operand[2].number: 0x801
+            - and:
+              - mnemonic: mul
+              - number: 0x801
+          - instruction:
+            - mnemonic: or
+            - operand[1].number: 0x2800000
+      - basic block:
+        - and:
+          - mnemonic: add
+          - instruction:
+            - mnemonic: shl
+            - operand[1].number: 0xB
+          - instruction:
+            - mnemonic: or
+            - operand[1].number: 0x2800000

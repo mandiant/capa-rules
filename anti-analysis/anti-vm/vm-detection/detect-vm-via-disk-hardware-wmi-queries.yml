@@ -1,0 +1,17 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: detect VM via disk hardware WMI queries
+    namespace: anti-analysis/anti-vm/vm-detection
+    authors:
+      - anders.vejlby@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
+    examples:
+      - 32B3678F8C29437E9EA10EAB10194F66:0x4035e0
+  features:
+    - and:
+      - string: "Win32_DiskDrive"
+      - string: "Model"
+      - string: "Virtual"

@@ -19,8 +19,8 @@ rule:
       - match: link function at runtime on Windows
       - or:
         - api: kernel32.VirtualProtect
-        - api: ntdll.NtProtectVirtualMemory
-        - api: ntdll.ZwProtectVirtualMemory
+        - api: ntdll.NtProtectVirtualMemory  # exported by only ntdll, not ntoskrnl
+        - api: ZwProtectVirtualMemory  # exported by both ntdll and ntoskrnl
         - string: "VirtualProtect"
         - string: "NtProtectVirtualMemory"
         - string: "ZwProtectVirtualMemory"
