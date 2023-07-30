@@ -13,7 +13,7 @@ rule:
       - Data::Encode Data::Base64 [C0026.001]
     examples:
       - 9efa86b43b4367bcdc1591aee59bda25:0x10001000
-      - 09BF850BE5DA44A1C3629A1F62813A83:0x10001100
+      - 09bf850be5da44a1c3629a1f62813a83:0x10001100
   features:
     - and:
       - mnemonic: shl
