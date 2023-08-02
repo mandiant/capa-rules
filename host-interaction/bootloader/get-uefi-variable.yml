@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: get UEFI variable
+    namespace: host-interaction/bootloader
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scope: function
+    att&ck:
+      - Persistence::Pre-OS Boot::System Firmware [T1542.001]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/sysinfo/access-uefi-firmware-variables-from-a-universal-windows-app
+    examples:
+      - b761e060c7114448d6a5fe276d4ca882c4bd702c12c4d73f6ad79b8dfac33448:0x14000138F
+  features:
+    - or:
+      - api: ntdll.NtEnumerateSystemEnvironmentValuesEx
+      - api: ntdll.NtQuerySystemEnvironmentValueEx
+      - api: ntdll.NtQuerySystemEnvironmentValue
+      - api: kernel32.GetFirmwareEnvironmentVariable
+      - api: kernel32.GetFirmwareEnvironmentVariableEx
+      - api: ntoskrnl.ExGetFirmwareEnvironmentVariable
