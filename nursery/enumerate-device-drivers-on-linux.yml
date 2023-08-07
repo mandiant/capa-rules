@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: enumerate device drivers on Linux
+    namespace: collection
+    authors:
+      - "@mr-tz"
+    scope: function
+    att&ck:
+      - Discovery::Device Driver Discovery [T1652]
+  features:
+    - and:
+      - os: linux
+      - api: system
+      - or:
+        - substring: "lsmod"
+        - substring: "modinfo"
