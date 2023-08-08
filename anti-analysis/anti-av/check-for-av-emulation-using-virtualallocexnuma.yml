@@ -10,7 +10,7 @@ rule:
     references:
       - https://www.purpl3f0xsecur1ty.tech/2021/03/30/av_evasion.html
     examples:
-      - 23604a06b0720a430f8d6f6b14b589d850e4cfd291a47f22f199324f21169c1a:0x10084520
+      - 17b31898c3613d6e86d06260c7e6f7738d3afdf0f0a4010e2f5259c502d38b09:0x10001A1D
   features:
     - and:
       - api: kernel32.VirtualAllocExNuma
