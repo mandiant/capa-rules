@@ -5,7 +5,7 @@ rule:
     authors:
       - "@_re_fox"
       - still@teamt5.org
-    scope: function
+    scope: file
     att&ck:
       - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
     examples:
@@ -20,11 +20,13 @@ rule:
         - string: /SELECT ((date_created|username_element|password_element|origin_url|signon_realm|action_url|username_value|password_value),?\s?)+ FROM logins/i
         - string: /SELECT ((creation_utc|encrypted_value),?\s?)+ FROM cookies/i
         - 2 or more:
-          - string: /date_created/i
-          - string: /username_element/i
-          - string: /username_value/i
-          - string: /password_element/i
-          - string: /origin_url/i
-          - string: /signon_realm/i
-          - string: /action_url/i
-          - string: /password_value/i
+          - substring: "date_created"
+          - substring: "encrypted_value"
+          - substring: "creation_utc"
+          - substring: "username_element"
+          - substring: "username_value"
+          - substring: "password_element"
+          - substring: "origin_url"
+          - substring: "signon_realm"
+          - substring: "action_url"
+          - substring: "password_value"
