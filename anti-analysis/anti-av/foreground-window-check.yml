@@ -18,4 +18,6 @@ rule:
       - count(api(GetForegroundWindow)): 2 or more
       - api: Sleep
       - mnemonic: cmp
-      - characteristic: loop
+      - or:
+        - characteristic: loop
+        - characteristic: tight loop
