@@ -3,8 +3,9 @@ rule:
     name: hash data using aphash
     namespace: data-manipulation/hashing/aphash
     authors:
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
     mbc:
       - Data::Non-Cryptographic Hash [C0030]
     references:

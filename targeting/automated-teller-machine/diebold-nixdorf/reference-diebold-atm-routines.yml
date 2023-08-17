@@ -4,7 +4,8 @@ rule:
     namespace: targeting/automated-teller-machine/diebold-nixdorf
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
     references:
       - https://www.mandiant.com/resources/new-ploutus-variant
     examples:

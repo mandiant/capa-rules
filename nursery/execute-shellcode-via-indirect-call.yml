@@ -4,7 +4,8 @@ rule:
     namespace: load-code/shellcode
     authors:
       - ronnie.salomonsen@mandiant.com
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Memory::Allocate Memory [C0007]
   features:

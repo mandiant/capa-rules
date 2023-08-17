@@ -4,14 +4,14 @@ rule:
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - echernofsky@google.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     references:
       - https://www.crowdstrike.com/blog/guloader-dissection-reveals-new-anti-analysis-techniques-and-code-injection-redundancy/
       - https://elis531989.medium.com/dancing-with-shellcodes-cracking-the-latest-version-of-guloader-75083fb15cb4
-    # examples:
-    #   - 
   features:
     - and:
       - api: EnumWindows

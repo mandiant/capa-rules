@@ -4,8 +4,9 @@ rule:
     namespace: anti-analysis/anti-forensic/self-deletion
     authors:
       - michael.hunhoff@mandiant.com
-      - "@mr-tz"
-    scope: function
+      - '@mr-tz'
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Indicator Removal::File Deletion [T1070.004]
     mbc:
@@ -19,10 +20,10 @@ rule:
         - string: "cmd.exe"
         - match: host-interaction/process/create
       - or:
-        - string: /\/c\s*del\s*/
-          description: "/c del"
-        - string: /del\s*\S/
-          description: "del \"%s\""
+        - string: "/\\/c\\s*del\\s*/"
+          description: /c del
+        - string: "/del\\s*\\S/"
+          description: del "%s"
       - optional:
-        - string: /\s*>\s*nul\s*/i
-          description: "> nul"
+        - string: "/\\s*>\\s*nul\\s*/i"
+          description: '> nul'

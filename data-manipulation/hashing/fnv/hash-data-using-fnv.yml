@@ -4,10 +4,12 @@ rule:
     namespace: data-manipulation/hashing/fnv
     authors:
       - moritz.raabe@mandiant.com
-      - "@_re_fox"
+      - '@_re_fox'
       - michael.hunhoff@mandiant.com
     description: can be any Fowler-Noll-Vo (FNV) hash variant, including FNV-1, FNV-1a, FNV-0
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Data::Non-Cryptographic Hash::FNV [C0030.005]
     references:
@@ -20,7 +22,6 @@ rule:
   features:
     - and:
       - optional:
-        - characteristic: loop
         - number: 0xcbf29ce484222325 = FNV_offset_basis, unused by FNV-0
         - number: 0x811c9dc5 = FNV_offset_basis, unused by FNV-0
         - and:
@@ -33,8 +34,6 @@ rule:
           - number: 0x100 = FNV prime 64 bits, split in DWORD
           - number: 0x1b3 = FNV prime 64 bits, split in DWORD
       - basic block:
-        # FNV-1 hash does multiply then XOR
-        # FNV-1a hash does XOR then multiply
         - and:
           - characteristic: nzxor
           - or:

@@ -3,8 +3,10 @@ rule:
     name: linked against CPP JSON library
     namespace: linking/static/jsoncpp
     authors:
-      - "@mr-tz"
-    scope: file
+      - '@mr-tz'
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://github.com/open-source-parsers/jsoncpp
   features:

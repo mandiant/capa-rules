@@ -1,11 +1,12 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: read data from CLFS log container
     namespace: host-interaction/log/clfs/read
     authors:
       - blaine.stancill@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Discovery::File and Directory Discovery::Log File [E1083.m01]
     references:

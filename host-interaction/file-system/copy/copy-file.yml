@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - File System::Copy File [C0045]
     examples:
@@ -19,8 +21,14 @@ rule:
       - api: LZCopy
       - api: System.IO.FileInfo::CopyTo
       - api: System.IO.File::Copy
-      - basic block:
-        - and:
-          - number: 2 = FO_COPY
-          - or:
-            - api: kernel32.SHFileOperation
+      - or:
+        - basic block:
+          - and:
+            - number: 2 = FO_COPY
+            - or:
+              - api: kernel32.SHFileOperation
+        - thread:
+          - and:
+            - number: 2 = FO_COPY
+            - or:
+              - api: kernel32.SHFileOperation

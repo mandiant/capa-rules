@@ -3,8 +3,10 @@ rule:
     name: execute command
     namespace: host-interaction/process/create
     authors:
-      - "@mr-tz"
-    scope: function
+      - '@mr-tz'
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Process::Create Process [C0017]
     examples:

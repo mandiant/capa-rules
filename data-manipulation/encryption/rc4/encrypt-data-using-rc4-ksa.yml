@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/rc4
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
@@ -17,33 +19,6 @@ rule:
       - 73CE04892E5F39EC82B00C02FC04C70F:0x40646E
   features:
     - or:
-      - and:
-        - basic block:
-          - and:
-            - description: initialize S
-            # misses if regular loop is used,
-            # however we cannot model that a loop contains a certain number
-            - characteristic: tight loop
-            - or:
-              - number: 0xFF
-              - number: 0x100
-        - or:
-          - description: modulo 256
-          - match: calculate modulo 256 via x86 assembly
-          - basic block:
-            - and:
-              - description: modulo via zero-extended mov from 8-bit register
-              - count(mnemonic(movzx)): 2 or more
-              # avoid false positives; filter out unexpected instructions
-              - not:
-                - or:
-                  - mnemonic: shl
-                  - mnemonic: rol
-                  - characteristic: nzxor
-        - or:
-          - description: modulo key length
-          - mnemonic: div
-          - mnemonic: idiv
       - and:
         - description: write DWORDs instead of bytes
         - or:

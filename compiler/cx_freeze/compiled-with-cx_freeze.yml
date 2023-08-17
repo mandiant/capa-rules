@@ -3,9 +3,11 @@ rule:
     name: compiled with cx_Freeze
     namespace: compiler/cx_freeze
     authors:
-      - "@mr-tz"
+      - '@mr-tz'
       - jakub.jozwiak@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Execution::Command and Scripting Interpreter::Python [T1059.006]
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]

@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Process Injection::Process Hollowing [T1055.012]
       - Defense Evasion::Reflective Code Loading [T1620]

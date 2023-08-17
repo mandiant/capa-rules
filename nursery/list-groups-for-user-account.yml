@@ -1,4 +1,3 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: list groups for user account
@@ -6,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: enumerates all the groups to which a user account belongs
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Discovery::Account Discovery [T1087]
   features:

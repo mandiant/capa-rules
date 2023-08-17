@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
     mbc:
@@ -16,4 +18,3 @@ rule:
     - or:
       - api: kernel32.GetFileSize
       - api: kernel32.GetFileSizeEx
-      - property/read: System.IO.FileInfo::Length

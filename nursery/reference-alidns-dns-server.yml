@@ -4,11 +4,11 @@ rule:
     namespace: communication/dns
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     references:
       - https://www.alidns.com/
-    # examples:
-      # - ab57d3c179355bf2bcdb7935483d84d4
   features:
     - or:
       - string: "223.5.5.5"

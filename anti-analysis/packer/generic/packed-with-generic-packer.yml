@@ -4,7 +4,8 @@ rule:
     namespace: anti-analysis/packer/generic
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
@@ -15,10 +16,10 @@ rule:
     - and:
       - or:
         - mnemonic: pusha
-        - mnemonic: pushad  # vivisect
+        - mnemonic: pushad
       - or:
         - mnemonic: popa
-        - mnemonic: popad  # vivisect
+        - mnemonic: popad
       - characteristic: cross section flow
       - not:
         - match: contain pusha popa sequence

@@ -3,8 +3,9 @@ rule:
     name: encrypt data using OpenSSL ECDSA
     namespace: data-manipulation/encryption/ecdsa
     authors:
-      - "Ana06"
-    scope: function
+      - Ana06
+    scopes:
+      static: function
     references:
       - https://github.com/openssl/openssl/blob/fdc5043d58900663b493147298e64f11353b35fe/crypto/objects/obj_dat.h
   features:

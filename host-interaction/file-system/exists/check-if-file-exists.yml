@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
     mbc:
@@ -28,4 +30,3 @@ rule:
             - number: 2 = ERROR_FILE_NOT_FOUND
       - api: shlwapi.PathFileExists
       - api: System.IO.File::Exists
-      - property/read: System.IO.FileSystemInfo::Exists

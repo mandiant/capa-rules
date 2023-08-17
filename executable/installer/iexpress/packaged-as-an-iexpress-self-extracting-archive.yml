@@ -4,13 +4,15 @@ rule:
     namespace: executable/installer/iexpress
     authors:
       - awillia2@cisco.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://en.wikipedia.org/wiki/IExpress
     examples:
-      - ac742739cae0d411dfcb78ae99a7baee:0xA4C0 # wextract_cleanup%d
-      - ac742739cae0d411dfcb78ae99a7baee:0xA488 # Software\Microsoft\Windows\CurrentVersion\RunOnce
-      - ac742739cae0d411dfcb78ae99a7baee:0x34BA2 # '  <description>IExpress extraction tool</description>'
+      - ac742739cae0d411dfcb78ae99a7baee:0xA4C0
+      - ac742739cae0d411dfcb78ae99a7baee:0xA488
+      - ac742739cae0d411dfcb78ae99a7baee:0x34BA2
   features:
     - or:
       - and:

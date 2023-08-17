@@ -3,8 +3,9 @@ rule:
     name: hash data using sha1 via x86 extensions
     namespace: data-manipulation/hashing/sha1
     authors:
-      - "@_re_fox"
-    scope: basic block
+      - '@_re_fox'
+    scopes:
+      static: basic block
   features:
     - or:
       - mnemonic: sha1rnds4 = Perform Four Rounds of SHA1 Operation

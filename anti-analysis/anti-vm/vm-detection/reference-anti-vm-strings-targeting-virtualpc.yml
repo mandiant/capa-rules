@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - michael.hunhoff@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
@@ -15,7 +17,7 @@ rule:
       - al-khaser_x86.exe_
   features:
     - or:
-      - string: /VirtualPC/i
-      - string: /VMSrvc.exe/i
-      - string: /VMUSrvc.exe/i
-      - string: /SOFTWARE\\Microsoft\\Virtual Machine\\Guest\\Parameters/i
+      - string: "/VirtualPC/i"
+      - string: "/VMSrvc.exe/i"
+      - string: "/VMUSrvc.exe/i"
+      - string: "/SOFTWARE\\\\Microsoft\\\\Virtual Machine\\\\Guest\\\\Parameters/i"

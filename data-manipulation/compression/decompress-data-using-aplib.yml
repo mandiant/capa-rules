@@ -3,11 +3,13 @@ rule:
     name: decompress data using aPLib
     namespace: data-manipulation/compression
     authors:
-      - "@r3c0nst (Frank Boldewin)"
+      - '@r3c0nst (Frank Boldewin)'
       - moritz.raabe@mandiant.com
       - cdong49@gatech.edu
     description: detects decompression function of library aPLib
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Data::Decompress Data::aPLib [C0025.003]
     references:

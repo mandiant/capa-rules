@@ -3,8 +3,9 @@ rule:
     name: hash data using tiger
     namespace: data-manipulation/hashing/tiger
     authors:
-      - "@_re_fox"
-    scope: basic block
+      - '@_re_fox'
+    scopes:
+      static: basic block
     mbc:
       - Cryptography::Cryptographic Hash::Tiger [C0029.005]
     examples:

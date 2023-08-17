@@ -7,7 +7,9 @@ rule:
       - johnk3r
       - joakim@intezer.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Communication::DNS Communication::Resolve [C0011.001]
     examples:

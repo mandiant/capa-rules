@@ -4,7 +4,8 @@ rule:
     namespace: persistence
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: file
+    scopes:
+      static: file
     att&ck:
       - Persistence::Server Software Component [T1505]
     references:

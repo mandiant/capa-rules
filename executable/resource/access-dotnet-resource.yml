@@ -3,8 +3,9 @@ rule:
     name: access .NET resource
     namespace: executable/resource
     authors:
-      - "@mr-tz"
-    scope: function
+      - '@mr-tz'
+    scopes:
+      static: function
     examples:
       - 387f15043f0198fd3a637b0758c2b6dde9ead795c3ed70803426fc355731b173:0x06000084
   features:

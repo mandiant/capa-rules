@@ -3,8 +3,10 @@ rule:
     name: validate payment card number using luhn algorithm
     namespace: data-manipulation/checksum/luhn
     authors:
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Data::Checksum::Luhn [C0032.002]
     examples:

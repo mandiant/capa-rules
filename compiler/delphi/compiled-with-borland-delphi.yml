@@ -4,8 +4,10 @@ rule:
     namespace: compiler/delphi
     authors:
       - william.ballenthin@mandiant.com
-      - "@mr-tz"
-    scope: file
+      - '@mr-tz'
+    scopes:
+      static: file
+      dynamic: file
     examples:
       - 4BDD67FF852C221112337FECD0681EAC
   features:
@@ -13,6 +15,5 @@ rule:
       - string: "Borland C++ - Copyright 2002 Borland Corporation"
       - string: "Sysutils::Exception"
       - string: "TForm1"
-      - import: "BORLNDMM.DLL"
       - substring: "SOFTWARE\\Borland\\Delphi\\RTL"
       - substring: "Embarcadero Delphi for Win32 compiler"

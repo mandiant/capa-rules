@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/gui/window/get-text
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Discovery::Application Window Discovery [E1010]
     examples:
@@ -15,10 +17,15 @@ rule:
       - and:
         - optional:
           - api: user32.IsWindowVisible
-        - basic block:
-          - and:
-            - number: 0xD = WM_GETTEXT
-            - api: user32.SendMessage
+        - or:
+          - basic block:
+            - and:
+              - number: 0xD = WM_GETTEXT
+              - api: user32.SendMessage
+          - thread:
+            - and:
+              - number: 0xD = WM_GETTEXT
+              - api: user32.SendMessage
       - and:
         - optional:
           - api: user32.GetForegroundWindow

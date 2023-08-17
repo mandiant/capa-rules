@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/internet/cache
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
   features:
     - and:
       - match: enumerate internet cache

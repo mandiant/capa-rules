@@ -4,7 +4,9 @@ rule:
     namespace: persistence/registry/winlogon-helper
     authors:
       - 0x534a@mailbox.org
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Winlogon Helper DLL [T1547.004]
     examples:
@@ -15,8 +17,8 @@ rule:
         - match: set registry value
         - number: 0x80000001 = HKEY_CURRENT_USER
         - number: 0x80000002 = HKEY_LOCAL_MACHINE
-      - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
+      - string: "/Software\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Winlogon/i"
       - or:
-        - string: /Notify/i
-        - string: /Userinit/i
-        - string: /Shell/i
+        - string: "/Notify/i"
+        - string: "/Userinit/i"
+        - string: "/Shell/i"

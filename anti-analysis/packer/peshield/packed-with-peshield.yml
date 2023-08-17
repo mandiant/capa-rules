@@ -3,8 +3,10 @@ rule:
     name: packed with peshield
     namespace: anti-analysis/packer/peshield
     authors:
-      - "@_re_fox"
-    scope: file
+      - '@_re_fox'
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
@@ -15,6 +17,4 @@ rule:
       - a3c0a2425ea84103adde03a92176424c
   features:
     - or:
-      - section: PESHiELD
-      - section: PESHiELD_1
-      - string: / PE-SHiELD v[0-9]\.[0-9]/
+      - string: "/ PE-SHiELD v[0-9]\\.[0-9]/"

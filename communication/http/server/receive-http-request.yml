@@ -4,7 +4,9 @@ rule:
     namespace: communication/http/server
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Communication::HTTP Communication::Receive Request [C0002.015]
     examples:

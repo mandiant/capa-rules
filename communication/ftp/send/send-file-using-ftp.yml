@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Communication::FTP Communication::Send File [C0004.001]
       - Communication::FTP Communication::WinINet [C0004.002]
@@ -21,7 +23,3 @@ rule:
             - and:
               - api: wininet.InternetConnect
               - number: 0x15 = IPPORT_FTP
-      - and:
-        - api: System.Net.WebRequest::Create
-        - string: "STOR"
-        - property/write: System.Net.WebRequest::Method

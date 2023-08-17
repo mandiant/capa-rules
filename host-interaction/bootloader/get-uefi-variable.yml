@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/bootloader
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Pre-OS Boot::System Firmware [T1542.001]
     references:

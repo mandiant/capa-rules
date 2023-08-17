@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/bootloader
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     references:
       - https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdedit-command-line-options
     examples:
@@ -12,15 +14,15 @@ rule:
   features:
     - or:
       - and:
-        - string: /bcdedit.exe/i
+        - string: "/bcdedit.exe/i"
         - optional:
           - string: "/deletevalue safeboot"
       - and:
-        - string: /boot.ini/i
+        - string: "/boot.ini/i"
         - optional:
           - api: kernel32.GetPrivateProfileStringA
           - api: kernel32.WritePrivateProfileString
           - or:
-            - string: /default/i
-            - string: /boot loader/i
-            - string: /operating systems/i
+            - string: "/default/i"
+            - string: "/boot loader/i"
+            - string: "/operating systems/i"

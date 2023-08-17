@@ -5,7 +5,8 @@ rule:
     authors:
       - gilbert.elliot@mandiant.com
       - sara.rincon@mandiant.com
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

@@ -3,8 +3,10 @@ rule:
     name: create device object
     namespace: host-interaction/driver
     authors:
-      - "@mr-tz"
-    scope: function
+      - '@mr-tz'
+    scopes:
+      static: function
+      dynamic: process
     examples:
       - Practical Malware Analysis Lab 10-03.sys_:0x00010706
   features:

@@ -4,12 +4,14 @@ rule:
     namespace: host-interaction/bootloader
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Subvert Trust Controls::Code Signing Policy Modification [T1553.006]
     examples:
-      - 0596C4EA5AA8DEF47F22C85D75AACA95:0x10710B3  # old Necurs rootkit
+      - 0596C4EA5AA8DEF47F22C85D75AACA95:0x10710B3
   features:
     - and:
       - match: host-interaction/process/create
-      - string: /^bcdedit(\.exe)? -set TESTSIGNING ON/i
+      - string: "/^bcdedit(\\.exe)? -set TESTSIGNING ON/i"

@@ -4,8 +4,10 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    lib: true
-    scope: basic block
+    lib: 'true'
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
       - Operating System::Registry::Create Registry Key [C0036.004]
       - Operating System::Registry::Open Registry Key [C0036.003]

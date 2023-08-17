@@ -4,13 +4,12 @@ rule:
     namespace: data-manipulation/hashing/whirlpool
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Cryptography::Cryptographic Hash [C0029]
     references:
       - https://github.com/jzelinskie/whirlpool/blob/master/const.go
-    #examples:
-    #  - 0761142efbda6c4b1e801223de723578:0x65472CC0
   features:
     - or:
       - description: the first 16 bytes of the C* constants

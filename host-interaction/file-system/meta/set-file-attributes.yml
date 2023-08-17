@@ -6,7 +6,9 @@ rule:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Defense Evasion::File and Directory Permissions Modification [T1222]
     mbc:
@@ -26,4 +28,3 @@ rule:
       - api: System.IO.File::SetLastAccessTimeUtc
       - api: System.IO.File::SetLastWriteTime
       - api: System.IO.File::SetLastWriteTimeUtc
-      - property/write: System.IO.FileSystemInfo::Attributes

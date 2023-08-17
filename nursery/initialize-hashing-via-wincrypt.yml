@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
   features:
     - and:
       - api: advapi32.CryptCreateHash

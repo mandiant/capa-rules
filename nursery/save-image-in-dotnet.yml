@@ -4,7 +4,8 @@ rule:
     namespace: collection
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
   features:
     - and:
       - api: System.Drawing.Image::Save

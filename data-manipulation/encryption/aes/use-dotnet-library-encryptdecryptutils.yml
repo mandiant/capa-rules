@@ -3,8 +3,10 @@ rule:
     name: use .NET library EncryptDecryptUtils
     namespace: data-manipulation/encryption/aes
     authors:
-      - "@johnk3r"
-    scope: file
+      - '@johnk3r'
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

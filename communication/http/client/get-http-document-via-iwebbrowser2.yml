@@ -4,7 +4,8 @@ rule:
     namespace: communication/http/client
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Communication::HTTP Communication::Get Response [C0002.017]
       - Communication::HTTP Communication::IWebBrowser [C0002.010]

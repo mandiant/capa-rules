@@ -1,11 +1,11 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: compress data via ZLIB inflate or deflate
     namespace: data-manipulation/compression
     authors:
       - blas.kojusner@mandiant.com
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Data::Compress Data [C0024]
     references:

@@ -6,7 +6,9 @@ rule:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Discovery::System Information Discovery [T1082]
     mbc:
@@ -21,4 +23,3 @@ rule:
       - api: GetComputerObjectName
       - api: ws2_32.gethostname
       - api: gethostname
-      - property/read: System.Environment::MachineName

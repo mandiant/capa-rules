@@ -3,8 +3,9 @@ rule:
     name: enumerate PE sections in .NET
     namespace: load-code/pe
     authors:
-      - "@mr-tz"
-    scope: function
+      - '@mr-tz'
+    scopes:
+      static: function
     mbc:
       - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
   features:

@@ -4,7 +4,9 @@ rule:
     namespace: persistence/scheduled-tasks
     authors:
       - 0x534a@mailbox.org
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
     examples:
@@ -14,6 +16,6 @@ rule:
       - match: host-interaction/process/create
       - or:
         - and:
-          - string: /schtasks/i
-          - string: /\/create /i
-        - string: /Register-ScheduledTask /i
+          - string: "/schtasks/i"
+          - string: "/\\/create /i"
+        - string: "/Register-ScheduledTask /i"

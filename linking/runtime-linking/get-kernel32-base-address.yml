@@ -4,7 +4,8 @@ rule:
     namespace: linking/runtime-linking
     authors:
       - moritz.raabe@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
     att&ck:
       - Execution::Shared Modules [T1129]
     references:
@@ -14,11 +15,8 @@ rule:
       - 67f8302a2fd28d15f62d6d20d748bfe350334e5353cbdef112bd1f8231b5599d:0x406936
   features:
     - and:
-      # PEB -> PEB.Ldr -> PEB_LDR_DATA.InLoadOrderModuleList.Flink
       - match: access PEB ldr_data
-      # -> current module -> ntdll
       - count(offset(0)): 2
-      # -> kernel32 -> LDR_DATA_TABLE_ENTRY.DllBase
       - or:
         - and:
           - arch: i386

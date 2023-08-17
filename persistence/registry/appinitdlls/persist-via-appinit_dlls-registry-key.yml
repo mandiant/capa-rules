@@ -4,7 +4,9 @@ rule:
     namespace: persistence/registry/appinitdlls
     authors:
       - michael.hunhoff@fireye.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Event Triggered Execution::AppInit DLLs [T1546.010]
     references:
@@ -17,9 +19,9 @@ rule:
         - match: set registry value
         - number: 0x80000002 = HKEY_LOCAL_MACHINE
       - or:
-        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
-        - string: /Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
-      - string: /AppInit_DLLs/i
+        - string: "/Software\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Windows/i"
+        - string: "/Software\\\\Wow6432Node\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Windows/i"
+      - string: "/AppInit_DLLs/i"
       - optional:
-        - string: /LoadAppInit_DLLs/i
+        - string: "/LoadAppInit_DLLs/i"
           description: enable AppInit DLLs feature

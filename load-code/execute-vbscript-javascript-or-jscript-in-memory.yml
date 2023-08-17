@@ -1,4 +1,3 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: execute VBScript Javascript or JScript in memory
@@ -6,7 +5,8 @@ rule:
     authors:
       - blas.kojusner@mandiant.com
     description: the sample may execute 32-bit VBScript, JavaScript, or JScript (32-bit)
-    scope: function
+    scopes:
+      static: function
     references:
       - https://gist.github.com/odzhan/d18145b9538a3653be2f9a580b53b063
     examples:

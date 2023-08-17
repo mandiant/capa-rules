@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/ripemd320
     authors:
       - raymond.leong@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     references:
       - https://en.wikipedia.org/wiki/RIPEMD-320
   features:
@@ -21,4 +23,3 @@ rule:
         - number: 0x89ABCDEF = also used in RIPEMD-256
         - number: 0x01234567 = also used in RIPEMD-256
         - number: 0x3C2D1E0F = unique to RIPEMD-320
-      - bytes: 01 23 45 67 89 AB CD EF FE DC BA 98 76 54 32 10 F0 E1 D2 C3 10 32 54 76 98 BA DC FE EF CD AB 89 67 45 23 01 0F 1E 2D 3C

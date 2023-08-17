@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Process::Allocate Thread Local Storage [C0040]
     examples:

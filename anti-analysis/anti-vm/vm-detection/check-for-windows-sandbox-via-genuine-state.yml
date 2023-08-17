@@ -3,8 +3,10 @@ rule:
     name: check for Windows sandbox via genuine state
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
@@ -15,10 +17,19 @@ rule:
       - 773290480d5445f11d3dc1b800728966:0x140001140
   features:
     - and:
-      - basic block:
-        - and:
-          - api: SLIsGenuineLocal
-      - basic block:
-        - and:
-          - api: UuidFromString
-          - string: "55c92734-d682-4d71-983e-d6ec3f16059f"
+      - or:
+        - basic block:
+          - and:
+            - api: SLIsGenuineLocal
+        - thread:
+          - and:
+            - api: SLIsGenuineLocal
+      - or:
+        - basic block:
+          - and:
+            - api: UuidFromString
+            - string: "55c92734-d682-4d71-983e-d6ec3f16059f"
+        - thread:
+          - and:
+            - api: UuidFromString
+            - string: "55c92734-d682-4d71-983e-d6ec3f16059f"

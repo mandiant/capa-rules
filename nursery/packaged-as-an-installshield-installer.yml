@@ -4,11 +4,9 @@ rule:
     namespace: executable/installer/installshield
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
   features:
     - or:
-      # AppHelp has an export ApphelpCheckInstallShieldPackage,
-      # which we want to avoid FP'ing on,
-      # so do an exact match for this string.
-      # ok to relax if there are counterexamples.
       - string: "InstallShield"

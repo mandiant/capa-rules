@@ -1,4 +1,3 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: encrypt data using FAKEM cipher
@@ -6,7 +5,8 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: Detect custom encryption cipher used by FAKEM malware family
-    scope: basic block
+    scopes:
+      static: basic block
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

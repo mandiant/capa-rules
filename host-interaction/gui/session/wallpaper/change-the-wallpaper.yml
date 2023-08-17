@@ -3,8 +3,10 @@ rule:
     name: change the wallpaper
     namespace: host-interaction/gui/session
     authors:
-      - "@_re_fox"
-    scope: basic block
+      - '@_re_fox'
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
       - Operating System::Wallpaper [C0035]
     examples:

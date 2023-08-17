@@ -5,7 +5,8 @@ rule:
     authors:
       - matthew.williams@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Process::Create Process [C0017]
     references:
@@ -23,8 +24,6 @@ rule:
           - api: advapi32.CreateProcessWithLogon
           - api: advapi32.CreateProcessWithToken
         - number: 0x101 = STARTF_USESTDHANDLES | STARTF_USESHOWWINDOW
-          # STARTF_USESTDHANDLES indicates the hStdInput, hStdOutput, and hStdError members contain additional information
-          # STARTF_USESHOWWINDOW indicates the wShowWindow member contains additional information
         - or:
           - and:
             - arch: i386
@@ -32,7 +31,6 @@ rule:
           - and:
             - arch: amd64
             - number: 0x68 = StartupInfo.cb (size)
-          # STARTUPINFOEX size values not currently supported by this rule.
         - optional:
           - api: kernel32.GetStartupInfo
       - and:

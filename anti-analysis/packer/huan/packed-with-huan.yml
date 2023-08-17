@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/packer/huan
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
@@ -15,7 +17,6 @@ rule:
       - 378ecc1b2e60129c9f06bb6bb8042f2b95feca5f526a4c26a5c39707807fa259:0x140048000
   features:
     - or:
-      - section: .huan
       - string: "[+] IAT Fix starts..."
       - string: "     [+] Import by ordinal: "
       - string: "     [+] Import by name: "

@@ -3,8 +3,10 @@ rule:
     name: parse credit card information
     namespace: collection/credit-card
     authors:
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Data::Check String [C0019]
     examples:

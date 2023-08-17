@@ -4,8 +4,10 @@ rule:
     namespace: communication/http/client
     authors:
       - anamaria.martinezgom@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
   features:
     - and:
       - match: send HTTP request
-      - string: /Cookie:/i
+      - string: "/Cookie:/i"

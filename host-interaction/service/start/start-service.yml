@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/service/start
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
     examples:

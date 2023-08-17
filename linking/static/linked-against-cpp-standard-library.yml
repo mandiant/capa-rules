@@ -3,8 +3,10 @@ rule:
     name: linked against CPP standard library
     namespace: linking/static
     authors:
-      - "@mr-tz"
-    scope: file
+      - '@mr-tz'
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://en.wikipedia.org/wiki/P._J._Plauger
       - https://www.dinkumware.com/

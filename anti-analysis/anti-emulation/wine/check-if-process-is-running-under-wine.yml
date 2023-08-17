@@ -3,8 +3,10 @@ rule:
     name: check if process is running under wine
     namespace: anti-analysis/anti-emulation/wine
     authors:
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
@@ -15,7 +17,7 @@ rule:
       - ccbf7cba35bab56563c0fbe4237fdc41:0x40d750
   features:
     - or:
-      - string: /SOFTWARE\\Wine/i
+      - string: "/SOFTWARE\\\\Wine/i"
       - and:
         - api: GetModuleHandle
         - api: GetProcAddress

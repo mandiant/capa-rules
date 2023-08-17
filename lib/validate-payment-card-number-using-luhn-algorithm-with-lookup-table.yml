@@ -2,9 +2,10 @@ rule:
   meta:
     name: validate payment card number using luhn algorithm with lookup table
     authors:
-      - "@_re_fox"
-    lib: true
-    scope: function
+      - '@_re_fox'
+    lib: 'true'
+    scopes:
+      static: function
     mbc:
       - Data::Checksum::Luhn [C0032.002]
     examples:
@@ -49,7 +50,7 @@ rule:
         - instruction:
           - description: Conversion of chr to int (LEA REG,[REG+ -0x30])
           - mnemonic: lea
-          - offset: -0x30
+          - offset: -48
       - basic block:
         - or:
           - and:

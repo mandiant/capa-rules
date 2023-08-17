@@ -5,9 +5,10 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: managed code calls unmanaged (native) code, often seen in .NET
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
   features:
     - or:
-      - characteristic: unmanaged call
       - match: unmanaged call via dynamic PInvoke in .NET
       - api: System.Runtime.InteropServices.Marshal::GetDelegateForFunctionPointer

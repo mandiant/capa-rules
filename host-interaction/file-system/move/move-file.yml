@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - File System::Move File [C0063]
     examples:
@@ -20,8 +22,14 @@ rule:
       - api: _wrename
       - api: System.IO.FileInfo::MoveTo
       - api: System.IO.File::Move
-      - basic block:
-        - and:
-          - number: 1 = FO_MOVE
-          - or:
-            - api: kernel32.SHFileOperation
+      - or:
+        - basic block:
+          - and:
+            - number: 1 = FO_MOVE
+            - or:
+              - api: kernel32.SHFileOperation
+        - thread:
+          - and:
+            - number: 1 = FO_MOVE
+            - or:
+              - api: kernel32.SHFileOperation

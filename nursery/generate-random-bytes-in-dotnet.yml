@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/prng
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Cryptography::Generate Pseudo-random Sequence::Use API [C0021.003]
   features:

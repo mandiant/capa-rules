@@ -4,7 +4,8 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - 0x534a@mailbox.org
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Process Injection::Portable Executable Injection [T1055.002]
       - Defense Evasion::Reflective Code Loading [T1620]

@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/file-system/read
     authors:
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - File System::Read File [C0051]
     examples:

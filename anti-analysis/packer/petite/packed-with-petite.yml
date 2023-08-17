@@ -3,8 +3,9 @@ rule:
     name: packed with petite
     namespace: anti-analysis/packer/petite
     authors:
-      - "@_re_fox"
-    scope: file
+      - '@_re_fox'
+    scopes:
+      static: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:

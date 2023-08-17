@@ -4,7 +4,8 @@ rule:
     namespace: data-manipulation/encryption/aes
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
     mbc:

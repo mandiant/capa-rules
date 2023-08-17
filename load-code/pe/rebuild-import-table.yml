@@ -3,8 +3,9 @@ rule:
     name: rebuild import table
     namespace: load-code/pe
     authors:
-      - "@Ana06"
-    scope: function
+      - '@Ana06'
+    scopes:
+      static: function
     mbc:
       - Defense Evasion::Hijack Execution Flow::Import Address Table Hooking [F0015.003]
     references:

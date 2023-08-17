@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/murmur
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Data::Non-Cryptographic Hash::MurmurHash [C0030.001]
     references:
@@ -32,7 +34,7 @@ rule:
         - number: 0x4cf5ad432745937f = 64-bit c2 for 128-bit hash
       - basic block:
         - and:
-          - description: 'hash >> 16; hash >> 13; hash >> 16'
+          - description: hash >> 16; hash >> 13; hash >> 16
           - count(mnemonic(shr)): 3
           - instruction:
             - mnemonic: shr
@@ -43,8 +45,6 @@ rule:
           - optional:
             - count(characteristic(nzxor)): 3 or more
       - and:
-        # Group this two blocks under an `and` as on their own they are not
-        # unique enough and would cause false positives
         - instruction:
           - description: k ROL r1
           - mnemonic: rol

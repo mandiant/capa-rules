@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Communication::HTTP Communication::Send Request [C0002.003]
     examples:
@@ -31,4 +33,4 @@ rule:
             - api: winhttp.WinHttpConnect
       - and:
         - match: send data on socket
-        - string: /HTTP/i
+        - string: "/HTTP/i"

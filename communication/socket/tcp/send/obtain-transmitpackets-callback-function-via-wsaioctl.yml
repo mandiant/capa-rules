@@ -5,7 +5,8 @@ rule:
     authors:
       - jonathan.lepore@mandiant.com
     description: The TransmitPackets function transmits in-memory data or file data over a connected socket. The TransmitPackets function uses the operating system cache manager to retrieve file data, locking memory for the minimum time required to transmit and resulting in efficient, high-performance transmission.
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Communication::Socket Communication::Send TCP Data [C0001.014]
     references:

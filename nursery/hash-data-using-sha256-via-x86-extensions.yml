@@ -3,8 +3,9 @@ rule:
     name: hash data using sha256 via x86 extensions
     namespace: data-manipulation/hashing/sha256
     authors:
-      - "@_re_fox"
-    scope: basic block
+      - '@_re_fox'
+    scopes:
+      static: basic block
   features:
     - or:
       - mnemonic: sha256rnds2 = Perform Two Rounds of SHA256 Operation

@@ -4,8 +4,10 @@ rule:
     namespace: executable/pe/pdb
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     examples:
-      - 464EF2CA59782CE697BC329713698CCC  # level32.exe
+      - 464EF2CA59782CE697BC329713698CCC
   features:
-    - string: /:\\.*\.pdb/
+    - string: "/:\\\\.*\\.pdb/"

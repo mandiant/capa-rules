@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encoding/base64
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
@@ -15,4 +17,4 @@ rule:
       - 074072B261FC27B65C72671F13510C05
       - 5DB2D2BE20D59AA0BE6709A6850F1775
   features:
-    - string: /ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+    - string: "/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"

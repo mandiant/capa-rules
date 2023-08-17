@@ -4,11 +4,13 @@ rule:
     namespace: collection/database/sql
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Collection::Data from Information Repositories [T1213]
     examples:
       - 5F66B82558CA92E54E77F216EF4C066C:0x42B1DF
   features:
     - and:
-      - string: /SELECT.*FROM.*WHERE/
+      - string: "/SELECT.*FROM.*WHERE/"

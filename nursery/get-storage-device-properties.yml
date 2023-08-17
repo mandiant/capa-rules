@@ -1,11 +1,12 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: get storage device properties
     namespace: host-interaction/hardware/storage
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     references:
       - https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-ioctl_storage_query_property
   features:

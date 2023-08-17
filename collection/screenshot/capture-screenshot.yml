@@ -4,9 +4,11 @@ rule:
     namespace: collection/screenshot
     authors:
       - moritz.raabe@mandiant.com
-      - "@_re_fox"
+      - '@_re_fox'
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Collection::Screen Capture [T1113]
     mbc:

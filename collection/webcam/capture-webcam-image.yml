@@ -4,7 +4,9 @@ rule:
     namespace: collection/webcam
     authors:
       - johnk3r
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Collection::Video Capture [T1125]
     examples:
@@ -13,16 +15,31 @@ rule:
     - or:
       - and:
         - api: capCreateCaptureWindow
-        - basic block:
-          - and:
-            - api: SendMessage
-            - number: 0x40a = WM_CAP_DRIVER_CONNECT
-        - optional:
+        - or:
           - basic block:
             - and:
               - api: SendMessage
-              - number: 0x40B = WM_CAP_DRIVER_DISCONNECT
-      - basic block:
-        - and:
-          - api: SendMessage
-          - number: 0x419 = WM_CAP_FILE_SAVEDIB
+              - number: 0x40a = WM_CAP_DRIVER_CONNECT
+          - thread:
+            - and:
+              - api: SendMessage
+              - number: 0x40a = WM_CAP_DRIVER_CONNECT
+        - optional:
+          - or:
+            - basic block:
+              - and:
+                - api: SendMessage
+                - number: 0x40B = WM_CAP_DRIVER_DISCONNECT
+            - thread:
+              - and:
+                - api: SendMessage
+                - number: 0x40B = WM_CAP_DRIVER_DISCONNECT
+      - or:
+        - basic block:
+          - and:
+            - api: SendMessage
+            - number: 0x419 = WM_CAP_FILE_SAVEDIB
+        - thread:
+          - and:
+            - api: SendMessage
+            - number: 0x419 = WM_CAP_FILE_SAVEDIB

@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/terminate
     authors:
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
   features:
     - and:
       - api: System.Diagnostics.Process::GetProcessesByName

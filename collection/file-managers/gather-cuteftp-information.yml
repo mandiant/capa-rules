@@ -3,8 +3,10 @@ rule:
     name: gather cuteftp information
     namespace: collection/file-managers
     authors:
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Credential Access::Credentials from Password Stores [T1555]
     references:
@@ -16,6 +18,6 @@ rule:
     - and:
       - substring: "\\sm.dat"
       - or:
-        - string: /\\GlobalSCAPE\\CuteFTP/i
-        - string: /\\GlobalSCAPE\\CuteFTP Pro/i
+        - string: "/\\\\GlobalSCAPE\\\\CuteFTP/i"
+        - string: "/\\\\GlobalSCAPE\\\\CuteFTP Pro/i"
         - substring: "\\CuteFTP"

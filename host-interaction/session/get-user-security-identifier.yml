@@ -1,11 +1,12 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: get user security identifier
     namespace: host-interaction/session
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Discovery::Account Discovery [T1087]
     examples:

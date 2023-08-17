@@ -3,11 +3,13 @@ rule:
     name: linked against CPP HTTP library
     namespace: linking/static/httplib
     authors:
-      - "@mr-tz"
-    scope: file
+      - '@mr-tz'
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://github.com/yhirose/cpp-httplib
   features:
     - or:
       - substring: "cpp-httplib/"
-      - string: /\(HTTP\/1\\\.\[01\]\) \(\\d/
+      - string: "/\\(HTTP\\/1\\\\\\.\\[01\\]\\) \\(\\\\d/"

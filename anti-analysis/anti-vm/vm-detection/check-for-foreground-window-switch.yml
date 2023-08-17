@@ -5,7 +5,8 @@ rule:
     authors:
       - ervin.ocampo@mandiant.com
     description: Detect usage of GetForegroundWindow and Sleep APIs to check if there is any foreground window switch. Typically, sandboxes do not switch the foreground window like a user would in a normal environment.
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::User Activity Based Checks [T1497.002]
     references:

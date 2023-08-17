@@ -4,7 +4,8 @@ rule:
     namespace: anti-analysis/packer/confuser
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
@@ -13,4 +14,4 @@ rule:
       - b9f5bd514485fb06da39beff051b9fdc
   features:
     - or:
-      - class: "ConfusedByAttribute"
+      - class: ConfusedByAttribute

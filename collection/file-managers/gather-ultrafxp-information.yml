@@ -3,8 +3,10 @@ rule:
     name: gather ultrafxp information
     namespace: collection/file-managers
     authors:
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Credential Access::Credentials from Password Stores [T1555]
     examples:

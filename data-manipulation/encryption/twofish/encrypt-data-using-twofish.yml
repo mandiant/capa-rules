@@ -3,8 +3,9 @@ rule:
     name: encrypt data using twofish
     namespace: data-manipulation/encryption/twofish
     authors:
-      - "@_re_fox"
-    scope: basic block
+      - '@_re_fox'
+    scopes:
+      static: basic block
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

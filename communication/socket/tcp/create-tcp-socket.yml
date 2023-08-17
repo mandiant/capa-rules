@@ -6,7 +6,9 @@ rule:
       - william.ballenthin@mandiant.com
       - joakim@intezer.com
       - anushka.virgaonkar@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
       - Communication::Socket Communication::Create TCP Socket [C0001.011]
     examples:
@@ -21,4 +23,3 @@ rule:
           - api: ws2_32.socket
           - api: ws2_32.WSASocket
           - api: socket
-      - property/read: System.Net.Sockets.TcpClient::Client

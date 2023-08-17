@@ -4,7 +4,8 @@ rule:
     namespace: executable/pe/section/tls
     authors:
       - michael.hunhoff@mandiant.com
-    scope: file
+    scopes:
+      static: file
     examples:
       - Practical Malware Analysis Lab 16-02.exe_
   features:

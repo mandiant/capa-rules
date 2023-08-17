@@ -5,7 +5,8 @@ rule:
     authors:
       - jonathanlepore@google.com
     description: detects sandbox detection via mac address organizationally unique identifiers (OUIs). Based off publicly available CSharpShooter/CheckPlease.cs
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
@@ -18,11 +19,11 @@ rule:
       - basic block:
         - and:
           - 3 or more:
-            - string: /00[:-]?0c[:-]?29/i
-            - string: /00[:-]?1c[:-]?14/i
-            - string: /00[:-]?50[:-]?56/i
+            - string: "/00[:-]?0c[:-]?29/i"
+            - string: "/00[:-]?1c[:-]?14/i"
+            - string: "/00[:-]?50[:-]?56/i"
               description: VMware OUIs
-            - string: /08[:-]?00[:-]?27/i
+            - string: "/08[:-]?00[:-]?27/i"
               description: PCS Systemtechnik GmbH OUI, potentially related to VirtualBox
           - api: System.Net.NetworkInformation.NetworkInterface::GetPhysicalAddress
           - api: System.Net.NetworkInformation.NetworkInterface::GetAllNetworkInterfaces

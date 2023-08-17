@@ -4,7 +4,8 @@ rule:
     namespace: anti-analysis/packer/themida
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
@@ -13,7 +14,6 @@ rule:
       - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
     examples:
       - 8a132663bee5c2f0f5cbfebee1b55ac72934632bf32bc32d6e2dae797c9e6e35
-      # see capa #1104 - 2826b762b9c268601a44974ef469a671b441e798a6c3cbb40070450c6c030ba2
   features:
     - or:
       - section: Themida
@@ -25,5 +25,5 @@ rule:
         description: Section names containing 8 space characters observed in Themida 3.0.x packed files
       - and:
         - description: Section names containing 3 and 8 space characters observed in Themida 2.1.x packed files
-        - section: "   "
-        - section: "        "
+        - section: '   '
+        - section: '        '

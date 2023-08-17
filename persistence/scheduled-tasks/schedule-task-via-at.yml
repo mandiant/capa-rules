@@ -4,7 +4,9 @@ rule:
     namespace: persistence/scheduled-tasks
     authors:
       - joren485
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Scheduled Task/Job::At [T1053.002]
     examples:
@@ -12,7 +14,7 @@ rule:
   features:
     - and:
       - match: host-interaction/process/create
-      - string: /at(|\.exe)/i
+      - string: "/at(|\\.exe)/i"
       - or:
         - string: "//every:/i"
         - string: "//next:/i"

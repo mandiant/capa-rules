@@ -4,8 +4,9 @@ rule:
     namespace: host-interaction/software
     authors:
       - moritz.raabe@mandiant.com
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
     att&ck:
       - Discovery::Software Discovery [T1518]
     examples:
@@ -13,7 +14,7 @@ rule:
   features:
     - and:
       - match: create or open registry key
-      - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall/i
+      - string: "/SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall/i"
       - characteristic: loop
       - optional:
         - string: "DisplayName"

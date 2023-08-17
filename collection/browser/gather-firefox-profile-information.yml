@@ -3,8 +3,10 @@ rule:
     name: gather firefox profile information
     namespace: collection/browser
     authors:
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
     examples:
@@ -12,10 +14,10 @@ rule:
   features:
     - and:
       - 2 or more:
-        - string: /\\Mozilla\\Firefox\\profiles(\.ini)?/i
-        - string: /\\signons\.sqlite/i
-        - string: /SELECT\s+[a-z,\s]{5,}FROM moz_(logins|cookies)/i
-        - string: /FROM moz_(logins|cookies)/i
+        - string: "/\\\\Mozilla\\\\Firefox\\\\profiles(\\.ini)?/i"
+        - string: "/\\\\signons\\.sqlite/i"
+        - string: "/SELECT\\s+[a-z,\\s]{5,}FROM moz_(logins|cookies)/i"
+        - string: "/FROM moz_(logins|cookies)/i"
         - substring: "WHERE moz_cookies.host LIKE"
       - optional:
         - or:

@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/sha512
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     references:
       - https://www.rfc-editor.org/rfc/rfc6234
     examples:
@@ -62,4 +64,3 @@ rule:
           - and:
             - number: 0xab1c5ed5
             - number: 0xda6d8118
-      - bytes: 08 C9 BC F3 67 E6 09 6A 3B A7 CA 84 85 AE 67 BB 2B F8 94 FE 72 F3 6E 3C F1 36 1D 5F 3A F5 4F A5 D1 82 E6 AD 7F 52 0E 51 1F 6C 3E 2B 8C 68 05 9B 6B BD 41 FB AB D9 83 1F 79 21 7E 13 19 CD E0 5B = H(0)

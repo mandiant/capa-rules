@@ -4,7 +4,9 @@ rule:
     namespace: persistence/registry/ginadll
     authors:
       - michael.hunhoff@fireye.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Event Triggered Execution [T1546]
     examples:
@@ -14,5 +16,5 @@ rule:
       - or:
         - match: set registry value
         - number: 0x80000002 = HKEY_LOCAL_MACHINE
-      - string: /SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
-      - string: /GinaDLL/i
+      - string: "/SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Winlogon/i"
+      - string: "/GinaDLL/i"

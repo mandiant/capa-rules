@@ -4,13 +4,15 @@ rule:
     namespace: collection/database/wmi
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Collection::Data from Information Repositories [T1213]
     examples:
       - al-khaser_x86.exe_:0x433490
   features:
     - or:
-      - string: /SELECT\s+\*\s+FROM\s+CIM_./
-      - string: /SELECT\s+\*\s+FROM\s+Win32_./
-      - string: /SELECT\s+\*\s+FROM\s+MSAcpi_./
+      - string: "/SELECT\\s+\\*\\s+FROM\\s+CIM_./"
+      - string: "/SELECT\\s+\\*\\s+FROM\\s+Win32_./"
+      - string: "/SELECT\\s+\\*\\s+FROM\\s+MSAcpi_./"

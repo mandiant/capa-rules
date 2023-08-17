@@ -3,8 +3,10 @@ rule:
     name: use .NET library SharpClipboard
     namespace: collection
     authors:
-      - "@johnk3r"
-    scope: file
+      - '@johnk3r'
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Collection::Clipboard Data [T1115]
     mbc:

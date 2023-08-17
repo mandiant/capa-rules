@@ -4,7 +4,9 @@ rule:
     namespace: persistence
     authors:
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::XDG Autostart Entries [T1547.013]
     examples:
@@ -14,5 +16,5 @@ rule:
       - os: linux
       - match: host-interaction/file-system/write
       - or:
-        - string: /\/\.config\/autostart\/.+\.desktop/
+        - string: "/\\/\\.config\\/autostart\\/.+\\.desktop/"
         - substring: "/etc/xdg/autostart"

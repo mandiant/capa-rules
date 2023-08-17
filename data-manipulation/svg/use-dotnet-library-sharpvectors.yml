@@ -3,8 +3,10 @@ rule:
     name: use .NET library SharpVectors
     namespace: data-manipulation/svg
     authors:
-      - "@johnk3r"
-    scope: file
+      - '@johnk3r'
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/
     examples:

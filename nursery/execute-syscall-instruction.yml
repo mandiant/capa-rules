@@ -3,10 +3,11 @@ rule:
     name: execute syscall instruction
     namespace: anti-analysis
     authors:
-      - "@kulinacs"
-      - "@mr-tz"
+      - '@kulinacs'
+      - '@mr-tz'
     description: may be used to evade hooks or hinder analysis
-    scope: basic block
+    scopes:
+      static: basic block
     references:
       - https://github.com/j00ru/windows-syscalls
   features:

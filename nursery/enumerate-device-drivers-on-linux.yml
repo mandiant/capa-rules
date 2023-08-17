@@ -3,8 +3,10 @@ rule:
     name: enumerate device drivers on Linux
     namespace: collection
     authors:
-      - "@mr-tz"
-    scope: function
+      - '@mr-tz'
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Discovery::Device Driver Discovery [T1652]
   features:

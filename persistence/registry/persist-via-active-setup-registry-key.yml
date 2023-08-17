@@ -4,7 +4,9 @@ rule:
     namespace: persistence/registry
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Active Setup [T1547.014]
     references:
@@ -16,5 +18,5 @@ rule:
       - or:
         - match: set registry value
         - number: 0x80000002 = HKEY_LOCAL_MACHINE
-      - string: /Software\\Microsoft\\Active Setup\\Installed Components/i
+      - string: "/Software\\\\Microsoft\\\\Active Setup\\\\Installed Components/i"
       - string: "StubPath"

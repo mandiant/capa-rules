@@ -4,7 +4,8 @@ rule:
     namespace: communication/dns
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
     references:
       - https://dns.he.net/
       - https://dnslytics.com/ip/216.66.1.2

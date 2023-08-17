@@ -5,7 +5,8 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: .NET file contains uncommon TLS section
-    scope: file
+    scopes:
+      static: file
     references:
       - https://washi.dev/blog/posts/entry-points/
   features:

@@ -1,12 +1,12 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: create BITS job
     namespace: communication/http/client
     authors:
-      - "@mr-tz"
+      - '@mr-tz'
     description: BITS jobs can be used to download data or achieve persistence (via SetNotifyCmdLine)
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::BITS Jobs [T1197]
       - Persistence::BITS Jobs [T1197]

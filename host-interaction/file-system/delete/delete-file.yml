@@ -5,14 +5,14 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - File System::Delete File [C0047]
     examples:
       - 946A99F36A46D335DEC080D9A4371940:0x100015F0
-      # MoveFileEx
       - 31600AD0D1A7EA615690DF111AE36C73:0x401A15
-      # NtDeleteFile
       - 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001E04
   features:
     - or:
@@ -24,13 +24,25 @@ rule:
       - api: _wremove
       - api: System.IO.File::Delete
       - api: System.IO.FileSystemInfo::Delete
-      - basic block:
-        - and:
-          - number: 3 = FO_DELETE
-          - or:
-            - api: kernel32.SHFileOperation
-      - basic block:
-        - and:
-          - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
-          - number: 0 = NULL
-          - api: MoveFileEx
+      - or:
+        - basic block:
+          - and:
+            - number: 3 = FO_DELETE
+            - or:
+              - api: kernel32.SHFileOperation
+        - thread:
+          - and:
+            - number: 3 = FO_DELETE
+            - or:
+              - api: kernel32.SHFileOperation
+      - or:
+        - basic block:
+          - and:
+            - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
+            - number: 0 = NULL
+            - api: MoveFileEx
+        - thread:
+          - and:
+            - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
+            - number: 0 = NULL
+            - api: MoveFileEx

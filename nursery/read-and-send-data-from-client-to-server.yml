@@ -4,7 +4,9 @@ rule:
     namespace: communication/c2/file-transfer
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
   features:
     - and:
       - match: host-interaction/file-system/read

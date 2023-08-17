@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/clipboard
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Collection::Clipboard Data [T1115]
     examples:

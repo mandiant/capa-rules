@@ -3,8 +3,10 @@ rule:
     name: read virtual disk
     namespace: host-interaction/file-system/read
     authors:
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - File System::Read Virtual Disk [C0056]
     references:

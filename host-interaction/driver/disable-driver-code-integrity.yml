@@ -4,7 +4,8 @@ rule:
     namespace: host-interaction/driver
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
     mbc:
@@ -24,5 +25,5 @@ rule:
         - substring: "g_CiOptions"
           description: non-exported name for code integrity settings
       - optional:
-        - string: /CI.dll/i
+        - string: "/CI.dll/i"
           description: code integrity implementation DLL

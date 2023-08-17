@@ -4,7 +4,8 @@ rule:
     namespace: data-manipulation/encryption/rc4
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
@@ -17,15 +18,11 @@ rule:
       - 73CE04892E5F39EC82B00C02FC04C70F:0x4064C6
   features:
     - and:
-      # TODO: maybe add characteristic for nzxor reg size
       - count(characteristic(nzxor)): 1
       - or:
         - match: calculate modulo 256 via x86 assembly
-        # compiler may do this via zero-extended mov from 8-bit register
         - count(mnemonic(movzx)): 4 or more
-      # should not call (many) functions
       - count(characteristic(calls from)): (0, 4)
-      # should not be too simple or too complex (50 is picked by intuition)
       - count(basic blocks): (4, 50)
       - match: contain loop
       - optional:

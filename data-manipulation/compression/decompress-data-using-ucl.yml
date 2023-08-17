@@ -4,7 +4,8 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Data::Decompress Data [C0025]
     references:

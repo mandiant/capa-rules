@@ -3,9 +3,11 @@ rule:
     name: embed dependencies as resources using Fody/Costura
     namespace: executable/resource
     authors:
-      - "@johnk3r"
-      - "@mr-tz"
-    scope: file
+      - '@johnk3r'
+      - '@mr-tz'
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/
     examples:
@@ -14,7 +16,4 @@ rule:
     - and:
       - match: compiled to the .NET platform
       - or:
-        - class: ProcessedByFody
-        - namespace: Costura
-        - class: Costura.AssemblyLoader
         - string: "ProcessedByFody"

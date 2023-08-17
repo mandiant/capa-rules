@@ -4,7 +4,9 @@ rule:
     namespace: linking/static/xzip
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     mbc:
       - Data::Compression Library [C0060]
     references:
@@ -22,7 +24,7 @@ rule:
       - string: "bad pack level"
       - string: "Code too clever"
       - string: "unknown zip result code"
-      - string: "Culdn't duplicate handle"  # typo in library code
+      - string: "Culdn't duplicate handle"
       - string: "File not found in the zipfile"
       - string: "Still more data to unzip"
       - string: "Caller: the file had already been partially unzipped"

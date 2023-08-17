@@ -3,9 +3,11 @@ rule:
     name: read .ini file
     namespace: host-interaction/file-system/read
     authors:
-      - "@_re_fox"
+      - '@_re_fox'
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - File System::Read File [C0051]
     examples:
@@ -20,5 +22,5 @@ rule:
         - api: GetPrivateProfileSection
         - api: GetPrivateProfileSectionNames
       - optional:
-        - string: /\.ini/i
+        - string: "/\\.ini/i"
         - api: GetFullPathName

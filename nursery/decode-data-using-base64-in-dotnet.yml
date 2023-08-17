@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encoding/base64
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
     mbc:

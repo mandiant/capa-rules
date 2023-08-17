@@ -4,7 +4,8 @@ rule:
     namespace: load-code/pe
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:
@@ -44,7 +45,7 @@ rule:
                 - operand[1].offset: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
                 - operand[1].offset: 0x14 = IMAGE_NT_HEADERS.FileHeader.SizeOfOptionalHeader
                 - operand[1].offset: 0x16 = IMAGE_NT_HEADERS.FileHeader.Characteristics
-                - operand[1].offset: 0x28 = IMAGE_NT_HEADERS.OptionalHeader.AddressOfEntryPoint  # for 32 and 64 bit
+                - operand[1].offset: 0x28 = IMAGE_NT_HEADERS.OptionalHeader.AddressOfEntryPoint
                 - or:
                   - and:
                     - arch: i386

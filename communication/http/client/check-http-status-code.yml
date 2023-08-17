@@ -3,8 +3,10 @@ rule:
     name: check HTTP status code
     namespace: communication/http/client
     authors:
-      - "@mr-tz"
-    scope: function
+      - '@mr-tz'
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Communication::HTTP Communication::Read Header [C0002.014]
     examples:

@@ -4,7 +4,9 @@ rule:
     namespace: load-code/dotnet
     authors:
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Compile After Delivery [T1027.004]
   features:

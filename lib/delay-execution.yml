@@ -3,9 +3,11 @@ rule:
     name: delay execution
     authors:
       - michael.hunhoff@mandiant.com
-      - "@ramen0x3f"
-    lib: true
-    scope: basic block
+      - '@ramen0x3f'
+    lib: 'true'
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
       - Anti-Behavioral Analysis::Dynamic Analysis Evasion::Delayed Execution [B0003.003]
     references:

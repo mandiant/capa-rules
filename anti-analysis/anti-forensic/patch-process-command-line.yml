@@ -4,8 +4,10 @@ rule:
     namespace: anti-analysis/anti-forensic
     authors:
       - william.ballenthin@mandiant.com
-      - "@_re_fox"
-    scope: function
+      - '@_re_fox'
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Process Injection [T1055]
     mbc:
@@ -19,15 +21,6 @@ rule:
     - or:
       - and:
         - basic block:
-          # example:
-          #   mov     rbx, gs:60h
-          #   lea     r9, [rsp+4A0h+flOldProtect] ; lpflOldProtect
-          #   mov     edx, 8          ; dwSize
-          #   mov     rcx, [rbx+20h]
-          #   add     rcx, 70h ; 'p'  ; lpAddress
-          #   lea     r8d, [rdx-4]    ; flNewProtect
-          #   call    cs:VirtualProtect
-          #   test    eax, eax
           - and:
             - arch: amd64
             - characteristic: gs access
@@ -36,17 +29,3 @@ rule:
             - offset: 0x70 = PEB->ProcessParameters->CommandLine
             - api: VirtualProtect
         - count(api(VirtualProtect)): 2 or more
-      - and:
-        - characteristic: indirect call
-        - api: GetProcAddress
-        - string: "NtQueryInformationProcess"
-        - api: ReadProcessMemory
-        - or:
-          - and:
-            - arch: i386
-            - offset: 0x10 = PEB->ProcessParameters
-            - offset: 0x40 = PEB->ProcessParameters->CommandLine
-          - and:
-            - arch: amd64
-            - offset: 0x20 = PEB->ProcessParameters
-            - offset: 0x70 = PEB->ProcessParameters->CommandLine

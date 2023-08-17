@@ -4,7 +4,8 @@ rule:
     namespace: executable/pe/export
     authors:
       - ronnie.salomonsen@mandiant.com
-    scope: file
+    scopes:
+      static: file
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:

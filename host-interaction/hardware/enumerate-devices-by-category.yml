@@ -1,11 +1,11 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: enumerate devices by category
     namespace: host-interaction/hardware
     authors:
-      - "@mr-tz"
-    scope: function
+      - '@mr-tz'
+    scopes:
+      static: function
     references:
       - https://learn.microsoft.com/en-us/windows/win32/api/strmif/nf-strmif-icreatedevenum-createclassenumerator
     examples:

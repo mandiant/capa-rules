@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - michael.hunhoff@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:
@@ -15,8 +17,8 @@ rule:
       - al-khaser_x86.exe_
   features:
     - or:
-      - string: /^Xen/i
-      - string: /XenVMMXenVMM/i
-      - string: /xenservice.exe/i
-      - string: /XenVMMXenVMM/i
-      - string: /HVM domU/i
+      - string: "/^Xen/i"
+      - string: "/XenVMMXenVMM/i"
+      - string: "/xenservice.exe/i"
+      - string: "/XenVMMXenVMM/i"
+      - string: "/HVM domU/i"

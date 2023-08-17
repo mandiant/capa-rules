@@ -4,7 +4,8 @@ rule:
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Anti-debugging Instructions [B0001.034]
     examples:
