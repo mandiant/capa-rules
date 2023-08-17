@@ -19,5 +19,5 @@ rule:
     - and:
       - api: RegOpenKeyEx
       - api: RegEnumValue
-      - substring: "\\Microsoft\\Windows\\CurrentVersion\\RunOnce"
+      - substring: \Microsoft\Windows\CurrentVersion\RunOnce
       - string: /wmic useraccount where \"name='WDAGUtilityAccount'\"/i

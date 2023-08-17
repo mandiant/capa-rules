@@ -16,5 +16,5 @@ rule:
       - os: linux
       - match: host-interaction/file-system/write
       - or:
-        - string: "/\\/\\.config\\/autostart\\/.+\\.desktop/"
+        - string: /\/\.config\/autostart\/.+\.desktop/
         - substring: "/etc/xdg/autostart"

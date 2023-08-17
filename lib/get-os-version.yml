@@ -20,3 +20,18 @@ rule:
       - api: VerSetConditionMask
       - api: RtlGetNtVersionNumbers
       - api: GetProductInfo
+      - and:
+        - match: PEB access
+        - or:
+          - and:
+            - arch: i386
+            - or:
+              - offset: 0xA4 = PEB->OSMajorVersion
+              - offset: 0xA8 = PEB->OSMinorVersion
+              - offset: 0xAC = PEB->OSBuildNumber
+          - and:
+            - arch: amd64
+            - or:
+              - offset: 0x118 = PEB->OSMajorVersion
+              - offset: 0x11C = PEB->OSMinorVersion
+              - offset: 0x120 = PEB->OSBuildNumber

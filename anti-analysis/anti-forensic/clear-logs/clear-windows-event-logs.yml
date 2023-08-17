@@ -26,7 +26,7 @@ rule:
         - or:
           - basic block:
             - and:
-              - string: "/wevtutil(\\.exe)?\\s+(clear-log|cl)/i"
+              - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i
           - thread:
             - and:
-              - string: "/wevtutil(\\.exe)?\\s+(clear-log|cl)/i"
+              - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i

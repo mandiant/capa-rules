@@ -16,7 +16,7 @@ rule:
   features:
     - and:
       - string: "winver.exe"
-      - string: "WinSta0\\Default"
+      - string: WinSta0\Default
       - string: "taskmgr.exe"
       - api: WaitForDebugEvent
       - api: ContinueDebugEvent

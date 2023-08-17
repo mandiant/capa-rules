@@ -14,8 +14,8 @@ rule:
   features:
     - and:
       - match: host-interaction/process/create
-      - string: "/at(|\\.exe)/i"
+      - string: /at(|\.exe)/i
       - or:
         - string: "//every:/i"
         - string: "//next:/i"
-        - string: "/\\d:\\d/i"
+        - string: /\d:\d/i

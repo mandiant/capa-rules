@@ -22,5 +22,5 @@ rule:
         - api: GetPrivateProfileSection
         - api: GetPrivateProfileSectionNames
       - optional:
-        - string: "/\\.ini/i"
+        - string: /\.ini/i
         - api: GetFullPathName

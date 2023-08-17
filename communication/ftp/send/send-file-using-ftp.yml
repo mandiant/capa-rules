@@ -23,3 +23,7 @@ rule:
             - and:
               - api: wininet.InternetConnect
               - number: 0x15 = IPPORT_FTP
+      - and:
+        - api: System.Net.WebRequest::Create
+        - string: "STOR"
+        - property/write: System.Net.WebRequest::Method

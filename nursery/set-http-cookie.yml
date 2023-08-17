@@ -15,3 +15,4 @@ rule:
   features:
     - or:
       - api: System.Net.CookieContainer::SetCookies
+      - property/write: System.Net.HttpWebRequest::CookieContainer

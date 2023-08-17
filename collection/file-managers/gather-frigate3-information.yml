@@ -16,4 +16,4 @@ rule:
   features:
     - and:
       - substring: "FtpSite.xml"
-      - substring: "\\Frigate3"
+      - substring: \Frigate3

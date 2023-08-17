@@ -24,3 +24,18 @@ rule:
       - api: System.Convert::ToBase64String
       - api: System.Convert::ToBase64CharArray
       - api: System.Convert::TryToBase64Chars
+      - and:
+        - mnemonic: shl
+        - mnemonic: shr
+        - number: 0x3F = modulo 64
+        - or:
+          - number: 0x3D = '='
+          - number: 0x3D3D = '=='
+        - match: contain loop
+        - optional:
+          - number: 2
+          - number: 3
+          - number: 4
+          - number: 6
+          - number: 0xF
+          - string: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"

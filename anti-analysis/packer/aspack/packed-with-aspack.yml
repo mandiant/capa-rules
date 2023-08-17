@@ -20,3 +20,7 @@ rule:
     - or:
       - string: "The procedure entry point %s could not be located in the dynamic link library %s"
       - string: "The ordinal %u could not be located in the dynamic link library %s"
+      - section: .aspack
+      - section: .adata
+      - section: .ASPack
+      - section: ASPack

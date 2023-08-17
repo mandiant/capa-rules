@@ -23,12 +23,12 @@ rule:
         - number: 0x80000002 = HKEY_LOCAL_MACHINE
       - or:
         - and:
-          - string: "/Software\\\\Microsoft\\\\Windows\\\\CurrentVersion/i"
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion/i
           - or:
             - string: "/Run/i"
-            - string: "/Explorer\\\\Shell Folders/i"
+            - string: /Explorer\\Shell Folders/i
             - string: "/User Shell Folders/i"
             - string: "/RunServices/i"
-            - string: "/Policies\\\\Explorer\\\\Run/i"
-        - string: "/Software\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Windows\\\\load/i"
-        - string: "/System\\\\CurrentControlSet\\\\Control\\\\Session Manager\\\\BootExecute/i"
+            - string: /Policies\\Explorer\\Run/i
+        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\load/i
+        - string: /System\\CurrentControlSet\\Control\\Session Manager\\BootExecute/i

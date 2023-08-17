@@ -15,5 +15,5 @@ rule:
       - string: "SCRNSAVE.EXE"
       - optional:
         - string: "ScreenSaveTimeOut"
-        - string: "Control Panel\\Desktop"
+        - string: Control Panel\Desktop
         - match: set registry value

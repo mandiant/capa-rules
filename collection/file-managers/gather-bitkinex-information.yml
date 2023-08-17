@@ -16,4 +16,4 @@ rule:
   features:
     - and:
       - substring: "bitkinex.ds"
-      - substring: "\\BitKinex"
+      - substring: \BitKinex

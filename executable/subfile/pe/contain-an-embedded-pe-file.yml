@@ -14,3 +14,4 @@ rule:
   features:
     - or:
       - count(string(This program cannot be run in DOS mode.)): 2 or more
+      - count(characteristic(embedded pe)): 1 or more

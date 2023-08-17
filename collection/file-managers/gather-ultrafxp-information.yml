@@ -14,4 +14,4 @@ rule:
   features:
     - and:
       - substring: "UltraFXP"
-      - substring: "\\sites.xml"
+      - substring: \sites.xml

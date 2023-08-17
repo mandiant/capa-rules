@@ -17,5 +17,5 @@ rule:
     - or:
       - and:
         - string: "wextract_cleanup%d"
-        - string: "Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce"
+        - string: Software\Microsoft\Windows\CurrentVersion\RunOnce
       - string: "  <description>IExpress extraction tool</description>"

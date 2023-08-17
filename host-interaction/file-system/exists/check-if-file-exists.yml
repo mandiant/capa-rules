@@ -30,3 +30,4 @@ rule:
             - number: 2 = ERROR_FILE_NOT_FOUND
       - api: shlwapi.PathFileExists
       - api: System.IO.File::Exists
+      - property/read: System.IO.FileSystemInfo::Exists

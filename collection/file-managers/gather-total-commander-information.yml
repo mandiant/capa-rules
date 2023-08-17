@@ -16,10 +16,10 @@ rule:
   features:
     - and:
       - or:
-        - substring: "Software\\Ghisler\\Total Commander"
-        - substring: "Software\\Ghisler\\Windows Commander"
+        - substring: Software\Ghisler\Total Commander
+        - substring: Software\Ghisler\Windows Commander
       - or:
         - string: "FtpIniName"
         - string: "wcx_ftp.ini"
         - string: "InstallDir"
-        - substring: "\\GHISLER"
+        - substring: \GHISLER

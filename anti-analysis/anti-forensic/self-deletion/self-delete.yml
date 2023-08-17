@@ -20,10 +20,10 @@ rule:
         - string: "cmd.exe"
         - match: host-interaction/process/create
       - or:
-        - string: "/\\/c\\s*del\\s*/"
+        - string: /\/c\s*del\s*/
           description: /c del
-        - string: "/del\\s*\\S/"
+        - string: /del\s*\S/
           description: del "%s"
       - optional:
-        - string: "/\\s*>\\s*nul\\s*/i"
+        - string: /\s*>\s*nul\s*/i
           description: '> nul'

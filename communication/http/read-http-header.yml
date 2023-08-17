@@ -15,3 +15,4 @@ rule:
   features:
     - or:
       - api: winhttp.WinHttpQueryHeaders
+      - property/read: System.Net.WebClient::Headers

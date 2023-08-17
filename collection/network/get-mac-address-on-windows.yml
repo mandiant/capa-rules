@@ -19,3 +19,20 @@ rule:
   features:
     - or:
       - api: System.Net.NetworkInformation.NetworkInterface::GetPhysicalAddress
+      - and:
+        - os: windows
+        - or:
+          - and:
+            - api: iphlpapi.GetAdaptersInfo
+            - or:
+              - offset: 0x194 = IP_ADAPTER_INFO.Address
+              - offset: 0x195 = IP_ADAPTER_INFO.Address+1
+              - offset: 0x196 = IP_ADAPTER_INFO.Address+2
+              - offset: 0x197 = IP_ADAPTER_INFO.Address+3
+              - offset: 0x198 = IP_ADAPTER_INFO.Address+4
+              - offset: 0x199 = IP_ADAPTER_INFO.Address+5
+            - optional:
+              - string: "%02X-%02X-%02X-%02X-%02X-%02X"
+          - and:
+            - api: iphlpapi.GetAdaptersAddresses
+            - offset: 0x2C = PhysicalAddress

@@ -16,7 +16,7 @@ rule:
   features:
     - and:
       - or:
-        - string: "/ iex\\(/i"
+        - string: / iex\(/i
         - string: "/ iex /i"
         - string: "/Invoke-Expression/i"
         - api: System.Management.Automation.PowerShell::Create

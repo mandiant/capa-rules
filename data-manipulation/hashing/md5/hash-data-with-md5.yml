@@ -36,3 +36,27 @@ rule:
           - and:
             - number: 0x8003 = CALG_MD5
             - api: advapi32.CryptCreateHash
+      - and:
+        - description: magic initialization constants from MD4 and MD5
+        - number: 0x67452301 = A, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - number: 0xefcdab89 = B, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - number: 0x98badcfe = C, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - number: 0x10325476 = D, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - not:
+          - number: 0xc3d2e1f0 = likely SHA1 but also used in RIPEMD-160 and RIPEMD-320
+        - optional:
+          - description: specific compilation from https://github.com/rwfpl/rewolf-x86-virtualizer/blob/master/src/test_app/main.cpp
+          - and:
+            - offset: -680876936
+            - offset: -389564586
+      - basic block:
+        - and:
+          - number: 0x8003 = CALG_MD5
+          - api: advapi32.CryptCreateHash
+      - and:
+        - format: dotnet
+        - or:
+          - api: System.Security.Cryptography.MD5::Create
+          - api: System.Security.Cryptography.MD5CryptoServiceProvider::ctor
+        - optional:
+          - api: System.Security.Cryptography.HashAlgorithm::ComputeHash

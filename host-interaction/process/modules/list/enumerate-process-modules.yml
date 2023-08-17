@@ -46,3 +46,17 @@ rule:
                   - number: 0x10 = TH32CS_SNAPMODULE32
                   - number: 0x18 = TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32
                 - api: kernel32.CreateToolhelp32Snapshot
+      - and:
+        - api: kernel32.Module32First
+        - api: kernel32.Module32Next
+        - optional:
+          - basic block:
+            - and:
+              - or:
+                - number: 0x8 = TH32CS_SNAPMODULE
+                - number: 0x10 = TH32CS_SNAPMODULE32
+                - number: 0x18 = TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32
+              - api: kernel32.CreateToolhelp32Snapshot
+      - and:
+        - property/read: System.Diagnostics.Process::Modules
+        - property/read: System.Diagnostics.ProcessModuleCollection::Item

@@ -16,4 +16,4 @@ rule:
   features:
     - and:
       - string: "NDSites.ini"
-      - substring: "\\NetDrive"
+      - substring: \NetDrive

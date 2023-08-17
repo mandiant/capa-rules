@@ -17,7 +17,7 @@ rule:
       - and:
         - string: "/nltest/i"
         - or:
-          - string: "/\\/domain_trusts/i"
-          - string: "/\\/dclist/i"
-          - string: "/\\/all_trusts/i"
+          - string: /\/domain_trusts/i
+          - string: /\/dclist/i
+          - string: /\/all_trusts/i
       - api: DsEnumerateDomainTrusts

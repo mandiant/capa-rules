@@ -12,4 +12,4 @@ rule:
   features:
     - and:
       - os: windows
-      - string: "/wbadmin(\\.exe)?\\s+delete\\s+catalog/i"
+      - string: /wbadmin(\.exe)?\s+delete\s+catalog/i

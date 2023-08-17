@@ -31,9 +31,9 @@ rule:
           description: Satan Username Check
         - string: "/MALWARE/i"
           description: Betabot Username Check
-        - string: "/SAND\\s?BOX/i"
+        - string: /SAND\s?BOX/i
           description: Betabot Username Check
-        - string: "/Test\\sUser/i"
+        - string: /Test\sUser/i
           description: Betabot Username Check
         - string: "/CurrentUser/i"
           description: Gookit Username Check
@@ -41,7 +41,7 @@ rule:
           description: Gookit Username Check
         - string: "/FORTINET/i"
           description: Shifu Username Check
-        - string: "/John\\s?Doe/i"
+        - string: /John\s?Doe/i
           description: Emotet Username Check
         - string: "/Emily/i"
           description: Trickbot Downloader Username Check
@@ -49,7 +49,7 @@ rule:
           description: Trickbot Downloader Username Check
         - string: "/HAPUBWS/i"
           description: Trickbot Downloader Username Check
-        - string: "/Hong\\sLee/i"
+        - string: /Hong\sLee/i
           description: Trickbot Downloader Username Check
         - string: "/IT-ADMIN/i"
           description: Trickbot Downloader Username Check
@@ -61,7 +61,7 @@ rule:
           description: Trickbot Downloader Username Check
         - string: "/MUELLER(-PC)?/i"
           description: Trickbot Downloader Username Check
-        - string: "/Peter\\sWilson/i"
+        - string: /Peter\sWilson/i
           description: Trickbot Downloader Username Check
         - string: "/SystemIT/i"
           description: Trickbot Downloader Username Check

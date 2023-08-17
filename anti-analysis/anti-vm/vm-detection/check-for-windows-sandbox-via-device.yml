@@ -18,4 +18,4 @@ rule:
   features:
     - and:
       - match: create or open file
-      - string: "\\\\.\\GLOBALROOT\\device\\vmsmb"
+      - string: \\.\GLOBALROOT\device\vmsmb

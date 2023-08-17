@@ -14,4 +14,4 @@ rule:
   features:
     - and:
       - match: host-interaction/process/create
-      - string: "/^bcdedit(\\.exe)? -set TESTSIGNING ON/i"
+      - string: /^bcdedit(\.exe)? -set TESTSIGNING ON/i

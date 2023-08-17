@@ -22,4 +22,4 @@ rule:
       - string: "Unable to dump stack trace: {s}"
       - string: "std.mem.Allocator.alloc"
       - string: "_std.os.getenv"
-      - string: "\\\\.\\pipe\\zig-childprocess-{d}-{d}"
+      - string: \\.\pipe\zig-childprocess-{d}-{d}

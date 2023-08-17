@@ -16,13 +16,13 @@ rule:
   features:
     - or:
       - and:
-        - substring: "\\sitemanager.xml"
-        - substring: "\\recentservers.xml"
-        - substring: "\\filezilla.xml"
+        - substring: \sitemanager.xml
+        - substring: \recentservers.xml
+        - substring: \filezilla.xml
       - and:
-        - substring: "Software\\FileZilla"
+        - substring: Software\FileZilla
         - string: "Install_Dir"
-        - substring: "Software\\FileZilla Client"
+        - substring: Software\FileZilla Client
       - 3 or more:
         - string: "Server Type"
         - string: "Remote Dir"

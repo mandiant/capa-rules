@@ -27,3 +27,10 @@ rule:
             - api: RegisterServiceCtrlHandlerEx
             - api: StartServiceCtrlDispatcher
             - api: System.ServiceProcess.ServiceBase::Run
+      - export: ServiceMain
+      - function:
+        - or:
+          - api: RegisterServiceCtrlHandler
+          - api: RegisterServiceCtrlHandlerEx
+          - api: StartServiceCtrlDispatcher
+          - api: System.ServiceProcess.ServiceBase::Run

@@ -15,4 +15,4 @@ rule:
     - or:
       - and:
         - string: "NovaFTP.db"
-        - substring: "\\INSoftware\\NovaFTP"
+        - substring: \INSoftware\NovaFTP

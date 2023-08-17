@@ -16,9 +16,9 @@ rule:
   features:
     - or:
       - and:
-        - substring: "SOFTWARE\\Robo-FTP"
+        - substring: SOFTWARE\Robo-FTP
         - or:
-          - substring: "\\FTPServers"
+          - substring: \FTPServers
           - substring: "FTP File"
           - string: "FTP Count"
       - and:

@@ -12,4 +12,4 @@ rule:
   features:
     - or:
       - substring: "cpp-httplib/"
-      - string: "/\\(HTTP\\/1\\\\\\.\\[01\\]\\) \\(\\\\d/"
+      - string: /\(HTTP\/1\\\.\[01\]\) \(\\d/

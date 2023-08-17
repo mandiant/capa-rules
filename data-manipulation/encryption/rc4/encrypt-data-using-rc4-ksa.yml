@@ -29,3 +29,27 @@ rule:
             - mnemonic: add
             - mnemonic: sub
           - number: 0x04040404
+      - and:
+        - basic block:
+          - and:
+            - description: initialize S
+            - characteristic: tight loop
+            - or:
+              - number: 0xFF
+              - number: 0x100
+        - or:
+          - description: modulo 256
+          - match: calculate modulo 256 via x86 assembly
+          - basic block:
+            - and:
+              - description: modulo via zero-extended mov from 8-bit register
+              - count(mnemonic(movzx)): 2 or more
+              - not:
+                - or:
+                  - mnemonic: shl
+                  - mnemonic: rol
+                  - characteristic: nzxor
+        - or:
+          - description: modulo key length
+          - mnemonic: div
+          - mnemonic: idiv

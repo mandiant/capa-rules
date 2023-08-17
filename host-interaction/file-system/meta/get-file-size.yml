@@ -18,3 +18,4 @@ rule:
     - or:
       - api: kernel32.GetFileSize
       - api: kernel32.GetFileSizeEx
+      - property/read: System.IO.FileInfo::Length

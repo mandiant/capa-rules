@@ -33,10 +33,10 @@ rule:
         - match: host-interaction/process/create
         - or:
           - and:
-            - string: "/^sc(|\\.exe)$/i"
+            - string: /^sc(|\.exe)$/i
             - string: "/create /i"
-          - string: "/^sc(|\\.exe) create/i"
+          - string: /^sc(|\.exe) create/i
           - string: "/New-Service /i"
       - and:
         - match: set registry value
-        - string: "/System\\\\(CurrentControlSet|ControlSet001)\\\\Services/i"
+        - string: /System\\(CurrentControlSet|ControlSet001)\\Services/i

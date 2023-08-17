@@ -17,7 +17,7 @@ rule:
       - and:
         - os: windows
         - match: query or enumerate registry value
-        - string: "/Hardware\\\\Description\\\\System\\\\CentralProcessor/i"
+        - string: /Hardware\\Description\\System\\CentralProcessor/i
       - and:
         - os: linux
         - match: host-interaction/file-system/read

@@ -22,4 +22,4 @@ rule:
         - string: "LastAddress"
         - string: "LastUser"
         - string: "LastPort"
-        - substring: "Software\\FlashPeak\\BlazeFtp\\Settings"
+        - substring: Software\FlashPeak\BlazeFtp\Settings

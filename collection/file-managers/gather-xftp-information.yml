@@ -16,4 +16,4 @@ rule:
   features:
     - and:
       - string: ".xfp"
-      - substring: "\\NetSarang"
+      - substring: \NetSarang

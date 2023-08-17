@@ -23,3 +23,4 @@ rule:
           - api: ws2_32.socket
           - api: ws2_32.WSASocket
           - api: socket
+      - property/read: System.Net.Sockets.TcpClient::Client

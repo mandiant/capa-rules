@@ -29,3 +29,17 @@ rule:
             - offset: 0x70 = PEB->ProcessParameters->CommandLine
             - api: VirtualProtect
         - count(api(VirtualProtect)): 2 or more
+      - and:
+        - characteristic: indirect call
+        - api: GetProcAddress
+        - string: "NtQueryInformationProcess"
+        - api: ReadProcessMemory
+        - or:
+          - and:
+            - arch: i386
+            - offset: 0x10 = PEB->ProcessParameters
+            - offset: 0x40 = PEB->ProcessParameters->CommandLine
+          - and:
+            - arch: amd64
+            - offset: 0x20 = PEB->ProcessParameters
+            - offset: 0x70 = PEB->ProcessParameters->CommandLine

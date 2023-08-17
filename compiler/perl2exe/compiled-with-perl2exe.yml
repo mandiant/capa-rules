@@ -13,7 +13,7 @@ rule:
     - and:
       - api: LoadLibrary
       - api: FreeLibrary
-      - string: "/^p2x[a-z0-9]{1,10}\\.dll/i"
+      - string: /^p2x[a-z0-9]{1,10}\.dll/i
       - or:
         - basic block:
           - and:

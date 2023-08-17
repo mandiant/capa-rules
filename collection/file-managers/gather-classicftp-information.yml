@@ -15,4 +15,4 @@ rule:
       - 5a2f620f29ca2f44fc22df67b674198f:0x40735E
   features:
     - or:
-      - substring: "Software\\NCH Software\\ClassicFTP\\FTPAccounts"
+      - substring: Software\NCH Software\ClassicFTP\FTPAccounts

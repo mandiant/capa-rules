@@ -16,8 +16,8 @@ rule:
       - 5a2f620f29ca2f44fc22df67b674198f:0x40531A
   features:
     - and:
-      - substring: "\\sm.dat"
+      - substring: \sm.dat
       - or:
-        - string: "/\\\\GlobalSCAPE\\\\CuteFTP/i"
-        - string: "/\\\\GlobalSCAPE\\\\CuteFTP Pro/i"
-        - substring: "\\CuteFTP"
+        - string: /\\GlobalSCAPE\\CuteFTP/i
+        - string: /\\GlobalSCAPE\\CuteFTP Pro/i
+        - substring: \CuteFTP

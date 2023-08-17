@@ -13,5 +13,5 @@ rule:
       - 70FD3347786ED7A4A43910E6778EF296
   features:
     - and:
-      - string: "/^Inno Setup Setup Data \\(/"
-      - string: "/^Inno Setup Messages \\(/"
+      - string: /^Inno Setup Setup Data \(/
+      - string: /^Inno Setup Messages \(/

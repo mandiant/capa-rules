@@ -16,7 +16,7 @@ rule:
   features:
     - or:
       - and:
-        - substring: "\\SmartFTP"
+        - substring: \SmartFTP
         - string: ".xml"
-        - string: "/Favorites\\.dat/i"
-        - string: "/History\\.dat/i"
+        - string: /Favorites\.dat/i
+        - string: /History\.dat/i

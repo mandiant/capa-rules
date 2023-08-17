@@ -23,3 +23,4 @@ rule:
       - number: 1 = ProhibitDynamicCode
       - or:
         - number: 8 = ProcessDynamicCodePolicy
+        - offset: 4

@@ -19,3 +19,4 @@ rule:
       - number: 0x040031415352 = RSA1 bitlen 1024
       - number: 0x080031415352 = RSA1 bitlen 2048
       - number: 0x100031415352 = RSA1 bitlen 4096
+      - bytes: 06 02 00 00 00 A4 00 00 52 53 41 31

@@ -22,5 +22,5 @@ rule:
       - and:
         - string: "wiseftpsrvs.bin"
         - or:
-          - substring: "\\AceBIT"
-          - substring: "Software\\AceBIT"
+          - substring: \AceBIT
+          - substring: Software\AceBIT

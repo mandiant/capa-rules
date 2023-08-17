@@ -37,3 +37,5 @@ rule:
       - api: shell32.SHGetSpecialFolderLocation
       - api: System.IO.Directory::GetCurrentDirectory
       - api: System.Environment::GetFolderPath
+      - property/read: System.Environment::SystemDirectory
+      - property/read: System.Environment::CurrentDirectory

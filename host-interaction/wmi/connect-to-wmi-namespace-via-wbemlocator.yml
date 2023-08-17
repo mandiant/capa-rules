@@ -26,5 +26,5 @@ rule:
           - arch: amd64
           - offset: 0x18 = ppv->ConnectServer
       - optional:
-        - string: "/ROOT\\\\CIMV2/i"
-        - string: "/ROOT\\\\DEFAULT/i"
+        - string: /ROOT\\CIMV2/i
+        - string: /ROOT\\DEFAULT/i

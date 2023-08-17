@@ -9,5 +9,5 @@ rule:
       dynamic: file
   features:
     - or:
-      - string: "\\\\.\\PhysicalDrive0"
-      - string: "\\\\.\\C:"
+      - string: \\.\PhysicalDrive0
+      - string: '\\.\C:'

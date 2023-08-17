@@ -18,9 +18,9 @@ rule:
       - and:
         - substring: "profiles.xml"
         - or:
-          - substring: "Software\\FTP Explorer\\FTP Explorer\\Workspace\\MFCToolBar-224"
-          - substring: "Software\\FTP Explorer\\Profiles"
-          - substring: "\\FTP Explorer"
+          - substring: Software\FTP Explorer\FTP Explorer\Workspace\MFCToolBar-224
+          - substring: Software\FTP Explorer\Profiles
+          - substring: \FTP Explorer
       - and:
         - string: "Password"
         - string: "Host"

@@ -20,8 +20,8 @@ rule:
         - string: "sites.ini"
       - and:
         - or:
-          - substring: "SOFTWARE\\LeapWare"
-          - substring: "\\LeapWare\\LeapFTP"
+          - substring: SOFTWARE\LeapWare
+          - substring: \LeapWare\LeapFTP
         - 2 or more:
           - string: "sites.dat"
           - string: "sites.ini"

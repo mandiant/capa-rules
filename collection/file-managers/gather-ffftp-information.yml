@@ -17,8 +17,8 @@ rule:
     - or:
       - and:
         - or:
-          - substring: "Software\\Sota\\FFFTP\\Options"
-          - substring: "Software\\Sota\\FFFTP"
+          - substring: Software\Sota\FFFTP\Options
+          - substring: Software\Sota\FFFTP
         - or:
           - substring: "CredentialSalt"
           - substring: "CredentialCheck"

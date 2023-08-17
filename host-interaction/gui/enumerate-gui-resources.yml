@@ -21,3 +21,4 @@ rule:
       - api: EnumWindowStations
       - api: EnumDesktops
       - api: EnumWindows
+      - property/read: System.Windows.Forms.Screen::AllScreens

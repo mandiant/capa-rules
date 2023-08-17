@@ -12,3 +12,4 @@ rule:
     - or:
       - match: unmanaged call via dynamic PInvoke in .NET
       - api: System.Runtime.InteropServices.Marshal::GetDelegateForFunctionPointer
+      - characteristic: unmanaged call

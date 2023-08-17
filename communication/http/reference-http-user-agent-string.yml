@@ -19,3 +19,4 @@ rule:
       - substring: "Mozilla/5.0"
       - substring: "like Gecko"
       - api: urlmon.ObtainUserAgentString
+      - property/read: System.Net.HttpWebRequest::UserAgent

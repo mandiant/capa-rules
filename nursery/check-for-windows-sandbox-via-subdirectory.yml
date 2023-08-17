@@ -18,4 +18,4 @@ rule:
       - or:
         - match: create or open file
         - api: GetFileAttributes
-      - string: "C:\\INTERNAL\\__empty"
+      - string: C:\INTERNAL\__empty

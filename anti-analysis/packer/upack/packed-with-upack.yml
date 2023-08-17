@@ -18,3 +18,5 @@ rule:
   features:
     - or:
       - string: "UpackByDwing@"
+      - section: .Upack
+      - section: .ByDwing

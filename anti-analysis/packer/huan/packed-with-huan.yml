@@ -24,3 +24,4 @@ rule:
       - string: "[!] No Relocation Table and Cannot load to the preferable address"
       - string: "[+] All headers are copied"
       - string: "[+] All sections are copied"
+      - section: .huan

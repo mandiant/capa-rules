@@ -10,4 +10,4 @@ rule:
     examples:
       - 464EF2CA59782CE697BC329713698CCC
   features:
-    - string: "/:\\\\.*\\.pdb/"
+    - string: /:\\.*\.pdb/
