@@ -3,7 +3,7 @@ rule:
     name: execute via asynchronous task in .NET
     namespace: host-interaction/thread/task
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

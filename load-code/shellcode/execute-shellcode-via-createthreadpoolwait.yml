@@ -3,7 +3,7 @@ rule:
     name: execute shellcode via CreateThreadpoolWait
     namespace: load-code/shellcode
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: function
       dynamic: process

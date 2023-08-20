@@ -3,7 +3,7 @@ rule:
     name: persist via AppInit_DLLs registry key
     namespace: persistence/registry/appinitdlls
     authors:
-      - michael.hunhoff@fireye.com
+      - "michael.hunhoff@fireye.com"
     scopes:
       static: function
       dynamic: process
@@ -21,7 +21,7 @@ rule:
       - or:
         - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
         - string: /Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
-      - string: "/AppInit_DLLs/i"
+      - string: /AppInit_DLLs/i
       - optional:
-        - string: "/LoadAppInit_DLLs/i"
+        - string: /LoadAppInit_DLLs/i
           description: enable AppInit DLLs feature

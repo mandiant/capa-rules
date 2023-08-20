@@ -3,7 +3,7 @@ rule:
     name: manually build AES constants
     namespace: data-manipulation/encryption/aes
     authors:
-      - huynh.t.nhan@gmail.com
+      - "huynh.t.nhan@gmail.com"
     scopes:
       static: function
     att&ck:

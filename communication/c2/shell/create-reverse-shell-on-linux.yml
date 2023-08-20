@@ -3,7 +3,7 @@ rule:
     name: create reverse shell on Linux
     namespace: communication/c2/shell
     authors:
-      - joakim@intezer.com
+      - "joakim@intezer.com"
     scopes:
       static: function
       dynamic: process

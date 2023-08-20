@@ -3,7 +3,7 @@ rule:
     name: hash data using jshash
     namespace: data-manipulation/hashing/jshash
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
     mbc:

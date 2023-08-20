@@ -3,7 +3,7 @@ rule:
     name: persist via rc script
     namespace: persistence/service
     authors:
-      - joakim@intezer.com
+      - "joakim@intezer.com"
     scopes:
       static: function
       dynamic: process
@@ -16,5 +16,5 @@ rule:
       - os: linux
       - match: host-interaction/file-system/write
       - or:
-        - substring: "/etc/init.d/"
+        - substring: /etc/init.d/
         - string: /\/etc\/rc[0-9].d\//

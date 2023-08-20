@@ -3,8 +3,8 @@ rule:
     name: (internal) autohotkey file limitation
     namespace: internal/limitation/file
     authors:
-      - '@mr-tz'
-    description: 'This sample appears to be compiled with AutoHotkey.
+      - "@mr-tz"
+    description: This sample appears to be compiled with AutoHotkey.
 
 
       AutoHotkey is a free, open-source scripting language for Windows that allows users to easily create scripts.
@@ -15,7 +15,7 @@ rule:
 
       You may have to analyze the file manually, using a tool like the AutoIt decompiler MyAut2Exe.
 
-      '
+      
     scopes:
       static: file
       dynamic: file

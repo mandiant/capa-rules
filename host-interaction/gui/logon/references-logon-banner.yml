@@ -3,7 +3,7 @@ rule:
     name: references logon banner
     namespace: host-interaction/gui/logon
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
       dynamic: thread
@@ -11,7 +11,7 @@ rule:
       - c3341b7dfbb9d43bca8c812e07b4299f:0x4066FC
   features:
     - and:
-      - substring: \Microsoft\Windows\CurrentVersion\Policies\System
+      - substring: "\\Microsoft\\Windows\\CurrentVersion\\Policies\\System"
       - or:
         - substring: "LegalNoticeCaption"
         - substring: "LegalNoticeText"

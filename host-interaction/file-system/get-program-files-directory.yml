@@ -3,7 +3,7 @@ rule:
     name: get Program Files directory
     namespace: host-interaction/file-system
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

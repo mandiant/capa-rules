@@ -3,7 +3,7 @@ rule:
     name: power down monitor
     namespace: host-interaction/hardware/monitor
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

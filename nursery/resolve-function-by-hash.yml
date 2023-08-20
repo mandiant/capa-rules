@@ -3,7 +3,7 @@ rule:
     name: resolve function by hash
     namespace: linking/runtime-linking
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
       dynamic: process

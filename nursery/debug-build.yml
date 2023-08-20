@@ -3,7 +3,7 @@ rule:
     name: debug build
     namespace: executable/pe/debug
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
       dynamic: file

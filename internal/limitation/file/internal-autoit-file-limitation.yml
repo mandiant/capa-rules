@@ -3,8 +3,8 @@ rule:
     name: (internal) autoit file limitation
     namespace: internal/limitation/file
     authors:
-      - william.ballenthin@mandiant.com
-    description: 'This sample appears to be compiled with AutoIt.
+      - "william.ballenthin@mandiant.com"
+    description: This sample appears to be compiled with AutoIt.
 
 
       AutoIt is a freeware BASIC-like scripting language designed for automating the Windows GUI.
@@ -13,7 +13,7 @@ rule:
 
       You may have to analyze the file manually, using a tool like the AutoIt decompiler MyAut2Exe.
 
-      '
+      
     scopes:
       static: file
       dynamic: file

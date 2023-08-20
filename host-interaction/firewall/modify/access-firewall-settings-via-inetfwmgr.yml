@@ -3,7 +3,7 @@ rule:
     name: access firewall settings via INetFwMgr
     namespace: host-interaction/firewall/modify
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
     att&ck:

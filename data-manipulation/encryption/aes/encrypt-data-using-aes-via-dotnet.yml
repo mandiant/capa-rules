@@ -3,7 +3,7 @@ rule:
     name: encrypt data using AES via .NET
     namespace: data-manipulation/encryption/aes
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     att&ck:

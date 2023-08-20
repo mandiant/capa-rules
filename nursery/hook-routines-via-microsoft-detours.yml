@@ -2,7 +2,7 @@ rule:
   meta:
     name: hook routines via microsoft detours
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: find taskbar
     namespace: host-interaction/gui/taskbar/find
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process

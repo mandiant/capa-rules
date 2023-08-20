@@ -3,11 +3,11 @@ rule:
     name: make an HTTP request with a Cookie
     namespace: communication/http/client
     authors:
-      - anamaria.martinezgom@mandiant.com
+      - "anamaria.martinezgom@mandiant.com"
     scopes:
       static: function
       dynamic: process
   features:
     - and:
       - match: send HTTP request
-      - string: "/Cookie:/i"
+      - string: /Cookie:/i

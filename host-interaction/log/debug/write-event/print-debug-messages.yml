@@ -3,7 +3,7 @@ rule:
     name: print debug messages
     namespace: host-interaction/log/debug/write-event
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

@@ -3,8 +3,8 @@ rule:
     name: enumerate PE sections
     namespace: load-code/pe
     authors:
-      - '@Ana06'
-      - '@mr-tz'
+      - "@Ana06"
+      - "@mr-tz"
     scopes:
       static: function
     mbc:

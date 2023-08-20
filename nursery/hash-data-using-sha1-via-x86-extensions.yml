@@ -3,7 +3,7 @@ rule:
     name: hash data using sha1 via x86 extensions
     namespace: data-manipulation/hashing/sha1
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
   features:

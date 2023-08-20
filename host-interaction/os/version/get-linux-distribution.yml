@@ -3,7 +3,7 @@ rule:
     name: get Linux distribution
     namespace: host-interaction/os/version
     authors:
-      - joakim@intezer.com
+      - "joakim@intezer.com"
     scopes:
       static: function
       dynamic: process

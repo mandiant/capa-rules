@@ -3,8 +3,8 @@ rule:
     name: link many functions at runtime
     namespace: linking/runtime-linking
     authors:
-      - moritz.raabe@mandiant.com
-      - joakim@intezer.com
+      - "moritz.raabe@mandiant.com"
+      - "joakim@intezer.com"
     scopes:
       static: function
       dynamic: process

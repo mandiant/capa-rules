@@ -3,7 +3,7 @@ rule:
     name: migrate process to active window station
     namespace: host-interaction/gui/window-station
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     description: set process to the active window station so it can receive GUI events. commonly seen in keyloggers.
     scopes:
       static: function

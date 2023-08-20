@@ -3,8 +3,8 @@ rule:
     name: check mutex and exit
     namespace: host-interaction/mutex
     authors:
-      - '@_re_fox'
-      - moritz.raabe@mandiant.com
+      - "@_re_fox"
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process

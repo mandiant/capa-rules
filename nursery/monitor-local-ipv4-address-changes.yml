@@ -3,7 +3,7 @@ rule:
     name: monitor local IPv4 address changes
     namespace: host-interaction/network/address
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

@@ -3,7 +3,7 @@ rule:
     name: manipulate console window
     namespace: host-interaction/console
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

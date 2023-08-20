@@ -3,8 +3,8 @@ rule:
     name: decode data using Base64 via dword translation table
     namespace: data-manipulation/encoding/base64
     authors:
-      - gilbert.elliot@mandiant.com
-      - sara.rincon@mandiant.com
+      - "gilbert.elliot@mandiant.com"
+      - "sara.rincon@mandiant.com"
     scopes:
       static: function
     att&ck:

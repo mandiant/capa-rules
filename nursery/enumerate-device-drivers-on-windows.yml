@@ -3,7 +3,7 @@ rule:
     name: enumerate device drivers on Windows
     namespace: collection
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
       dynamic: process
@@ -14,7 +14,7 @@ rule:
   features:
     - or:
       - api: EnumDeviceDrivers
-      - string: "/driverquery(.exe)?/i"
+      - string: /driverquery(.exe)?/i
       - and:
         - or:
           - match: query or enumerate registry key

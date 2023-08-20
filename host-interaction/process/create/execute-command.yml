@@ -3,7 +3,7 @@ rule:
     name: execute command
     namespace: host-interaction/process/create
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
       dynamic: process

@@ -3,8 +3,8 @@ rule:
     name: compiled with nuitka
     namespace: compiler/nuitka
     authors:
-      - '@williballenthin'
-      - '@mr-tz'
+      - "@williballenthin"
+      - "@mr-tz"
     scopes:
       static: file
       dynamic: file

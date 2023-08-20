@@ -3,7 +3,7 @@ rule:
     name: manipulate boot configuration
     namespace: host-interaction/bootloader
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
       dynamic: process
@@ -14,15 +14,15 @@ rule:
   features:
     - or:
       - and:
-        - string: "/bcdedit.exe/i"
+        - string: /bcdedit.exe/i
         - optional:
           - string: "/deletevalue safeboot"
       - and:
-        - string: "/boot.ini/i"
+        - string: /boot.ini/i
         - optional:
           - api: kernel32.GetPrivateProfileStringA
           - api: kernel32.WritePrivateProfileString
           - or:
-            - string: "/default/i"
-            - string: "/boot loader/i"
-            - string: "/operating systems/i"
+            - string: /default/i
+            - string: /boot loader/i
+            - string: /operating systems/i

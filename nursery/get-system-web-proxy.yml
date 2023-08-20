@@ -3,7 +3,7 @@ rule:
     name: get system web proxy
     namespace: communication/http
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

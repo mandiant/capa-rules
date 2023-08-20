@@ -3,7 +3,7 @@ rule:
     name: encrypt data using AES MixColumns step
     namespace: data-manipulation/encryption/aes
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
     att&ck:

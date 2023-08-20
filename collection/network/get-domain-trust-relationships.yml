@@ -3,7 +3,7 @@ rule:
     name: get domain trust relationships
     namespace: collection/network
     authors:
-      - johnk3r
+      - "johnk3r"
     scopes:
       static: function
       dynamic: process
@@ -15,7 +15,7 @@ rule:
   features:
     - or:
       - and:
-        - string: "/nltest/i"
+        - string: /nltest/i
         - or:
           - string: /\/domain_trusts/i
           - string: /\/dclist/i

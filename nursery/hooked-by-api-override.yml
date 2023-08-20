@@ -3,7 +3,7 @@ rule:
     name: hooked by API Override
     namespace: executable/hooked/api-override
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     references:

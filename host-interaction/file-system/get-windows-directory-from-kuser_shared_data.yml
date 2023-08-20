@@ -3,7 +3,7 @@ rule:
     name: get Windows directory from KUSER_SHARED_DATA
     namespace: host-interaction/file-system
     authors:
-      - david.cannings@pwc.com
+      - "david.cannings@pwc.com"
     scopes:
       static: basic block
       dynamic: thread

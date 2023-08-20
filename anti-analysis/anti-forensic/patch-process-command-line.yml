@@ -3,8 +3,8 @@ rule:
     name: patch process command line
     namespace: anti-analysis/anti-forensic
     authors:
-      - william.ballenthin@mandiant.com
-      - '@_re_fox'
+      - "william.ballenthin@mandiant.com"
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process

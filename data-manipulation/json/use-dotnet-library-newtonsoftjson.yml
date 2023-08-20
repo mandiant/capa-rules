@@ -3,7 +3,7 @@ rule:
     name: use .NET library Newtonsoft.Json
     namespace: data-manipulation/json
     authors:
-      - '@johnk3r'
+      - "@johnk3r"
     scopes:
       static: file
       dynamic: file

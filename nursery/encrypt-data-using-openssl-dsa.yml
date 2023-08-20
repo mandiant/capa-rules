@@ -3,7 +3,7 @@ rule:
     name: encrypt data using OpenSSL DSA
     namespace: data-manipulation/encryption/dsa
     authors:
-      - Ana06
+      - "Ana06"
     scopes:
       static: function
     references:

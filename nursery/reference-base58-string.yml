@@ -3,7 +3,7 @@ rule:
     name: reference Base58 string
     namespace: data-manipulation/encoding/base58
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     description: Similar to Base64, but modified to avoid both non-alphanumeric characters (+ and /) and letters that might look ambiguous when printed (0, I, O, and l). Base58 is used to represent bitcoin addresses.
     scopes:
       static: file
@@ -15,4 +15,4 @@ rule:
     references:
       - https://en.wikipedia.org/wiki/Binary-to-text_encoding#Base58
   features:
-    - string: "/123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz/"
+    - string: /123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz/

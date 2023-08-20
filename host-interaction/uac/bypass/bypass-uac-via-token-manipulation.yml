@@ -3,8 +3,8 @@ rule:
     name: bypass UAC via token manipulation
     namespace: host-interaction/uac/bypass
     authors:
-      - richard.cole@mandiant.com
-      - david.cannings@pwc.com
+      - "richard.cole@mandiant.com"
+      - "david.cannings@pwc.com"
     scopes:
       static: function
       dynamic: process

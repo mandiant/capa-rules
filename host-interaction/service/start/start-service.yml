@@ -3,7 +3,7 @@ rule:
     name: start service
     namespace: host-interaction/service/start
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: enable safe mode boot
     namespace: host-interaction/bootloader
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
     att&ck:

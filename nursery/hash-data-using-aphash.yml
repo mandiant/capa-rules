@@ -3,7 +3,7 @@ rule:
     name: hash data using aphash
     namespace: data-manipulation/hashing/aphash
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
     mbc:

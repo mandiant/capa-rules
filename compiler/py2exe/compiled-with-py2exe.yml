@@ -3,7 +3,7 @@ rule:
     name: compiled with py2exe
     namespace: compiler/py2exe
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
       dynamic: thread

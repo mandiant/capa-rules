@@ -3,8 +3,8 @@ rule:
     name: enumerate files recursively
     namespace: host-interaction/file-system/files/list
     authors:
-      - '@_re_fox'
-      - anushka.virgaonkar@mandiant.com
+      - "@_re_fox"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
     att&ck:

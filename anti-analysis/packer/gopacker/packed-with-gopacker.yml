@@ -3,7 +3,7 @@ rule:
     name: packed with GoPacker
     namespace: anti-analysis/packer/gopacker
     authors:
-      - jared.wilson@mandiant.com
+      - "jared.wilson@mandiant.com"
     description: The sample appears to be packed with GoPacker.
     scopes:
       static: file

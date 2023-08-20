@@ -3,7 +3,7 @@ rule:
     name: check for Windows sandbox via process name
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: create raw socket
     namespace: communication/socket
     authors:
-      - blas.kojusner@mandiant.com
+      - "blas.kojusner@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

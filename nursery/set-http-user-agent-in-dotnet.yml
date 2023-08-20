@@ -3,7 +3,7 @@ rule:
     name: set HTTP User-Agent in .NET
     namespace: communication/http
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
   features:

@@ -3,7 +3,7 @@ rule:
     name: attach user process memory
     namespace: host-interaction/process/inject
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

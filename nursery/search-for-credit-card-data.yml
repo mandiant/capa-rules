@@ -3,7 +3,7 @@ rule:
     name: search for credit card data
     namespace: collection/credit-card
     authors:
-      - matthew.williams@mandiant.com
+      - "matthew.williams@mandiant.com"
     scopes:
       static: function
       dynamic: process

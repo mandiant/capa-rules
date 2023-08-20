@@ -3,7 +3,7 @@ rule:
     name: load Diebold Nixdorf ATM library
     namespace: targeting/automated-teller-machine/diebold-nixdorf
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
       dynamic: file

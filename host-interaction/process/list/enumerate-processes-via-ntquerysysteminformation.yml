@@ -3,7 +3,7 @@ rule:
     name: enumerate processes via NtQuerySystemInformation
     namespace: host-interaction/process/list
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
       dynamic: thread

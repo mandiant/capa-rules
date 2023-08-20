@@ -3,7 +3,7 @@ rule:
     name: gather 3d-ftp information
     namespace: collection/file-managers
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process
@@ -18,4 +18,4 @@ rule:
       - string: "3D-FTP"
       - string: "sites.ini"
       - optional:
-        - substring: \SiteDesigner
+        - substring: "\\SiteDesigner"

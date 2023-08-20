@@ -3,7 +3,7 @@ rule:
     name: change the wallpaper
     namespace: host-interaction/gui/session
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
       dynamic: thread

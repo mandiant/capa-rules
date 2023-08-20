@@ -3,7 +3,7 @@ rule:
     name: compile Visual Basic in .NET
     namespace: load-code/dotnet/vb
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

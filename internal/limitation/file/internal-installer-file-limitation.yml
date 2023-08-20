@@ -3,15 +3,15 @@ rule:
     name: (internal) installer file limitation
     namespace: internal/limitation/file
     authors:
-      - william.ballenthin@mandiant.com
-    description: 'This sample appears to be an installer.
+      - "william.ballenthin@mandiant.com"
+    description: This sample appears to be an installer.
 
 
       capa cannot handle installers well. This means the results may be misleading or incomplete.
 
       You should try to understand the install mechanism and analyze created files with capa.
 
-      '
+      
     scopes:
       static: file
       dynamic: file

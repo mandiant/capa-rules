@@ -3,7 +3,7 @@ rule:
     name: encrypt data using RC4 with custom key via WinAPI
     namespace: data-manipulation/encryption/rc4
     authors:
-      - blaine.stancill@mandiant.com
+      - "blaine.stancill@mandiant.com"
     scopes:
       static: function
     att&ck:

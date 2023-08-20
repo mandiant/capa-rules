@@ -3,7 +3,7 @@ rule:
     name: enumerate devices by category
     namespace: host-interaction/hardware
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
     references:

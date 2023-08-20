@@ -3,7 +3,7 @@ rule:
     name: capture screenshot in Go
     namespace: collection/screenshot
     authors:
-      - joakim@intezer.com
+      - "joakim@intezer.com"
     description: Detects screenshot capability via WinAPI for Go files.
     scopes:
       static: file

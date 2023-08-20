@@ -3,7 +3,7 @@ rule:
     name: resolve function by djb2 hash
     namespace: linking/runtime-linking
     authors:
-      - still@teamt5.org
+      - "still@teamt5.org"
     description: known import name hashes calculated using the non-cryptographic djb2 hashing algorithm
     scopes:
       static: function

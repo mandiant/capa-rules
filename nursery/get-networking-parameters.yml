@@ -3,7 +3,7 @@ rule:
     name: get networking parameters
     namespace: host-interaction/network
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

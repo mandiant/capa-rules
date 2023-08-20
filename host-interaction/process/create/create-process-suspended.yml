@@ -3,7 +3,7 @@ rule:
     name: create process suspended
     namespace: host-interaction/process/create
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

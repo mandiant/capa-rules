@@ -3,7 +3,7 @@ rule:
     name: hash data using murmur2
     namespace: data-manipulation/hashing/murmur
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: instruction
     references:

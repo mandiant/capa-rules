@@ -3,8 +3,8 @@ rule:
     name: linked against OpenSSL
     namespace: linking/static/openssl
     authors:
-      - william.ballenthin@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "william.ballenthin@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: file
       dynamic: file

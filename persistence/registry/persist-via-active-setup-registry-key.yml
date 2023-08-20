@@ -3,7 +3,7 @@ rule:
     name: persist via Active Setup registry key
     namespace: persistence/registry
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process

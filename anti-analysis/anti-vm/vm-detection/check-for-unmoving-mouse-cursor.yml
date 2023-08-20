@@ -3,7 +3,7 @@ rule:
     name: check for unmoving mouse cursor
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - BitsOfBinary
+      - "BitsOfBinary"
     scopes:
       static: function
       dynamic: process

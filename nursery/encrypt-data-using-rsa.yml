@@ -3,7 +3,7 @@ rule:
     name: encrypt data using RSA
     namespace: data-manipulation/encryption/rsa
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

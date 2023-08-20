@@ -3,7 +3,7 @@ rule:
     name: encrypt data using HC-128 via WolfSSL
     namespace: data-manipulation/encryption/hc-128
     authors:
-      - blaine.stancill@mandiant.com
+      - "blaine.stancill@mandiant.com"
     scopes:
       static: basic block
     att&ck:

@@ -3,7 +3,7 @@ rule:
     name: packed with Epack
     namespace: anti-analysis/packer/epack
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     att&ck:

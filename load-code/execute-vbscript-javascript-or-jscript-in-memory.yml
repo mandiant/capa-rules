@@ -3,7 +3,7 @@ rule:
     name: execute VBScript Javascript or JScript in memory
     namespace: load-code
     authors:
-      - blas.kojusner@mandiant.com
+      - "blas.kojusner@mandiant.com"
     description: the sample may execute 32-bit VBScript, JavaScript, or JScript (32-bit)
     scopes:
       static: function

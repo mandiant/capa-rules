@@ -3,7 +3,7 @@ rule:
     name: read virtual disk
     namespace: host-interaction/file-system/read
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process

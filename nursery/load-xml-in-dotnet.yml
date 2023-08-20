@@ -3,7 +3,7 @@ rule:
     name: load XML in .NET
     namespace: data-manipulation/xml
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

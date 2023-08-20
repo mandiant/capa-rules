@@ -3,7 +3,7 @@ rule:
     name: hash data using MD4
     namespace: data-manipulation/hashing/md4
     authors:
-      - anamaria.martinezgom@mandiant.com
+      - "anamaria.martinezgom@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

@@ -3,7 +3,7 @@ rule:
     name: gather direct-ftp information
     namespace: collection/file-managers
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process
@@ -15,8 +15,8 @@ rule:
       - 5a2f620f29ca2f44fc22df67b674198f:0x40DC62
   features:
     - or:
-      - substring: Software\CoffeeCup Software\Internet\Profiles
-      - substring: \CoffeeCup Software
+      - substring: "Software\\CoffeeCup Software\\Internet\\Profiles"
+      - substring: "\\CoffeeCup Software"
       - and:
         - string: "Password"
         - string: "HostName"
@@ -24,8 +24,8 @@ rule:
         - string: "Username"
         - string: "HostDirName"
       - 2 or more:
-        - substring: \SharedSettings.ccs
-        - substring: \SharedSettings.sqlite
+        - substring: "\\SharedSettings.ccs"
+        - substring: "\\SharedSettings.sqlite"
         - string: /\\SharedSettings[0-9_\.]{2,7}\.ccs/
         - string: /\\SharedSettings[0-9_\.]{2,7}\.sqlite/
       - and:

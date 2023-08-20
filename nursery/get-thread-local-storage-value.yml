@@ -3,7 +3,7 @@ rule:
     name: get thread local storage value
     namespace: host-interaction/process
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

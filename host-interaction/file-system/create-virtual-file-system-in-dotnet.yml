@@ -3,7 +3,7 @@ rule:
     name: create virtual file system in .NET
     namespace: host-interaction/file-system
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: function
     att&ck:

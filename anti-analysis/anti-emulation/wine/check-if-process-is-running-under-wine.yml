@@ -3,7 +3,7 @@ rule:
     name: check if process is running under wine
     namespace: anti-analysis/anti-emulation/wine
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process

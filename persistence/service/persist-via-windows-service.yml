@@ -3,7 +3,7 @@ rule:
     name: persist via Windows service
     namespace: persistence/service
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process
@@ -34,9 +34,9 @@ rule:
         - or:
           - and:
             - string: /^sc(|\.exe)$/i
-            - string: "/create /i"
+            - string: /create /i
           - string: /^sc(|\.exe) create/i
-          - string: "/New-Service /i"
+          - string: /New-Service /i
       - and:
         - match: set registry value
         - string: /System\\(CurrentControlSet|ControlSet001)\\Services/i

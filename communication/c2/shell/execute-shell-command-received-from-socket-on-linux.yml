@@ -3,7 +3,7 @@ rule:
     name: execute shell command received from socket on Linux
     namespace: communication/c2/shell
     authors:
-      - joakim@intezer.com
+      - "joakim@intezer.com"
     scopes:
       static: function
       dynamic: process

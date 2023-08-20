@@ -3,7 +3,7 @@ rule:
     name: get memory information
     namespace: host-interaction/hardware/memory
     authors:
-      - joakim@intezer.com
+      - "joakim@intezer.com"
     scopes:
       static: function
       dynamic: process
@@ -22,4 +22,4 @@ rule:
         - api: system
         - or:
           - substring: "/proc/meminfo"
-          - string: "/^free/"
+          - string: /^free/

@@ -3,7 +3,7 @@ rule:
     name: query service configuration
     namespace: host-interaction/service
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: packed with peshield
     namespace: anti-analysis/packer/peshield
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: file
       dynamic: file

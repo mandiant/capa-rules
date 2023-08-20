@@ -3,7 +3,7 @@ rule:
     name: disable AppInit_DLLs code signature enforcement
     namespace: persistence/registry/appinitdlls
     authors:
-      - william.ballenthin@fireye.com
+      - "william.ballenthin@fireye.com"
     scopes:
       static: function
       dynamic: process
@@ -16,7 +16,7 @@ rule:
       - 58ADC2E97FBEE01B71073CCD7FF1B9A4:0x401350
   features:
     - and:
-      - string: "/RequireSignedAppInit_DLLs/i"
+      - string: /RequireSignedAppInit_DLLs/i
         description: disable DLL code signature enforcement
       - number: 0 = state disabled
       - or:

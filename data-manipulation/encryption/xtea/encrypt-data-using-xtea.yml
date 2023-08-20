@@ -3,7 +3,7 @@ rule:
     name: encrypt data using XTEA
     namespace: data-manipulation/encryption/xtea
     authors:
-      - raymond.leong@mandiant.com
+      - "raymond.leong@mandiant.com"
     scopes:
       static: function
     att&ck:

@@ -3,7 +3,7 @@ rule:
     name: gather flashfxp information
     namespace: collection/file-managers
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process
@@ -16,10 +16,10 @@ rule:
   features:
     - or:
       - and:
-        - substring: Software\FlashFXP
+        - substring: "Software\\FlashFXP"
         - substring: "DataFolder"
         - substring: "Install Path"
       - and:
-        - substring: \Sites.dat
-        - substring: \Quick.dat
-        - substring: \History.dat
+        - substring: "\\Sites.dat"
+        - substring: "\\Quick.dat"
+        - substring: "\\History.dat"

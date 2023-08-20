@@ -3,7 +3,7 @@ rule:
     name: encrypt or decrypt via WinCrypt
     namespace: data-manipulation/encryption
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process

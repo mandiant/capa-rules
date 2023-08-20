@@ -3,7 +3,7 @@ rule:
     name: encrypt or decrypt data via BCrypt
     namespace: data-manipulation/encryption
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

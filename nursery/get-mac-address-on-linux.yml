@@ -3,7 +3,7 @@ rule:
     name: get MAC address on Linux
     namespace: collection/network
     authors:
-      - joakim@intezer.com
+      - "joakim@intezer.com"
     scopes:
       static: function
       dynamic: process

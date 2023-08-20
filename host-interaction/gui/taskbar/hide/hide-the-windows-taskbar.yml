@@ -3,7 +3,7 @@ rule:
     name: hide the Windows taskbar
     namespace: host-interaction/gui/taskbar/hide
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

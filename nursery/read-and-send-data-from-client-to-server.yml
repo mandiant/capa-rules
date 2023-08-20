@@ -3,7 +3,7 @@ rule:
     name: read and send data from client to server
     namespace: communication/c2/file-transfer
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
       dynamic: process

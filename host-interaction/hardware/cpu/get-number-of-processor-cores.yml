@@ -3,7 +3,7 @@ rule:
     name: get number of processor cores
     namespace: host-interaction/hardware/cpu
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

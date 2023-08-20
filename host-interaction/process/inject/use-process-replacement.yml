@@ -3,7 +3,7 @@ rule:
     name: use process replacement
     namespace: host-interaction/process/inject
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
       dynamic: process

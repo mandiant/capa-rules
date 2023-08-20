@@ -3,7 +3,7 @@ rule:
     name: reference Hurricane Electric DNS server
     namespace: communication/dns
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
     references:

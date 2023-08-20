@@ -3,8 +3,8 @@ rule:
     name: inspect section memory permissions
     namespace: load-code/pe
     authors:
-      - '@Ana06'
-    description: translate section memory permissions (specified in the 'Characteristics' field of the image section header) into page protection constants
+      - "@Ana06"
+    description: translate section memory permissions (specified in the Characteristics field of the image section header) into page protection constants
     scopes:
       static: function
       dynamic: process

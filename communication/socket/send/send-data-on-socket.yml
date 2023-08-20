@@ -3,9 +3,9 @@ rule:
     name: send data on socket
     namespace: communication/socket/send
     authors:
-      - moritz.raabe@mandiant.com
-      - joakim@intezer.com
-      - anushka.virgaonkar@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "joakim@intezer.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

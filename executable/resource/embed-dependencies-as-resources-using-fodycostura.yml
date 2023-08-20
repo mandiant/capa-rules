@@ -3,8 +3,8 @@ rule:
     name: embed dependencies as resources using Fody/Costura
     namespace: executable/resource
     authors:
-      - '@johnk3r'
-      - '@mr-tz'
+      - "@johnk3r"
+      - "@mr-tz"
     scopes:
       static: file
       dynamic: file

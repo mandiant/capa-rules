@@ -3,7 +3,7 @@ rule:
     name: packed with kkrunchy
     namespace: anti-analysis/packer/kkrunchy
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: file
     att&ck:

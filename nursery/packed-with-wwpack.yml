@@ -3,7 +3,7 @@ rule:
     name: packed with WWPACK
     namespace: anti-analysis/packer/wwpack
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     att&ck:

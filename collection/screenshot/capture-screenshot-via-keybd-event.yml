@@ -3,7 +3,7 @@ rule:
     name: capture screenshot via keybd event
     namespace: collection/screenshot
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process

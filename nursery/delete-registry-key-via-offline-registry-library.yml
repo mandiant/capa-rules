@@ -3,7 +3,7 @@ rule:
     name: delete registry key via offline registry library
     namespace: host-interaction/registry
     authors:
-      - johnk3r
+      - "johnk3r"
     scopes:
       static: function
       dynamic: process

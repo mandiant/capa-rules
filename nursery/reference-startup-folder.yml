@@ -3,7 +3,7 @@ rule:
     name: reference startup folder
     namespace: persistence/startup-folder
     authors:
-      - matthew.williams@mandiant.com
+      - "matthew.williams@mandiant.com"
     scopes:
       static: file
       dynamic: file

@@ -3,7 +3,7 @@ rule:
     name: get Explorer PID
     namespace: host-interaction/process/list
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

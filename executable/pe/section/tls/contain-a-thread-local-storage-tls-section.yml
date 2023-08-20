@@ -3,7 +3,7 @@ rule:
     name: contain a thread local storage (.tls) section
     namespace: executable/pe/section/tls
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: file
     examples:

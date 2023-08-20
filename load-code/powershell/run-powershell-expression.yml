@@ -3,7 +3,7 @@ rule:
     name: run PowerShell expression
     namespace: load-code/powershell/
     authors:
-      - anamaria.martinezgom@mandiant.com
+      - "anamaria.martinezgom@mandiant.com"
     scopes:
       static: function
       dynamic: process
@@ -17,8 +17,8 @@ rule:
     - and:
       - or:
         - string: / iex\(/i
-        - string: "/ iex /i"
-        - string: "/Invoke-Expression/i"
+        - string: / iex /i
+        - string: /Invoke-Expression/i
         - api: System.Management.Automation.PowerShell::Create
         - api: System.Management.Automation.PowerShell::AddScript
         - api: System.Management.Automation.PowerShell::Invoke

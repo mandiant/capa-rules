@@ -3,7 +3,7 @@ rule:
     name: packed with rlpack
     namespace: anti-analysis/packer/rlpack
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: file
     att&ck:

@@ -3,7 +3,7 @@ rule:
     name: lock semaphore on Linux
     namespace: host-interaction/mutex
     authors:
-      - '@ramen0x3f'
+      - "@ramen0x3f"
     scopes:
       static: function
       dynamic: process

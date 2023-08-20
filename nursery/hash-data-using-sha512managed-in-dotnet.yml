@@ -3,7 +3,7 @@ rule:
     name: hash data using SHA512Managed in .NET
     namespace: data-manipulation/hashing/sha512
     authors:
-      - jonathanlepore@google.com
+      - "jonathanlepore@google.com"
     scopes:
       static: function
       dynamic: process

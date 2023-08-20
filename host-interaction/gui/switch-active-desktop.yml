@@ -3,7 +3,7 @@ rule:
     name: switch active desktop
     namespace: host-interaction/gui
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: function
       dynamic: process

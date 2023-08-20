@@ -3,7 +3,7 @@ rule:
     name: packed with Pepack
     namespace: anti-analysis/packer/pepack
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     att&ck:

@@ -3,7 +3,7 @@ rule:
     name: reference anti-VM strings targeting Qemu
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: file
       dynamic: file
@@ -17,7 +17,7 @@ rule:
       - al-khaser_x86.exe_
   features:
     - or:
-      - string: "/Qemu/i"
-      - string: "/qemu-ga.exe/i"
-      - string: "/BOCHS/i"
-      - string: "/^BXPC/i"
+      - string: /Qemu/i
+      - string: /qemu-ga.exe/i
+      - string: /BOCHS/i
+      - string: /^BXPC/i

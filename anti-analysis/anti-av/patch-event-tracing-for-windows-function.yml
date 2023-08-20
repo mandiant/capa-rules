@@ -3,7 +3,7 @@ rule:
     name: patch Event Tracing for Windows function
     namespace: anti-analysis/anti-av
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: function
       dynamic: process

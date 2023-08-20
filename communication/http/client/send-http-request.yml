@@ -3,8 +3,8 @@ rule:
     name: send HTTP request
     namespace: communication/http/client
     authors:
-      - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process
@@ -33,4 +33,4 @@ rule:
             - api: winhttp.WinHttpConnect
       - and:
         - match: send data on socket
-        - string: "/HTTP/i"
+        - string: /HTTP/i

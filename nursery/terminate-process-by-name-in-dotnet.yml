@@ -3,7 +3,7 @@ rule:
     name: terminate process by name in .NET
     namespace: host-interaction/process/terminate
     authors:
-      - anushka.virgaonkar@mandiant.com
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: log keystrokes via application hook
     namespace: collection/keylog
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

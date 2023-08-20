@@ -3,7 +3,7 @@ rule:
     name: generate random numbers using the Delphi LCG
     namespace: data-manipulation/prng/lcg
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: basic block
     mbc:

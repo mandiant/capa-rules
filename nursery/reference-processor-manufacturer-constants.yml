@@ -3,7 +3,7 @@ rule:
     name: reference processor manufacturer constants
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - matthew.williams@mandiant.com
+      - "matthew.williams@mandiant.com"
     scopes:
       static: basic block
     att&ck:

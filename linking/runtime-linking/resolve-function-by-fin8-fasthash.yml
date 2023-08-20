@@ -3,7 +3,7 @@ rule:
     name: resolve function by FIN8 fasthash
     namespace: linking/runtime-linking
     authors:
-      - '@r3c0nst (Frank Boldewin)'
+      - "@r3c0nst (Frank Boldewin)"
     description: APIHashing algorithm derived from a fasthash implementation in OpenCPN using seeds
     scopes:
       static: function

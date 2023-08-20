@@ -3,7 +3,7 @@ rule:
     name: packed with generic packer
     namespace: anti-analysis/packer/generic
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
     att&ck:

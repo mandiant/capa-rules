@@ -3,7 +3,7 @@ rule:
     name: packed with nspack
     namespace: anti-analysis/packer/nspack
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: file
     att&ck:

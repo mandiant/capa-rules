@@ -3,7 +3,7 @@ rule:
     name: resolve path using msvcrt
     namespace: host-interaction/cli
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
       dynamic: thread

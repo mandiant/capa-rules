@@ -3,7 +3,7 @@ rule:
     name: gather turbo-ftp information
     namespace: collection/file-managers
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process
@@ -21,5 +21,5 @@ rule:
       - and:
         - substring: "installpath"
         - or:
-          - substring: Software\TurboFTP
-          - substring: \TurboFTP
+          - substring: "Software\\TurboFTP"
+          - substring: "\\TurboFTP"

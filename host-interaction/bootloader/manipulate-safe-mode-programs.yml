@@ -3,7 +3,7 @@ rule:
     name: manipulate safe mode programs
     namespace: host-interaction/bootloader
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
     att&ck:
@@ -14,7 +14,7 @@ rule:
     - and:
       - os: windows
       - or:
-        - substring: Control\SafeBoot\Minimal\
+        - substring: "Control\\SafeBoot\\Minimal\\"
           description: registry key for safe mode, no networking
-        - substring: Control\SafeBoot\Network\
+        - substring: "Control\\SafeBoot\\Network\\"
           description: registry key for safe mode, with networking

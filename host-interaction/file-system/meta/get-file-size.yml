@@ -3,8 +3,8 @@ rule:
     name: get file size
     namespace: host-interaction/file-system/meta
     authors:
-      - michael.hunhoff@mandiant.com
-      - anushka.virgaonkar@mandiant.com
+      - "michael.hunhoff@mandiant.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

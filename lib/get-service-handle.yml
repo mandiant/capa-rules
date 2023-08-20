@@ -2,8 +2,8 @@ rule:
   meta:
     name: get service handle
     authors:
-      - moritz.raabe@mandiant.com
-    lib: 'true'
+      - "moritz.raabe@mandiant.com"
+    lib: true
     scopes:
       static: function
       dynamic: process

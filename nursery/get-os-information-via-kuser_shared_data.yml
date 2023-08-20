@@ -3,7 +3,7 @@ rule:
     name: get OS information via KUSER_SHARED_DATA
     namespace: host-interaction/os/version
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: packed with enigma
     namespace: anti-analysis/packer/enigma
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     att&ck:

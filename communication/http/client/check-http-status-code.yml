@@ -3,7 +3,7 @@ rule:
     name: check HTTP status code
     namespace: communication/http/client
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
       dynamic: process

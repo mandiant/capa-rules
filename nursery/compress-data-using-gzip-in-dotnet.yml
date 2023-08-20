@@ -3,7 +3,7 @@ rule:
     name: compress data using GZip in .NET
     namespace: data-manipulation/compression
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

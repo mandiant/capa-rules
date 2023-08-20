@@ -3,8 +3,8 @@ rule:
     name: start TCP server
     namespace: communication/tcp/serve
     authors:
-      - william.ballenthin@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "william.ballenthin@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

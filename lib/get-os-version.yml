@@ -2,8 +2,8 @@ rule:
   meta:
     name: get OS version
     authors:
-      - '@mr-tz'
-    lib: 'true'
+      - "@mr-tz"
+    lib: true
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: schedule task via at
     namespace: persistence/scheduled-tasks
     authors:
-      - joren485
+      - "joren485"
     scopes:
       static: function
       dynamic: process
@@ -16,6 +16,6 @@ rule:
       - match: host-interaction/process/create
       - string: /at(|\.exe)/i
       - or:
-        - string: "//every:/i"
-        - string: "//next:/i"
+        - string: //every:/i
+        - string: //next:/i
         - string: /\d:\d/i

@@ -3,7 +3,7 @@ rule:
     name: execute shell command and capture output
     namespace: communication/c2/shell
     authors:
-      - matthew.williams@mandiant.com
+      - "matthew.williams@mandiant.com"
     scopes:
       static: function
       dynamic: process
@@ -19,10 +19,10 @@ rule:
       - match: create pipe
       - or:
         - match: get COMSPEC environment variable
-        - string: \cmd.exe
+        - string: "\\cmd.exe"
         - string: "cmd.exe"
         - string: "cmd.exe /c "
-        - string: C:\Windows\system32\cmd.exe
+        - string: "C:\\Windows\\system32\\cmd.exe"
       - optional:
         - api: kernel32.GetSystemDirectory
         - api: kernel32.SetCurrentDirectory

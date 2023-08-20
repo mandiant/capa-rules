@@ -3,7 +3,7 @@ rule:
     name: execute via .NET startup hook
     namespace: runtime/dotnet
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     references:

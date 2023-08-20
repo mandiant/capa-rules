@@ -3,9 +3,9 @@ rule:
     name: terminate thread
     namespace: host-interaction/thread/terminate
     authors:
-      - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
-      - anushka.virgaonkar@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

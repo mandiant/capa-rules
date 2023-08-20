@@ -3,7 +3,7 @@ rule:
     name: persist via shell profile or rc file
     namespace: persistence
     authors:
-      - joakim@intezer.com
+      - "joakim@intezer.com"
     scopes:
       static: function
       dynamic: process
@@ -20,5 +20,5 @@ rule:
         - substring: "/.bash_login"
         - substring: "/.bashrc"
         - substring: "/.profile"
-        - substring: "/etc/profile.d/"
+        - substring: /etc/profile.d/
         - string: "/etc/profile"

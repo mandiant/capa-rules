@@ -3,7 +3,7 @@ rule:
     name: packed with petite
     namespace: anti-analysis/packer/petite
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: file
     att&ck:

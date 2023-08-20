@@ -3,7 +3,7 @@ rule:
     name: packaged as a Pintool
     namespace: executable/pintool
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     references:

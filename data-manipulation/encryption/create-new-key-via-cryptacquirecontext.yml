@@ -3,7 +3,7 @@ rule:
     name: create new key via CryptAcquireContext
     namespace: data-manipulation/encryption
     authors:
-      - chuong.dong@mandiant.com
+      - "chuong.dong@mandiant.com"
     scopes:
       static: function
       dynamic: process

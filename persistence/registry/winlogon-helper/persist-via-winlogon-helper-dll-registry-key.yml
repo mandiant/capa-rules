@@ -3,7 +3,7 @@ rule:
     name: persist via Winlogon Helper DLL registry key
     namespace: persistence/registry/winlogon-helper
     authors:
-      - 0x534a@mailbox.org
+      - "0x534a@mailbox.org"
     scopes:
       static: function
       dynamic: process
@@ -19,6 +19,6 @@ rule:
         - number: 0x80000002 = HKEY_LOCAL_MACHINE
       - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
       - or:
-        - string: "/Notify/i"
-        - string: "/Userinit/i"
-        - string: "/Shell/i"
+        - string: /Notify/i
+        - string: /Userinit/i
+        - string: /Shell/i

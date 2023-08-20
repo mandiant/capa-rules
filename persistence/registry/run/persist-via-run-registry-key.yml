@@ -3,7 +3,7 @@ rule:
     name: persist via Run registry key
     namespace: persistence/registry/run
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process
@@ -25,10 +25,10 @@ rule:
         - and:
           - string: /Software\\Microsoft\\Windows\\CurrentVersion/i
           - or:
-            - string: "/Run/i"
+            - string: /Run/i
             - string: /Explorer\\Shell Folders/i
-            - string: "/User Shell Folders/i"
-            - string: "/RunServices/i"
+            - string: /User Shell Folders/i
+            - string: /RunServices/i
             - string: /Policies\\Explorer\\Run/i
         - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\load/i
         - string: /System\\CurrentControlSet\\Control\\Session Manager\\BootExecute/i

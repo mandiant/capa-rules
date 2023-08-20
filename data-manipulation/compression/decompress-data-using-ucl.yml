@@ -3,7 +3,7 @@ rule:
     name: decompress data using UCL
     namespace: data-manipulation/compression
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: function
     mbc:

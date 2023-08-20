@@ -3,8 +3,8 @@ rule:
     name: decompress data using LZO
     namespace: data-manipulation/compression
     authors:
-      - david@edeca.net
-      - david.cannings@pwc.com
+      - "david@edeca.net"
+      - "david.cannings@pwc.com"
     description: detects the decompression routine from LZO
     scopes:
       static: function

@@ -3,7 +3,7 @@ rule:
     name: create process memory minidump
     namespace: host-interaction/process/dump
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

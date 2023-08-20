@@ -3,7 +3,7 @@ rule:
     name: create two anonymous pipes
     namespace: communication/named-pipe/create
     authors:
-      - matthew.williams@mandiant.com
+      - "matthew.williams@mandiant.com"
     scopes:
       static: function
       dynamic: process

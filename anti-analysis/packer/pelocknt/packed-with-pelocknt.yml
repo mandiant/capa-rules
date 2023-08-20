@@ -3,7 +3,7 @@ rule:
     name: packed with pelocknt
     namespace: anti-analysis/packer/pelocknt
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: file
     att&ck:

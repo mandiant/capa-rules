@@ -3,7 +3,7 @@ rule:
     name: encode data using XOR
     namespace: data-manipulation/encoding/xor
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: basic block
     att&ck:

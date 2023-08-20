@@ -3,8 +3,8 @@ rule:
     name: delete file
     namespace: host-interaction/file-system/delete
     authors:
-      - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

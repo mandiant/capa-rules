@@ -3,7 +3,7 @@ rule:
     name: encrypt data using RC6
     namespace: data-manipulation/encryption/rc6
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: compiled with pyarmor
     namespace: compiler/pyarmor
     authors:
-      - '@stvemillertime, @itreallynick'
+      - "@stvemillertime, @itreallynick"
     scopes:
       static: file
       dynamic: file

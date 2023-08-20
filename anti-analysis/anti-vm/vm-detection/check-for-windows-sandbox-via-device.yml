@@ -3,7 +3,7 @@ rule:
     name: check for Windows sandbox via device
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
       dynamic: thread
@@ -18,4 +18,4 @@ rule:
   features:
     - and:
       - match: create or open file
-      - string: \\.\GLOBALROOT\device\vmsmb
+      - string: "\\\\.\\GLOBALROOT\\device\\vmsmb"

@@ -3,8 +3,8 @@ rule:
     name: check for sandbox username or hostname
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - '@_re_fox'
-      - echernofsky@google.com
+      - "@_re_fox"
+      - "echernofsky@google.com"
     scopes:
       static: function
     att&ck:
@@ -21,55 +21,55 @@ rule:
         - match: get session user name
         - match: get hostname
       - or:
-        - string: "/MALTEST/i"
+        - string: /MALTEST/i
           description: Betabot Username Check
-        - string: "/TEQUILABOOMBOOM/i"
+        - string: /TEQUILABOOMBOOM/i
           description: VirusTotal Sandbox
-        - string: "/SANDBOX/i"
+        - string: /SANDBOX/i
           description: Gookit Username Check
-        - string: "/^VIRUS/i"
+        - string: /^VIRUS/i
           description: Satan Username Check
-        - string: "/MALWARE/i"
+        - string: /MALWARE/i
           description: Betabot Username Check
         - string: /SAND\s?BOX/i
           description: Betabot Username Check
         - string: /Test\sUser/i
           description: Betabot Username Check
-        - string: "/CurrentUser/i"
+        - string: /CurrentUser/i
           description: Gookit Username Check
-        - string: "/7SILVIA/i"
+        - string: /7SILVIA/i
           description: Gookit Username Check
-        - string: "/FORTINET/i"
+        - string: /FORTINET/i
           description: Shifu Username Check
         - string: /John\s?Doe/i
           description: Emotet Username Check
-        - string: "/Emily/i"
+        - string: /Emily/i
           description: Trickbot Downloader Username Check
-        - string: "/HANSPETER(-PC)?/i"
+        - string: /HANSPETER(-PC)?/i
           description: Trickbot Downloader Username Check
-        - string: "/HAPUBWS/i"
+        - string: /HAPUBWS/i
           description: Trickbot Downloader Username Check
         - string: /Hong\sLee/i
           description: Trickbot Downloader Username Check
-        - string: "/IT-ADMIN/i"
+        - string: /IT-ADMIN/i
           description: Trickbot Downloader Username Check
-        - string: "/JOHN(-PC)?/i"
+        - string: /JOHN(-PC)?/i
           description: Trickbot Downloader Username Check
-        - string: "/Johnson/i"
+        - string: /Johnson/i
           description: Trickbot Downloader Username Check
-        - string: "/Miller/i"
+        - string: /Miller/i
           description: Trickbot Downloader Username Check
-        - string: "/MUELLER(-PC)?/i"
+        - string: /MUELLER(-PC)?/i
           description: Trickbot Downloader Username Check
         - string: /Peter\sWilson/i
           description: Trickbot Downloader Username Check
-        - string: "/SystemIT/i"
+        - string: /SystemIT/i
           description: Trickbot Downloader Username Check
-        - string: "/Timmy/i"
+        - string: /Timmy/i
           description: Trickbot Downloader Username Check
-        - string: "/WIN7-TRAPS/i"
+        - string: /WIN7-TRAPS/i
           description: Trickbot Downloader Username Check
-        - string: "/WDAGUtilityAccount/i"
+        - string: /WDAGUtilityAccount/i
           description: Windows Defender Application Guard
-        - string: "/HAL9TH/i"
+        - string: /HAL9TH/i
           description: Windows Defender Emulator

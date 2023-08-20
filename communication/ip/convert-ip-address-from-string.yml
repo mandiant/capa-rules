@@ -3,7 +3,7 @@ rule:
     name: convert IP address from string
     namespace: communication/ip
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: basic block
       dynamic: thread

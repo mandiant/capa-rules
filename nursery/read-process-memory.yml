@@ -3,9 +3,9 @@ rule:
     name: read process memory
     namespace: host-interaction/process
     authors:
-      - matthew.williams@mandiant.com
-      - '@_re_fox'
-      - michael.hunhoff@mandiant.com
+      - "matthew.williams@mandiant.com"
+      - "@_re_fox"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

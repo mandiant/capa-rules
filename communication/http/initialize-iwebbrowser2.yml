@@ -3,7 +3,7 @@ rule:
     name: initialize IWebBrowser2
     namespace: communication/http
     authors:
-      - matthew.williams@mandiant.com
+      - "matthew.williams@mandiant.com"
     scopes:
       static: basic block
     mbc:

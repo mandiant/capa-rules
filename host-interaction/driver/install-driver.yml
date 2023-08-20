@@ -3,7 +3,7 @@ rule:
     name: install driver
     namespace: host-interaction/driver
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

@@ -3,7 +3,7 @@ rule:
     name: capture network configuration via ifconfig
     namespace: collection/network
     authors:
-      - joakim@intezeer.com
+      - "joakim@intezeer.com"
     scopes:
       static: basic block
       dynamic: thread

@@ -3,8 +3,8 @@ rule:
     name: suspend thread
     namespace: host-interaction/thread/suspend
     authors:
-      - 0x534a@mailbox.org
-      - anushka.virgaonkar@mandiant.com
+      - "0x534a@mailbox.org"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

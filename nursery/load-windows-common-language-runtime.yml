@@ -3,7 +3,7 @@ rule:
     name: load Windows Common Language Runtime
     namespace: load-code/dotnet
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

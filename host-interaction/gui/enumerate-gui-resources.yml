@@ -3,8 +3,8 @@ rule:
     name: enumerate gui resources
     namespace: host-interaction/gui
     authors:
-      - johnk3r
-      - anushka.virgaonkar@mandiant.com
+      - "johnk3r"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

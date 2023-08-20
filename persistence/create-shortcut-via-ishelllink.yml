@@ -3,7 +3,7 @@ rule:
     name: create shortcut via IShellLink
     namespace: persistence
     authors:
-      - matthew.williams@mandiant.com
+      - "matthew.williams@mandiant.com"
     scopes:
       static: function
     att&ck:

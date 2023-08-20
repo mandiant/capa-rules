@@ -3,8 +3,8 @@ rule:
     name: enumerate services
     namespace: host-interaction/service/list
     authors:
-      - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

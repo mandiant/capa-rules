@@ -3,7 +3,7 @@ rule:
     name: load .NET assembly
     namespace: load-code/dotnet
     authors:
-      - anushka.virgaonkar@mandiant.com
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

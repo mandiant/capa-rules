@@ -3,8 +3,8 @@ rule:
     name: run as service
     namespace: host-interaction/service
     authors:
-      - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: file
       dynamic: file

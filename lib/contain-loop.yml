@@ -2,8 +2,8 @@ rule:
   meta:
     name: contain loop
     authors:
-      - moritz.raabe@mandiant.com
-    lib: 'true'
+      - "moritz.raabe@mandiant.com"
+    lib: true
     scopes:
       static: function
     examples:

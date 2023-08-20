@@ -3,7 +3,7 @@ rule:
     name: compiled with perl2exe
     namespace: compiler/perl2exe
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process

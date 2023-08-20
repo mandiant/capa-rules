@@ -3,8 +3,8 @@ rule:
     name: compiled with cx_Freeze
     namespace: compiler/cx_freeze
     authors:
-      - '@mr-tz'
-      - jakub.jozwiak@mandiant.com
+      - "@mr-tz"
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: file
       dynamic: file
@@ -23,7 +23,7 @@ rule:
           - string: "cx_Freeze Fatal Error"
           - string: "cx_Freeze: Python error in main script"
           - string: "cx_Freeze: Application Terminated"
-          - string: '%ls\lib\library.zip;%ls\lib'
+          - string: "%ls\\lib\\library.zip;%ls\\lib"
           - string: "Unable to calculate directory of executable!"
           - string: "Unable to load python3.dll!"
           - string: "Unable to change DLL search path!"

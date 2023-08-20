@@ -3,10 +3,10 @@ rule:
     name: resolve DNS
     namespace: communication/dns
     authors:
-      - william.ballenthin@mandiant.com
-      - johnk3r
-      - joakim@intezer.com
-      - michael.hunhoff@mandiant.com
+      - "william.ballenthin@mandiant.com"
+      - "johnk3r"
+      - "joakim@intezer.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

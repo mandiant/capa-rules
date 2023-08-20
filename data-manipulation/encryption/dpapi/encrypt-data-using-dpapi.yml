@@ -3,8 +3,8 @@ rule:
     name: encrypt data using DPAPI
     namespace: data-manipulation/encryption/dpapi
     authors:
-      - william.ballenthin@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "william.ballenthin@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

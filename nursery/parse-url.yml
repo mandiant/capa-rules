@@ -3,7 +3,7 @@ rule:
     name: parse URL
     namespace: communication/http
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

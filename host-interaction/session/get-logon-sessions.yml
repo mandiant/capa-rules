@@ -3,7 +3,7 @@ rule:
     name: get logon sessions
     namespace: host-interaction/session
     authors:
-      - awillia2@cisco.com
+      - "awillia2@cisco.com"
     description: Looks for imported Windows APIs being called to enumerate user sessions.
     scopes:
       static: function

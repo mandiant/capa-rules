@@ -3,7 +3,7 @@ rule:
     name: inject dll
     namespace: host-interaction/process/inject
     authors:
-      - 0x534a@mailbox.org
+      - "0x534a@mailbox.org"
     scopes:
       static: function
       dynamic: process
@@ -31,5 +31,5 @@ rule:
         - or:
           - api: kernel32.GetModuleHandle
           - api: kernel32.GetModuleHandleEx
-        - string: "/LoadLibrary[AW]/"
+        - string: /LoadLibrary[AW]/
       - match: create thread

@@ -3,9 +3,9 @@ rule:
     name: get MAC address on Windows
     namespace: collection/network
     authors:
-      - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
-      - echernofsky@google.com
+      - "moritz.raabe@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
+      - "echernofsky@google.com"
     scopes:
       static: function
       dynamic: process

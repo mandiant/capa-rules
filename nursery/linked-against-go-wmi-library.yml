@@ -3,8 +3,8 @@ rule:
     name: linked against Go WMI library
     namespace: collection/database/wmi
     authors:
-      - joakim@intezer.com
-    description: StackExchange's WMI library is used to interact with WMI.
+      - "joakim@intezer.com"
+    description: StackExchanges WMI library is used to interact with WMI.
     scopes:
       static: file
       dynamic: file

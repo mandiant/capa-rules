@@ -3,7 +3,7 @@ rule:
     name: compiled with V
     namespace: compiler/v
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: file
       dynamic: file

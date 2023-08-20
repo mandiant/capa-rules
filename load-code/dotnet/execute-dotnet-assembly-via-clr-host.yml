@@ -3,7 +3,7 @@ rule:
     name: execute .NET assembly via CLR host
     namespace: load-code/dotnet
     authors:
-      - blas.kojusner@mandiant.com
+      - "blas.kojusner@mandiant.com"
     description: may be used to evade hooks or hinder analysis
     scopes:
       static: function

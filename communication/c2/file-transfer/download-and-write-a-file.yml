@@ -4,7 +4,7 @@ rule:
     namespace: communication/c2/file-transfer
     maec/malware-category: downloader
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: resolve function by FNV-1a hash
     namespace: linking/runtime-linking
     authors:
-      - still@teamt5.org
+      - "still@teamt5.org"
     description: known import name hashes calculated using the non-cryptographic FNV-1a hashing algorithm
     scopes:
       static: function

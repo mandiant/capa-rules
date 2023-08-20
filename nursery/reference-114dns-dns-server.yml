@@ -3,7 +3,7 @@ rule:
     name: reference 114DNS DNS server
     namespace: communication/dns
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
       dynamic: process

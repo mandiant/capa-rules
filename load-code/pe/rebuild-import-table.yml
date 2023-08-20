@@ -3,7 +3,7 @@ rule:
     name: rebuild import table
     namespace: load-code/pe
     authors:
-      - '@Ana06'
+      - "@Ana06"
     scopes:
       static: function
     mbc:

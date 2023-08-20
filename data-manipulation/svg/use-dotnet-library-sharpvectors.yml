@@ -3,7 +3,7 @@ rule:
     name: use .NET library SharpVectors
     namespace: data-manipulation/svg
     authors:
-      - '@johnk3r'
+      - "@johnk3r"
     scopes:
       static: file
       dynamic: file

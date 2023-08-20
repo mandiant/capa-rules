@@ -3,8 +3,8 @@ rule:
     name: get disk size
     namespace: host-interaction/hardware/storage
     authors:
-      - michael.hunhoff@mandiant.com
-      - anushka.virgaonkar@mandiant.com
+      - "michael.hunhoff@mandiant.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

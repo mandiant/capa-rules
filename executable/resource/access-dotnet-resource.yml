@@ -3,7 +3,7 @@ rule:
     name: access .NET resource
     namespace: executable/resource
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
     examples:

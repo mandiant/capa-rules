@@ -3,7 +3,7 @@ rule:
     name: gather chrome based browser login information
     namespace: collection/browser
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process
@@ -19,11 +19,11 @@ rule:
       - or:
         - string: /SELECT [(date_created|username_element|password_element|origin_url|signon_realm|action_url|username_value|password_value)\s+,]+ FROM logins/i
         - 2 or more:
-          - string: "/date_created/i"
-          - string: "/username_element/i"
-          - string: "/username_value/i"
-          - string: "/password_element/i"
-          - string: "/origin_url/i"
-          - string: "/signon_realm/i"
-          - string: "/action_url/i"
-          - string: "/password_value/i"
+          - string: /date_created/i
+          - string: /username_element/i
+          - string: /username_value/i
+          - string: /password_element/i
+          - string: /origin_url/i
+          - string: /signon_realm/i
+          - string: /action_url/i
+          - string: /password_value/i

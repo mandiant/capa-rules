@@ -3,8 +3,8 @@ rule:
     name: check if file exists
     namespace: host-interaction/file-system/exists
     authors:
-      - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

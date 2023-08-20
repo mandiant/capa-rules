@@ -3,7 +3,7 @@ rule:
     name: linked against libsodium
     namespace: linking/static/crypto
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     description: Sodium is a software library for encryption, decryption, signatures, password hashing and more.
     scopes:
       static: file

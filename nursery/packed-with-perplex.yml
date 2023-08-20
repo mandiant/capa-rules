@@ -3,7 +3,7 @@ rule:
     name: packed with Perplex
     namespace: anti-analysis/packer/perplex
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     att&ck:

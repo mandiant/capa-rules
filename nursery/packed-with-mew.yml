@@ -3,7 +3,7 @@ rule:
     name: packed with MEW
     namespace: anti-analysis/packer/mew
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     att&ck:

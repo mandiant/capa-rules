@@ -3,7 +3,7 @@ rule:
     name: linked against wolfCrypt
     namespace: linking/static/wolfcrypt
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: file
       dynamic: file

@@ -3,7 +3,7 @@ rule:
     name: timestomp file
     namespace: anti-analysis/anti-forensic/timestomp
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process

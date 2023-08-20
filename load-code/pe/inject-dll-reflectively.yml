@@ -3,7 +3,7 @@ rule:
     name: inject DLL reflectively
     namespace: load-code/pe
     authors:
-      - '@Ana06'
+      - "@Ana06"
     scopes:
       static: function
       dynamic: process

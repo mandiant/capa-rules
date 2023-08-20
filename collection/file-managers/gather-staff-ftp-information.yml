@@ -3,7 +3,7 @@ rule:
     name: gather staff-ftp information
     namespace: collection/file-managers
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process

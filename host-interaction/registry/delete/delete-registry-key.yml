@@ -3,9 +3,9 @@ rule:
     name: delete registry key
     namespace: host-interaction/registry/delete
     authors:
-      - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
-      - johnk3r
+      - "moritz.raabe@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
+      - "johnk3r"
     scopes:
       static: function
       dynamic: process

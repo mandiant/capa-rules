@@ -3,7 +3,7 @@ rule:
     name: enumerate minifilter drivers
     namespace: host-interaction/filter
     authors:
-      - aseel.kayal@mandiant.com
+      - "aseel.kayal@mandiant.com"
     scopes:
       static: function
       dynamic: process

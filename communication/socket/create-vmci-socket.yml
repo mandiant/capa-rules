@@ -3,7 +3,7 @@ rule:
     name: create VMCI socket
     namespace: communication/socket
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

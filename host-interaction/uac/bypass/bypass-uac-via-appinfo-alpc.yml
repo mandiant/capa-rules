@@ -3,7 +3,7 @@ rule:
     name: bypass UAC via AppInfo ALPC
     namespace: host-interaction/uac/bypass
     authors:
-      - richard.cole@mandiant.com
+      - "richard.cole@mandiant.com"
     scopes:
       static: function
       dynamic: process
@@ -16,7 +16,7 @@ rule:
   features:
     - and:
       - string: "winver.exe"
-      - string: WinSta0\Default
+      - string: "WinSta0\\Default"
       - string: "taskmgr.exe"
       - api: WaitForDebugEvent
       - api: ContinueDebugEvent

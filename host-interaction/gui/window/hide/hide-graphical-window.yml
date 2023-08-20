@@ -3,7 +3,7 @@ rule:
     name: hide graphical window
     namespace: host-interaction/gui/window/hide
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

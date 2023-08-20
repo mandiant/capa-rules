@@ -3,9 +3,9 @@ rule:
     name: hash data using fnv
     namespace: data-manipulation/hashing/fnv
     authors:
-      - moritz.raabe@mandiant.com
-      - '@_re_fox'
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "@_re_fox"
+      - "michael.hunhoff@mandiant.com"
     description: can be any Fowler-Noll-Vo (FNV) hash variant, including FNV-1, FNV-1a, FNV-0
     scopes:
       static: function

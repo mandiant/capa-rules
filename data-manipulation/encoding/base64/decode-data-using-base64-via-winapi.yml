@@ -3,7 +3,7 @@ rule:
     name: decode data using Base64 via WinAPI
     namespace: data-manipulation/encoding/base64
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

@@ -3,8 +3,8 @@ rule:
     name: check Internet connectivity via WinINet
     namespace: host-interaction/network/connectivity
     authors:
-      - matthew.williams@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "matthew.williams@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

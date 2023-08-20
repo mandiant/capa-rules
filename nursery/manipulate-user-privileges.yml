@@ -3,7 +3,7 @@ rule:
     name: manipulate user privileges
     namespace: host-interaction/user
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

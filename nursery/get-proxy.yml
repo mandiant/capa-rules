@@ -3,7 +3,7 @@ rule:
     name: get proxy
     namespace: host-interaction/network/proxy
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process

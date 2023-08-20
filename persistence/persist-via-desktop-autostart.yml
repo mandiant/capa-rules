@@ -3,7 +3,7 @@ rule:
     name: persist via .desktop autostart
     namespace: persistence
     authors:
-      - joakim@intezer.com
+      - "joakim@intezer.com"
     scopes:
       static: function
       dynamic: process

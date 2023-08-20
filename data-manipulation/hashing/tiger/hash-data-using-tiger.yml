@@ -3,7 +3,7 @@ rule:
     name: hash data using tiger
     namespace: data-manipulation/hashing/tiger
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
     mbc:

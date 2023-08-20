@@ -3,7 +3,7 @@ rule:
     name: encrypt data using OpenSSL ECDSA
     namespace: data-manipulation/encryption/ecdsa
     authors:
-      - Ana06
+      - "Ana06"
     scopes:
       static: function
     references:

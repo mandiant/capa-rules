@@ -3,7 +3,7 @@ rule:
     name: set UEFI variable
     namespace: host-interaction/bootloader
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: function
       dynamic: process

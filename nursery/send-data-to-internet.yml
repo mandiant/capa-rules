@@ -3,7 +3,7 @@ rule:
     name: send data to Internet
     namespace: communication/http/client
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: capture microphone audio
     namespace: collection/microphone
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process
@@ -15,9 +15,9 @@ rule:
     - or:
       - and:
         - api: mciSendString
-        - string: "/^open/i"
-        - string: "/waveaudio/i"
-        - string: "/^record/i"
+        - string: /^open/i
+        - string: /waveaudio/i
+        - string: /^record/i
       - api: winmm.waveInOpen
       - api: winmm.waveInAddBuffer
       - api: winmm.waveInStart

@@ -3,7 +3,7 @@ rule:
     name: reference anti-VM strings targeting VirtualBox
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: file
       dynamic: file
@@ -17,10 +17,10 @@ rule:
       - al-khaser_x86.exe_
   features:
     - or:
-      - string: "/VBOX/i"
-      - string: "/VEN_VBOX/i"
-      - string: "/VirtualBox/i"
-      - string: "/06/23/99/i"
+      - string: /VBOX/i
+      - string: /VEN_VBOX/i
+      - string: /VirtualBox/i
+      - string: /06/23/99/i
       - string: /HARDWARE\\ACPI\\DSDT\\VBOX__/i
       - string: /HARDWARE\\ACPI\\FADT\\VBOX__/i
       - string: /HARDWARE\\ACPI\\RSDT\\VBOX__/i
@@ -53,29 +53,29 @@ rule:
       - string: /\\\\.\\pipe\\VBoxMiniRdDN/i
       - string: /\\\\.\\VBoxTrayIPC/i
       - string: /\\\\.\\pipe\\VBoxTrayIPC/i
-      - string: "/VBoxTrayToolWndClass/i"
-      - string: "/VBoxTrayToolWnd/i"
+      - string: /VBoxTrayToolWndClass/i
+      - string: /VBoxTrayToolWnd/i
       - string: /vboxservice\.exe/i
-      - string: "/vboxtray.exe/i"
-      - string: "/vboxvideo/i"
-      - string: "/VBoxVideoW8/i"
-      - string: "/VBoxWddm/i"
+      - string: /vboxtray.exe/i
+      - string: /vboxvideo/i
+      - string: /VBoxVideoW8/i
+      - string: /VBoxWddm/i
       - string: /PCI\\VEN_80EE&DEV_CAFE/i
-      - string: "/82801FB/i"
-      - string: "/82441FX/i"
-      - string: "/82371SB/i"
-      - string: "/OpenHCD/i"
-      - string: "/ACPIBus_BUS_0/i"
-      - string: "/PCI_BUS_0/i"
-      - string: "/PNP_BUS_0/i"
-      - string: "/Oracle Corporation/i"
-      - string: "/VBoxWdd/i"
-      - string: "/VBoxS/i"
+      - string: /82801FB/i
+      - string: /82441FX/i
+      - string: /82371SB/i
+      - string: /OpenHCD/i
+      - string: /ACPIBus_BUS_0/i
+      - string: /PCI_BUS_0/i
+      - string: /PNP_BUS_0/i
+      - string: /Oracle Corporation/i
+      - string: /VBoxWdd/i
+      - string: /VBoxS/i
         description: VirtualBox Shared Folders
-      - string: "/VBoxMouse/i"
+      - string: /VBoxMouse/i
         description: VirtualBox Guest Mouse
-      - string: "/VBoxGuest/i"
+      - string: /VBoxGuest/i
         description: VirtualBox Guest Driver
-      - string: "/VBoxVBoxVBox/i"
-      - string: "/innotek GmbH/i"
+      - string: /VBoxVBoxVBox/i
+      - string: /innotek GmbH/i
       - string: /drivers\\vboxdrv/i

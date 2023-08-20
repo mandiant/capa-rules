@@ -3,8 +3,8 @@ rule:
     name: set registry value
     namespace: host-interaction/registry/create
     authors:
-      - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process
@@ -36,10 +36,10 @@ rule:
           - api: Microsoft.Win32.Registry::SetValue
       - and:
         - match: host-interaction/process/create
-        - string: "/add/i"
+        - string: /add/i
         - or:
-          - string: "/reg(|.exe)/i"
-          - string: "/hklm/i"
-          - string: "/HKEY_LOCAL_MACHINE/i"
-          - string: "/hkcu/i"
-          - string: "/HKEY_CURRENT_USER/i"
+          - string: /reg(|.exe)/i
+          - string: /hklm/i
+          - string: /HKEY_LOCAL_MACHINE/i
+          - string: /hkcu/i
+          - string: /HKEY_CURRENT_USER/i

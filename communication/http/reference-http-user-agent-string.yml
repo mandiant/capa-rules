@@ -3,7 +3,7 @@ rule:
     name: reference HTTP User-Agent string
     namespace: communication/http
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
       dynamic: process

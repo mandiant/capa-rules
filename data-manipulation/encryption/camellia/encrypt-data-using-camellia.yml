@@ -3,7 +3,7 @@ rule:
     name: encrypt data using Camellia
     namespace: data-manipulation/encryption/camellia
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
       dynamic: thread
@@ -32,17 +32,17 @@ rule:
           - number: 0xb05688c2 = CAMELLIA_SIGMA6L
           - number: 0xb3e6c1fd = CAMELLIA_SIGMA6R
         - and:
-          - string: "/A09E667F3BCC908B/i"
+          - string: /A09E667F3BCC908B/i
             description: sigma1_str
           - string: "/B67AE8584CAA73B"
             description: sigma2_str
-          - string: "/C6EF372FE94F82BE/i"
+          - string: /C6EF372FE94F82BE/i
             description: sigma3_str
-          - string: "/54FF53A5F1D36F1C/i"
+          - string: /54FF53A5F1D36F1C/i
             description: sigma4_str
-          - string: "/10E527FADE682D1D/i"
+          - string: /10E527FADE682D1D/i
             description: sigma5_str
-          - string: "/B05688C2B3E6C1FD/i"
+          - string: /B05688C2B3E6C1FD/i
             description: sigma6_str
         - and:
           - bytes: 8b 90 cc 3b 7f 66 9e a0 = sigma1
@@ -78,15 +78,15 @@ rule:
           - bytes: 1d 2d 68 de fa 27 e5 10 = sigma5
           - bytes: fd c1 e6 b3 c2 88 56 b0 = sigma6
         - and:
-          - string: "/A09E667F3BCC908B/i"
+          - string: /A09E667F3BCC908B/i
             description: sigma1_str
           - string: "/B67AE8584CAA73B"
             description: sigma2_str
-          - string: "/C6EF372FE94F82BE/i"
+          - string: /C6EF372FE94F82BE/i
             description: sigma3_str
-          - string: "/54FF53A5F1D36F1C/i"
+          - string: /54FF53A5F1D36F1C/i
             description: sigma4_str
-          - string: "/10E527FADE682D1D/i"
+          - string: /10E527FADE682D1D/i
             description: sigma5_str
-          - string: "/B05688C2B3E6C1FD/i"
+          - string: /B05688C2B3E6C1FD/i
             description: sigma6_str

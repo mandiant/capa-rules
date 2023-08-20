@@ -3,7 +3,7 @@ rule:
     name: get HTTP document via IWebBrowser2
     namespace: communication/http/client
     authors:
-      - matthew.williams@mandiant.com
+      - "matthew.williams@mandiant.com"
     scopes:
       static: function
     mbc:

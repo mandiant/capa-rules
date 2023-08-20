@@ -3,7 +3,7 @@ rule:
     name: linked against CPP standard library
     namespace: linking/static
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: file
       dynamic: file

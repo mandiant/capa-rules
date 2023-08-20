@@ -3,7 +3,7 @@ rule:
     name: linked against ZLIB
     namespace: linking/static/zlib
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
       dynamic: file
@@ -13,5 +13,5 @@ rule:
       - 6cc148363200798a12091b97a17181a1
   features:
     - or:
-      - string: "/deflate .* Copyright/"
-      - string: "/inflate .* Copyright/"
+      - string: /deflate .* Copyright/
+      - string: /inflate .* Copyright/

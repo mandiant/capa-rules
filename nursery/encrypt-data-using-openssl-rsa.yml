@@ -3,7 +3,7 @@ rule:
     name: encrypt data using OpenSSL RSA
     namespace: data-manipulation/encryption/rsa
     authors:
-      - Ana06
+      - "Ana06"
     scopes:
       static: function
     mbc:

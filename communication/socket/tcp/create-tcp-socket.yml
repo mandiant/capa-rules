@@ -3,9 +3,9 @@ rule:
     name: create TCP socket
     namespace: communication/socket/tcp
     authors:
-      - william.ballenthin@mandiant.com
-      - joakim@intezer.com
-      - anushka.virgaonkar@mandiant.com
+      - "william.ballenthin@mandiant.com"
+      - "joakim@intezer.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

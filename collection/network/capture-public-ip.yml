@@ -3,7 +3,7 @@ rule:
     name: capture public ip
     namespace: collection/network
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process

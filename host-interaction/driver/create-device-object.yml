@@ -3,7 +3,7 @@ rule:
     name: create device object
     namespace: host-interaction/driver
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
       dynamic: process

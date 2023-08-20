@@ -3,9 +3,9 @@ rule:
     name: encode data using Base64
     namespace: data-manipulation/encoding/base64
     authors:
-      - moritz.raabe@mandiant.com
-      - anushka.virgaonkar@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "anushka.virgaonkar@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

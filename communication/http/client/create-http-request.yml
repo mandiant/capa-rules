@@ -3,8 +3,8 @@ rule:
     name: create HTTP request
     namespace: communication/http/client
     authors:
-      - michael.hunhoff@mandiant.com
-      - anushka.virgaonkar@mandiant.com
+      - "michael.hunhoff@mandiant.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: send request in .NET
     namespace: communication/http/client
     authors:
-      - anushka.virgaonakr@mandiant.com
+      - "anushka.virgaonakr@mandiant.com"
     scopes:
       static: function
       dynamic: process

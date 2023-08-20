@@ -3,8 +3,8 @@ rule:
     name: reference absolute stream path on Windows
     namespace: host-interaction/file-system
     authors:
-      - blas.kojusner@mandiant.com
-      - william.ballenthin@mandiant.com
+      - "blas.kojusner@mandiant.com"
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

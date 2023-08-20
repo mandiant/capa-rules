@@ -3,8 +3,8 @@ rule:
     name: execute syscall instruction
     namespace: anti-analysis
     authors:
-      - '@kulinacs'
-      - '@mr-tz'
+      - "@kulinacs"
+      - "@mr-tz"
     description: may be used to evade hooks or hinder analysis
     scopes:
       static: basic block

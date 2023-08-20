@@ -3,8 +3,8 @@ rule:
     name: manipulate console buffer
     namespace: host-interaction/console
     authors:
-      - william.ballenthin@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "william.ballenthin@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

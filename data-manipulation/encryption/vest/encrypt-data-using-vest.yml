@@ -3,7 +3,7 @@ rule:
     name: encrypt data using vest
     namespace: data-manipulation/encryption/vest
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
     att&ck:

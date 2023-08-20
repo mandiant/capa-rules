@@ -3,8 +3,8 @@ rule:
     name: bypass UAC via RPC
     namespace: host-interaction/uac/bypass
     authors:
-      - david.cannings@pwc.com
-      - david@edeca.net
+      - "david.cannings@pwc.com"
+      - "david@edeca.net"
     scopes:
       static: function
     att&ck:

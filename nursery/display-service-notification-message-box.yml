@@ -3,7 +3,7 @@ rule:
     name: display service notification message box
     namespace: host-interaction/gui
     authors:
-      - anushka.virgaonkar@mandiant.com
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

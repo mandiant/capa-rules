@@ -3,8 +3,8 @@ rule:
     name: start HTTP server
     namespace: communication/http/server
     authors:
-      - michael.hunhoff@mandiant.com
-      - jakub.jozwiak@mandiant.com
+      - "michael.hunhoff@mandiant.com"
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: function
       dynamic: process

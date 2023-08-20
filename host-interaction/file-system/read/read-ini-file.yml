@@ -3,8 +3,8 @@ rule:
     name: read .ini file
     namespace: host-interaction/file-system/read
     authors:
-      - '@_re_fox'
-      - michael.hunhoff@mandiant.com
+      - "@_re_fox"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

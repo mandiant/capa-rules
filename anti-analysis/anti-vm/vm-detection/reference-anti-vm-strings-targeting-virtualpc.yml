@@ -3,7 +3,7 @@ rule:
     name: reference anti-VM strings targeting VirtualPC
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: file
       dynamic: file
@@ -17,7 +17,7 @@ rule:
       - al-khaser_x86.exe_
   features:
     - or:
-      - string: "/VirtualPC/i"
-      - string: "/VMSrvc.exe/i"
-      - string: "/VMUSrvc.exe/i"
+      - string: /VirtualPC/i
+      - string: /VMSrvc.exe/i
+      - string: /VMUSrvc.exe/i
       - string: /SOFTWARE\\Microsoft\\Virtual Machine\\Guest\\Parameters/i

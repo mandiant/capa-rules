@@ -3,7 +3,7 @@ rule:
     name: capture webcam image
     namespace: collection/webcam
     authors:
-      - johnk3r
+      - "johnk3r"
     scopes:
       static: function
       dynamic: process

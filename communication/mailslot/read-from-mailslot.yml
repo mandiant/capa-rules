@@ -3,7 +3,7 @@ rule:
     name: read from mailslot
     namespace: communication/mailslot
     authors:
-      - nick.simonian@mandiant.com
+      - "nick.simonian@mandiant.com"
     scopes:
       static: function
       dynamic: process

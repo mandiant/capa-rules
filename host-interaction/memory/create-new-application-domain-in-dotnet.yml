@@ -3,7 +3,7 @@ rule:
     name: create new application domain in .NET
     namespace: host-interaction/memory
     authors:
-      - jakub.jozwiak@mandiant.com
+      - "jakub.jozwiak@mandiant.com"
     scopes:
       static: file
     att&ck:

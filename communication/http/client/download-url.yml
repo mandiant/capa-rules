@@ -3,9 +3,9 @@ rule:
     name: download URL
     namespace: communication/http/client
     authors:
-      - matthew.williams@mandiant.com
-      - michael.hunhoff@mandiant.com
-      - anushka.virgaonkar@mandiant.com
+      - "matthew.williams@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: initialize hashing via WinCrypt
     namespace: data-manipulation/hashing
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

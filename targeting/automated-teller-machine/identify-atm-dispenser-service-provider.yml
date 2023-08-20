@@ -3,7 +3,7 @@ rule:
     name: identify ATM dispenser service provider
     namespace: targeting/automated-teller-machine
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: file
     references:

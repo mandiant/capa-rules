@@ -3,8 +3,8 @@ rule:
     name: check mutex
     namespace: host-interaction/mutex
     authors:
-      - moritz.raabe@mandiant.com
-      - anushka.virgaonkar@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

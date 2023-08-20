@@ -3,8 +3,8 @@ rule:
     name: get disk information
     namespace: host-interaction/hardware/storage
     authors:
-      - moritz.raabe@mandiant.com
-      - anushka.virgaonkar@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

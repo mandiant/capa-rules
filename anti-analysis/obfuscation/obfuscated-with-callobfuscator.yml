@@ -3,7 +3,7 @@ rule:
     name: obfuscated with callobfuscator
     namespace: anti-analysis/obfuscation
     authors:
-      - johnk3r
+      - "johnk3r"
     scopes:
       static: file
     att&ck:

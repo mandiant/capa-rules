@@ -3,7 +3,7 @@ rule:
     name: linked against CPP JSON library
     namespace: linking/static/jsoncpp
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: file
       dynamic: file

@@ -2,8 +2,8 @@ rule:
   meta:
     name: calculate modulo 256 via x86 assembly
     authors:
-      - moritz.raabe@mandiant.com
-    lib: 'true'
+      - "moritz.raabe@mandiant.com"
+    lib: true
     scopes:
       static: instruction
     mbc:

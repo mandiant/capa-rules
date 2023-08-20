@@ -3,7 +3,7 @@ rule:
     name: get session information
     namespace: host-interaction/session
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

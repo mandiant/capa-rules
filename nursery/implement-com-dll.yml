@@ -3,7 +3,7 @@ rule:
     name: implement COM DLL
     namespace: executable/pe
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: file
     references:

@@ -3,7 +3,7 @@ rule:
     name: list user account groups
     namespace: host-interaction/accounts
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     description: enumerates all the groups present on the system/domain
     scopes:
       static: basic block

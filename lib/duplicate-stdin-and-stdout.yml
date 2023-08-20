@@ -2,8 +2,8 @@ rule:
   meta:
     name: duplicate stdin and stdout
     authors:
-      - joakim@intezer.com
-    lib: 'true'
+      - "joakim@intezer.com"
+    lib: true
     scopes:
       static: basic block
       dynamic: thread

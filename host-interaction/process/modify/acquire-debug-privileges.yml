@@ -3,7 +3,7 @@ rule:
     name: acquire debug privileges
     namespace: host-interaction/process/modify
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

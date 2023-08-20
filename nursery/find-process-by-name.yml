@@ -3,7 +3,7 @@ rule:
     name: find process by name
     namespace: host-interaction/process/list
     authors:
-      - anushka.virgaonkar@mandiant.com
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process

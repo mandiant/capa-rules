@@ -3,7 +3,7 @@ rule:
     name: reference anti-VM strings targeting Parallels
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: file
       dynamic: file
@@ -17,7 +17,7 @@ rule:
       - al-khaser_x86.exe_
   features:
     - or:
-      - string: "/Parallels/i"
-      - string: "/prl_cc.exe/i"
-      - string: "/prl_tools.exe/i"
-      - string: "/prl hyperv/i"
+      - string: /Parallels/i
+      - string: /prl_cc.exe/i
+      - string: /prl_tools.exe/i
+      - string: /prl hyperv/i

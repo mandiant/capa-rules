@@ -3,7 +3,7 @@ rule:
     name: discover Group Policy via gpresult
     namespace: collection/group-policy
     authors:
-      - william.ballenthin@mandiant.com
+      - "william.ballenthin@mandiant.com"
     scopes:
       static: function
       dynamic: process

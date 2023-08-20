@@ -3,7 +3,7 @@ rule:
     name: lock the desktop
     namespace: host-interaction/gui/session/lock
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

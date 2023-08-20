@@ -3,7 +3,7 @@ rule:
     name: check for sandbox via MAC address OUIs in .NET
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - jonathanlepore@google.com
+      - "jonathanlepore@google.com"
     description: detects sandbox detection via mac address organizationally unique identifiers (OUIs). Based off publicly available CSharpShooter/CheckPlease.cs
     scopes:
       static: function
@@ -19,11 +19,11 @@ rule:
       - basic block:
         - and:
           - 3 or more:
-            - string: "/00[:-]?0c[:-]?29/i"
-            - string: "/00[:-]?1c[:-]?14/i"
-            - string: "/00[:-]?50[:-]?56/i"
+            - string: /00[:-]?0c[:-]?29/i
+            - string: /00[:-]?1c[:-]?14/i
+            - string: /00[:-]?50[:-]?56/i
               description: VMware OUIs
-            - string: "/08[:-]?00[:-]?27/i"
+            - string: /08[:-]?00[:-]?27/i
               description: PCS Systemtechnik GmbH OUI, potentially related to VirtualBox
           - api: System.Net.NetworkInformation.NetworkInterface::GetPhysicalAddress
           - api: System.Net.NetworkInformation.NetworkInterface::GetAllNetworkInterfaces

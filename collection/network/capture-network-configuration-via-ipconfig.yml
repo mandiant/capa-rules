@@ -3,7 +3,7 @@ rule:
     name: capture network configuration via ipconfig
     namespace: collection/network
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: basic block
       dynamic: thread

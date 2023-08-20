@@ -3,7 +3,7 @@ rule:
     name: set web proxy in .NET
     namespace: communication/http
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
   features:

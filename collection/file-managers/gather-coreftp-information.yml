@@ -3,7 +3,7 @@ rule:
     name: gather coreftp information
     namespace: collection/file-managers
     authors:
-      - '@_re_fox'
+      - "@_re_fox"
     scopes:
       static: function
       dynamic: process
@@ -15,7 +15,7 @@ rule:
       - 5a2f620f29ca2f44fc22df67b674198f:0x4063FD
   features:
     - or:
-      - substring: Software\FTPWare\COREFTP\Sites
+      - substring: "Software\\FTPWare\\COREFTP\\Sites"
       - and:
         - string: "Host"
         - string: "User"

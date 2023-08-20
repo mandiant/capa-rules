@@ -3,9 +3,9 @@ rule:
     name: receive data on socket
     namespace: communication/socket/receive
     authors:
-      - moritz.raabe@mandiant.com
-      - joakim@intezer.com
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe@mandiant.com"
+      - "joakim@intezer.com"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

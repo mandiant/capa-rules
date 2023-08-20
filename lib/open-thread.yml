@@ -2,8 +2,8 @@ rule:
   meta:
     name: open thread
     authors:
-      - 0x534a@mailbox.org
-    lib: 'true'
+      - "0x534a@mailbox.org"
+    lib: true
     scopes:
       static: basic block
       dynamic: thread

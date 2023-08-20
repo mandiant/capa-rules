@@ -2,9 +2,9 @@ rule:
   meta:
     name: create or open file
     authors:
-      - michael.hunhoff@mandiant.com
-      - joakim@intezer.com
-    lib: 'true'
+      - "michael.hunhoff@mandiant.com"
+      - "joakim@intezer.com"
+    lib: true
     scopes:
       static: basic block
       dynamic: thread

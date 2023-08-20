@@ -3,7 +3,7 @@ rule:
     name: create BITS job
     namespace: communication/http/client
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     description: BITS jobs can be used to download data or achieve persistence (via SetNotifyCmdLine)
     scopes:
       static: function

@@ -3,9 +3,9 @@ rule:
     name: get domain information
     namespace: host-interaction/network/domain
     authors:
-      - awillia2@cisco.com
-      - anushka.virgaonkar@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - "awillia2@cisco.com"
+      - "anushka.virgaonkar@mandiant.com"
+      - "michael.hunhoff@mandiant.com"
     description: Detect collection of Windows domain information
     scopes:
       static: function

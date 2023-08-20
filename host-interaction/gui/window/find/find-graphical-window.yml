@@ -3,7 +3,7 @@ rule:
     name: find graphical window
     namespace: host-interaction/gui/window/find
     authors:
-      - moritz.raabe@mandiant.com
+      - "moritz.raabe@mandiant.com"
     scopes:
       static: function
       dynamic: process

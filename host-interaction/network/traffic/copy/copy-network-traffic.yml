@@ -3,7 +3,7 @@ rule:
     name: copy network traffic
     namespace: host-interaction/network/traffic/copy
     authors:
-      - michael.hunhoff@mandiant.com
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process

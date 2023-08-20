@@ -3,8 +3,8 @@ rule:
     name: get geographical location
     namespace: collection
     authors:
-      - moritz.raabe
-      - michael.hunhoff@mandiant.com
+      - "moritz.raabe"
+      - "michael.hunhoff@mandiant.com"
     scopes:
       static: function
       dynamic: process
@@ -18,16 +18,16 @@ rule:
       - api: GetLocaleInfoEx
       - api: kernel32.GetUserGeoID
       - api: kernel32.GetGeoInfo
-      - string: "/geolocation/i"
-      - string: "/geo-location/i"
-      - string: "/^city/i"
-      - string: "/region_code/i"
-      - string: "/region_name/i"
-      - string: "/^country/i"
-      - string: "/country_code/i"
-      - string: "/countrycode/i"
-      - string: "/country_name/i"
-      - string: "/continent_code/i"
-      - string: "/continent_name/i"
-      - string: "/^latitude/i"
-      - string: "/^longitude/i"
+      - string: /geolocation/i
+      - string: /geo-location/i
+      - string: /^city/i
+      - string: /region_code/i
+      - string: /region_name/i
+      - string: /^country/i
+      - string: /country_code/i
+      - string: /countrycode/i
+      - string: /country_name/i
+      - string: /continent_code/i
+      - string: /continent_name/i
+      - string: /^latitude/i
+      - string: /^longitude/i

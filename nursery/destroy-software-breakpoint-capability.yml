@@ -3,7 +3,7 @@ rule:
     name: destroy software breakpoint capability
     namespace: anti-analysis/anti-debugging
     authors:
-      - echernofsky@google.com
+      - "echernofsky@google.com"
     scopes:
       static: function
       dynamic: process

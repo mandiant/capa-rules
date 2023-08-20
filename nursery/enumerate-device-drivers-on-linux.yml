@@ -3,7 +3,7 @@ rule:
     name: enumerate device drivers on Linux
     namespace: collection
     authors:
-      - '@mr-tz'
+      - "@mr-tz"
     scopes:
       static: function
       dynamic: process

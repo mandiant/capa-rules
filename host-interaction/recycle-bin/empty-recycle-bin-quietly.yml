@@ -3,7 +3,7 @@ rule:
     name: empty recycle bin quietly
     namespace: host-interaction/recycle-bin
     authors:
-      - matthew.williams@mandiant.com
+      - "matthew.williams@mandiant.com"
     scopes:
       static: basic block
       dynamic: thread

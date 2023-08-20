@@ -3,8 +3,8 @@ rule:
     name: set HTTP cookie
     namespace: communication/http
     authors:
-      - michael.hunhoff@mandiant.com
-      - anushka.virgaonkar@mandiant.com
+      - "michael.hunhoff@mandiant.com"
+      - "anushka.virgaonkar@mandiant.com"
     scopes:
       static: function
       dynamic: process
