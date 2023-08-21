@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: linked against sqlite3
+    namespace: linking/static/sqlite3
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: file
+      dynamic: file
+    examples:
+      - 253309d8b3675d3cc61d4bf23aa15d4b
+  features:
+    - or:
+      - 3 or more:
+        - string: "database corruption"
+        - string: "SQLITE_OK"
+        - string: "SQLite format 3"
+        - string: "sqlite3_extension_init"
+        - substring: "cannot INSERT into generated column"
+        - substring: "UPSERT not implemented for virtual table"
+        - substring: "sqlite3_get_table()"
+        - substring: "qualified table names are not allowed on"

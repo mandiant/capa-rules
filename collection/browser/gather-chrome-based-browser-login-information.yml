@@ -4,25 +4,30 @@ rule:
     namespace: collection/browser
     authors:
       - "@_re_fox"
+      - still@teamt5.org
     scopes:
-      static: function
+      static: file
     att&ck:
       - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
     examples:
       - 2fd45662e3d0ec0077ea2fa66b6378f0:0x6000039
+      - 54390bda109aab7fc006b8b4ead5b6c2:0x1006E8D3
   features:
     - and:
       - or:
-        - string: /\\(Edge|Chrome|Chromium|Brave\-Browser|YandexBrowser|Kometa|Orbitum|Dragon|Torch|Amigo)\\User Data\\Default\\Login Data/
-        - string: /\\Opera Software\\Opera Stable\\Login Data/
+        - string: /\\+(Edge|Chrome|Chromium|Brave\-Browser|YandexBrowser|Kometa|Orbitum|Dragon|Torch|Amigo)\\+User Data\\+Default(\\+Network)?\\+(Cookies|Login Data)/i
+        - string: /\\Opera Software\\Opera Stable\\(Login Data|Cookies)/i
       - or:
-        - string: /SELECT [(date_created|username_element|password_element|origin_url|signon_realm|action_url|username_value|password_value)\s+,]+ FROM logins/i
+        - string: /SELECT ((date_created|username_element|password_element|origin_url|signon_realm|action_url|username_value|password_value),?\s?)+ FROM logins/i
+        - string: /SELECT ((creation_utc|encrypted_value),?\s?)+ FROM cookies/i
         - 2 or more:
-          - string: /date_created/i
-          - string: /username_element/i
-          - string: /username_value/i
-          - string: /password_element/i
-          - string: /origin_url/i
-          - string: /signon_realm/i
-          - string: /action_url/i
-          - string: /password_value/i
+          - substring: "date_created"
+          - substring: "encrypted_value"
+          - substring: "creation_utc"
+          - substring: "username_element"
+          - substring: "username_value"
+          - substring: "password_element"
+          - substring: "origin_url"
+          - substring: "signon_realm"
+          - substring: "action_url"
+          - substring: "password_value"

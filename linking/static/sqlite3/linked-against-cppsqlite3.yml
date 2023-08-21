@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: linked against CppSQLite3
+    namespace: linking/static/sqlite3
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: file
+      dynamic: file
+    examples:
+      - 253309d8b3675d3cc61d4bf23aa15d4b
+  features:
+    - and:
+      - substring: "CppSQLite3DB"
+      - substring: "CppSQLite3Query"
