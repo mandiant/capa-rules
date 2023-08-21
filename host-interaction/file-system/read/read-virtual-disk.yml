@@ -6,7 +6,6 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: process
     mbc:
       - File System::Read Virtual Disk [C0056]
     references:

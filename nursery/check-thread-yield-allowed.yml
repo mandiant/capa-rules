@@ -6,7 +6,6 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::NtYieldExecution/SwitchToThread [B0001.015]
     references:

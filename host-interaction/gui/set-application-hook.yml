@@ -6,7 +6,6 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: process
     examples:
       - Practical Malware Analysis Lab 12-03.exe_:0x401000
   features:

@@ -6,7 +6,6 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
     att&ck:
       - Defense Evasion::Indicator Removal [T1070]
     references:

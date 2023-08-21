@@ -9,7 +9,6 @@ rule:
     description: can be any Fowler-Noll-Vo (FNV) hash variant, including FNV-1, FNV-1a, FNV-0
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Data::Non-Cryptographic Hash::FNV [C0030.005]
     references:
@@ -22,6 +21,7 @@ rule:
   features:
     - and:
       - optional:
+        - characteristic: loop
         - number: 0xcbf29ce484222325 = FNV_offset_basis, unused by FNV-0
         - number: 0x811c9dc5 = FNV_offset_basis, unused by FNV-0
         - and:

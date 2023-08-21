@@ -6,7 +6,6 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Defense Evasion::Process Injection::Extra Window Memory Injection [T1055.011]
     mbc:

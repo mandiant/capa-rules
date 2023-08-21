@@ -6,7 +6,6 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: function
-      dynamic: process
   features:
     - and:
       - instruction:

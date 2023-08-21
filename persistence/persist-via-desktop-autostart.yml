@@ -6,7 +6,6 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::XDG Autostart Entries [T1547.013]
     examples:

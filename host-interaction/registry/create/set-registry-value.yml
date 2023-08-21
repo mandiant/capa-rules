@@ -7,7 +7,6 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Operating System::Registry::Set Registry Key [C0036.001]
     examples:

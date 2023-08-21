@@ -7,7 +7,6 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Communication::Interprocess Communication::Write Pipe [C0003.004]
     examples:

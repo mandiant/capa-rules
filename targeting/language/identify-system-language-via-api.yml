@@ -6,7 +6,6 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Discovery::System Location Discovery::System Language Discovery [T1614.001]
     examples:

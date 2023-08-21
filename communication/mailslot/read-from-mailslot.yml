@@ -6,7 +6,6 @@ rule:
       - nick.simonian@mandiant.com
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Communication::Interprocess Communication [C0003]
     references:

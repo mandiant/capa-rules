@@ -8,7 +8,6 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Discovery::Query Registry [T1012]
     mbc:

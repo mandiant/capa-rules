@@ -6,7 +6,6 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
     mbc:
       - Communication::Socket Communication::Create Socket [C0001.003]
     references:

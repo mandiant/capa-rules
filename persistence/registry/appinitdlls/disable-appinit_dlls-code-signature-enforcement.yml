@@ -6,7 +6,6 @@ rule:
       - william.ballenthin@fireye.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Persistence::Event Triggered Execution::AppInit DLLs [T1546.010]
       - Defense Evasion::Subvert Trust Controls::Code Signing Policy Modification [T1553.006]

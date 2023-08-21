@@ -6,7 +6,6 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection [B0001]
     references:
@@ -16,21 +15,11 @@ rule:
   features:
     - and:
       - match: contain loop
-      - or:
-        - basic block:
-          - and:
-            - api: kernel32.QueryInformationJobObject
-            - number: 0x3 = JobObjectBasicProcessIdList
-        - thread:
-          - and:
-            - api: kernel32.QueryInformationJobObject
-            - number: 0x3 = JobObjectBasicProcessIdList
-      - or:
-        - basic block:
-          - and:
-            - api: kernel32.OpenProcess
-            - number: 0x400 = PROCESS_QUERY_INFORMATION
-        - thread:
-          - and:
-            - api: kernel32.OpenProcess
-            - number: 0x400 = PROCESS_QUERY_INFORMATION
+      - basic block:
+        - and:
+          - api: kernel32.QueryInformationJobObject
+          - number: 0x3 = JobObjectBasicProcessIdList
+      - basic block:
+        - and:
+          - api: kernel32.OpenProcess
+          - number: 0x400 = PROCESS_QUERY_INFORMATION

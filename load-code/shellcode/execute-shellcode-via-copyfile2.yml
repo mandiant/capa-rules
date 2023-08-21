@@ -6,7 +6,6 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: process
     references:
       - https://github.com/S4R1N/AlternativeShellcodeExec/blob/master/CopyFile2/CopyFile2.cpp
     examples:
@@ -15,20 +14,14 @@ rule:
     - and:
       - or:
         - match: allocate RWX memory
-        - or:
-          - basic block:
-            - and:
-              - match: allocate memory
-              - or:
-                - number: 0x40
-                - instruction:
-                  - mnemonic: lea
-                  - offset: 64
-          - thread:
-            - and:
-              - match: allocate memory
-              - or:
-                - number: 0x40
+        - basic block:
+          - and:
+            - match: allocate memory
+            - or:
+              - number: 0x40
+              - instruction:
+                - mnemonic: lea
+                - offset: 64
       - api: CopyFile2
       - api: DeleteFileW
       - number: 0x00000001 = COPY_FILE_FAIL_IF_EXISTS

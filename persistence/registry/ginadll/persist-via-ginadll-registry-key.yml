@@ -6,7 +6,6 @@ rule:
       - michael.hunhoff@fireye.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Persistence::Event Triggered Execution [T1546]
     examples:

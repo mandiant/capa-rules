@@ -14,6 +14,13 @@ rule:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314567B
   features:
     - or:
+      - api: System.IO.File::ReadAllBytes
+      - api: System.IO.File::ReadAllBytesAsync
+      - api: System.IO.File::ReadAllLines
+      - api: System.IO.File::ReadAllLinesAsync
+      - api: System.IO.File::ReadAllText
+      - api: System.IO.File::ReadAllTextAsync
+      - api: System.IO.File::ReadLines
       - and:
         - os: windows
         - optional:
@@ -28,10 +35,3 @@ rule:
           - api: LZRead
           - api: _read
           - api: fread
-      - api: System.IO.File::ReadAllBytes
-      - api: System.IO.File::ReadAllBytesAsync
-      - api: System.IO.File::ReadAllLines
-      - api: System.IO.File::ReadAllLinesAsync
-      - api: System.IO.File::ReadAllText
-      - api: System.IO.File::ReadAllTextAsync
-      - api: System.IO.File::ReadLines

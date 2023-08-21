@@ -16,15 +16,15 @@ rule:
   features:
     - or:
       - and:
-        - substring: "SOFTWARE\\Robo-FTP"
-        - or:
-          - substring: "\\FTPServers"
-          - substring: "FTP File"
-          - string: "FTP Count"
-      - and:
         - string: "Password"
         - string: "ServerName"
         - string: "UserID"
         - string: "PortNumber"
         - string: "InitialDirectory"
         - string: "ServerType"
+      - and:
+        - substring: "SOFTWARE\\Robo-FTP"
+        - or:
+          - substring: "\\FTPServers"
+          - substring: "FTP File"
+          - string: "FTP Count"

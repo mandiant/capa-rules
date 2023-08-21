@@ -6,7 +6,6 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: process
     mbc:
       - File System::Read File [C0051]
     examples:

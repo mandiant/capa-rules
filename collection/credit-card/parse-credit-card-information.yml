@@ -6,7 +6,6 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Data::Check String [C0019]
     examples:

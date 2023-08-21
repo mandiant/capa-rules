@@ -16,15 +16,13 @@ rule:
   features:
     - or:
       - and:
-        - or:
-          - basic block:
-            - and:
-              - number: 2 = SERVICE_AUTO_START
-              - api: advapi32.CreateService
-          - thread:
-            - and:
-              - number: 2 = SERVICE_AUTO_START
-              - api: advapi32.CreateService
+        - match: set registry value
+        - string: /System\\(CurrentControlSet|ControlSet001)\\Services/i
+      - and:
+        - basic block:
+          - and:
+            - number: 2 = SERVICE_AUTO_START
+            - api: advapi32.CreateService
         - optional:
           - or:
             - api: advapi32.OpenService
@@ -37,6 +35,3 @@ rule:
             - string: /create /i
           - string: /^sc(|\.exe) create/i
           - string: /New-Service /i
-      - and:
-        - match: set registry value
-        - string: /System\\(CurrentControlSet|ControlSet001)\\Services/i

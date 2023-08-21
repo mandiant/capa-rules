@@ -7,7 +7,6 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: file
-      dynamic: file
     references:
       - https://github.com/ikarstein/ps2exe
       - https://github.com/MScholtes/PS2EXE

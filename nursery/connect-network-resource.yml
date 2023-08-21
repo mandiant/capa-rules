@@ -7,7 +7,6 @@ rule:
     description: connect to disk or print resource
     scopes:
       static: function
-      dynamic: process
   features:
     - and:
       - or:

@@ -7,7 +7,6 @@ rule:
       - still@teamt5.org
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Data::Non-Cryptographic Hash::djb2 [C0030.006]
     references:

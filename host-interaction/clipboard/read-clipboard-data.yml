@@ -7,7 +7,6 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Collection::Clipboard Data [T1115]
     references:
@@ -24,21 +23,13 @@ rule:
         - api: kernel32.GlobalLock
         - api: kernel32.GlobalUnlock
       - or:
-        - or:
-          - basic block:
-            - and:
-              - api: user32.GetClipboardData
-              - optional:
-                - number: 0x1 = CF_TEXT
-                - number: 0x7 = CF_OEMTEXT
-                - number: 0xD = CF_UNICODETEXT
-          - thread:
-            - and:
-              - api: user32.GetClipboardData
-              - optional:
-                - number: 0x1 = CF_TEXT
-                - number: 0x7 = CF_OEMTEXT
-                - number: 0xD = CF_UNICODETEXT
+        - basic block:
+          - and:
+            - api: user32.GetClipboardData
+            - optional:
+              - number: 0x1 = CF_TEXT
+              - number: 0x7 = CF_OEMTEXT
+              - number: 0xD = CF_UNICODETEXT
         - api: System.Windows.Forms.Clipboard::GetAudioStream
         - api: System.Windows.Forms.Clipboard::GetData
         - api: System.Windows.Forms.Clipboard::GetDataObject

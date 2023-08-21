@@ -33,6 +33,12 @@ rule:
               - api: NtSetInformationThread
               - api: ZwSetInformationThread
             - number: 0x11 = ThreadHideFromDebugger
+      - basic block:
+        - and:
+          - or:
+            - api: NtSetInformationThread
+            - api: ZwSetInformationThread
+          - number: 0x11 = ThreadHideFromDebugger
       - and:
         - or:
           - string: "NtSetInformationThread"

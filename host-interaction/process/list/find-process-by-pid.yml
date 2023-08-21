@@ -7,7 +7,6 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Discovery::Process Discovery [T1057]
     examples:

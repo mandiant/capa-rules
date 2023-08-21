@@ -18,6 +18,9 @@ rule:
   features:
     - or:
       - and:
+        - os: linux
+        - api: pthread_create
+      - and:
         - os: windows
         - or:
           - api: kernel32.CreateThread
@@ -33,9 +36,6 @@ rule:
           - api: ntdll.NtCreateThreadEx
           - api: ntdll.ZwCreateThread
           - api: ntdll.ZwCreateThreadEx
-      - and:
-        - os: linux
-        - api: pthread_create
       - and:
         - api: System.Threading.Thread::Start
         - optional:

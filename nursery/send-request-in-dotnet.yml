@@ -6,7 +6,6 @@ rule:
       - anushka.virgaonakr@mandiant.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Command and Control::Application Layer Protocol::Web Protocols [T1071.001]
     mbc:

@@ -6,7 +6,6 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: file
-      dynamic: file
     att&ck:
       - "Defense Evasion::Process Injection::Process Doppelg\xE4nging [T1055.013]"
     examples:

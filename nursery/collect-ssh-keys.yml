@@ -6,7 +6,6 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Credential Access::Unsecured Credentials::Private Keys [T1552.004]
   features:

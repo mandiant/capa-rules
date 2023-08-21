@@ -37,6 +37,10 @@ rule:
           - and:
             - number: 0x8004 = CALG_SHA1
             - api: advapi32.CryptCreateHash
+      - basic block:
+        - and:
+          - number: 0x8004 = CALG_SHA1
+          - api: advapi32.CryptCreateHash
       - and:
         - api: System.Security.Cryptography.SHA1Managed::ctor
         - optional:

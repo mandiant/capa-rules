@@ -18,6 +18,9 @@ rule:
       - api: System.Net.WebRequest::GetResponse
       - api: System.Net.WebRequest::GetResponseAsync
       - and:
+        - match: send data on socket
+        - string: /HTTP/i
+      - and:
         - or:
           - api: wininet.HttpOpenRequest
           - api: wininet.InternetConnect
@@ -31,6 +34,3 @@ rule:
           - or:
             - api: winhttp.WinHttpOpenRequest
             - api: winhttp.WinHttpConnect
-      - and:
-        - match: send data on socket
-        - string: /HTTP/i

@@ -6,7 +6,6 @@ rule:
     lib: 'true'
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Data::Checksum::Luhn [C0032.002]
     examples:

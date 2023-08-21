@@ -6,7 +6,6 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::SetHandleInformation [B0001.024]
     references:
@@ -15,13 +14,8 @@ rule:
       - al-khaser_x86.exe_:0x430D20
   features:
     - and:
-      - or:
-        - basic block:
-          - and:
-            - count(number(2)): 2 or more
-            - api: SetHandleInformation
-        - thread:
-          - and:
-            - count(number(2)): 2 or more
-            - api: SetHandleInformation
+      - basic block:
+        - and:
+          - count(number(2)): 2 or more
+          - api: SetHandleInformation
       - api: CloseHandle

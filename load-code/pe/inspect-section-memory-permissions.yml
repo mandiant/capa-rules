@@ -7,7 +7,6 @@ rule:
     description: translate section memory permissions (specified in the 'Characteristics' field of the image section header) into page protection constants
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Discovery::Code Discovery::Inspect Section Memory Permissions [B0046.002]
     examples:

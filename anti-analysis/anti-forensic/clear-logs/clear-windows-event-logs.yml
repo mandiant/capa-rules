@@ -6,7 +6,6 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Defense Evasion::Indicator Removal::Clear Windows Event Logs [T1070.001]
     examples:
@@ -23,10 +22,6 @@ rule:
           - optional:
             - api: advapi32.OpenEventLog
             - api: advapi32.GetNumberOfEventLogRecords
-        - or:
-          - basic block:
-            - and:
-              - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i
-          - thread:
-            - and:
-              - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i
+        - basic block:
+          - and:
+            - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i

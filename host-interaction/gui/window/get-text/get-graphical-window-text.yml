@@ -6,7 +6,6 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: process
     mbc:
       - Discovery::Application Window Discovery [E1010]
     examples:
@@ -17,15 +16,10 @@ rule:
       - and:
         - optional:
           - api: user32.IsWindowVisible
-        - or:
-          - basic block:
-            - and:
-              - number: 0xD = WM_GETTEXT
-              - api: user32.SendMessage
-          - thread:
-            - and:
-              - number: 0xD = WM_GETTEXT
-              - api: user32.SendMessage
+        - basic block:
+          - and:
+            - number: 0xD = WM_GETTEXT
+            - api: user32.SendMessage
       - and:
         - optional:
           - api: user32.GetForegroundWindow

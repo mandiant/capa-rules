@@ -6,7 +6,6 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
     examples:

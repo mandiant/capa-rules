@@ -6,7 +6,6 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
@@ -19,16 +18,6 @@ rule:
       - 73CE04892E5F39EC82B00C02FC04C70F:0x40646E
   features:
     - or:
-      - and:
-        - description: write DWORDs instead of bytes
-        - or:
-          - number: 0x03020100
-          - number: 0xFFFEFDFC
-        - instruction:
-          - or:
-            - mnemonic: add
-            - mnemonic: sub
-          - number: 0x04040404
       - and:
         - basic block:
           - and:
@@ -53,3 +42,13 @@ rule:
           - description: modulo key length
           - mnemonic: div
           - mnemonic: idiv
+      - and:
+        - description: write DWORDs instead of bytes
+        - or:
+          - number: 0x03020100
+          - number: 0xFFFEFDFC
+        - instruction:
+          - or:
+            - mnemonic: add
+            - mnemonic: sub
+          - number: 0x04040404

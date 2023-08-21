@@ -14,6 +14,7 @@ rule:
       - 648FC498110B11B4313A47A776E6BA40:0x6633F0
   features:
     - or:
+      - api: wininet.InternetAttemptConnect
       - and:
         - or:
           - api: wininet.InternetGetConnectedState
@@ -24,4 +25,3 @@ rule:
             - or:
               - number: 0 = FALSE
               - number: 1 = TRUE
-      - api: wininet.InternetAttemptConnect

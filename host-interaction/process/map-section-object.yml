@@ -6,7 +6,6 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: process
     examples:
       - 61908f4d70ce6f16173e76aa42a8c25a:0x4018F0
   features:

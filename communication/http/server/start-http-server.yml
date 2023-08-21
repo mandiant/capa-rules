@@ -15,8 +15,8 @@ rule:
       - 039a6336d0802a2255669e6867a5679c7eb83313dbc61fb1c7232147379bd304:0x6000026
   features:
     - or:
+      - api: System.Net.HttpListener::Start
       - and:
         - api: httpapi.HttpInitialize
         - optional:
           - api: httpapi.HttpTerminate
-      - api: System.Net.HttpListener::Start

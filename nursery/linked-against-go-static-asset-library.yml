@@ -7,7 +7,6 @@ rule:
     description: Detects if the Go file includes an static assets.
     scopes:
       static: file
-      dynamic: file
     references:
       - https://github.com/rakyll/statik
       - https://github.com/gobuffalo/packr

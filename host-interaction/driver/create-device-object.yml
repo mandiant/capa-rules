@@ -6,7 +6,6 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: process
     examples:
       - Practical Malware Analysis Lab 10-03.sys_:0x00010706
   features:

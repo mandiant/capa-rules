@@ -6,17 +6,11 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: process
   features:
     - and:
-      - or:
-        - basic block:
-          - and:
-            - api: advapi32.GetTokenInformation
-            - number: 0x3 = TokenPrivileges
-        - thread:
-          - and:
-            - api: advapi32.GetTokenInformation
-            - number: 0x3 = TokenPrivileges
+      - basic block:
+        - and:
+          - api: advapi32.GetTokenInformation
+          - number: 0x3 = TokenPrivileges
       - optional:
         - api: advapi32.LookupPrivilegeName

@@ -6,7 +6,6 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: process
     references:
       - https://docs.microsoft.com/en-us/previous-versions/windows/desktop/regprov/stdregprov#methods
   features:

@@ -7,38 +7,22 @@ rule:
     description: Rule that detects a system's webcam being used to capture video
     scopes:
       static: function
-      dynamic: process
     att&ck:
       - Collection::Video Capture [T1125]
   features:
     - and:
       - os: windows
       - api: capCreateCaptureWindow
+      - basic block:
+        - and:
+          - api: SendMessage
+          - number: 0x43E = WM_CAP_SEQUENCE
       - or:
         - basic block:
           - and:
             - api: SendMessage
-            - number: 0x43E = WM_CAP_SEQUENCE
-        - thread:
+            - number: 0x417 = WM_CAP_FILE_SAVEAS
+        - basic block:
           - and:
             - api: SendMessage
-            - number: 0x43E = WM_CAP_SEQUENCE
-      - or:
-        - or:
-          - basic block:
-            - and:
-              - api: SendMessage
-              - number: 0x417 = WM_CAP_FILE_SAVEAS
-          - thread:
-            - and:
-              - api: SendMessage
-              - number: 0x417 = WM_CAP_FILE_SAVEAS
-        - or:
-          - basic block:
-            - and:
-              - api: SendMessage
-              - number: 0x414 = WM_CAP_FILE_SET_CAPTURE_FILE
-          - thread:
-            - and:
-              - api: SendMessage
-              - number: 0x414 = WM_CAP_FILE_SET_CAPTURE_FILE
+            - number: 0x414 = WM_CAP_FILE_SET_CAPTURE_FILE

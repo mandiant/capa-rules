@@ -6,7 +6,6 @@ rule:
       - "@mr-tz"
     scopes:
       static: basic block
-      dynamic: thread
     examples:
       - 0796F1C1EA0A142FC1EB7109A44C86CB:0x405D20
   features:

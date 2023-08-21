@@ -6,7 +6,6 @@ rule:
       - joakim@intezer.com
     scopes:
       static: basic block
-      dynamic: thread
     mbc:
       - Process::Terminate Process [C0018]
     examples:
