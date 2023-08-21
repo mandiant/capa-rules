@@ -3,7 +3,7 @@ rule:
     name: check for minimum number of windows on screen
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "echernofsky@google.com"
+      - echernofsky@google.com
     scopes:
       static: basic block
       dynamic: thread

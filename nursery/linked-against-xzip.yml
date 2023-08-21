@@ -3,7 +3,7 @@ rule:
     name: linked against XZip
     namespace: linking/static/xzip
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: file
       dynamic: file

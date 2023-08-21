@@ -3,7 +3,7 @@ rule:
     name: create mailslot
     namespace: communication/mailslot
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,9 +3,9 @@ rule:
     name: create UDP socket
     namespace: communication/socket/udp/send
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "joakim@intezer.com"
-      - "michael.hunhoff@mandiant.com"
+      - moritz.raabe@mandiant.com
+      - joakim@intezer.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

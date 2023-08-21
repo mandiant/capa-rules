@@ -3,7 +3,7 @@ rule:
     name: get OS version
     authors:
       - "@mr-tz"
-    lib: true
+    lib: 'true'
     scopes:
       static: function
       dynamic: process

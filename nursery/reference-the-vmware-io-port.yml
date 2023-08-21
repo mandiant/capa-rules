@@ -3,7 +3,7 @@ rule:
     name: reference the VMWare IO port
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: function
     att&ck:

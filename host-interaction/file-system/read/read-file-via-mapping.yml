@@ -3,7 +3,7 @@ rule:
     name: read file via mapping
     namespace: host-interaction/file-system/read
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

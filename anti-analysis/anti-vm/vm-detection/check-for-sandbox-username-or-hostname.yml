@@ -4,7 +4,7 @@ rule:
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - "@_re_fox"
-      - "echernofsky@google.com"
+      - echernofsky@google.com
     scopes:
       static: function
     att&ck:

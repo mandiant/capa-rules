@@ -3,7 +3,7 @@ rule:
     name: persist via AppInit_DLLs registry key
     namespace: persistence/registry/appinitdlls
     authors:
-      - "michael.hunhoff@fireye.com"
+      - michael.hunhoff@fireye.com
     scopes:
       static: function
       dynamic: process

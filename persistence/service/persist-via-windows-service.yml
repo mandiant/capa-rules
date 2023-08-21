@@ -3,7 +3,7 @@ rule:
     name: persist via Windows service
     namespace: persistence/service
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

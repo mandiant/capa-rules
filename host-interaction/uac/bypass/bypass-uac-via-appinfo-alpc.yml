@@ -3,7 +3,7 @@ rule:
     name: bypass UAC via AppInfo ALPC
     namespace: host-interaction/uac/bypass
     authors:
-      - "richard.cole@mandiant.com"
+      - richard.cole@mandiant.com
     scopes:
       static: function
       dynamic: process

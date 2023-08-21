@@ -3,7 +3,7 @@ rule:
     name: send HTTP request with Host header
     namespace: communication/http
     authors:
-      - "anamaria.martinezgom@mandiant.com"
+      - anamaria.martinezgom@mandiant.com
     scopes:
       static: function
       dynamic: process

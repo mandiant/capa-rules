@@ -3,7 +3,7 @@ rule:
     name: query remote server for available data
     namespace: communication
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

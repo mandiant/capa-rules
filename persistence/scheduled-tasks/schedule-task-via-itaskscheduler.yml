@@ -3,7 +3,7 @@ rule:
     name: schedule task via ITaskScheduler
     namespace: persistence/scheduled-tasks
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
     att&ck:

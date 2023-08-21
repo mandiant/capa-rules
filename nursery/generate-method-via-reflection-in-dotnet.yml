@@ -3,7 +3,7 @@ rule:
     name: generate method via reflection in .NET
     namespace: load-code/dotnet
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     description: https://github.com/bohops/DynamicDotNet/blob/main/assembly_loader/DynamicAssemblyLoader.cs
     scopes:
       static: function

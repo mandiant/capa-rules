@@ -3,9 +3,9 @@ rule:
     name: hash data with MD5
     namespace: data-manipulation/hashing/md5
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
+      - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

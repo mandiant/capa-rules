@@ -3,8 +3,8 @@ rule:
     name: get local IPv4 addresses
     namespace: host-interaction/network/address
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "joakim@intezer.com"
+      - moritz.raabe@mandiant.com
+      - joakim@intezer.com
     scopes:
       static: function
       dynamic: process

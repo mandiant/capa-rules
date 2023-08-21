@@ -3,7 +3,7 @@ rule:
     name: enumerate processes on remote desktop session host
     namespace: host-interaction/process/list
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

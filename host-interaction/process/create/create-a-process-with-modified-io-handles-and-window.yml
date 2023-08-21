@@ -3,8 +3,8 @@ rule:
     name: create a process with modified I/O handles and window
     namespace: host-interaction/process/create
     authors:
-      - "matthew.williams@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
+      - matthew.williams@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process

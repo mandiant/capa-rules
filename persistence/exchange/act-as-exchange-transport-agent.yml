@@ -3,7 +3,7 @@ rule:
     name: act as Exchange transport agent
     namespace: persistence/exchange
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: function
     att&ck:

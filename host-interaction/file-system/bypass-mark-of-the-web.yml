@@ -3,7 +3,7 @@ rule:
     name: bypass Mark of the Web
     namespace: host-interaction/file-system
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
     att&ck:

@@ -3,7 +3,7 @@ rule:
     name: compiled with AutoIt
     namespace: compiler/autoit
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
       dynamic: file

@@ -3,7 +3,7 @@ rule:
     name: delete user account from group
     namespace: host-interaction/accounts
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

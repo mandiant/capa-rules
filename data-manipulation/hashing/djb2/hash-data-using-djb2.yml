@@ -3,8 +3,8 @@ rule:
     name: hash data using djb2
     namespace: data-manipulation/hashing/djb2
     authors:
-      - "awillia2@cisco.com"
-      - "still@teamt5.org"
+      - awillia2@cisco.com
+      - still@teamt5.org
     scopes:
       static: function
       dynamic: process

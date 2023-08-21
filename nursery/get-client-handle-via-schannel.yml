@@ -3,7 +3,7 @@ rule:
     name: get client handle via SChannel
     namespace: data-manipulation/encryption
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: function
       dynamic: process

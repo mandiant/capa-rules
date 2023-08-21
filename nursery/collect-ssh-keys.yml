@@ -3,7 +3,7 @@ rule:
     name: collect ssh keys
     namespace: collection
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: function
       dynamic: process

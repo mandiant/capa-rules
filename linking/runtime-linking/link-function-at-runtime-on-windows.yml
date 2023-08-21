@@ -3,8 +3,8 @@ rule:
     name: link function at runtime on Windows
     namespace: linking/runtime-linking
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

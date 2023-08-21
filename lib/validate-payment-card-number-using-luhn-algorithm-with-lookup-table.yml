@@ -3,7 +3,7 @@ rule:
     name: validate payment card number using luhn algorithm with lookup table
     authors:
       - "@_re_fox"
-    lib: true
+    lib: 'true'
     scopes:
       static: function
     mbc:

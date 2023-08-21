@@ -3,8 +3,8 @@ rule:
     name: inject thread
     namespace: host-interaction/process/inject
     authors:
-      - "anamaria.martinezgom@mandiant.com"
-      - "0x534a@mailbox.org"
+      - anamaria.martinezgom@mandiant.com
+      - 0x534a@mailbox.org
     scopes:
       static: function
       dynamic: process

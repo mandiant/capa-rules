@@ -3,7 +3,7 @@ rule:
     name: append data to CLFS log container
     namespace: host-interaction/log/clfs/append
     authors:
-      - "blaine.stancill@mandiant.com"
+      - blaine.stancill@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: decrypt data via SSPI
     namespace: data-manipulation/encryption
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

@@ -3,7 +3,7 @@ rule:
     name: packed with PESpin
     namespace: anti-analysis/packer/pespin
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: file
     att&ck:

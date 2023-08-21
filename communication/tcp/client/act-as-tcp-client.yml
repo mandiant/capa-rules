@@ -3,8 +3,8 @@ rule:
     name: act as TCP client
     namespace: communication/tcp/client
     authors:
-      - "william.ballenthin@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
+      - william.ballenthin@mandiant.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

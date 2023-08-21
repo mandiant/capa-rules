@@ -3,7 +3,7 @@ rule:
     name: clear clipboard data
     namespace: host-interaction/clipboard
     authors:
-      - "anushka.virgaonkar@mandiant.com"
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process

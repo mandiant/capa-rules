@@ -3,7 +3,7 @@ rule:
     name: create process on Linux
     namespace: host-interaction/process/create
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: basic block
       dynamic: thread

@@ -3,7 +3,7 @@ rule:
     name: delete Windows backup catalog
     namespace: impact/inhibit-system-recovery
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

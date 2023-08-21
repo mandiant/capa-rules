@@ -3,8 +3,8 @@ rule:
     name: delete registry value
     namespace: host-interaction/registry/delete
     authors:
-      - "michael.hunhoff@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
+      - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process

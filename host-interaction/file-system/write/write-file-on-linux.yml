@@ -3,7 +3,7 @@ rule:
     name: write file on Linux
     namespace: host-interaction/file-system/write
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: function
       dynamic: process

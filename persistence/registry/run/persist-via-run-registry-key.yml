@@ -3,7 +3,7 @@ rule:
     name: persist via Run registry key
     namespace: persistence/registry/run
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

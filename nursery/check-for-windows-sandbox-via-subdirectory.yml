@@ -3,7 +3,7 @@ rule:
     name: check for windows sandbox via subdirectory
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "echernofsky@google.com"
+      - echernofsky@google.com
     scopes:
       static: basic block
       dynamic: thread

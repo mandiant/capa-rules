@@ -3,7 +3,7 @@ rule:
     name: contain a thread local storage (.tls) section in .NET
     namespace: executable/pe/section/tls
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     description: .NET file contains uncommon TLS section
     scopes:
       static: file

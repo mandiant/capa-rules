@@ -3,8 +3,8 @@ rule:
     name: extract zip archive in .NET
     namespace: data-manipulation/compression
     authors:
-      - "anushka.virgaonkar@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
+      - anushka.virgaonkar@mandiant.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

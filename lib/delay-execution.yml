@@ -2,9 +2,9 @@ rule:
   meta:
     name: delay execution
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
       - "@ramen0x3f"
-    lib: true
+    lib: 'true'
     scopes:
       static: basic block
       dynamic: thread

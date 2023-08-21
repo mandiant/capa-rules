@@ -3,7 +3,7 @@ rule:
     name: decompress data using QuickLZ
     namespace: data-manipulation/compression
     authors:
-      - "david@edeca.net"
+      - david@edeca.net
     description: detects the inner decompression loop from QuickLZ
     scopes:
       static: function

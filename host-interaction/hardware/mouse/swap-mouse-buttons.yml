@@ -3,7 +3,7 @@ rule:
     name: swap mouse buttons
     namespace: host-interaction/hardware/mouse
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: hash data using Whirlpool
     namespace: data-manipulation/hashing/whirlpool
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
     mbc:

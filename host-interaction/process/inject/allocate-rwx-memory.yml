@@ -3,7 +3,7 @@ rule:
     name: allocate RWX memory
     namespace: host-interaction/process/inject
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

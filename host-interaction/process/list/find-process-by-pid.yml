@@ -3,8 +3,8 @@ rule:
     name: find process by PID
     namespace: host-interaction/process/list
     authors:
-      - "michael.hunhoff@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
+      - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process

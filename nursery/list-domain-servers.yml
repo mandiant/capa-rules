@@ -3,7 +3,7 @@ rule:
     name: list domain servers
     namespace: host-interaction/domain
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

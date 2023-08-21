@@ -3,7 +3,7 @@ rule:
     name: packed with Dragon Armor
     namespace: anti-analysis/packer/dragon-armor
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     att&ck:

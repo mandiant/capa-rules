@@ -3,7 +3,7 @@ rule:
     name: save image in .NET
     namespace: collection
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
   features:

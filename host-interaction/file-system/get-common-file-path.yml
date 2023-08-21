@@ -3,9 +3,9 @@ rule:
     name: get common file path
     namespace: host-interaction/file-system
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process

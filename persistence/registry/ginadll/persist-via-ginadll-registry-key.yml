@@ -3,7 +3,7 @@ rule:
     name: persist via GinaDLL registry key
     namespace: persistence/registry/ginadll
     authors:
-      - "michael.hunhoff@fireye.com"
+      - michael.hunhoff@fireye.com
     scopes:
       static: function
       dynamic: process

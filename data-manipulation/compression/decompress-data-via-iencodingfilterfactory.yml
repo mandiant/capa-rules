@@ -3,7 +3,7 @@ rule:
     name: decompress data via IEncodingFilterFactory
     namespace: data-manipulation/compression
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: function
     mbc:

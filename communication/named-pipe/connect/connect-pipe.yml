@@ -3,8 +3,8 @@ rule:
     name: connect pipe
     namespace: communication/named-pipe/connect
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

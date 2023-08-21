@@ -3,7 +3,7 @@ rule:
     name: packed with Confuser
     namespace: anti-analysis/packer/confuser
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     att&ck:

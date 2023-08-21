@@ -3,7 +3,7 @@ rule:
     name: enumerate threads
     namespace: host-interaction/thread/list
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

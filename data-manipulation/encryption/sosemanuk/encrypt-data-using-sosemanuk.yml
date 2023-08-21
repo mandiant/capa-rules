@@ -3,7 +3,7 @@ rule:
     name: encrypt data using Sosemanuk
     namespace: data-manipulation/encryption/sosemanuk
     authors:
-      - "awillia2@cisco.com"
+      - awillia2@cisco.com
     description: Looks for cryptographic constants associated with the Sosemanuk stream cipher
     scopes:
       static: basic block

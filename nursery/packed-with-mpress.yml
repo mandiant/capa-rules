@@ -3,7 +3,7 @@ rule:
     name: packed with Mpress
     namespace: anti-analysis/packer/mpress
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     att&ck:

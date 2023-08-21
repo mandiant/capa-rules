@@ -3,7 +3,7 @@ rule:
     name: enumerate domain computers via LDAP
     namespace: host-interaction/network/domain
     authors:
-      - "awillia2@cisco.com"
+      - awillia2@cisco.com
     description: Looks for an LDAP query and related Windows API calls used to enumerate other computers on the Windows domain that a computer is connected to.
     scopes:
       static: function

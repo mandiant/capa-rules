@@ -3,7 +3,7 @@ rule:
     name: packed with StarForce
     namespace: anti-analysis/packer/starforce
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     att&ck:

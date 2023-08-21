@@ -3,7 +3,7 @@ rule:
     name: compiled with exe4j
     namespace: compiler/exe4j
     authors:
-      - "johnk3r"
+      - johnk3r
     scopes:
       static: file
       dynamic: file

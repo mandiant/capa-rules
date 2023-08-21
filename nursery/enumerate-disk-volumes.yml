@@ -3,7 +3,7 @@ rule:
     name: enumerate disk volumes
     namespace: host-interaction/hardware/storage
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

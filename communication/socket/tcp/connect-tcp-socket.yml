@@ -3,8 +3,8 @@ rule:
     name: connect TCP socket
     namespace: communication/socket/tcp
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "joakim@intezer.com"
+      - moritz.raabe@mandiant.com
+      - joakim@intezer.com
     scopes:
       static: function
       dynamic: process

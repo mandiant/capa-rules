@@ -4,8 +4,8 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - "@r3c0nst (Frank Boldewin)"
-      - "moritz.raabe@mandiant.com"
-      - "cdong49@gatech.edu"
+      - moritz.raabe@mandiant.com
+      - cdong49@gatech.edu
     description: detects decompression function of library aPLib
     scopes:
       static: function

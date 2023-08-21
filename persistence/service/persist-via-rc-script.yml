@@ -3,7 +3,7 @@ rule:
     name: persist via rc script
     namespace: persistence/service
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: function
       dynamic: process

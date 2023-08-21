@@ -3,7 +3,7 @@ rule:
     name: inject pe
     namespace: host-interaction/process/inject
     authors:
-      - "0x534a@mailbox.org"
+      - 0x534a@mailbox.org
     scopes:
       static: function
     att&ck:

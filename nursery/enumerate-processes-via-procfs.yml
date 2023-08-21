@@ -3,7 +3,7 @@ rule:
     name: enumerate processes via procfs
     namespace: host-interaction/process/list
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: function
       dynamic: process

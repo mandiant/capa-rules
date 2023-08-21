@@ -3,7 +3,7 @@ rule:
     name: compiled with MinGW for Windows
     namespace: compiler/mingw
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
       dynamic: file

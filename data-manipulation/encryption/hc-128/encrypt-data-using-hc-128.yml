@@ -3,7 +3,7 @@ rule:
     name: encrypt data using HC-128
     namespace: data-manipulation/encryption/hc-128
     authors:
-      - "awillia2@cisco.com"
+      - awillia2@cisco.com
     description: Looks for instruction mnemonics associated with initialization of the HC-128 stream cipher
     scopes:
       static: basic block

@@ -3,7 +3,7 @@ rule:
     name: enumerate browser history
     namespace: host-interaction/browser/history/list
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
   features:

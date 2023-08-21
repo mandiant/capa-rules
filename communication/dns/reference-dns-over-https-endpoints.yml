@@ -3,7 +3,7 @@ rule:
     name: reference DNS over HTTPS endpoints
     namespace: communication/dns
     authors:
-      - "markus.neis@swisscom.com / @markus_neis"
+      - markus.neis@swisscom.com / @markus_neis
     scopes:
       static: file
       dynamic: file

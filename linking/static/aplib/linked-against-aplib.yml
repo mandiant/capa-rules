@@ -3,7 +3,7 @@ rule:
     name: linked against aPLib
     namespace: linking/static/aplib
     authors:
-      - "still@teamt5.org"
+      - still@teamt5.org
     scopes:
       static: file
       dynamic: file

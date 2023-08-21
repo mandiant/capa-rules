@@ -3,7 +3,7 @@ rule:
     name: check for sandbox via MAC address OUIs in .NET
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "jonathanlepore@google.com"
+      - jonathanlepore@google.com
     description: detects sandbox detection via mac address organizationally unique identifiers (OUIs). Based off publicly available CSharpShooter/CheckPlease.cs
     scopes:
       static: function

@@ -4,7 +4,7 @@ rule:
     namespace: collection/webcam
     authors:
       - "@johnk3r"
-    description: Rule that detects a systems webcam being used to capture video
+    description: Rule that detects a system's webcam being used to capture video
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: link function at runtime on Linux
     namespace: linking/runtime-linking
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: function
       dynamic: process

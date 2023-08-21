@@ -3,7 +3,7 @@ rule:
     name: unmanaged call
     namespace: runtime
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     description: managed code calls unmanaged (native) code, often seen in .NET
     scopes:
       static: function

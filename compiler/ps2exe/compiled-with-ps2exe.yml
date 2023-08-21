@@ -4,7 +4,7 @@ rule:
     namespace: compiler/ps2exe
     authors:
       - "@_re_fox"
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: file
       dynamic: file

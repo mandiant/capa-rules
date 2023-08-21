@@ -3,8 +3,8 @@ rule:
     name: encrypt data using AES
     namespace: data-manipulation/encryption/aes
     authors:
-      - "william.ballenthin@mandiant.com"
-      - "Ivan Kwiatkowski (@JusticeRage)"
+      - william.ballenthin@mandiant.com
+      - Ivan Kwiatkowski (@JusticeRage)
     scopes:
       static: function
     att&ck:

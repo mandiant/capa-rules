@@ -3,7 +3,7 @@ rule:
     name: compiled with AutoHotKey
     namespace: compiler/autohotkey
     authors:
-      - "awillia2@cisco.com"
+      - awillia2@cisco.com
     scopes:
       static: file
       dynamic: file

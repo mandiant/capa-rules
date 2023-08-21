@@ -3,7 +3,7 @@ rule:
     name: check for foreground window switch
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "ervin.ocampo@mandiant.com"
+      - ervin.ocampo@mandiant.com
     description: Detect usage of GetForegroundWindow and Sleep APIs to check if there is any foreground window switch. Typically, sandboxes do not switch the foreground window like a user would in a normal environment.
     scopes:
       static: function

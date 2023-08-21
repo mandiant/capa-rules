@@ -3,7 +3,7 @@ rule:
     name: compiled to the .NET platform
     namespace: runtime/dotnet
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     examples:

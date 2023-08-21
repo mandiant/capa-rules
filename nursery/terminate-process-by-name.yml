@@ -3,7 +3,7 @@ rule:
     name: terminate process by name
     namespace: host-interaction/process/terminate
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
   features:

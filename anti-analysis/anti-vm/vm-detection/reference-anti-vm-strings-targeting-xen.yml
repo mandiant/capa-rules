@@ -3,7 +3,7 @@ rule:
     name: reference anti-VM strings targeting Xen
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: file
       dynamic: file

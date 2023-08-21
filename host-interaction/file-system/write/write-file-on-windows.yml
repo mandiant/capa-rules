@@ -3,8 +3,8 @@ rule:
     name: write file on Windows
     namespace: host-interaction/file-system/write
     authors:
-      - "william.ballenthin@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
+      - william.ballenthin@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process

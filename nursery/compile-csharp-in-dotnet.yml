@@ -3,7 +3,7 @@ rule:
     name: compile CSharp in .NET
     namespace: load-code/dotnet/csharp
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

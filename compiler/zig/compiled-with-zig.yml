@@ -3,7 +3,7 @@ rule:
     name: compiled with Zig
     namespace: compiler/zig
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: file
       dynamic: file

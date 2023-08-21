@@ -3,7 +3,7 @@ rule:
     name: connect network resource
     namespace: communication/http
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     description: connect to disk or print resource
     scopes:
       static: function

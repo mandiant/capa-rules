@@ -3,7 +3,7 @@ rule:
     name: "use process Doppelg\xE4nging"
     namespace: host-interaction/process/inject
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: file
       dynamic: file

@@ -3,7 +3,7 @@ rule:
     name: check for hardware breakpoints
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
     mbc:

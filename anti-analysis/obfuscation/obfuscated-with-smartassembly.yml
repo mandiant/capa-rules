@@ -3,7 +3,7 @@ rule:
     name: obfuscated with SmartAssembly
     namespace: anti-analysis/obfuscation
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: file
       dynamic: file

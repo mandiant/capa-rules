@@ -3,7 +3,7 @@ rule:
     name: find data using regex in .NET
     namespace: data-manipulation/regex
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

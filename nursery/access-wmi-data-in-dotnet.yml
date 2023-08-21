@@ -3,7 +3,7 @@ rule:
     name: access WMI data in .NET
     namespace: host-interaction/wmi
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

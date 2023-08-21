@@ -3,7 +3,7 @@ rule:
     name: receive data
     namespace: communication
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     description: all known techniques for receiving data from a potential C2 server
     scopes:
       static: function

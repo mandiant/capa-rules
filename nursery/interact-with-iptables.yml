@@ -3,7 +3,7 @@ rule:
     name: interact with iptables
     namespace: host-interaction/firewall
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: basic block
       dynamic: thread

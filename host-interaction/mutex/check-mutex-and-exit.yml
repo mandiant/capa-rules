@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/mutex
     authors:
       - "@_re_fox"
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

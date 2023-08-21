@@ -3,8 +3,8 @@ rule:
     name: move file
     namespace: host-interaction/file-system/move
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

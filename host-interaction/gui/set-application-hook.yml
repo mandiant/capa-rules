@@ -3,7 +3,7 @@ rule:
     name: set application hook
     namespace: host-interaction/gui
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

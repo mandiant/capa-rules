@@ -3,7 +3,7 @@ rule:
     name: delete volume shadow copies
     namespace: impact/inhibit-system-recovery
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

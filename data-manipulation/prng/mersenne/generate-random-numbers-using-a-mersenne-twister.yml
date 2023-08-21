@@ -3,7 +3,7 @@ rule:
     name: generate random numbers using a Mersenne Twister
     namespace: data-manipulation/prng/mersenne
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

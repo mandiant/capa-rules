@@ -3,7 +3,7 @@ rule:
     name: authenticate HMAC
     namespace: data-manipulation/hmac
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
     mbc:

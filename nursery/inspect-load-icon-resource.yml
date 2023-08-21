@@ -3,7 +3,7 @@ rule:
     name: inspect load icon resource
     namespace: anti-analysis
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
   features:

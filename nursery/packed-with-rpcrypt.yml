@@ -3,7 +3,7 @@ rule:
     name: packed with RPCrypt
     namespace: anti-analysis/packer/rpcrypt
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     att&ck:

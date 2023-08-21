@@ -3,7 +3,7 @@ rule:
     name: detect VM via disk hardware WMI queries
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "anders.vejlby@mandiant.com"
+      - anders.vejlby@mandiant.com
     scopes:
       static: function
       dynamic: process

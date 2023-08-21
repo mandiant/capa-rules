@@ -3,7 +3,7 @@ rule:
     name: packaged as single-file .NET application
     namespace: executable/installer/dotnet
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     description: Single binary containing target .NET application and all application-dependent files
     scopes:
       static: file

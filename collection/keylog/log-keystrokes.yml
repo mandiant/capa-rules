@@ -3,7 +3,7 @@ rule:
     name: log keystrokes
     namespace: collection/keylog
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

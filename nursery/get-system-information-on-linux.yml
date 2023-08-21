@@ -3,7 +3,7 @@ rule:
     name: get system information on Linux
     namespace: host-interaction/os/info
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: function
       dynamic: process

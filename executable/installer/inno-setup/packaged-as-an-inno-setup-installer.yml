@@ -3,7 +3,7 @@ rule:
     name: packaged as an Inno Setup installer
     namespace: executable/installer/inno-setup
     authors:
-      - "awillia2@cisco.com"
+      - awillia2@cisco.com
     scopes:
       static: file
       dynamic: file

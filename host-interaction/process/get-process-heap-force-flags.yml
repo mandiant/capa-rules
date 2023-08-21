@@ -3,7 +3,7 @@ rule:
     name: get process heap force flags
     namespace: host-interaction/process
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

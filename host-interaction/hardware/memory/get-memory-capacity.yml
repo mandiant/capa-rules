@@ -3,7 +3,7 @@ rule:
     name: get memory capacity
     namespace: host-interaction/hardware/memory
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

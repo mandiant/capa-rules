@@ -3,8 +3,8 @@ rule:
     name: hide thread from debugger
     namespace: anti-analysis/anti-debugging/debugger-evasion
     authors:
-      - "michael.hunhoff@mandiant.com"
-      - "jakub.jozwiak@mandiant.com"
+      - michael.hunhoff@mandiant.com
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: function
       dynamic: process

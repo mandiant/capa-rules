@@ -3,8 +3,8 @@ rule:
     name: execute shellcode via Windows callback function
     namespace: load-code/shellcode
     authors:
-      - "ervin.ocampo@mandiant.com"
-      - "jakub.jozwiak@mandiant.com"
+      - ervin.ocampo@mandiant.com
+      - jakub.jozwiak@mandiant.com
     description: Detect usage of various WinAPI functions that accept callback functions as parameters in order to execute arbitrary shellcode
     scopes:
       static: function

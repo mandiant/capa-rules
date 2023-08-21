@@ -3,7 +3,7 @@ rule:
     name: compiled with ExeScript
     namespace: compiler/exescript
     authors:
-      - "jonathanlepore@google.com"
+      - jonathanlepore@google.com
     scopes:
       static: file
     references:

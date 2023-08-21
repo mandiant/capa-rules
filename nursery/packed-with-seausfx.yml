@@ -3,7 +3,7 @@ rule:
     name: packed with SeauSFX
     namespace: anti-analysis/packer/seausfx
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     att&ck:

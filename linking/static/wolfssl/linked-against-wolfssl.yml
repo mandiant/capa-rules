@@ -3,7 +3,7 @@ rule:
     name: linked against wolfSSL
     namespace: linking/static/wolfssl
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: file
       dynamic: file

@@ -3,8 +3,8 @@ rule:
     name: generate random numbers in .NET
     namespace: data-manipulation/prng
     authors:
-      - "anushka.virgaonkar@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
+      - anushka.virgaonkar@mandiant.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

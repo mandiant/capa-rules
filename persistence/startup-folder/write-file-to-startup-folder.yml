@@ -3,7 +3,7 @@ rule:
     name: write file to startup folder
     namespace: persistence/startup-folder
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: inject shellcode using a file mapping object
     namespace: host-interaction/process/inject
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: function
       dynamic: process

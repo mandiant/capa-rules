@@ -3,7 +3,7 @@ rule:
     name: schedule task via at
     namespace: persistence/scheduled-tasks
     authors:
-      - "joren485"
+      - joren485
     scopes:
       static: function
       dynamic: process

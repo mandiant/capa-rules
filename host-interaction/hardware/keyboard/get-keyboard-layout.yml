@@ -3,7 +3,7 @@ rule:
     name: get keyboard layout
     namespace: host-interaction/hardware/keyboard
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

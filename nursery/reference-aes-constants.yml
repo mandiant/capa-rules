@@ -3,7 +3,7 @@ rule:
     name: reference AES constants
     namespace: data-manipulation/encryption/aes
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
     att&ck:

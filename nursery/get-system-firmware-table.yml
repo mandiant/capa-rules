@@ -3,7 +3,7 @@ rule:
     name: get system firmware table
     namespace: host-interaction/hardware/firmware
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

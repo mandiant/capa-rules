@@ -3,7 +3,7 @@ rule:
     name: monitor clipboard content
     namespace: host-interaction/clipboard
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

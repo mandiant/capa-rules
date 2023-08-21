@@ -3,7 +3,7 @@ rule:
     name: hash data using SHA384
     namespace: data-manipulation/hashing/sha384
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
       dynamic: process

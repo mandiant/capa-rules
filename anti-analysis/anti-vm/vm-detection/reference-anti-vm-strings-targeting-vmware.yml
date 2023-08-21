@@ -3,7 +3,7 @@ rule:
     name: reference anti-VM strings targeting VMWare
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
       - "@johnk3r"
     scopes:
       static: file

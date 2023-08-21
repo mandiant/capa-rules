@@ -3,7 +3,7 @@ rule:
     name: compiled with Borland Delphi
     namespace: compiler/delphi
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
       - "@mr-tz"
     scopes:
       static: file

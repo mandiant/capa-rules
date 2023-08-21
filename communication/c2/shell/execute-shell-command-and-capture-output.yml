@@ -3,7 +3,7 @@ rule:
     name: execute shell command and capture output
     namespace: communication/c2/shell
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: function
       dynamic: process

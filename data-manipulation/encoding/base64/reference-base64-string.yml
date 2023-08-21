@@ -3,7 +3,7 @@ rule:
     name: reference Base64 string
     namespace: data-manipulation/encoding/base64
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: file
       dynamic: file

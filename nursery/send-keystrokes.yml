@@ -3,7 +3,7 @@ rule:
     name: send keystrokes
     namespace: host-interaction/hardware/keyboard
     authors:
-      - "anushka.virgaonkar@mandiant.com"
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process

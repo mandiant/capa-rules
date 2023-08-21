@@ -3,7 +3,7 @@ rule:
     name: read data from CLFS log container
     namespace: host-interaction/log/clfs/read
     authors:
-      - "blaine.stancill@mandiant.com"
+      - blaine.stancill@mandiant.com
     scopes:
       static: function
       dynamic: process

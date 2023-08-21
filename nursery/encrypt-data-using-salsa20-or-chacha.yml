@@ -3,7 +3,7 @@ rule:
     name: encrypt data using Salsa20 or ChaCha
     namespace: data-manipulation/encryption/salsa20
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: hash data using RIPEMD128
     namespace: data-manipulation/hashing/ripemd128
     authors:
-      - "raymond.leong@mandiant.com"
+      - raymond.leong@mandiant.com
     scopes:
       static: file
       dynamic: file

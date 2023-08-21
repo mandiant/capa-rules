@@ -3,8 +3,8 @@ rule:
     name: create mutex
     namespace: host-interaction/mutex
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

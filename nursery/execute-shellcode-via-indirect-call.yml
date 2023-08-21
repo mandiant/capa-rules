@@ -3,7 +3,7 @@ rule:
     name: execute shellcode via indirect call
     namespace: load-code/shellcode
     authors:
-      - "ronnie.salomonsen@mandiant.com"
+      - ronnie.salomonsen@mandiant.com
     scopes:
       static: function
     mbc:

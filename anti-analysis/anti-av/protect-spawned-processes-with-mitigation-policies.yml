@@ -3,7 +3,7 @@ rule:
     name: protect spawned processes with mitigation policies
     namespace: anti-analysis/anti-av
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

@@ -3,7 +3,7 @@ rule:
     name: bypass UAC via scheduled task environment variable
     namespace: host-interaction/uac/bypass
     authors:
-      - "anamaria.martinezgom@mandiant.com"
+      - anamaria.martinezgom@mandiant.com
     scopes:
       static: function
       dynamic: process

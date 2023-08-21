@@ -3,7 +3,7 @@ rule:
     name: modify access privileges
     namespace: host-interaction/process/modify
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

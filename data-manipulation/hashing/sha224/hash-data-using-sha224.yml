@@ -3,7 +3,7 @@ rule:
     name: hash data using SHA224
     namespace: data-manipulation/hashing/sha224
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

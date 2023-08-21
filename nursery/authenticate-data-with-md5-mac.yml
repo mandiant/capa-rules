@@ -3,7 +3,7 @@ rule:
     name: authenticate data with MD5-MAC
     namespace: data-manipulation/hashing/md5
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
     mbc:

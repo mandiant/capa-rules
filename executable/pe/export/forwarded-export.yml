@@ -3,7 +3,7 @@ rule:
     name: forwarded export
     namespace: executable/pe/export
     authors:
-      - "ronnie.salomonsen@mandiant.com"
+      - ronnie.salomonsen@mandiant.com
     scopes:
       static: file
     att&ck:

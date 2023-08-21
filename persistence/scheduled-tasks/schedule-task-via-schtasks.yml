@@ -3,7 +3,7 @@ rule:
     name: schedule task via schtasks
     namespace: persistence/scheduled-tasks
     authors:
-      - "0x534a@mailbox.org"
+      - 0x534a@mailbox.org
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: packed with amber
     namespace: anti-analysis/packer/amber
     authors:
-      - "john.gorman@mandiant.com"
+      - john.gorman@mandiant.com
     scopes:
       static: file
       dynamic: file

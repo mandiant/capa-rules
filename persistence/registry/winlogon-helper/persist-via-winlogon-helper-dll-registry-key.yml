@@ -3,7 +3,7 @@ rule:
     name: persist via Winlogon Helper DLL registry key
     namespace: persistence/registry/winlogon-helper
     authors:
-      - "0x534a@mailbox.org"
+      - 0x534a@mailbox.org
     scopes:
       static: function
       dynamic: process

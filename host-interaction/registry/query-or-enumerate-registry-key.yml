@@ -3,7 +3,7 @@ rule:
     name: query or enumerate registry key
     namespace: host-interaction/registry
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

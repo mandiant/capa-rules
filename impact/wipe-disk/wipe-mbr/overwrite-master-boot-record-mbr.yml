@@ -3,7 +3,7 @@ rule:
     name: overwrite Master Boot Record (MBR)
     namespace: impact/wipe-disk/wipe-mbr
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: covertly decode and write data to Windows directory using indirect calls
     namespace: data-manipulation/encoding/xor
     authors:
-      - "dan.kelly@mandiant.com"
+      - dan.kelly@mandiant.com
     scopes:
       static: function
     att&ck:

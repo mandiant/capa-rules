@@ -3,7 +3,7 @@ rule:
     name: packed with UPX
     namespace: anti-analysis/packer/upx
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     att&ck:

@@ -3,8 +3,8 @@ rule:
     name: get geographical location
     namespace: collection
     authors:
-      - "moritz.raabe"
-      - "michael.hunhoff@mandiant.com"
+      - moritz.raabe
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

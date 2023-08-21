@@ -3,7 +3,7 @@ rule:
     name: compiled with Go
     namespace: compiler/go
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: file
       dynamic: file

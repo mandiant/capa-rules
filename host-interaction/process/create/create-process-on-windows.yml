@@ -3,7 +3,7 @@ rule:
     name: create process on Windows
     namespace: host-interaction/process/create
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

@@ -3,7 +3,7 @@ rule:
     name: reference analysis tools strings
     namespace: anti-analysis
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: file
       dynamic: file

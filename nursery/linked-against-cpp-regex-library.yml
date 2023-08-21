@@ -3,7 +3,7 @@ rule:
     name: linked against CPP regex library
     namespace: linking/static/cppregex
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
       dynamic: file

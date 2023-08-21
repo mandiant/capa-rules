@@ -3,8 +3,8 @@ rule:
     name: hijack thread execution
     namespace: host-interaction/process/inject
     authors:
-      - "0x534a@mailbox.org"
-      - "michael.hunhoff@mandiant.com"
+      - 0x534a@mailbox.org
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

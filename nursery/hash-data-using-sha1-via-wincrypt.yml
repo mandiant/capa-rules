@@ -3,7 +3,7 @@ rule:
     name: hash data using SHA1 via WinCrypt
     namespace: data-manipulation/hashing/sha1
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

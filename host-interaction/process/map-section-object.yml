@@ -3,7 +3,7 @@ rule:
     name: map section object
     namespace: host-interaction/process
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -4,7 +4,7 @@ rule:
     namespace: internal/limitation/file
     authors:
       - "@mr-tz"
-    description: This sample appears to be compiled from Visual Basic.
+    description: 'This sample appears to be compiled from Visual Basic.
 
 
       Visual Basic is a Microsoft programming language that can be compiled to native code or an intermediate
@@ -15,7 +15,7 @@ rule:
 
       You may have to analyze the file manually, for example using a tool like VB Decompiler.
 
-      
+      '
     scopes:
       static: file
       dynamic: file

@@ -3,7 +3,7 @@ rule:
     name: resolve function by parsing PE exports
     namespace: load-code/pe
     authors:
-      - "sara-rn"
+      - sara-rn
     scopes:
       static: function
     examples:

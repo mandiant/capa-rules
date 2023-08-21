@@ -3,7 +3,7 @@ rule:
     name: packed with Shrinker
     namespace: anti-analysis/packer/shrinker
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     att&ck:

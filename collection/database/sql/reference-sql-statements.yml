@@ -3,7 +3,7 @@ rule:
     name: reference SQL statements
     namespace: collection/database/sql
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,9 +3,9 @@ rule:
     name: query or enumerate registry value
     namespace: host-interaction/registry
     authors:
-      - "william.ballenthin@mandiant.com"
-      - "michael.hunhoff@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
+      - william.ballenthin@mandiant.com
+      - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process

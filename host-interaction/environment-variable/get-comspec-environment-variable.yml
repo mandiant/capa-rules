@@ -3,7 +3,7 @@ rule:
     name: get COMSPEC environment variable
     namespace: host-interaction/environment-variable
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: function
       dynamic: process

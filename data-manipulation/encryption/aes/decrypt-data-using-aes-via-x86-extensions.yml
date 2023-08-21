@@ -3,7 +3,7 @@ rule:
     name: decrypt data using AES via x86 extensions
     namespace: data-manipulation/encryption/aes
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
     att&ck:

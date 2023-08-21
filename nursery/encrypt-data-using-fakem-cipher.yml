@@ -3,7 +3,7 @@ rule:
     name: encrypt data using FAKEM cipher
     namespace: data-manipulation/encryption
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     description: Detect custom encryption cipher used by FAKEM malware family
     scopes:
       static: basic block

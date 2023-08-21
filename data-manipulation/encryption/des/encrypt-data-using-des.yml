@@ -4,7 +4,7 @@ rule:
     namespace: data-manipulation/encryption/des
     authors:
       - "@_re_fox"
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: basic block
     att&ck:

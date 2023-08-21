@@ -3,7 +3,7 @@ rule:
     name: run PowerShell expression
     namespace: load-code/powershell/
     authors:
-      - "anamaria.martinezgom@mandiant.com"
+      - anamaria.martinezgom@mandiant.com
     scopes:
       static: function
       dynamic: process

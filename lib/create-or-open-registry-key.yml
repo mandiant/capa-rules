@@ -2,9 +2,9 @@ rule:
   meta:
     name: create or open registry key
     authors:
-      - "michael.hunhoff@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
-    lib: true
+      - michael.hunhoff@mandiant.com
+      - anushka.virgaonkar@mandiant.com
+    lib: 'true'
     scopes:
       static: basic block
       dynamic: thread

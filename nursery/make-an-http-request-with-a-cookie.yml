@@ -3,7 +3,7 @@ rule:
     name: make an HTTP request with a Cookie
     namespace: communication/http/client
     authors:
-      - "anamaria.martinezgom@mandiant.com"
+      - anamaria.martinezgom@mandiant.com
     scopes:
       static: function
       dynamic: process

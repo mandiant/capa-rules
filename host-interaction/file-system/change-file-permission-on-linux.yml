@@ -3,7 +3,7 @@ rule:
     name: change file permission on Linux
     namespace: host-interaction/file-system
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: basic block
       dynamic: thread

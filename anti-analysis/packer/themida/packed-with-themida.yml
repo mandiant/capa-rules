@@ -3,7 +3,7 @@ rule:
     name: packed with Themida
     namespace: anti-analysis/packer/themida
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
     att&ck:

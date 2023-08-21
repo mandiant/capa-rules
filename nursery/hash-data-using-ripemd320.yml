@@ -3,7 +3,7 @@ rule:
     name: hash data using RIPEMD320
     namespace: data-manipulation/hashing/ripemd320
     authors:
-      - "raymond.leong@mandiant.com"
+      - raymond.leong@mandiant.com
     scopes:
       static: function
       dynamic: process

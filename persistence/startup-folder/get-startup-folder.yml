@@ -3,7 +3,7 @@ rule:
     name: get startup folder
     namespace: persistence/startup-folder
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

@@ -3,7 +3,7 @@ rule:
     name: decode data using URL encoding
     namespace: data-manipulation/encoding/url
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

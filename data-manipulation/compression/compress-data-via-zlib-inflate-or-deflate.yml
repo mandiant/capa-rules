@@ -3,7 +3,7 @@ rule:
     name: compress data via ZLIB inflate or deflate
     namespace: data-manipulation/compression
     authors:
-      - "blas.kojusner@mandiant.com"
+      - blas.kojusner@mandiant.com
     scopes:
       static: function
     mbc:

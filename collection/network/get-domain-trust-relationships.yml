@@ -3,7 +3,7 @@ rule:
     name: get domain trust relationships
     namespace: collection/network
     authors:
-      - "johnk3r"
+      - johnk3r
     scopes:
       static: function
       dynamic: process

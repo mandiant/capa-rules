@@ -3,7 +3,7 @@ rule:
     name: send email in .NET
     namespace: communication/smtp/send
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: extract resource via kernel32 functions
     namespace: executable/resource
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
       dynamic: process

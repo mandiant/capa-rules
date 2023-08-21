@@ -3,7 +3,7 @@ rule:
     name: modify service
     namespace: host-interaction/service/modify
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
       dynamic: process

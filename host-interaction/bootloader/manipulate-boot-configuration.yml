@@ -3,7 +3,7 @@ rule:
     name: manipulate boot configuration
     namespace: host-interaction/bootloader
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: receive HTTP request
     namespace: communication/http/server
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

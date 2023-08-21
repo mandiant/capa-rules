@@ -3,7 +3,7 @@ rule:
     name: set console window title
     namespace: host-interaction/gui/console
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

@@ -3,7 +3,7 @@ rule:
     name: create Restart Manager session
     namespace: host-interaction/process
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     description: Windows Restart Manager can be used to close/unlock specific files, often abused by Ransomware
     scopes:
       static: function

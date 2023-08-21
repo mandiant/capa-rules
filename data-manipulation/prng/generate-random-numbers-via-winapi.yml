@@ -3,8 +3,8 @@ rule:
     name: generate random numbers via WinAPI
     namespace: data-manipulation/prng
     authors:
-      - "michael.hunhoff@mandiant.com"
-      - "johnk3r"
+      - michael.hunhoff@mandiant.com
+      - johnk3r
     scopes:
       static: function
       dynamic: process

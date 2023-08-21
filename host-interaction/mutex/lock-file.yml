@@ -3,7 +3,7 @@ rule:
     name: lock file
     namespace: host-interaction/mutex
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: basic block
       dynamic: thread

@@ -3,7 +3,7 @@ rule:
     name: get HTTP response content encoding
     namespace: communication/http/client
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

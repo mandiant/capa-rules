@@ -3,7 +3,7 @@ rule:
     name: enumerate files on Linux
     namespace: host-interaction/file-system/files/list
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
       dynamic: process

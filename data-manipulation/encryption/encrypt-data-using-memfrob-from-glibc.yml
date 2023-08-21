@@ -3,7 +3,7 @@ rule:
     name: encrypt data using memfrob from glibc
     namespace: data-manipulation/encryption
     authors:
-      - "zander.work@mandiant.com"
+      - zander.work@mandiant.com
     scopes:
       static: function
       dynamic: process

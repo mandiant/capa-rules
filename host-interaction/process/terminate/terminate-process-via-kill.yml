@@ -3,7 +3,7 @@ rule:
     name: terminate process via kill
     namespace: host-interaction/process/terminate
     authors:
-      - "joakim@intezer.com"
+      - joakim@intezer.com
     scopes:
       static: basic block
       dynamic: thread

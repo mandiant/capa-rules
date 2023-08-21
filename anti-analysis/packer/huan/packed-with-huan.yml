@@ -3,7 +3,7 @@ rule:
     name: packed with Huan
     namespace: anti-analysis/packer/huan
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: file
       dynamic: file

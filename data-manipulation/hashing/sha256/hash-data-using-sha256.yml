@@ -3,9 +3,9 @@ rule:
     name: hash data using SHA256
     namespace: data-manipulation/hashing/sha256
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
-      - "william.ballenthin@mandiant.com"
+      - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
       dynamic: process

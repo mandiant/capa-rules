@@ -3,7 +3,7 @@ rule:
     name: self delete
     namespace: anti-analysis/anti-forensic/self-deletion
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
       - "@mr-tz"
     scopes:
       static: function

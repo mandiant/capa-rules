@@ -3,7 +3,7 @@ rule:
     name: identify system language via API
     namespace: targeting/language
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: function
       dynamic: process

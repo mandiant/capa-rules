@@ -3,7 +3,7 @@ rule:
     name: disable AppInit_DLLs code signature enforcement
     namespace: persistence/registry/appinitdlls
     authors:
-      - "william.ballenthin@fireye.com"
+      - william.ballenthin@fireye.com
     scopes:
       static: function
       dynamic: process

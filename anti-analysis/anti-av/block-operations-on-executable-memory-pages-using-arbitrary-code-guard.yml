@@ -3,7 +3,7 @@ rule:
     name: block operations on executable memory pages using Arbitrary Code Guard
     namespace: anti-analysis/anti-av
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: basic block
       dynamic: thread

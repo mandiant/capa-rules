@@ -3,7 +3,7 @@ rule:
     name: compute adler32 checksum
     namespace: data-manipulation/checksum/adler32
     authors:
-      - "matthew.williams@mandiant.com"
+      - matthew.williams@mandiant.com
     scopes:
       static: function
     mbc:

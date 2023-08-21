@@ -2,8 +2,8 @@ rule:
   meta:
     name: allocate RW memory
     authors:
-      - "0x534a@mailbox.org"
-    lib: true
+      - 0x534a@mailbox.org
+    lib: 'true'
     scopes:
       static: basic block
       dynamic: thread

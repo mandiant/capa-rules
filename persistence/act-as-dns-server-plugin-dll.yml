@@ -3,7 +3,7 @@ rule:
     name: act as DNS server plugin DLL
     namespace: persistence
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     scopes:
       static: file
     att&ck:

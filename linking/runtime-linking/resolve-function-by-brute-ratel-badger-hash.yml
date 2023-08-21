@@ -3,7 +3,7 @@ rule:
     name: resolve function by Brute Ratel Badger hash
     namespace: linking/runtime-linking
     authors:
-      - "jakub.jozwiak@mandiant.com"
+      - jakub.jozwiak@mandiant.com
     description: Custom API hashing algorithm used in Brute Ratel Badger (version 1.3 or higher)
     scopes:
       static: function

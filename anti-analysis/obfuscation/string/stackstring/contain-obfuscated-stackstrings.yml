@@ -3,7 +3,7 @@ rule:
     name: contain obfuscated stackstrings
     namespace: anti-analysis/obfuscation/string/stackstring
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: basic block
     att&ck:

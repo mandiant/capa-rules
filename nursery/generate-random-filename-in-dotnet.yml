@@ -3,7 +3,7 @@ rule:
     name: generate random filename in .NET
     namespace: host-interaction/file-system
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

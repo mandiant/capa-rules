@@ -3,7 +3,7 @@ rule:
     name: parse PE header
     namespace: load-code/pe
     authors:
-      - "moritz.raabe@mandiant.com"
+      - moritz.raabe@mandiant.com
     scopes:
       static: function
     att&ck:

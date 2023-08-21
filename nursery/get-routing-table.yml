@@ -3,7 +3,7 @@ rule:
     name: get routing table
     namespace: host-interaction/network/routing-table
     authors:
-      - "michael.hunhoff@mandiant.com"
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process

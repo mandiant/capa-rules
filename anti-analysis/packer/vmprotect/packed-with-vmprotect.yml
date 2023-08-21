@@ -3,7 +3,7 @@ rule:
     name: packed with VMProtect
     namespace: anti-analysis/packer/vmprotect
     authors:
-      - "william.ballenthin@mandiant.com"
+      - william.ballenthin@mandiant.com
     scopes:
       static: file
       dynamic: file

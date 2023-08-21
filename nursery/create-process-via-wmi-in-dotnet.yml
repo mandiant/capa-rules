@@ -3,7 +3,7 @@ rule:
     name: create process via WMI in .NET
     namespace: host-interaction/wmi
     authors:
-      - "anushka.virgaonkar@mandiant.com"
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process

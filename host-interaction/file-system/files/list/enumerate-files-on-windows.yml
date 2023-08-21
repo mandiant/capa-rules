@@ -3,8 +3,8 @@ rule:
     name: enumerate files on Windows
     namespace: host-interaction/file-system/files/list
     authors:
-      - "moritz.raabe@mandiant.com"
-      - "anushka.virgaonkar@mandiant.com"
+      - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
       dynamic: process
