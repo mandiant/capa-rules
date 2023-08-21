@@ -7,6 +7,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
+      dynamic: process
     mbc:
       - Communication::Socket Communication::Connect Socket [C0001.004]
     examples:
@@ -20,19 +21,37 @@ rule:
         - api: ws2_32.WSAConnect
         - api: ConnectEx
         - and:
-          - basic block:
-            - and:
-              - number: 0x25A207B9
-              - number: 0x4660DDF3
-              - number: 0xE576E98E
-              - number: 0x3E06748C
-          - basic block:
-            - and:
-              - api: WSAIoctl
-              - number: 0xC8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
-          - basic block:
-            - and:
-              - api: setsockopt
-              - number: 0xFFFF = SOL_SOCKET
-              - number: 0x7010 = SO_UPDATE_CONNECT_CONTEXT
+          - or:
+            - basic block:
+              - and:
+                - number: 0x25A207B9
+                - number: 0x4660DDF3
+                - number: 0xE576E98E
+                - number: 0x3E06748C
+            - thread:
+              - and:
+                - number: 0x25A207B9
+                - number: 0x4660DDF3
+                - number: 0xE576E98E
+                - number: 0x3E06748C
+          - or:
+            - basic block:
+              - and:
+                - api: WSAIoctl
+                - number: 0xC8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
+            - thread:
+              - and:
+                - api: WSAIoctl
+                - number: 0xC8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
+          - or:
+            - basic block:
+              - and:
+                - api: setsockopt
+                - number: 0xFFFF = SOL_SOCKET
+                - number: 0x7010 = SO_UPDATE_CONNECT_CONTEXT
+            - thread:
+              - and:
+                - api: setsockopt
+                - number: 0xFFFF = SOL_SOCKET
+                - number: 0x7010 = SO_UPDATE_CONNECT_CONTEXT
           - api: bind

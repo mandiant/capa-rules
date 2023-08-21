@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Discovery::Query Registry [T1012]
     mbc:

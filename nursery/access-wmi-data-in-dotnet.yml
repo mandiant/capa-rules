@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Execution::Windows Management Instrumentation [T1047]
   features:

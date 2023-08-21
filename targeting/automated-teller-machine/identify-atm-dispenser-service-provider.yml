@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: file
+      dynamic: file
     references:
       - https://doc.axxonsoft.com/confluence/display/atm70en/Configuring+the+connection+to+the+dispenser+service+provider
     examples:
@@ -18,4 +19,3 @@ rule:
       - string: "CDM30"
         description: Wincor
       - string: "DBD_AdvFuncDisp"
-        description: Diebold

@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Impair Defenses::Safe Mode Boot [T1562.009]
   features:
@@ -17,4 +18,3 @@ rule:
         - string: "bcdedit /set {current} safeboot minimal"
           description: modern-era method for safe mode, no internet
         - string: "bcdedit /set {current} safeboot network"
-          description: modern-era method for safe mode, with internet

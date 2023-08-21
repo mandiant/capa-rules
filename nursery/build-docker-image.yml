@@ -17,4 +17,3 @@ rule:
       - and:
         - match: send HTTP request
         - string: /\/v1\.[0-9]{1,2}\/build/
-          description: docker API endpoint, e.g., /v1.24/build

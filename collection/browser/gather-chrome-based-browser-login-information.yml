@@ -7,6 +7,7 @@ rule:
       - still@teamt5.org
     scopes:
       static: file
+      dynamic: file
     att&ck:
       - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
     examples:

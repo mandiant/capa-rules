@@ -16,15 +16,15 @@ rule:
   features:
     - or:
       - and:
+        - substring: "profiles.xml"
+        - or:
+          - substring: "Software\\FTP Explorer\\FTP Explorer\\Workspace\\MFCToolBar-224"
+          - substring: "Software\\FTP Explorer\\Profiles"
+          - substring: "\\FTP Explorer"
+      - and:
         - string: "Password"
         - string: "Host"
         - string: "Login"
         - string: "InitialPath"
         - string: "PasswordType"
         - string: "Port"
-      - and:
-        - substring: "profiles.xml"
-        - or:
-          - substring: "Software\\FTP Explorer\\FTP Explorer\\Workspace\\MFCToolBar-224"
-          - substring: "Software\\FTP Explorer\\Profiles"
-          - substring: "\\FTP Explorer"

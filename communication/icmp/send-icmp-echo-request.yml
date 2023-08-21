@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
+      dynamic: process
     mbc:
       - Communication::ICMP Communication::Echo Request [C0014.002]
     references:

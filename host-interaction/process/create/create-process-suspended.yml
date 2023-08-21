@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: basic block
+      dynamic: thread
     mbc:
       - Process::Create Process::Create Suspended Process [C0017.003]
     examples:

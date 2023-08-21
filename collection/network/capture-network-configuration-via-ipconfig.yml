@@ -6,6 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: basic block
+      dynamic: thread
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
     examples:
@@ -18,4 +19,3 @@ rule:
         - and:
           - string: "ipconfig.txt"
           - substring: "[Windows IP Configuration]"
-            description: Arkei Stealer Filename and Banner

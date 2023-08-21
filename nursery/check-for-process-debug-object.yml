@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
+      dynamic: process
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::NtQueryInformationProcess [B0001.012]
     references:
@@ -15,9 +16,16 @@ rule:
       - or:
         - api: kernel32.GetCurrentProcess
         - api: System.Diagnostics.Process::GetCurrentProcess
-      - basic block:
-        - and:
-          - or:
-            - api: NtQueryInformationProcess
-            - api: ZwQueryInformationProcess
-          - number: 0x1E = ProcessDebugObjectHandle
+      - or:
+        - basic block:
+          - and:
+            - or:
+              - api: NtQueryInformationProcess
+              - api: ZwQueryInformationProcess
+            - number: 0x1E = ProcessDebugObjectHandle
+        - thread:
+          - and:
+            - or:
+              - api: NtQueryInformationProcess
+              - api: ZwQueryInformationProcess
+            - number: 0x1E = ProcessDebugObjectHandle

@@ -17,12 +17,12 @@ rule:
     - or:
       - api: getsockname
       - and:
-        - api: GetAdaptersInfo
-        - offset: 0x1B0 = IP_ADAPTER_INFO.IpAddressList.IpAddress
-      - and:
         - api: GetAdaptersAddresses
         - optional:
           - or:
             - number: 0 = AF_UNSPEC
             - number: 2 = AF_INET
             - number: 23 = AF_INET6
+      - and:
+        - api: GetAdaptersInfo
+        - offset: 0x1B0 = IP_ADAPTER_INFO.IpAddressList.IpAddress

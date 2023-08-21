@@ -19,11 +19,6 @@ rule:
       - 50D5EE1CE2CA5E30C6B1019EE64EEEC2:0x406E07
   features:
     - or:
-      - basic block:
-        - and:
-          - api: BitBlt
-          - characteristic: tight loop
-      - api: System.Drawing.Graphics::CopyFromScreen
       - and:
         - or:
           - api: user32.GetWindowDC
@@ -40,3 +35,8 @@ rule:
           - or:
             - api: user32.GetSystemMetrics = fetch screen dimensions
             - api: user32.GetDesktopWindow = get entire desktop
+      - basic block:
+        - and:
+          - api: BitBlt
+          - characteristic: tight loop
+      - api: System.Drawing.Graphics::CopyFromScreen

@@ -6,9 +6,9 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
+      dynamic: process
     references:
       - https://whatismyipaddress.com/ip/168.126.63.1
   features:
     - or:
       - string: "168.126.63.1"
-        description: kns.kornet.net

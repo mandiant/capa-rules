@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
+      dynamic: thread
     att&ck:
       - Discovery::Process Discovery [T1057]
     references:

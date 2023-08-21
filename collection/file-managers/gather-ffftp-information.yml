@@ -16,15 +16,15 @@ rule:
   features:
     - or:
       - and:
-        - string: "Password"
-        - string: "UserName"
-        - string: "HostAdrs"
-        - string: "RemoteDir"
-        - string: "Port"
-      - and:
         - or:
           - substring: "Software\\Sota\\FFFTP\\Options"
           - substring: "Software\\Sota\\FFFTP"
         - or:
           - substring: "CredentialSalt"
           - substring: "CredentialCheck"
+      - and:
+        - string: "Password"
+        - string: "UserName"
+        - string: "HostAdrs"
+        - string: "RemoteDir"
+        - string: "Port"

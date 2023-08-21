@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:
@@ -16,11 +17,11 @@ rule:
   features:
     - or:
       - and:
+        - format: elf
+        - or:
+          - string: "UPX!"
+      - and:
         - format: pe
         - or:
           - section: UPX0
           - section: UPX1
-      - and:
-        - format: elf
-        - or:
-          - string: "UPX!"

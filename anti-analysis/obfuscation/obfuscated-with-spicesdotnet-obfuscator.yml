@@ -6,6 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

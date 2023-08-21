@@ -8,6 +8,7 @@ rule:
     description: detects the compression routine from LZO
     scopes:
       static: function
+      dynamic: process
     mbc:
       - Data::Compress Data [C0024]
     references:

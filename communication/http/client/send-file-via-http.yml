@@ -6,6 +6,7 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: basic block
+      dynamic: thread
     mbc:
       - Communication::HTTP Communication::Send Data [C0002.005]
     examples:

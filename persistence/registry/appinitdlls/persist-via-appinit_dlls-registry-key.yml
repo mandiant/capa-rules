@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@fireye.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Persistence::Event Triggered Execution::AppInit DLLs [T1546.010]
     references:
@@ -23,4 +24,3 @@ rule:
       - string: /AppInit_DLLs/i
       - optional:
         - string: /LoadAppInit_DLLs/i
-          description: enable AppInit DLLs feature

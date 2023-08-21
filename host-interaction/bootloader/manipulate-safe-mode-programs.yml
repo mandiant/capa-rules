@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Impair Defenses::Safe Mode Boot [T1562.009]
     examples:
@@ -17,4 +18,3 @@ rule:
         - substring: "Control\\SafeBoot\\Minimal\\"
           description: registry key for safe mode, no networking
         - substring: "Control\\SafeBoot\\Network\\"
-          description: registry key for safe mode, with networking

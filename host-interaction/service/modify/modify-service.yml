@@ -6,6 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
       - Execution::System Services::Service Execution [T1569.002]

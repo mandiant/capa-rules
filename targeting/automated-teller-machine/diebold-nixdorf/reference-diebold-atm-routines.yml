@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: file
+      dynamic: file
     references:
       - https://www.mandiant.com/resources/new-ploutus-variant
     examples:
@@ -15,4 +16,3 @@ rule:
       - string: "DBD_AdvFuncDisp"
         description: dispenser function
       - string: "DBD_EPP4"
-        description: pin pad function

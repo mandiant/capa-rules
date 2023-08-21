@@ -8,6 +8,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
+      dynamic: process
   features:
     - and:
       - api: kernel32.ReadProcessMemory

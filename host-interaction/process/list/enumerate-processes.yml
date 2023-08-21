@@ -21,9 +21,16 @@ rule:
         - api: kernel32.Process32First
         - api: kernel32.Process32Next
         - optional:
-          - basic block:
-            - and:
-              - or:
-                - number: 0xF = TH32CS_SNAPALL
-                - number: 0x2 = TH32CS_SNAPPROCESS
-              - api: kernel32.CreateToolhelp32Snapshot
+          - or:
+            - basic block:
+              - and:
+                - or:
+                  - number: 0xF = TH32CS_SNAPALL
+                  - number: 0x2 = TH32CS_SNAPPROCESS
+                - api: kernel32.CreateToolhelp32Snapshot
+            - thread:
+              - and:
+                - or:
+                  - number: 0xF = TH32CS_SNAPALL
+                  - number: 0x2 = TH32CS_SNAPPROCESS
+                - api: kernel32.CreateToolhelp32Snapshot

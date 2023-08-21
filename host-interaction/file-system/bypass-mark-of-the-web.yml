@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Subvert Trust Controls::Mark-of-the-Web Bypass [T1553.005]
     examples:
@@ -17,4 +18,3 @@ rule:
         - string: ":Zone.Identifier"
           description: NTFS ADS name recognized by Windows Defender SmartScreen
         - string: "%s:Zone.Identifier"
-          description: NTFS ADS name recognized by Windows Defender SmartScreen

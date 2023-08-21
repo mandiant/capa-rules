@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
+      dynamic: thread
     att&ck:
       - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
     examples:

@@ -7,6 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:
@@ -19,7 +20,6 @@ rule:
         - api: kernel32.GetProcAddress
         - api: ntdll.LdrGetProcedureAddress
       - optional:
-        - characteristic: indirect call
         - api: kernel32.LoadLibrary
         - api: kernel32.GetModuleHandle
         - api: kernel32.GetModuleHandleEx

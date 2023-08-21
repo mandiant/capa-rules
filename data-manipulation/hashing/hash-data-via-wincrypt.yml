@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
+      dynamic: process
     mbc:
       - Cryptography::Cryptographic Hash [C0029]
     examples:
@@ -14,10 +15,18 @@ rule:
     - and:
       - api: advapi32.CryptHashData
       - optional:
-        - basic block:
-          - and:
-            - api: advapi32.CryptGetHashParam
-            - or:
-              - number: 1 = HP_ALGID
-              - number: 2 = HP_HASHVAL
-              - number: 4 = HP_HASHSIZE
+        - or:
+          - basic block:
+            - and:
+              - api: advapi32.CryptGetHashParam
+              - or:
+                - number: 1 = HP_ALGID
+                - number: 2 = HP_HASHVAL
+                - number: 4 = HP_HASHSIZE
+          - thread:
+            - and:
+              - api: advapi32.CryptGetHashParam
+              - or:
+                - number: 1 = HP_ALGID
+                - number: 2 = HP_HASHVAL
+                - number: 4 = HP_HASHSIZE

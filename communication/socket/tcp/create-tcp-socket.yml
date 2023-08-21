@@ -8,6 +8,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: basic block
+      dynamic: thread
     mbc:
       - Communication::Socket Communication::Create TCP Socket [C0001.011]
     examples:

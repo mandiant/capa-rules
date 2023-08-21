@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: file
+      dynamic: file
     examples:
       - b9f5bd514485fb06da39beff051b9fdc
   features:

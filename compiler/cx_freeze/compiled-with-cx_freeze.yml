@@ -7,6 +7,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: file
+      dynamic: file
     att&ck:
       - Execution::Command and Scripting Interpreter::Python [T1059.006]
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]

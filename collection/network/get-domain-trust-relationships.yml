@@ -14,10 +14,10 @@ rule:
       - 0731679c5f99e8ee65d8b29a3cabfc6b:0x40408E
   features:
     - or:
-      - api: DsEnumerateDomainTrusts
       - and:
         - string: /nltest/i
         - or:
           - string: /\/domain_trusts/i
           - string: /\/dclist/i
           - string: /\/all_trusts/i
+      - api: DsEnumerateDomainTrusts

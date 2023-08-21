@@ -13,4 +13,3 @@ rule:
     - and:
       - string: "Mingw runtime failure:"
       - string: "_Jv_RegisterClasses"
-        description: from GCC

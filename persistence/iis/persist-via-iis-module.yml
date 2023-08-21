@@ -16,4 +16,3 @@ rule:
       - os: windows
       - export: RegisterModule
       - substring: "CHttpModule"
-        description: C++ super class provided by Microsoft

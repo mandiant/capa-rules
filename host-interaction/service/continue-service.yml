@@ -6,6 +6,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
     examples:
@@ -14,9 +15,16 @@ rule:
     - and:
       - optional:
         - match: get service handle
-      - basic block:
-        - and:
-          - number: 0x3 = SERVICE_CONTROL_CONTINUE
-          - or:
-            - api: advapi32.ControlService
-            - api: advapi32.ControlServiceEx
+      - or:
+        - basic block:
+          - and:
+            - number: 0x3 = SERVICE_CONTROL_CONTINUE
+            - or:
+              - api: advapi32.ControlService
+              - api: advapi32.ControlServiceEx
+        - thread:
+          - and:
+            - number: 0x3 = SERVICE_CONTROL_CONTINUE
+            - or:
+              - api: advapi32.ControlService
+              - api: advapi32.ControlServiceEx

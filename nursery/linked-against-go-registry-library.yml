@@ -7,6 +7,7 @@ rule:
     description: Uses a Go library for interacting with the Windows registry.
     scopes:
       static: file
+      dynamic: file
     references:
       - https://github.com/golang/sys
   features:

@@ -6,6 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
+      dynamic: process
     mbc:
       - File System::Writes File [C0052]
     examples:

@@ -28,7 +28,12 @@ rule:
       - and:
         - match: create pipe
         - match: host-interaction/process/create
-        - basic block:
-          - and:
-            - count(api(SetHandleInformation)): 2 or more
-            - number: 1 = HANDLE_FLAG_INHERIT
+        - or:
+          - basic block:
+            - and:
+              - count(api(SetHandleInformation)): 2 or more
+              - number: 1 = HANDLE_FLAG_INHERIT
+          - thread:
+            - and:
+              - count(api(SetHandleInformation)): 2 or more
+              - number: 1 = HANDLE_FLAG_INHERIT

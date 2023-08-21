@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
+      dynamic: process
     mbc:
       - Communication::HTTP Communication::Receive Request [C0002.015]
     examples:

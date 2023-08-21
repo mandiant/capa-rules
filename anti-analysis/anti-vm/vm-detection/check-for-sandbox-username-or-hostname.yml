@@ -7,6 +7,7 @@ rule:
       - echernofsky@google.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion [T1497]
     mbc:
@@ -72,4 +73,3 @@ rule:
         - string: /WDAGUtilityAccount/i
           description: Windows Defender Application Guard
         - string: /HAL9TH/i
-          description: Windows Defender Emulator

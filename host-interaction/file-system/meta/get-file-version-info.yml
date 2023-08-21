@@ -7,6 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
     mbc:

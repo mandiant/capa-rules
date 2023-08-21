@@ -43,7 +43,6 @@ rule:
           - string: /10E527FADE682D1D/i
             description: sigma5_str
           - string: /B05688C2B3E6C1FD/i
-            description: sigma6_str
         - and:
           - bytes: 8b 90 cc 3b 7f 66 9e a0 = sigma1
           - bytes: b2 73 aa 4c 58 e8 7a b6 = sigma2
@@ -89,4 +88,3 @@ rule:
           - string: /10E527FADE682D1D/i
             description: sigma5_str
           - string: /B05688C2B3E6C1FD/i
-            description: sigma6_str

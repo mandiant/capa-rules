@@ -20,16 +20,6 @@ rule:
       - 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x14000203C
   features:
     - or:
-      - or:
-        - api: System.IO.DirectoryInfo::GetFiles
-        - api: System.IO.DirectoryInfo::EnumerateFiles
-        - api: System.IO.Directory::GetFiles
-        - api: System.IO.Directory::EnumerateFiles
-        - api: System.IO.Directory::EnumerateFileSystemEntries
-        - api: System.IO.DirectoryInfo::GetDirectories
-        - api: System.IO.DirectoryInfo::EnumerateDirectories
-        - api: System.IO.Directory::GetDirectories
-        - api: System.IO.Directory::EnumerateDirectories
       - and:
         - or:
           - api: kernel32.FindFirstFile
@@ -44,12 +34,26 @@ rule:
           - api: kernel32.FindClose
           - match: contain loop
       - and:
-        - basic block:
-          - and:
-            - number: 1 = DIRECTORY_QUERY
-            - api: ntdll.NtOpenDirectoryObject
+        - or:
+          - basic block:
+            - and:
+              - number: 1 = DIRECTORY_QUERY
+              - api: ntdll.NtOpenDirectoryObject
+          - thread:
+            - and:
+              - number: 1 = DIRECTORY_QUERY
+              - api: ntdll.NtOpenDirectoryObject
         - api: ntdll.NtQueryDirectoryObject
         - optional:
           - api: RtlAllocateHeap
           - match: contain loop
-          - characteristic: indirect call
+      - or:
+        - api: System.IO.DirectoryInfo::GetFiles
+        - api: System.IO.DirectoryInfo::EnumerateFiles
+        - api: System.IO.Directory::GetFiles
+        - api: System.IO.Directory::EnumerateFiles
+        - api: System.IO.Directory::EnumerateFileSystemEntries
+        - api: System.IO.DirectoryInfo::GetDirectories
+        - api: System.IO.DirectoryInfo::EnumerateDirectories
+        - api: System.IO.Directory::GetDirectories
+        - api: System.IO.Directory::EnumerateDirectories

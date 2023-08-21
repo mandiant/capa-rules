@@ -28,7 +28,6 @@ rule:
         - number: 0x9B05688C = H(0)5
         - number: 0x1F83D9AB = H(0)6
         - number: 0x5BE0CD19 = H(0)7
-      - bytes: 67 E6 09 6A 85 AE 67 BB 72 F3 6E 3C 3A F5 4F A5 7F 52 0E 51 8C 68 05 9B AB D9 83 1F 19 CD E0 5B = H(0)
       - and:
         - number: 0x428a2f98
         - number: 0x71374491
@@ -50,3 +49,4 @@ rule:
           - api: System.Security.Cryptography.SHA256::Create
           - api: System.Security.Cryptography.SHA256Managed::ctor
         - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
+      - bytes: 67 E6 09 6A 85 AE 67 BB 72 F3 6E 3C 3A F5 4F A5 7F 52 0E 51 8C 68 05 9B AB D9 83 1F 19 CD E0 5B = H(0)

@@ -16,8 +16,6 @@ rule:
       - 3aa7ee4d67f562933bc998f352b1f319:0x705413A0
   features:
     - or:
-      - api: System.Console::Write
-      - api: System.Console::WriteLine
       - and:
         - or:
           - api: kernel32.SetConsoleCursorPosition
@@ -28,3 +26,5 @@ rule:
         - optional:
           - api: kernel32.GetStdHandle
           - number: 0xfffffff5 = STD_OUTPUT_HANDLE
+      - api: System.Console::Write
+      - api: System.Console::WriteLine

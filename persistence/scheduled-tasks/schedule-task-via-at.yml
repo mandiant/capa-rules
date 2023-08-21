@@ -6,6 +6,7 @@ rule:
       - joren485
     scopes:
       static: function
+      dynamic: process
     att&ck:
       - Persistence::Scheduled Task/Job::At [T1053.002]
     examples:

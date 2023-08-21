@@ -7,6 +7,7 @@ rule:
     description: Enumerating processes using a Go library
     scopes:
       static: file
+      dynamic: file
     att&ck:
       - Discovery::Process Discovery [T1057]
       - Discovery::Software Discovery [T1518]

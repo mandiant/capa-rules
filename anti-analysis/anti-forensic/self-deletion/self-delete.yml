@@ -26,4 +26,3 @@ rule:
           description: del "%s"
       - optional:
         - string: /\s*>\s*nul\s*/i
-          description: '> nul'
