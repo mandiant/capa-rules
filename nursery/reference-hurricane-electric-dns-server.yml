@@ -21,3 +21,4 @@ rule:
       - string: "216.66.1.2"
         description: ns4.he.net
       - string: "216.66.80.18"
+        description: ns5.he.net

@@ -1,3 +1,4 @@
+# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: spoof parent PID

@@ -38,5 +38,5 @@ rule:
           - string: /^sc(|\.exe) create/i
           - string: /New-Service /i
       - and:
-        - match: set registry value
+        - match: "set registry value"
         - string: /System\\(CurrentControlSet|ControlSet001)\\Services/i

@@ -1,3 +1,4 @@
+# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: encrypt data using AES MixColumns step
@@ -17,16 +18,19 @@ rule:
       - 1e9fc7f32bd5522dd0222932eb9f1d8bd0a2e132c7b46cfcc622ad97831e6128:0x40e3de
   features:
     - and:
+      # for (c = 0; c < 4; c++)
       - characteristic: loop
       - instruction:
         - and:
           - mnemonic: cmp
           - operand[1].number: 0x4
+      # b[c] = r[c] << 1;
       - instruction:
         - and:
           - description: implicitly removes high bit
           - mnemonic: shl
           - operand[1].number: 0x1
+      # b[c] ^= h * 0x1B;
       - instruction:
         - and:
           - description: Rijndael's Galois field
@@ -35,6 +39,6 @@ rule:
       - optional:
         - instruction:
           - and:
-            - description: 'byte assignment, e.g., in: b[c] = r[c] << 1; b[c] ^= h * 0x1B;'
+            - description: "byte assignment, e.g., in: b[c] = r[c] << 1; b[c] ^= h * 0x1B;"
             - mnemonic: mov
-            - operand[0].offset: '0x0'
+            - operand[0].offset: 0x0

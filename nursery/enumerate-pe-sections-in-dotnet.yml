@@ -14,6 +14,7 @@ rule:
       - format: dotnet
       - optional:
         - api: System.Diagnostics.Process::GetCurrentProcess
+        - property/read: System.Diagnostics.ProcessModule::BaseAddress
         - api: System.IntPtr::ToInt32
       - api: System.Runtime.InteropServices.Marshal::ReadInt32
       - number: 0x3C = IMAGE_DOS_HEADER.e_lfanew

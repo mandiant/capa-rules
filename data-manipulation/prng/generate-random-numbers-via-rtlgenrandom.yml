@@ -21,3 +21,4 @@ rule:
         - optional:
           - string: "advapi32.dll"
           - string: "Advapi32.dll"
+          - characteristic: indirect call

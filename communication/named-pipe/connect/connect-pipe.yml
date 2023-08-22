@@ -11,6 +11,7 @@ rule:
     mbc:
       - Communication::Interprocess Communication::Connect Pipe [C0003.002]
     examples:
+      # Windows msdt.exe
       - 152d4c9f63efb332ccb134c6953c0104:0x42e400
   features:
     - or:

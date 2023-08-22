@@ -31,8 +31,8 @@ rule:
           - number: 0xC
           - number: 0xFFF
           - or:
-            - offset: 16384
-            - offset: 32768
+            - offset: 0x4000
+            - offset: 0x8000
       - basic block:
         - and:
           - description: Mode 2 decompression

@@ -12,7 +12,9 @@ rule:
     - and:
       - or:
         - count(mnemonic(pusha)): 2 or more
+        # vivisect
         - count(mnemonic(pushad)): 2 or more
       - or:
         - count(mnemonic(popa)): 2 or more
+        # vivisect
         - count(mnemonic(popad)): 2 or more

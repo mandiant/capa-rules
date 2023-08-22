@@ -22,6 +22,8 @@ rule:
         - basic block:
           - and:
             - description: initialize S
+            # misses if regular loop is used,
+            # however we cannot model that a loop contains a certain number
             - characteristic: tight loop
             - or:
               - number: 0xFF
@@ -33,6 +35,7 @@ rule:
             - and:
               - description: modulo via zero-extended mov from 8-bit register
               - count(mnemonic(movzx)): 2 or more
+              # avoid false positives; filter out unexpected instructions
               - not:
                 - or:
                   - mnemonic: shl

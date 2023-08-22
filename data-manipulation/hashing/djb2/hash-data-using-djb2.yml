@@ -11,6 +11,7 @@ rule:
       - Data::Non-Cryptographic Hash::djb2 [C0030.006]
     references:
       - https://twitter.com/r3c0nst/status/1392405576131436546
+      - http://www.cse.yorku.ca/~oz/hash.html
     examples:
       - 6be0ae5cb7c3155f70d608fc7670d2d9:0x41DD19
   features:

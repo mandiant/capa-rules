@@ -19,3 +19,4 @@ rule:
         - and:
           - string: "ipconfig.txt"
           - substring: "[Windows IP Configuration]"
+            description: Arkei Stealer Filename and Banner

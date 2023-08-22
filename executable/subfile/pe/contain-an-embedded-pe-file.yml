@@ -13,5 +13,5 @@ rule:
       - Practical Malware Analysis Lab 01-04.exe_:0x4060
   features:
     - or:
-      - count(string(This program cannot be run in DOS mode.)): 2 or more
       - count(characteristic(embedded pe)): 1 or more
+      - count(string(This program cannot be run in DOS mode.)): 2 or more

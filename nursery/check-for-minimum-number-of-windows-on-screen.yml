@@ -11,6 +11,8 @@ rule:
     references:
       - https://www.crowdstrike.com/blog/guloader-dissection-reveals-new-anti-analysis-techniques-and-code-injection-redundancy/
       - https://elis531989.medium.com/dancing-with-shellcodes-cracking-the-latest-version-of-guloader-75083fb15cb4
+    # examples:
+    #   - 
   features:
     - and:
       - api: EnumWindows

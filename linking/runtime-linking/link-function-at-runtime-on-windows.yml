@@ -20,6 +20,7 @@ rule:
         - api: kernel32.GetProcAddress
         - api: ntdll.LdrGetProcedureAddress
       - optional:
+        - characteristic: indirect call
         - api: kernel32.LoadLibrary
         - api: kernel32.GetModuleHandle
         - api: kernel32.GetModuleHandleEx

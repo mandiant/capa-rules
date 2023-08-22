@@ -13,12 +13,19 @@ rule:
       - https://www.x86matthew.com/view_post?id=ntsockets
     examples:
       - 0fd8330e00aa48676d6d0c4f36e9a80b:0x1400132B0
+      # FLIRT FP: ?DERReencode@CryptoPP@@YAXAEAVBufferedTransformation@1@0@Z
+      # - 59a6c5036241a2f604e755bf523eb084:0x1400010D0
   features:
     - and:
+      # wanted, but the routine is resolved via GetProcAddress into a global
+      # - api: ntdll.NtCreateFile
+
       - api: kernel32.CreateEvent
       - string: "\\Device\\Afd\\Endpoint"
       - or:
         - description: a hardcoded byte array that provides the socket details to the AFD driver via "extended attributes".
+
+        # the raw byte sequence
         - or:
           - basic block:
             - and:
@@ -106,9 +113,12 @@ rule:
               - number: 0x473DEF60 = bExtendedAttributes+0x34
               - number: 0x0FE = bExtendedAttributes+0x38
         - bytes: 00 00 00 00 00 0F 1E 00 41 66 64 4F 70 65 6E 50 61 63 6B 65 74 58 58 00 00 00 00 00 00 00 00 00 02 00 00 00 01 00 00 00 06 00 00 00 00 00 00 00 00 00 00 00 60 EF 3D 47 FE = bExtendedAttributes for IPv4 TCP
+
+        # in the example code, in debug mode, the array is constructed bytewise on the stack
         - basic block:
           - and:
             - description: bExtendedAttributes for IPv4 TCP on stack, bytewise
+            # i've kept the values approximately in order while removing some duplicates for clarity
             - number: 0x00
             - number: 0x0F
             - number: 0x1E
@@ -135,6 +145,8 @@ rule:
             - number: 0x3D
             - number: 0x47
             - number: 0xFE
+
+        # in the example code, in release mode, the array is constructed word-wise on the stack
         - basic block:
           - and:
             - description: bExtendedAttributes for IPv4 TCP on stack, wordwise

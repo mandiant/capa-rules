@@ -47,6 +47,7 @@ rule:
         - optional:
           - api: RtlAllocateHeap
           - match: contain loop
+          - characteristic: indirect call
       - or:
         - api: System.IO.DirectoryInfo::GetFiles
         - api: System.IO.DirectoryInfo::EnumerateFiles

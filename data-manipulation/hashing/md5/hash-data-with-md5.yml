@@ -27,6 +27,9 @@ rule:
           - number: 0xc3d2e1f0 = likely SHA1 but also used in RIPEMD-160 and RIPEMD-320
         - optional:
           - description: specific compilation from https://github.com/rwfpl/rewolf-x86-virtualizer/blob/master/src/test_app/main.cpp
+          - and:
+            - offset: -0x28955B88
+            - offset: -0x173848AA
       - or:
         - basic block:
           - and:

@@ -50,7 +50,7 @@ rule:
         - instruction:
           - description: Conversion of chr to int (LEA REG,[REG+ -0x30])
           - mnemonic: lea
-          - offset: -48
+          - offset: -0x30
       - basic block:
         - or:
           - and:

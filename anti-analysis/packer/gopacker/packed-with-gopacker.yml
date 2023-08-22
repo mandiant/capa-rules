@@ -24,3 +24,4 @@ rule:
       - optional:
         - string: "path   github.com/nirhaas/gopacker"
         - string: "LALALALA"
+          description: LALALALA is the default magic footer; however, it can be changed.

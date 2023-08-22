@@ -16,7 +16,7 @@ rule:
     - and:
       - match: compiled to the .NET platform
       - or:
-        - string: "ProcessedByFody"
         - class: ProcessedByFody
         - namespace: Costura
         - class: Costura.AssemblyLoader
+        - string: "ProcessedByFody"

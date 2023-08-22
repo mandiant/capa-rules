@@ -16,10 +16,10 @@ rule:
     - and:
       - or:
         - mnemonic: pusha
-        - mnemonic: pushad
+        - mnemonic: pushad  # vivisect
       - or:
         - mnemonic: popa
-        - mnemonic: popad
+        - mnemonic: popad  # vivisect
       - characteristic: cross section flow
       - not:
         - match: contain pusha popa sequence

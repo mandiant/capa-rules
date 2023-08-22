@@ -1,3 +1,4 @@
+# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: inspect load icon resource
@@ -7,6 +8,10 @@ rule:
     scopes:
       static: basic block
   features:
+    # check if call to LoadIcon fails when first argument is NULL
+    # and second argument is not a valid predefined icon - LoadIcon
+    # should return NULL here, but some sandboxes/emulation may instead
+    # return a valid handle
     - and:
       - api: user32.LoadIcon
       - number: 0x0

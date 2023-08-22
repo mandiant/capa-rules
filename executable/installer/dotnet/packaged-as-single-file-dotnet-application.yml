@@ -14,6 +14,7 @@ rule:
       - a6e9d94e286984b9e44c58df5eeb20cf5c08b9acff4af341ddecdfbe3ea9249d
   features:
     - and:
+      # the installer portion of a single-file application is native code (in the samples I have seen) so format(dotnet) does not apply here.
       - string: "Failure processing application bundle; possible file corruption."
       - string: "Failure processing application bundle."
       - string: "Bundle header version compatibility check failed"

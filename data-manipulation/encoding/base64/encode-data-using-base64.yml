@@ -21,9 +21,6 @@ rule:
       - 08AC667C65D36D6542917655571E61C8:0x406EAA
   features:
     - or:
-      - api: System.Convert::ToBase64String
-      - api: System.Convert::ToBase64CharArray
-      - api: System.Convert::TryToBase64Chars
       - and:
         - mnemonic: shl
         - mnemonic: shr
@@ -39,3 +36,6 @@ rule:
           - number: 6
           - number: 0xF
           - string: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+      - api: System.Convert::ToBase64String
+      - api: System.Convert::ToBase64CharArray
+      - api: System.Convert::TryToBase64Chars

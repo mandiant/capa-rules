@@ -19,3 +19,4 @@ rule:
       - string: "CDM30"
         description: Wincor
       - string: "DBD_AdvFuncDisp"
+        description: Diebold

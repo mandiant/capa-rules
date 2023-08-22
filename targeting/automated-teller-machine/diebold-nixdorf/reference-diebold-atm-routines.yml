@@ -16,3 +16,4 @@ rule:
       - string: "DBD_AdvFuncDisp"
         description: dispenser function
       - string: "DBD_EPP4"
+        description: pin pad function

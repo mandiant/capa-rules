@@ -18,3 +18,4 @@ rule:
         - string: ":Zone.Identifier"
           description: NTFS ADS name recognized by Windows Defender SmartScreen
         - string: "%s:Zone.Identifier"
+          description: NTFS ADS name recognized by Windows Defender SmartScreen

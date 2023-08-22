@@ -29,6 +29,8 @@ rule:
       - api: System.Security.Principal.WindowsIdentity::GetCurrent
       - basic block:
         - and:
+          # - match: get session information (see #463)
           - api: wtsapi32.WTSQuerySessionInformation
           - number: 5 = WTSUserName
+      - api: System.Security.Principal.WindowsIdentity::GetCurrent
       - property/read: System.Environment::UserName

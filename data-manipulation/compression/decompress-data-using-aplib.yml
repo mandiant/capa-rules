@@ -41,3 +41,4 @@ rule:
         - number: 1
       - optional:
         - count(characteristic(calls from)): 2 or more
+          description: calls aP_getbit and aP_getgamma

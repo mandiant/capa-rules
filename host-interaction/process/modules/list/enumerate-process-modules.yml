@@ -24,6 +24,7 @@ rule:
           - api: kernel32.K32EnumProcessModules
           - api: kernel32.K32EnumProcessModulesEx
           - api: kernel32.K32EnumProcesses
+          # depending on OS version in kernel32 or psapi
           - api: EnumProcessModules
           - api: EnumProcessModulesEx
           - api: EnumProcesses

@@ -1,3 +1,4 @@
+# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: read data from CLFS log container

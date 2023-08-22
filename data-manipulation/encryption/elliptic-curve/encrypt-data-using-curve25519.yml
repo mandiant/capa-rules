@@ -16,6 +16,10 @@ rule:
       - 80372de850597bd9e7e021a94f13f0a1:0x4086f4
       - b4a07cdd640bbaef21cd0493b4d62675:0x4098af
   features:
+    # Common corresponding C source code:
+    #    e[0] &= 0xf8;
+    #   e[31] &= 0x7f;
+    #   e[31] |= 0x40;
     - and:
       - instruction:
         - description: clear bits 0, 1, and 2 of the first byte

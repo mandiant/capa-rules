@@ -24,3 +24,4 @@ rule:
       - string: /AppInit_DLLs/i
       - optional:
         - string: /LoadAppInit_DLLs/i
+          description: enable AppInit DLLs feature

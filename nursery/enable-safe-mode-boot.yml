@@ -18,3 +18,4 @@ rule:
         - string: "bcdedit /set {current} safeboot minimal"
           description: modern-era method for safe mode, no internet
         - string: "bcdedit /set {current} safeboot network"
+          description: modern-era method for safe mode, with internet

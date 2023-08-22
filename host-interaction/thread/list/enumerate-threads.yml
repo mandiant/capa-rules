@@ -23,9 +23,11 @@ rule:
             - and:
               - or:
                 - number: 0x4 = TH32CS_SNAPTHREAD
+                # TH32CS_SNAPTHREAD includes all threads in the system in the snapshot
               - api: kernel32.CreateToolhelp32Snapshot
           - thread:
             - and:
               - or:
                 - number: 0x4 = TH32CS_SNAPTHREAD
+                # TH32CS_SNAPTHREAD includes all threads in the system in the snapshot
               - api: kernel32.CreateToolhelp32Snapshot

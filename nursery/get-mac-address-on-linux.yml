@@ -14,3 +14,4 @@ rule:
       - os: linux
       - match: host-interaction/file-system/read
       - string: /\/sys\/class\/net\/\S+\/address/
+        description: pseudo-file path like /sys/class/net/eth0/address

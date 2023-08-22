@@ -18,3 +18,4 @@ rule:
         - substring: "Control\\SafeBoot\\Minimal\\"
           description: registry key for safe mode, no networking
         - substring: "Control\\SafeBoot\\Network\\"
+          description: registry key for safe mode, with networking

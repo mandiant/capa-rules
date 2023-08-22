@@ -4,16 +4,12 @@ rule:
     namespace: internal/limitation/file
     authors:
       - william.ballenthin@mandiant.com
-    description: 'This sample appears to be packed.
-
+    description: |
+      This sample appears to be packed.
 
       Packed samples have often been obfuscated to hide their logic.
-
       capa cannot handle obfuscation well. This means the results may be misleading or incomplete.
-
       If possible, you should try to unpack this input file before analyzing it with capa.
-
-      '
     scopes:
       static: file
       dynamic: file

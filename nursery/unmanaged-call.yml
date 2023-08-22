@@ -10,6 +10,6 @@ rule:
       dynamic: process
   features:
     - or:
+      - characteristic: unmanaged call
       - match: unmanaged call via dynamic PInvoke in .NET
       - api: System.Runtime.InteropServices.Marshal::GetDelegateForFunctionPointer
-      - characteristic: unmanaged call

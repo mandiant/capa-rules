@@ -14,4 +14,4 @@ rule:
   features:
     - and:
       - format: dotnet
-      - function-name: StartupHook::Initialize
+      - function-name: "StartupHook::Initialize"

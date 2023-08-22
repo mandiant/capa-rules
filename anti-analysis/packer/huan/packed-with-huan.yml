@@ -17,6 +17,7 @@ rule:
       - 378ecc1b2e60129c9f06bb6bb8042f2b95feca5f526a4c26a5c39707807fa259:0x140048000
   features:
     - or:
+      - section: .huan
       - string: "[+] IAT Fix starts..."
       - string: "     [+] Import by ordinal: "
       - string: "     [+] Import by name: "
@@ -24,4 +25,3 @@ rule:
       - string: "[!] No Relocation Table and Cannot load to the preferable address"
       - string: "[+] All headers are copied"
       - string: "[+] All sections are copied"
-      - section: .huan

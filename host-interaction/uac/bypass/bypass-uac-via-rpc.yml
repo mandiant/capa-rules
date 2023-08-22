@@ -22,6 +22,10 @@ rule:
         - string: "201ef99a-7fa0-444c-9399-19ba84f12a1a"
           description: IID_APPINFO
         - bytes: 9A F9 1E 20 A0 7F 4C 44 93 99 19 BA 84 F1 2A 1A = IID_APPINFO
+
+      # These APIs have been observed in samples abusing RPC for UAC bypass, and are
+      # included to guide analysts to function calls. The identifiers above are
+      # sufficient for identifying likely UAC bypass.
       - optional:
         - api: rpcrt4.RpcStringBindingComposeW
         - api: rpcrt4.RpcBindingFromStringBindingW

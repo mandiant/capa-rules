@@ -16,7 +16,29 @@ rule:
       - b7b5e1253710d8927cbe07d52d2d2e10:0x417DF0
   features:
     - or:
+        # typedef struct _PUBLICKEYSTRUC {
+        #   BYTE   bType;
+        #   BYTE   bVersion;
+        #   WORD   reserved;
+        #   ALG_ID aiKeyAlg;
+        # } BLOBHEADER, PUBLICKEYSTRUC;
+        #
+        # typedef struct _RSAPUBKEY {
+        #   DWORD magic;
+        #   DWORD bitlen;
+        #   DWORD pubexp;
+        # } RSAPUBKEY;
+        #
+      - bytes: 06 02 00 00 00 A4 00 00 52 53 41 31
+        #      ^^ bType = PUBLICKEYBLOB
+        #         ^^ bVersion = CUR_BLOB_VERSION
+        #            ^^ ^^ reserved
+        #                  ^^ ^^ ^^ ^^ aiKeyAlg = CALG_RSA_KEYX
+        #                              ^^ ^^ ^^ ^^ magic = RSA1 for public keys
+
+        # mov     rax, 80031415352h
+        # ... 52 53 41 31 00 08 00 00
+        #                 ^^ ^^ ^^ ^^ bitlen (bits in modulus) = 2048
       - number: 0x040031415352 = RSA1 bitlen 1024
       - number: 0x080031415352 = RSA1 bitlen 2048
       - number: 0x100031415352 = RSA1 bitlen 4096
-      - bytes: 06 02 00 00 00 A4 00 00 52 53 41 31

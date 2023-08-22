@@ -17,6 +17,7 @@ rule:
   features:
     - and:
       - os: windows
+      # there should be some complexity to functions like this
       - count(basic blocks): 3 or more
       - optional:
         - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
@@ -50,5 +51,6 @@ rule:
         - operand[1].offset: 0xC = IMAGE_SECTION_HEADER.VirtualAddress
         - operand[1].offset: 0x14 = IMAGE_SECTION_HEADER.PointerToRawData
         - operand[1].offset: 0x10 = IMAGE_SECTION_HEADER.SizeOfRawData
+        # there's also offset 0x8 = IMAGE_SECTION_HEADER.Misc.PhysicalAddress, but it's likely too common
       - not:
         - characteristic: nzxor

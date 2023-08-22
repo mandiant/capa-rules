@@ -24,7 +24,7 @@ rule:
       - string: "bad pack level"
       - string: "Code too clever"
       - string: "unknown zip result code"
-      - string: "Culdn't duplicate handle"
+      - string: "Culdn't duplicate handle"  # typo in library code
       - string: "File not found in the zipfile"
       - string: "Still more data to unzip"
       - string: "Caller: the file had already been partially unzipped"

@@ -24,7 +24,7 @@ rule:
           - match: send data to Internet
       - and:
         - os: linux
-        - or:
+        - or: # Require network bound socket.
           - match: create TCP socket
           - match: create UDP socket
         - or:

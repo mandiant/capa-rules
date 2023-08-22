@@ -20,6 +20,15 @@ rule:
     - or:
       - and:
         - basic block:
+          # example:
+          #   mov     rbx, gs:60h
+          #   lea     r9, [rsp+4A0h+flOldProtect] ; lpflOldProtect
+          #   mov     edx, 8          ; dwSize
+          #   mov     rcx, [rbx+20h]
+          #   add     rcx, 70h ; 'p'  ; lpAddress
+          #   lea     r8d, [rdx-4]    ; flNewProtect
+          #   call    cs:VirtualProtect
+          #   test    eax, eax
           - and:
             - arch: amd64
             - characteristic: gs access

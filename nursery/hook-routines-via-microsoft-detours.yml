@@ -1,6 +1,7 @@
 rule:
   meta:
     name: hook routines via microsoft detours
+    # namespace: linking/hooking
     authors:
       - william.ballenthin@mandiant.com
     scopes:

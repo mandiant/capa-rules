@@ -21,3 +21,4 @@ rule:
       - api: kernel32.TransactNamedPipe
         description: writes and reads pipe in single operation
       - api: kernel32.CallNamedPipe
+        description: connects, writes, and reads pipe in single operation

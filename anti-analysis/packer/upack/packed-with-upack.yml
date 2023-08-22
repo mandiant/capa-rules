@@ -17,6 +17,6 @@ rule:
       - 9d98f8519d9fee8219caca5b31eef0bd
   features:
     - or:
-      - string: "UpackByDwing@"
       - section: .Upack
       - section: .ByDwing
+      - string: "UpackByDwing@"

@@ -20,6 +20,7 @@ rule:
     - and:
       - or:
         - match: get session user name
+        # Usernames often overlap with hostnames for many of these checks.
         - match: get hostname
       - or:
         - string: /MALTEST/i
@@ -73,3 +74,4 @@ rule:
         - string: /WDAGUtilityAccount/i
           description: Windows Defender Application Guard
         - string: /HAL9TH/i
+          description: Windows Defender Emulator
