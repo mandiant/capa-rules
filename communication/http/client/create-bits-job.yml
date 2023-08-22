@@ -6,7 +6,9 @@ rule:
     authors:
       - "@mr-tz"
     description: BITS jobs can be used to download data or achieve persistence (via SetNotifyCmdLine)
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::BITS Jobs [T1197]
       - Persistence::BITS Jobs [T1197]

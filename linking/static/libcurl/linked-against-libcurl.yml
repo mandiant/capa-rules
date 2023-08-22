@@ -4,7 +4,9 @@ rule:
     namespace: linking/static/libcurl
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - A90E5B3454AA71D9700B2EA54615F44B
   features:

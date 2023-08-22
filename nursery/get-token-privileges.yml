@@ -5,7 +5,9 @@ rule:
     namespace: host-interaction/session
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
   features:
     - and:
       - basic block:

@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::SetHandleInformation [B0001.024]
     references:

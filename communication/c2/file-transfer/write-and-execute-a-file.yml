@@ -5,7 +5,9 @@ rule:
     maec/malware-category: launcher
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Execution::Install Additional Program [B0023]
     examples:

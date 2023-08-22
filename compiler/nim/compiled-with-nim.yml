@@ -4,7 +4,9 @@ rule:
     namespace: compiler/nim
     authors:
       - michael.hunhoff@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - 580c37831fe98a254eb6c61c692c70d8.exe_
   features:

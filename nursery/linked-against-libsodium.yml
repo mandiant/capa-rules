@@ -5,7 +5,9 @@ rule:
     authors:
       - "@mr-tz"
     description: Sodium is a software library for encryption, decryption, signatures, password hashing and more.
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Cryptography::Crypto Library [C0059]
   features:

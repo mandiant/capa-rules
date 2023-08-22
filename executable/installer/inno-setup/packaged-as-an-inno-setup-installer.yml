@@ -4,7 +4,9 @@ rule:
     namespace: executable/installer/inno-setup
     authors:
       - awillia2@cisco.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     references:
       - https://jrsoftware.org/isinfo.php
     examples:

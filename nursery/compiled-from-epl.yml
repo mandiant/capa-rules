@@ -4,7 +4,9 @@ rule:
     namespace: compiler/epl
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     references:
       - https://www.hexacorn.com/blog/2019/02/13/pe-files-and-the-easy-programming-language-epl/
   features:

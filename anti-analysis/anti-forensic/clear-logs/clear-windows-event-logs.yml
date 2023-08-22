@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-forensic/clear-logs
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Indicator Removal::Clear Windows Event Logs [T1070.001]
     examples:

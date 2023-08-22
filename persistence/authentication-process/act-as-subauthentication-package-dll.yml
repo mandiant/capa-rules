@@ -4,7 +4,9 @@ rule:
     namespace: persistence/authentication-process
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Authentication Package [T1547.002]
     references:

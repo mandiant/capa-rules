@@ -4,7 +4,9 @@ rule:
     namespace: runtime/dotnet
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - b9f5bd514485fb06da39beff051b9fdc
   features:

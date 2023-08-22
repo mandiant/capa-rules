@@ -4,7 +4,9 @@ rule:
     namespace: collection/file-managers
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Credential Access::Credentials from Password Stores [T1555]
     examples:

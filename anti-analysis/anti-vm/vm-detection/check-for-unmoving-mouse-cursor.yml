@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - BitsOfBinary
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::User Activity Based Checks [T1497.002]
     mbc:

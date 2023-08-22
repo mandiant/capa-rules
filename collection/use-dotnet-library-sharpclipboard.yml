@@ -4,7 +4,9 @@ rule:
     namespace: collection
     authors:
       - "@johnk3r"
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Collection::Clipboard Data [T1115]
     mbc:

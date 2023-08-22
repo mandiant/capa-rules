@@ -4,7 +4,9 @@ rule:
     namespace: load-code/pe
     authors:
       - sara-rn
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - 73CE04892E5F39EC82B00C02FC04C70F:0x406BA1
   features:

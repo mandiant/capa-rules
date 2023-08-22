@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Process Injection::Asynchronous Procedure Call [T1055.004]
     examples:

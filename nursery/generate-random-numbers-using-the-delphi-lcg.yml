@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/prng/lcg
     authors:
       - william.ballenthin@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Cryptography::Generate Pseudo-random Sequence [C0021]
     references:

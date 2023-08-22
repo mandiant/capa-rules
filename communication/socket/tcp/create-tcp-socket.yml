@@ -6,7 +6,9 @@ rule:
       - william.ballenthin@mandiant.com
       - joakim@intezer.com
       - anushka.virgaonkar@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Communication::Socket Communication::Create TCP Socket [C0001.011]
     examples:

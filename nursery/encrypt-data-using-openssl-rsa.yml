@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/rsa
     authors:
       - "Ana06"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Cryptography::Encrypt Data::RSA [C0027.011]
     references:

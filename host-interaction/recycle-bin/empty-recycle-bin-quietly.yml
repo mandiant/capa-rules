@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/recycle-bin
     authors:
       - matthew.williams@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Indicator Removal [T1070]
     references:

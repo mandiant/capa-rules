@@ -4,7 +4,9 @@ rule:
     namespace: compiler/go
     authors:
       - michael.hunhoff@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - 49a34cfbeed733c24392c9217ef46bb6
   features:

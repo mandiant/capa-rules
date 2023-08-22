@@ -4,7 +4,9 @@ rule:
     namespace: executable/pe/pdb
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - 464EF2CA59782CE697BC329713698CCC  # level32.exe
   features:

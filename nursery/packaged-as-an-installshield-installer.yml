@@ -4,7 +4,9 @@ rule:
     namespace: executable/installer/installshield
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
   features:
     - or:
       # AppHelp has an export ApphelpCheckInstallShieldPackage,

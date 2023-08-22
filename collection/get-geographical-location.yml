@@ -6,7 +6,9 @@ rule:
     authors:
       - moritz.raabe
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Discovery::System Location Discovery [T1614]
     examples:

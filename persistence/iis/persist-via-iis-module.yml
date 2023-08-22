@@ -5,7 +5,9 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
     description: IIS 7.0 introduced modules that provide the same unrestricted access to HTTP requests and responses as ISAPI extensions and filters.
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Persistence::Server Software Component::IIS Components [T1505.004]
     examples:

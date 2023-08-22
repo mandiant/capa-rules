@@ -11,7 +11,9 @@ rule:
 
       capa cannot handle installers well. This means the results may be misleading or incomplete.
       You should try to understand the install mechanism and analyze created files with capa.
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - 70FD3347786ED7A4A43910E6778EF296
   features:

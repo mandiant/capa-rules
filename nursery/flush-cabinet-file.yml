@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/file-system
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     references:
       - https://docs.microsoft.com/en-us/windows/win32/msi/cabinet-files
   features:

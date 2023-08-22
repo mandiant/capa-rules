@@ -4,7 +4,9 @@ rule:
     namespace: persistence
     authors:
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Persistence::Event Triggered Execution::Unix Shell Configuration Modification [T1546.004]
     examples:

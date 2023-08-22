@@ -5,7 +5,9 @@ rule:
     authors:
       - joakim@intezer.com
     description: Detects screenshot capability via WinAPI for Go files.
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Collection::Screen Capture [T1113]
     mbc:

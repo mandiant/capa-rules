@@ -5,7 +5,9 @@ rule:
     authors:
       - "@_re_fox"
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - c3341b7dfbb9d43bca8c812e07b4299f:0x45F490
   features:

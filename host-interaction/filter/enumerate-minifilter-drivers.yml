@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/filter
     authors:
       - aseel.kayal@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     references:
       - https://posts.specterops.io/mimidrv-in-depth-4d273d19e148
       - https://learn.microsoft.com/en-us/windows-hardware/drivers/ifs/filter-manager-concepts

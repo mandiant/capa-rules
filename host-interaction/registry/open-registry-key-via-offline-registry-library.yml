@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/registry
     authors:
       - johnk3r
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Operating System::Registry::Open Registry Key [C0036.003]
     examples:

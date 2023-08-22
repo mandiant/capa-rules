@@ -4,7 +4,9 @@ rule:
     namespace: communication/icmp
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Communication::ICMP Communication::Echo Request [C0014.002]
     references:

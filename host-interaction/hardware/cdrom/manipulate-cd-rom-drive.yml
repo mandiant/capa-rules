@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/hardware/cdrom
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Impact::Modify Hardware::CDROM [B0042.001]
     examples:

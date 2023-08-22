@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis
     authors:
       - michael.hunhoff@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Discovery::Analysis Tool Discovery::Process detection [B0013.001]
     references:

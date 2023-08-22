@@ -4,7 +4,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     lib: true
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - Practical Malware Analysis Lab 03-02.dll_:0x10004706
   features:

@@ -4,7 +4,9 @@ rule:
     namespace: compiler/exescript
     authors:
       - jonathanlepore@google.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     references:
       - https://www.hide-folder.com/overview/hf_7.html
   features:

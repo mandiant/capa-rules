@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/svg
     authors:
       - "@johnk3r"
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     references:
       - https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/
     examples:

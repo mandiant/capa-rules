@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/gui/taskbar/find
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Discovery::Taskbar Discovery [B0043]
     examples:

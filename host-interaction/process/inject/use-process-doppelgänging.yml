@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Process Injection::Process Doppelgänging [T1055.013]
     examples:

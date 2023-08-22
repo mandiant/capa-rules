@@ -7,7 +7,9 @@ rule:
       - moritz.raabe@mandiant.com
       - cdong49@gatech.edu
     description: detects decompression function of library aPLib
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Data::Decompress Data::aPLib [C0025.003]
     references:

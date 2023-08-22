@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/checksum/luhn
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Data::Checksum::Luhn [C0032.002]
     examples:

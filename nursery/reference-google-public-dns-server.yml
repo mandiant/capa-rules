@@ -4,7 +4,9 @@ rule:
     namespace: communication/dns
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     references:
       - https://www.techradar.com/news/best-dns-server
       - https://developers.google.com/speed/public-dns/docs/using

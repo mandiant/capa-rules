@@ -4,7 +4,9 @@ rule:
     namespace: collection/keylog
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Collection::Input Capture::Keylogging [T1056.001]
     examples:
