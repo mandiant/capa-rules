@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Collection::Archive Collected Data::Archive via Library [T1560.002]
     mbc:

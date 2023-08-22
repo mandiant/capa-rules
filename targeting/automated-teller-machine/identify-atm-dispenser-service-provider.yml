@@ -4,7 +4,9 @@ rule:
     namespace: targeting/automated-teller-machine
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://doc.axxonsoft.com/confluence/display/atm70en/Configuring+the+connection+to+the+dispenser+service+provider
     examples:

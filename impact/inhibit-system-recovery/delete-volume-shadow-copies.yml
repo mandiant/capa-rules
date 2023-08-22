@@ -4,7 +4,9 @@ rule:
     namespace: impact/inhibit-system-recovery
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Impact::Inhibit System Recovery [T1490]
       - Defense Evasion::Indicator Removal::File Deletion [T1070.004]

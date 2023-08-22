@@ -4,7 +4,8 @@ rule:
     namespace: communication/http
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
   features:
     - or:
       - property/write: System.Net.HttpWebRequest::UserAgent

@@ -3,8 +3,9 @@ rule:
     name: encrypt data using OpenSSL RSA
     namespace: data-manipulation/encryption/rsa
     authors:
-      - "Ana06"
-    scope: function
+      - Ana06
+    scopes:
+      static: function
     mbc:
       - Cryptography::Encrypt Data::RSA [C0027.011]
     references:

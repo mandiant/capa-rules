@@ -5,7 +5,9 @@ rule:
     namespace: host-interaction/accounts
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Persistence::Create Account [T1136]
   features:

@@ -4,7 +4,8 @@ rule:
     namespace: executable/pe
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
     references:
       - https://learn.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-dllgetclassobject
   features:

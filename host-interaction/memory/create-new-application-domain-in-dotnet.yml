@@ -4,7 +4,8 @@ rule:
     namespace: host-interaction/memory
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: file
+    scopes:
+      static: file
     att&ck:
       - Persistence::Hijack Execution Flow [T1574]
     references:

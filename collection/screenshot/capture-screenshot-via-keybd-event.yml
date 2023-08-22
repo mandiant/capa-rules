@@ -4,7 +4,8 @@ rule:
     namespace: collection/screenshot
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Collection::Screen Capture [T1113]
     mbc:

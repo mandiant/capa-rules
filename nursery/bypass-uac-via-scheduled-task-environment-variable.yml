@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/uac/bypass
     authors:
       - anamaria.martinezgom@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Account Control [T1548.002]
     references:

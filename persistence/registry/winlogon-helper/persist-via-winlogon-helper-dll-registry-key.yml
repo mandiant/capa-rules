@@ -4,7 +4,9 @@ rule:
     namespace: persistence/registry/winlogon-helper
     authors:
       - 0x534a@mailbox.org
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Winlogon Helper DLL [T1547.004]
     examples:

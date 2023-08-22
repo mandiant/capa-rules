@@ -3,8 +3,10 @@ rule:
     name: get service handle
     authors:
       - moritz.raabe@mandiant.com
-    lib: true
-    scope: function
+    lib: 'true'
+    scopes:
+      static: function
+      dynamic: process
     examples:
       - Practical Malware Analysis Lab 03-02.dll_:0x10004706
   features:

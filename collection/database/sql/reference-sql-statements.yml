@@ -4,7 +4,9 @@ rule:
     namespace: collection/database/sql
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Collection::Data from Information Repositories [T1213]
     examples:

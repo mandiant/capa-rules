@@ -4,7 +4,8 @@ rule:
     namespace: anti-analysis/packer/generic
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:

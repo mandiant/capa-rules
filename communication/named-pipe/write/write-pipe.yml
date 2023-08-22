@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Communication::Interprocess Communication::Write Pipe [C0003.004]
     examples:

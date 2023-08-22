@@ -4,7 +4,9 @@ rule:
     namespace: impact/inhibit-system-recovery
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Impact::Inhibit System Recovery [T1490]
   features:

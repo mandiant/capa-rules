@@ -4,7 +4,9 @@ rule:
     namespace: executable/resource
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     examples:
       - BF88E1BD4A3BDE10B419A622278F1FF7:0x401000
       - Practical Malware Analysis Lab 01-04.exe_:0x4011FC

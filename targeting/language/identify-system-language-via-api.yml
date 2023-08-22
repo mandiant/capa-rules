@@ -4,7 +4,9 @@ rule:
     namespace: targeting/language
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Discovery::System Location Discovery::System Language Discovery [T1614.001]
     examples:

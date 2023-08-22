@@ -3,8 +3,9 @@ rule:
     name: PEB access
     authors:
       - michael.hunhoff@mandiant.com
-    lib: true
-    scope: basic block
+    lib: 'true'
+    scopes:
+      static: basic block
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Process Environment Block [B0001.019]
     references:

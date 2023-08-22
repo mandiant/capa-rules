@@ -4,7 +4,8 @@ rule:
     namespace: data-manipulation/hashing/murmur
     authors:
       - william.ballenthin@mandiant.com
-    scope: instruction
+    scopes:
+      static: instruction
     references:
       - https://github.com/abrandoned/murmur2/blob/master/MurmurHash2.c
   features:

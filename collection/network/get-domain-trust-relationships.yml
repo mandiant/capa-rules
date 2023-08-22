@@ -4,7 +4,9 @@ rule:
     namespace: collection/network
     authors:
       - johnk3r
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Discovery::Domain Trust Discovery [T1482]
     examples:

@@ -6,7 +6,8 @@ rule:
     authors:
       - blas.kojusner@mandiant.com
     description: may be used to evade hooks or hinder analysis
-    scope: function
+    scopes:
+      static: function
     references:
       - https://github.com/TheWover/donut/blob/master/DonutTest/rundotnet.cpp
     examples:

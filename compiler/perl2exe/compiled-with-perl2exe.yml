@@ -4,7 +4,9 @@ rule:
     namespace: compiler/perl2exe
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     examples:
       - 873275ce8bf88ef66e9fa0c74b5c2a1e:0x4011C9
   features:
@@ -12,7 +14,12 @@ rule:
       - api: LoadLibrary
       - api: FreeLibrary
       - string: /^p2x[a-z0-9]{1,10}\.dll/i
-      - basic block:
-        - and:
-          - api: GetProcAddress
-          - string: "RunPerl"
+      - or:
+        - basic block:
+          - and:
+            - api: GetProcAddress
+            - string: "RunPerl"
+        - thread:
+          - and:
+            - api: GetProcAddress
+            - string: "RunPerl"

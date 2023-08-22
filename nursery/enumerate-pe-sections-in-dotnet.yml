@@ -4,7 +4,9 @@ rule:
     namespace: load-code/pe
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
   features:

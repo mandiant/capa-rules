@@ -5,7 +5,8 @@ rule:
     namespace: host-interaction/wmi
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Execution::Windows Management Instrumentation [T1047]
     examples:

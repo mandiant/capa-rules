@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/hardware/mouse
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Impact::Modify Hardware::Mouse [B0042.002]
     examples:

@@ -4,13 +4,15 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Process Injection [T1055]
     mbc:
       - Memory::Free Memory [C0044]
     examples:
-      - 493167E85E45363D09495D0841C30648:0x404B00
+      - 493167E85E45363D09495D0841C30648:0x404CA0
   features:
     - and:
       - match: attach user process memory

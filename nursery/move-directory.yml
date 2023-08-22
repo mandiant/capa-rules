@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/file-system/move
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
   features:
     - or:
       - api: System.IO.DirectoryInfo::MoveTo

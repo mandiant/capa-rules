@@ -5,7 +5,8 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Process Injection [T1055]
     mbc:

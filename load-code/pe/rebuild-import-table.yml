@@ -4,7 +4,8 @@ rule:
     namespace: load-code/pe
     authors:
       - "@Ana06"
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Defense Evasion::Hijack Execution Flow::Import Address Table Hooking [F0015.003]
     references:

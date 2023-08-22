@@ -1,12 +1,17 @@
 rule:
   meta:
     name: create shortcut via IShellLink
-    namespace: host-interaction/file-system/write
+    namespace: persistence
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution::Shortcut Modification [T1547.009]
     references:
       - https://docs.microsoft.com/en-us/windows/win32/shell/links#creating-a-shortcut-and-a-folder-shortcut-to-a-file
+    examples:
+      - 7f403f7d643d90c7cbadf3ccfc68bd1badf06f89a35af5fc7811920e820bbcc9:0x10001380
   features:
     - and:
       - bytes: 01 14 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = CLSID_ShellLink

@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/prng/mersenne
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Cryptography::Generate Pseudo-random Sequence [C0021]
     examples:

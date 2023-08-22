@@ -3,8 +3,10 @@ rule:
     name: allocate memory
     authors:
       - 0x534a@mailbox.org
-    lib: true
-    scope: basic block
+    lib: 'true'
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
       - Memory::Allocate Memory [C0007]
     examples:

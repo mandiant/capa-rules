@@ -3,8 +3,10 @@ rule:
     name: encrypt data using Camellia
     namespace: data-manipulation/encryption/camellia
     authors:
-      - '@_re_fox'
-    scope: basic block
+      - "@_re_fox"
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

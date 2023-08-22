@@ -4,7 +4,8 @@ rule:
     namespace: data-manipulation/hmac
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Cryptography::Hashed Message Authentication Code [C0061]
     references:

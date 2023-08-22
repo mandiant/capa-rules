@@ -4,7 +4,9 @@ rule:
     namespace: persistence/exchange
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Server Software Component::Transport Agent [T1505.002]
     references:

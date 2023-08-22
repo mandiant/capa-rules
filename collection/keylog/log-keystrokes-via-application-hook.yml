@@ -4,7 +4,9 @@ rule:
     namespace: collection/keylog
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Collection::Input Capture::Keylogging [T1056.001]
     mbc:

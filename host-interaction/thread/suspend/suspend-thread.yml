@@ -5,7 +5,9 @@ rule:
     authors:
       - 0x534a@mailbox.org
       - anushka.virgaonkar@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
       - Process::Suspend Thread [C0055]
     examples:

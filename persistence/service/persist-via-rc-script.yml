@@ -4,7 +4,9 @@ rule:
     namespace: persistence/service
     authors:
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Persistence::Boot or Logon Initialization Scripts::RC Scripts [T1037.004]
     examples:

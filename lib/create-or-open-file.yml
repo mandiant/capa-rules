@@ -4,8 +4,10 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - joakim@intezer.com
-    lib: true
-    scope: basic block
+    lib: 'true'
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
       - File System::Create File [C0016]
     examples:

@@ -5,7 +5,9 @@ rule:
     authors:
       - anushka.virgaonkar@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Cryptography::Generate Pseudo-random Sequence::Use API [C0021.003]
   features:

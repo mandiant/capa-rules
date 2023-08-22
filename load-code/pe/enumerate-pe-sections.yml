@@ -5,7 +5,8 @@ rule:
     authors:
       - "@Ana06"
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
     references:
@@ -52,5 +53,4 @@ rule:
         - operand[1].offset: 0x10 = IMAGE_SECTION_HEADER.SizeOfRawData
         # there's also offset 0x8 = IMAGE_SECTION_HEADER.Misc.PhysicalAddress, but it's likely too common
       - not:
-        # non-zeroing XOR was observed in FPs
         - characteristic: nzxor

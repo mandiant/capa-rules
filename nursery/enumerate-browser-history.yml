@@ -4,7 +4,8 @@ rule:
     namespace: host-interaction/browser/history/list
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
   features:
     - and:
       - api: ole32.CoCreateInstance

@@ -6,7 +6,9 @@ rule:
       - moritz.raabe@mandiant.com
       - anushka.virgaonkar@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Cryptography::Cryptographic Hash::MD5 [C0029.001]
     references:
@@ -28,10 +30,15 @@ rule:
           - and:
             - offset: -0x28955B88
             - offset: -0x173848AA
-      - basic block:
-        - and:
-          - number: 0x8003 = CALG_MD5
-          - api: advapi32.CryptCreateHash
+      - or:
+        - basic block:
+          - and:
+            - number: 0x8003 = CALG_MD5
+            - api: advapi32.CryptCreateHash
+        - thread:
+          - and:
+            - number: 0x8003 = CALG_MD5
+            - api: advapi32.CryptCreateHash
       - and:
         - format: dotnet
         - or:

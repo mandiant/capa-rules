@@ -3,8 +3,9 @@ rule:
     name: calculate modulo 256 via x86 assembly
     authors:
       - moritz.raabe@mandiant.com
-    lib: true
-    scope: instruction
+    lib: 'true'
+    scopes:
+      static: instruction
     mbc:
       - Data::Modulo [C0058]
     examples:

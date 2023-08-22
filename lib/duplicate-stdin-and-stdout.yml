@@ -3,8 +3,10 @@ rule:
     name: duplicate stdin and stdout
     authors:
       - joakim@intezer.com
-    lib: true
-    scope: basic block
+    lib: 'true'
+    scopes:
+      static: basic block
+      dynamic: thread
     examples:
       - 7351f8a40c5450557b24622417fc478d:0x40236D
   features:

@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/file-system
     authors:
       - david.cannings@pwc.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     references:
       - http://www.rohitab.com/discuss/topic/42325-the-kuser-shared-data-structure/
       - https://www.geoffchappell.com/studies/windows/km/ntoskrnl/inc/api/ntexapi_x/kuser_shared_data/index.htm

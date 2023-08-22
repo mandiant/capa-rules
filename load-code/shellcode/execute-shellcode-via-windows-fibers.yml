@@ -4,7 +4,9 @@ rule:
     namespace: load-code/shellcode
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Defense Evasion::Process Injection::Injection via Windows Fibers [E1055.m05]
     references:

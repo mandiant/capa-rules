@@ -4,7 +4,8 @@ rule:
     namespace: collection/credit-card
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Data::Check String [C0019]
     examples:

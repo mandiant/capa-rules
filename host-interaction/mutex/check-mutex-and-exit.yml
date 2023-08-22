@@ -5,7 +5,9 @@ rule:
     authors:
       - "@_re_fox"
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Process::Check Mutex [C0043]
       - Process::Terminate Process [C0018]

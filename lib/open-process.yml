@@ -3,8 +3,10 @@ rule:
     name: open process
     authors:
       - 0x534a@mailbox.org
-    lib: true
-    scope: basic block
+    lib: 'true'
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
       - Process::Open Process [C0065]
     examples:

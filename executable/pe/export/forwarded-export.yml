@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: forwarded export
+    namespace: executable/pe/export
+    authors:
+      - ronnie.salomonsen@mandiant.com
+    scopes:
+      static: file
+    att&ck:
+      - Execution::Shared Modules [T1129]
+    examples:
+      - 76FA734236DAA023444DEC26863401DC
+  features:
+    - characteristic: forwarded export

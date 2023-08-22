@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::CheckRemoteDebuggerPresent [B0001.002]
       - Anti-Behavioral Analysis::Debugger Detection::WudfIsAnyDebuggerPresent [B0001.031]

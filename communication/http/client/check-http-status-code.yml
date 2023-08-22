@@ -4,7 +4,8 @@ rule:
     namespace: communication/http/client
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Communication::HTTP Communication::Read Header [C0002.014]
     examples:

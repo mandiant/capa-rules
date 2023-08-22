@@ -5,7 +5,9 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - File System::Writes File [C0052]
     examples:
@@ -17,11 +19,17 @@ rule:
       - and:
         - os: windows
         - optional:
-          - basic block:
-            - or:
-              - number: 0x40000000 = GENERIC_WRITE
-              - number: 0x2 = FILE_WRITE_DATA
-              - match: create or open file
+          - or:
+            - basic block:
+              - or:
+                - number: 0x40000000 = GENERIC_WRITE
+                - number: 0x2 = FILE_WRITE_DATA
+                - match: create or open file
+            - thread:
+              - or:
+                - number: 0x40000000 = GENERIC_WRITE
+                - number: 0x2 = FILE_WRITE_DATA
+                - match: create or open file
         - or:
           - api: kernel32.WriteFile
           - api: kernel32.WriteFileEx

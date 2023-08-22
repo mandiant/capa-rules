@@ -4,7 +4,9 @@ rule:
     namespace: targeting/automated-teller-machine/ncr
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://www.pcworld.com/article/2824572/leaked-programming-manual-may-help-criminals-develop-more-atm-malware.html
     examples:

@@ -3,8 +3,10 @@ rule:
     name: write process memory
     authors:
       - moritz.raabe@mandiant.com
-    lib: true
-    scope: function
+    lib: 'true'
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Defense Evasion::Process Injection [T1055]
     examples:

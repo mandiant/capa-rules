@@ -4,8 +4,13 @@ rule:
     namespace: data-manipulation/json
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
   features:
     - or:
       - api: System.Web.Script.Serialization.JavaScriptSerializer::Deserialize
       - api: System.Web.Script.Serialization.JavaScriptSerializer::DeserializeObject
+      - api: System.Text.Json.JsonSerializer::Deserialize
+      - api: System.Text.Json.JsonSerializer::DeserializeAsync
+      - api: System.Text.Json.JsonSerializer::DeserializeAsyncEnumerable

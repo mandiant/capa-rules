@@ -4,7 +4,8 @@ rule:
     namespace: data-manipulation/hashing/jshash
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Data::Non-Cryptographic Hash [C0030]
     references:

@@ -4,7 +4,8 @@ rule:
     namespace: runtime/dotnet
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
     references:
       - https://rastamouse.me/net-startup-hooks/
       - https://github.com/dotnet/runtime/blob/main/docs/design/features/host-startup-hook.md

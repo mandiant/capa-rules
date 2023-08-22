@@ -3,8 +3,9 @@ rule:
     name: contain pusha popa sequence
     authors:
       - moritz.raabe@mandiant.com
-    lib: true
-    scope: function
+    lib: 'true'
+    scopes:
+      static: function
     examples:
       - a5c70086b3bc4fe64f4e7a0aa452e620:0x35007200
   features:

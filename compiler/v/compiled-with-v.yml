@@ -4,7 +4,9 @@ rule:
     namespace: compiler/v
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://vlang.io
       - https://github.com/vlang/v

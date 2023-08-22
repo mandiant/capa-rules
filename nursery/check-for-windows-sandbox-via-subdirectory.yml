@@ -3,8 +3,10 @@ rule:
     name: check for windows sandbox via subdirectory
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - "echernofsky@google.com"
-    scope: basic block
+      - echernofsky@google.com
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:

@@ -4,7 +4,9 @@ rule:
     namespace: impact/wipe-disk/wipe-mbr
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Impact::Disk Wipe::Disk Structure Wipe [T1561.002]
     mbc:

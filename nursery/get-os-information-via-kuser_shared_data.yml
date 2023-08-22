@@ -5,7 +5,9 @@ rule:
     namespace: host-interaction/os/version
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Discovery::System Information Discovery [T1082]
     references:

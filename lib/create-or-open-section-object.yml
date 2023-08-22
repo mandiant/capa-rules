@@ -3,8 +3,10 @@ rule:
     name: create or open section object
     authors:
       - william.ballenthin@mandiant.com
-    lib: true
-    scope: function
+    lib: 'true'
+    scopes:
+      static: function
+      dynamic: process
     examples:
       - daa13ae302fe8b618ddbf590537443ef:0x401116
   features:

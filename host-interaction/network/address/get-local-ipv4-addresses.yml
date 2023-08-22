@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
     examples:

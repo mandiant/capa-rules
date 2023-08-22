@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Communication::HTTP Communication::Get Response [C0002.017]
     examples:

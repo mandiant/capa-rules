@@ -5,7 +5,8 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: file contains managed and unmanaged (native) code, often seen in .NET
-    scope: file
+    scopes:
+      static: file
   features:
     - or:
       - characteristic: mixed mode

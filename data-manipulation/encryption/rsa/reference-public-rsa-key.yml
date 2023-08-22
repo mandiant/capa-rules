@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/rsa
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Cryptography::Encryption Key [C0028]
     references:

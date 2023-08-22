@@ -6,7 +6,8 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
       - Ivan Kwiatkowski (@JusticeRage)
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

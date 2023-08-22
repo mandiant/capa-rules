@@ -5,7 +5,9 @@ rule:
     namespace: host-interaction/accounts
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Persistence::Account Manipulation [T1098]
   features:

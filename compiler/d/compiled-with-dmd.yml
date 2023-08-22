@@ -4,7 +4,8 @@ rule:
     namespace: compiler/d
     authors:
       - "@_re_fox"
-    scope: file
+    scopes:
+      static: file
     references:
       - https://github.com/dlang/dmd
     examples:

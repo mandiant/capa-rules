@@ -5,7 +5,8 @@ rule:
     namespace: data-manipulation/encryption/aes
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

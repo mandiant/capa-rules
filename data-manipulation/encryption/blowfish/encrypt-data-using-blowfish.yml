@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/blowfish
     authors:
       - "@_re_fox"
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

@@ -5,7 +5,8 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Discovery::Software Discovery [T1518]
     examples:

@@ -4,7 +4,8 @@ rule:
     namespace: load-code/pe
     authors:
       - "@Ana06"
-    scope: function
+    scopes:
+      static: function
     att&ck:
       - Defense Evasion::Process Injection::Dynamic-link Library Injection [T1055.001]
       - Defense Evasion::Reflective Code Loading [T1620]

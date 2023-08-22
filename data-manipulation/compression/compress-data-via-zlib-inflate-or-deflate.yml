@@ -5,7 +5,8 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - blas.kojusner@mandiant.com
-    scope: function
+    scopes:
+      static: function
     mbc:
       - Data::Compress Data [C0024]
     references:

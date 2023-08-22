@@ -4,7 +4,9 @@ rule:
     namespace: communication/http/client
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: process
     mbc:
       - Communication::HTTP Communication::Create Request [C0002.012]
     examples:

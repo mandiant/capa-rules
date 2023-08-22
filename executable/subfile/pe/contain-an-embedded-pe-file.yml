@@ -4,7 +4,9 @@ rule:
     namespace: executable/subfile/pe
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     mbc:
       - Execution::Install Additional Program [B0023]
     examples:
