@@ -343,6 +343,7 @@ The following features are relevant at this scope and above:
   - [number](#number)
   - [string and substring](#string-and-substring)
   - [bytes](#bytes)
+  - [com](#com)
   - [offset](#offset)
   - [mnemonic](#mnemonic)
   - [operand](#operand)
@@ -500,6 +501,33 @@ Example rule elements:
 
     bytes: 01 14 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = CLSID_ShellLink
     bytes: EE 14 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = IID_IShellLink
+
+### com
+COM features represent Component Object Model (COM) interfaces and classes used in the program's logic. They help identify interactions with COM objects, methods, properties, and interfaces. The parameter is the name of the COM.
+
+Example:
+
+```yaml
+- com/class: InternetExplorer #bytes: 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = CLSID_InternetExplorer
+- com/interface: IWebBrowser2 #bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IID_IWebBrowser2
+```
+
+Rule parsers will translate the above rule to its bytes and string representation using the COM name by fetching the GUIDs from the COM database.
+
+Translated Representation:
+
+```yaml
+- or:
+  - bytes : 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = InternetExplorer as bytes
+  - string : "0002DF01-0000-0000-C000-000000000046"
+    description: InternetExplorer as guid string
+- or:
+  - bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IWebBrowser2 as bytes
+  - string: "D30C1661-CDAF-11D0-8A3E-00C04FC9E26E"
+    description: IWebBrowser2 as guid string
+```
+
+Note: I added the description field for the bytes entries in the translated representation to match the provided example where the comments are included. This helps to maintain consistency in the documentation.
 
 ### offset
 A structure offset referenced by the logic of the program.
