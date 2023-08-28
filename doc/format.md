@@ -523,7 +523,7 @@ Translated representation of the above rule:
   - bytes : 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = InternetExplorer as bytes
 - or:
   - string: "D30C1661-CDAF-11D0-8A3E-00C04FC9E26E"
-    description: IWebBrowser2 as guid string
+    description: IWebBrowser2 as GUID string
   - bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IWebBrowser2 as bytes
 ```
 
