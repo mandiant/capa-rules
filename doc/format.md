@@ -503,23 +503,23 @@ Example rule elements:
     bytes: EE 14 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = IID_IShellLink
 
 ### com
-COM features represent Component Object Model (COM) interfaces and classes used in the program's logic. They help identify interactions with COM objects, methods, properties, and interfaces. The parameter is the name of the COM.
+COM features represent Component Object Model (COM) interfaces and classes used in the program's logic. They help identify interactions with COM objects, methods, properties, and interfaces. The parameter is the name of the COM class or interface. This feature allows you to list human-readable names instead of the byte representations found in the program.
 
-Example:
+Examples:
 
 ```yaml
-- com/class: InternetExplorer #bytes: 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = CLSID_InternetExplorer
-- com/interface: IWebBrowser2 #bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IID_IWebBrowser2
+- com/class: InternetExplorer  # bytes: 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = CLSID_InternetExplorer
+- com/interface: IWebBrowser2  # bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IID_IWebBrowser2
 ```
 
-Rule parsers will translate the above rule to its `bytes` and `string` representation by fetching the GUIDs from the COM database using the COM name.
+The rule parser translates com features to their `bytes` and `string` representation by fetching the GUIDs from an internal COM database.
 
-Translated Representation:
+Translated representation of the above rule:
 
 ```yaml
 - or:
   - string : "0002DF01-0000-0000-C000-000000000046"
-    description: InternetExplorer as guid string
+    description: InternetExplorer as GUID string
   - bytes : 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = InternetExplorer as bytes
 - or:
   - string: "D30C1661-CDAF-11D0-8A3E-00C04FC9E26E"
@@ -527,7 +527,7 @@ Translated Representation:
   - bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IWebBrowser2 as bytes
 ```
 
-Note: I added the description field for the bytes entries in the translated representation to match the provided example where the comments are included. This helps to maintain consistency in the documentation.
+Note: The automatically added descriptions help to maintain consistency and improve documentation.
 
 ### offset
 A structure offset referenced by the logic of the program.
