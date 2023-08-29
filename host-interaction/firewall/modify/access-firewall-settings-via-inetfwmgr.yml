@@ -6,6 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Discovery::Software Discovery::Security Software Discovery [T1518.001]
       - Defense Evasion::Impair Defenses::Disable or Modify System Firewall [T1562.004]

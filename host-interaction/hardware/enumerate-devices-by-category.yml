@@ -6,6 +6,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     references:
       - https://learn.microsoft.com/en-us/windows/win32/api/strmif/nf-strmif-icreatedevenum-createclassenumerator
     examples:

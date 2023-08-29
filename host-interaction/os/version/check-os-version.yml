@@ -7,6 +7,7 @@ rule:
       - johnk3r
     scopes:
       static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Discovery::System Information Discovery [T1082]
     mbc:

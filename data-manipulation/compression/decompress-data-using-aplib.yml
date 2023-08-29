@@ -9,6 +9,7 @@ rule:
     description: detects decompression function of library aPLib
     scopes:
       static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Data::Decompress Data::aPLib [C0025.003]
     references:

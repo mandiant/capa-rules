@@ -7,6 +7,7 @@ rule:
     description: Looks for instructions related to executing 64-bit code from a 32-bit process (Heaven's Gate)
     scopes:
       static: function
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Defense Evasion::Disable or Evade Security Tools::Heavens Gate [F0004.008]
     references:

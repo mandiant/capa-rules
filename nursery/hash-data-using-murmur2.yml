@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: instruction
+      dynamic: unspecified   # rule hasn't been migrated yet
     references:
       - https://github.com/abrandoned/murmur2/blob/master/MurmurHash2.c
   features:
