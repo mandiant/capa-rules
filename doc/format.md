@@ -519,12 +519,12 @@ Translated representation of the above rule:
 ```yaml
 - or:
   - string : "0002DF01-0000-0000-C000-000000000046"
-    description: InternetExplorer as GUID string
-  - bytes : 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = InternetExplorer as bytes
+    description: CLSID_InternetExplorer as GUID string
+  - bytes : 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = CLSID_InternetExplorer as bytes
 - or:
   - string: "D30C1661-CDAF-11D0-8A3E-00C04FC9E26E"
-    description: IWebBrowser2 as GUID string
-  - bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IWebBrowser2 as bytes
+    description: IID_IWebBrowser2 as GUID string
+  - bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IID_IWebBrowser2 as bytes
 ```
 
 Note: The automatically added descriptions help to maintain consistency and improve documentation.
