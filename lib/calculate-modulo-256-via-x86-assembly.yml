@@ -6,7 +6,7 @@ rule:
     lib: 'true'
     scopes:
       static: instruction
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Data::Modulo [C0058]
     examples:

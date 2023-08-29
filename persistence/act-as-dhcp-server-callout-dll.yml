@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: file
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Persistence::Server Software Component [T1505]
     references:

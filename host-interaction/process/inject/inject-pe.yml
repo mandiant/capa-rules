@@ -6,7 +6,7 @@ rule:
       - 0x534a@mailbox.org
     scopes:
       static: function
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Process Injection::Portable Executable Injection [T1055.002]
       - Defense Evasion::Reflective Code Loading [T1620]

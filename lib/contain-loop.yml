@@ -6,7 +6,7 @@ rule:
     lib: 'true'
     scopes:
       static: function
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - 08AC667C65D36D6542917655571E61C8:0x406EAA
   features:

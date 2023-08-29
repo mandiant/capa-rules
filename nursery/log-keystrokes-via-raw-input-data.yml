@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Collection::Input Capture::Keylogging [T1056.001]
   features:

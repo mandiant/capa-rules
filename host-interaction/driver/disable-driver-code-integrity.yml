@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
     mbc:

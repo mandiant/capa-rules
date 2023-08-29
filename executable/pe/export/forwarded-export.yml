@@ -6,7 +6,7 @@ rule:
       - ronnie.salomonsen@mandiant.com
     scopes:
       static: file
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:

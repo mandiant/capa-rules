@@ -7,7 +7,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

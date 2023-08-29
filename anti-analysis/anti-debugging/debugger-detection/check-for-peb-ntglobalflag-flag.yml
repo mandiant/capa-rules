@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Process Environment Block NtGlobalFlag [B0001.036]
     references:

@@ -6,7 +6,7 @@ rule:
       - "@williballenthin"
     scopes:
       static: file
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     examples:
       - 9bca6b99e7981208af4c7925b96fb9cf
   features:

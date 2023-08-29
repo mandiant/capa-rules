@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: basic block
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Process Environment Block BeingDebugged [B0001.035]
     references:

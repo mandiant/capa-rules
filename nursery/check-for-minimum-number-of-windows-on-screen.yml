@@ -6,7 +6,7 @@ rule:
       - echernofsky@google.com
     scopes:
       static: basic block
-      dynamic: unspecified
+      dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     references:
