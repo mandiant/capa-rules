@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
+      dynamic: unspecified
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection [B0001]
     references:

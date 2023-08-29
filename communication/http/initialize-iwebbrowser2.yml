@@ -6,6 +6,7 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: basic block
+      dynamic: unspecified
     mbc:
       - Communication::HTTP Communication::IWebBrowser [C0002.010]
     references:

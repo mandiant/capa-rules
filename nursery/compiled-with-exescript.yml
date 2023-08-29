@@ -6,6 +6,7 @@ rule:
       - jonathanlepore@google.com
     scopes:
       static: file
+      dynamic: unspecified
     references:
       - https://www.hide-folder.com/overview/hf_7.html
   features:

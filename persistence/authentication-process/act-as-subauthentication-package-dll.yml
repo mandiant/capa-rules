@@ -6,6 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: file
+      dynamic: unspecified
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Authentication Package [T1547.002]
     references:

@@ -6,6 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Data::Decompress Data [C0025]
     references:

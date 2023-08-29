@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
+      dynamic: unspecified
     att&ck:
       - Discovery::System Information Discovery [T1082]
   features:

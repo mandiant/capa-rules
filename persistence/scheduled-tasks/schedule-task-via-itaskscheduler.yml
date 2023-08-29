@@ -6,6 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     att&ck:
       - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
     examples:

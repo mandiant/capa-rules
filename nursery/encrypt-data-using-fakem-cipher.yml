@@ -8,6 +8,7 @@ rule:
     description: Detect custom encryption cipher used by FAKEM malware family
     scopes:
       static: basic block
+      dynamic: unspecified
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

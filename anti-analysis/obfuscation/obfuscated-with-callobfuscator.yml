@@ -6,6 +6,7 @@ rule:
       - johnk3r
     scopes:
       static: file
+      dynamic: unspecified
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

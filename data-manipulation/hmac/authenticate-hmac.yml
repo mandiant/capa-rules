@@ -6,6 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Cryptography::Hashed Message Authentication Code [C0061]
     references:

@@ -6,6 +6,7 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Data::Decompress Data::IEncodingFilterFactory [C0025.002]
     references:

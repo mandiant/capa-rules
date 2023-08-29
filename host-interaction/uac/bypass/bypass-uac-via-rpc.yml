@@ -7,6 +7,7 @@ rule:
       - david@edeca.net
     scopes:
       static: function
+      dynamic: unspecified
     att&ck:
       - Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Account Control [T1548.002]
     references:

@@ -6,6 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     att&ck:
       - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
     mbc:

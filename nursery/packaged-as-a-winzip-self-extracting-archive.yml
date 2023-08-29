@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: file
+      dynamic: unspecified
     references:
       - https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
   features:

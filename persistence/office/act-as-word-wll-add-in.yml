@@ -6,6 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: file
+      dynamic: unspecified
     att&ck:
       - Persistence::Office Application Startup::Add-ins [T1137.006]
     references:

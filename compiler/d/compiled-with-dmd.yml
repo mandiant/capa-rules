@@ -6,6 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: file
+      dynamic: unspecified
     references:
       - https://github.com/dlang/dmd
     examples:

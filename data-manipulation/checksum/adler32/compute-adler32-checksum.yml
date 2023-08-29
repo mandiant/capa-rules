@@ -6,6 +6,7 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Data::Checksum::Adler [C0032.005]
     references:

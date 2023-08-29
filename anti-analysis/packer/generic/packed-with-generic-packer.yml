@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:

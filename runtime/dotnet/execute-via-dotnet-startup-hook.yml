@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: file
+      dynamic: unspecified
     references:
       - https://rastamouse.me/net-startup-hooks/
       - https://github.com/dotnet/runtime/blob/main/docs/design/features/host-startup-hook.md

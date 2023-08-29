@@ -6,6 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: file
+      dynamic: unspecified
     examples:
       - Practical Malware Analysis Lab 16-02.exe_
   features:

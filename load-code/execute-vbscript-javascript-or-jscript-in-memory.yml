@@ -8,6 +8,7 @@ rule:
     description: the sample may execute 32-bit VBScript, JavaScript, or JScript (32-bit)
     scopes:
       static: function
+      dynamic: unspecified
     references:
       - https://gist.github.com/odzhan/d18145b9538a3653be2f9a580b53b063
     examples:

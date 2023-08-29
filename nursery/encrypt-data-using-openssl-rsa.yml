@@ -6,6 +6,7 @@ rule:
       - Ana06
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Cryptography::Encrypt Data::RSA [C0027.011]
     references:

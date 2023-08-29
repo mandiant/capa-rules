@@ -6,6 +6,7 @@ rule:
     lib: 'true'
     scopes:
       static: basic block
+      dynamic: unspecified
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Process Environment Block [B0001.019]
     references:

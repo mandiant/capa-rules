@@ -7,6 +7,7 @@ rule:
     description: Looks for cryptographic constants associated with the Sosemanuk stream cipher
     scopes:
       static: basic block
+      dynamic: unspecified
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

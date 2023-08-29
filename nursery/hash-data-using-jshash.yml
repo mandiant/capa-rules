@@ -6,6 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Data::Non-Cryptographic Hash [C0030]
     references:

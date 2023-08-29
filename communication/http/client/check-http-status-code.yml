@@ -6,6 +6,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Communication::HTTP Communication::Read Header [C0002.014]
     examples:

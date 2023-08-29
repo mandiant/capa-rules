@@ -8,6 +8,7 @@ rule:
     description: detects the decompression routine from LZO
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Data::Decompress Data [C0025]
     references:

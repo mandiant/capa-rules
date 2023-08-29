@@ -6,6 +6,7 @@ rule:
       - ronnie.salomonsen@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Memory::Allocate Memory [C0007]
   features:

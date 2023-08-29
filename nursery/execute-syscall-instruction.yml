@@ -8,6 +8,7 @@ rule:
     description: may be used to evade hooks or hinder analysis
     scopes:
       static: basic block
+      dynamic: unspecified
     references:
       - https://github.com/j00ru/windows-syscalls
   features:

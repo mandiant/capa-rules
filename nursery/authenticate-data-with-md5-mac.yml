@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     mbc:
       - Cryptography::Cryptographic Hash::MD5 [C0029.001]
     references:

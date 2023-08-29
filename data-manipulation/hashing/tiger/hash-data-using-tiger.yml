@@ -6,6 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: basic block
+      dynamic: unspecified
     mbc:
       - Cryptography::Cryptographic Hash::Tiger [C0029.005]
     examples:

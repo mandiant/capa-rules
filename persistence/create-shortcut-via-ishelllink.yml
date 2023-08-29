@@ -6,6 +6,7 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Shortcut Modification [T1547.009]
     references:

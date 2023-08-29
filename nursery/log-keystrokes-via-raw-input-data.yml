@@ -7,6 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
+      dynamic: unspecified
     att&ck:
       - Collection::Input Capture::Keylogging [T1056.001]
   features:
