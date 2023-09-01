@@ -33,3 +33,4 @@ rule:
       - api: System.Net.Sockets.Socket::EndReceive
       - api: System.Net.Sockets.Socket::EndReceiveFrom
       - api: System.Net.Sockets.Socket::EndReceiveMessageFrom
+      - api: recvmsg

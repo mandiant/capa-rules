@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: create detached thread on Linux
+    namespace: host-interaction/thread
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: basic block
+  features:
+    - and:
+      - os: linux
+      - api: pthread_detach

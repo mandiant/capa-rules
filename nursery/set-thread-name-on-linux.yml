@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: set thread name on Linux
+    namespace: host-interaction/thread
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: basic block
+  features:
+    - and:
+      - os: linux
+      - or:
+        - api: pthread_setname_np
+        - and:
+          - api: prctl
+          - number: 0xF = PR_SET_NAME
