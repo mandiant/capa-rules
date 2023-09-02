@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: get ntoskrnl base address
+    namespace: linking/runtime-linking
+    authors:
+      - "@mr-tz"
+    scope: function
+    att&ck:
+      - Execution::Shared Modules [T1129]
+    references:
+      - https://github.com/hfiref0x/TDL/blob/cc4b46ae1c939b14a22a734a727b163f873a41b5/Source/Furutaka/sup.c#L76
+      - https://www.geoffchappell.com/studies/windows/km/ntoskrnl/api/ex/sysinfo/query.htm
+  features:
+    - and:
+      - basic block:
+        - and:
+          - description: returns RTL_PROCESS_MODULES structure
+          - number: 0xB = SystemModuleInformation
+          - match: get system information on Windows
+      - and:
+        - arch: i386
+        - offset: 0xC = RTL_PROCESS_MODULES.Modules[0].ImageBase
+      - and:
+        - arch: amd64
+        - offset: 0x18 = RTL_PROCESS_MODULES.Modules[0].ImageBase
