@@ -7,6 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
+      dynamic: unspecified   # rule hasn't been upgraded yet
   features:
     # check if call to LoadIcon fails when first argument is NULL
     # and second argument is not a valid predefined icon - LoadIcon
