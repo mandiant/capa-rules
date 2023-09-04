@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get user database entry on Linux
+    name: get password database entry on Linux
     namespace: host-interaction/session
     authors:
       - michael.hunhoff@mandiant.com
