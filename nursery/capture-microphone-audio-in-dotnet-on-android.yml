@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: capture microphone audio in .NET on Android
+    namespace: collection/microphone
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: function
+  features:
+    - and:
+      - api: Android.Media.AudioRecord::StartRecording
+      - optional:
+        - api: Android.Media.AudioRecord::Release
+        - api: Android.Media.AudioRecord::Stop

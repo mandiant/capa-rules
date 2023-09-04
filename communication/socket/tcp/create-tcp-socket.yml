@@ -6,6 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
       - joakim@intezer.com
       - anushka.virgaonkar@mandiant.com
+      - michael.hunhoff@mandiant.com
     scope: basic block
     mbc:
       - Communication::Socket Communication::Create TCP Socket [C0001.011]
@@ -21,4 +22,5 @@ rule:
           - api: ws2_32.socket
           - api: ws2_32.WSASocket
           - api: socket
+          - api: System.Net.Sockets.Socket::ctor
       - property/read: System.Net.Sockets.TcpClient::Client
