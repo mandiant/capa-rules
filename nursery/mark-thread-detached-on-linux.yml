@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: create detached thread on Linux
+    name: mark thread detached on Linux
     namespace: host-interaction/thread
     authors:
       - michael.hunhoff@mandiant.com
