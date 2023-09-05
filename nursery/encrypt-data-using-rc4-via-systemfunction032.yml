@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt data using RC4 via WinAPI SystemFunctionXXX Procedures
+    name: encrypt data using RC4 via SystemFunction032
     namespace: data-manipulation/encryption/rc4
     authors:
       - richard.weiss@mandiant.com
@@ -14,10 +14,9 @@ rule:
       - https://doxygen.reactos.org/df/d13/sysfunc_8c_source.html
       - https://blog.gentilkiwi.com/tag/systemfunction032
   features:
-      - or:
-        - api: SystemFunction032
-        - optional:
-          - and:
-            - string: Advapi32.dll
-            - string: SystemFunction032
-              description: Procedure Address resolved at runtime
+    - or:
+      - api: SystemFunction032
+      - and:
+        - string: "Advapi32.dll"
+        - string: "SystemFunction032"
+          description: Procedure Address resolved at runtime
