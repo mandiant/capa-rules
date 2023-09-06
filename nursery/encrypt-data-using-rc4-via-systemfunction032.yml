@@ -13,10 +13,14 @@ rule:
     references:
       - https://doxygen.reactos.org/df/d13/sysfunc_8c_source.html
       - https://blog.gentilkiwi.com/tag/systemfunction032
+    examples:
+      - 1F31917FFF1E43B0BBC72576906B0746A88F978084FADA49312900B5241A9FC8:0x14009E058 # SystemFunction032
   features:
     - or:
       - api: SystemFunction032
       - and:
-        - string: "Advapi32.dll"
+        - or:
+          - substring: "Advapi32"
+          - substring: "cryptsp"
         - string: "SystemFunction032"
           description: Procedure Address resolved at runtime
