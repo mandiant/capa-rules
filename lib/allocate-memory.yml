@@ -22,3 +22,5 @@ rule:
       - api: ZwAllocateVirtualMemory
       - api: NtMapViewOfSection
       - api: ZwMapViewOfSection
+      - api: NtProtectVirtualMemory
+      - api: ZwProtectVirtualMemory
