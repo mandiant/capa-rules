@@ -14,13 +14,12 @@ rule:
       - https://doxygen.reactos.org/df/d13/sysfunc_8c_source.html
       - https://blog.gentilkiwi.com/tag/systemfunction032
     examples:
-      - 3BBDF04C25FCD9876733EAA9163B3ED64D81396E7414619758D9376EDF4C103E:0x1000976C # SystemFunction032
+      - 3BBDF04C25FCD9876733EAA9163B3ED64D81396E7414619758D9376EDF4C103E:0x1000976C # api match
   features:
     - or:
       - api: SystemFunction032
       - and:
         - or:
-          - substring: "Advapi32"
-          - substring: "cryptsp"
+          - string: /advapi32/i
+          - string: /cryptsp/i
         - string: "SystemFunction032"
-          description: Procedure Address resolved at runtime
