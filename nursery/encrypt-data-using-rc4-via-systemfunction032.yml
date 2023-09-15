@@ -19,7 +19,8 @@ rule:
     - or:
       - api: SystemFunction032
       - and:
+        - match: link function at runtime on Windows
+        - string: "SystemFunction032"
         - or:
           - string: /advapi32/i
           - string: /cryptsp/i
-        - string: "SystemFunction032"
