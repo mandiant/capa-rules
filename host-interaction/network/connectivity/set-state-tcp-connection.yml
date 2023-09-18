@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: set state tcp connection
+    namespace: host-interaction/network/connectivity
+    authors:
+      - "@johnk3r"
+    description: The SetTcpEntry function sets the state of a TCP connection.
+    scope: function
+    att&ck:
+      - Defense Evasion::Impair Defenses [T1562]
+    references:
+      - https://unit42.paloaltonetworks.com/evilgrab-delivered-by-watering-hole-attack-on-president-of-myanmars-website
+      - https://github.com/magisterquis/EDRSniper/blob/master/edrsniper.c
+    examples:
+      - 883bf161937f8dc6e766b07000110254:0x403150
+  features:
+    - or:
+      - api: iphlpapi.SetTcpEntry
