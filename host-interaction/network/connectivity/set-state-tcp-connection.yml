@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: set state tcp connection
+    name: set TCP connection state
     namespace: host-interaction/network/connectivity
     authors:
       - "@johnk3r"
