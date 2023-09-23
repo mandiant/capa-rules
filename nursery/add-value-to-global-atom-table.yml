@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: add value to global atom table
+    namespace: host-interaction/process/inject
+    authors:
+      - "@mr-tz"
+    scope: function
+    references:
+      - https://www.fortinet.com/blog/threat-research/atombombing-brand-new-code-injection-technique-for-windows
+      - https://github.com/BreakingMalwareResearch/atom-bombing
+  features:
+    - and:
+      - api: GlobalAddAtom
