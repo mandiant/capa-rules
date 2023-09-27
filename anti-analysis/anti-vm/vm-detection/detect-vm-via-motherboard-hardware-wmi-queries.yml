@@ -8,6 +8,8 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
+    mbc:
+      - Anti-Behavioral Analysis::Virtual Machine Detection::Unique Hardware/Firmware Check [B0009.023]
     examples:
       - 32B3678F8C29437E9EA10EAB10194F66:0x4035e0
   features:
