@@ -7,6 +7,8 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Hide Artifacts::Hidden File System [T1564.005]
+    mbc:
+      - Defense Evasion::Hidden Files and Directories [F0005]
     references:
       - https://learn.microsoft.com/en-us/dotnet/api/system.web.hosting.virtualpathprovider?view=netframework-4.8.1
     examples:

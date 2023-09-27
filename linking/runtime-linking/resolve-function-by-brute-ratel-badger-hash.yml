@@ -8,6 +8,8 @@ rule:
     scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Dynamic API Resolution [T1027.007]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information [E1027]
     references:
       - https://bruteratel.com/release_notes/releases.txt
     examples:
