@@ -14,5 +14,6 @@ rule:
     examples:
       - 883bf161937f8dc6e766b07000110254:0x403150
   features:
-    - or:
+    - and:
       - api: iphlpapi.SetTcpEntry
+      - number: 12 = MIB_TCP_STATE_DELETE_TCB
