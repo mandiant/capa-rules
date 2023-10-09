@@ -4,12 +4,16 @@ rule:
     namespace: data-manipulation/prng
     authors:
       - william.ballenthin@mandiant.com
+      - richard.weiss@mandiant.com
     scope: function
     mbc:
       - Cryptography::Generate Pseudo-random Sequence::Use API [C0021.003]
+    references:
+      - https://doxygen.reactos.org/df/d13/sysfunc_8c_source.html
+      - https://blog.gentilkiwi.com/tag/systemfunction036
     examples:
-      - b7841b9d5dc1f511a93cc7576672ec0c:0x10002B80
-      - 0a0882b8da225406cc838991b5f67d11:0x416F35
+      - b7841b9d5dc1f511a93cc7576672ec0c:0x10002B80 # api
+      - 0a0882b8da225406cc838991b5f67d11:0x416F35 # string
   features:
     - or:
       - api: SystemFunction036
@@ -17,6 +21,6 @@ rule:
         - match: link function at runtime on Windows
         - string: "SystemFunction036"
         - optional:
-          - string: "advapi32.dll"
-          - string: "Advapi32.dll"
+          - string: /advapi32/i
+          - string: /cryptsp/i
           - characteristic: indirect call
