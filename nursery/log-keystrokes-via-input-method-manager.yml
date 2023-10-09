@@ -1,0 +1,16 @@
+# generated using capa explorer for IDA Pro
+rule:
+  meta:
+    name: log keystrokes via Input Method Manager
+    namespace: collection/keylog
+    authors:
+      - "@mr-tz"
+    scope: function
+  features:
+    - and:
+      - or:
+        - api: ImmGetCompositionString
+        - api: ImmGetVirtualKey
+      - optional:
+        - api: ImmGetContext
+        - api: ImmReleaseContext
