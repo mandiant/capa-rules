@@ -15,6 +15,7 @@ rule:
     - or:
       - api: RemoveDirectory
       - api: RemoveDirectoryTransacted
+      - api: rmdir
       - api: _rmdir
       - api: _wrmdir
       - api: System.IO.DirectoryInfo::Delete

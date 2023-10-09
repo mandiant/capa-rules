@@ -9,3 +9,5 @@ rule:
     - or:
       - api: System.IO.Directory::SetCurrentDirectory
       - api: kernel32.SetCurrentDirectory
+      - api: chdir
+      - api: fchdir
