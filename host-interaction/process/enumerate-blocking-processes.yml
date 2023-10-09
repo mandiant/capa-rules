@@ -1,17 +1,17 @@
 rule:
   meta:
-    name: enumerate blocking processes
+    name: enumerate processes that use resource
     namespace: host-interaction/process
     authors:
-      - Ana06
+      - "@Ana06"
     scope: function
     references:
       - https://www.malwarebytes.com/blog/threat-intelligence/2021/07/avoslocker-enters-the-ransomware-scene-asks-for-partners
-    examples:
-      - 43b7a60c0ef8b4af001f45a0c57410b7374b1d75a6811e0dfc86e4d60f503856:0x402C5E
+    # examples:
+    #  - 43b7a60c0ef8b4af001f45a0c57410b7374b1d75a6811e0dfc86e4d60f503856:0x402C5E
   features:
     - and:
-      - api: RmRegisterResources
-      - api: RmGetList
+      - api: rstrtmgr.RmRegisterResources
+      - api: rstrtmgr.RmGetList
       - optional:
         - api: RmStartSession
