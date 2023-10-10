@@ -23,4 +23,3 @@ rule:
         - optional:
           - string: /advapi32/i
           - string: /cryptsp/i
-          - characteristic: indirect call
