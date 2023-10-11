@@ -19,3 +19,13 @@ rule:
       - api: ZwAllocateVirtualMemory
       - api: NtMapViewOfSection
       - api: ZwMapViewOfSection
+      - and:
+        - match: link function at runtime on Windows
+        - or:
+          - string: "VirtualAlloc"
+          - string: "VirtualAllocEx"
+          - string: "VirtualAllocExNuma"
+          - string: "NtAllocateVirtualMemory"
+          - string: "ZwAllocateVirtualMemory"
+          - string: "NtMapViewOfSection"
+          - string: "ZwMapViewOfSection"
