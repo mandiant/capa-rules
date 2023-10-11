@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: enumerate device drivers on Windows
+    namespace: collection
+    authors:
+      - "@mr-tz"
+    scope: function
+    att&ck:
+      - Discovery::Device Driver Discovery [T1652]
+    references:
+      - https://learn.microsoft.com/en-us/windows-hardware/drivers/install/overview-of-registry-trees-and-keys
+  features:
+    - or:
+      - api: EnumDeviceDrivers
+      - string: /driverquery(.exe)?/i
+      - and:
+        - or:
+          - match: query or enumerate registry key
+          - match: query or enumerate registry value
+        - string: /System\\(CurrentControlSet|ControlSet001)\\Services/i
+        - string: /System\\(CurrentControlSet|ControlSet001)\\Control/i
+        - string: /System\\(CurrentControlSet|ControlSet001)\\Enum/i
+        - string: /System\\(CurrentControlSet|ControlSet001)\\HardwareProfiles/i

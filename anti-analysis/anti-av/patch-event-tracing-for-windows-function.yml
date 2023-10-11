@@ -1,0 +1,37 @@
+rule:
+  meta:
+    name: patch Event Tracing for Windows function
+    namespace: anti-analysis/anti-av
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Impair Defenses::Indicator Blocking [T1562.006]
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools [F0004]
+    references:
+      - https://unprotect.it/technique/disabling-event-tracing-for-windows-etw/
+      - https://github.com/Mr-Un1k0d3r/AMSI-ETW-Patch/blob/main/patch-etw-x64.c
+    examples:
+      - 15835b6dd703e69d22d4ab941ccd5f6e78c3abc22ae123366da5e950eaa62e2b:0x180001D70
+  features:
+    - and:
+      - match: link function at runtime on Windows
+      - or:
+        - api: kernel32.VirtualProtect
+        - api: ntdll.NtProtectVirtualMemory  # exported by only ntdll, not ntoskrnl
+        - api: ZwProtectVirtualMemory  # exported by both ntdll and ntoskrnl
+        - string: "VirtualProtect"
+        - string: "NtProtectVirtualMemory"
+        - string: "ZwProtectVirtualMemory"
+      - or:
+        - string: "EventWrite"
+        - string: "EtwEventWrite"
+        - string: "EtwEventWriteFull"
+        - string: "TraceEvent"
+        - string: "NtTraceEvent"
+        - string: "ZwTraceEvent"
+        - string: "NtTraceControl"
+        - string: "ZwTraceControl"
+      - optional:
+        - match: write process memory

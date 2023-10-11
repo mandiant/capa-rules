@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: pause service
+    namespace: host-interaction/service
+    authors:
+      - "@mr-tz"
+    scope: function
+    att&ck:
+      - Persistence::Create or Modify System Process::Windows Service [T1543.003]
+    examples:
+      - Practical Malware Analysis Lab 17-02.dll_:0x1000bccd
+  features:
+    - and:
+      - optional:
+        - match: get service handle
+      - basic block:
+        - and:
+          - number: 0x2 = SERVICE_CONTROL_PAUSE
+          - or:
+            - api: advapi32.ControlService
+            - api: advapi32.ControlServiceEx

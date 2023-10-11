@@ -30,6 +30,7 @@ rule:
       - api: SHGetFolderPathAndSubDir
       - api: shell32.SHGetFolderPath
       - api: shell32.SHGetFolderLocation
+      - api: shell32.SHGetKnownFolderPath
       - api: shell32.SHGetSpecialFolderPath
       - api: shell32.SHGetSpecialFolderLocation
       - api: System.IO.Directory::GetCurrentDirectory

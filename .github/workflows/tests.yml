@@ -42,10 +42,11 @@ jobs:
       with:
         repository: mandiant/capa-testfiles
         path: tests/data
-    - name: Set up Python 3.9
+    # use latest available python for best performance
+    - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.11
     - name: Install capa
       run: pip install -e .
     # Regular lint is fast, so do this first

@@ -27,3 +27,7 @@ rule:
       - api: System.IO.File::GetLastWriteTime
       - api: System.IO.File::GetLastWriteTimeUtc
       - property/read: System.IO.FileSystemInfo::Attributes
+      - api: stat
+      - api: fstat
+      - api: lstat
+      - api: fstatat

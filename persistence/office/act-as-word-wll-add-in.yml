@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: act as Word WLL add-in
+    namespace: persistence/office
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scope: file
+    att&ck:
+      - Persistence::Office Application Startup::Add-ins [T1137.006]
+    references:
+      - https://www.ired.team/offensive-security/persistence/word-library-add-ins
+    examples:
+      - 03bb32d43885e83bc56c0b2bcad6f0c5ea40402763b7057056c654990022471b
+  features:
+    - or:
+      - export: wdAutoOpen

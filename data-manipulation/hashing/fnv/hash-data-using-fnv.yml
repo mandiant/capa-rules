@@ -16,15 +16,22 @@ rule:
       - https://create.stephan-brumme.com/fnv-hash/
     examples:
       - ad4229879180e267f431ac6666b6a0a2:0x14007B4D4
+      - 09BF850BE5DA44A1C3629A1F62813A83:0x10006010
   features:
     - and:
       - optional:
         - characteristic: loop
         - number: 0xcbf29ce484222325 = FNV_offset_basis, unused by FNV-0
         - number: 0x811c9dc5 = FNV_offset_basis, unused by FNV-0
+        - and:
+          - number: 0xcbf29ce4 = FNV_offset_basis 64 bits, 32-bit value
+          - number: 0x84222325 = FNV_offset_basis 64 bits, 32-bit value
       - or:
         - number: 0x100000001b3 = FNV prime
         - number: 0x01000193 = FNV prime
+        - and:
+          - number: 0x100 = FNV prime 64 bits, split in DWORD
+          - number: 0x1b3 = FNV prime 64 bits, split in DWORD
       - basic block:
         # FNV-1 hash does multiply then XOR
         # FNV-1a hash does XOR then multiply
@@ -33,3 +40,4 @@ rule:
           - or:
             - mnemonic: imul
             - mnemonic: mul
+            - api: _allmul

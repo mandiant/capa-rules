@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: switch active desktop
+    namespace: host-interaction/gui
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scope: function
+    att&ck:
+      - Defense Evasion::Debugger Evasion [T1622]
+    mbc:
+      - Anti-Behavioral Analysis::Debugger Evasion [B0002]
+    references:
+      - https://anti-debug.checkpoint.com/techniques/interactive.html#switchdesktop
+    examples:
+      - 26beba7352a32b803aa19e0782011a383a1df19549910e7b2f2f244e49678524:0x10001670
+  features:
+    - and:
+      - api: user32.CreateDesktop
+      - api: user32.SwitchDesktop

@@ -8,3 +8,9 @@ rule:
   features:
     - or:
       - api: System.Web.Script.Serialization.JavaScriptSerializer::Serialize
+      - api: System.Text.Json.JsonSerializer::Serialize
+      - api: System.Text.Json.JsonSerializer::SerializeAsync
+      - api: System.Text.Json.JsonSerializer::SerializeToDocument
+      - api: System.Text.Json.JsonSerializer::SerializeToElement
+      - api: System.Text.Json.JsonSerializer::SerializeToNode
+      - api: System.Text.Json.JsonSerializer::SerializeToUtf8Bytes
