@@ -1,8 +1,9 @@
 rule:
   meta:
-    name: allocate RW memory
+    name: allocate or change RW memory
     authors:
       - 0x534a@mailbox.org
+      - "@mr-tz"
     lib: true
     scope: basic block
     mbc:
@@ -11,5 +12,13 @@ rule:
       - Practical Malware Analysis Lab 17-02.dll_:0x1000D10D
   features:
     - and:
-      - match: allocate memory
-      - number: 0x4 = PAGE_READWRITE
+      - or:
+        - match: allocate memory
+        - match: change memory protection
+      - or:
+        - number: 0x4 = PAGE_READWRITE
+        # lea     r9d, [rcx+4]  ; flProtect
+        # call    cs:VirtualAlloc
+        - instruction:
+          - mnemonic: lea
+          - offset: 0x4 = PAGE_READWRITE

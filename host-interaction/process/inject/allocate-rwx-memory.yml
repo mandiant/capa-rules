@@ -1,9 +1,9 @@
 rule:
   meta:
-    name: allocate RWX memory
+    name: allocate or change RWX memory
     namespace: host-interaction/process/inject
     authors:
-      - moritz.raabe@mandiant.com
+      - "@mr-tz"
     scope: basic block
     mbc:
       - Memory::Allocate Memory [C0007]
@@ -13,5 +13,13 @@ rule:
       - 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001ABA
   features:
     - and:
-      - match: allocate memory
-      - number: 0x40 = PAGE_EXECUTE_READWRITE
+      - or:
+        - match: allocate memory
+        - match: change memory protection
+      - or:
+        - number: 0x40 = PAGE_EXECUTE_READWRITE
+        # lea     r9d, [rcx+40h]  ; flProtect
+        # call    cs:VirtualAlloc
+        - instruction:
+          - mnemonic: lea
+          - offset: 0x40 = PAGE_EXECUTE_READWRITE
