@@ -3,6 +3,7 @@ rule:
     name: allocate memory
     authors:
       - 0x534a@mailbox.org
+      - "@mr-tz"
     lib: true
     scope: basic block
     mbc:
@@ -29,4 +30,3 @@ rule:
           - string: "ZwAllocateVirtualMemory"
           - string: "NtMapViewOfSection"
           - string: "ZwMapViewOfSection"
-
