@@ -23,7 +23,7 @@ rule:
         - or:
           - match: open process
           - match: host-interaction/process/create
-      - match: allocate RW memory
+      - match: allocate or change RW memory
       - match: write process memory
       - and:
         - or:
