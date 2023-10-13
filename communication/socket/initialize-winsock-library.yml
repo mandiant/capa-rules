@@ -4,7 +4,9 @@ rule:
     namespace: communication/socket
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Communication::Socket Communication::Initialize Winsock Library [C0001.009]
     examples:

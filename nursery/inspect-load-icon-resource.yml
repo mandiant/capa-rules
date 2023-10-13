@@ -5,7 +5,9 @@ rule:
     namespace: anti-analysis
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature mnemonic for dynamic scope
   features:
     # check if call to LoadIcon fails when first argument is NULL
     # and second argument is not a valid predefined icon - LoadIcon

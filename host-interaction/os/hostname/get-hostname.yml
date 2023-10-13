@@ -6,7 +6,9 @@ rule:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature property for dynamic scope
     att&ck:
       - Discovery::System Information Discovery [T1082]
     mbc:

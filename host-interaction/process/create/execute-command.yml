@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/create
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Process::Create Process [C0017]
     examples:

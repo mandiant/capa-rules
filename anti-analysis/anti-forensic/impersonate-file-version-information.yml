@@ -5,7 +5,9 @@ rule:
     authors:
       - awillia2@cisco.com
     description: Looks for Windows API calls associated with reading and then writing file version information of executables on disk. Malware can use these calls to overwrite its own version information with that of a legitimate executable on the system (for instance, explorer.exe) to make it appear to be a legitimate application.
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     att&ck:
       - Defense Evasion::Indicator Removal [T1070]
     references:

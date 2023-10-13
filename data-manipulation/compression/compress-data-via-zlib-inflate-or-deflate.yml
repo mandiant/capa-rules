@@ -5,7 +5,9 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - blas.kojusner@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature bytes for dynamic scope
     mbc:
       - Data::Compress Data [C0024]
     references:

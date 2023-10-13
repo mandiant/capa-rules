@@ -6,7 +6,9 @@ rule:
       - moritz.raabe@mandiant.com
       - anushka.virgaonkar@mandiant.com
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature bytes for dynamic scope
     mbc:
       - Cryptography::Cryptographic Hash::SHA256 [C0029.003]
     references:

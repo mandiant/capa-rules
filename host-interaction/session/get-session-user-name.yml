@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
       - Discovery::Account Discovery [T1087]

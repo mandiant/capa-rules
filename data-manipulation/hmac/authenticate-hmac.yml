@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hmac
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     mbc:
       - Cryptography::Hashed Message Authentication Code [C0061]
     references:

@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encoding/xor
     authors:
       - dan.kelly@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

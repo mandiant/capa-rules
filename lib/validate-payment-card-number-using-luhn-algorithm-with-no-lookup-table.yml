@@ -4,7 +4,9 @@ rule:
     authors:
       - "@_re_fox"
     lib: true
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Data::Checksum::Luhn [C0032.002]
     examples:

@@ -7,7 +7,9 @@ rule:
       - michael.hunhoff@mandiant.com
       - joakim@intezer.com
       - anushka.virgaonkar@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     mbc:
       - Process::Create Thread [C0038]
     examples:

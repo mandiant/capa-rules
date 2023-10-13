@@ -5,7 +5,9 @@ rule:
     authors:
       - jared.wilson@mandiant.com
     description: The sample appears to be packed with GoPacker.
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
     mbc:

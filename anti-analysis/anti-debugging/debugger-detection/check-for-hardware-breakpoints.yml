@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature mnemonic for dynamic scope
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Hardware Breakpoints [B0001.005]
     references:

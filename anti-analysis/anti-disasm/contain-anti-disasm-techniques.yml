@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-disasm
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified  # TODO upgrade manually, contains match
     mbc:
       - Anti-Static Analysis::Disassembler Evasion [B0012]
     examples:

@@ -4,7 +4,9 @@ rule:
     namespace: communication/c2/shell
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     att&ck:
       - Execution::Command and Scripting Interpreter::Windows Command Shell [T1059.003]
     references:

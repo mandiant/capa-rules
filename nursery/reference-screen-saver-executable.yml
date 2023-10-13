@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: SCRNSAVE.EXE registry value specifies the name of the screen saver executable file
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     att&ck:
       - Persistence::Event Triggered Execution::Screensaver [T1546.002]
   features:

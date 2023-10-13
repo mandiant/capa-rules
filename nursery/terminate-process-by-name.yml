@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/terminate
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     # examples:
       # - unpacked Cl0p ransomware
   features:

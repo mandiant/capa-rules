@@ -6,7 +6,9 @@ rule:
     authors:
       - richard.weiss@mandiant.com
     description: Detects virtualization using VPCEXT (visual property container extender) instruction. Execution of this instruction will cause an illegal instruction exception outside of a virtual environment otherwise return 0
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature mnemonic for dynamic scope
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion [T1497]
     mbc:

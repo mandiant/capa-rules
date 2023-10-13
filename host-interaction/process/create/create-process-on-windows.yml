@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/create
     authors:
       - moritz.raabe@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     mbc:
       - Process::Create Process [C0017]
     examples:

@@ -4,7 +4,9 @@ rule:
     namespace: communication/dns
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     references:
       - https://www.quora.com/What-is-a-4-2-2-1-DNS-server
   features:

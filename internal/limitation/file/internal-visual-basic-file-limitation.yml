@@ -11,7 +11,9 @@ rule:
       representation called P-Code.
       capa cannot handle Visual Basic executables well. This means that the results will be misleading or incomplete.
       You may have to analyze the file manually, for example using a tool like VB Decompiler.
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified  # TODO upgrade manually, contains match
     examples:
       - 9bca6b99e7981208af4c7925b96fb9cf
   features:

@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Anti-Behavioral Analysis::Conditional Execution::Runs as Service [B0025.007]
     examples:

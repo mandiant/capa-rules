@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/sha384
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature bytes for dynamic scope
     references:
       - https://www.rfc-editor.org/rfc/rfc6234
     examples:

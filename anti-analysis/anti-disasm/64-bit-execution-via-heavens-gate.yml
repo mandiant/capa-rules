@@ -5,7 +5,9 @@ rule:
     authors:
       - awillia2@cisco.com
     description: Looks for instructions related to executing 64-bit code from a 32-bit process (Heaven's Gate)
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Defense Evasion::Disable or Evade Security Tools::Heavens Gate [F0004.008]
     references:

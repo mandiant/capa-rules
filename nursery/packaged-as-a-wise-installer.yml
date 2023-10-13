@@ -4,7 +4,9 @@ rule:
     namespace: executable/installer/wiseinstall
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
   features:
     - or:
       - string: "WiseMain"

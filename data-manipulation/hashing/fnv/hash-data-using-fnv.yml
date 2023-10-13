@@ -7,7 +7,9 @@ rule:
       - "@_re_fox"
       - michael.hunhoff@mandiant.com
     description: can be any Fowler-Noll-Vo (FNV) hash variant, including FNV-1, FNV-1a, FNV-0
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Data::Non-Cryptographic Hash::FNV [C0030.005]
     references:

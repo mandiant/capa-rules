@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - johnk3r
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Hardware::Simulate Hardware::Ctrl-Alt-Del [C0057.001]
     examples:

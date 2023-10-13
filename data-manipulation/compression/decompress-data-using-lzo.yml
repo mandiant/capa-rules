@@ -6,7 +6,9 @@ rule:
       - david@edeca.net
       - david.cannings@pwc.com
     description: detects the decompression routine from LZO
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Data::Decompress Data [C0025]
     references:

@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: Single binary containing target .NET application and all application-dependent files
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli
     examples:

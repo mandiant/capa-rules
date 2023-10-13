@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/sha256
     authors:
       - "@_re_fox"
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature mnemonic for dynamic scope
   features:
     - or:
       - mnemonic: sha256rnds2 = Perform Two Rounds of SHA256 Operation

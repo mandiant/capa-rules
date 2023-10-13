@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/network/traffic/filter
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Impact::Data Manipulation::Transmitted Data Manipulation [T1565.002]
     examples:

@@ -4,7 +4,9 @@ rule:
     namespace: persistence/office
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature class for dynamic scope
     att&ck:
       - Persistence::Office Application Startup::Add-ins [T1137.006]
     references:

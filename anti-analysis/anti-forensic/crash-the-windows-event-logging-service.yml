@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-forensic
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     att&ck:
       - Defense Evasion::Impair Defenses::Disable Windows Event Logging [T1562.002]
     references:

@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: Windows Restart Manager can be used to close/unlock specific files, often abused by Ransomware
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     references:
       - https://www.carbonblack.com/blog/tau-threat-discovery-conti-ransomware/
   features:

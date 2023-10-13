@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Cryptography::Cryptographic Hash [C0029]
     examples:

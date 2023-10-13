@@ -4,7 +4,9 @@ rule:
     namespace: load-code/pe
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature mnemonic for dynamic scope
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:

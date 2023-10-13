@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/checksum/adler32
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Data::Checksum::Adler [C0032.005]
     references:

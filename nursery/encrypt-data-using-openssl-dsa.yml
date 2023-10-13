@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/dsa
     authors:
       - "Ana06"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature bytes for dynamic scope
     references:
       - https://github.com/openssl/openssl/blob/fdc5043d58900663b493147298e64f11353b35fe/crypto/objects/obj_dat.h
   features:

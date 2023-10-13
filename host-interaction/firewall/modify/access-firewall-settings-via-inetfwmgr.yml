@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/firewall/modify
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature bytes for dynamic scope
     att&ck:
       - Discovery::Software Discovery::Security Software Discovery [T1518.001]
       - Defense Evasion::Impair Defenses::Disable or Modify System Firewall [T1562.004]

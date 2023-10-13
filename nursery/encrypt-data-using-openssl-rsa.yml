@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/rsa
     authors:
       - "Ana06"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature bytes for dynamic scope
     mbc:
       - Cryptography::Encrypt Data::RSA [C0027.011]
     references:

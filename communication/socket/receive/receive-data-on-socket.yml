@@ -6,7 +6,9 @@ rule:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Communication::Socket Communication::Receive Data [C0001.006]
     examples:

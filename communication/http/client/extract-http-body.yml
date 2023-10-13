@@ -4,7 +4,9 @@ rule:
     namespace: communication/http/client
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature bytes for dynamic scope
     mbc:
       - Communication::HTTP Communication::Extract Body [C0002.011]
     references:

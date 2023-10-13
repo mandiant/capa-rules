@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/file-system/read
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - File System::Read Virtual Disk [C0056]
     references:

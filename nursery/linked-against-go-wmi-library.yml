@@ -5,7 +5,9 @@ rule:
     authors:
       - joakim@intezer.com
     description: StackExchange's WMI library is used to interact with WMI.
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified  # TODO upgrade manually, contains match
     att&ck:
       - Collection::Data from Information Repositories [T1213]
     references:

@@ -5,7 +5,9 @@ rule:
     authors:
       - matthew.williams@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     att&ck:
       - Discovery::System Network Configuration Discovery::Internet Connection Discovery [T1016.001]
     examples:

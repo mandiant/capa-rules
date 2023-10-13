@@ -5,7 +5,9 @@ rule:
     authors:
       - joakim@intezer.com
     description: Uses a Go library for interacting with the Windows registry.
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified  # TODO upgrade manually, contains match
     references:
       - https://github.com/golang/sys
   features:

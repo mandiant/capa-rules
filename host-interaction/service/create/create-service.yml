@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/service/create
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
       - Execution::System Services::Service Execution [T1569.002]

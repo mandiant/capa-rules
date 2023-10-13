@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     att&ck:
       - Defense Evasion::Process Injection::Extra Window Memory Injection [T1055.011]
     mbc:

@@ -5,7 +5,9 @@ rule:
     authors:
       - awillia2@cisco.com
     description: Looks for instruction mnemonics associated with initialization of the HC-128 stream cipher
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

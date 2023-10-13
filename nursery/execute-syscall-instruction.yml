@@ -6,7 +6,9 @@ rule:
       - "@kulinacs"
       - "@mr-tz"
     description: may be used to evade hooks or hinder analysis
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature mnemonic for dynamic scope
     references:
       - https://github.com/j00ru/windows-syscalls
   features:

@@ -5,7 +5,9 @@ rule:
     maec/malware-category: launcher
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     mbc:
       - Execution::Install Additional Program [B0023]
     examples:

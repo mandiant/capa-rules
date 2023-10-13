@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/aphash
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Data::Non-Cryptographic Hash [C0030]
     references:

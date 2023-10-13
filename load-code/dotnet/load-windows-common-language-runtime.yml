@@ -7,7 +7,9 @@ rule:
       - michael.hunhoff@mandiant.com
       - blas.kojusner@mandiant.com
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     references:
       - https://modexp.wordpress.com/2019/05/10/dotnet-loader-shellcode/
       - https://github.com/TheWover/donut/blob/master/loader/inmem_dotnet.c

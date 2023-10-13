@@ -4,7 +4,9 @@ rule:
     namespace: compiler/perl2exe
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     examples:
       - 873275ce8bf88ef66e9fa0c74b5c2a1e:0x4011C9
   features:

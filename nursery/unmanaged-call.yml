@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: managed code calls unmanaged (native) code, often seen in .NET
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
   features:
     - or:
       - characteristic: unmanaged call

@@ -4,7 +4,9 @@ rule:
     namespace: collection/credit-card
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
   features:
     - and:
       - instruction:

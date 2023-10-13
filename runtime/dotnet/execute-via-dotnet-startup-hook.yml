@@ -4,7 +4,9 @@ rule:
     namespace: runtime/dotnet
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature function-name for dynamic scope
     references:
       - https://rastamouse.me/net-startup-hooks/
       - https://github.com/dotnet/runtime/blob/main/docs/design/features/host-startup-hook.md

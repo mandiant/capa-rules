@@ -5,7 +5,9 @@ rule:
       - 0x534a@mailbox.org
       - "@mr-tz"
     lib: true
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     mbc:
       - Memory::Allocate Memory [C0007]
     examples:

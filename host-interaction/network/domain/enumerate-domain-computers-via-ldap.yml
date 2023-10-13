@@ -5,7 +5,9 @@ rule:
     authors:
       - awillia2@cisco.com
     description: Looks for an LDAP query and related Windows API calls used to enumerate other computers on the Windows domain that a computer is connected to.
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
     references:

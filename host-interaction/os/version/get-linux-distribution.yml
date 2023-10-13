@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/os/version
     authors:
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     att&ck:
       - Discovery::System Information Discovery [T1082]
     examples:

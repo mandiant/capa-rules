@@ -4,7 +4,9 @@ rule:
     namespace: persistence
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
   features:
     - and:
       - os: linux

@@ -4,7 +4,9 @@ rule:
     namespace: load-code/pe
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature property for dynamic scope
     mbc:
       - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
   features:

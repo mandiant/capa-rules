@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/obfuscation/string/stackstring
     authors:
       - moritz.raabe@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     mbc:

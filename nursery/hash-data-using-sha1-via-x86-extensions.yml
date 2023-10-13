@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/sha1
     authors:
       - "@_re_fox"
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature mnemonic for dynamic scope
   features:
     - or:
       - mnemonic: sha1rnds4 = Perform Four Rounds of SHA1 Operation

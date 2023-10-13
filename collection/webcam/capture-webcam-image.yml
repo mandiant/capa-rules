@@ -4,7 +4,9 @@ rule:
     namespace: collection/webcam
     authors:
       - johnk3r
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     att&ck:
       - Collection::Video Capture [T1125]
     examples:

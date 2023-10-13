@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-av
     authors:
       - "@_re_fox"
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     mbc:
       - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]
       - Anti-Behavioral Analysis::Sandbox Detection [B0007]

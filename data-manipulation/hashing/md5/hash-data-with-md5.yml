@@ -6,7 +6,9 @@ rule:
       - moritz.raabe@mandiant.com
       - anushka.virgaonkar@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains Subscope
     mbc:
       - Cryptography::Cryptographic Hash::MD5 [C0029.001]
     references:

@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/network
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     att&ck:
       - Discovery::Network Share Discovery [T1135]
   features:

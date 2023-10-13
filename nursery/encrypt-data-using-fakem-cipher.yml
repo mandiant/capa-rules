@@ -6,7 +6,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: Detect custom encryption cipher used by FAKEM malware family
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature mnemonic for dynamic scope
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

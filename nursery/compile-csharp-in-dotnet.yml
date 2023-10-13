@@ -4,7 +4,9 @@ rule:
     namespace: load-code/dotnet/csharp
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains match
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Compile After Delivery [T1027.004]
   features:

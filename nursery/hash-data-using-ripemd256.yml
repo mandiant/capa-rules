@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/ripemd256
     authors:
       - raymond.leong@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains unsupported feature bytes for dynamic scope
     references:
       - https://en.wikipedia.org/wiki/RIPEMD-256
   features:
