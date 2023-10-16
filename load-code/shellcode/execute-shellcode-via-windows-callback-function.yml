@@ -23,7 +23,7 @@ rule:
       - 43db867967c71bd3aaba9a9a3084e7fa:0x140001000
   features:
     - and:
-      - match: allocate RWX memory
+      - match: allocate or change RWX memory
       - or:
         - api: EnumDateFormats
         - api: GrayString

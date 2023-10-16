@@ -19,7 +19,7 @@ rule:
         - or:
           - match: open process
           - match: host-interaction/process/create
-      - match: allocate RWX memory
+      - match: allocate or change RWX memory
       - basic block:
         - description: virtual address offset calculation
         - and:
