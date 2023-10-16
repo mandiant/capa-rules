@@ -6,7 +6,7 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]
     examples:
