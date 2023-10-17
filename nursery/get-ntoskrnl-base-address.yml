@@ -4,7 +4,9 @@ rule:
     namespace: linking/runtime-linking
     authors:
       - "@mr-tz"
-    scope: function
+    scopes: 
+      static: function
+      dynamic: unsupported
     att&ck:
       - Execution::Shared Modules [T1129]
     references:

@@ -4,7 +4,9 @@ rule:
     namespace: collection/network
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
     att&ck:
       - Discovery::Network Sniffing [T1040]
     references:
