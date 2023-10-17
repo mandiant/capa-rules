@@ -5,7 +5,7 @@ rule:
       - 0x534a@mailbox.org
       - "@mr-tz"
     lib: true
-    scopes: 
+    scopes:
       static: basic block
       dynamic: call
     mbc:

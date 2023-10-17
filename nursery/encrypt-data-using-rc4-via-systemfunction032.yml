@@ -4,7 +4,7 @@ rule:
     namespace: data-manipulation/encryption/rc4
     authors:
       - richard.weiss@mandiant.com
-    scopes: 
+    scopes:
       static: function
       dynamic: thread
     att&ck:

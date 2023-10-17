@@ -4,7 +4,7 @@ rule:
     namespace: linking/runtime-linking
     authors:
       - "@mr-tz"
-    scopes: 
+    scopes:
       static: function
       dynamic: unsupported
     att&ck:

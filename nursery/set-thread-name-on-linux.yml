@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/thread
     authors:
       - michael.hunhoff@mandiant.com
-    scopes: 
+    scopes:
       static: basic block
       dynamic: call
   features:

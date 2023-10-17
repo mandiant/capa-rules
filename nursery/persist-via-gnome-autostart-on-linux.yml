@@ -4,7 +4,7 @@ rule:
     namespace: persistence
     authors:
       - michael.hunhoff@mandiant.com
-    scopes: 
+    scopes:
       static: function
       dynamic: thread
   features:

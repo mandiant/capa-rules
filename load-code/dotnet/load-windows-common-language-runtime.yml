@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
       - blas.kojusner@mandiant.com
       - jakub.jozwiak@mandiant.com
-    scopes: 
+    scopes:
       static: function
       dynamic: call
     references:
