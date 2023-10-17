@@ -10,6 +10,8 @@ rule:
       dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::User Activity Based Checks [T1497.002]
+    mbc:
+      - Anti-Behavioral Analysis::Virtual Machine Detection::Human User Check [B0009.012]
     references:
       - https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html
       - https://unprotect.it/technique/getforegroundwindow/

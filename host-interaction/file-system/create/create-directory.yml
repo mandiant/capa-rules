@@ -22,6 +22,7 @@ rule:
       - api: ZwCreateDirectoryObject
       - api: SHCreateDirectory
       - api: SHCreateDirectoryEx
+      - api: mkdir
       - api: _mkdir
       - api: _wmkdir
       - api: System.IO.Directory::CreateDirectory

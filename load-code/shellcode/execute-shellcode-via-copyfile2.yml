@@ -13,22 +13,7 @@ rule:
       - c2bb17c12975ea61ff43a71afd9c3ff111d018af161859abae0bdb0b3dae98f9:0x140001010
   features:
     - and:
-      - or:
-        - match: allocate RWX memory
-        - or:
-          - basic block:
-            - and:
-              - match: allocate memory
-              - or:
-                - number: 0x40
-                - instruction:
-                  - mnemonic: lea
-                  - offset: 64
-          - thread:
-            - and:
-              - match: allocate memory
-              - or:
-                - number: 0x40
+      - match: allocate or change RWX memory
       - api: CopyFile2
       - api: DeleteFileW
       - number: 0x00000001 = COPY_FILE_FAIL_IF_EXISTS

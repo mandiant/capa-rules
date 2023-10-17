@@ -21,6 +21,8 @@ rule:
       - api: System.Diagnostics.Process::WaitForExitAsync
       - api: System.Environment::Exit
       - api: System.Windows.Forms.Application::Exit
+      - api: exit
+      - api: Exit
       - and:
         - optional:
           - match: open process

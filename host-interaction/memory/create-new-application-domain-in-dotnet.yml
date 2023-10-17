@@ -9,6 +9,8 @@ rule:
       dynamic: unspecified   # rule hasn't been migrated yet
     att&ck:
       - Persistence::Hijack Execution Flow [T1574]
+    mbc:
+      - Persistence::Hijack Execution Flow [F0015]
     references:
       - https://learn.microsoft.com/en-us/dotnet/framework/app-domains/application-domains
       - https://www.rapid7.com/blog/post/2023/05/05/appdomain-manager-injection-new-techniques-for-red-teams/

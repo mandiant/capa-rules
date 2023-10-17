@@ -22,7 +22,7 @@ rule:
       - match: suspend thread
       - api: kernel32.GetThreadContext
       - optional:
-        - match: allocate RWX memory
+        - match: allocate or change RWX memory
         - match: write process memory
       - api: kernel32.SetThreadContext
       - match: resume thread

@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: get file system information on Linux
+    namespace: host-interaction/file-system
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: basic block
+  features:
+    - and:
+      - os: linux
+      - or:
+        - api: statfs
+        - api: fstatfs

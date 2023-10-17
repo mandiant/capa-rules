@@ -17,8 +17,8 @@ rule:
   features:
     - and:
       - or:
-        - match: allocate RWX memory
-        - match: allocate RW memory
+        - match: allocate or change RWX memory
+        - match: allocate or change RW memory
       - match: write process memory
       - match: create thread
       - optional:

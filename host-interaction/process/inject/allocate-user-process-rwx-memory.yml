@@ -14,7 +14,7 @@ rule:
   features:
     - and:
       - match: attach user process memory
-      - match: allocate RWX memory
+      - match: allocate or change RWX memory
       - number: 0xFFFFFFFF = NtCurrentProcess()
       - optional:
         - match: find process by PID

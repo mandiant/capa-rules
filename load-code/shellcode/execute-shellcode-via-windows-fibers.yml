@@ -16,7 +16,7 @@ rule:
       - f03bdb9fa52f7b61ef03141fefff1498ad2612740b1fdbf6941f1c5af5eee70a:0x4026E0
   features:
     - and:
-      - match: allocate RWX memory
+      - match: allocate or change RWX memory
       - api: ConvertThreadToFiber
       - api: CreateFiber
       - api: SwitchToFiber

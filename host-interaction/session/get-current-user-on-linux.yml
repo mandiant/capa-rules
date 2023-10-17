@@ -1,7 +1,7 @@
 rule:
   meta:
     name: get current user on Linux
-    namespace: collection
+    namespace: host-interaction/session
     authors:
       - joakim@intezer.com
     scopes:
@@ -15,9 +15,8 @@ rule:
     - and:
       - os: linux
       - or:
-        - and:
-          - api: geteuid
-          - api: getpwuid
+        - api: geteuid
+        - api: getpwuid
         - api: getlogin
         - api: getlogin_r
         - api: cuserid

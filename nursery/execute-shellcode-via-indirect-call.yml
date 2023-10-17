@@ -11,7 +11,7 @@ rule:
       - Memory::Allocate Memory [C0007]
   features:
     - and:
-      - match: allocate RWX memory
+      - match: allocate or change RWX memory
       - or:
         - characteristic: indirect call
         - characteristic: cross section flow

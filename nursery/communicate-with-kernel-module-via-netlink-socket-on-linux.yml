@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: communicate with kernel module via Netlink socket on Linux
+    namespace: host-interaction/kernel
+    authors:
+      - michael.hunhoff@mandiant.com
+    description: Netlink is used to transfer information between the kernel and user-space processes (https://man7.org/linux/man-pages/man7/netlink.7.html)
+    scope: basic block
+  features:
+    - and:
+      - os: linux
+      - api: socket
+      - number: 0x10 = AF_NETLINK

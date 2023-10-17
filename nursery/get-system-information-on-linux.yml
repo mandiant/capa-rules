@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/os/info
     authors:
       - joakim@intezer.com
+      - michael.hunhoff@mandiant.com
     scopes:
       static: function
       dynamic: process
@@ -17,3 +18,4 @@ rule:
         - and:
           - api: system
           - string: "lshw"
+        - api: sysinfo

@@ -19,3 +19,4 @@ rule:
       - api: kernel32.TerminateThread
       - api: PsTerminateSystemThread
       - api: System.Threading.Thread.Abort
+      - api: pthread_terminate
