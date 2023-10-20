@@ -10,31 +10,30 @@ Here's an example rule used by capa:
 ```yaml
 rule:
   meta:
-    name: hash data with CRC32
-    namespace: data-manipulation/checksum/crc32
+    name: create TCP socket
+    namespace: communication/socket/tcp
     authors:
-      - moritz.raabe@mandiant.com
-    scope: function
+      - william.ballenthin@mandiant.com
+      - joakim@intezer.com
+      - anushka.virgaonkar@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: call
     mbc:
-      - Data::Checksum::CRC32 [C0032.001]
+      - Communication::Socket Communication::Create TCP Socket [C0001.011]
     examples:
-      - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
-      - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
-      - 7EFF498DE13CC734262F87E6B3EF38AB:0x100084A6
+      - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
     - or:
       - and:
-        - mnemonic: shr
+        - number: 6 = IPPROTO_TCP
+        - number: 1 = SOCK_STREAM
+        - number: 2 = AF_INET
         - or:
-          - number: 0xEDB88320
-          - bytes: 00 00 00 00 96 30 07 77 2C 61 0E EE BA 51 09 99 19 C4 6D 07 8F F4 6A 70 35 A5 63 E9 A3 95 64 9E = crc32_tab
-        - number: 8
-        - characteristic: nzxor
-      - and:
-        - number: 0x8320
-        - number: 0xEDB8
-        - characteristic: nzxor
-      - api: RtlComputeCrc32
+          - api: ws2_32.socket
+          - api: ws2_32.WSASocket
+          - api: socket
+      - property/read: System.Net.Sockets.TcpClient::Client
 ```
 
 This document defines the available structures and features that you can use as you write capa rules.
@@ -384,14 +383,16 @@ though possibly a local function (like `malloc`) extracted via function signatur
 
 The parameter is a string describing the function name, specified like  `functionname`, `module.functionname`, or `namespace.class::functioname`.
 
+Since version 7 the module (DLL) name is not used during matching so only benefits the documentation.
+
 Windows API functions that take string arguments come in two API versions. For example, `CreateProcessA` takes ANSI strings and `CreateProcessW` takes Unicode strings. capa extracts these API features both with and without the suffix character `A` or `W`. That means you can write a rule to match on both APIs using the base name. If you want to match a specific API version, you can include the suffix.
 
 .NET classes and structures implement constructor (`.ctor`) and static constructor (`.cctor`) methods. capa extracts these constructor methods as `namespace.class::ctor` and `namespace.class::cctor`, respectively.
 
 Example:
 
-    api: kernel32.CreateFile  # matches both Ansi (CreateFileA) and Unicode (CreateFileW) versions
-    api: CreateFile
+    api: kernel32.CreateFile  # the DLL name will be ignored during matching, but is good to include as documentation
+    api: CreateFile  # matches both Ansi (CreateFileA) and Unicode (CreateFileW) versions
     api: GetEnvironmentVariableW  # only matches on Unicode version
     api: System.IO.File::Delete
     api: System.Net.WebResponse::GetResponseStream
@@ -640,7 +641,7 @@ To specify a [forwarded export](https://devblogs.microsoft.com/oldnewthing/20060
 
 ### import
 
-The name of a routine imported from a shared library.
+The name of a routine imported from a shared library. These can include DLL names that are checked during matching.
 
 Examples:
 
@@ -681,7 +682,7 @@ The following features are supported at this scope:
 ### os
 
 The name of the OS on which the sample runs. This is determined via heuristics applied to the file format (e.g. PE files are for Windows, header fields and notes sections in ELF files indicate Linux/*BSD/etc.).
-This lets you group logic that should only be found on some platforms, such as Windows APIs are found only in Windows exectuables.
+This lets you group logic that should only be found on some platforms, such as Windows APIs are found only in Windows executables.
 
 Examples:
 
