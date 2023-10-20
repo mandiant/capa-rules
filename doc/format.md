@@ -641,7 +641,7 @@ To specify a [forwarded export](https://devblogs.microsoft.com/oldnewthing/20060
 
 ### import
 
-The name of a routine imported from a shared library.
+The name of a routine imported from a shared library. These can include DLL names that are checked during matching.
 
 Examples:
 
