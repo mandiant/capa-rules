@@ -5,7 +5,9 @@ rule:
     namespace: host-interaction/hardware
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, bytes features
     references:
       - https://learn.microsoft.com/en-us/windows/win32/api/strmif/nf-strmif-icreatedevenum-createclassenumerator
     examples:

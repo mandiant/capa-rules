@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/wmi
     authors:
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Execution::Windows Management Instrumentation [T1047]
   features:

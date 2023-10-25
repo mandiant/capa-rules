@@ -5,7 +5,9 @@ rule:
     authors:
       - "@_re_fox"
       - jakub.jozwiak@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://github.com/ikarstein/ps2exe
       - https://github.com/MScholtes/PS2EXE

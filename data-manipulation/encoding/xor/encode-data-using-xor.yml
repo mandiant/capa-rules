@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encoding/xor
     authors:
       - moritz.raabe@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unsupported  # requires characteristic, Not features
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

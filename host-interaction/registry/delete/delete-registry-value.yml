@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Modify Registry [T1112]
     mbc:

@@ -5,7 +5,9 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
     description: Similar to Base64, but modified to avoid both non-alphanumeric characters (+ and /) and letters that might look ambiguous when printed (0, I, O, and l). Base58 is used to represent bitcoin addresses.
-    scope: file
+    scopes:
+      static: file
+      dynamic: unsupported  # requires  features
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

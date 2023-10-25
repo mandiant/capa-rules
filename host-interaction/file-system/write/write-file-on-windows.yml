@@ -5,7 +5,9 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains subscope
     mbc:
       - File System::Writes File [C0052]
     examples:

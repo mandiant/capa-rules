@@ -5,7 +5,9 @@ rule:
     authors:
       - joakim@intezer.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::System Information Discovery [T1082]
   features:

@@ -5,7 +5,9 @@ rule:
     authors:
       - gilbert.elliot@mandiant.com
       - sara.rincon@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires bytes, mnemonic features
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

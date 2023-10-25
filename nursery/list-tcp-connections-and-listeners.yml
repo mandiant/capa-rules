@@ -5,7 +5,9 @@ rule:
     namespace: collection/network
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
   features:
     - or:
       - api: iphlpapi.GetExtendedTcpTable

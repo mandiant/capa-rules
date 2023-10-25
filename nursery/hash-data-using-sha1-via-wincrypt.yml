@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/sha1
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
   features:
     - or:
       - and:

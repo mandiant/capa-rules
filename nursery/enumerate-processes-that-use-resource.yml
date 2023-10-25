@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process
     authors:
       - "@Ana06"
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     references:
       - https://www.malwarebytes.com/blog/threat-intelligence/2021/07/avoslocker-enters-the-ransomware-scene-asks-for-partners
     # examples:

@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/thread/task
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
   features:
     - or:
       - api: System.Threading.Tasks.Task::ctor

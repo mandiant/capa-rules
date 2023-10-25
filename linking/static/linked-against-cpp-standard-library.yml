@@ -4,7 +4,9 @@ rule:
     namespace: linking/static
     authors:
       - "@mr-tz"
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://en.wikipedia.org/wiki/P._J._Plauger
       - https://www.dinkumware.com/

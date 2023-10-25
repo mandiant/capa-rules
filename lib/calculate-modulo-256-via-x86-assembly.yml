@@ -4,7 +4,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     lib: true
-    scope: instruction
+    scopes:
+      static: instruction
+      dynamic: unsupported  # requires mnemonic features
     mbc:
       - Data::Modulo [C0058]
     examples:

@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/md5
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires bytes features
     mbc:
       - Cryptography::Cryptographic Hash::MD5 [C0029.001]
     references:

@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/service
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unspecified  # TODO upgrade manually, contains subscope
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
     examples:

@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/file-system
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread  # TODO check if scope call instead
   features:
     - and:
       - os: linux

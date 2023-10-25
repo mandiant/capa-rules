@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::OutputDebugString [B0001.016]
     examples:

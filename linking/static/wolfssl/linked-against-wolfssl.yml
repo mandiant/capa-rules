@@ -4,7 +4,9 @@ rule:
     namespace: linking/static/wolfssl
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     mbc:
       - Cryptography::Crypto Library [C0059]
     references:

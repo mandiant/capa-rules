@@ -4,7 +4,9 @@ rule:
     namespace: collection/credit-card
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires mnemonic, Not features
     mbc:
       - Data::Check String [C0019]
     examples:

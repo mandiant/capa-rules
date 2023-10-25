@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Discovery::System Information Discovery [T1082]
     examples:

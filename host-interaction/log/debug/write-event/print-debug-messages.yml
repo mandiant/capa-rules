@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/log/debug/write-event
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
     examples:
       - 493167E85E45363D09495D0841C30648:0x401000
   features:

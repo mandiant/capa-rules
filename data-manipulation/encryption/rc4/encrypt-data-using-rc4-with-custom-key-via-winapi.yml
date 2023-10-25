@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/rc4
     authors:
       - blaine.stancill@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires bytes features
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

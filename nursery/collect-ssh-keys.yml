@@ -4,7 +4,9 @@ rule:
     namespace: collection
     authors:
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Credential Access::Unsecured Credentials::Private Keys [T1552.004]
   features:

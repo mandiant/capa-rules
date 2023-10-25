@@ -4,7 +4,9 @@ rule:
     namespace: persistence
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, bytes features
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Shortcut Modification [T1547.009]
     references:

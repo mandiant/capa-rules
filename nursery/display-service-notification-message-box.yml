@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/gui
     authors:
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
   features:
     - and:
       - number: 0x200000 = service notification

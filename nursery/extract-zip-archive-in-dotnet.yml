@@ -5,7 +5,9 @@ rule:
     authors:
       - anushka.virgaonkar@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
   features:

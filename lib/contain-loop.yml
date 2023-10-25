@@ -4,7 +4,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     lib: true
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires characteristic features
     examples:
       - 08AC667C65D36D6542917655571E61C8:0x406EAA
   features:

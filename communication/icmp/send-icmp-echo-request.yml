@@ -4,7 +4,9 @@ rule:
     namespace: communication/icmp
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Communication::ICMP Communication::Echo Request [C0014.002]
     references:

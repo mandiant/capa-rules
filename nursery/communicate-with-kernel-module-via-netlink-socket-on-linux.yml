@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: Netlink is used to transfer information between the kernel and user-space processes (https://man7.org/linux/man-pages/man7/netlink.7.html)
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
   features:
     - and:
       - os: linux

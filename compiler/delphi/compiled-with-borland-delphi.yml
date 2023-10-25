@@ -5,7 +5,9 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
       - "@mr-tz"
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     examples:
       - 4BDD67FF852C221112337FECD0681EAC
   features:

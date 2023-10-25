@@ -5,7 +5,9 @@ rule:
       - michael.hunhoff@mandiant.com
       - joakim@intezer.com
     lib: true
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     mbc:
       - File System::Create File [C0016]
     examples:

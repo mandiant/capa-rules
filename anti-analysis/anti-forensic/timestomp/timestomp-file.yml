@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-forensic/timestomp
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Indicator Removal::Timestomp [T1070.006]
     examples:

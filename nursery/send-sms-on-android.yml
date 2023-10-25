@@ -4,7 +4,9 @@ rule:
     namespace: communication/sms
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset features
     # att&ck:
     #   - Mobile::SMS Control [T1582]
   features:

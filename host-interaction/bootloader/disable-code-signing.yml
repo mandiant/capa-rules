@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/bootloader
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Defense Evasion::Subvert Trust Controls::Code Signing Policy Modification [T1553.006]
     examples:

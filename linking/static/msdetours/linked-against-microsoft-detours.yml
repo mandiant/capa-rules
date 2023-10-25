@@ -4,7 +4,9 @@ rule:
     namespace: linking/static/msdetours
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Defense Evasion::Hijack Execution Flow [T1574]
     references:

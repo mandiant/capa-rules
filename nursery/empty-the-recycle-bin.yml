@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/recycle-bin
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
   features:
     - or:
       - api: SHEmptyRecycleBin

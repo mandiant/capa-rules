@@ -6,7 +6,9 @@ rule:
       - moritz.raabe@mandiant.com
       - anushka.virgaonkar@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, Not features
     mbc:
       - Cryptography::Cryptographic Hash::MD5 [C0029.001]
     references:

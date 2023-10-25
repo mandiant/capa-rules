@@ -4,7 +4,9 @@ rule:
     namespace: persistence/startup-folder
     authors:
       - matthew.williams@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]
     examples:

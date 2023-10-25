@@ -5,7 +5,9 @@ rule:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
     lib: true
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     mbc:
       - Operating System::Registry::Create Registry Key [C0036.004]
       - Operating System::Registry::Open Registry Key [C0036.003]

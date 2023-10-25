@@ -4,7 +4,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     lib: true
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
     att&ck:
       - Defense Evasion::Process Injection [T1055]
     examples:

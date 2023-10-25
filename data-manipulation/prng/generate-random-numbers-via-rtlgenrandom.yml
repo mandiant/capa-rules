@@ -5,7 +5,9 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
       - richard.weiss@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     mbc:
       - Cryptography::Generate Pseudo-random Sequence::Use API [C0021.003]
     references:

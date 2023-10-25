@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/file-system
     authors:
       - joakim@intezer.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread  # TODO check if scope call instead
     mbc:
       - File System::Set File Attributes [C0050]
     examples:

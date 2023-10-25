@@ -4,7 +4,9 @@ rule:
     namespace: persistence/registry/ginadll
     authors:
       - michael.hunhoff@fireye.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Persistence::Event Triggered Execution [T1546]
     examples:

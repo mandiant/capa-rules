@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/container/docker
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Execution::Container Administration Command [T1609]
     references:

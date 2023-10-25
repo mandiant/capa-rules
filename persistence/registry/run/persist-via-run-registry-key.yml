@@ -4,7 +4,9 @@ rule:
     namespace: persistence/registry/run
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]
     mbc:

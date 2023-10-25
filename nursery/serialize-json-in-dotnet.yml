@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/json
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
   features:
     - or:
       - api: System.Web.Script.Serialization.JavaScriptSerializer::Serialize

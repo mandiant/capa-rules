@@ -4,7 +4,9 @@ rule:
     namespace: collection/screenshot
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires operand[0].number features
     att&ck:
       - Collection::Screen Capture [T1113]
     mbc:

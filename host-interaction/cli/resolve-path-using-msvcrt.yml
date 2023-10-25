@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/cli
     authors:
       - "@_re_fox"
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
     examples:

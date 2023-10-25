@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/container/docker
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Discovery::Container and Resource Discovery [T1613]
     references:

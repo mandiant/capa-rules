@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/bootloader
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Impair Defenses::Safe Mode Boot [T1562.009]
   features:

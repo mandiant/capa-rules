@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/md4
     authors:
       - anamaria.martinezgom@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
   features:
     - and:
       - number: 0x8002 = CALG_MD4

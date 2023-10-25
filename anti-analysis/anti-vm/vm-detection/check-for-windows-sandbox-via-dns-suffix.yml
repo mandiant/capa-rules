@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset features
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:

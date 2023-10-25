@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/gui/taskbar/find
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     mbc:
       - Discovery::Taskbar Discovery [B0043]
     examples:

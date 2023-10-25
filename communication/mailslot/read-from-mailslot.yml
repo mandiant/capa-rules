@@ -4,7 +4,9 @@ rule:
     namespace: communication/mailslot
     authors:
       - nick.simonian@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Communication::Interprocess Communication [C0003]
     references:

@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires mnemonic features
     mbc:
       - Data::Decompress Data [C0025]
     references:

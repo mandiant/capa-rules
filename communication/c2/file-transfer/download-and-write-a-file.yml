@@ -5,7 +5,9 @@ rule:
     maec/malware-category: downloader
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Command and Control::Ingress Tool Transfer [T1105]
     mbc:

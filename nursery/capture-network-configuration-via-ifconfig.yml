@@ -4,7 +4,9 @@ rule:
     namespace: collection/network
     authors:
       - joakim@intezeer.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call  # TODO check if scope thread instead
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
   features:

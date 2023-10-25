@@ -4,7 +4,9 @@ rule:
     namespace: persistence/scheduled-tasks
     authors:
       - joren485
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread  # TODO check if scope call instead
     att&ck:
       - Persistence::Scheduled Task/Job::At [T1053.002]
     examples:
