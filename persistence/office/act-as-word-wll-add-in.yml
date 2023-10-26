@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: file
-      dynamic: unsupported  # requires export features
+      dynamic: file
     att&ck:
       - Persistence::Office Application Startup::Add-ins [T1137.006]
     references:

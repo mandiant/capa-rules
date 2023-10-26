@@ -7,7 +7,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: unsupported  # requires offset, Not, operand[1].offset, characteristic, mnemonic, basicblock features
+      dynamic: unsupported  # requires offset, operand[1].offset, characteristic, mnemonic, basicblock features
     mbc:
       - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
     references:

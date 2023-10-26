@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: file
-      dynamic: unsupported  # requires export features
+      dynamic: file
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Security Support Provider [T1547.005]
     references:

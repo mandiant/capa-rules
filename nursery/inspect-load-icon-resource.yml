@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: unsupported  # requires Not, mnemonic features
+      dynamic: unsupported  # requires mnemonic features
   features:
     # check if call to LoadIcon fails when first argument is NULL
     # and second argument is not a valid predefined icon - LoadIcon

@@ -8,7 +8,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: unsupported  # requires offset, Not features
+      dynamic: thread
     mbc:
       - Cryptography::Cryptographic Hash::MD5 [C0029.001]
     references:
@@ -31,6 +31,10 @@ rule:
             - offset: -0x28955B88
             - offset: -0x173848AA
       - basic block:
+        - and:
+          - number: 0x8003 = CALG_MD5
+          - api: advapi32.CryptCreateHash
+      - call:
         - and:
           - number: 0x8003 = CALG_MD5
           - api: advapi32.CryptCreateHash
