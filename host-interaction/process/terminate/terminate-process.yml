@@ -8,7 +8,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     mbc:
       - Process::Terminate Process [C0018]
     examples:

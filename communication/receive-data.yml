@@ -7,7 +7,7 @@ rule:
     description: all known techniques for receiving data from a potential C2 server
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     mbc:
       - Command and Control::C2 Communication::Receive Data [B0030.002]
     examples:

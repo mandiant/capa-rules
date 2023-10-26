@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     examples:

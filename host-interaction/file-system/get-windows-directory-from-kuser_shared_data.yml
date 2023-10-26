@@ -6,7 +6,7 @@ rule:
       - david.cannings@pwc.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: unsupported
     references:
       - http://www.rohitab.com/discuss/topic/42325-the-kuser-shared-data-structure/
       - https://www.geoffchappell.com/studies/windows/km/ntoskrnl/inc/api/ntexapi_x/kuser_shared_data/index.htm

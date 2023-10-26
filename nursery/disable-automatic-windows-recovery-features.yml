@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: call
     att&ck:
       - Impact::Inhibit System Recovery [T1490]
   features:

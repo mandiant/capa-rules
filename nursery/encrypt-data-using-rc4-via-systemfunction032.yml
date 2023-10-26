@@ -6,7 +6,7 @@ rule:
       - richard.weiss@mandiant.com
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

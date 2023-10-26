@@ -6,7 +6,7 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     att&ck:
       - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
     references:

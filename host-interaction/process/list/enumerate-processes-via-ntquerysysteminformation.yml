@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: basic block
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: call
     att&ck:
       - Discovery::Process Discovery [T1057]
       - Discovery::Software Discovery [T1518]

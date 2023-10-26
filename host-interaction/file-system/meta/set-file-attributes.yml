@@ -8,7 +8,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     att&ck:
       - Defense Evasion::File and Directory Permissions Modification [T1222]
     mbc:

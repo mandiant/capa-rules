@@ -7,7 +7,7 @@ rule:
     lib: true
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     mbc:
       - Operating System::Registry::Create Registry Key [C0036.004]
       - Operating System::Registry::Open Registry Key [C0036.003]

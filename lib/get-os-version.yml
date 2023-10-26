@@ -6,7 +6,7 @@ rule:
     lib: true
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: call
     examples:
       - 493167E85E45363D09495D0841C30648:0x401000
       - 5f66b82558ca92e54e77f216ef4c066c:0x44580A

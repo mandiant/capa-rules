@@ -9,7 +9,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: call
     mbc:
       - Communication::Socket Communication::Create TCP Socket [C0001.011]
     examples:

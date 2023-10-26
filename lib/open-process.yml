@@ -6,7 +6,7 @@ rule:
     lib: true
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     mbc:
       - Process::Open Process [C0065]
     examples:

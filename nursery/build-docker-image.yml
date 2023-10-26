@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Defense Evasion::Build Image on Host [T1612]
     references:

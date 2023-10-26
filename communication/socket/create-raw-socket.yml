@@ -7,7 +7,7 @@ rule:
       - blas.kojusner@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: call
     mbc:
       - Communication::Socket Communication::Create Socket [C0001.003]
     references:

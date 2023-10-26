@@ -7,7 +7,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     references:
       - https://learn.microsoft.com/en-us/windows/win32/fileio/file-streams
     examples:

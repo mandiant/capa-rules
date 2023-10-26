@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
     examples:

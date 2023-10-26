@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: unsupported
     mbc:
       - Data::Checksum::Luhn [C0032.002]
     examples:

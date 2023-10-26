@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Privilege Escalation::Access Token Manipulation [T1134]
     examples:

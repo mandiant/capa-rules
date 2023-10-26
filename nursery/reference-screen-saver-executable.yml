@@ -7,7 +7,7 @@ rule:
     description: SCRNSAVE.EXE registry value specifies the name of the screen saver executable file
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Persistence::Event Triggered Execution::Screensaver [T1546.002]
   features:

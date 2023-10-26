@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     mbc:
       - Process::Create Process [C0017]
     examples:

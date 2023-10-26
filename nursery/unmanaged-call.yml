@@ -7,7 +7,7 @@ rule:
     description: managed code calls unmanaged (native) code, often seen in .NET
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: unsupported
   features:
     - or:
       - characteristic: unmanaged call

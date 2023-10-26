@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     mbc:
       - Process::Create Mutex [C0042]
     examples:

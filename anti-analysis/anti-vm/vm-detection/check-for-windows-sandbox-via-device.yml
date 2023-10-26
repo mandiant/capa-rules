@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: basic block
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:

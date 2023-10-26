@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Active Setup [T1547.014]
     references:

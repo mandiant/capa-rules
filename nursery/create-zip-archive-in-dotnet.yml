@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: unsupported
   features:
     - and:
       - optional:

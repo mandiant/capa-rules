@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Memory Write Watching [B0001.010]
     references:

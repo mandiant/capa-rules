@@ -6,7 +6,7 @@ rule:
       - 0x534a@mailbox.org
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Winlogon Helper DLL [T1547.004]
     examples:

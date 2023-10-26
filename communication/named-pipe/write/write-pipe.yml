@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     mbc:
       - Communication::Interprocess Communication::Write Pipe [C0003.004]
     examples:

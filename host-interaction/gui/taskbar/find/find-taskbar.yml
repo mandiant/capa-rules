@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     mbc:
       - Discovery::Taskbar Discovery [B0043]
     examples:

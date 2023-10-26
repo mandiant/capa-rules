@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: thread
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::OutputDebugString [B0001.016]
     examples:

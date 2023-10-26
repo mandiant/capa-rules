@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Persistence::Event Triggered Execution::Unix Shell Configuration Modification [T1546.004]
     examples:

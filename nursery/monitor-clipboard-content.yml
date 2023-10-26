@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     att&ck:
       - Collection::Clipboard Data [T1115]
   features:

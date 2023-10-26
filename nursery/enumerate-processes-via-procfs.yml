@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Discovery::Process Discovery [T1057]
       - Discovery::Software Discovery [T1518]

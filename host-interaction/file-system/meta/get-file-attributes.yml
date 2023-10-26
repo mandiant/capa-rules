@@ -7,7 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: call
     mbc:
       - File System::Get File Attributes [C0049]
     examples:

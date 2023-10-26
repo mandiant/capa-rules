@@ -7,7 +7,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:

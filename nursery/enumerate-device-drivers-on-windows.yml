@@ -6,7 +6,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: thread
     att&ck:
       - Discovery::Device Driver Discovery [T1652]
     references:

@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: basic block
-      dynamic: thread  # TODO check if scope call instead
+      dynamic: call
     mbc:
       - File System::Set File Attributes [C0050]
     examples:

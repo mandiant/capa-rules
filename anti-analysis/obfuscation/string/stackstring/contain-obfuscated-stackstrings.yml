@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: basic block
-      dynamic: call  # TODO check if scope thread instead
+      dynamic: unsupported
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     mbc:
