@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: unspecified  # TODO upgrade manually, contains subscope
+      dynamic: thread
     mbc:
       - File System::Copy File [C0045]
     examples:
@@ -22,6 +22,11 @@ rule:
       - api: System.IO.FileInfo::CopyTo
       - api: System.IO.File::Copy
       - basic block:
+        - and:
+          - number: 2 = FO_COPY
+          - or:
+            - api: kernel32.SHFileOperation
+      - call:
         - and:
           - number: 2 = FO_COPY
           - or:

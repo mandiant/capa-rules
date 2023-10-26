@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: unspecified  # TODO upgrade manually, contains subscope
+      dynamic: thread
     examples:
       - 873275ce8bf88ef66e9fa0c74b5c2a1e:0x4011C9
   features:
@@ -14,7 +14,12 @@ rule:
       - api: LoadLibrary
       - api: FreeLibrary
       - string: /^p2x[a-z0-9]{1,10}\.dll/i
-      - basic block:
-        - and:
-          - api: GetProcAddress
-          - string: "RunPerl"
+      - or:
+        - basic block:
+          - and:
+            - api: GetProcAddress
+            - string: "RunPerl"
+        - call:
+          - and:
+            - api: GetProcAddress
+            - string: "RunPerl"

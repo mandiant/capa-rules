@@ -7,7 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: unspecified  # TODO upgrade manually, contains subscope
+      dynamic: thread
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
       - Discovery::Account Discovery [T1087]
@@ -20,6 +20,10 @@ rule:
       - basic block:
         - and:
           # - match: get session information (see #463)
+          - api: wtsapi32.WTSQuerySessionInformation
+          - number: 5 = WTSUserName
+      - call:
+        - and:
           - api: wtsapi32.WTSQuerySessionInformation
           - number: 5 = WTSUserName
       - api: System.Security.Principal.WindowsIdentity::GetCurrent

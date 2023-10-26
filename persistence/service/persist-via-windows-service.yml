@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: unspecified  # TODO upgrade manually, contains subscope
+      dynamic: thread
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
       - Execution::System Services::Service Execution [T1569.002]
@@ -16,10 +16,15 @@ rule:
   features:
     - or:
       - and:
-        - basic block:
-          - and:
-            - number: 2 = SERVICE_AUTO_START
-            - api: advapi32.CreateService
+        - or:
+          - basic block:
+            - and:
+              - number: 2 = SERVICE_AUTO_START
+              - api: advapi32.CreateService
+          - call:
+            - and:
+              - number: 2 = SERVICE_AUTO_START
+              - api: advapi32.CreateService
         - optional:
           - or:
             - api: advapi32.OpenService

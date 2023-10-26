@@ -7,12 +7,17 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: unspecified  # TODO upgrade manually, contains subscope
+      dynamic: thread
   features:
     - and:
-      - basic block:
-        - and:
-          - api: advapi32.GetTokenInformation
-          - number: 0x3 = TokenPrivileges
+      - or:
+        - basic block:
+          - and:
+            - api: advapi32.GetTokenInformation
+            - number: 0x3 = TokenPrivileges
+        - call:
+          - and:
+            - api: advapi32.GetTokenInformation
+            - number: 0x3 = TokenPrivileges
       - optional:
         - api: advapi32.LookupPrivilegeName
