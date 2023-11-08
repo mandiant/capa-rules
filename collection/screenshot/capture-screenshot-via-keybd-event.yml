@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: unsupported  # requires operand[0].number features
+      dynamic: thread
     att&ck:
       - Collection::Screen Capture [T1113]
     mbc:
@@ -15,12 +15,22 @@ rule:
       - 3f3bbcf8fd90bdcdcdc5494314ed4225:0x402D10
   features:
     - and:
-      - basic block:
-        - and:
-          - operand[0].number: 0x2C = VK_SNAPSHOT
-          - count(api(user32.keybd_event)): 2
-          - or:
-            - operand[0].number: 0x3 = KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
-            - operand[0].number: 0x2 = KEYEVENTF_KEYUP
+      - or:
+        # static
+        - basic block:
+          - and:
+            - number: 0x2C = VK_SNAPSHOT
+            - count(api(user32.keybd_event)): 2
+            - or:
+              - number: 0x3 = KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
+              - number: 0x2 = KEYEVENTF_KEYUP
+        # dynamic
+        - call:
+          - and:
+            - number: 0x2C = VK_SNAPSHOT
+            - count(api(user32.keybd_event)): 2
+            - or:
+              - number: 0x3 = KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
+              - number: 0x2 = KEYEVENTF_KEYUP
       - match: read clipboard data
       - match: open clipboard
