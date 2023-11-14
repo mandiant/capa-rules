@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: unsupported  # TODO dynamic scope could be adjusted
+      dynamic: call
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
     mbc:

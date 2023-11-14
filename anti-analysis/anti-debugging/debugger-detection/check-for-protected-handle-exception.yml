@@ -16,6 +16,7 @@ rule:
   features:
     - and:
       - or:
+        - description: SetHandleInformation(hMutex, HANDLE_FLAG_PROTECT_FROM_CLOSE, HANDLE_FLAG_PROTECT_FROM_CLOSE);
         - basic block:
           - and:
             - count(number(2)): 2 or more
