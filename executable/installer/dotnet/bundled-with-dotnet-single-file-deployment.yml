@@ -15,5 +15,6 @@ rule:
       - and:
         - match: contains PDB path
         - string: "singlefilehost.pdb"
+          description = symbol file for the native executable when PublishSingleFile is true
       - export: DotNetRuntimeInfo
       - export: corehost_initialize
