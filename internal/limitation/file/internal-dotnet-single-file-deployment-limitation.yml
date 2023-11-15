@@ -17,4 +17,3 @@ rule:
   features:
     - or:
       - match: executable/installer/dotnet
-
