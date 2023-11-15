@@ -1,7 +1,7 @@
 rule:
   meta:
     name: bundled with .NET single-file deployment
-    namespace: runtime/dotnet
+    namespace: executable/installer/dotnet
     authors:
       - sara.rincon@mandiant.com
     scope: file
