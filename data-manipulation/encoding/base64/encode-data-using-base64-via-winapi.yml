@@ -11,5 +11,17 @@ rule:
       - mimikatz.exe_:0x40622D
   features:
     - and:
-      - number: 1 = dwFlags=CRYPT_STRING_BASE64
+      - or:
+        # number: 0x0 = CRYPT_STRING_BASE64HEADER (with certificate beginning and ending headers), FPs too likely for 0
+        - number: 0x1 = dwFlags=CRYPT_STRING_BASE64  # without headers
+        - number: 0x3 = dwFlags=CRYPT_STRING_BASE64REQUESTHEADER  # with request beginning and ending headers
+        - number: 0x9 = dwFlags=CRYPT_STRING_BASE64X509CRLHEADER  # with X.509 CRL beginning and ending headers
+        # CRYPT_STRING_NOCRLF = 0x40000000, do not append any new line characters to the encoded string
+        - number: 0x40000001 = dwFlags=CRYPT_STRING_BASE64 | CRYPT_STRING_NOCRLF
+        - number: 0x40000003 = dwFlags=CRYPT_STRING_BASE64REQUESTHEADER | CRYPT_STRING_NOCRLF
+        - number: 0x40000009 = dwFlags=CRYPT_STRING_BASE64X509CRLHEADER | CRYPT_STRING_NOCRLF
+        # CRYPT_STRING_NOCR = 0x80000000, only use the line feed (LF) character
+        - number: 0x80000001 = dwFlags=CRYPT_STRING_BASE64 | CRYPT_STRING_NOCR
+        - number: 0x80000003 = dwFlags=CRYPT_STRING_BASE64REQUESTHEADER | CRYPT_STRING_NOCR
+        - number: 0x80000009 = dwFlags=CRYPT_STRING_BASE64X509CRLHEADER | CRYPT_STRING_NOCR
       - api: CryptBinaryToString

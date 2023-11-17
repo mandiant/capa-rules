@@ -12,7 +12,8 @@ rule:
   features:
     - and:
       - or:
-        - number: 0x1 = dwFlags=CRYPT_STRING_BASE64
-        - number: 0x6 = dwFlags=CRYPT_STRING_BASE64_ANY
-        - number: 0x7 = dwFlags=CRYPT_STRING_ANY
+        # number: 0x0 = CRYPT_STRING_BASE64HEADER (with certificate beginning and ending headers), FPs too likely for 0
+        - number: 0x1 = dwFlags=CRYPT_STRING_BASE64  # without headers
+        - number: 0x6 = dwFlags=CRYPT_STRING_BASE64_ANY  # tries: CRYPT_STRING_BASE64HEADER, CRYPT_STRING_BASE64
+        - number: 0x7 = dwFlags=CRYPT_STRING_ANY  # tries: CRYPT_STRING_BASE64HEADER, CRYPT_STRING_BASE64, CRYPT_STRING_BINARY
       - api: CryptStringToBinary
