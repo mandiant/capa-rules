@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: (internal) .NET single file deployment limitation
+    namespace: internal/limitation/file
+    authors:
+      - sara.rincon@mandiant.com
+    description: |
+      This sample appears to be built with the single-file deployment in .NET.
+
+      Single-file deployment allows all the application-dependent files to be bundled into a single binary.
+      The size of the single file in a self-contained application is large since it includes the runtime and the framework libraries.
+      The main application and the libraries are contained in the overlay section.
+      You may need to extract the runtime configuration files such as *.deps.json and *.runtimeconfig.json files to determine the main .NET library and extract it with the tool SingleFileExtractor.
+    scope: file
+    examples:
+      - a83339b07cf2bf1aeda192de42760c625d4b2f106260f58c902d02f4766848d5
+  features:
+    - or:
+      - match: executable/dotnet-singlefile
