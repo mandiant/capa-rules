@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scope: function
     att&ck:
-      - Defense Evasion::Impair Defenses::Indicator Blocking [T1562.006]
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
     mbc:
       - Defense Evasion::Disable or Evade Security Tools [F0004]
     references:
@@ -16,14 +16,7 @@ rule:
       - 15835b6dd703e69d22d4ab941ccd5f6e78c3abc22ae123366da5e950eaa62e2b:0x180001D70
   features:
     - and:
-      - match: link function at runtime on Windows
-      - or:
-        - api: kernel32.VirtualProtect
-        - api: ntdll.NtProtectVirtualMemory  # exported by only ntdll, not ntoskrnl
-        - api: ZwProtectVirtualMemory  # exported by both ntdll and ntoskrnl
-        - string: "VirtualProtect"
-        - string: "NtProtectVirtualMemory"
-        - string: "ZwProtectVirtualMemory"
+      - match: change memory protection
       - or:
         - string: "EventWrite"
         - string: "EtwEventWrite"
