@@ -1,7 +1,7 @@
 rule:
   meta:
     name: packaged as single-file .NET application
-    namespace: executable/installer/dotnet
+    namespace: executable/dotnet-singlefile
     authors:
       - michael.hunhoff@mandiant.com
     description: Single binary containing target .NET application and all application-dependent files
