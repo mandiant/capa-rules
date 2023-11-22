@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: encode data using ADD XOR SUB operations
+    namespace: data-manipulation/encoding
+    authors:
+      - jakub.jozwiak@mandiant.com
+    description: Data encoding using a sequence of ADD/XOR/SUB (or SUB/XOR/ADD) operations common for PlugX but also used by other malware families.
+    scope: function
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encoding-Custom Algorithm [E1027.m03]
+    examples:
+      - df814d4b55912e4ba404c62080b3a7eda70a3c6283ea740f8a14a9116d803259:0x1000100F
+  features:
+    - and:
+      - count(basic blocks): 6 or fewer
+      - basic block:
+        - and:
+          - characteristic: tight loop
+          - characteristic: nzxor
+          - count(mnemonic(add)): 1
+          - count(mnemonic(sub)): 1
