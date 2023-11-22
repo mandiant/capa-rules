@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get system information in .NET on Android
+    name: get OS version in .NET on Android
     namespace: host-interaction/os/info
     authors:
       - michael.hunhoff@mandiant.com
