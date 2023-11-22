@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: linked against High-Performance Socket (hp-socket)
+    name: linked against hp-socket
     namespace: linking/static/hp-socket
     authors:
       - still@teamt5.org
