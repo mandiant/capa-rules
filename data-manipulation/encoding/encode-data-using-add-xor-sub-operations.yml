@@ -5,7 +5,7 @@ rule:
     authors:
       - jakub.jozwiak@mandiant.com
     description: Data encoding using a sequence of ADD/XOR/SUB (or SUB/XOR/ADD) operations common for PlugX but also used by other malware families.
-    scope: basic block
+    scope: function
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
