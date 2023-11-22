@@ -10,7 +10,7 @@ rule:
     references:
       - https://github.com/ldcsaa/HP-Socket/
     examples:
-      - dd597670a613c5435839e7f249dac0ad
+      - 4c46fdafceba8e450deb93cdb82a177e
   features:
     - or:
       - substring: "HP-Socket for Linux v%d.%d.%d [BN:%02d]"
