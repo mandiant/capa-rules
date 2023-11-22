@@ -1,0 +1,11 @@
+rule:
+  meta:
+    name: check for outgoing call in .NET on Android
+    namespace: host-interaction
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: function
+  features:
+    - and:
+      - property/read: Android.Content.Intent::Action
+      - string: "android.intent.action.NEW_OUTGOING_CALL"

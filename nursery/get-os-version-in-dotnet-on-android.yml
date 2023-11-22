@@ -1,0 +1,10 @@
+rule:
+  meta:
+    name: get OS version in .NET on Android
+    namespace: host-interaction/os/info
+    authors:
+      - michael.hunhoff@mandiant.com
+    scope: function
+  features:
+    - and:
+      - class: Android.OS.Build
