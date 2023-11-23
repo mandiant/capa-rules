@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: extract files from Cabinet
+    name: extract Cabinet on Windows
     namespace: data-manipulation/compression
     authors:
       - jakub.jozwiak@mandiant.com
@@ -15,7 +15,7 @@ rule:
       - 44bad2e2a9e387b86870f009d01833ea4618d2a7cda5f64fa84a19f3bdf4efaf:0x1400028E0
   features:
     - and:
-      - match: create File Decompression Interface context
+      - match: create File Decompression Interface context on Windows
       - or:
         - api: cabinet.FDICopy
         - api: cabinet.FDIDestroy

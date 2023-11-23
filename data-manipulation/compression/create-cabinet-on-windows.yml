@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: create Cabinet file
+    name: create Cabinet on Windows
     namespace: data-manipulation/compression
     authors:
       - michael.hunhoff@mandiant.com
@@ -16,8 +16,9 @@ rule:
       - 44bad2e2a9e387b86870f009d01833ea4618d2a7cda5f64fa84a19f3bdf4efaf:0x1400028E0
   features:
     - and:
-      - match: create File Compression Interface context
+      - match: create File Compression Interface context on Windows
       - or:
         - api: cabinet.FCIAddFile = add file to Cabinet
         - api: cabinet.FCIFlushFolder = flush current folder under construction
-        - api: cabinet.FCIFlushCabinet = completes current cabinet
+        - api: cabinet.FCIFlushCabinet = complete current cabinet
+        - api: cabinet.FCIDestroy = delete an open FCI context

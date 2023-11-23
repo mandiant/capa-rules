@@ -1,8 +1,8 @@
 rule:
   meta:
-    name: create File Decompression Interface context
+    name: create File Compression Interface context on Windows
     authors:
-      - jakub.jozwiak@mandiant.com
+      - michael.hunhoff@mandiant.com
     lib: true
     scope: function
     references:
@@ -11,4 +11,4 @@ rule:
       - 44bad2e2a9e387b86870f009d01833ea4618d2a7cda5f64fa84a19f3bdf4efaf:0x1400028E0
   features:
     - or:
-      - api: cabinet.FDICreate
+      - api: cabinet.FCICreate
