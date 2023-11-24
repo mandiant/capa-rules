@@ -5,8 +5,8 @@ rule:
     authors:
       - jakub.jozwiak@mandiant.com
     scopes:
-      static: basic block
-      dynamic: call
+      static: function
+      dynamic: thread
     mbc:
       - Communication::Socket Communication::Create Socket [C0001.003]
     references:
