@@ -4,7 +4,9 @@ rule:
     namespace: collection/microphone
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires .NET API features
   features:
     - and:
       - api: Android.Media.AudioRecord::StartRecording

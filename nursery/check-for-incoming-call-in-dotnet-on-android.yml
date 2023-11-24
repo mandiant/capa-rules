@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires property
   features:
     - and:
       - property/read: Android.Content.Intent::Action
