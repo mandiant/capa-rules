@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::Process Discovery [T1057]
       - Discovery::Software Discovery [T1518]
@@ -20,6 +22,12 @@ rule:
         - api: kernel32.Process32Next
         - optional:
           - basic block:
+            - and:
+              - or:
+                - number: 0xF = TH32CS_SNAPALL
+                - number: 0x2 = TH32CS_SNAPPROCESS
+              - api: kernel32.CreateToolhelp32Snapshot
+          - call:
             - and:
               - or:
                 - number: 0xF = TH32CS_SNAPALL

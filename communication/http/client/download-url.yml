@@ -6,7 +6,9 @@ rule:
       - matthew.williams@mandiant.com
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
     mbc:
       - Communication::HTTP Communication::Download URL [C0002.006]
     examples:

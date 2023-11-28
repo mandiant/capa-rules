@@ -5,7 +5,9 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - blas.kojusner@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires operand[1].number, characteristic, bytes, mnemonic features
     mbc:
       - Data::Compress Data [C0024]
     references:

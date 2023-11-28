@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - "@mr-tz"
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
       - Memory::Allocate Memory [C0007]
     examples:

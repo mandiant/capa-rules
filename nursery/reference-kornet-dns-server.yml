@@ -4,7 +4,9 @@ rule:
     namespace: communication/dns
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     references:
       - https://whatismyipaddress.com/ip/168.126.63.1
     # examples:

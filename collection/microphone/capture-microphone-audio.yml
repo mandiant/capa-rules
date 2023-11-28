@@ -4,7 +4,9 @@ rule:
     namespace: collection/microphone
     authors:
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Collection::Audio Capture [T1123]
     examples:

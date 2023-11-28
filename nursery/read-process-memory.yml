@@ -6,7 +6,9 @@ rule:
       - matthew.williams@mandiant.com
       - "@_re_fox"
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
   features:
     - and:
       - api: kernel32.ReadProcessMemory

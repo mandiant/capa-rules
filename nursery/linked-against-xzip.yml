@@ -4,7 +4,9 @@ rule:
     namespace: linking/static/xzip
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     mbc:
       - Data::Compression Library [C0060]
     references:

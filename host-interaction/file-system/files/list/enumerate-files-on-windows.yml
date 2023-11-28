@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
     mbc:
@@ -32,10 +34,15 @@ rule:
           - api: kernel32.FindClose
           - match: contain loop
       - and:
-        - basic block:
-          - and:
-            - number: 1 = DIRECTORY_QUERY
-            - api: ntdll.NtOpenDirectoryObject
+        - or:
+          - basic block:
+            - and:
+              - number: 1 = DIRECTORY_QUERY
+              - api: ntdll.NtOpenDirectoryObject
+          - call:
+            - and:
+              - number: 1 = DIRECTORY_QUERY
+              - api: ntdll.NtOpenDirectoryObject
         - api: ntdll.NtQueryDirectoryObject
         - optional:
           - api: RtlAllocateHeap

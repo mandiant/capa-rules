@@ -5,7 +5,9 @@ rule:
     authors:
       - awillia2@cisco.com
       - still@teamt5.org
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires mnemonic features
     mbc:
       - Data::Non-Cryptographic Hash::djb2 [C0030.006]
     references:

@@ -5,7 +5,9 @@ rule:
     namespace: collection/keylog
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
   features:
     - and:
       - or:

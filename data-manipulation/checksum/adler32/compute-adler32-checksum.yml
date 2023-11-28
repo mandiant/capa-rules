@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/checksum/adler32
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires operand[1].number, characteristic, mnemonic features
     mbc:
       - Data::Checksum::Adler [C0032.005]
     references:

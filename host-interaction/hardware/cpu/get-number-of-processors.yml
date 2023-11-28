@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires property features
     att&ck:
       - Discovery::System Information Discovery [T1082]
     references:

@@ -4,7 +4,9 @@ rule:
     namespace: compiler/mingw
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     examples:
       - 5b3968b47eb16a1cb88525e3b565eab1
   features:

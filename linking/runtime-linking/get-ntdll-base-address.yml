@@ -4,7 +4,9 @@ rule:
     namespace: linking/runtime-linking
     authors:
       - moritz.raabe@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unsupported  # requires offset features
     att&ck:
       - Execution::Shared Modules [T1129]
     references:

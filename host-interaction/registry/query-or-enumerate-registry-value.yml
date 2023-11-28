@@ -6,7 +6,9 @@ rule:
       - william.ballenthin@mandiant.com
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::Query Registry [T1012]
     mbc:

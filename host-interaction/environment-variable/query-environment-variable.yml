@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - "@_re_fox"
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
     att&ck:
       - Discovery::System Information Discovery [T1082]
     mbc:

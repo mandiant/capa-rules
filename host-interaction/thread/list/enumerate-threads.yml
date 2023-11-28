@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/thread/list
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::Process Discovery [T1057]
     mbc:
@@ -21,4 +23,9 @@ rule:
             - or:
               - number: 0x4 = TH32CS_SNAPTHREAD
               # TH32CS_SNAPTHREAD includes all threads in the system in the snapshot
+            - api: kernel32.CreateToolhelp32Snapshot
+        - call:
+          - and:
+            - or:
+              - number: 0x4 = TH32CS_SNAPTHREAD
             - api: kernel32.CreateToolhelp32Snapshot

@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - File System::Delete File [C0047]
     examples:
@@ -24,12 +26,24 @@ rule:
       - api: _wremove
       - api: System.IO.File::Delete
       - api: System.IO.FileSystemInfo::Delete
+      # static
       - basic block:
         - and:
           - number: 3 = FO_DELETE
           - or:
             - api: kernel32.SHFileOperation
       - basic block:
+        - and:
+          - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
+          - number: 0 = NULL
+          - api: MoveFileEx
+      # dynamic
+      - call:
+        - and:
+          - number: 3 = FO_DELETE
+          - or:
+            - api: kernel32.SHFileOperation
+      - call:
         - and:
           - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
           - number: 0 = NULL

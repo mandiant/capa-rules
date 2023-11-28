@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/obfuscation
     authors:
       - michael.hunhoff@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unsupported  # requires namespace, class features
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

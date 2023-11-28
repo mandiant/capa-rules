@@ -4,7 +4,9 @@ rule:
     namespace: impact/cryptocurrency
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Impact::Resource Hijacking [T1496]
     references:

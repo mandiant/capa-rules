@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unsupported
     att&ck:
       - Discovery::Process Discovery [T1057]
     references:

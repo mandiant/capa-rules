@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/salsa20
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     references:

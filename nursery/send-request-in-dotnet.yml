@@ -4,7 +4,9 @@ rule:
     namespace: communication/http/client
     authors:
       - anushka.virgaonakr@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Command and Control::Application Layer Protocol::Web Protocols [T1071.001]
     mbc:

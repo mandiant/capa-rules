@@ -5,7 +5,9 @@ rule:
     authors:
       - "@williballenthin"
       - "@mr-tz"
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     examples:
       - 39ce034911a6ebd482af5893f9bdbd95
   features:

@@ -4,7 +4,9 @@ rule:
     namespace: persistence
     authors:
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::XDG Autostart Entries [T1547.013]
     examples:

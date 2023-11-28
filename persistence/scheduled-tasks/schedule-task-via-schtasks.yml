@@ -4,7 +4,9 @@ rule:
     namespace: persistence/scheduled-tasks
     authors:
       - 0x534a@mailbox.org
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
     examples:

@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Debugger Evasion [T1622]
     mbc:
@@ -19,6 +21,12 @@ rule:
   features:
     - or:
       - basic block:
+        - and:
+          - or:
+            - api: NtSetInformationThread
+            - api: ZwSetInformationThread
+          - number: 0x11 = ThreadHideFromDebugger
+      - call:
         - and:
           - or:
             - api: NtSetInformationThread

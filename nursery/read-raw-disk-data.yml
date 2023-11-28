@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/file-system
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
   features:
     - or:
       - string: "\\\\.\\PhysicalDrive0"

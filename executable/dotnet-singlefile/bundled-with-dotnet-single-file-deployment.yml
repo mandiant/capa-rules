@@ -4,7 +4,9 @@ rule:
     namespace: executable/dotnet-singlefile
     authors:
       - sara.rincon@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli
       - https://github.com/dotnet/runtime/blob/84de9b678613675e0444b265905c82d33dae33a8/src/installer/managed/Microsoft.NET.HostModel/AppHost/HostWriter.cs

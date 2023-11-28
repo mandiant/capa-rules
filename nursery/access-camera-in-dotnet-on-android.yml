@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/hardware/camera
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires .NET API feature
   features:
     - or:
       - api: Android.Hardware.Camera::Open

@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/tiger
     authors:
       - "@_re_fox"
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unsupported  # requires characteristic, bytes, mnemonic features
     mbc:
       - Cryptography::Cryptographic Hash::Tiger [C0029.005]
     examples:

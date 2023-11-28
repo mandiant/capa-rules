@@ -5,7 +5,9 @@ rule:
     authors:
       - david.cannings@pwc.com
       - david@edeca.net
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Account Control [T1548.002]
     references:

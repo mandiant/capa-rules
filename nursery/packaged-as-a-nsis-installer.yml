@@ -4,7 +4,9 @@ rule:
     namespace: executable/installer/nsis
     authors:
       - moritz.raabe@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://nsis.sourceforge.io/Main_Page
   features:

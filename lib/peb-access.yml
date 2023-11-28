@@ -4,7 +4,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     lib: true
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unsupported  # requires characteristic, offset, mnemonic features
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Process Environment Block [B0001.019]
     references:

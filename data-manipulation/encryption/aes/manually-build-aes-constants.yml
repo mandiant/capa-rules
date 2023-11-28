@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/aes
     authors:
       - huynh.t.nhan@gmail.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires characteristic, mnemonic features
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

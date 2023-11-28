@@ -4,7 +4,9 @@ rule:
     namespace: communication/socket/tcp
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported
     mbc:
       - Communication::Socket Communication::Create TCP Socket [C0001.011]
     references:

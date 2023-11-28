@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/mutex
     authors:
       - joakim@intezer.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call
     mbc:
       - Process::Create Mutex [C0042]
     examples:

@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-debugging
     authors:
       - echernofsky@google.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     references:
       - https://www.microsoft.com/en-us/security/blog/2018/03/01/finfisher-exposed-a-researchers-tale-of-defeating-traps-tricks-and-complex-virtual-machines/
       - https://anti-debug.checkpoint.com/techniques/assembly.html

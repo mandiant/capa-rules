@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/modify
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Privilege Escalation::Access Token Manipulation [T1134]
     examples:

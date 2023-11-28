@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/gui/window/find
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
     att&ck:
       - Discovery::Application Window Discovery [T1010]
     examples:

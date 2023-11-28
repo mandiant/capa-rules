@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::Process Discovery [T1057]
     examples:
@@ -31,6 +33,13 @@ rule:
         - api: kernel32.Module32Next
         - optional:
           - basic block:
+            - and:
+              - or:
+                - number: 0x8 = TH32CS_SNAPMODULE
+                - number: 0x10 = TH32CS_SNAPMODULE32
+                - number: 0x18 = TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32
+              - api: kernel32.CreateToolhelp32Snapshot
+          - call:
             - and:
               - or:
                 - number: 0x8 = TH32CS_SNAPMODULE

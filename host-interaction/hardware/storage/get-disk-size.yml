@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::System Information Discovery [T1082]
     mbc:
@@ -23,6 +25,10 @@ rule:
       - property/read: System.IO.DriveInfo::TotalFreeSpace
       - property/read: System.IO.DriveInfo::AvailableFreeSpace
       - basic block:
+        - and:
+          - api: DeviceIoControl
+          - number: 0x7405C = IOCTL_DISK_GET_LENGTH_INFO
+      - call:
         - and:
           - api: DeviceIoControl
           - number: 0x7405C = IOCTL_DISK_GET_LENGTH_INFO

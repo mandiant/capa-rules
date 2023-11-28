@@ -5,7 +5,9 @@ rule:
     authors:
       - matthew.williams@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires property features
     mbc:
       - Process::Create Process [C0017]
     references:

@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/rc6
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

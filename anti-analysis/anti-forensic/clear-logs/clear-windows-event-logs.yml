@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-forensic/clear-logs
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Indicator Removal::Clear Windows Event Logs [T1070.001]
     examples:
@@ -22,5 +24,8 @@ rule:
             - api: advapi32.OpenEventLog
             - api: advapi32.GetNumberOfEventLogRecords
         - basic block:
+          - and:
+            - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i
+        - call:
           - and:
             - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i

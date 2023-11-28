@@ -4,7 +4,9 @@ rule:
     namespace: communication/http
     authors:
       - anamaria.martinezgom@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
   features:
     - and:
       - match: send HTTP request

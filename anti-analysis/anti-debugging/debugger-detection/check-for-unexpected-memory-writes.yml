@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Memory Write Watching [B0001.010]
     references:

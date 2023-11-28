@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::SetHandleInformation [B0001.024]
     references:
@@ -13,8 +15,14 @@ rule:
       - al-khaser_x86.exe_:0x430D20
   features:
     - and:
-      - basic block:
-        - and:
-          - count(number(2)): 2 or more
-          - api: SetHandleInformation
+      - or:
+        - description: SetHandleInformation(hMutex, HANDLE_FLAG_PROTECT_FROM_CLOSE, HANDLE_FLAG_PROTECT_FROM_CLOSE);
+        - basic block:
+          - and:
+            - count(number(2)): 2 or more
+            - api: SetHandleInformation
+        - call:
+          - and:
+            - count(number(2)): 2 or more
+            - api: SetHandleInformation
       - api: CloseHandle
