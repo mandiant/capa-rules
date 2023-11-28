@@ -43,6 +43,9 @@ We'll start at the high level structure and then dig into the logic structures a
 - [rule format](#rule-format)
   - [yaml](#yaml)
   - [meta block](#meta-block)
+    - [rule name](#rule-name)
+    - [rule namespace](#rule-namespace)
+    - [analysis flavors](#analysis-flavors)
   - [features block](#features-block)
 - [extracted features](#extracted-features)
   - [characteristic](#characteristic)
@@ -112,7 +115,9 @@ meta:
   authors:
       - william.ballenthin@mandiant.com
   description: the sample appears to be packed with UPX
-  scope: file
+  scopes: 
+    static: file
+    dynamic: file
   att&ck:
     - Defense Evasion::Obfuscated Files or Information [T1027.002]
   mbc:
@@ -133,14 +138,19 @@ Here are the common fields:
   
   - `description` is optional text that describes the intent or interpretation of the rule.
 
-  - `scope` indicates to which feature set this rule applies.
-    Here are the legal values:
-    - **`file`**: matches features across the whole file.
-    - **`function`** (default): match features within each function.
-    - **`basic block`**: matches features within each basic block.
-      This is used to achieve locality in rules (for example for parameters of a function).
-    - **`instruction`**: matches features found at a single instruction.
-      This is great to identify structure access or comparisons against magic constants.
+  - `scopes` indicates which feature set the rule applies to, when analyzing static or dynamic analysis artifacts. There are two required sub fields: `static` and `dynamic`. Here are the legal values:
+    - `scopes.static`:
+      - **`file`**: matches features across the whole file.
+      - **`function`** (default): match features within each function.
+      - **`basic block`**: matches features within each basic block.
+        This is used to achieve locality in rules (for example for parameters of a function).
+      - **`instruction`**: matches features found at a single instruction.
+        This is great to identify structure access or comparisons against magic constants.
+    - `scopes.dynamic`:
+      - **`file`**: matches features across the whole file, including from the executable file features *and* across the entire runtime trace.
+      - **`process`**: match features within each process.
+      - **`thread`**: match features within each thread, such as sequence of API names.
+      - **`call`**: match features at each traced API call site, such as API name and argument values.
       
   - `att&ck` is an optional list of [ATT&CK framework](https://attack.mitre.org/) techniques that the rule implies, like 
 `Discovery::Query Registry [T1012]` or `Persistence::Create or Modify System Process::Windows Service [T1543.003]`.
@@ -252,6 +262,35 @@ rules/host-interaction/file-system/list
 
 The depth of the namespace tree is not limited, but we've found that 3-4 components is typically sufficient.
 
+### analysis flavors
+
+capa analyzes capabilities found in both executable files and in API traces captured by sandboxes, such as CAPE.
+We call these categories of analysis "flavors" and use "static analysis flavor" and "dynamic analysis flavor" to refer to them, respectively. Static analysis is great for reviewing the entire logic of a program and finding the interesting regions. Dynamic analysis via sandboxes helps bypass packing, which is very widespread in malware, and can better describe the actual runtime behavior of a program. We use the `meta.scopes.$flavor` key to specify how a rule interacts with a particular flavor.
+
+When possible, we try to write capa rules that work in both static and dynamic analysis flavors.
+For example, here's a rule that matches in both flavors:
+
+```yml
+TODO
+```
+
+See how XYZ can be reasoned about both by inspecting the disassembly features (static analysis) as well as the runtime API trace (dynamic analysis)? TODO
+
+On the other hand, some behaviors are best described by rules that work in only one scope. 
+(Remember, its paramount that rules be human-readable, so avoid complicating logic for the sake of merging rules.)
+In this case, mark the excluded scope with `unsupported`, like in the following rule:
+
+```yml
+TODO
+```
+
+ABC works great becauses of DEF, but doesn't work in GHI scope because of JKL. TODO.
+
+As you'll see in the [extracted features](#extracted-features) section, capa matches features at various scopes, starting small (e.g., instruction) and growing large (e.g., file). In static analysis, scopes grow from instruction, to basic block, function, and then file. In dynamic analysis, scopes from call, to thread, process, and then to file.
+
+When matching a sequence of API calls, the static scope is often "function" and the dynamic scope is "thread". When matching a single API call with arguments, the static scope is usually "basic block" and the dynamic scope is "call". One day we hope to support "call" scope directly in the static analysis flavor.
+
+
 ## features block
 
 This section declares logical statements about the features that must exist for the rule to match.
@@ -288,19 +327,44 @@ If only one of these features is found in a function, the rule will not match.
 
 # extracted features
 
-capa extracts features from multiple scopes, starting with the most specific (instruction) and working towards the most general:
+capa matches features at multiple scopes, starting small (e.g., instruction) and growing large (e.g., file). In static analysis, scopes grow from instruction, to basic block, function, and then file. In dynamic analysis, scopes from call, to thread, process, and then to file:
 
 | scope       | best for...                                                                              |
 |-------------|------------------------------------------------------------------------------------------|
+| (static)    | ---                                                                                      |
 | instruction | specific combinations of mnemonics, operands, constants, etc. to find magic values       |
 | basic block | closely related instructions, such as structure access or function call arguments        |
 | function    | collections of API calls, constants, etc. that suggest complete capabilities             |
+| (dynamic)   | ---                                                                                      |
+| call        | single API call and its arguments                                                        |
+| thread      | sequence of related API calls                                                            |
+| process     | combinations of other capabilities found within a (potentially multi-threaded) program   |
+| (common)    | ---                                                                                      |
 | file        | high level conclusions, like encryptor, backdoor, or statically linked with some library |
-| (global)    | the features available at every scope, like arch or OS                                   |
+| global      | the features available at every scope, like arch or OS                                   |
 
 In general, capa collects and merges the features from lower scopes into higher scopes;
 for example, features extracted from individual instructions are merged into the function scope that contains the instructions.
 This way, you can use the match results against instructions ("the constant X is for crypto algorithm Y") to recognize function-level capabilities ("crypto function Z").
+
+## complete feature listing
+
+TODO: make this table complete, with links
+
+  feature   static       dynamic
+  --------- ------------ -------
+  api       instruction  call
+  number    instruction  call
+  string    instruction  call
+  bytes     instruction  call
+  offset    instruction  -
+  mnemonic  instruction  -
+  operand   instruction  -
+  import    file         file
+  export    file         file
+  os        global       global
+  arch      global       global
+  format    global       global
 
 
 ### characteristic
@@ -309,6 +373,8 @@ Characteristics are features that are extracted by the analysis engine.
 They are one-off features that seem interesting to the authors.
 
 For example, the `characteristic: nzxor` feature describes non-zeroing XOR instructions.
+
+TODO: add links to rules with each of these characteristics.
 
 | characteristic                       | scope                              | description |
 |--------------------------------------|------------------------------------|-------------|
@@ -366,6 +432,8 @@ Example:
 
     namespace: System.IO
     namespace: System.Net
+
+TODO: add reference to rule with this feature, and for all other features.
 
 ### class
 A named class used by the logic of the program. This must include the class's namespace if recoverable.
