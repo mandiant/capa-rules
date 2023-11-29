@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
     mbc:
