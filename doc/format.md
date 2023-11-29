@@ -271,20 +271,49 @@ When possible, we try to write capa rules that work in both static and dynamic a
 For example, here's a rule that matches in both flavors:
 
 ```yml
-TODO
+rule:
+  meta:
+    name: create mutex
+    namespace: host-interaction/mutex
+    authors:
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
+    scopes:
+      static: function
+      dynamic: call
+  features:
+    - or:
+      - api: kernel32.CreateMutex
+      - api: kernel32.CreateMutexEx
+      - api: System.Threading.Mutex::ctor
 ```
 
-See how XYZ can be reasoned about both by inspecting the disassembly features (static analysis) as well as the runtime API trace (dynamic analysis)? TODO
+See how "create mutex" can be reasoned about both by inspecting the disassembly features (static analysis) as well as the runtime API trace (dynamic analysis)?
 
 On the other hand, some behaviors are best described by rules that work in only one scope. 
 (Remember, its paramount that rules be human-readable, so avoid complicating logic for the sake of merging rules.)
 In this case, mark the excluded scope with `unsupported`, like in the following rule:
 
 ```yml
-TODO
+rule:
+  meta:
+    name: check for software breakpoints
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    authors:
+      - michael.hunhoff@mandiant.com
+    scopes:
+      static: function
+      dynamic: unsupported  # requires mnemonic features
+  features:
+    - and:
+      - or:
+        - instruction:
+          - mnemonic: cmp
+          - number: 0xCC = INT3
+      - match: contain loop
 ```
 
-ABC works great becauses of DEF, but doesn't work in GHI scope because of JKL. TODO.
+"check for software breakpoints" works great during disassembly analysis, such as mnemonic and operand matching, but doesn't work in dynamic scopes because these features aren't available. So, we mark the rule `scopes.dynamic: unsupported` so the rule won't be considered when processing sandbox traces.
 
 As you'll see in the [extracted features](#extracted-features) section, capa matches features at various scopes, starting small (e.g., instruction) and growing large (e.g., file). In static analysis, scopes grow from instruction, to basic block, function, and then file. In dynamic analysis, scopes from call, to thread, process, and then to file.
 
@@ -347,24 +376,27 @@ In general, capa collects and merges the features from lower scopes into higher 
 for example, features extracted from individual instructions are merged into the function scope that contains the instructions.
 This way, you can use the match results against instructions ("the constant X is for crypto algorithm Y") to recognize function-level capabilities ("crypto function Z").
 
-## complete feature listing
-
-TODO: make this table complete, with links
-
-  feature   static       dynamic
-  --------- ------------ -------
-  api       instruction  call
-  number    instruction  call
-  string    instruction  call
-  bytes     instruction  call
-  offset    instruction  -
-  mnemonic  instruction  -
-  operand   instruction  -
-  import    file         file
-  export    file         file
-  os        global       global
-  arch      global       global
-  format    global       global
+| feature                           | static scope | dynamic scope |
+|-----------------------------------|--------------|---------------|
+| [api](#api)                       | instruction  | call          |
+| [string](#string-and-substring)   | instruction  | call          |
+| [bytes](#bytes)                   | instruction  | call          |
+| [number](#number)                 | instruction  | call          |
+| [characteristic](#characteristic) | instruction  | -             |
+| [mnemonic](#mnemonic)             | instruction  | -             |
+| [operand](#operand)               | instruction  | -             |
+| [offset](#offset)                 | instruction  | -             |
+| [com](#com)                       | instruction  | -             |
+| [namespace](#namespace)           | instruction  | -             |
+| [class](#class)                   | instruction  | -             |
+| [property](#property)             | instruction  | -             |
+| [export](#export)                 | file         | file          |
+| [import](#import)                 | file         | file          |
+| [section](#section)               | file         | file          |
+| [function-name](#function-name)   | file         | -             |
+| [os](#os)                         | global       | global        |
+| [arch](#arch)                     | global       | global        |
+| [format](#format)                 | global       | global        |
 
 
 ### characteristic
@@ -374,27 +406,25 @@ They are one-off features that seem interesting to the authors.
 
 For example, the `characteristic: nzxor` feature describes non-zeroing XOR instructions.
 
-TODO: add links to rules with each of these characteristics.
-
-| characteristic                       | scope                              | description |
-|--------------------------------------|------------------------------------|-------------|
-| `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files. |
-| `characteristic: forwarded export`   | file                               | PE file has a forwarded export. |
-| `characteristic: mixed mode`         | file                               | File contains both managed and unmanaged (native) code, often seen in .NET |
-| `characteristic: loop`               | function                           | Function contains a loop. |
-| `characteristic: recursive call`     | function                           | Function is recursive. |
+| characteristic                       | scope                              | description                                                                                               |
+|--------------------------------------|------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `characteristic: embedded pe`        | file                               | (XOR encoded) embedded PE files.                                                                          |
+| `characteristic: forwarded export`   | file                               | PE file has a forwarded export.                                                                           |
+| `characteristic: mixed mode`         | file                               | File contains both managed and unmanaged (native) code, often seen in .NET                                |
+| `characteristic: loop`               | function                           | Function contains a loop.                                                                                 |
+| `characteristic: recursive call`     | function                           | Function is recursive.                                                                                    |
 | `characteristic: calls from`         | function                           | There are unique calls from this function. Best used like: `count(characteristic(calls from)): 3 or more` |
-| `characteristic: calls to`           | function                           | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more` |
-| `characteristic: tight loop`         | basic block, function              | A tight loop where a basic block branches to itself. |
-| `characteristic: stack string`       | basic block, function              | There is a sequence of instructions that looks like stack string construction. |
-| `characteristic: nzxor`              | instruction, basic block, function | Non-zeroing XOR instruction |
-| `characteristic: peb access`         | instruction, basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h] |
-| `characteristic: fs access`          | instruction, basic block, function | Access to memory via the `fs` segment. |
-| `characteristic: gs access`          | instruction, basic block, function | Access to memory via the `gs` segment. |
-| `characteristic: cross section flow` | instruction, basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs. |
-| `characteristic: indirect call`      | instruction, basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`. |
-| `characteristic: call $+5`           | instruction, basic block, function | Call just past the current instruction. |
-| `characteristic: unmanaged call`     | instruction, basic block, function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET |
+| `characteristic: calls to`           | function                           | There are unique calls to this function. Best used like: `count(characteristic(calls to)): 3 or more`     |
+| `characteristic: tight loop`         | basic block, function              | A tight loop where a basic block branches to itself.                                                      |
+| `characteristic: stack string`       | basic block, function              | There is a sequence of instructions that looks like stack string construction.                            |
+| `characteristic: nzxor`              | instruction, basic block, function | Non-zeroing XOR instruction                                                                               |
+| `characteristic: peb access`         | instruction, basic block, function | Access to the process environment block (PEB), e.g. via fs:[30h], gs:[60h]                                |
+| `characteristic: fs access`          | instruction, basic block, function | Access to memory via the `fs` segment.                                                                    |
+| `characteristic: gs access`          | instruction, basic block, function | Access to memory via the `gs` segment.                                                                    |
+| `characteristic: cross section flow` | instruction, basic block, function | Function contains a call/jump to a different section. This is commonly seen in unpacking stubs.           |
+| `characteristic: indirect call`      | instruction, basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`.                         |
+| `characteristic: call $+5`           | instruction, basic block, function | Call just past the current instruction.                                                                   |
+| `characteristic: unmanaged call`     | instruction, basic block, function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET                 |
 
 ## instruction features
 
@@ -433,8 +463,6 @@ Example:
     namespace: System.IO
     namespace: System.Net
 
-TODO: add reference to rule with this feature, and for all other features.
-
 ### class
 A named class used by the logic of the program. This must include the class's namespace if recoverable.
 
@@ -444,6 +472,9 @@ Example:
 
     class: System.IO.File
     class: System.Net.WebResponse
+
+Example rule: [create new application domain in .NET](../host-interaction/memory/create-new-application-domain-in-dotnet.yml)
+
 
 ### api
 A call to a named function, probably an import,
@@ -466,6 +497,8 @@ Example:
     api: System.Net.WebResponse::GetResponseStream
     api: System.Threading.Mutex::ctor # match creation System.Threading.Mutex object
 
+Example rule: [switch active desktop](../host-interaction/gui/switch-active-desktop.yml)
+
 ### property
 A member of a class or structure used by the logic of a program. This must include the member's class and namespace if recoverable.
 
@@ -475,6 +508,8 @@ Example:
 
     property/read: System.Environment::OSVersion
     property/write: System.Net.WebRequest::Proxy
+
+Example rule: [enumere GUI resources](../host-interaction/gui/enumerate-gui-resources.yml)
 
 ### number
 A number used by the logic of the program.
@@ -503,6 +538,8 @@ If the number is only relevant on a particular architecture, don't hesitate to u
   - arch: i386
   - number: 4 = size of pointer
 ```
+
+Example rule: [get disk size](../host-interaction/hardware/storage/get-disk-size.yml)
 
 ### string and substring
 A string referenced by the logic of the program.
@@ -548,6 +585,8 @@ Examples:
 
 Note that regex and substring matching is expensive (`O(features)` rather than `O(1)`) so they should be used sparingly.
 
+Example rule: [identify ATM dispenser service provider](../targeting/automated-teller-machine/identify-atm-dispenser-service-provider.yml)
+
 ### bytes
 A sequence of bytes referenced by the logic of the program. 
 The provided sequence must match from the beginning of the referenced bytes and be no more than `0x100` bytes.
@@ -570,6 +609,8 @@ Example rule elements:
 
     bytes: 01 14 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = CLSID_ShellLink
     bytes: EE 14 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = IID_IShellLink
+
+Example rule: [hash data using Whirlpool](../nursery/hash-data-using-whirlpool.yml)
 
 ### com
 COM features represent Component Object Model (COM) interfaces and classes used in the program's logic. They help identify interactions with COM objects, methods, properties, and interfaces. The parameter is the name of the COM class or interface. This feature allows you to list human-readable names instead of the byte representations found in the program.
@@ -633,7 +674,9 @@ Examples:
 
     mnemonic: xor
     mnemonic: shl
-    
+
+
+Example rule: [check for trap flag exception](../anti-analysis/anti-debugging/debugger-detection/check-for-trap-flag-exception.yml)
 
 ### operand
 
@@ -644,6 +687,8 @@ Examples:
 
     operand[0].number: 0x10
     operand[1].offset: 0x2C
+
+Example rule: [encrypt data using XTEA](../data-manipulation/encryption/xtea/encrypt-data-using-xtea.yml)
 
 ## basic block features
 Basic block features stem from combinations of features from the instruction scope that are found within the same basic block.
@@ -707,6 +752,8 @@ To specify a [forwarded export](https://devblogs.microsoft.com/oldnewthing/20060
     export: "c:/windows/system32/version.GetFileVersionInfoA"
     export: "vresion.GetFileVersionInfoA"
 
+Example rule: [act as password filter DLL](../persistence/authentication-process/act-as-password-filter-dll.yml)
+
 ### import
 
 The name of a routine imported from a shared library. These can include DLL names that are checked during matching.
@@ -718,6 +765,8 @@ Examples:
     import: kernel32.#22      # by ordinal
     import: System.IO.File::Exists
 
+Example rule: [load NCR ATM library](../targeting/automated-teller-machine/ncr/load-ncr-atm-library.yml)
+
 ### function-name
 
 The name of a recognized statically-linked library, such as recovered via FLIRT, or a name extracted from information contained in the file, such as .NET metadata.
@@ -728,6 +777,8 @@ Examples:
     function-name: "?FillEncTable@Base@Rijndael@CryptoPP@@KAXXZ"
     function-name: Malware.Backdoor::Beacon
 
+Example rule: [execute via .NET startup hook](../runtime/dotnet/execute-via-dotnet-startup-hook.yml)
+
 ### section
 
 The name of a section in a structured file.
@@ -736,6 +787,8 @@ Examples:
 
     section: .rsrc
 
+
+Example rule: [compiled with DMD](../compiler/d/compiled-with-dmd.yml)
 
 ## global features
 
@@ -795,6 +848,8 @@ Valid OSes:
 
 Note: you can match any valid OS by not specifying an `os` feature or by using `any`, e.g. `- os: any`.
 
+Example rule: [discover group policy via gpresult](../collection/group-policy/discover-group-policy-via-gpresult.yml)
+
 ### arch
 
 The name of the CPU architecture on which the sample runs.
@@ -837,6 +892,8 @@ However, this can be useful if you have groups of many architecture-specific off
 
 This can be easier to understand than using many `offset/x32` or `offset/x64` features.
 
+Example rule: [get process heap flags](../host-interaction/process/get-process-heap-flags.yml)
+
 ### format
 
 The name of the file format.
@@ -845,6 +902,8 @@ Valid formats:
   - `pe`
   - `elf`
   - `dotnet`
+
+Example rule: [access .NET resource](../executable/resource/access-dotnet-resource.yml)
 
 ## counting
 
