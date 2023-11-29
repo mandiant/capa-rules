@@ -758,7 +758,6 @@ Examples:
     mnemonic: xor
     mnemonic: shl
 
-
 Example rule: [check for trap flag exception](../anti-analysis/anti-debugging/debugger-detection/check-for-trap-flag-exception.yml)
 
 ### operand
