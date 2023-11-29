@@ -384,27 +384,27 @@ In general, capa collects and merges the features from lower scopes into higher 
 for example, features extracted from individual instructions are merged into the function scope that contains the instructions.
 This way, you can use the match results against instructions ("the constant X is for crypto algorithm Y") to recognize function-level capabilities ("crypto function Z").
 
-| feature                           | static scope | dynamic scope |
-|-----------------------------------|--------------|---------------|
-| [api](#api)                       | instruction  | call          |
-| [string](#string-and-substring)   | instruction  | call          |
-| [bytes](#bytes)                   | instruction  | call          |
-| [number](#number)                 | instruction  | call          |
-| [characteristic](#characteristic) | instruction  | -             |
-| [mnemonic](#mnemonic)             | instruction  | -             |
-| [operand](#operand)               | instruction  | -             |
-| [offset](#offset)                 | instruction  | -             |
-| [com](#com)                       | instruction  | -             |
-| [namespace](#namespace)           | instruction  | -             |
-| [class](#class)                   | instruction  | -             |
-| [property](#property)             | instruction  | -             |
-| [export](#export)                 | file         | file          |
-| [import](#import)                 | file         | file          |
-| [section](#section)               | file         | file          |
-| [function-name](#function-name)   | file         | -             |
-| [os](#os)                         | global       | global        |
-| [arch](#arch)                     | global       | global        |
-| [format](#format)                 | global       | global        |
+| feature                           | static scope                                | dynamic scope                  |
+|-----------------------------------|---------------------------------------------|--------------------------------|
+| [api](#api)                       | instruction ↦ basic block ↦ function ↦ file | call ↦ thread ↦ process ↦ file |
+| [string](#string-and-substring)   | instruction ↦ ...                           | call ↦ ...                     |
+| [bytes](#bytes)                   | instruction ↦ ...                           | call ↦ ...                     |
+| [number](#number)                 | instruction ↦ ...                           | call ↦ ...                     |
+| [characteristic](#characteristic) | instruction ↦ ...                           | -                              |
+| [mnemonic](#mnemonic)             | instruction ↦ ...                           | -                              |
+| [operand](#operand)               | instruction ↦ ...                           | -                              |
+| [offset](#offset)                 | instruction ↦ ...                           | -                              |
+| [com](#com)                       | instruction ↦ ...                           | -                              |
+| [namespace](#namespace)           | instruction ↦ ...                           | -                              |
+| [class](#class)                   | instruction ↦ ...                           | -                              |
+| [property](#property)             | instruction ↦ ...                           | -                              |
+| [export](#export)                 | file                                        | file                           |
+| [import](#import)                 | file                                        | file                           |
+| [section](#section)               | file                                        | file                           |
+| [function-name](#function-name)   | file                                        | -                              |
+| [os](#os)                         | global                                      | global                         |
+| [arch](#arch)                     | global                                      | global                         |
+| [format](#format)                 | global                                      | global                         |
 
 ## static analysis scopes
 
