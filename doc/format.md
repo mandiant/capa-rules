@@ -323,7 +323,7 @@ rule:
 
 As you'll see in the [extracted features](#extracted-features) section, capa matches features at various scopes, starting small (e.g., `instruction`) and growing large (e.g., `file`). In static analysis, scopes grow from `instruction`, to `basic block`, `function`, and then `file`. In dynamic analysis, scopes grow from `call`, to `thread`, `process`, and then to `file`.
 
-When matching a sequence of API calls, the static scope is often "function" and the dynamic scope is "thread". When matching a single API call with arguments, the static scope is usually "basic block" and the dynamic scope is "call". One day we hope to support "call" scope directly in the static analysis flavor.
+When matching a sequence of API calls, the static scope is often `function` and the dynamic scope is `thread`. When matching a single API call with arguments, the static scope is usually `basic block` and the dynamic scope is `call`. One day we hope to support `call` scope directly in the static analysis flavor.
 
 
 ## features block
