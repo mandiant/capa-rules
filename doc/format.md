@@ -364,19 +364,21 @@ If only one of these features is found in a function, the rule will not match.
 
 capa matches features at multiple scopes, starting small (e.g., `instruction`) and growing large (e.g., `file`). In static analysis, scopes grow from `instruction`, to `basic block`, `function`, and then `file`. In dynamic analysis, scopes grow from `call`, to `thread`, `process`, and then to `file`:
 
-| scope       | best for...                                                                              |
-|-------------|------------------------------------------------------------------------------------------|
-| (static)    | ---                                                                                      |
-| instruction | specific combinations of mnemonics, operands, constants, etc. to find magic values       |
-| basic block | closely related instructions, such as structure access or function call arguments        |
-| function    | collections of API calls, constants, etc. that suggest complete capabilities             |
-| (dynamic)   | ---                                                                                      |
-| call        | single API call and its arguments                                                        |
-| thread      | sequence of related API calls                                                            |
-| process     | combinations of other capabilities found within a (potentially multi-threaded) program   |
-| (common)    | ---                                                                                      |
-| file        | high level conclusions, like encryptor, backdoor, or statically linked with some library |
-| global      | the features available at every scope, like architechture or OS                          |
+| static scope | best for...                                                                              |
+|--------------|------------------------------------------------------------------------------------------|
+| instruction  | specific combinations of mnemonics, operands, constants, etc. to find magic values       |
+| basic block  | closely related instructions, such as structure access or function call arguments        |
+| function     | collections of API calls, constants, etc. that suggest complete capabilities             |
+| file         | high level conclusions, like encryptor, backdoor, or statically linked with some library |
+| global       | the features available at every scope, like architechture or OS                          |
+
+| dynamic scope | best for...                                                                              |
+|---------------|------------------------------------------------------------------------------------------|
+| call          | single API call and its arguments                                                        |
+| thread        | sequence of related API calls                                                            |
+| process       | combinations of other capabilities found within a (potentially multi-threaded) program   |
+| file          | high level conclusions, like encryptor, backdoor, or statically linked with some library |
+| global        | the features available at every scope, like architechture or OS                          |
 
 In general, capa collects and merges the features from lower scopes into higher scopes;
 for example, features extracted from individual instructions are merged into the function scope that contains the instructions.
