@@ -362,7 +362,7 @@ If only one of these features is found in a function, the rule will not match.
 
 # extracted features
 
-capa matches features at multiple scopes, starting small (e.g., instruction) and growing large (e.g., file). In static analysis, scopes grow from instruction, to basic block, function, and then file. In dynamic analysis, scopes from call, to thread, process, and then to file:
+capa matches features at multiple scopes, starting small (e.g., `instruction`) and growing large (e.g., `file`). In static analysis, scopes grow from `instruction`, to `basic block`, `function`, and then `file`. In dynamic analysis, scopes grow from `call`, to `thread`, `process`, and then to `file`:
 
 | scope       | best for...                                                                              |
 |-------------|------------------------------------------------------------------------------------------|
