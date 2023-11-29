@@ -376,7 +376,7 @@ capa matches features at multiple scopes, starting small (e.g., instruction) and
 | process     | combinations of other capabilities found within a (potentially multi-threaded) program   |
 | (common)    | ---                                                                                      |
 | file        | high level conclusions, like encryptor, backdoor, or statically linked with some library |
-| global      | the features available at every scope, like arch or OS                                   |
+| global      | the features available at every scope, like architechture or OS                          |
 
 In general, capa collects and merges the features from lower scopes into higher scopes;
 for example, features extracted from individual instructions are merged into the function scope that contains the instructions.
