@@ -319,7 +319,7 @@ rule:
       - match: contain loop
 ```
 
-"check for software breakpoints" works great during disassembly analysis, such as mnemonic and operand matching, but doesn't work in dynamic scopes because these features aren't available. So, we mark the rule `scopes.dynamic: unsupported` so the rule won't be considered when processing sandbox traces.
+`check for software breakpoints` works great during disassembly analysis, where low-level instruction features can be matched, but doesn't work in dynamic scopes because these features aren't available. Hence, we mark the rule `scopes.dynamic: unsupported` so the rule won't be considered when processing sandbox traces.
 
 As you'll see in the [extracted features](#extracted-features) section, capa matches features at various scopes, starting small (e.g., instruction) and growing large (e.g., file). In static analysis, scopes grow from instruction, to basic block, function, and then file. In dynamic analysis, scopes from call, to thread, process, and then to file.
 
