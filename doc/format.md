@@ -370,7 +370,7 @@ capa matches features at multiple scopes, starting small (e.g., `instruction`) a
 | basic block  | closely related instructions, such as structure access or function call arguments        |
 | function     | collections of API calls, constants, etc. that suggest complete capabilities             |
 | file         | high level conclusions, like encryptor, backdoor, or statically linked with some library |
-| global       | the features available at every scope, like architechture or OS                          |
+| global       | the features available at every scope, like architecture or OS                           |
 
 | dynamic scope | best for...                                                                              |
 |---------------|------------------------------------------------------------------------------------------|
