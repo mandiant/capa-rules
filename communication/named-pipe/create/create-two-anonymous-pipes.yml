@@ -4,7 +4,9 @@ rule:
     namespace: communication/named-pipe/create
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Communication::Interprocess Communication::Create Pipe [C0003.001]
     examples:

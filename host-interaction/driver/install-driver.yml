@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/driver
     authors:
       - moritz.raabe@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
     mbc:

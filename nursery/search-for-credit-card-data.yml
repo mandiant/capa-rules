@@ -4,7 +4,9 @@ rule:
     namespace: collection/credit-card
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires mnemonic features
   features:
     - and:
       - instruction:

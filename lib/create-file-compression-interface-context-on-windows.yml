@@ -3,8 +3,10 @@ rule:
     name: create File Compression Interface context on Windows
     authors:
       - michael.hunhoff@mandiant.com
+    scopes:
+      static: function
+      dynamic: call
     lib: true
-    scope: function
     references:
       - https://docs.microsoft.com/en-us/windows/win32/msi/cabinet-files
     examples:

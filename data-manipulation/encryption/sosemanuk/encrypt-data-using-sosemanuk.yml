@@ -5,7 +5,9 @@ rule:
     authors:
       - awillia2@cisco.com
     description: Looks for cryptographic constants associated with the Sosemanuk stream cipher
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unsupported  # requires bytes, mnemonic features
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

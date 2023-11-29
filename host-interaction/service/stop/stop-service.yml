@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/service/stop
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
       - Impact::Service Stop [T1489]
@@ -14,9 +16,16 @@ rule:
     - and:
       - optional:
         - match: get service handle
-      - basic block:
-        - and:
-          - number: 0x1 = SERVICE_CONTROL_STOP
-          - or:
-            - api: advapi32.ControlService
-            - api: advapi32.ControlServiceEx
+      - or:
+        - basic block:
+          - and:
+            - number: 0x1 = SERVICE_CONTROL_STOP
+            - or:
+              - api: advapi32.ControlService
+              - api: advapi32.ControlServiceEx
+        - call:
+          - and:
+            - number: 0x1 = SERVICE_CONTROL_STOP
+            - or:
+              - api: advapi32.ControlService
+              - api: advapi32.ControlServiceEx

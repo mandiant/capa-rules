@@ -5,7 +5,9 @@ rule:
     authors:
       - david@edeca.net
     description: detects the inner decompression loop from QuickLZ
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported
     mbc:
       - Data::Decompress Data::QuickLZ [C0025.001]
     references:

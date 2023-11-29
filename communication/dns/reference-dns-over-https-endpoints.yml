@@ -4,7 +4,9 @@ rule:
     namespace: communication/dns
     authors:
       - markus.neis@swisscom.com / @markus_neis
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     mbc:
       - Communication::DNS Communication::Server Connect [C0011.002]
     references:

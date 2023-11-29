@@ -4,7 +4,9 @@ rule:
     namespace: compiler/exe4j
     authors:
       - johnk3r
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     examples:
       - 6b25f1e754ef486bbb28a66d46bababe:0x404EDE
   features:

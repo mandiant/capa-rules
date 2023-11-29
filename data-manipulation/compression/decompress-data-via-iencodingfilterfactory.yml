@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, bytes features
     mbc:
       - Data::Decompress Data::IEncodingFilterFactory [C0025.002]
     references:

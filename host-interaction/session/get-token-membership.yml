@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/session
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
     examples:

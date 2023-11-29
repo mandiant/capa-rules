@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/list
     authors:
       - joakim@intezer.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::Process Discovery [T1057]
       - Discovery::Software Discovery [T1518]

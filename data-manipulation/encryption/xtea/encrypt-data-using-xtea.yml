@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/xtea
     authors:
       - raymond.leong@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires operand[1].number, characteristic, mnemonic features
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

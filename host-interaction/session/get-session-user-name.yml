@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
       - Discovery::Account Discovery [T1087]
@@ -18,6 +20,10 @@ rule:
       - basic block:
         - and:
           # - match: get session information (see #463)
+          - api: wtsapi32.WTSQuerySessionInformation
+          - number: 5 = WTSUserName
+      - call:
+        - and:
           - api: wtsapi32.WTSQuerySessionInformation
           - number: 5 = WTSUserName
       - api: System.Security.Principal.WindowsIdentity::GetCurrent

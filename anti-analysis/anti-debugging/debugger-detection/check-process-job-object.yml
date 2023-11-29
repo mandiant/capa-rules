@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection [B0001]
     references:
@@ -12,13 +14,25 @@ rule:
     examples:
       - al-khaser_x86.exe_:0x426730
   features:
-    - and:
-      - match: contain loop
-      - basic block:
-        - and:
-          - api: kernel32.QueryInformationJobObject
-          - number: 0x3 = JobObjectBasicProcessIdList
-      - basic block:
-        - and:
-          - api: kernel32.OpenProcess
-          - number: 0x400 = PROCESS_QUERY_INFORMATION
+    - or:
+      # static
+      - and:
+        - match: contain loop
+        - basic block:
+          - and:
+            - api: kernel32.QueryInformationJobObject
+            - number: 0x3 = JobObjectBasicProcessIdList
+        - basic block:
+          - and:
+            - api: kernel32.OpenProcess
+            - number: 0x400 = PROCESS_QUERY_INFORMATION
+      # dynamic
+      - and:
+        - call:
+          - and:
+            - api: kernel32.QueryInformationJobObject
+            - number: 0x3 = JobObjectBasicProcessIdList
+        - call:
+          - and:
+            - api: kernel32.OpenProcess
+            - number: 0x400 = PROCESS_QUERY_INFORMATION

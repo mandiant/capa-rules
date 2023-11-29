@@ -6,7 +6,9 @@ rule:
       - moritz.raabe@mandiant.com
       - "@_re_fox"
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Collection::Screen Capture [T1113]
     mbc:
@@ -37,4 +39,7 @@ rule:
         - and:
           - api: BitBlt
           - characteristic: tight loop
+      - call:
+        - and:
+          - api: BitBlt
       - api: System.Drawing.Graphics::CopyFromScreen

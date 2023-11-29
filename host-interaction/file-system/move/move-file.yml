@@ -5,7 +5,9 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - File System::Move File [C0063]
     examples:
@@ -25,3 +27,7 @@ rule:
           - number: 1 = FO_MOVE
           - or:
             - api: kernel32.SHFileOperation
+      - call:
+        - and:
+          - number: 1 = FO_MOVE
+          - api: kernel32.SHFileOperation

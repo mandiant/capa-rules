@@ -5,7 +5,9 @@ rule:
     namespace: host-interaction/log/clfs/append
     authors:
       - blaine.stancill@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     references:
       - https://docs.microsoft.com/en-us/windows/win32/api/clfsw32/
       - https://github.com/libyal/libfsclfs/blob/main/documenation/Common%20Log%20File%20System%20(CLFS).asciidoc

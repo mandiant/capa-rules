@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - johnk3r
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Hardware::Simulate Hardware::Ctrl-Alt-Del [C0057.001]
     examples:
@@ -19,9 +21,22 @@ rule:
               - api: OpenDesktop
               - api: OpenInputDesktop
             - string: "Winlogon"
-      - basic block:
-        - and:
-          - api: PostMessage
-          - number: 0x2E0003 = (MOD_ALT | MOD_CONTROL | VK_DELETE)
-          - number: 0x312 = WM_HOTKEY
-          - number: 0xFFFF = HWND_BROADCAST
+        - call:
+          - and:
+            - or:
+              - api: OpenDesktop
+              - api: OpenInputDesktop
+            - string: "Winlogon"
+      - or:
+        - basic block:
+          - and:
+            - api: PostMessage
+            - number: 0x2E0003 = (MOD_ALT | MOD_CONTROL | VK_DELETE)
+            - number: 0x312 = WM_HOTKEY
+            - number: 0xFFFF = HWND_BROADCAST
+        - call:
+          - and:
+            - api: PostMessage
+            - number: 0x2E0003 = (MOD_ALT | MOD_CONTROL | VK_DELETE)
+            - number: 0x312 = WM_HOTKEY
+            - number: 0xFFFF = HWND_BROADCAST

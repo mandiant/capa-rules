@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     description: https://github.com/bohops/DynamicDotNet/blob/main/dynamic_pinvoke/dynamic_pinvoke_definepinvokemethod_shellcode_runner.cs
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
   features:
     - and:
       - or:

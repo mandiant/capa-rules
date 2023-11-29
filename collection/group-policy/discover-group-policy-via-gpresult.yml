@@ -4,7 +4,9 @@ rule:
     namespace: collection/group-policy
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Discovery::Group Policy Discovery [T1615]
     examples:

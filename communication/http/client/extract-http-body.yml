@@ -4,7 +4,9 @@ rule:
     namespace: communication/http/client
     authors:
       - matthew.williams@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, bytes features
     mbc:
       - Communication::HTTP Communication::Extract Body [C0002.011]
     references:

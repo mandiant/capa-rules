@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/ripemd128
     authors:
       - raymond.leong@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unsupported
     references:
       - https://en.wikipedia.org/wiki/RIPEMD-128
   features:

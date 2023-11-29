@@ -11,7 +11,9 @@ rule:
       The size of the single file in a self-contained application is large since it includes the runtime and the framework libraries.
       The main application and the libraries are contained in the overlay section.
       You may need to extract the runtime configuration files such as *.deps.json and *.runtimeconfig.json files to determine the main .NET library and extract it with the tool SingleFileExtractor.
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     examples:
       - 0da87fccbf7687a6c7ab38087dea8b8f32c2b1fb6546101485b7167d18d9c406
   features:

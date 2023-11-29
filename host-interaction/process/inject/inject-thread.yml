@@ -5,7 +5,9 @@ rule:
     authors:
       - anamaria.martinezgom@mandiant.com
       - 0x534a@mailbox.org
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Process Injection::Thread Execution Hijacking [T1055.003]
       - Defense Evasion::Reflective Code Loading [T1620]

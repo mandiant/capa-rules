@@ -4,7 +4,9 @@ rule:
     namespace: communication/c2/shell
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Execution::Command and Scripting Interpreter::Windows Command Shell [T1059.003]
     mbc:
@@ -26,7 +28,12 @@ rule:
       - and:
         - match: create pipe
         - match: host-interaction/process/create
-        - basic block:
-          - and:
-            - count(api(SetHandleInformation)): 2 or more
-            - number: 1 = HANDLE_FLAG_INHERIT
+        - or:
+          - basic block:
+            - and:
+              - count(api(SetHandleInformation)): 2 or more
+              - number: 1 = HANDLE_FLAG_INHERIT
+          - call:
+            - and:
+              - count(api(SetHandleInformation)): 2 or more
+              - number: 1 = HANDLE_FLAG_INHERIT

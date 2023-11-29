@@ -4,7 +4,9 @@ rule:
     namespace: persistence/scheduled-tasks
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, bytes features
     att&ck:
       - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
   features:

@@ -4,7 +4,9 @@ rule:
     namespace: linking/static/httplib
     authors:
       - "@mr-tz"
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://github.com/yhirose/cpp-httplib
   features:

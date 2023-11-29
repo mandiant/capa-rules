@@ -4,7 +4,9 @@ rule:
     namespace: load-code/pe
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires mnemonic, operand[1].offset features
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:

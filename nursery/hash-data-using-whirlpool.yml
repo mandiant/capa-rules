@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/hashing/whirlpool
     authors:
       - william.ballenthin@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires bytes features
     mbc:
       - Cryptography::Cryptographic Hash [C0029]
     references:

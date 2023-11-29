@@ -5,7 +5,9 @@ rule:
     authors:
       - still@teamt5.org
     description: known import name hashes calculated using the non-cryptographic FNV-1a hashing algorithm
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     references:

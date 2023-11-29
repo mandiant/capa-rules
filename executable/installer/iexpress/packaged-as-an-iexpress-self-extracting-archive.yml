@@ -4,7 +4,9 @@ rule:
     namespace: executable/installer/iexpress
     authors:
       - awillia2@cisco.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     references:
       - https://en.wikipedia.org/wiki/IExpress
     examples:

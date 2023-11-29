@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/compression
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unsupported
   features:
     - and:
       - optional:

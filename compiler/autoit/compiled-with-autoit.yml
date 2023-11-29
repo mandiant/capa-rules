@@ -4,7 +4,9 @@ rule:
     namespace: compiler/autoit
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Execution::Command and Scripting Interpreter [T1059]
     references:

@@ -5,7 +5,9 @@ rule:
     authors:
       - "@_re_fox"
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - File System::Read File [C0051]
     examples:

@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/gui
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     examples:
       - Practical Malware Analysis Lab 12-03.exe_:0x401000
   features:

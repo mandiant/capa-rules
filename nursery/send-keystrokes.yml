@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/hardware/keyboard
     authors:
       - anushka.virgaonkar@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
   features:
     - or:
       - api: System.Windows.Forms.SendKeys::Send

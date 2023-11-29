@@ -5,7 +5,9 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Collection::Archive Collected Data::Archive via Library [T1560.002]
     mbc:

@@ -5,7 +5,9 @@ rule:
     namespace: communication/rpc/server
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call
   features:
     - or:
       - api: rpcrt4.RpcServerListen

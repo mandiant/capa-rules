@@ -4,7 +4,9 @@ rule:
     namespace: data-manipulation/encryption/aes
     authors:
       - william.ballenthin@mandiant.com
-    scope: file
+    scopes:
+      static: file
+      dynamic: unsupported  # requires class features
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

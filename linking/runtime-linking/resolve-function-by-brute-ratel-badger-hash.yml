@@ -5,7 +5,9 @@ rule:
     authors:
       - jakub.jozwiak@mandiant.com
     description: Custom API hashing algorithm used in Brute Ratel Badger (version 1.3 or higher)
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Dynamic API Resolution [T1027.007]
     mbc:

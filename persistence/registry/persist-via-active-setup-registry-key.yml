@@ -4,7 +4,9 @@ rule:
     namespace: persistence/registry
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Active Setup [T1547.014]
     references:

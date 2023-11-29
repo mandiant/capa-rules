@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/service
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
     examples:
@@ -13,9 +15,16 @@ rule:
     - and:
       - optional:
         - match: get service handle
-      - basic block:
-        - and:
-          - number: 0x3 = SERVICE_CONTROL_CONTINUE
-          - or:
-            - api: advapi32.ControlService
-            - api: advapi32.ControlServiceEx
+      - or:
+        - basic block:
+          - and:
+            - number: 0x3 = SERVICE_CONTROL_CONTINUE
+            - or:
+              - api: advapi32.ControlService
+              - api: advapi32.ControlServiceEx
+        - call:
+          - and:
+            - number: 0x3 = SERVICE_CONTROL_CONTINUE
+            - or:
+              - api: advapi32.ControlService
+              - api: advapi32.ControlServiceEx

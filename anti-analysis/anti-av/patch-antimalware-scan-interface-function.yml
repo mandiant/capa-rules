@@ -4,7 +4,9 @@ rule:
     namespace: anti-analysis/anti-av
     authors:
       - jakub.jozwiak@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
     mbc:

@@ -4,7 +4,9 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
     lib: true
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     examples:
       - daa13ae302fe8b618ddbf590537443ef:0x401116
   features:

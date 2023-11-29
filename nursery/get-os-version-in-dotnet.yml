@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/os/version
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: unsupported  # requires property features
     att&ck:
       - Discovery::System Information Discovery [T1082]
   features:

@@ -7,7 +7,9 @@ rule:
       - anushka.virgaonkar@mandiant.com
       - michael.hunhoff@mandiant.com
     description: Detect collection of Windows domain information
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
     examples:

@@ -5,7 +5,9 @@ rule:
     namespace: host-interaction/hardware
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call
   features:
     - or:
       - api: user32.RegisterRawInputDevices

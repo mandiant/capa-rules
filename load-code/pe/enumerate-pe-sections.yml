@@ -5,7 +5,9 @@ rule:
     authors:
       - "@Ana06"
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, operand[1].offset, characteristic, mnemonic, basicblock features
     mbc:
       - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
     references:

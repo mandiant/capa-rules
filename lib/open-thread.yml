@@ -4,7 +4,9 @@ rule:
     authors:
       - 0x534a@mailbox.org
     lib: true
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call
     mbc:
       - Process::Open Thread [C0066]
     examples:

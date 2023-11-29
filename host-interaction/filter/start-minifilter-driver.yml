@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/filter
     authors:
       - michael.hunhoff@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call
     mbc:
       - Hardware::Load Driver::Minifilter [C0023.001]
     references:

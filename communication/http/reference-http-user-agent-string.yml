@@ -5,7 +5,9 @@ rule:
     namespace: communication/http
     authors:
       - "@mr-tz"
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     mbc:
       - Communication::HTTP Communication [C0002]
     references:

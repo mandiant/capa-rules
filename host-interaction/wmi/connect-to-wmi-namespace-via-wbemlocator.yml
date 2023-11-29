@@ -5,7 +5,9 @@ rule:
     namespace: host-interaction/wmi
     authors:
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, bytes features
     att&ck:
       - Execution::Windows Management Instrumentation [T1047]
     examples:

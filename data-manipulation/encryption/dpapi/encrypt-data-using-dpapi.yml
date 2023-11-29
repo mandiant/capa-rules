@@ -5,7 +5,9 @@ rule:
     authors:
       - william.ballenthin@mandiant.com
       - michael.hunhoff@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:

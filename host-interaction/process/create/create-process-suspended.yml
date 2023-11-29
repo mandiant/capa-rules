@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/create
     authors:
       - william.ballenthin@mandiant.com
-    scope: basic block
+    scopes:
+      static: basic block
+      dynamic: call
     mbc:
       - Process::Create Process::Create Suspended Process [C0017.003]
     examples:
