@@ -48,8 +48,19 @@ We'll start at the high level structure and then dig into the logic structures a
     - [analysis flavors](#analysis-flavors)
   - [features block](#features-block)
 - [extracted features](#extracted-features)
-  - [characteristic](#characteristic)
-  - [instruction features](#instruction-features)
+  - [static analysis scopes](#static-analysis-scopes)
+    - [instruction features](#instruction-features)
+    - [basic block features](#basic-block-features)
+    - [function features](#function-features)
+  - [dynamic analysis scopes](#dynamic-analysis-scopes)
+    - [call features](#call-features)
+    - [thread features](#thread-features)
+    - [process features](#process-features)
+  - [common scopes](#common-scopes)
+    - [file features](#file-features)
+    - [global features](#global-features)
+  - [complete feature listing](#complete-feature-listing)
+    - [characteristic](#characteristic)
     - [namespace](#namespace)
     - [class](#class)
     - [api](#api)
@@ -60,9 +71,6 @@ We'll start at the high level structure and then dig into the logic structures a
     - [offset](#offset)
     - [mnemonic](#mnemonic)
     - [operand](#operand)
-  - [basic block features](#basic-block-features)
-  - [function features](#function-features)
-  - [file features](#file-features)
     - [string and substring](#file-string-and-substring)
     - [export](#export)
     - [import](#import)
@@ -70,7 +78,6 @@ We'll start at the high level structure and then dig into the logic structures a
     - [function-name](#function-name)
     - [namespace](#namespace)
     - [class](#class)
-  - [global features](#global-features)
     - [os](#os)
     - [arch](#arch)
     - [format](#format)
@@ -113,7 +120,7 @@ meta:
   name: packed with UPX
   namespace: anti-analysis/packer/upx
   authors:
-      - william.ballenthin@mandiant.com
+    - william.ballenthin@mandiant.com
   description: the sample appears to be packed with UPX
   scopes: 
     static: file
@@ -121,12 +128,11 @@ meta:
   att&ck:
     - Defense Evasion::Obfuscated Files or Information [T1027.002]
   mbc:
-      - Anti-Static Analysis::Software Packing
+    - Anti-Static Analysis::Software Packing
   examples:
     - CD2CBA9E6313E8DF2C1273593E649682
     - Practical Malware Analysis Lab 01-02.exe_:0x0401000
 ```
-
 
 Here are the common fields:
 
@@ -140,17 +146,17 @@ Here are the common fields:
 
   - `scopes` indicates which feature set the rule applies to, when analyzing static or dynamic analysis artifacts. There are two required sub fields: `static` and `dynamic`. Here are the legal values:
     - `scopes.static`:
-      - **`file`**: matches features across the whole file.
-      - **`function`** (default): match features within each function.
-      - **`basic block`**: matches features within each basic block.
-        This is used to achieve locality in rules (for example for parameters of a function).
       - **`instruction`**: matches features found at a single instruction.
         This is great to identify structure access or comparisons against magic constants.
+      - **`basic block`**: matches features within each basic block.
+        This is used to achieve close locality in rules (for example for parameters of a function).
+      - **`function`**: match features within each function.
+      - **`file`**: matches features across the whole file.
     - `scopes.dynamic`:
-      - **`file`**: matches features across the whole file, including from the executable file features *and* across the entire runtime trace.
-      - **`process`**: match features within each process.
-      - **`thread`**: match features within each thread, such as sequence of API names.
       - **`call`**: match features at each traced API call site, such as API name and argument values.
+      - **`thread`**: match features within each thread, such as sequence of API names.
+      - **`process`**: match features within each process.
+      - **`file`**: matches features across the whole file, including from the executable file features *and* across the entire runtime trace.
       
   - `att&ck` is an optional list of [ATT&CK framework](https://attack.mitre.org/) techniques that the rule implies, like 
 `Discovery::Query Registry [T1012]` or `Persistence::Create or Modify System Process::Windows Service [T1543.003]`.
@@ -398,6 +404,110 @@ This way, you can use the match results against instructions ("the constant X is
 | [arch](#arch)                     | global       | global        |
 | [format](#format)                 | global       | global        |
 
+## static analysis scopes
+
+### instruction features
+
+Instruction features stem from individual instructions, such as mnemonics, string references, or function calls.
+The following features are relevant at this scope and above:
+
+  - [namespace](#namespace)
+  - [class](#class)
+  - [api](#api)
+  - [property](#property)
+  - [number](#number)
+  - [string and substring](#string-and-substring)
+  - [bytes](#bytes)
+  - [com](#com)
+  - [offset](#offset)
+  - [mnemonic](#mnemonic)
+  - [operand](#operand)
+
+Also, the following [characteristics](#characteristic) are relevant at this scope and above:
+  - `nzxor`
+  - `peb access`
+  - `fs access`
+  - `gs access`
+  - `cross section flow`
+  - `indirect call`
+  - `call $+5`
+  - `unmanaged call`
+
+### basic block features
+
+Basic block features stem from combinations of features from the instruction scope that are found within the same basic block.
+
+Also, the following [characteristics](#characteristic) are relevant at this scope and above:
+  - `tight loop`
+  - `stack string`
+
+### function features
+
+Function features stem from combinations of features from the instruction and basic block scopes that are found within the same function.
+
+Also, the following [characteristics](#characteristic) are relevant at this scope and above:
+  - `loop`
+  - `recursive call`
+  - `calls from`
+  - `calls to`
+
+## dynamic analysis scopes
+
+### call features
+
+Call features are collected from individual sandbox trace events, such as API calls.
+They're typically useful for matching against the API name and arguments (strings or integer constants).
+
+The following features are relevant at this scope and above:
+
+  - [api](#api)
+  - [number](#number)
+  - [string and substring](#string-and-substring)
+  - [bytes](#bytes)
+
+### thread features
+
+Thread features stem from combinations of features from the call scopes that are found within the same thread.
+This is useful for matching a sequence of API calls, such as `OpenFile`/`ReadFile`/`CloseFile`.
+
+There are no thread-specific features.
+
+### process features
+
+Process features are combinations of features from the thread scopes found within the same process.
+This is useful for matching behaviors found across an entire program, even if its multi-threaded.
+
+There are no process-specific features.
+
+## common scopes
+
+### file features
+
+File features stem from the file structure, i.e. PE structure or the raw file data.
+
+Also, all features found in all functions (static) or all processes (dynamic) are collected into the file scope.
+
+The following features are supported at this scope:
+
+  - [string and substring](#file-string-and-substring)
+  - [export](#export)
+  - [import](#import)
+  - [section](#section)
+  - [function-name](#function-name)
+  - [namespace](#namespace)
+  - [class](#class)
+
+### global features
+
+Global features are extracted at all scopes.
+These are features that may be useful to both disassembly and file structure interpretation, such as the targeted OS or architecture.
+The following features are supported at this scope:
+
+  - [os](#os)
+  - [arch](#arch)
+  - [format](#format)
+
+## complete feature listing
 
 ### characteristic
 
@@ -425,33 +535,6 @@ For example, the `characteristic: nzxor` feature describes non-zeroing XOR instr
 | `characteristic: indirect call`      | instruction, basic block, function | Indirect call instruction; for example, `call edx` or `call qword ptr [rsp+78h]`.                         |
 | `characteristic: call $+5`           | instruction, basic block, function | Call just past the current instruction.                                                                   |
 | `characteristic: unmanaged call`     | instruction, basic block, function | Function contains a call from managed code to unmanaged (native) code, often seen in .NET                 |
-
-## instruction features
-
-Instruction features stem from individual instructions, such as mnemonics, string references, or function calls.
-The following features are relevant at this scope and above:
-
-  - [namespace](#namespace)
-  - [class](#class)
-  - [api](#api)
-  - [property](#property)
-  - [number](#number)
-  - [string and substring](#string-and-substring)
-  - [bytes](#bytes)
-  - [com](#com)
-  - [offset](#offset)
-  - [mnemonic](#mnemonic)
-  - [operand](#operand)
-
-Also, the following [characteristics](#characteristic) are relevant at this scope and above:
-  - `nzxor`
-  - `peb access`
-  - `fs access`
-  - `gs access`
-  - `cross section flow`
-  - `indirect call`
-  - `call $+5`
-  - `unmanaged call`
 
 ### namespace
 A named namespace used by the logic of the program.
@@ -690,37 +773,6 @@ Examples:
 
 Example rule: [encrypt data using XTEA](../data-manipulation/encryption/xtea/encrypt-data-using-xtea.yml)
 
-## basic block features
-Basic block features stem from combinations of features from the instruction scope that are found within the same basic block.
-
-Also, the following [characteristics](#characteristic) are relevant at this scope and above:
-  - `tight loop`
-  - `stack string`
-
-
-## function features
-Function features stem from combinations of features from the instruction and basic block scopes that are found within the same function.
-
-Also, the following [characteristics](#characteristic) are relevant at this scope and above:
-  - `loop`
-  - `recursive call`
-  - `calls from`
-  - `calls to`
-
-
-## file features
-
-File features stem from the file structure, i.e. PE structure or the raw file data.
-The following features are supported at this scope:
-
-  - [string and substring](#file-string-and-substring)
-  - [export](#export)
-  - [import](#import)
-  - [section](#section)
-  - [function-name](#function-name)
-  - [namespace](#namespace)
-  - [class](#class)
-
 
 ### file string and substring
 An ASCII or UTF-16 LE string present in the file.
@@ -789,16 +841,6 @@ Examples:
 
 
 Example rule: [compiled with DMD](../compiler/d/compiled-with-dmd.yml)
-
-## global features
-
-Global features are extracted at all scopes.
-These are features that may be useful to both disassembly and file structure interpretation, such as the targeted OS or architecture.
-The following features are supported at this scope:
-
-  - [os](#os)
-  - [arch](#arch)
-  - [format](#format)
 
 ### os
 
