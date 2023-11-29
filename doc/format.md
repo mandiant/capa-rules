@@ -297,7 +297,7 @@ rule:
 See how `create mutex` can be reasoned about both by inspecting the disassembly features (static analysis) as well as the runtime API trace (dynamic analysis)?
 
 On the other hand, some behaviors are best described by rules that work in only one scope. 
-(Remember, its paramount that rules be human-readable, so avoid complicating logic for the sake of merging rules.)
+Remember, its paramount that rules be human-readable, so avoid complicating logic for the sake of merging rules.
 In this case, mark the excluded scope with `unsupported`, like in the following rule:
 
 ```yml
