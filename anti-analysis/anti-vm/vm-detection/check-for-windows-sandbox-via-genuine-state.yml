@@ -16,20 +16,22 @@ rule:
     examples:
       - 773290480d5445f11d3dc1b800728966:0x140001140
   features:
-    - and:
-      # static
-      - basic block:
-        - and:
-          - api: SLIsGenuineLocal
-      - basic block:
-        - and:
-          - api: UuidFromString
-          - string: "55c92734-d682-4d71-983e-d6ec3f16059f"
-      # dynamic
-      - call:
-        - and:
-          - api: SLIsGenuineLocal
-      - call:
-        - and:
-          - api: UuidFromString
-          - string: "55c92734-d682-4d71-983e-d6ec3f16059f"
+    - or:
+      - and:
+        # static
+        - basic block:
+          - and:
+            - api: SLIsGenuineLocal
+        - basic block:
+          - and:
+            - api: UuidFromString
+            - string: "55c92734-d682-4d71-983e-d6ec3f16059f"
+      - and:
+        # dynamic
+        - call:
+          - and:
+            - api: SLIsGenuineLocal
+        - call:
+          - and:
+            - api: UuidFromString
+            - string: "55c92734-d682-4d71-983e-d6ec3f16059f"
