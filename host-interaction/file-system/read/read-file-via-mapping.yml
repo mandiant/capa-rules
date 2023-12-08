@@ -12,38 +12,40 @@ rule:
     examples:
       - Practical Malware Analysis Lab 01-01.exe_:0x401440
   features:
-    - and:
-      # static
-      - basic block:
-        - and:
-          - api: kernel32.MapViewOfFile
-          - or:
-            - number: 4 = FILE_MAP_READ
-            - number: 6 = FILE_MAP_WRITE | FILE_MAP_READ
-      - optional:
-        - api: kernel32.UnmapViewOfFile
-        - and:
-          - match: get file size
+    - or:
+      - and:
+        # static
         - basic block:
           - and:
-            - api: kernel32.CreateFileMapping
+            - api: kernel32.MapViewOfFile
             - or:
-              - number: 2 = PAGE_READONLY
-              - number: 4 = PAGE_READWRITE
-      # dynamic
-      - call:
-        - and:
-          - api: kernel32.MapViewOfFile
-          - or:
-            - number: 4 = FILE_MAP_READ
-            - number: 6 = FILE_MAP_WRITE | FILE_MAP_READ
-      - optional:
-        - api: kernel32.UnmapViewOfFile
-        - and:
-          - match: get file size
+              - number: 4 = FILE_MAP_READ
+              - number: 6 = FILE_MAP_WRITE | FILE_MAP_READ
+        - optional:
+          - api: kernel32.UnmapViewOfFile
+          - and:
+            - match: get file size
+          - basic block:
+            - and:
+              - api: kernel32.CreateFileMapping
+              - or:
+                - number: 2 = PAGE_READONLY
+                - number: 4 = PAGE_READWRITE
+      - and:
+        # dynamic
         - call:
           - and:
-            - api: kernel32.CreateFileMapping
+            - api: kernel32.MapViewOfFile
             - or:
-              - number: 2 = PAGE_READONLY
-              - number: 4 = PAGE_READWRITE
+              - number: 4 = FILE_MAP_READ
+              - number: 6 = FILE_MAP_WRITE | FILE_MAP_READ
+        - optional:
+          - api: kernel32.UnmapViewOfFile
+          - and:
+            - match: get file size
+          - call:
+            - and:
+              - api: kernel32.CreateFileMapping
+              - or:
+                - number: 2 = PAGE_READONLY
+                - number: 4 = PAGE_READWRITE
