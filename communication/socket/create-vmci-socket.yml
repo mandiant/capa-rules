@@ -23,9 +23,7 @@ rule:
         - number: 0x81032068 = VMCI_SOCKETS_GET_AF_VALUE
       - and:
         - os: linux
-        - call:
-          - and:
-            - api: ioctl
-            - number: 0x7B8 = VMCI_SOCKETS_GET_AF_VALUE
-        - optional:
+        - or:
+          - api: ioctl
           - api: socket
+        - number: 0x7B8 = VMCI_SOCKETS_GET_AF_VALUE
