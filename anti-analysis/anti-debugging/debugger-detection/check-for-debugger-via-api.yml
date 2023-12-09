@@ -25,3 +25,4 @@ rule:
       - api: WUDFPlatform.WudfIsKernelDebuggerPresent
       - api: WUDFPlatform.WudfIsUserDebuggerPresent
       - property/read: System.Diagnostics.Debugger::IsAttached
+      - api: System.Diagnostics.Debugger::IsLogging
