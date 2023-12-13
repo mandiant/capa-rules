@@ -25,31 +25,43 @@ Here's an example of a capa rule:
 ```yaml
 rule:
   meta:
-    name: hash data with CRC32
-    namespace: data-manipulation/checksum/crc32
+    name: create reverse shell
+    namespace: communication/c2/shell
     authors:
       - moritz.raabe@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
+    att&ck:
+      - Execution::Command and Scripting Interpreter::Windows Command Shell [T1059.003]
     mbc:
-      - Data::Checksum::CRC32 [C0032.001]
+      - Impact::Remote Access::Reverse Shell [B0022.001]
     examples:
-      - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
-      - 7D28CB106CB54876B2A5C111724A07CD:0x402350  # RtlComputeCrc32
-      - 7EFF498DE13CC734262F87E6B3EF38AB:0x100084A6
+      - C91887D861D9BD4A5872249B641BC9F9:0x401A77
   features:
     - or:
       - and:
-        - mnemonic: shr
-        - or:
-          - number: 0xEDB88320
-          - bytes: 00 00 00 00 96 30 07 77 2C 61 0E EE BA 51 09 99 19 C4 6D 07 8F F4 6A 70 35 A5 63 E9 A3 95 64 9E = crc32_tab
-        - number: 8
-        - characteristic: nzxor
+        - match: create pipe
+        - api: kernel32.PeekNamedPipe
+        - api: kernel32.CreateProcess
+        - api: kernel32.ReadFile
+        - api: kernel32.WriteFile
       - and:
-        - number: 0x8320
-        - number: 0xEDB8
-        - characteristic: nzxor
-      - api: RtlComputeCrc32
+        - match: host-interaction/process/create
+        - match: read pipe
+        - match: write pipe
+      - and:
+        - match: create pipe
+        - match: host-interaction/process/create
+        - or:
+          - basic block:
+            - and:
+              - count(api(SetHandleInformation)): 2 or more
+              - number: 1 = HANDLE_FLAG_INHERIT
+          - call:
+            - and:
+              - count(api(SetHandleInformation)): 2 or more
+              - number: 1 = HANDLE_FLAG_INHERIT
 ```
 
 capa interpets the content of these rules as it inspects executable files.
