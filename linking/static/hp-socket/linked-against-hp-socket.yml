@@ -4,7 +4,9 @@ rule:
     namespace: linking/static/hp-socket
     authors:
       - still@teamt5.org
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
       - Command and Control::Non-Application Layer Protocol [T1095]
     references:
