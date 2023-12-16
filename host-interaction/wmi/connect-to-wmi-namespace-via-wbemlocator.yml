@@ -18,8 +18,8 @@ rule:
       - basic block:
         - and:
           - api: ole32.CoCreateInstance
-          - bytes: 11 F8 90 45 3A 1D D0 11 89 1F 00 AA 00 4B 2E 24 = CLSID_WbemLocator
-          - bytes: 87 A6 12 DC 7F 73 CF 11 88 4D 00 AA 00 4B 2E 24 = IID_IWbemLocator
+          - com/class: WbemLocator  # 11 F8 90 45 3A 1D D0 11 89 1F 00 AA 00 4B 2E 24 = CLSID_WbemLocator
+          - com/interface: IWbemLocator  # 87 A6 12 DC 7F 73 CF 11 88 4D 00 AA 00 4B 2E 24 = IID_IWbemLocator
       - or:
         - and:
           - arch: i386
