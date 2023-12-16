@@ -1,7 +1,7 @@
 rule:
   meta:
     name: set thread local storage value
-    namespace: host-interaction/process
+    namespace: host-interaction/thread/tls
     authors:
       - michael.hunhoff@mandiant.com
     scopes:
