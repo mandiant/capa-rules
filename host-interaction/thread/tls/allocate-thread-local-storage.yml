@@ -1,7 +1,7 @@
 rule:
   meta:
     name: allocate thread local storage
-    namespace: host-interaction/process
+    namespace: host-interaction/thread/tls
     authors:
       - michael.hunhoff@mandiant.com
     scopes:
