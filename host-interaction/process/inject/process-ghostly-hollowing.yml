@@ -4,7 +4,9 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - sara.rincon@mandiant.com
-    scope: function
+    scopes:
+      static: function
+      dynamic: call
     references:
       - https://github.com/hasherezade/transacted_hollowing/tree/main#ghostly-hollowing
     examples:
