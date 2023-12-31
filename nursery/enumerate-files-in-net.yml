@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: enumerate files in .NET
+    namespace: host-interaction/file-system/files/list
+    authors:
+      - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
+    scopes:
+      static: function
+      dynamic: thread
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
+    mbc:
+      - Discovery::File and Directory Discovery [E1083]
+    references:
+      - https://github.com/hfiref0x/TDL/blob/cc4b46ae1c939b14a22a734a727b163f873a41b
+  features:
+    - or:
+      - api: System.IO.DirectoryInfo::GetFiles
+      - api: System.IO.DirectoryInfo::EnumerateFiles
+      - api: System.IO.Directory::GetFiles
+      - api: System.IO.Directory::EnumerateFiles
+      - api: System.IO.Directory::EnumerateFileSystemEntries
+      - api: System.IO.DirectoryInfo::GetDirectories
+      - api: System.IO.DirectoryInfo::EnumerateDirectories
+      - api: System.IO.Directory::GetDirectories
+      - api: System.IO.Directory::EnumerateDirectories
