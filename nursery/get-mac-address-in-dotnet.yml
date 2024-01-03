@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: get MAC address in .NET
+    namespace: collection/network
+    authors:
+      - moritz.raabe@mandiant.com
+      - michael.hunhoff@mandiant.com
+      - echernofsky@google.com
+    scopes:
+      static: function
+      dynamic: thread
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+  features:
+    - or:
+      - api: System.Net.NetworkInformation.NetworkInterface::GetPhysicalAddress
