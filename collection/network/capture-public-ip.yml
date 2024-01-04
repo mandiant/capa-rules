@@ -4,6 +4,7 @@ rule:
     namespace: collection/network
     authors:
       - "@_re_fox"
+      - "still@teamt5.org"
     scopes:
       static: function
       dynamic: thread
@@ -11,6 +12,7 @@ rule:
       - Discovery::System Network Configuration Discovery [T1016]
     examples:
       - 84f1b049fa8962b215a77f51af6714b3:0x100061e5
+      - 6d952a7e66bc63b72c9a3d10ef28e3f2
   features:
     - and:
       - api: InternetOpen
@@ -28,3 +30,10 @@ rule:
         - substring: "wtfismyip.com/text"
         - substring: "api.myip.com"
         - substring: "ip-api.com/line"
+        - substring: "ip.tool.chinaz.com"
+        - substring: "1234i.com"
+        - substring: "ip138.com"
+        - substring: "myip.com.tw"
+        - substring: "taobao.com/help/getip.php"
+        - substring: "chaipip.com"
+        - substring: "sojson.com/ip"
