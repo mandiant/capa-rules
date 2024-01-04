@@ -12,7 +12,7 @@ rule:
       - Discovery::System Network Configuration Discovery [T1016]
     examples:
       - 84f1b049fa8962b215a77f51af6714b3:0x100061e5
-      - 6d952a7e66bc63b72c9a3d10ef28e3f2
+      - 6d952a7e66bc63b72c9a3d10ef28e3f2:0x0050e7b6
   features:
     - and:
       - api: InternetOpen
