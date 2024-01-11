@@ -1,7 +1,7 @@
 rule:
   meta:
     name: hook routines via dlsym RTLD_NEXT
-    # namespace: linking/hooking
+    namespace: linking/hooking
     authors:
       - william.ballenthin@mandiant.com
     scopes:
