@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: get current process command line
+    namespace: host-interation/process
+    authors:
+      - william.ballenthin@mandiant.com
+    scopes:
+      static: function
+      dynamic: thread
+  features:
+    - and:
+      - os: linux
+      - api: open
+      - string: "/proc/self/cmdline"
+      - api: read

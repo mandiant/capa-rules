@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: hook routines via dlsym RTLD_NEXT
+    namespace: linking/hooking
+    authors:
+      - william.ballenthin@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: call
+    references:
+      - https://stackoverflow.com/questions/71695007/hook-library-function-using-custom-method-using-dlsym
+      - https://liveoverflow.com/hooking-on-linux-with-ld_preload-pwn-adventure-3/
+  features:
+    - and:
+      - api: dlsym
+      - or:
+        - and:
+          - arch: i386
+          - number: 0xFFFFFFFF = RTLD_NEXT
+        - and:
+          - arch: amd64
+          - number: 0xFFFFFFFFFFFFFFFF = RTLD_NEXT

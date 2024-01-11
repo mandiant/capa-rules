@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: get current process file path
+    namespace: host-interation/process
+    authors:
+      - william.ballenthin@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: call
+  features:
+    - and:
+      - os: linux
+      - api: readlink
+      - string: "/proc/self/exe"
