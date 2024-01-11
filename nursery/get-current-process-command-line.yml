@@ -1,7 +1,7 @@
 rule:
   meta:
     name: get current process command line
-    # namespace: host-interation/process
+    namespace: host-interation/process
     authors:
       - william.ballenthin@mandiant.com
     scopes:
