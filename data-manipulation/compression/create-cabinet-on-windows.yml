@@ -11,7 +11,6 @@ rule:
     att&ck:
       - Collection::Archive Collected Data::Archive via Library [T1560.002]
     mbc:
-      - Collection::Archive Collected Data [E1560]
       - Data::Compress Data [C0024]
     references:
       - https://learn.microsoft.com/en-us/windows/win32/devnotes/creating-a-cabinet
