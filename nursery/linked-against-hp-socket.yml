@@ -1,0 +1,32 @@
+rule:
+  meta:
+    name: linked against hp-socket
+    namespace: linking/static/hp-socket
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Command and Control::Non-Application Layer Protocol [T1095]
+    references:
+      - https://github.com/ldcsaa/HP-Socket/
+    examples:
+      - 4c46fdafceba8e450deb93cdb82a177e
+  features:
+    - or:
+      - substring: "HP-Socket for Linux v%d.%d.%d [BN:%02d]"
+      - 3 or more:
+        - substring: "global/helper.cpp"
+        - substring: "src/HttpServer.cpp"
+        - substring: "src/TcpServer.cpp"
+        - substring: "src/common/IODispatcher.cpp"
+        - substring: "src/common/Thread.cpp"
+        - substring: "/HP-Socket/Linux/"
+      # in theory the following should be present for Windows version; untested
+      - 3 or more:
+        - substring: "Client Send Fail [SOCK: %d, SEQ: %d]"
+        - substring: "(%Iu) Send OK -->"
+        - substring: "<%s#%d> OP: %d, CODE: %d (DATA: 0x%X, LEN: %d>"
+        - substring: "---------------> Client Worker Thread 0x%08X stoped <---------------"
+        - substring: "<C-CNNID: %Iu> OnSend() event should not return 'HR_ERROR' !!"
