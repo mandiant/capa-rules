@@ -10,8 +10,8 @@ rule:
     references:
       - https://github.com/hasherezade/transacted_hollowing/tree/main#ghostly-hollowing
     examples:
-      - 3b2eba4789bd4a799fe18476a4d1ce9f37ecc4c202eb406e06425c7e792904ff:0x140007aa0
-      - 3b2eba4789bd4a799fe18476a4d1ce9f37ecc4c202eb406e06425c7e792904ff:0x140007840
+      - 3b2eba4789bd4a799fe18476a4d1ce9f37ecc4c202eb406e06425c7e792904ff:0x140007aa0  # open_file
+      - 3b2eba4789bd4a799fe18476a4d1ce9f37ecc4c202eb406e06425c7e792904ff:0x140007840  # delete_pending_file
   features:
     - or:
       - and:
