@@ -5,7 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     scopes:
-      static: function
+      static: basic block
       dynamic: thread
     att&ck:
       - Execution::System Services::Service Execution [T1569.002]
