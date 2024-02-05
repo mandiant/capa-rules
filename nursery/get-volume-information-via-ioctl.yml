@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: call
     att&ck:
       - Discovery::System Information Discovery [T1082]
     mbc:
@@ -16,6 +16,6 @@ rule:
   features:
     - and:
       - or:
-        - api: DeviceIoControl
+        - match: interact with driver via IOCTL
         - characteristic: indirect call
       - number: 0x90064 = FSCTL_GET_NTFS_VOLUME_DATA

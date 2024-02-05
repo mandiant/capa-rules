@@ -6,13 +6,13 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: call
     references:
       - https://www.crowdstrike.com/blog/the-anatomy-of-wiper-malware-part-3/
   features:
     - and:
       - or:
-        - api: DeviceIoControl
+        - match: interact with driver via IOCTL
         - characteristic: indirect call
       - and:
         - number: 0x90018 = FSCTL_LOCK_VOLUME

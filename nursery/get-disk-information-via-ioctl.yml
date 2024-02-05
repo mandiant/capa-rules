@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: call
     att&ck:
       - Discovery::System Information Discovery [T1082]
     mbc:
@@ -17,7 +17,7 @@ rule:
   features:
     - and:
       - or:
-        - api: DeviceIoControl
+        - match: interact with driver via IOCTL
         - characteristic: indirect call
       - or:
         - number: 0x70050 = IOCTL_DISK_GET_DRIVE_LAYOUT_EX
