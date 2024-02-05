@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: interact with driver via control codes
+    name: interact with driver via ioctl
     namespace: host-interaction/driver
     authors:
       - moritz.raabe@mandiant.com
