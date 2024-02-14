@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: unload driver
+    namespace: host-interaction/driver
+    authors:
+      - moritz.raabe@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: call
+    att&ck:
+      - Persistence::Create or Modify System Process::Windows Service [T1543.003]
+    examples:
+      - 31cee4f66cf3b537e3d2d37a71f339f4:0x1400044ce
+  features:
+    - or:
+      - api: NtUnloadDriver
+      - api: ZwUnloadDriver

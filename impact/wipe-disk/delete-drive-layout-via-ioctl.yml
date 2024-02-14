@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: call
     att&ck:
       - Impact::Disk Wipe::Disk Structure Wipe [T1561.002]
     mbc:
@@ -20,6 +20,6 @@ rule:
   features:
     - and:
       - or:
-        - api: DeviceIoControl
+        - match: interact with driver via IOCTL
         - characteristic: indirect call
       - number: 0x7c100 = IOCTL_DISK_DELETE_DRIVE_LAYOUT

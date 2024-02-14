@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: interact with driver via IOCTL
+    namespace: host-interaction/driver
+    authors:
+      - moritz.raabe@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: thread
+    examples:
+      - Practical Malware Analysis Lab 10-03.exe_:0x40108c
+  features:
+    - or:
+      - api: DeviceIoControl

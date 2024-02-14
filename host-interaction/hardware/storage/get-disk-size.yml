@@ -26,11 +26,11 @@ rule:
       - property/read: System.IO.DriveInfo::AvailableFreeSpace
       - basic block:
         - and:
-          - api: DeviceIoControl
+          - match: interact with driver via IOCTL
           - number: 0x7405C = IOCTL_DISK_GET_LENGTH_INFO
       - call:
         - and:
-          - api: DeviceIoControl
+          - match: interact with driver via IOCTL
           - number: 0x7405C = IOCTL_DISK_GET_LENGTH_INFO
       - and:
         - or:

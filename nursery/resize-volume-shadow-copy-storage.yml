@@ -10,5 +10,5 @@ rule:
       dynamic: call
   features:
     - and:
-      - api: kernel32.DeviceIoControl
+      - match: interact with driver via IOCTL
       - number: 0x53C028 = IOCTL_VOLSNAP_SET_MAX_DIFF_AREA_SIZE

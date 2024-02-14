@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: get disk information via IOCTL
+    namespace: host-interaction/hardware/storage
+    authors:
+      - william.ballenthin@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: call
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+    mbc:
+      - Discovery::System Information Discovery [E1082]
+    references:
+      - https://www.crowdstrike.com/blog/the-anatomy-of-wiper-malware-part-3/
+      - http://www.ioctls.net/
+  features:
+    - and:
+      - or:
+        - match: interact with driver via IOCTL
+        - characteristic: indirect call
+      - or:
+        - number: 0x70050 = IOCTL_DISK_GET_DRIVE_LAYOUT_EX
+        - number: 0x24050 = IOCTL_DISK_GET_DRIVE_GEOMETRY_EX
+        - number: 0x2d1080 = IOCTL_STORAGE_GET_DEVICE_NUMBER

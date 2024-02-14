@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: unmount volume via IOCTL
+    namespace: host-interaction/hardware/storage
+    authors:
+      - william.ballenthin@mandiant.com
+    scopes:
+      static: function
+      dynamic: call
+    references:
+      - https://www.crowdstrike.com/blog/the-anatomy-of-wiper-malware-part-3/
+  features:
+    - and:
+      - or:
+        - match: interact with driver via IOCTL
+        - characteristic: indirect call
+      - and:
+        - number: 0x90018 = FSCTL_LOCK_VOLUME
+        - number: 0x90020 = FSCTL_DISMOUNT_VOLUME

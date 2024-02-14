@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: get volume information via IOCTL
+    namespace: host-interaction/hardware/storage
+    authors:
+      - william.ballenthin@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: call
+    att&ck:
+      - Discovery::System Information Discovery [T1082]
+    mbc:
+      - Discovery::System Information Discovery [E1082]
+    references:
+      - https://www.crowdstrike.com/blog/the-anatomy-of-wiper-malware-part-3/
+  features:
+    - and:
+      - or:
+        - match: interact with driver via IOCTL
+        - characteristic: indirect call
+      - number: 0x90064 = FSCTL_GET_NTFS_VOLUME_DATA
