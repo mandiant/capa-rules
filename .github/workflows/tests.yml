@@ -30,15 +30,15 @@ jobs:
     steps:
     # We check the submodules separately as the rules submodule's reference may not be our PR/master
     - name: Checkout capa without submodules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         repository: mandiant/capa
     - name: Checkout capa-rules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         path: rules
     - name: Checkout capa-testfiles
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         repository: mandiant/capa-testfiles
         path: tests/data
@@ -108,12 +108,12 @@ jobs:
         echo "zip_name=capa-$v-linux.zip" >> $GITHUB_ENV
         echo "major_version=$(echo $v | cut -d. -f1)" >> $GITHUB_ENV
     - name: Checkout capa-rules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         ref: ${{ env.major_version }}
         path: rules
     - name: Checkout capa-testfiles
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         repository: mandiant/capa-testfiles
         path: tests/data

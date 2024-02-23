@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout capa-rules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
     - name: Count rules
       run: |
         num_rules=$(find . -type f -name '*.yml' -not -path './.github/*' | wc -l)
@@ -29,12 +29,12 @@ jobs:
     # Do not checkout submodules as we don't need capa-testfiles and we need to
     # update the rules submodule reference
     - name: Checkout capa
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         repository: mandiant/capa
         token: ${{ secrets.CAPA_TOKEN }}
     - name: Checkout capa-rules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         # To include the commit from update_num_rules (the default `ref` is the
         # one which triggered the action)
