@@ -8,21 +8,19 @@ jobs:
     steps:
     - name: Checkout capa-rules
       uses: actions/checkout@v3
-    - name: Update rules number badge in README
+    - name: Count rules
       run: |
         num_rules=$(find . -type f -name '*.yml' -not -path './.github/*' | wc -l)
-        sed -i "s/rules-[0-9]*-blue\.svg/rules-$num_rules-blue.svg/" README.md
-    - name: Commit changes
-      run: |
-        git config user.email 'capa-dev@mandiant.com'
-        git config user.name 'Capa Bot'
-        # Do not fail the action if rules number doesn't change
-        git add -A
-        git diff-index --quiet HEAD || git commit -am 'Update rules number badge'
-    - name: Push changes to capa-rules
-      uses: ad-m/github-push-action@master
+        echo "num_rules=$num_rules" >> $GITHUB_ENV
+    - name: Update dynamic badge gist
+      uses: schneegans/dynamic-badges-action@e9a478b16159b4d31420099ba146cdc50f134483 # v1.7.0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        auth: ${{ secrets.GITHUB_TOKEN }}
+        gistID: 6d7960e911f48b3b74916df8988cf0f3
+        filename: rules_badge.svg
+        label: rules
+        message: ${{ env.num_rules }}
+        color: blue
 
   sync_submodule_capa:
     runs-on: ubuntu-20.04
@@ -43,10 +41,6 @@ jobs:
         ref: master
         path: rules
         fetch-depth: 100 # needed so that `git diff` finds `github.event.before`
-    - name: Update rules number badge in README
-      run: |
-        num_rules=$(find rules -type f -name '*.yml' -not -path 'rules/.github/*' | wc -l)
-        sed -i "s/rules-[0-9]*-blue\.svg/rules-$num_rules-blue.svg/" README.md
     - name: Update number of new rules in CHANGELOG
       run: |
         new_rules=$(git -C rules diff -M --summary ${{ github.event.before }} | grep create | grep .yml | wc -l)
