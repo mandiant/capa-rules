@@ -56,7 +56,7 @@ jobs:
     - name: Get modified files
       if: github.event_name != 'workflow_dispatch' && github.event_name != 'schedule'
       id: files
-      uses: Ana06/get-changed-files@v2.2.0
+      uses: Ana06/get-changed-files@25f79e676e7ea1868813e21465014798211fad8c # v2.3.0
       # this Action may throw the below error, e.g. when not properly rebased
       # however, it still gets the modified files and we can continue
       # Error: The head commit for this pull_request event is not ahead of the base commit.

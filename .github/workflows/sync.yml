@@ -49,7 +49,7 @@ jobs:
         sed -ir "0,/### New Rules.*/s//### New Rules \($rules\)/" CHANGELOG.md
     - name: Get modified files
       id: files
-      uses: Ana06/get-changed-files@v2.2.0
+      uses: Ana06/get-changed-files@25f79e676e7ea1868813e21465014798211fad8c # v2.3.0
     - name: Set up Python 3.9
       uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
       with:
