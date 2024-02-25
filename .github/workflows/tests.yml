@@ -30,21 +30,21 @@ jobs:
     steps:
     # We check the submodules separately as the rules submodule's reference may not be our PR/master
     - name: Checkout capa without submodules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         repository: mandiant/capa
     - name: Checkout capa-rules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         path: rules
     - name: Checkout capa-testfiles
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         repository: mandiant/capa-testfiles
         path: tests/data
     # use latest available python for best performance
     - name: Set up Python 3.11
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
       with:
         python-version: 3.11
     - name: Install capa
@@ -56,7 +56,7 @@ jobs:
     - name: Get modified files
       if: github.event_name != 'workflow_dispatch' && github.event_name != 'schedule'
       id: files
-      uses: Ana06/get-changed-files@v2.2.0
+      uses: Ana06/get-changed-files@25f79e676e7ea1868813e21465014798211fad8c # v2.3.0
       # this Action may throw the below error, e.g. when not properly rebased
       # however, it still gets the modified files and we can continue
       # Error: The head commit for this pull_request event is not ahead of the base commit.
@@ -108,12 +108,12 @@ jobs:
         echo "zip_name=capa-$v-linux.zip" >> $GITHUB_ENV
         echo "major_version=$(echo $v | cut -d. -f1)" >> $GITHUB_ENV
     - name: Checkout capa-rules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         ref: ${{ env.major_version }}
         path: rules
     - name: Checkout capa-testfiles
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         repository: mandiant/capa-testfiles
         path: tests/data

@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout capa-rules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
     - name: Count rules
       run: |
         num_rules=$(find . -type f -name '*.yml' -not -path './.github/*' | wc -l)
@@ -29,12 +29,12 @@ jobs:
     # Do not checkout submodules as we don't need capa-testfiles and we need to
     # update the rules submodule reference
     - name: Checkout capa
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         repository: mandiant/capa
         token: ${{ secrets.CAPA_TOKEN }}
     - name: Checkout capa-rules
-      uses: actions/checkout@v3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
         # To include the commit from update_num_rules (the default `ref` is the
         # one which triggered the action)
@@ -49,9 +49,9 @@ jobs:
         sed -ir "0,/### New Rules.*/s//### New Rules \($rules\)/" CHANGELOG.md
     - name: Get modified files
       id: files
-      uses: Ana06/get-changed-files@v2.2.0
+      uses: Ana06/get-changed-files@25f79e676e7ea1868813e21465014798211fad8c # v2.3.0
     - name: Set up Python 3.9
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
       with:
         python-version: 3.9
     - name: Install Python dependencies
