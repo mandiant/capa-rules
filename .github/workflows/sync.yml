@@ -15,7 +15,7 @@ jobs:
     - name: Update dynamic badge gist
       uses: schneegans/dynamic-badges-action@e9a478b16159b4d31420099ba146cdc50f134483 # v1.7.0
       with:
-        auth: ${{ secrets.GITHUB_TOKEN }}
+        auth: ${{ secrets.CAPA_TOKEN }}
         gistID: 6d7960e911f48b3b74916df8988cf0f3
         filename: rules_badge.svg
         label: rules
