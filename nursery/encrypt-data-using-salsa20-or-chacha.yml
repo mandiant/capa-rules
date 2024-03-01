@@ -15,8 +15,8 @@ rule:
     # The constant words spell "expand 32-byte k" in ASCII (i.e. the 4 words are "expa", "nd 3", "2-by", and "te k")
     - or:
       - description: part of key setup
-      - string: "expand 32-byte k = sigma"
-      - string: "expand 16-byte k = tau"
+      - string: "expand 32-byte k" = sigma
+      - string: "expand 16-byte k" = tau
       # if sigma and tau are in contiguous memory, may result in concatenated string
       - string: "expand 32-byte kexpand 16-byte k"
       - and:
