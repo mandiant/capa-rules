@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: populate syswhisper2 syscall list
+    name: populate syswhispers2 syscall list
     namespace: linking/runtime-linking
     authors:
       - still@teamt5.org
