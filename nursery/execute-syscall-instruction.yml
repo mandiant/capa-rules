@@ -5,15 +5,21 @@ rule:
     authors:
       - "@kulinacs"
       - "@mr-tz"
+      - still@teamt5.org
     description: may be used to evade hooks or hinder analysis
     scopes:
       static: basic block
       dynamic: unsupported  # requires mnemonic features
     references:
       - https://github.com/j00ru/windows-syscalls
+      - https://codemachine.com/articles/system_call_instructions.html
   features:
     - and:
-      - mnemonic: syscall
+      - or:
+        - mnemonic: syscall
+        - instruction:
+          - mnemonic: int
+          - operand[0].number: 0x2e
       - or:
         - mnemonic: ret
         - mnemonic: retn
