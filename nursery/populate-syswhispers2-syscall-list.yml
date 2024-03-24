@@ -25,7 +25,7 @@ rule:
         - or:
           - instruction:
             - mnemonic: cmp
-            - operand[1].number: 0x6C64746E
+            - operand[1].number: 0x6C64746E = "ldtn"
           - instruction:
             - mnemonic: cmp
             - operand[1].number: 0x6C642E6C
