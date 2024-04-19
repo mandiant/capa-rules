@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encryptdecrypt-data-using-rc4-via-systemfunction033.yml
+    name: encrypt data using RC4 via SystemFunction033
     namespace: data-manipulation/encryption/rc4
     authors:
       - daniel.stepanic@elastic.co
