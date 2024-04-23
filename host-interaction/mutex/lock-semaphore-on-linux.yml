@@ -11,7 +11,9 @@ rule:
       - 294b8db1f2702b60fb2e42fdc50c2cee6a5046112da9a5703a548a4fa50477bc:0x408e40
   features:
     - and:
-      - os: linux
+      - or:
+        - os: linux
+        - os: android
       - or:
         - api: sem_wait
         - api: sem_timedwait

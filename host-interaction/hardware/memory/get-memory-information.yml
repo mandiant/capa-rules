@@ -14,11 +14,15 @@ rule:
   features:
     - or:
       - and:
-        - os: linux
+        - or:
+          - os: linux
+          - os: android
         - match: host-interaction/file-system/read
         - string: "/proc/meminfo"
       - and:
-        - os: linux
+        - or:
+          - os: linux
+          - os: android
         - api: system
         - or:
           - substring: "/proc/meminfo"

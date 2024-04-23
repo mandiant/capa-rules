@@ -11,7 +11,9 @@ rule:
       - Execution::Shared Modules [T1129]
   features:
     - and:
-      - os: linux
+      - or:
+        - os: linux
+        - os: android
       - or:
         - api: dlopen
         - api: dlmopen

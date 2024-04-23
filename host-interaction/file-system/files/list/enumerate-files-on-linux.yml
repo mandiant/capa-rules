@@ -15,7 +15,9 @@ rule:
       - 7351f8a40c5450557b24622417fc478d:0x405438
   features:
     - and:
-      - os: linux
+      - or:
+        - os: linux
+        - os: android
       - or:
         - and:
           - match: create or open file

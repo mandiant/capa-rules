@@ -21,7 +21,9 @@ rule:
           - count(api(kernel32.GetProcAddress)): 5 or more
           - count(api(ntdll.LdrGetProcedureAddress)): 5 or more
       - and:
-        - os: linux
+        - or:
+          - os: linux
+          - os: android
         - match: link function at runtime on Linux
         - or:
           - count(api(dlsym)): 5 or more

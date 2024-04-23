@@ -18,4 +18,5 @@ rule:
     - and:
       - or:
         - match: enumerate files on Windows
+        - match: enumerate files on Linux
       - characteristic: recursive call
