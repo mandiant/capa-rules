@@ -15,14 +15,20 @@ rule:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
     - or:
+      - api: recv
       - api: ws2_32.recv
+      - api: ws2_32.#16 = recv
       - api: ws2_32.recvfrom
+      - api: ws2_32.#17 = recvfrom
       - api: ws2_32.WSARecv
+      - api: ws2_32.#71 = WSARecv
       - api: ws2_32.WSARecvDisconnect
+      - api: ws2_32.#72 = WSARecvDisconnect
       - api: ws2_32.WSARecvEx
       - api: ws2_32.WSARecvFrom
+      - api: ws2_32.#73 = WSARecvFrom
       - api: ws2_32.WSARecvMsg
-      - api: recv
+      - api: recvmsg
       - api: System.Net.Sockets.Socket::Receive
       - api: System.Net.Sockets.Socket::ReceiveAsync
       - api: System.Net.Sockets.Socket::ReceiveFrom
@@ -35,4 +41,3 @@ rule:
       - api: System.Net.Sockets.Socket::EndReceive
       - api: System.Net.Sockets.Socket::EndReceiveFrom
       - api: System.Net.Sockets.Socket::EndReceiveMessageFrom
-      - api: recvmsg

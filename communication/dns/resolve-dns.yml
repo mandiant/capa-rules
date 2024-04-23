@@ -16,16 +16,19 @@ rule:
       - 17264e3126a97c319a6a0c61e6da951e:0x5FDC25D0
   features:
     - or:
+      - api: gethostbyname
       - api: ws2_32.gethostbyname
+      - api: ws2_32.#52 = gethostbyname
       - api: DnsQuery_A
       - api: DnsQuery_W
       - api: DnsQuery_UTF8
       - api: DnsQueryEx
-      - api: getaddrinfo
       - api: GetAddrInfo
+      - api: ws2_32.#24 = GetAddrInfoW
       - api: GetAddrInfoEx
-      - api: gethostbyname
       - api: getaddrinfo
+      - api: ws2_32.#98 = getaddrinfo
       - api: getnameinfo
+      - api: ws2_32.#99 = getnameinfo
       - api: gethostent
       - api: System.Net.Dns::GetHostAddresses

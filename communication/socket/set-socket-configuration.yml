@@ -14,4 +14,6 @@ rule:
   features:
     - or:
       - api: ws2_32.setsockopt
+      - api: ws2_32.#21 = setsockopt
       - api: ws2_32.ioctlsocket
+      - api: ws2_32.#10 = ioctlsocket

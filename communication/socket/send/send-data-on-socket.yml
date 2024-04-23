@@ -15,12 +15,16 @@ rule:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
     - or:
+      - api: send
       - api: ws2_32.send
+      - api: ws2_32.#19 = send
       - api: ws2_32.sendto
+      - api: ws2_32.#20 = sendto
       - api: ws2_32.WSASend
+      - api: ws2_32.#76 = WSASend
       - api: ws2_32.WSASendMsg
       - api: ws2_32.WSASendTo
-      - api: send
+      - api: ws2_32.#78 = WSASendTo
       - api: System.Net.Sockets.Socket::Send
       - api: System.Net.Sockets.Socket::SendAsync
       - api: System.Net.Sockets.Socket::SendTo
