@@ -18,7 +18,9 @@ rule:
       - or:
         - api: connect
         - api: ws2_32.connect
+        - api: ws2_32.#4 = connect
         - api: ws2_32.WSAConnect
+        - api: ws2_32.#33 = WSAConnect
         - api: ConnectEx
         - or:
           - and:
@@ -32,27 +34,39 @@ rule:
                 - number: 0x3E06748C
             - basic block:
               - and:
-                - api: WSAIoctl
+                - or:
+                  - api: ws2_32.WSAIoctl
+                  - api: ws2_32.#60 = WSAIoctl
                 - number: 0xC8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
             - basic block:
               - and:
-                - api: setsockopt
+                - or:
+                  - api: setsockopt
+                  - api: ws2_32.#21 = setsockopt
                 - number: 0xFFFF = SOL_SOCKET
                 - number: 0x7010 = SO_UPDATE_CONNECT_CONTEXT
             # socket must be bound to ConnectEx
             # https://gist.github.com/joeyadams/4158972
-            - api: bind
+            - or:
+              - api: bind
+              - api: ws2_32.#2 = bind
           - and:
             # dynamic
             - call:
               - and:
-                - api: WSAIoctl
+                - or:
+                  - api: ws2_32.WSAIoctl
+                  - api: ws2_32.#60 = WSAIoctl
                 - number: 0xC8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
             - call:
               - and:
-                - api: setsockopt
+                - or:
+                  - api: setsockopt
+                  - api: ws2_32.#21 = setsockopt
                 - number: 0xFFFF = SOL_SOCKET
                 - number: 0x7010 = SO_UPDATE_CONNECT_CONTEXT
             # socket must be bound to ConnectEx
             # https://gist.github.com/joeyadams/4158972
-            - api: bind
+            - or:
+              - api: bind
+              - api: ws2_32.#2 = bind

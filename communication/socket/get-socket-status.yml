@@ -14,5 +14,6 @@ rule:
     examples:
       - 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x1000C1F0
   features:
-    - and:
+    - or:
       - api: ws2_32.select
+      - api: ws2_32.#18 = select

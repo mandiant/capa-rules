@@ -20,7 +20,10 @@ rule:
     - and:
       - or:
         - api: socket
-        - api: ws2_32.WSASocketA
+        - api: ws2_32.#23 = socket
+        - api: ws2_32.WSASocket
+        - api: ws2_32.#82 = WSASocketA
+        - api: ws2_32.#83 = WSASocketW
       - or:
         - number: 2 = AF_INET
         - number: 23 = AF_INET6
