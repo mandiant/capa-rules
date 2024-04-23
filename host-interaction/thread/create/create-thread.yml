@@ -34,7 +34,9 @@ rule:
           - api: ntdll.ZwCreateThread
           - api: ntdll.ZwCreateThreadEx
       - and:
-        - os: linux
+        - or:
+          - os: linux
+          - os: android
         - api: pthread_create
       - and:
         - api: System.Threading.Thread::Start

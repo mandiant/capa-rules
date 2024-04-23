@@ -36,7 +36,9 @@ rule:
           - api: KeWaitForSingleObject
           - api: KeDelayExecutionThread
       - and:
-        - os: linux
+        - or:
+          - os: linux
+          - os: android
         - or:
           - api: sleep
           - api: usleep

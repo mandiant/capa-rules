@@ -9,7 +9,9 @@ rule:
       dynamic: thread
   features:
     - and:
-      - os: linux
+      - or:
+        - os: linux
+        - os: android
       - or:
         - api: pthread_setname_np
         - and:
