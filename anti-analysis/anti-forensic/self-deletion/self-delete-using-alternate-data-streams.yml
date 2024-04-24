@@ -48,5 +48,6 @@ rule:
           - number: 0x10000 = DELETE
         - and:
           - instruction:
+            - description: Uses arithmetic to return FILE_INFORMATION_CLASS (FileRenameInfo)          
             - mnemonic: lea
             - offset: -0x1D
