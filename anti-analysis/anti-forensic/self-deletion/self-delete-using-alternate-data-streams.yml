@@ -19,16 +19,27 @@ rule:
   features:
     - and:
       - count(api(kernel32.SetFileInformationByHandle)): 2
-      - basic block:
-        - and:
-          - api: kernel32.SetFileInformationByHandle
-          - optional:
+      - or:
+        - basic block:
+          - and:
+            - api: kernel32.SetFileInformationByHandle
+            - optional:
+              - number: 3 = FileRenameInfo
+        - call:
+          - and:
+            - api: SetFileInformationByHandle
             - number: 3 = FileRenameInfo
-      - basic block:
-        - and:
-          - api: kernel32.SetFileInformationByHandle
-          - number: 4 = FileDispositionInfo
-          - number: 1 = TRUE // fDelete.DeleteFile = TRUE;
+      - or:
+        - basic block:
+          - and:
+            - api: kernel32.SetFileInformationByHandle
+            - number: 4 = FileDispositionInfo
+            - number: 1 = TRUE // fDelete.DeleteFile = TRUE;
+        - call:
+          - and:
+            - api: SetFileInformationByHandle
+            - number: 4 = FileDispositionInfo
+            - number: 1 = TRUE // fDelete.DeleteFile = TRUE;
       - and:
         - count(api(kernel32.CreateFile)): 2
         - number: 0x10000 = DELETE
