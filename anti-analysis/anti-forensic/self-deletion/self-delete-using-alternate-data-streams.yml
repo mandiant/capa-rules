@@ -1,0 +1,45 @@
+rule:
+  meta:
+    name: self delete using alternate data streams
+    namespace: anti-analysis/anti-forensic/self-deletion
+    authors:
+      - daniel.stepanic@elastic.co
+    scopes:
+      static: function
+      dynamic: thread
+    att&ck:
+      - Defense Evasion::Indicator Removal::File Deletion [T1070.004]
+    mbc:
+      - Defense Evasion::Self Deletion [F0007]
+    references:
+      - https://github.com/LloydLabs/delete-self-poc
+    examples:
+      - c2d46d256b8f9490c9599eea11ecef19fde7d4fdd2dea93604cee3cea8e172ac:0x1400019C0
+      - 388021747b85453adff2680c8a0e13e230f4eeada1a1055e3fb8e09800d4fb79:0x180003A24
+  features:
+    - and:
+      - count(api(kernel32.SetFileInformationByHandle)): 2
+      - or:
+        - basic block:
+          - and:
+            - api: kernel32.SetFileInformationByHandle
+            - optional:
+              - number: 3 = FileRenameInfo
+        - call:
+          - and:
+            - api: SetFileInformationByHandle
+            - number: 3 = FileRenameInfo
+      - or:
+        - basic block:
+          - and:
+            - api: kernel32.SetFileInformationByHandle
+            - number: 4 = FileDispositionInfo
+            - number: 1 = TRUE // fDelete.DeleteFile = TRUE;
+        - call:
+          - and:
+            - api: SetFileInformationByHandle
+            - number: 4 = FileDispositionInfo
+            - number: 1 = TRUE // fDelete.DeleteFile = TRUE;
+      - and:
+        - count(api(kernel32.CreateFile)): 2
+        - number: 0x10000 = DELETE
