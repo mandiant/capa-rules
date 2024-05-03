@@ -5,6 +5,7 @@ rule:
     authors:
       - ervin.ocampo@mandiant.com
       - jakub.jozwiak@mandiant.com
+      - still@teamt5.org
     description: Detect usage of various WinAPI functions that accept callback functions as parameters in order to execute arbitrary shellcode
     scopes:
       static: function
@@ -18,6 +19,7 @@ rule:
       - https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html
       - http://ropgadget.com/posts/abusing_win_functions.html
       - https://github.com/aahmad097/AlternativeShellcodeExec/
+      - https://osandamalith.com/2021/04/01/executing-shellcode-via-callbacks/
     examples:
       - 10cd7afd580ee9c222b0a87ff241d306:0x10008BE0
       - 268d61837aa248c1d49a973612a129ce:0x1000CEC0
@@ -27,18 +29,26 @@ rule:
     - and:
       - match: allocate or change RWX memory
       - or:
-        - api: EnumDateFormats
-        - api: GrayString
-        - api: LineDDA
+        - api: CallWindowProc
+        - api: EnumCalendarInfo
+        - api: EnumCalendarInfoEx
         - api: EnumChildWindows
+        - api: EnumChildWindows
+        - api: EnumDateFormats
         - api: EnumDesktops
         - api: EnumDesktopWindows
+        - api: EnumDisplayMonitors
+        - api: EnumFontFamilies
+        - api: EnumFontFamiliesEx
+        - api: EnumFonts
+        - api: EnumResourceTypes
         - api: EnumSystemCodePages
         - api: EnumSystemGeoID
         - api: EnumSystemLanguageGroups
         - api: EnumSystemLocales
         - api: EnumThreadWindows
+        - api: EnumTimeFormats
         - api: EnumUILanguages
         - api: EnumWindows
-        - api: EnumChildWindows
-        - api: EnumTimeFormats
+        - api: GrayString
+        - api: LineDDA
