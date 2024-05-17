@@ -22,3 +22,10 @@ rule:
       - api: crypt32.CryptUnprotectData
       - api: System.Security.Cryptography.ProtectedData::Unprotect
       - api: System.Security.Cryptography.ProtectedData::Protect
+      - api: SystemFunction040
+      - api: SystemFunction041
+      - and:
+        - match: link function at runtime on Windows
+        - or:
+          - string: "SystemFunction040"
+          - string: "SystemFunction041"
