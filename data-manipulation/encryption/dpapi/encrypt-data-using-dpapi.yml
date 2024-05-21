@@ -22,3 +22,14 @@ rule:
       - api: crypt32.CryptUnprotectData
       - api: System.Security.Cryptography.ProtectedData::Unprotect
       - api: System.Security.Cryptography.ProtectedData::Protect
+      - api: SystemFunction040
+      - api: SystemFunction041
+      - and:
+        - match: link function at runtime on Windows
+        - or:
+          # RtlEncryptMemory is available as SystemFunction040 export in Advapi32.dll
+          # CryptProtectMemory is a wrapper function for SystemFunction040
+          - string: "SystemFunction040"
+          # RtlDecryptMemory is available as SystemFunction041 export in Advapi32.dll
+          # CryptUnprotectMemory is a wrapper function for SystemFunction041
+          - string: "SystemFunction041"
