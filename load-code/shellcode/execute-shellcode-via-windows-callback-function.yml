@@ -41,6 +41,8 @@ rule:
         - api: EnumFontFamilies
         - api: EnumFontFamiliesEx
         - api: EnumFonts
+        - api: EnumProps
+        - api: EnumPropsEx
         - api: EnumResourceTypes
         - api: EnumSystemCodePages
         - api: EnumSystemGeoID
