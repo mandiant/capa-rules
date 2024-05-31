@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/process/create
     authors:
       - joakim@intezer.com
+      - mehunhoff@google.com
     scopes:
       static: basic block
       dynamic: call
@@ -27,3 +28,4 @@ rule:
         - api: posix_spawn
         - api: posix_spawnp
         - api: popen
+        - api: fork

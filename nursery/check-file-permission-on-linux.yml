@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: check file permission on Linux
+    namespace: host-interaction/file-system
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: call
+  features:
+    - and:
+      - or:
+        - os: android
+        - os: linux
+      - or:
+        - api: access
+        - api: faccessat

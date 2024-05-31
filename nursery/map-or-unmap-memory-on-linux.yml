@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: map or unmap memory on Linux
+    namespace: host-interaction/memory
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: call
+  features:
+    - and:
+      - or:
+        - os: linux
+        - os: android
+      - or:
+        - api: mmap
+        - api: munmap

@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: change memory permission on Linux
+    namespace: host-interaction/memory
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: call
+  features:
+    - and:
+      - or:
+        - os: linux
+        - os: android
+      - or:
+        - api: mprotect
+        - api: pkey_mprotect
