@@ -10,8 +10,8 @@ rule:
   features:
     - and:
       - or:
-        - os: linux
         - os: android
+        - os: linux
       - or:
         - api: access
         - api: faccessat

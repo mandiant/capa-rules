@@ -15,8 +15,8 @@ rule:
   features:
     - and:
       - or:
-          - os: android
-          - os: linux
+        - os: android
+        - os: linux
       - or:
         - api: chown
         - api: fchown
