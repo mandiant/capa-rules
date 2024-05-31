@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: check if process is running under Android emulator on Android
+    namespace: anti-analysis/anti-emulation/android
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: call
+    references:
+      - https://github.com/happylishang/AntiFakerAndroidChecker/blob/master/antifake/src/main/jni/emulator/emcheck64.c
+  features:
+    - and:
+      - or:
+        - os: linux
+        - os: android
+      - string: "com/snail/antifake/jni/EmulatorDetectUtil"
+      - optional:
+        - string: "getSystemArch"
