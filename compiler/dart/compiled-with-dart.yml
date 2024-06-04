@@ -11,7 +11,7 @@ rule:
       - https://dart.dev/
       - https://github.com/dart-lang/sdk
     examples:
-      - a6c9827c2077c044dc4ff76c69062c6bbf6fa1b73f485b0c7e006f949e18e1a5
+      - 159d2036b0f4e4778b327276bb058229ee0d7f80cd71c1b2515bce0d2f5a75be
   features:
     - 2 or more:
       - string: "dart:typed_data"
