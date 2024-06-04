@@ -1,0 +1,29 @@
+rule:
+  meta:
+    name: hide graphical window from taskbar
+    namespace: host-interaction/gui/window/hide
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: call
+    att&ck:
+      - Defense Evasion::Hide Artifacts::Hidden Window [T1564.003]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getwindowlongptrw
+      - https://learn.microsoft.com/en-us/windows/win32/winmsg/extended-window-styles
+      - https://dreamlayers.blogspot.com/2010/12/hiding-window-from-taskbar-using.html
+    examples:
+      - 79252f58d486aee8c08a8a7ebd36ae11ab5798b289e7f88e71eacf8637c340cc:0x180004B22
+  features:
+    - and:
+      - api: GetWindowLongPtr
+      - api: SetWindowLongPtr
+      - number: 0x0FFFFFFEC = GWL_EXSTYLE (-20)
+      - or:
+        - instruction:
+          - mnemonic: or
+          - operand[1].number: 0x80 = WS_EX_TOOLWINDOW
+        - instruction:
+          - mnemonic: bts
+          - operand[1].number: 0x7
