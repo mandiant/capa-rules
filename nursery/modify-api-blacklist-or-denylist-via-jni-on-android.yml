@@ -11,6 +11,7 @@ rule:
     - and:
       - os: android
       - string: "com/android/internal/os/ZygoteInit"
-      - string: "setApiBlacklistExemptions"
-      - string: "setApiDenylistExemptions"
+      - or:
+        - string: "setApiBlacklistExemptions"
+        - string: "setApiDenylistExemptions"
       - string: "java/lang/String"
