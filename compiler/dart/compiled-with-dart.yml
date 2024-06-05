@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: compiled with Dart
+    namespace: compiler/dart
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scopes:
+      static: file
+      dynamic: file
+    references:
+      - https://dart.dev/
+      - https://github.com/dart-lang/sdk
+    examples:
+      - 659a539cfff56e5450af76f8696b7122d6a22b1d7dbe5121c7b6308eb6ec1c3a
+  features:
+    - 2 or more:
+      - string: "dart:typed_data"
+      - string: "dart:_internal"
+      - string: "_kDartVmSnapshotData"
+      - string: "dart:core/bool.dart"
+      - string: "dart:io/common.dart"
+      - string: "dart:ffi-patch/ffi_patch.dart"
+      - string: "Object_haveSameRuntimeType"
