@@ -19,6 +19,10 @@ rule:
         - os: android
       - or:
         - api: execve
+        - and:
+          - match: execute syscall
+          - arch: aarch64
+          - number: 0xdd
         - api: execl
         - api: execlp
         - api: execle

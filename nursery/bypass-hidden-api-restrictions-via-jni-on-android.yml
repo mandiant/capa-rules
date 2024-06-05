@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: bypass hidden API restrictions via JNI on Android
+    namespace: host-interaction/bypass
+    authors:
+      - mehunhoff@google.com
+    description: Starting in Android 9 (API level 28), the platform restricts which non-SDK interfaces your app can use
+    scopes:
+      static: function
+      dynamic: thread
+    references:
+      - https://stackoverflow.com/questions/55970137/bypass-androids-hidden-api-restrictions
+  features:
+    - and:
+      - os: android
+      - string: "dalvik/system/VMRuntime"
+      - string: "getRuntime"
+      - string: "setHiddenApiExemptions"
+      - string: "java/lang/String"
