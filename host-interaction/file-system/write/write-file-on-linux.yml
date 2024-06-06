@@ -29,6 +29,8 @@ rule:
         - api: fwrite
         - api: putwchar
         - api: dprintf
+        - api: vdprintf
         - api: fprintf
+        - api: vfprintf
       - optional:
         - match: create or open file

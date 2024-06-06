@@ -22,7 +22,7 @@ rule:
         - and:
           - match: execute syscall
           - arch: aarch64
-          - number: 0xdd
+          - number: 0xdd = execve
         - api: execl
         - api: execlp
         - api: execle
