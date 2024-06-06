@@ -1,0 +1,45 @@
+rule:
+  meta:
+    name: populate SysWhispers2 syscall list
+    namespace: linking/runtime-linking
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: function
+      dynamic: unsupported
+    att&ck:
+      - Execution::Shared Modules [T1129]
+      - Execution::Native API [T1106]
+      - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
+    references:
+      - https://github.com/jthuraisamy/SysWhispers2/blob/main/data/base.c#L32
+    examples:
+      - 932dab8756ad4ae9a62bde0772d952e4:0x14001BD1E
+  features:
+    - and:
+      - and:
+        - description: check ntdll.dll
+        - instruction:
+          - description: "to lower case"
+          - mnemonic: or
+          - operand[1].number: 0x20202020
+        - or:
+          - instruction:
+            - mnemonic: cmp
+            - operand[1].number: 0x6C64746E = "ldtn"
+          - instruction:
+            - mnemonic: cmp
+            - operand[1].number: 0x6C642E6C = "ld.l"
+      - and:
+        - description: check system call starting with 'Zw'
+        - instruction:
+          - description: check 'Zw'
+          - mnemonic: cmp
+          - operand[1].number: 0x775a = "wZ"
+      - and: # this is optional but this should reduce false positives if any at all
+        - description: syscall list sorting
+        - instruction:
+          - mnemonic: add
+          - operand[1].number: 1
+        - mnemonic: lea
+        - mnemonic: mov
