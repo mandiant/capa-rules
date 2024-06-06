@@ -5,12 +5,11 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     scopes:
-      static: function
-      dynamic: thread
+      static: instruction
+      dynamic: call
     examples:
       - Practical Malware Analysis Lab 12-03.exe_:0x401000
   features:
-    - and:
-      - or:
-        - api: user32.SetWindowsHookEx
-        - api: user32.UnhookWindowsHookEx
+    - or:
+      - api: user32.SetWindowsHookEx
+      - api: user32.UnhookWindowsHookEx

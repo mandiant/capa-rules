@@ -5,7 +5,7 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     scopes:
-      static: function
+      static: basic block
       dynamic: call
     att&ck:
       - Collection::Input Capture::Keylogging [T1056.001]

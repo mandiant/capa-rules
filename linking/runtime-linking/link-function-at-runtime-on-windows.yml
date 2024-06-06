@@ -6,8 +6,8 @@ rule:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
     scopes:
-      static: function
-      dynamic: unsupported  # requires characteristic features
+      static: instruction
+      dynamic: call
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:
