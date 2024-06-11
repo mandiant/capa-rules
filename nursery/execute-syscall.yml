@@ -14,7 +14,11 @@ rule:
       - https://github.com/j00ru/windows-syscalls
   features:
     - or:
-      - api: syscall
+      - and:
+        - or:
+          - os: linux
+          - os: android
+        - api: syscall # https://man7.org/linux/man-pages/man2/syscall.2.html
       - and:
         - mnemonic: syscall
         - or:
