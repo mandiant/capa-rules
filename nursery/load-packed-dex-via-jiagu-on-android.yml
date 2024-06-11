@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: load packed DEX via Jiagu on Android
+    namespace: anti-analysis
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: thread
+    references:
+      - https://github.com/Frezrik/Jiagu
+  features:
+    - and:
+      - os: android
+      - string: "NDK_JIAGU"
+      - string: "[-]get %s handle failed:%s"
+      - string: "[-]ANONYMOUS mmap failed:%s"
+      - string: "[-]g_sdk_int Update cookie failed"
+      - string: "dalvik/system/InMemoryDexClassLoader"

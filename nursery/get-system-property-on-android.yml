@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: get system property on Android
+    namespace: host-interation/process
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: basic block
+      dynamic: call
+  features:
+    - and:
+      - os: android
+      - api: __system_property_get

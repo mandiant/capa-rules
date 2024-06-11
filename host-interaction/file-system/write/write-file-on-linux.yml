@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/file-system/write
     authors:
       - joakim@intezer.com
+      - mehunhoff@google.com
     scopes:
       static: function
       dynamic: thread
@@ -27,5 +28,9 @@ rule:
         - api: write
         - api: fwrite
         - api: putwchar
+        - api: dprintf
+        - api: vdprintf
+        - api: fprintf
+        - api: vfprintf
       - optional:
         - match: create or open file

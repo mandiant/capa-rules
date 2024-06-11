@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: get current process filesystem mounts on Linux
+    namespace: host-interation/process
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: basic block
+      dynamic: call
+  features:
+    - and:
+      - or:
+        - os: linux
+        - os: android
+      - match: create or open file
+      - string: "/proc/self/mounts"

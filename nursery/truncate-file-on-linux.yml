@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: truncate file on Linux
+    namespace: host-interaction/file-system/truncate
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: basic block
+      dynamic: call
+  features:
+    - and:
+      - or:
+        - os: android
+        - os: linux
+      - api: ftruncate

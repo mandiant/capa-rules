@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: modify API blacklist or denylist via JNI on Android
+    namespace: host-interaction/bypass
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: thread
+  features:
+    - and:
+      - os: android
+      - string: "com/android/internal/os/ZygoteInit"
+      - or:
+        - string: "setApiBlacklistExemptions"
+        - string: "setApiDenylistExemptions"
+      - string: "java/lang/String"

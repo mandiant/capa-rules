@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: hook routines via LSPlant
+    namespace: linking/hooking
+    authors:
+      - mehunhoff@google.com
+    description: LSPlant is an Android ART hook library, providing Java method hook/unhook and inline deoptimization
+    scopes:
+      static: basic block
+      dynamic: thread
+    references:
+      - https://github.com/LSPosed/LSPlant
+  features:
+    - and:
+      - string: "LSPHooker_"
+      - string: "hooker"
+      - string: "{target}"
