@@ -6,8 +6,8 @@ rule:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
     scopes:
-      static: function
-      dynamic: unsupported  # requires characteristic features
+      static: instruction
+      dynamic: call
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:
@@ -19,9 +19,3 @@ rule:
       - or:
         - api: kernel32.GetProcAddress
         - api: ntdll.LdrGetProcedureAddress
-      - optional:
-        - characteristic: indirect call
-        - api: kernel32.LoadLibrary
-        - api: kernel32.GetModuleHandle
-        - api: kernel32.GetModuleHandleEx
-        - api: ntdll.LdrLoadDll
