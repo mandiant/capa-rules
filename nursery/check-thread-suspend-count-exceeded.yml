@@ -15,7 +15,7 @@ rule:
       - https://research.checkpoint.com/2023/raspberry-robin-anti-evasion-how-to-exploit-analysis/
   features:
     - and:
-      - match: create thread bypass process freeze
+      - match: create thread bypassing process freeze
       - function:
         - and:
           - or:
