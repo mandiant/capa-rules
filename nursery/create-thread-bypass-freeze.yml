@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: create thread bypass process freeze
+    name: create thread bypassing process freeze
     authors:
       - ervinocampo@google.com
     scopes:
