@@ -25,7 +25,6 @@ rule:
         - api: fputwc
         - api: putwc
         - api: fputws
-        - api: write
         - api: fwrite
         - api: putwchar
         - api: dprintf
