@@ -15,8 +15,7 @@ rule:
     references:
       - https://github.com/powturbo/Turbo-Base64/blob/50fdf37b8517160c772dba357684ea6144befaa9/turbob64v512.c#L124
     examples:
-      - f74246f0aeca69128d122b0e5b25c3ab
-      - 314a87dee7faff7c1b313a36024c4faf
+      - f53dfa294d6979145fbb34303cf73bb6
   features:
     - or:
       - and:
