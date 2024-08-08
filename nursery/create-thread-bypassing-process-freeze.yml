@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: create thread bypassing process freeze
+    authors:
+      - ervinocampo@google.com
+    scopes:
+      static: basic block
+      dynamic: call
+    att&ck:
+      - Defense Evasion::Debugger Evasion [T1622]
+    mbc:
+      - Anti-Behavioral Analysis::Debugger Evasion [B0002]
+    references:
+      - https://secret.club/2021/01/04/thread-stuff.html
+      - https://research.checkpoint.com/2023/raspberry-robin-anti-evasion-how-to-exploit-analysis/
+      - https://www.pinvoke.dev/ntdll/ntcreatethreadex
+      - https://github.com/winsiderss/systeminformer/blob/master/phnt/include/ntpsapi.h
+  features:
+    - and:
+      - or:
+        - api: ntdll.NtCreateThreadEx
+        - string: "NtCreateThreadEx"
+      - number: 0x40 = Undocumented thread creation flag dubbed as THREAD_CREATE_FLAGS_BYPASS_PROCESS_FREEZE
