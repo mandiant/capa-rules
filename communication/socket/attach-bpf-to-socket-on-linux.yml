@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: call
     att&ck:
       - Persistence::Traffic Signaling::Socket Filters [T1205.002]
     mbc:
