@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: attach BPF to socket on Linux
+    namespace: communication/socket
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: call
+    att&ck:
+      - Persistence::Traffic Signaling::Socket Filters [T1205.002]
+    mbc:
+      - Communication::Socket Communication::Set Socket Config [C0001.001]
+    references:
+      - https://www.kernel.org/doc/Documentation/networking/filter.txt
+    examples:
+      - 34dbc85ed0386e024c724c7969e8d0ff0ff0b1882508ea259c458d59657a1971
+  features:
+    - and:
+      - os: linux
+      - api: setsockopt
+      - number: 1 = SOL_SOCKET
+      - number: 26 = SO_ATTACH_FILTER
