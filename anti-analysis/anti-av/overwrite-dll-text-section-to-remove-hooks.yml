@@ -1,0 +1,30 @@
+rule:
+  meta:
+    name: overwrite DLL .text section to remove hooks
+    namespace: anti-analysis/anti-av
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scopes:
+      static: function
+      dynamic: thread
+    att&ck:
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools [F0004]
+    references:
+      - https://www.ired.team/offensive-security/defense-evasion/how-to-unhook-a-dll-using-c++
+    examples:
+      - 282c32269a9893c5741ca682268369421c43ac21d73b1f6c23386d61c93bf3e9:0x1400014A4
+  features:
+    - and:
+      - or:
+        - api: GetModuleHandle
+        - api: GetModuleHandleEx
+      - or:
+        - match: read file via mapping
+        - match: read file on Windows
+      - match: enumerate PE sections
+      - string: ".text"
+      # The rule was initially created for NTDLL unhooking technique but then made more generic to handle unhooking of any DLL.
+      # Revert to `string: ntdll.dll` if it's too broad.
+      - substring: ".dll"
