@@ -29,28 +29,59 @@ rule:
     - and:
       - match: allocate or change RWX memory
       - or:
+        - api: AddPropSheetPageProc
         - api: CallWindowProc
+        - api: CertEnumSystemStore
+        - api: CertEnumSystemStoreLocation
+        - api: CreateTimerQueueTimer
+        - api: CryptEnumOIDInfo
+        - and:
+          - api: DPA_Create
+          - api: DPA_SetPtr
+          - api: DPA_EnumCallback
+        - and:
+          - api: DSA_Create
+          - api: DSA_InsertItem
+          - api: DSA_EnumCallback
+        - api: DrawState
         - api: EnumCalendarInfo
         - api: EnumCalendarInfoEx
-        - api: EnumChildWindows
         - api: EnumChildWindows
         - api: EnumDateFormats
         - api: EnumDesktops
         - api: EnumDesktopWindows
+        - api: EnumDirTree
         - api: EnumDisplayMonitors
         - api: EnumFontFamilies
         - api: EnumFontFamiliesEx
         - api: EnumFonts
+        - api: EnumLanguageGroupLocales
+        - and:
+          - or:
+            - api: GetDC
+            - api: GetDCEx
+          - api: EnumObjects
         - api: EnumProps
         - api: EnumPropsEx
+        - api: EnumPwrSchemes
         - api: EnumResourceTypes
         - api: EnumSystemCodePages
         - api: EnumSystemGeoID
+        - api: EnumSystemGeoNames
         - api: EnumSystemLanguageGroups
         - api: EnumSystemLocales
         - api: EnumThreadWindows
         - api: EnumTimeFormats
         - api: EnumUILanguages
         - api: EnumWindows
+        - api: EnumWindowStations
+        - api: EnumerateLoadedModules
         - api: GrayString
+        - api: ImmEnumInputContext
         - api: LineDDA
+        - and:
+          - api: SymInitialize
+          - or:
+            - api: SymEnumProcesses
+            - api: SymRegisterCallback
+        - api: VerifierEnumerateResource
