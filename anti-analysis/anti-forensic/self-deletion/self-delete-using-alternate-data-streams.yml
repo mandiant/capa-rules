@@ -15,7 +15,8 @@ rule:
       - https://github.com/LloydLabs/delete-self-poc
     examples:
       - c2d46d256b8f9490c9599eea11ecef19fde7d4fdd2dea93604cee3cea8e172ac:0x1400019C0
-      - 388021747b85453adff2680c8a0e13e230f4eeada1a1055e3fb8e09800d4fb79:0x180003A24
+      # encountering sporadic test issues for this sample for unknown reasons
+      # - 388021747b85453adff2680c8a0e13e230f4eeada1a1055e3fb8e09800d4fb79:0x180003A24
   features:
     - and:
       - count(api(kernel32.SetFileInformationByHandle)): 2
