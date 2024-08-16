@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: delete file on Linux
+    namespace: host-interaction/file-system/delete
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: basic block
+      dynamic: call
+    mbc:
+      - File System::Delete File [C0047]
+  features:
+    - and:
+      - or:
+        - os: linux
+        - os: android
+      - or:
+        - api: unlink
+        - api: unlinkat
