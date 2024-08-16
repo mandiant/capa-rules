@@ -13,3 +13,6 @@ rule:
     - or:
       - api: DbgPrint
       - api: kernel32.OutputDebugString
+      - and:
+        - os: android
+        - api: __android_log_print
