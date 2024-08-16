@@ -15,6 +15,9 @@ rule:
     #  and ecx, 800000FFh
     #  and ecx, 0FFh
     - and:
+      - or:
+        - arch: i386
+        - arch: amd64
       - mnemonic: and
       - or:
         - number: 0x800000FF
