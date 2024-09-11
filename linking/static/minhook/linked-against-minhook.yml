@@ -1,0 +1,52 @@
+rule:
+  meta:
+    name: linked against MinHook
+    namespace: linking/static/minhook
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Defense Evasion::Hijack Execution Flow [T1574]
+    references:
+      - https://www.codeproject.com/Articles/44326/MinHook-The-Minimalistic-x-x-API-Hooking-Libra
+      - https://github.com/TsudaKageyu/minhook
+    examples:
+      - 3d5a99114b24e4373b77077072e4ed52ffce9e2607ec6fe4ed2f08d3b1c59026
+  features:
+    - or:
+      - string: "MH_ERROR_ALREADY_INITIALIZED"
+      - string: "MH_ERROR_NOT_INITIALIZED"
+      - string: "MH_ERROR_ALREADY_CREATED"
+      - string: "MH_ERROR_NOT_CREATED"
+      - string: "MH_ERROR_ENABLED"
+      - string: "MH_ERROR_DISABLED"
+      - string: "MH_ERROR_NOT_EXECUTABLE"
+      - string: "MH_ERROR_UNSUPPORTED_FUNCTION"
+      - string: "MH_ERROR_MEMORY_ALLOC"
+      - string: "MH_ERROR_MEMORY_PROTECT"
+      - string: "MH_ERROR_MODULE_NOT_FOUND"
+      - string: "MH_ERROR_FUNCTION_NOT_FOUND"
+      - string: "MH_Initialize"
+      - string: "MH_Uninitialize"
+      - string: "MH_CreateHook"
+      - string: "MH_CreateHookApi"
+      - string: "MH_CreateHookApiEx"
+      - string: "MH_RemoveHook"
+      - string: "MH_EnableHook"
+      - string: "MH_DisableHook"
+      - string: "MH_QueueEnableHook"
+      - string: "MH_QueueDisableHook"
+      - string: "MH_ApplyQueued"
+      - export: "MH_Initialize"
+      - export: "MH_Uninitialize"
+      - export: "MH_CreateHook"
+      - export: "MH_CreateHookApi"
+      - export: "MH_CreateHookApiEx"
+      - export: "MH_RemoveHook"
+      - export: "MH_EnableHook"
+      - export: "MH_DisableHook"
+      - export: "MH_QueueEnableHook"
+      - export: "MH_QueueDisableHook"
+      - export: "MH_ApplyQueued"
