@@ -6,10 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: call
-    att&ck:
-      - Impact::Data Manipulation::Transmitted Data Manipulation [T1565.002]
-      - Defense Evasion::Impair Defenses::Disable or Modify System Firewall [T1562.004]
+      dynamic: thread
     references:
       - https://learn.microsoft.com/en-us/windows/win32/api/fwpmu/nf-fwpmu-fwpmfilterenum0
       - https://github.com/netero1010/EDRSilencer/blob/main/EDRSilencer.c
