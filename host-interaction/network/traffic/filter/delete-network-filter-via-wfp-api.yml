@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: delete network filter via WFP API
+    namespace: host-interaction/network/traffic/filter
+    authors:
+      - jakub.jozwiak@mandiant.com
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Impact::Data Manipulation::Transmitted Data Manipulation [T1565.002]
+      - Defense Evasion::Impair Defenses::Disable or Modify System Firewall [T1562.004]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/api/fwpmu/nf-fwpmu-fwpmfilterdeletebyid0
+      - https://learn.microsoft.com/en-us/windows/win32/api/fwpmu/nf-fwpmu-fwpmfilterdeletebykey0
+      - https://github.com/netero1010/EDRSilencer/blob/main/EDRSilencer.c
+    examples:
+      - d9531e53036c5d04fbe7d1aeae2988c3bf0fdec63774690c5df70cc121af8de4:0x10001DF0
+  features:
+    - or:
+      - api: fwpkclnt.FwpmFilterDeleteById0
+      - api: fwpkclnt.FwpmFilterDeleteByKey0
