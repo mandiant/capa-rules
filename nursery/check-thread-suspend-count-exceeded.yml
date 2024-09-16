@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: check thread suspend count exceeded
+    authors:
+      - ervinocampo@google.com
+    scopes:
+      static: file
+      dynamic: unsupported #requires mnemonic feature
+    att&ck:
+      - Defense Evasion::Debugger Evasion [T1622]
+    mbc:
+      - Anti-Behavioral Analysis::Debugger Detection [B0001]
+    references:
+      - https://secret.club/2021/01/04/thread-stuff.html
+      - https://research.checkpoint.com/2023/raspberry-robin-anti-evasion-how-to-exploit-analysis/
+  features:
+    - and:
+      - match: create thread bypassing process freeze
+      - function:
+        - and:
+          - or:
+            - api: ntdll.NtSuspendThread
+            - string: "NtSuspendThread"
+          - basic block:
+            - and:
+              - number: 0xc000004a = STATUS_SUSPEND_COUNT_EXCEEDED
+              - mnemonic: cmp
