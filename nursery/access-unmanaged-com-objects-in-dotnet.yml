@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: access unmanaged COM objects in .NET
+    namespace: host-interaction/com
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: unsupported  # requires .NET API feature
+  features:
+    - or:
+      - api: System.Runtime.InteropServices.Marshal::GetTypeFromCLSID

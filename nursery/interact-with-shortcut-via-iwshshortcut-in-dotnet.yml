@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: interact with shortcut via IWshShortcut in .NET
+    namespace: host-interaction/shortcut
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: unsupported  # requires .NET Class feature
+    references:
+      - https://stackoverflow.com/questions/4897655/create-a-shortcut-on-desktop
+  features:
+    - or:
+      - class: IWshRuntimeLibrary.IWshShortcut
