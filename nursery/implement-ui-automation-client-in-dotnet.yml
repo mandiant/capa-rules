@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: implement UI automation client in .NET
+    namespace: host-interaction/ui/automation
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: file
+      dynamic: unsupported  # requires .NET Namespace feature
+    references:
+      - https://learn.microsoft.com/en-us/dotnet/api/system.windows.automation?view=windowsdesktop-8.0
+  features:
+    - or:
+      - namespace: System.Windows.Automation

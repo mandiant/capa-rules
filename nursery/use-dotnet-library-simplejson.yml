@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: use .NET library SimpleJSON
+    namespace: data-manipulation/json
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: file
+      dynamic: unsupported  # requires .NET Class feature
+    references:
+      - https://github.com/mhallin/SimpleJSON.NET
+  features:
+    - or:
+      - class: Json.SimpleJson

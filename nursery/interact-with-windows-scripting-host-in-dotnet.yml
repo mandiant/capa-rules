@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: interact with Windows Scripting Host in .NET
+    namespace: host-interaction/wsh
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: file
+      dynamic: unsupported  # requires .NET Namespace feature
+    references:
+      - https://stackoverflow.com/questions/4897655/create-a-shortcut-on-desktop
+  features:
+    - or:
+      - namespace: IWshRuntimeLibrary

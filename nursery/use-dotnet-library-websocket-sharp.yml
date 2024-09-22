@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: use .NET library websocket-sharp
+    namespace: communication/websocket
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: file
+      dynamic: unsupported  # requires .NET Namespace feature
+    references:
+      - https://github.com/sta/websocket-sharp
+  features:
+    - or:
+      - namespace: WebSocketSharp
