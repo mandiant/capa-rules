@@ -12,18 +12,18 @@ rule:
     examples:
       - a6594d9550d56ddeaac8b3140821e698eefb7163ba29f0119c2ef19beb6040b0
   features:
-      - and:
-        - optional:
-          - match: create or open registry key
-        - or:
-          - and:
-            - string: "/Policies/i"
-            - or:
-              - string: "/ShutdownWithoutLogon/i"
-              - string: "/HidePowerOptions/i"
-          - and:
-            - string: "/PolicyManager/i"
-            - or:
-              - string: "/HideRestart/i"
-              - string: "/HideShutDown/i"
-              - string: "/HideSignOut/i"
+    - and:
+      - optional:
+        - match: create or open registry key
+      - or:
+        - and:
+          - string: "/Policies/i"
+          - or:
+            - string: "/ShutdownWithoutLogon/i"
+            - string: "/HidePowerOptions/i"
+        - and:
+          - string: "/PolicyManager/i"
+          - or:
+            - string: "/HideRestart/i"
+            - string: "/HideShutDown/i"
+            - string: "/HideSignOut/i"
