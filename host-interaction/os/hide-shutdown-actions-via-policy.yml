@@ -10,7 +10,9 @@ rule:
     att&ck:
       - Defense Evasion::Modify Registry [T1112]
     examples:
-      - a6594d9550d56ddeaac8b3140821e698eefb7163ba29f0119c2ef19beb6040b0
+      - a6594d9550d56ddeaac8b3140821e698eefb7163ba29f0119c2ef19beb6040b0:0x14000b47f
+    references:
+      - https://securelist.com/mallox-ransomware/113529/
   features:
     - and:
       - optional:
