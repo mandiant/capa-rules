@@ -1,0 +1,28 @@
+rule:
+  meta:
+    name: get process filename
+    namespace: host-interaction/process
+    authors:
+      - matthew.williams@mandiant.com
+    description: Retrieves the current process' filename. In the example sample, this was part of a sandbox evasion technique that computed and verified the checksum of the sample's filename.
+    scopes:
+      static: basic block
+      dynamic: unsupported # requires offset features
+    att&ck:
+      - Discovery::Process Discovery [T1057]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb_ldr_data
+    examples:
+      - cb948b13a5046a692ec3ed8cc16a9566:0x140013ee2
+  features:
+    - and:
+      # example:
+      # mov     rax, gs:60h     ; TEB.ProcessEnvironmentBlock
+      # mov     rcx, [rax+18h]  ; PEB64.Ldr
+      # mov     rax, [rcx+20h]  ; PEB_LDR_DATA.InMemoryOrderModuleList.Flink
+      # mov     rcx, [rax+50h]  ; LDR_DATA_TABLE_ENTRY.FullDllName.Buffer
+      - arch: amd64
+      - characteristic: peb access
+      - offset: 0x18 = PEB->Ldr
+      - offset: 0x20 = PEB->Ldr->InMemoryOrderModuleList->Flink
+      - offset: 0x50 = PEB->Ldr->InMemoryOrderModuleList->Flink->FullDllName
