@@ -1,0 +1,31 @@
+rule:
+  meta:
+    name: hide shutdown actions via policy
+    namespace: host-interaction/os
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Defense Evasion::Modify Registry [T1112]
+    references:
+      - https://securelist.com/mallox-ransomware/113529/
+    examples:
+      - a6594d9550d56ddeaac8b3140821e698eefb7163ba29f0119c2ef19beb6040b0:0x14000b47f
+  features:
+    - and:
+      - optional:
+        - match: create or open registry key
+      - or:
+        - and:
+          - string: "/Policies/i"
+          - or:
+            - string: "/ShutdownWithoutLogon/i"
+            - string: "/HidePowerOptions/i"
+        - and:
+          - string: "/PolicyManager/i"
+          - or:
+            - string: "/HideRestart/i"
+            - string: "/HideShutDown/i"
+            - string: "/HideSignOut/i"
