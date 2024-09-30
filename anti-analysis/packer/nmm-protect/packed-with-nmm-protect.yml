@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: packed with nmm-protect
+    namespace: anti-analysis/packer/nmm-protect
+    authors:
+      - william.ballenthin@mandiant.com
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]
+    mbc:
+      - Anti-Static Analysis::Software Packing::VMProtect [F0001.010]
+    references:
+      - https://github.com/maoabc/nmmp#nmm-protect
+    examples:
+      - e5e8c139772efe47f738f4788ae9b3dc97960b1c006bc6a406715cab69f27cfc
+  features:
+    - and:
+      - string: "vmInterpret"
+      - string: "cacheInitial"
+      - string: "getCacheClass"
