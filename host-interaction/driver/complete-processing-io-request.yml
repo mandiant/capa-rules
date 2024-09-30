@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: complete processing IO request
+    name: complete processing asynchronous IO request
     namespace: host-interaction/driver
     authors:
       - moritz.raabe@mandiant.com
