@@ -13,8 +13,8 @@ rule:
     references:
       - https://www.magnetforensics.com/blog/what-is-mru-most-recently-used/
       - https://unit42.paloaltonetworks.com/snipbot-romcom-malware-variant/
-    # examples:
-      # - cb948b13a5046a692ec3ed8cc16a9566:0x140016dc9 (dynamic)
+    examples:
+       - 86d8257ae56e5d8220a4e3f8396d944b5e9e41732b58ad7472276d78aea232fa_min_archive.zip
   features:
     - and:
       - match: create or open registry key
