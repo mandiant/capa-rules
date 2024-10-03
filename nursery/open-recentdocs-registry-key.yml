@@ -14,7 +14,7 @@ rule:
       - https://www.magnetforensics.com/blog/what-is-mru-most-recently-used/
       - https://unit42.paloaltonetworks.com/snipbot-romcom-malware-variant/
     examples:
-       - 86d8257ae56e5d8220a4e3f8396d944b5e9e41732b58ad7472276d78aea232fa_min_archive.zip
+      - 86d8257ae56e5d8220a4e3f8396d944b5e9e41732b58ad7472276d78aea232fa_min_archive.zip
   features:
     - and:
       - match: create or open registry key
