@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: open RecentDocs registry key
+    namespace: host-interaction/registry
+    authors:
+      - matthew.williams@mandiant.com
+    description: In the example sample, a RecentDocs registry value was leveraged for anti-sandbox purposes. See the referenced Palo Alto blog for details.
+    scopes:
+      static: basic block
+      dynamic: call
+    mbc:
+      - Operating System::Registry::Open Registry Key [C0036.003]
+    references:
+      - https://www.magnetforensics.com/blog/what-is-mru-most-recently-used/
+      - https://unit42.paloaltonetworks.com/snipbot-romcom-malware-variant/
+    examples:
+      - 86d8257ae56e5d8220a4e3f8396d944b5e9e41732b58ad7472276d78aea232fa_min_archive.zip
+  features:
+    - and:
+      - match: create or open registry key
+      - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs/i
