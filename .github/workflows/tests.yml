@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ master, 'v[0-9]+' ]
+    branches: [ master ]
   pull_request:
-    branches: [ master, 'v[0-9]+' ]
+    branches: [ master ]
     # trigger workflow on edited as well (opened and synchronize are default)
     types: [opened, edited, synchronize]
   workflow_dispatch:
@@ -95,22 +95,17 @@ jobs:
         done
       continue-on-error: true
 
-  # On update of version branch, ensure that branch rules are compatible with latest respective release
-  # assume we only update the branch that corresponds to the latest release
+  # warn if new rules are not compatible with latest release
   rules_latest_release:
-    # e.g. v4
-    if: startsWith(github.base_ref, 'v')
     runs-on: ubuntu-20.04
     steps:
     - name: Get latest release executable name and version
       run: |
         v=$(curl -s https://api.github.com/repos/mandiant/capa/releases/latest | jq .name | tr -d '"')
         echo "zip_name=capa-$v-linux.zip" >> $GITHUB_ENV
-        echo "major_version=$(echo $v | cut -d. -f1)" >> $GITHUB_ENV
     - name: Checkout capa-rules
       uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       with:
-        ref: ${{ env.major_version }}
         path: rules
     - name: Checkout capa-testfiles
       uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -118,7 +113,7 @@ jobs:
         repository: mandiant/capa-testfiles
         path: tests/data
     - name: Fetch latest capa release executable
-      uses: robinraju/release-downloader@v1
+      uses: robinraju/release-downloader@a96f54c1b5f5e09e47d9504526e96febd949d4c2 # v1.11
       with:
         repository: "mandiant/capa"
         latest: true
