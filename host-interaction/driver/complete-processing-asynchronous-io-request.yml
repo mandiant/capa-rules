@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: complete processing asynchronous IO request
+    namespace: host-interaction/driver
+    authors:
+      - moritz.raabe@mandiant.com
+    description: signals that driver has finished all processing for a given IRP (part of major function)
+    scopes:
+      static: basic block
+      dynamic: thread
+    examples:
+      - Practical Malware Analysis Lab 10-03.sys_:0x10666
+  features:
+    - or:
+      - api: IoCompleteRequest
+      - api: IofCompleteRequest

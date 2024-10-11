@@ -6,7 +6,7 @@ rule:
       - BitsOfBinary
     scopes:
       static: function
-      dynamic: thread
+      dynamic: unsupported  # too broad using thread scope, see #941
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::User Activity Based Checks [T1497.002]
     mbc:
