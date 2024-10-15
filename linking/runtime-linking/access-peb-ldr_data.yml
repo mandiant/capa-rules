@@ -10,7 +10,7 @@ rule:
     att&ck:
       - Execution::Shared Modules [T1129]
     references:
-      - https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb_ldr_data.htm
+      - https://www.geoffchappell.com/studies/windows/km/ntoskrnl/inc/api/ntpsapi_x/peb_ldr_data.htm
       - https://github.com/d35ha/CallObfuscator/blob/5834aff9ff4511f1408ae4ce80b79737af4ae77b/ShellCode/shell_x64.asm#L8
     examples:
       - 3FDFB2D522E7DEECAAAF2F87420F7E75:0x4117B7
