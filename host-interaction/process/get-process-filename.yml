@@ -12,6 +12,7 @@ rule:
       - Discovery::Process Discovery [T1057]
     references:
       - https://learn.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb_ldr_data
+      - https://research.openanalysis.net/rhadamanthys/config/ida/shifted%20pointers/peb/_list_entry/_ldr_data_table_entry/2023/01/19/rhadamanthys.html#PEB-Walk-_LDR_DATA_TABLE_ENTRY-and-Shifted-Pointers-in-IDA
     examples:
       - cb948b13a5046a692ec3ed8cc16a9566:0x140013ee2
   features:
@@ -21,16 +22,16 @@ rule:
         - characteristic: peb access
         - offset: 0x0C = PEB->Ldr
         - offset: 0x14 = PEB->Ldr->InMemoryOrderModuleList->Flink
-        - offset: 0x28 = PEB->Ldr->InMemoryOrderModuleList->Flink->FullDllName
+        - offset: 0x28 = PEB->Ldr->InMemoryOrderModuleList->Flink->BaseDllName.Buffer
 
       - and:
         # example:
         # mov     rax, gs:60h     ; TEB.ProcessEnvironmentBlock
         # mov     rcx, [rax+18h]  ; PEB64.Ldr
         # mov     rax, [rcx+20h]  ; PEB_LDR_DATA.InMemoryOrderModuleList.Flink
-        # mov     rcx, [rax+50h]  ; LDR_DATA_TABLE_ENTRY.FullDllName.Buffer
+        # mov     rcx, [rax+50h]  ; LDR_DATA_TABLE_ENTRY.BaseDllName.Buffer
         - arch: amd64
         - characteristic: peb access
         - offset: 0x18 = PEB->Ldr
         - offset: 0x20 = PEB->Ldr->InMemoryOrderModuleList->Flink
-        - offset: 0x50 = PEB->Ldr->InMemoryOrderModuleList->Flink->FullDllName
+        - offset: 0x50 = PEB->Ldr->InMemoryOrderModuleList->Flink->BaseDllName.Buffer
