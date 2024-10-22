@@ -23,7 +23,7 @@ env:
 
 jobs:
   rule_linter:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       # expect this text in the PR body to trigger thorough lint of all rules
       LINT_THOROUGH: '[x] lint thorough all'
@@ -43,10 +43,10 @@ jobs:
         repository: mandiant/capa-testfiles
         path: tests/data
     # use latest available python for best performance
-    - name: Set up Python 3.11
+    - name: Set up Python 3.12
       uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
       with:
-        python-version: 3.11
+        python-version: 3.12
     - name: Install capa
       run: pip install -e .
     # Regular lint is fast, so do this first
@@ -100,7 +100,7 @@ jobs:
   rules_latest_release:
     # e.g. v4
     if: startsWith(github.base_ref, 'v')
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Get latest release executable name and version
       run: |
