@@ -8,7 +8,6 @@ import sys
 import logging
 import subprocess
 import collections
-from typing import Dict, Tuple
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 
 GIT_EXE = "git"
@@ -23,7 +22,7 @@ DEFAULT_PRIOR_TAG = "(prior_tag)"
 logger = logging.getLogger(__name__)
 
 
-def run_cmd(cmd: str) -> Tuple[str, str]:
+def run_cmd(cmd: str) -> tuple[str, str]:
     logger.debug("cmd: %s", cmd)
     p = subprocess.Popen(cmd.split(" "), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out_, err_ = p.communicate()
@@ -34,7 +33,7 @@ def run_cmd(cmd: str) -> Tuple[str, str]:
     return out, err
 
 
-def get_diffs(cpath1: str, cpath2: str, percentage: str) -> Dict[str, list]:
+def get_diffs(cpath1: str, cpath2: str, percentage: str) -> dict[str, list]:
     cmd = f"{GIT_EXE} --no-pager diff --find-renames={percentage} --name-status {cpath1} {cpath2}"
     gdiff, err = run_cmd(cmd)
     # example output:
