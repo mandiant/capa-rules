@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: compiled with .NET AoT
+    namespace: runtime/dotnet
+    authors:
+      - still@teamt5.org
+    description: compiled using .NET Ahead-of-Time (AoT) compilation
+    scopes:
+      static: file
+      dynamic: file
+    references:
+      - https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/
+    examples:
+      - 3c45678eab01d28a971783263e8d1f73c0e6e989734121c1ae25f99ac6cb4e52
+  features:
+    - and:
+      - substring: ".NETCoreApp,Version="
+      - 2 or more:
+        - substring: "AotAnalysis4IL"
+        - substring: "https://aka.ms/nativeaot-compatibilit"
+        - substring: "removed by the AOT compiler"
+        - substring: "\\native\\"
+          description: During compilation, the output by default contains the path "native," which is then in turn included in the PDB path.
