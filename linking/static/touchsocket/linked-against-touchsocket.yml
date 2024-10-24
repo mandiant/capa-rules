@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: linked against TouchSocket
+    namespace: linking/static/touchsocket
+    authors:
+      - still@teamt5.org
+    description: TouchSocket is a .NET networking library, supporting a wide variety of protocol types such as WebSocket, RPC, DMTP, Modbus, and more.
+    scopes:
+      static: file
+      dynamic: file
+    references:
+      - https://github.com/RRQM/TouchSocket/
+      - https://www.trendmicro.com/en_us/research/24/i/earth-preta-new-malware-and-strategies.html
+    examples:
+      - 3c45678eab01d28a971783263e8d1f73c0e6e989734121c1ae25f99ac6cb4e52
+  features:
+    - and:
+      - or:
+        - match: compiled to the .NET platform
+        - match: compiled with .NET AoT
+      - 3 or more:
+        - substring: "TouchSocket"
+        - substring: "TouchSocket.Core"
+        - substring: "TouchSocket.Dmtp"
+        - substring: "TouchSocket.Modbus"
+        - substring: "BinarySerialize"
+        - substring: "BinaryDeserialize"
