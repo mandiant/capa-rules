@@ -5,8 +5,8 @@ rule:
     authors:
       - chuong.dong@mandiant.com
     scopes:
-      static: function
-      dynamic: thread
+      static: basic block
+      dynamic: call
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
