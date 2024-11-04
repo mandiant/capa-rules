@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: call
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]
     mbc:
@@ -30,5 +30,7 @@ rule:
             - string: /User Shell Folders/i
             - string: /RunServices/i
             - string: /Policies\\Explorer\\Run/i
-        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\load/i
+        - and:
+          - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
+          - string: /Load/i
         - string: /System\\CurrentControlSet\\Control\\Session Manager\\BootExecute/i

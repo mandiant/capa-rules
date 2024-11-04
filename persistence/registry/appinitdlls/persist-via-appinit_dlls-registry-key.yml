@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@fireye.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: call
     att&ck:
       - Persistence::Event Triggered Execution::AppInit DLLs [T1546.010]
     references:
