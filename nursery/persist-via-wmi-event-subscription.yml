@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: persist via WMI event subscription
+    namespace: persistence/custom-db
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution::Windows Management Instrumentation Event Subscription [T1546.003]
+    references:
+      - https://www.blackhat.com/docs/us-15/materials/us-15-Graeber-Abusing-Windows-Management-Instrumentation-WMI-To-Build-A-Persistent%20Asynchronous-And-Fileless-Backdoor-wp.pdf
+      - https://cloud.google.com/blog/topics/threat-intelligence/dissecting-one-ofap/
+  features:
+    - or:
+      - and:
+        - api: ole32.CoCreateInstance
+        - string: "4590F811-1D3A-11D0-891F-00AA004B2E24" # IWbemLocator
+      - and:
+        - match: host-interaction/process/create
+        - or:
+          - string: /wmic(|\.exe) /i
+          - string: /Register-WMIEvent /i

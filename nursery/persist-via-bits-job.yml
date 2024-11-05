@@ -1,0 +1,29 @@
+rule:
+  meta:
+    name: persist via BITS job
+    namespace: persistence/custom-db
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::BITS Jobs [T1197]
+    references:
+      - https://cloud.google.com/blog/topics/threat-intelligence/attacker-use-of-windows-background-intelligent-transfer-service/
+  features:
+    - or:
+      - and:
+        - api: ole32.CoCreateInstance
+        - string: "4991d34b-80a1-4291-83b6-3328366b9097" # BITS
+      - and:
+        - match: host-interaction/process/create
+        - or:
+          - and:
+            - string: /bitsadmin(|\.exe) /i
+            - string: /\/SetNotifyCmdLine/i
+          - and:
+            - or:
+              - string: /Set-BitsTransfer /i
+              - string: /Start-BitsTransfer /i
+            - string: / -NotifyCmdLine /i

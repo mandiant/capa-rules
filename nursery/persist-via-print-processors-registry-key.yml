@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: persist via Print Processors registry key
+    namespace: persistence/file-system-and-registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution::Print Processors [T1547.012]
+    references:
+      - https://stmxcsr.com/persistence/print-processor.html
+  features:
+    - or:
+      - and:
+        - match: set registry value
+        - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Print\\Environments\\.*\\Print Processors\\/i
+        - string: /^Driver$/i
+      - and:
+        - or:
+          - match: copy file
+          - match: move file
+          - match: host-interaction/file-system/write
+        - string: /\\spool\\PRTPROCS\\/i
