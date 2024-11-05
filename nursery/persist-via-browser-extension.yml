@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: persist via browser extension
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Browser Extensions [T1176]
+  features:
+    - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: host-interaction/file-system/write
+      - or:
+        - string: /AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Extensions\\/i
+        - string: /AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\/i
+        - and:
+          - string: /AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\/i
+          - string: /.default\\extensions\\/i

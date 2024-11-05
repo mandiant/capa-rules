@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: persist via Get-Variable hijack
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Hijack Execution Flow [T1574]
+    references:
+      - https://www.threatdown.com/blog/colibri-loader-combines-task-scheduler-and-powershell-in-clever-persistence-technique/
+  features:
+    - and:
+      - match: persist via host software binary compromise
+      - string: /Microsoft\\WindowsApps\\Get-Variable.exe/i

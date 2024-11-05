@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: persist via host software binary compromise
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Compromise Client Software Binary [T1554]
+  features:
+    - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: host-interaction/file-system/write
+      - or:
+        - string: /Windows/i
+        - string: /Program Files/i
+      - string: /.exe$/i

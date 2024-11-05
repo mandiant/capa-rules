@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: persist via startup folder
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]
+    references:
+      - https://dmcxblue.gitbook.io/red-team-notes-2-0/red-team-techniques/persistence/t1547-boot-or-logon-autostart-execution/registry-run-keys-startup-folder
+  features:
+    - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: host-interaction/file-system/write
+      - or:
+        - string: /Microsoft\\Windows\\Start Menu\\Programs\\Startup\\/i
+        - string: /Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\/i
+        - string: /WINNT\\Profiles\\All Users\\Start Menu\\Programs\\Startup\\/i
