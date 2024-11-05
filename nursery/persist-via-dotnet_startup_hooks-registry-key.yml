@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: persist via DOTNET_STARTUP_HOOKS registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Hijack Execution Flow::DLL Side-Loading [T1574.002]
+    references:
+      - https://github.com/dotnet/runtime/blob/main/docs/design/features/host-startup-hook.md
+  features:
+    - or:
+      - and:
+        - match: set registry value
+        - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Session Manager\\Environment/i
+        - string: /DOTNET_STARTUP_HOOKS/i
+      - and:
+        - match: set registry value
+        - string: /Environment/i
+        - string: /DOTNET_STARTUP_HOOKS/i

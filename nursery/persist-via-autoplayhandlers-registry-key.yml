@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: persist via AutoplayHandlers registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/shell/how-to-register-a-handler-for-a-device-event
+      - https://www.hexacorn.com/blog/2019/09/07/beyond-good-ol-run-key-part-114/
+  features:
+    - and:
+      - match: set registry value
+      - string: /Microsoft\\Windows\\CurrentVersion\\Explorer\\AutoplayHandlers\\Handlers\\/i
+      - or:
+        - string: /Action/i
+        - string: /Provider/i
+        - string: /InitCmd/i

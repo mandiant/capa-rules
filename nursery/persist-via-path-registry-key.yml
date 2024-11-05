@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: persist via PATH registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Hijack Execution Flow::Path Interception by PATH Environment Variable [T1574.007]
+    references:
+      - https://attack.mitre.org/techniques/T1574/007/
+  features:
+    - and:
+      - match: set registry value
+      - or:
+        - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Session Manager\\Environment/i
+        - string: /Environment/i
+      - string: /^PATH$/i

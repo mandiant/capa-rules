@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: persist via Disk Cleanup Handler registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://www.hexacorn.com/blog/2018/09/02/beyond-good-ol-run-key-part-86/
+      - https://learn.microsoft.com/en-us/windows/win32/lwef/disk-cleanup
+  features:
+    - and:
+      - match: set registry value
+      - string: /Microsoft\\Windows\\CurrentVersion\\Explorer\\VolumeCaches\\/i
+      - optional:
+        - match: persist via COM hijack

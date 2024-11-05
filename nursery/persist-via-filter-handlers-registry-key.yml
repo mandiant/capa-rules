@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: persist via Filter Handlers registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/search/-search-ifilter-about
+  features:
+    - and:
+      - match: set registry value
+      - string: /\\\.(.*?)\\Handler/i
+      - optional:
+        - match: persist via COM hijack
