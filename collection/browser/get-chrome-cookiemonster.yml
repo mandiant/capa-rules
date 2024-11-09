@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: get Chrome CookieMonster
+    namespace: collection/browser
+    authors:
+      - still@teamt5.org
+    description: finds sections related to Chrome's CookieMonster component, typically used in conjunction with code that dumps cookies from Chromium-based browsers
+    scopes:
+      static: file
+      dynamic: process
+    att&ck:
+      - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
+    references:
+      - https://github.com/Meckazin/ChromeKatz/blob/main/CookieKatz-BOF/CookieKatzBOF.cpp
+    examples:
+      - 79f5cabff898d60cd614e7254d409d9c2e05184416e5c54201e2dc216998d28b:0x117D
+  features:
+    - and:
+      - substring: "network.mojom.NetworkService" # process with CookieMonster
+      - or:
+        - substring: "chrome.dll"
+        - substring: "chrome.exe"
+        - substring: "msedge.exe"
+        - substring: "msedgewebview2.exe"
+        - substring: "msedge.dll"
