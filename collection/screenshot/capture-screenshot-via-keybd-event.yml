@@ -32,5 +32,3 @@ rule:
             - or:
               - number: 0x3 = KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
               - number: 0x2 = KEYEVENTF_KEYUP
-      - match: read clipboard data
-      - match: open clipboard
