@@ -1,7 +1,7 @@
 rule:
   meta:
     name: persist via BITS job
-    namespace: persistence/custom-db
+    namespace: persistence
     authors:
       - j.j.vannielen@utwente.nl
     scopes:

@@ -1,7 +1,7 @@
 rule:
   meta:
     name: persist via application shimming
-    namespace: persistence/file-system-and-registry
+    namespace: persistence
     authors:
       - j.j.vannielen@utwente.nl
     scopes:
