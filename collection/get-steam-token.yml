@@ -6,7 +6,7 @@ rule:
       - still@teamt5.org
     description: locates references to Steam authentication token via the beginning of a Steam bearer token
     scopes:
-      static: file
+      static: function
       dynamic: unsupported # requires bytes feature
     examples:
       - 2c83f152e09d0abaa3a3784669e75276784e50e1e202d16ab27e5741eef9ab4f:0x0041718C
