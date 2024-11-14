@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get Chrome elevation service
+    name: get elevation service for Chromium-based browsers
     namespace: collection/browser
     authors:
       - still@teamt5.org
@@ -42,3 +42,9 @@ rule:
           - bytes: 72 28 4C 70 49 20 5E 43 A4 69 0A 53 43 13 C4 2B = CLSID for Google Chrome Canary
           - substring: "{704C2872-2049-435E-A469-0A534313C42B}"
             description: CLSID for Google Chrome Canary
+        - 2 or more:
+          # untested
+          - bytes: 07 B8 C2 C9 31 77 34 4F 81 B7 44 FF 77 79 52 2B = IID for Microsoft Edge
+          - bytes: 6C E9 CB 1F 97 16 AF 43 91 40 28 97 C7 C6 97 67 = CLSID for Microsoft Edge
+          - substring: "{1FCBE96C-1697-43AF-9140-2897C7C69767}"
+            description: CLSID for Microsoft Edge
