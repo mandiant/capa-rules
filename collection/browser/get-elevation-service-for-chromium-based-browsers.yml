@@ -1,0 +1,50 @@
+rule:
+  meta:
+    name: get elevation service for Chromium-based browsers
+    namespace: collection/browser
+    authors:
+      - still@teamt5.org
+    description: finds strings/identifiers related to Chrome Elevation Service, typically used in conjunction with retrieving App-bound Encryption related key
+    scopes:
+      static: function
+      dynamic: unsupported  # requires bytes features
+    att&ck:
+      - Credential Access::Exploitation for Credential Access [T1212]
+      - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
+    references:
+      - https://gist.github.com/snovvcrash/caded55a318bbefcb6cc9ee30e82f824
+      - https://chromium.googlesource.com/chromium/src/+/HEAD/chrome/install_static/install_util_unittest.cc
+    examples:
+      - fb690a23b66d4f90dac83f1b4d6dec0074aff68d6ef62c2613120bd4d17cfbdd:0x14006E8C0
+  features:
+    - and:
+      - optional:
+        - string: "APPB"
+          description: prefix for App-bound Encryption encrypted credentials
+      - or:
+        - 2 or more:
+          - bytes: CF BE 3A 46 0D 41 7F 40 8A F5 0D F3 5A 00 5C C8 = IID for Google Chrome
+          - bytes: E0 60 88 70 41 F6 11 46 88 95 7D 86 7D D3 67 5B = CLSID for Google Chrome
+          - substring: "{708860E0-F641-4611-8895-7D867DD3675B}"
+            description: CLSID for Google Chrome
+        - 2 or more:
+          - bytes: 66 1D 72 A2 6E 37 2F 4D 9F 0F 90 70 E9 A4 2B 5F = IID for Google Chrome Beta
+          - bytes: BA 46 26 DD 07 37 F8 4B B9 A7 03 86 91 A6 8F C2 = CLSID for Google Chrome Beta
+          - substring: "{DD2646BA-3707-4BF8-B9A7-038691A68FC2}"
+            description: CLSID for Google Chrome Beta
+        - 2 or more:
+          - bytes: 6B A2 2A BB 3A 34 72 40 8B 6F 80 55 7B 8C E5 71 = IID for Google Chrome Dev
+          - bytes: A5 DC 7F DA AA 2C 37 46 AA 17 07 40 58 4D E7 DA = CLSID for Google Chrome Dev
+          - substring: "{DA7FDCA5-2CAA-4637-AA17-0740584DE7DA}"
+            description: CLSID for Google Chrome Dev
+        - 2 or more:
+          - bytes: 41 E0 7C 4F E9 28 4F 48 9D D0 61 A8 CA CE FE E4 = IID for Google Chrome Canary
+          - bytes: 72 28 4C 70 49 20 5E 43 A4 69 0A 53 43 13 C4 2B = CLSID for Google Chrome Canary
+          - substring: "{704C2872-2049-435E-A469-0A534313C42B}"
+            description: CLSID for Google Chrome Canary
+        - 2 or more:
+          # untested
+          - bytes: 07 B8 C2 C9 31 77 34 4F 81 B7 44 FF 77 79 52 2B = IID for Microsoft Edge
+          - bytes: 6C E9 CB 1F 97 16 AF 43 91 40 28 97 C7 C6 97 67 = CLSID for Microsoft Edge
+          - substring: "{1FCBE96C-1697-43AF-9140-2897C7C69767}"
+            description: CLSID for Microsoft Edge

@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: get Steam token
+    namespace: collection
+    authors:
+      - still@teamt5.org
+    description: locates references to Steam authentication token via the beginning of a Steam bearer token
+    scopes:
+      static: function
+      dynamic: unsupported # requires bytes feature
+    examples:
+      - 2c83f152e09d0abaa3a3784669e75276784e50e1e202d16ab27e5741eef9ab4f:0x0041718C
+  features:
+    - or:
+      - substring: "65 79 41 69 64 48 6C 77 49 6A 6F 67 49 6B 70 58 56 43 49 73 49 43 4A"
+      - substring: "eyAidHlwIjogIkpXVCIsICJ"
