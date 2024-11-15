@@ -18,6 +18,7 @@ rule:
         - string: /Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\/i
         - string: /DatabasePath/i
       - and:
+        - description: Malware can overwrite existing shimming files to gain persistence
         - or:
           - match: copy file
           - match: move file
