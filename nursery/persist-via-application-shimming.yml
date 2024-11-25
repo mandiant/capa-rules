@@ -1,0 +1,29 @@
+rule:
+  meta:
+    name: persist via application shimming
+    namespace: persistence
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution::Application Shimming [T1546.011]
+    references:
+      - https://cloud.google.com/blog/topics/threat-intelligence/fin7-shim-databases-persistence/
+  features:
+    - or:
+      - and:
+        - match: set registry value
+        - string: /Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\/i
+        - string: /DatabasePath/i
+      - and:
+        - description: Malware can overwrite existing shimming files to gain persistence
+        - or:
+          - match: copy file
+          - match: move file
+          - match: host-interaction/file-system/write
+        - string: /.sdb/i
+      - and:
+        - match: host-interaction/process/create
+        - string: /sdbinst(|\.exe) /i
