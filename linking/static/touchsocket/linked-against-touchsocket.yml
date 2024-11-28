@@ -12,7 +12,7 @@ rule:
       - https://github.com/RRQM/TouchSocket/
       - https://www.trendmicro.com/en_us/research/24/i/earth-preta-new-malware-and-strategies.html
     examples:
-      - 3c45678eab01d28a971783263e8d1f73c0e6e989734121c1ae25f99ac6cb4e52
+      - 684cc28e6a7fbd12f23dbc563f06306555ebb870bd727ad60839d4ff26e7f3b2
   features:
     - and:
       - or:
