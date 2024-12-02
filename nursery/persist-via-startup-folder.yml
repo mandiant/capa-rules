@@ -16,7 +16,7 @@ rule:
       - or:
         - match: copy file
         - match: move file
-        - match: host-interaction/file-system/write
+        - match: write file on Windows
       - or:
         - string: /Microsoft\\Windows\\Start Menu\\Programs\\Startup\\/i
         - string: /Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\/i
