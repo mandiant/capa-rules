@@ -13,4 +13,8 @@ rule:
       - https://cyble.com/blog/targeted-attacks-being-carried-out-via-dll-sideloading/
   features:
     - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: write file on Windows
       - string: /\\Appdata\\Local\\Microsoft\\.*\\iphlpapi.dll/i

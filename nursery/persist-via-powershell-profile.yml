@@ -16,7 +16,7 @@ rule:
       - or:
         - match: copy file
         - match: move file
-        - match: host-interaction/file-system/write
+        - match: write file on Windows
       - or:
         - string: /Profile.ps1/i
         - string: /Microsoft.PowerShell_profile.ps1/i

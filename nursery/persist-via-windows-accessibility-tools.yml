@@ -16,7 +16,7 @@ rule:
       - or:
         - match: copy file
         - match: move file
-        - match: host-interaction/file-system/write
+        - match: write file on Windows
       - or:
         - string: /windows\\system32\\osk.exe/i
         - string: /windows\\system32\\Magnify.exe/i

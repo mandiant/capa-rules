@@ -16,6 +16,6 @@ rule:
       - or:
         - match: copy file
         - match: move file
-        - match: host-interaction/file-system/write
+        - match: write file on Windows
       - or:
         - string: /Local\\Packages\\Microsoft.WindowsTerminal_.*\\LocalState\\settings.json/i

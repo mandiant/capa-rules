@@ -16,5 +16,5 @@ rule:
       - or:
         - match: copy file
         - match: move file
-        - match: host-interaction/file-system/write
+        - match: write file on Windows
       - string: /\\Windows\\Setup\\Scripts\\ErrorHandler.cmd/i
