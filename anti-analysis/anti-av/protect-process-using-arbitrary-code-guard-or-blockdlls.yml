@@ -26,10 +26,10 @@ rule:
       - and:
         - api: SetProcessMitigationPolicy
         - number: 4 = sizeof(PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY)
-        - number: 1 = set policy.flags to 1
+        - number: 1 = set policy.MicrosoftSignedOnly to 1
         - number: 8 = ProcessSignaturePolicy
       - and:
         - description: blockdlls
-        - api: InitializeProcThreadAttributeList
+        - api: UpdateProcThreadAttribute
         - number: 0x20007 = PROC_THREAD_ATTRIBUTE_MITIGATION_POLICY
         - number: 0x100000000000 = PROCESS_CREATION_MITIGATION_POLICY_BLOCK_NON_MICROSOFT_BINARIES_ALWAYS_ON
