@@ -13,5 +13,8 @@ rule:
       - https://www.threatdown.com/blog/colibri-loader-combines-task-scheduler-and-powershell-in-clever-persistence-technique/
   features:
     - and:
-      - match: persist via host software binary compromise
+      - or:
+        - match: copy file
+        - match: move file
+        - match: write file on Windows
       - string: /Microsoft\\WindowsApps\\Get-Variable.exe/i
