@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: persist via accessibility tools backdoor
+    name: persist via Windows accessibility tools
     namespace: persistence/file-system
     authors:
       - j.j.vannielen@utwente.nl
