@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: persist via browser extension
+    name: write to browser extension directory
     namespace: persistence/file-system
     authors:
       - j.j.vannielen@utwente.nl
@@ -10,11 +10,12 @@ rule:
     att&ck:
       - Persistence::Browser Extensions [T1176]
   features:
+    - description: can be used for browser-based persistence
     - and:
       - or:
         - match: copy file
         - match: move file
-        - match: host-interaction/file-system/write
+        - match: write file on Windows
       - or:
         - string: /\\Microsoft\\Edge\\User Data\\Default\\Extensions\\/i
         - string: /\\Google\\Chrome\\User Data\\Default\\Extensions\\/i
