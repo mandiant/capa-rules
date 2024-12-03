@@ -14,7 +14,5 @@ rule:
   features:
     - and:
       - match: set registry value
-      - or:
-        - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Session Manager\\Environment/i
-        - string: /Environment/i
+      - string: /Environment/i
       - string: /UserInitMprLogonScript/i
