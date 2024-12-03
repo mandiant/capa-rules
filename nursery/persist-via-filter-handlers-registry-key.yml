@@ -14,6 +14,6 @@ rule:
   features:
     - and:
       - match: set registry value
-      - string: /\\\.(.*?)\\Handler/i
-      - optional:
-        - match: persist via COM hijack
+      - or:
+        - string: /\\\..*\\PersistentHandler/i
+        - string: /CLSID\\.*\\PersistentHandler/i
