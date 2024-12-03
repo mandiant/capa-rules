@@ -16,5 +16,3 @@ rule:
     - and:
       - match: set registry value
       - string: /Microsoft\\Windows\\CurrentVersion\\Explorer\\VolumeCaches\\/i
-      - optional:
-        - match: persist via COM hijack
