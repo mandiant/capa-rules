@@ -14,7 +14,5 @@ rule:
   features:
     - and:
       - match: set registry value
-      - or:
-        - string: /Environment/i
-        - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Session Manager\\Environment/i
-      - string: /COR_PROFILER_PATH/
+      - string: /Environment/i
+      - string: /COR_PROFILER_PATH/i
