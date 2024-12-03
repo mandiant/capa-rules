@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: persist via PowerShell profile
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution::PowerShell Profile [T1546.013]
+    references:
+      - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles
+  features:
+    - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: write file on Windows
+      - or:
+        - string: /Profile.ps1/i
+        - string: /Microsoft.PowerShell_profile.ps1/i

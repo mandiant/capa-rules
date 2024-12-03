@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: persist via Windows Terminal Profile
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://nasbench.medium.com/persistence-using-windows-terminal-profiles-5035d3fc86fe
+  features:
+    - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: write file on Windows
+      - or:
+        - string: /Local\\Packages\\Microsoft.WindowsTerminal_.*\\LocalState\\settings.json/i

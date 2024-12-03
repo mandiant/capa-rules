@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: persist via Windows accessibility tools
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution::Accessibility Features [T1546.008]
+    references:
+      - https://pentestlab.blog/2019/11/13/persistence-accessibility-features/
+  features:
+    - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: write file on Windows
+      - or:
+        - string: /windows\\system32\\osk.exe/i
+        - string: /windows\\system32\\Magnify.exe/i
+        - string: /windows\\system32\\narator.exe/i
+        - string: /windows\\system32\\displayswitch.exe/i
+        - string: /windows\\system32\\atbroker.exe/i
+        - string: /windows\\system32\\sethc.exe/i
+        - string: /windows\\system32\\utilman.exe/i

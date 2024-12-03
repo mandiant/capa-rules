@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: persist via lnk shortcut
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution::Shortcut Modification [T1547.009]
+    references:
+      - https://www.ired.team/offensive-security/persistence/modifying-.lnk-shortcuts
+  features:
+    - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: write file on Windows
+      - string: /\.lnk$/i

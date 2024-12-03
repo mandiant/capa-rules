@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: persist via iphlpapi DLL hijack
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Hijack Execution Flow [T1574]
+    references:
+      - https://cyble.com/blog/targeted-attacks-being-carried-out-via-dll-sideloading/
+  features:
+    - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: write file on Windows
+      - string: /\\Appdata\\Local\\Microsoft\\.*\\iphlpapi.dll/i

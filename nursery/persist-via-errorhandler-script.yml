@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: persist via ErrorHandler script
+    namespace: persistence/file-system
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://www.hexacorn.com/blog/2022/01/16/beyond-good-ol-run-key-part-135/
+  features:
+    - and:
+      - or:
+        - match: copy file
+        - match: move file
+        - match: write file on Windows
+      - string: /\\Windows\\Setup\\Scripts\\ErrorHandler.cmd/i
