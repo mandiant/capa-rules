@@ -10,11 +10,12 @@ rule:
     att&ck:
       - Persistence::Event Triggered Execution::Change Default File Association [T1546.001]
     references:
-      - https://woshub.com/managing-default-file-associations-in-windows-10/
+      - https://dmcxblue.gitbook.io/red-team-notes-2-0/red-team-techniques/privilege-escalation/untitled-3/default-file-association
+      - https://giuliocomi.blogspot.com/2019/10/abusing-windows-10-narrators-feedback.html
   features:
     - and:
       - match: set registry value
       - or:
-        - string: /file\\shell\\open\\command/i
-        - string: /file\\shell\\print\\command/i
-        - string: /file\\shell\\printto\\command/i
+        - string: /\\shell\\open\\command/i
+        - string: /\\shell\\print\\command/i
+        - string: /\\shell\\printto\\command/i
