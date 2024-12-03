@@ -10,8 +10,8 @@ rule:
     att&ck:
       - Persistence::Browser Extensions [T1176]
   features:
-    - description: can be used for browser-based persistence
     - and:
+      - description: can be used for browser-based persistence
       - or:
         - match: copy file
         - match: move file
