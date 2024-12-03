@@ -12,12 +12,7 @@ rule:
     references:
       - https://github.com/dotnet/runtime/blob/main/docs/design/features/host-startup-hook.md
   features:
-    - or:
-      - and:
-        - match: set registry value
-        - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Session Manager\\Environment/i
-        - string: /DOTNET_STARTUP_HOOKS/i
-      - and:
-        - match: set registry value
-        - string: /Environment/i
-        - string: /DOTNET_STARTUP_HOOKS/i
+    - and:
+      - match: set registry value
+      - string: /Environment/i
+      - string: /DOTNET_STARTUP_HOOKS/i
