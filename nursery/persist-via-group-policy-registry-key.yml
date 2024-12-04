@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: persist via Group Policy registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution [T1547]
+    references:
+      - None
+  features:
+    - and:
+      - match: set registry value
+      - and:
+        - or:
+          - string: /Microsoft\\Windows\\CurrentVersion\\Group Policy\\Scripts\\Startup\\.*?\\.*/i
+          - string: /Microsoft\\Windows\\CurrentVersion\\Group Policy\\State\\Machine\\Scripts\\.*?\\.*/i
+        - string: /^Script$/i

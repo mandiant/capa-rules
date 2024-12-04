@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: persist via Command Processor registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://devblogs.microsoft.com/oldnewthing/20071121-00/?p=24433
+  features:
+    - and:
+      - match: set registry value
+      - and:
+        - string: /Microsoft\\Command Processor/i
+        - string: /AutoRun/i

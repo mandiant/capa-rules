@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: persist via Netsh registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://pentestlab.blog/2019/10/29/persistence-netsh-helper-dll/
+  features:
+    - and:
+      - match: set registry value
+      - string: /Microsoft\\Netsh/i

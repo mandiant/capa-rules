@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: persist via AppX registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://oddvar.moe/2018/09/06/persistence-using-universal-windows-platform-apps-appx/
+  features:
+    - and:
+      - match: set registry value
+      - or:
+        - string: /Microsoft\\Windows\\CurrentVersion\\PackagedAppXDebug\\/i
+        - and:
+          - string: /ActivatableClasses\\Package\\/i
+          - string: /DebugInformation/i
+          - string: /DebugPath/i

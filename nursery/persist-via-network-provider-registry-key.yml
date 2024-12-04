@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: persist via Network provider registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Modify Authentication Process::Network Provider DLL [T1556.008]
+    references:
+      - https://github.com/gtworek/PSBits/tree/master/PasswordStealing/NPPSpy
+  features:
+    - and:
+      - match: set registry value
+      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Services\\.*\\NetworkProvider/i
+      - string: /ProviderPath/i

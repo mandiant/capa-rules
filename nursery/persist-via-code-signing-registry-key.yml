@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: persist via Code signing registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://specterops.io/wp-content/uploads/sites/3/2022/06/SpecterOps_Subverting_Trust_in_Windows.pdf
+  features:
+    - and:
+      - match: set registry value
+      - and:
+        - string: /Microsoft\\Cryptography\\OID\\/i
+        - string: /^Dll$/i

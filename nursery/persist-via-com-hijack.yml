@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: persist via COM hijack
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution::Component Object Model Hijacking [T1546.015]
+    references:
+      - https://www.mdsec.co.uk/2019/05/persistence-the-continued-or-prolonged-existence-of-something-part-2-com-hijacking/
+      - https://stmxcsr.com/persistence/com-hijacking.html
+  features:
+    - and:
+      - match: set registry value
+      - or:
+        - string: /Classes\\CLSID/i
+        - string: /Classes\\WOW6432Node\\CLSID/i
+      - or:
+        - string: /InProcServer32/i
+        - string: /LocalServer32/i

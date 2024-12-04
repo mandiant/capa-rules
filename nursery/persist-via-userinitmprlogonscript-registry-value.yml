@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: persist via UserInitMprLogonScript registry value
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Boot or Logon Initialization Scripts::Logon Script (Windows) [T1037.001]
+    references:
+      - https://attack.mitre.org/techniques/T1037/001/
+  features:
+    - and:
+      - match: set registry value
+      - string: /Environment/i
+      - string: /UserInitMprLogonScript/i

@@ -1,0 +1,28 @@
+rule:
+  meta:
+    name: persist via LSA registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution::Authentication Package [T1547.002]
+      - Persistence::Boot or Logon Autostart Execution::Security Support Provider [T1547.005]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/secauthn/authentication-packages
+      - https://learn.microsoft.com/en-us/windows/win32/secmgmt/password-filters
+  features:
+    - and:
+      - match: set registry value
+      - or:
+        - and:
+          - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Lsa/i
+          - or:
+            - string: /Authentication Packages/i
+            - string: /Notification packages/i
+            - string: /Security Packages/i
+        - and:
+          - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\LsaExtensionConfig\\LsaSrv/i
+          - string: /Extensions/i

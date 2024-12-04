@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: persist via ContextMenuHandlers registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://pentestlab.blog/2023/03/13/persistence-context-menu/
+      - https://ristbs.github.io/2023/02/15/hijack-explorer-context-menu-for-persistence-and-fun.html
+  features:
+    - and:
+      - match: set registry value
+      - string: /\\shellex\\ContextMenuHandlers\\/i

@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: persist via SilentProcessExit registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://oddvar.moe/2018/04/10/persistence-using-globalflags-in-image-file-execution-options-hidden-from-autoruns-exe/
+  features:
+    - and:
+      - match: set registry value
+      - string: /Microsoft\\Windows NT\\CurrentVersion\\SilentProcessExit\\.*/i
+      - string: /^MonitorProcess$/i

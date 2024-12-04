@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: persist via AppCertDlls registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution::AppCert DLLs [T1546.009]
+    references:
+      - https://skanthak.hier-im-netz.de/appcert.html
+  features:
+    - and:
+      - match: set registry value
+      - string: /System\\(CurrentControlSet|ControlSet001)\\Control\\Session Manager\\AppCertDlls/i
