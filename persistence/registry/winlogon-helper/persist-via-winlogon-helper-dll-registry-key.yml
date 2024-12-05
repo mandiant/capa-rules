@@ -4,11 +4,14 @@ rule:
     namespace: persistence/registry/winlogon-helper
     authors:
       - 0x534a@mailbox.org
+      - j.j.vannielen@utwente.nl
     scopes:
       static: function
-      dynamic: thread
+      dynamic: call
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Winlogon Helper DLL [T1547.004]
+    references:
+      - https://learn.microsoft.com/en-us/previous-versions/windows/desktop/policy/creating-a-policy-callback-function
     examples:
       - 9ff8e68343cc29c1036650fc153e69f7:0x47f818
   features:
@@ -22,3 +25,7 @@ rule:
         - string: /Notify/i
         - string: /Userinit/i
         - string: /Shell/i
+        - string: /mpnotify/i
+        - and:
+          - string: /GPExtensions/i
+          - string: /DllName/i
