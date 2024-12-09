@@ -6,7 +6,7 @@ rule:
       - 0x534a@mailbox.org
     scopes:
       static: function
-      dynamic: thread
+      dynamic: call
     att&ck:
       - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
     examples:

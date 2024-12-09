@@ -4,6 +4,7 @@ rule:
     namespace: persistence/startup-folder
     authors:
       - matthew.williams@mandiant.com
+      - j.j.vannielen@utwente.nl
     scopes:
       static: function
       dynamic: thread
@@ -12,9 +13,17 @@ rule:
     examples:
       - 07F7846BBCDA782E5639292AD93907EB:0x401040
   features:
-    - and:
-      - match: get startup folder
-      - or:
-        - match: copy file
-        - match: move file
-        - match: host-interaction/file-system/write
+    - or:
+      - and:
+        - match: get startup folder
+        - or:
+          - match: copy file
+          - match: move file
+          - match: write file on Windows
+      - call:
+        - and:
+          - string: /Start Menu\\Programs\\Startup/i
+          - or:
+            - match: copy file
+            - match: move file
+            - match: write file on Windows
