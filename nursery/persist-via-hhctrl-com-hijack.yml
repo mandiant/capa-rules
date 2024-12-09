@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: persist via hhctrl COM hijack
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Hijack Execution Flow [T1574]
+    references:
+      - https://www.hexacorn.com/blog/2018/04/23/beyond-good-ol-run-key-part-77/
+  features:
+    - and:
+      - match: persist via COM hijack
+      - string: /{52A2AAAE-085D-4187-97EA-8C30DB990436}/i

@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: persist via Explorer tools registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://www.hexacorn.com/blog/2017/01/18/beyond-good-ol-run-key-part-55/
+  features:
+    - and:
+      - match: set registry value
+      - string: /Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\/i

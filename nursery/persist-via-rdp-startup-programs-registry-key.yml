@@ -1,0 +1,19 @@
+rule:
+  meta:
+    name: persist via RDP startup programs registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://www.cyberark.com/resources/threat-research-blog/attacking-rdp-from-inside
+      - https://www.cyberark.com/resources/threat-research-blog/persistence-techniques-that-persist
+  features:
+    - and:
+      - match: set registry value
+      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Terminal Server\\Wds\\rdpwd/i
+      - string: /^StartupPrograms$/i

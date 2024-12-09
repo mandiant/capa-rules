@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: persist via TelemetryController registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Scheduled Task/Job [T1053]
+    references:
+      - https://www.trustedsec.com/blog/abusing-windows-telemetry-for-persistence
+  features:
+    - and:
+      - match: set registry value
+      - string: /Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\TelemetryController\\/i
+      - string: /^Command$/i

@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: persist via TS InitialProgram registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution [T1546]
+    references:
+      - https://persistence-info.github.io/Data/tsinitialprogram.html
+  features:
+    - and:
+      - match: set registry value
+      - or:
+        - string: /\\Policies\\Microsoft\\Windows NT\\Terminal Services/i
+        - string: /System\\(CurrentControlSet|ControlSet001)\\Control\\Terminal Server\\WinStations\\RDP-Tcp/i
+      - string: /^InitialProgram$/i

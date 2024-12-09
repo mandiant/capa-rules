@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: persist via App paths registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Hijack Execution Flow::Path Interception by PATH Environment Variable [T1574.007]
+    references:
+      - https://www.cyberark.com/resources/threat-research-blog/persistence-techniques-that-persist
+  features:
+    - and:
+      - match: set registry value
+      - string: /Microsoft\\Windows\\CurrentVersion\\App Paths\\/i

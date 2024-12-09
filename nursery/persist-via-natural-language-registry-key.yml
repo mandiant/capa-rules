@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: persist via Natural Language registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution [T1547]
+    references:
+      - https://www.hexacorn.com/blog/2018/12/30/beyond-good-ol-run-key-part-98/
+  features:
+    - and:
+      - match: set registry value
+      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\ContentIndex\\Language\\/i
+      - or:
+        - string: /StemmerDLLPathOverride/i
+        - string: /WBDLLPathOverride/i

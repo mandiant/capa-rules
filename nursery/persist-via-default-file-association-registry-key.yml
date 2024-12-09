@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: persist via default file association registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Event Triggered Execution::Change Default File Association [T1546.001]
+    references:
+      - https://dmcxblue.gitbook.io/red-team-notes-2-0/red-team-techniques/privilege-escalation/untitled-3/default-file-association
+      - https://giuliocomi.blogspot.com/2019/10/abusing-windows-10-narrators-feedback.html
+  features:
+    - and:
+      - match: set registry value
+      - or:
+        - string: /\\shell\\open\\command/i
+        - string: /\\shell\\print\\command/i
+        - string: /\\shell\\printto\\command/i

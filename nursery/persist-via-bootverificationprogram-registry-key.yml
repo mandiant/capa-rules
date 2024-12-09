@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: persist via BootVerificationProgram registry key
+    namespace: persistence/registry
+    authors:
+      - j.j.vannielen@utwente.nl
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution [T1547]
+    references:
+      - https://www.cyberark.com/resources/threat-research-blog/persistence-techniques-that-persist
+  features:
+    - and:
+      - match: set registry value
+      - string: /System\\(CurrentControlSet|ControlSet001)\\Control\\BootVerificationProgram/i
+      - string: /ImagePath/i
