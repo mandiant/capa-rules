@@ -22,7 +22,7 @@ rule:
           - match: write file on Windows
       - call:
         - and:
-          - match: reference startup folder
+          - string: /Start Menu\\Programs\\Startup/i
           - or:
             - match: copy file
             - match: move file
