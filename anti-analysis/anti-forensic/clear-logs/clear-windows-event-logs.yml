@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: newscope
     att&ck:
       - Defense Evasion::Indicator Removal::Clear Windows Event Logs [T1070.001]
     examples:

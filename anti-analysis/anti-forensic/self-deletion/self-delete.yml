@@ -7,7 +7,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: thread
+      dynamic: newscope
     att&ck:
       - Defense Evasion::Indicator Removal::File Deletion [T1070.004]
     mbc:
