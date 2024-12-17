@@ -7,7 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: sequence
     mbc:
       - Process::Check Mutex [C0043]
     examples:

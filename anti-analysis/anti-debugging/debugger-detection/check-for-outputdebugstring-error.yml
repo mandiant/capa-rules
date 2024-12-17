@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: sequence
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::OutputDebugString [B0001.016]
     examples:
