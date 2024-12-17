@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Collection::Clipboard Data [T1115]
     examples:

@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Execution::Command and Scripting Interpreter::Unix Shell [T1059.004]
     mbc:

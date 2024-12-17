@@ -7,7 +7,7 @@ rule:
     description: The SetTcpEntry function sets the state of a TCP connection.
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Defense Evasion::Impair Defenses [T1562]
     references:

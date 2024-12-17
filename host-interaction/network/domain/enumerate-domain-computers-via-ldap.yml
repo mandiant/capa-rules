@@ -7,7 +7,7 @@ rule:
     description: Looks for an LDAP query and related Windows API calls used to enumerate other computers on the Windows domain that a computer is connected to.
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
     references:

@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     mbc:
       - Communication::HTTP Communication::Connect to Server [C0002.009]
     examples:

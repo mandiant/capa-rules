@@ -7,7 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
       - Discovery::Account Discovery [T1087]

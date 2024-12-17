@@ -7,7 +7,7 @@ rule:
     description: Starting in Android 9 (API level 28), the platform restricts which non-SDK interfaces your app can use
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     references:
       - https://stackoverflow.com/questions/55970137/bypass-androids-hidden-api-restrictions
   features:

@@ -6,7 +6,7 @@ rule:
       - matthew.williams@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     mbc:
       - Communication::HTTP Communication::Get Response [C0002.017]
     examples:

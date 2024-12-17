@@ -6,7 +6,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Execution::Windows Management Instrumentation [T1047]
   features:

@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Defense Evasion::Process Injection::Asynchronous Procedure Call [T1055.004]
     examples:

@@ -8,7 +8,7 @@ rule:
       - johnk3r
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Defense Evasion::Modify Registry [T1112]
     mbc:

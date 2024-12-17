@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     mbc:
       - Cryptography::Cryptographic Hash::SHA224 [C0029.004]
     references:

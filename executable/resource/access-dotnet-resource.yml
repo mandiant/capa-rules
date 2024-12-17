@@ -6,7 +6,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     examples:
       - 387f15043f0198fd3a637b0758c2b6dde9ead795c3ed70803426fc355731b173:0x06000084
   features:

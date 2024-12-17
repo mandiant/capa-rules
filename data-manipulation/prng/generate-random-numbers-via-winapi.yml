@@ -7,7 +7,7 @@ rule:
       - johnk3r
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     mbc:
       - Cryptography::Generate Pseudo-random Sequence::Use API [C0021.003]
     examples:

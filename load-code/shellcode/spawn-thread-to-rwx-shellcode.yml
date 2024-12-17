@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     mbc:
       - Memory::Allocate Memory [C0007]
       - Process::Create Thread [C0038]

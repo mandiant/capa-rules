@@ -7,7 +7,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     mbc:
       - Process::Check Mutex [C0043]
       - Process::Terminate Process [C0018]

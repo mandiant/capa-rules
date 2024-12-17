@@ -6,7 +6,7 @@ rule:
       - "@Ana06"
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     references:
       - https://www.malwarebytes.com/blog/threat-intelligence/2021/07/avoslocker-enters-the-ransomware-scene-asks-for-partners
     # examples:

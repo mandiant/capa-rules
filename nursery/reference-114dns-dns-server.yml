@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     references:
       - https://www.114dns.com/
       - https://www.amazon.com/ask/questions/Tx27CUHKMM403NP
