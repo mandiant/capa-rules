@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: sequence
     examples:
       - Practical Malware Analysis Lab 10-03.exe_:0x40108c
   features:

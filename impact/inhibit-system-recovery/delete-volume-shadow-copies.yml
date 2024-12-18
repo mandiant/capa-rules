@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Impact::Inhibit System Recovery [T1490]
       - Defense Evasion::Indicator Removal::File Deletion [T1070.004]

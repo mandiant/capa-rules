@@ -6,7 +6,7 @@ rule:
       - jonathanlepore@google.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     references:
       - https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.sha512managed
   features:

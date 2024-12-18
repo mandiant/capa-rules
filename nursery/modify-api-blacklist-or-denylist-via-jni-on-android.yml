@@ -6,7 +6,7 @@ rule:
       - mehunhoff@google.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
   features:
     - and:
       - os: android

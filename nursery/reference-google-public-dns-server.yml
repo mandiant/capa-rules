@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     references:
       - https://www.techradar.com/news/best-dns-server
       - https://developers.google.com/speed/public-dns/docs/using

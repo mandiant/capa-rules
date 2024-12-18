@@ -6,7 +6,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
   features:
     - and:
       - number: 0x200000 = service notification

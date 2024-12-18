@@ -7,7 +7,7 @@ rule:
       - 0x534a@mailbox.org
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Defense Evasion::Process Injection::Thread Execution Hijacking [T1055.003]
       - Defense Evasion::Reflective Code Loading [T1620]

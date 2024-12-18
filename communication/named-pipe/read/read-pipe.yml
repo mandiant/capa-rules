@@ -8,7 +8,7 @@ rule:
     description: PeekNamedPipe isn't required to read from a pipe; however, pipes are often utilized to capture the output of a cmd.exe process. In a multi-thread instance, a new thread is created that calls PeekNamedPipe and ReadFile to obtain the command output.
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     mbc:
       - Communication::Interprocess Communication::Read Pipe [C0003.003]
     examples:

@@ -6,7 +6,7 @@ rule:
     lib: true
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     examples:
       - daa13ae302fe8b618ddbf590537443ef:0x401116
   features:

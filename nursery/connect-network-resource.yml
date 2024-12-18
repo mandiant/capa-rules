@@ -7,7 +7,7 @@ rule:
     description: connect to disk or print resource
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
   features:
     - and:
       - or:

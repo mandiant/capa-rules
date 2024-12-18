@@ -7,7 +7,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Execution::Shared Modules [T1129]
     examples:

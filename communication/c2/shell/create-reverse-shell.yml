@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Execution::Command and Scripting Interpreter::Windows Command Shell [T1059.003]
     mbc:

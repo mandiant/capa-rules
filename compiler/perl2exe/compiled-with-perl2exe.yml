@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     examples:
       - 873275ce8bf88ef66e9fa0c74b5c2a1e:0x4011C9
   features:

@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: sequence
     references:
       - https://github.com/S4R1N/AlternativeShellcodeExec/blob/master/CreateThreadPoolWait/CreateThreadPoolWait.cpp
     examples:

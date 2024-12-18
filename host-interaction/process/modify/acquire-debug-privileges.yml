@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: sequence
     att&ck:
       - Privilege Escalation::Access Token Manipulation [T1134]
     examples:
