@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/process/create
     authors:
       - william.ballenthin@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: basic block
       dynamic: call
@@ -16,6 +17,7 @@ rule:
       - or:
         - number: 0x08000004 = CREATE_NO_WINDOW | CREATE_SUSPENDED
         - number: 4 = CREATE_SUSPENDED
+        - number: 2 = DEBUG_ONLY_THIS_PROCESS
       - or:
         - api: kernel32.CreateProcess
         - api: advapi32.CreateProcessAsUser
