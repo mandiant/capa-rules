@@ -10,6 +10,9 @@ rule:
       dynamic: call
     mbc:
       - Process::Create Process::Create Suspended Process [C0017.003]
+    references:
+      - https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/an-in-depth-look-at-mailto-ransomware-part-two-of-three/
+      - https://learn.microsoft.com/en-us/windows/win32/procthread/process-creation-flags#flags
     examples:
       - Practical Malware Analysis Lab 03-03.exe_:0x4010EA
   features:
