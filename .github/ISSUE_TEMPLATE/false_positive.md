@@ -7,8 +7,7 @@ labels: false positive
 ---
 
 <!--
-
-Have you read capa's Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://github.com/mandiant/capa/blob/master/CODE_OF_CONDUCT.md
+Have you read Google's Code of Conduct? By filing an issue, you are expected to comply with it, including treating everyone with respect: https://opensource.google/conduct
 -->
 
 ## Summary

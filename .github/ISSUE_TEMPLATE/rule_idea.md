@@ -11,7 +11,7 @@ Please use your proposed rule name as issue title. See convention at https://git
 
 The more information you can provide the better. However, we would rather collect more ideas than miss an interesting rule because of the amount of required data. So in that case you submit whatever you can.    
 
-Have you read capa's Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://github.com/mandiant/capa/blob/master/CODE_OF_CONDUCT.md
+Have you read Google's Code of Conduct? By filing an issue, you are expected to comply with it, including treating everyone with respect: https://opensource.google/conduct
 -->
 
 ## Prerequisites
