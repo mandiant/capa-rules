@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Process Injection [T1055]
     mbc:

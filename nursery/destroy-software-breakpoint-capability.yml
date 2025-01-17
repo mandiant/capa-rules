@@ -6,7 +6,7 @@ rule:
       - echernofsky@google.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     references:
       - https://www.microsoft.com/en-us/security/blog/2018/03/01/finfisher-exposed-a-researchers-tale-of-defeating-traps-tricks-and-complex-virtual-machines/
       - https://anti-debug.checkpoint.com/techniques/assembly.html

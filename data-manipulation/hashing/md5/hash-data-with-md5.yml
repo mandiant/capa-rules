@@ -8,7 +8,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Cryptography::Cryptographic Hash::MD5 [C0029.001]
     references:

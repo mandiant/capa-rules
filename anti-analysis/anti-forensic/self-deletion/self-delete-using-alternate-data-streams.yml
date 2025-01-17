@@ -6,7 +6,7 @@ rule:
       - daniel.stepanic@elastic.co
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Indicator Removal::File Deletion [T1070.004]
     mbc:

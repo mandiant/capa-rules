@@ -7,7 +7,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Collection::Archive Collected Data::Archive via Library [T1560.002]
     mbc:

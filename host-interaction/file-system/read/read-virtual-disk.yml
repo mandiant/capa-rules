@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - File System::Read Virtual Disk [C0056]
     references:

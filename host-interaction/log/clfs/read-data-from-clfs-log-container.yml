@@ -7,7 +7,7 @@ rule:
       - blaine.stancill@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Discovery::File and Directory Discovery::Log File [E1083.m01]
     references:

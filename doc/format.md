@@ -154,8 +154,8 @@ Here are the common fields:
       - **`file`**: matches features across the whole file.
     - `scopes.dynamic`:
       - **`call`**: match features at each traced API call site, such as API name and argument values.
-      - **`sequence`**: match features against a across a sliding window of API calls within a thread.
-      - **`thread`**: match features within each thread, such as sequence of API names.
+      - **`span of calls`**: match features against a across a sliding window of API calls within a thread.
+      - **`thread`**: match features within each thread.
       - **`process`**: match features within each process.
       - **`file`**: matches features across the whole file, including from the executable file features *and* across the entire runtime trace.
       
@@ -324,7 +324,7 @@ rule:
 
 As you'll see in the [extracted features](#extracted-features) section, capa matches features at various scopes, starting small (e.g., `instruction`) and growing large (e.g., `file`). In static analysis, scopes grow from `instruction`, to `basic block`, `function`, and then `file`. In dynamic analysis, scopes grow from `call`, to `thread`, `process`, and then to `file`.
 
-When matching a sequence of API calls, the static scope is often `function` and the dynamic scope is `thread`. When matching a single API call with arguments, the static scope is usually `basic block` and the dynamic scope is `call`. One day we hope to support `call` scope directly in the static analysis flavor.
+When matching a sequence of API calls, the static scope is often `function` and the dynamic scope is `span of calls`. When matching a single API call with arguments, the static scope is usually `basic block` and the dynamic scope is `call`. One day we hope to support `call` scope directly in the static analysis flavor.
 
 
 ## features block
@@ -376,8 +376,8 @@ capa matches features at multiple scopes, starting small (e.g., `instruction`) a
 | dynamic scope | best for...                                                                                    |
 |---------------|------------------------------------------------------------------------------------------------|
 | call          | single API call and its arguments                                                              |
-| sequence      | behaviors that span multiple API calls, but less than an entire thread, which may be very long |
-| thread        | combinations of capabilities from multiple separate sequence scopes (uncommon)                 |
+| span of calls | behaviors that span multiple API calls, but less than an entire thread, which may be very long |
+| thread        | combinations of capabilities from multiple separate span-of-calls scopes (uncommon)            |
 | process       | combinations of other capabilities found within a (potentially multi-threaded) program         |
 | file          | high level conclusions, like encryptor, backdoor, or statically linked with some library       |
 | global        | the features available at every scope, like architecture or OS                                 |
@@ -386,27 +386,27 @@ In general, capa collects and merges the features from lower scopes into higher 
 for example, features extracted from individual instructions are merged into the function scope that contains the instructions.
 This way, you can use the match results against instructions ("the constant X is for crypto algorithm Y") to recognize function-level capabilities ("crypto function Z").
 
-| feature                           | static scope                                | dynamic scope                              |
-|-----------------------------------|---------------------------------------------|--------------------------------------------|
-| [api](#api)                       | instruction ↦ basic block ↦ function ↦ file | call ↦  sequence ↦ thread ↦ process ↦ file |
-| [string](#string-and-substring)   | instruction ↦ ...                           | call ↦ ...                                 |
-| [bytes](#bytes)                   | instruction ↦ ...                           | call ↦ ...                                 |
-| [number](#number)                 | instruction ↦ ...                           | call ↦ ...                                 |
-| [characteristic](#characteristic) | instruction ↦ ...                           | -                                          |
-| [mnemonic](#mnemonic)             | instruction ↦ ...                           | -                                          |
-| [operand](#operand)               | instruction ↦ ...                           | -                                          |
-| [offset](#offset)                 | instruction ↦ ...                           | -                                          |
-| [com](#com)                       | instruction ↦ ...                           | -                                          |
-| [namespace](#namespace)           | instruction ↦ ...                           | -                                          |
-| [class](#class)                   | instruction ↦ ...                           | -                                          |
-| [property](#property)             | instruction ↦ ...                           | -                                          |
-| [export](#export)                 | file                                        | file                                       |
-| [import](#import)                 | file                                        | file                                       |
-| [section](#section)               | file                                        | file                                       |
-| [function-name](#function-name)   | file                                        | -                                          |
-| [os](#os)                         | global                                      | global                                     |
-| [arch](#arch)                     | global                                      | global                                     |
-| [format](#format)                 | global                                      | global                                     |
+| feature                           | static scope                                | dynamic scope                                   |
+|-----------------------------------|---------------------------------------------|-------------------------------------------------|
+| [api](#api)                       | instruction ↦ basic block ↦ function ↦ file | call ↦  span of calls ↦ thread ↦ process ↦ file |
+| [string](#string-and-substring)   | instruction ↦ ...                           | call ↦ ...                                      |
+| [bytes](#bytes)                   | instruction ↦ ...                           | call ↦ ...                                      |
+| [number](#number)                 | instruction ↦ ...                           | call ↦ ...                                      |
+| [characteristic](#characteristic) | instruction ↦ ...                           | -                                               |
+| [mnemonic](#mnemonic)             | instruction ↦ ...                           | -                                               |
+| [operand](#operand)               | instruction ↦ ...                           | -                                               |
+| [offset](#offset)                 | instruction ↦ ...                           | -                                               |
+| [com](#com)                       | instruction ↦ ...                           | -                                               |
+| [namespace](#namespace)           | instruction ↦ ...                           | -                                               |
+| [class](#class)                   | instruction ↦ ...                           | -                                               |
+| [property](#property)             | instruction ↦ ...                           | -                                               |
+| [export](#export)                 | file                                        | file                                            |
+| [import](#import)                 | file                                        | file                                            |
+| [section](#section)               | file                                        | file                                            |
+| [function-name](#function-name)   | file                                        | -                                               |
+| [os](#os)                         | global                                      | global                                          |
+| [arch](#arch)                     | global                                      | global                                          |
+| [format](#format)                 | global                                      | global                                          |
 
 ## static analysis scopes
 
@@ -469,23 +469,23 @@ The following features are relevant at this scope and above:
   - [string and substring](#string-and-substring)
   - [bytes](#bytes)
 
-### sequence features
+### span-of-calls features
 
-Sequence scope matches features across a sliding window of API calls within a thread.
+"Span of calls" scope matches features across a sliding window of API calls within a thread.
 This scope is useful for identifying behaviors that span multiple API calls, such as `OpenFile`/`ReadFile`/`CloseFile`,
  without having to analyze an entire thread, which may be very long.
 
-Sequence scope does not enforce ordering of calls, but rather matches a set of calls within the window.
+The span-of-calls scope does not enforce ordering of calls, but rather matches a set of calls within the window.
 The current window size is 20 API calls.
 This was chosen to balance the need to capture logic across multiple calls while balancing performance tradeoffs.
 
-When a "sequence" rule matches, it only reports the first match in a series of overlapping sequences to avoid flooding the user with repeated results, such as when a program executes a behavior in a tight loop. However, other rules can match against these "hammered" matches.
+When a span of calls rule matches, it only reports the first match in a series of overlapping spans to avoid flooding the user with repeated results, such as when a program executes a behavior in a tight loop. However, other rules can match against these "hammered" matches.
 
-There are no sequence-specific features.
+There are no span-specific features.
 
 ### thread features
 
-Thread scope matches behaviors from call and sequence scopes found within the same thread.
+Thread scope matches behaviors from call and span-of-calls scopes found within the same thread.
 
 While uncommon, this can be useful when a rule considers the entire collection of behaviors within a thread,
  or at least a very long sequence of calls.
@@ -493,7 +493,7 @@ You might do this to make conclusions about a thread's complete activity,
  such as "background thread that periodically injects browser processes".
 
 However, this scope is susceptible to false positives, as a thread may contain a huge number of events that aren't guaranteed to be directly related.
-Therefore, prefer to use sequence scope, when possible.
+Therefore, prefer to use span-of-calls scope, when possible.
 
 There are no thread-specific features.
 

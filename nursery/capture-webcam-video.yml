@@ -7,7 +7,7 @@ rule:
     description: Rule that detects a system's webcam being used to capture video
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Collection::Video Capture [T1125]
   features:

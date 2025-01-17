@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Impact::Disk Wipe::Disk Structure Wipe [T1561.002]
     mbc:

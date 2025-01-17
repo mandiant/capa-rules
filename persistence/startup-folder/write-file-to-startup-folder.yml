@@ -7,7 +7,7 @@ rule:
       - j.j.vannielen@utwente.nl
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]
     examples:

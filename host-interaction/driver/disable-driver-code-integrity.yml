@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
     mbc:

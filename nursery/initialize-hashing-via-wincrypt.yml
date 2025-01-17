@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
   features:
     - and:
       - api: advapi32.CryptCreateHash

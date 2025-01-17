@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Subvert Trust Controls::Mark-of-the-Web Bypass [T1553.005]
     examples:

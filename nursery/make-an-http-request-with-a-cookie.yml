@@ -6,7 +6,7 @@ rule:
       - anamaria.martinezgom@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
   features:
     - and:
       - match: send HTTP request

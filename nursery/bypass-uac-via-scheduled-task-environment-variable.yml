@@ -6,7 +6,7 @@ rule:
       - anamaria.martinezgom@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Account Control [T1548.002]
     references:

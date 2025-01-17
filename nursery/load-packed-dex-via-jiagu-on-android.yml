@@ -6,7 +6,7 @@ rule:
       - mehunhoff@google.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     references:
       - https://github.com/Frezrik/Jiagu
   features:

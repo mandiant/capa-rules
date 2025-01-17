@@ -7,7 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Modify Registry [T1112]
     mbc:

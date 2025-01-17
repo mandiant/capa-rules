@@ -7,7 +7,7 @@ rule:
       - johnk3r
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Hardware::Simulate Hardware::Ctrl-Alt-Del [C0057.001]
     examples:

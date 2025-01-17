@@ -7,7 +7,7 @@ rule:
     description: signals that driver has finished all processing for a given IRP (part of major function)
     scopes:
       static: basic block
-      dynamic: sequence
+      dynamic: span of calls
     examples:
       - Practical Malware Analysis Lab 10-03.sys_:0x10666
   features:

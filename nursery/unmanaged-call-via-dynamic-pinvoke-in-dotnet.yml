@@ -7,7 +7,7 @@ rule:
     description: https://github.com/bohops/DynamicDotNet/blob/main/dynamic_pinvoke/dynamic_pinvoke_definepinvokemethod_shellcode_runner.cs
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
   features:
     - and:
       - or:

@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Persistence::Event Triggered Execution::Unix Shell Configuration Modification [T1546.004]
     examples:

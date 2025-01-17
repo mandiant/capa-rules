@@ -7,7 +7,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Execution::Install Additional Program [B0023]
     examples:

@@ -7,7 +7,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Communication::HTTP Communication [C0002]
     references:

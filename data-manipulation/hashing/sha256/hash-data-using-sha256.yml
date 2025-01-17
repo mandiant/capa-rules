@@ -8,7 +8,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Cryptography::Cryptographic Hash::SHA256 [C0029.003]
     references:

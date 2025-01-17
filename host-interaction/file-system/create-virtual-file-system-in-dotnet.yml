@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Hide Artifacts::Hidden File System [T1564.005]
     mbc:

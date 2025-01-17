@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: sequence
+      dynamic: span of calls
   features:
     - or:
       - and:

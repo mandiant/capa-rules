@@ -7,7 +7,7 @@ rule:
     description: known import name hashes calculated using the non-cryptographic djb2 hashing algorithm
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]
     mbc:

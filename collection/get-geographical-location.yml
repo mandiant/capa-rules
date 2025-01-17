@@ -8,7 +8,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Discovery::System Location Discovery [T1614]
     examples:

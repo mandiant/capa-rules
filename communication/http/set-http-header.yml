@@ -7,7 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Communication::HTTP Communication::Set Header [C0002.013]
     examples:

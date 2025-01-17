@@ -6,7 +6,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
     examples:

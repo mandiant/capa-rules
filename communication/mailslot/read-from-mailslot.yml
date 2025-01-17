@@ -6,7 +6,7 @@ rule:
       - nick.simonian@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Communication::Interprocess Communication [C0003]
     references:

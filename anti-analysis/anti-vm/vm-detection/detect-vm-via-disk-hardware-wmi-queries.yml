@@ -7,7 +7,7 @@ rule:
       - anders.vejlby@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
     mbc:

@@ -6,7 +6,7 @@ rule:
       - johnk3r
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Discovery::Domain Trust Discovery [T1482]
     examples:

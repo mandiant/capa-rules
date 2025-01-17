@@ -7,7 +7,7 @@ rule:
     description: LSPlant is an Android ART hook library, providing Java method hook/unhook and inline deoptimization
     scopes:
       static: basic block
-      dynamic: sequence
+      dynamic: span of calls
     references:
       - https://github.com/LSPosed/LSPlant
   features:

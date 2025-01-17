@@ -6,7 +6,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: basic block
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Memory::Allocate Memory [C0007]
     examples:

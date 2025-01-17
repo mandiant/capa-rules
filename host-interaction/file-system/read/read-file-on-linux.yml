@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - File System::Read File [C0051]
     examples:

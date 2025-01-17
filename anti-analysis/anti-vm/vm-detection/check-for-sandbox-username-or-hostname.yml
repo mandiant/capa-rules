@@ -7,7 +7,7 @@ rule:
       - "echernofsky@google.com"
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Virtualization/Sandbox Evasion [T1497]
     mbc:

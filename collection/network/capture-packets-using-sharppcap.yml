@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Discovery::Network Sniffing [T1040]
     references:

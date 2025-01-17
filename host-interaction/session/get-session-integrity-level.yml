@@ -7,7 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
     examples:

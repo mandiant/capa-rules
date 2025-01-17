@@ -8,7 +8,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     att&ck:
       - Collection::Screen Capture [T1113]
     mbc:

@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Anti-Behavioral Analysis::Debugger Detection::Timing/Delay Check QueryPerformanceCounter [B0001.033]
     examples:

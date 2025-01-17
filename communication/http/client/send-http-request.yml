@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: sequence
+      dynamic: span of calls
     mbc:
       - Communication::HTTP Communication::Send Request [C0002.003]
     examples:
