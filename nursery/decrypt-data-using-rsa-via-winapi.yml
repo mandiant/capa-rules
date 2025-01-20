@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: decrypt data using RSA
+    name: decrypt data using RSA via WinAPI
     namespace: data-manipulation/encryption/rsa
     authors:
       - michael.hunhoff@mandiant.com
