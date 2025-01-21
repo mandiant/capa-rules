@@ -1,0 +1,31 @@
+rule:
+  meta:
+    name: use bigint function
+    namespace: data-manipulation/encryption
+    authors:
+      - "Ana06"
+    description: use bigint function such as bi_copy and bi_permanent. Useful to identify crypto.
+    scopes:
+      static: instruction
+      dynamic: unsupported # requires mnemonic, offset features
+    references:
+      # bi_copy
+      - https://github.com/ezhangle/krypton/blob/147d69429bfb03cce7113dca6dba36e77f8a9325/src/bigint.c#L149
+      - https://github.com/bnoordhuis/mongrel2/blob/3e9b57d82aeb627be0aebfb346199bfdfd67e530/src/crypto/bigint.c#L162
+      # bi_permanent
+      - https://github.com/ezhangle/krypton/blob/147d69429bfb03cce7113dca6dba36e77f8a9325/src/bigint.c#L161
+      - https://github.com/bnoordhuis/mongrel2/blob/3e9b57d82aeb627be0aebfb346199bfdfd67e530/src/crypto/bigint.c#L176
+    examples:
+      - 009c2377b67997b0da1579f4bbc822c1:0x404096 # bi_copy
+      - 009c2377b67997b0da1579f4bbc822c1:0x4040D4 # bi_permanent
+      - 009c2377b67997b0da1579f4bbc822c1:0x4040E6 # bi_depermanent
+      - 009c2377b67997b0da1579f4bbc822c1:0x404109 # bi_free
+      - 8333822ed41d9f2b302cf8e21b126efc:0x407933 # bi_permanent
+      - 8333822ed41d9f2b302cf8e21b126efc:0x407933 # bi_depermanent
+  features:
+    - and:
+      - or:
+        - mnemonic: mov
+        - mnemonic: cmp
+      - number: 0x7FFF55AA = PERMANENT
+      - offset: 8 = bi->refs

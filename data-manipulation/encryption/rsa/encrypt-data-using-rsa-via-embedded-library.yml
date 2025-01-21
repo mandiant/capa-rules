@@ -1,0 +1,46 @@
+rule:
+  meta:
+    name: encrypt data using RSA via embedded library
+    namespace: data-manipulation/encryption/rsa
+    authors:
+      - "Ana06"
+    description: encrypt data using krypton RSA implementation or similar
+    scopes:
+      static: function
+      dynamic: unsupported # requires mnemonic, offset features
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Encrypt Data::RSA [C0027.011]
+    references:
+      - https://github.com/ezhangle/krypton/blob/147d69429bfb03cce7113dca6dba36e77f8a9325/src/rsa.c#L232
+      - https://github.com/bnoordhuis/mongrel2/blob/3e9b57d82aeb627be0aebfb346199bfdfd67e530/src/crypto/rsa.c#L233
+    examples:
+      - 009c2377b67997b0da1579f4bbc822c1:0x405CF0
+  features:
+    - and:
+      # `sub  eax, 3`  Subtract 3 to calculate pads needed
+      - instruction:
+        - mnemonic: sub
+        - number: 3
+      # `mov  byte ptr [ecx], 0`  Ensure encryption block is < modulus
+      - instruction:
+        - mnemonic: mov
+        - offset: 0
+        - number: 0
+      # `mov  byte ptr [edx+1], 2` Set encryption flag
+      - instruction:
+        - mnemonic: mov
+        - offset: 1
+        - number: 2
+      # `mov  byte ptr [edx+2], 0` Terminate with zero
+      - instruction:
+        - mnemonic: mov
+        - offset: 2
+        - number: 0
+      # call `get_random_nonzero`, `memcpy`, `bi_import`, `RSA_public`, `bi_export`, and `bi_clear_cache`
+      # if the signing code is included, also call `memcpy` and `RSA_private`
+      - count(mnemonic(call)): (6,8)
+      - optional: # likely in a subfunction
+        - match: use bigint function
