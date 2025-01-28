@@ -55,7 +55,6 @@ rule:
       - string: /\\\\.\\pipe\\VBoxTrayIPC/i
       - string: /VBoxTrayToolWndClass/i
       - string: /VBoxTrayToolWnd/i
-      - string: /vboxservice\.exe/i
       - string: /vboxtray.exe/i
       - string: /vboxvideo/i
       - string: /VBoxVideoW8/i

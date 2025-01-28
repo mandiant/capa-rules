@@ -41,7 +41,7 @@ rule:
             - number: 0x64 = d
             - number: 0x4F = O
             - number: 0x70 = p
-            - number: 0x65 = e
+            # - number: 0x65 = e
             - number: 0x6E = n
             - number: 0x50 = P
             - number: 0x61 = a
@@ -53,7 +53,7 @@ rule:
             - number: 0x02
             - number: 0x01
             - number: 0x06
-            - number: 0x00
+            # - number: 0x00
             - number: 0x60
             - number: 0xEF
             - number: 0x3D

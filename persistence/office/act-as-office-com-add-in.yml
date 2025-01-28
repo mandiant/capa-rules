@@ -20,7 +20,6 @@ rule:
       - class: Extensibility.IDTExtensibility2
       - or:
         - string: "OnAddInsUpdate"
-        - string: "OnAddInsUpdate"
         - string: "OnBeginShutdown"
         - string: "OnConnection"
         - string: "OnDisconnection"

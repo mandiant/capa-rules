@@ -56,7 +56,6 @@ rule:
       - string: /vmx86/i
       - string: /VMwareVMware/i
       - string: /vmGuestLib\.dll/i
-      - string: /vmGuestLib\.dll/i
       - string: /Applications\\VMwareHostOpen\.exe/i
       - string: /vm3dgl\.dll/i
       - string: /vmdum\.dll/i
