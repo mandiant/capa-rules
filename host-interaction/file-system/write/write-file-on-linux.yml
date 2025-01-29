@@ -6,8 +6,8 @@ rule:
       - joakim@intezer.com
       - mehunhoff@google.com
     scopes:
-      static: function
-      dynamic: span of calls
+      static: instruction
+      dynamic: call
     mbc:
       - File System::Writes File [C0052]
     examples:
@@ -31,5 +31,3 @@ rule:
         - api: vdprintf
         - api: fprintf
         - api: vfprintf
-      - optional:
-        - match: create or open file
