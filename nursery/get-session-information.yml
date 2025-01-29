@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Discovery::System Owner/User Discovery [T1033]
   features:

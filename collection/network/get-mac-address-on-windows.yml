@@ -8,7 +8,7 @@ rule:
       - echernofsky@google.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Discovery::System Information Discovery [T1082]
     references:

@@ -7,7 +7,7 @@ rule:
     description: Looks for calls to Windows APIs that can be used to determine the name of the domain controller for a Windows domain that a computer is connected to.
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
     references:

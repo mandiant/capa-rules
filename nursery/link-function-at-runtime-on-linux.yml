@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: call
     att&ck:
       - Execution::Shared Modules [T1129]
   features:
@@ -14,9 +14,6 @@ rule:
       - or:
         - os: linux
         - os: android
-      - or:
-        - api: dlopen
-        - api: dlmopen
       - or:
         - api: dlsym
         - api: dlvsym

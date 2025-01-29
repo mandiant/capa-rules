@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Impact::Endpoint Denial of Service [T1499]
     examples:

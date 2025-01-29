@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
     mbc:

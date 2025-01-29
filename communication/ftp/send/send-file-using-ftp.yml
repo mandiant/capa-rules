@@ -7,7 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     mbc:
       - Communication::FTP Communication::Send File [C0004.001]
       - Communication::FTP Communication::WinINet [C0004.002]

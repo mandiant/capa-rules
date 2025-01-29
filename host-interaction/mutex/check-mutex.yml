@@ -7,7 +7,7 @@ rule:
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: span of calls
     mbc:
       - Process::Check Mutex [C0043]
     examples:

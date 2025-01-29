@@ -7,7 +7,7 @@ rule:
     description: all known techniques for receiving data from a potential C2 server
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     mbc:
       - Command and Control::C2 Communication::Receive Data [B0030.002]
     examples:

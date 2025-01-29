@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Collection::Screen Capture [T1113]
     mbc:

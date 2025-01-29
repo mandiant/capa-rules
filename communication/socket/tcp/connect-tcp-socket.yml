@@ -7,7 +7,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     mbc:
       - Communication::Socket Communication::Connect Socket [C0001.004]
     examples:

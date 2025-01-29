@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Impair Defenses::Disable Windows Event Logging [T1562.002]
     references:

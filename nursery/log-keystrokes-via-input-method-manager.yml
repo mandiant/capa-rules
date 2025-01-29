@@ -7,7 +7,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
   features:
     - and:
       - or:

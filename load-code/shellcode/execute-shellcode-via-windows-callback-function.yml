@@ -9,7 +9,7 @@ rule:
     description: Detect usage of various WinAPI functions that accept callback functions as parameters in order to execute arbitrary shellcode
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Reflective Code Loading [T1620]
     mbc:

@@ -14,17 +14,5 @@ rule:
       - b7b5e1253710d8927cbe07d52d2d2e10:0x401000
   features:
     - or:
-      - and:
-        - os: windows
-        - match: link function at runtime on Windows
-        - or:
-          - count(api(kernel32.GetProcAddress)): 5 or more
-          - count(api(ntdll.LdrGetProcedureAddress)): 5 or more
-      - and:
-        - or:
-          - os: linux
-          - os: android
-        - match: link function at runtime on Linux
-        - or:
-          - count(api(dlsym)): 5 or more
-          - count(api(dlvsym)): 5 or more
+      - count(match(link function at runtime on Windows)): 5 or more
+      - count(match(link function at runtime on Linux)): 5 or more

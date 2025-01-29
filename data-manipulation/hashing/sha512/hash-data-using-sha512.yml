@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     references:
       - https://www.rfc-editor.org/rfc/rfc6234
     examples:

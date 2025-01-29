@@ -8,7 +8,7 @@ rule:
     description: all known techniques for sending data to a potential C2 server
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     mbc:
       - Command and Control::C2 Communication::Send Data [B0030.001]
     examples:

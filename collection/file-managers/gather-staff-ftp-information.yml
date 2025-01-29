@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Credential Access::Credentials from Password Stores [T1555]
     references:

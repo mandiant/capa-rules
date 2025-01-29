@@ -6,7 +6,7 @@ rule:
       - aseel.kayal@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     references:
       - https://posts.specterops.io/mimidrv-in-depth-4d273d19e148
       - https://learn.microsoft.com/en-us/windows-hardware/drivers/ifs/filter-manager-concepts

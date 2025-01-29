@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     mbc:
       - Operating System::Console [C0033]
     references:

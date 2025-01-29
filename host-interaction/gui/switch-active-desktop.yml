@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Debugger Evasion [T1622]
     mbc:

@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     mbc:
       - Defense Evasion::Process Injection::Injection via Windows Fibers [E1055.m05]
     references:

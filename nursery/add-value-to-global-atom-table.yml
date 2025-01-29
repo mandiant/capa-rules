@@ -6,7 +6,7 @@ rule:
       - "@mr-tz"
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     references:
       - https://www.fortinet.com/blog/threat-research/atombombing-brand-new-code-injection-technique-for-windows
       - https://github.com/BreakingMalwareResearch/atom-bombing

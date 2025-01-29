@@ -7,7 +7,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     mbc:
       - Communication::HTTP Communication::Start Server [C0002.018]
     examples:

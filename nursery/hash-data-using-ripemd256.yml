@@ -6,7 +6,7 @@ rule:
       - raymond.leong@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     references:
       - https://en.wikipedia.org/wiki/RIPEMD-256
   features:

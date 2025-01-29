@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::XDG Autostart Entries [T1547.013]
     examples:

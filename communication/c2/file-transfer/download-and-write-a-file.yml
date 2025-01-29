@@ -7,7 +7,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Command and Control::Ingress Tool Transfer [T1105]
     mbc:

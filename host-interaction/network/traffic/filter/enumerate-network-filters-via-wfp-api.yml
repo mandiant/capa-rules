@@ -6,7 +6,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     references:
       - https://learn.microsoft.com/en-us/windows/win32/api/fwpmu/nf-fwpmu-fwpmfilterenum0
       - https://github.com/netero1010/EDRSilencer/blob/main/EDRSilencer.c

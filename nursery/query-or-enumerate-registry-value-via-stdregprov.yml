@@ -7,7 +7,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     references:
       - https://docs.microsoft.com/en-us/previous-versions/windows/desktop/regprov/stdregprov#methods
   features:

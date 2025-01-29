@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     scopes:
       static: function
-      dynamic: thread
+      dynamic: span of calls
     att&ck:
       - Persistence::Boot or Logon Initialization Scripts::RC Scripts [T1037.004]
     examples:
