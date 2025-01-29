@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
       - michael.hunhoff@mandiant.com
     scopes:
-      static: function
+      static: instruction
       dynamic: call
     mbc:
       - Process::Create Mutex [C0042]

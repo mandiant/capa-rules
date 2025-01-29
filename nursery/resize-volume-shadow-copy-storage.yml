@@ -10,5 +10,7 @@ rule:
       dynamic: call
   features:
     - and:
-      - match: interact with driver via IOCTL
+      - or:
+        - match: interact with driver via IOCTL
+        - characteristic: indirect call
       - number: 0x53C028 = IOCTL_VOLSNAP_SET_MAX_DIFF_AREA_SIZE

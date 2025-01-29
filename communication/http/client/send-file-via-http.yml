@@ -5,8 +5,8 @@ rule:
     authors:
       - matthew.williams@mandiant.com
     scopes:
-      static: basic block
-      dynamic: span of calls
+      static: instruction
+      dynamic: call
     mbc:
       - Communication::HTTP Communication::Send Data [C0002.005]
     examples:
@@ -14,7 +14,3 @@ rule:
   features:
     - and:
       - api: wininet.InternetWriteFile
-      - optional:
-        - or:
-          - match: connect to HTTP server
-          - match: connect to URL

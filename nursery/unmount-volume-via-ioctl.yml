@@ -6,7 +6,7 @@ rule:
       - william.ballenthin@mandiant.com
     scopes:
       static: function
-      dynamic: call
+      dynamic: span of calls
     references:
       - https://www.crowdstrike.com/blog/the-anatomy-of-wiper-malware-part-3/
   features:

@@ -6,7 +6,7 @@ rule:
       - joakim@intezer.com
     lib: true
     scopes:
-      static: basic block
+      static: instruction
       dynamic: call
     mbc:
       - File System::Create File [C0016]

@@ -5,8 +5,8 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     scopes:
-      static: function
-      dynamic: span of calls
+      static: instruction
+      dynamic: call
     att&ck:
       - Privilege Escalation::Access Token Manipulation [T1134]
     examples:
@@ -14,6 +14,3 @@ rule:
   features:
     - and:
       - api: advapi32.AdjustTokenPrivileges
-      - optional:
-        - or:
-          - api: advapi32.LookupPrivilegeValue
