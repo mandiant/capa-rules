@@ -6,7 +6,7 @@ rule:
       - "@_re_fox"
     scopes:
       static: basic block
-      dynamic: span of calls
+      dynamic: call
     mbc:
       - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]
       - Anti-Behavioral Analysis::Sandbox Detection [B0007]
