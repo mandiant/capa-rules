@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: span of calls
+      dynamic: call
     att&ck:
       - Collection::Data from Information Repositories [T1213]
     examples:
