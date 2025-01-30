@@ -5,7 +5,7 @@ rule:
     authors:
       - "@mr-tz"
     scopes:
-      static: basic block
+      static: function
       dynamic: span of calls
     mbc:
       - Memory::Allocate Memory [C0007]
