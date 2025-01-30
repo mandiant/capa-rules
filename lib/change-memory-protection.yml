@@ -5,7 +5,7 @@ rule:
       - "@mr-tz"
     lib: true
     scopes:
-      static: basic block
+      static: function
       dynamic: call
     mbc:
       - Memory::Change Memory Protection [C0008]
@@ -17,10 +17,11 @@ rule:
       - api: kernel32.VirtualProtectEx
       - api: NtProtectVirtualMemory
       - api: ZwProtectVirtualMemory
-      - and:
-        - match: link function at runtime on Windows
-        - or:
-          - string: "VirtualProtect"
-          - string: "VirtualProtectEx"
-          - string: "NtProtectVirtualMemory"
-          - string: "ZwProtectVirtualMemory"
+      - basic block:
+        - and:
+          - match: link function at runtime on Windows
+          - or:
+            - string: "VirtualProtect"
+            - string: "VirtualProtectEx"
+            - string: "NtProtectVirtualMemory"
+            - string: "ZwProtectVirtualMemory"

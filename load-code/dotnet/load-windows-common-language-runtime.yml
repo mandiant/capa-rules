@@ -26,23 +26,25 @@ rule:
           - api: mscoree.CorBindToRuntimeByCfg
           - api: mscoree.CorBindToCurrentRuntime
           - api: ole32.CoCreateInstance
-          - and:
-            - or:
-              - string: "CorBindToRuntime"
-              - string: "CorBindToRuntimeEx"
-              - string: "CorBindToRuntimeHost"
-              - string: "CorBindToRuntimeByCfg"
-              - string: "CorBindToCurrentRuntime"
-              - string: "CoCreateInstance"
-            - match: link function at runtime on Windows
+          - basic block:
+            - and:
+              - or:
+                - string: "CorBindToRuntime"
+                - string: "CorBindToRuntimeEx"
+                - string: "CorBindToRuntimeHost"
+                - string: "CorBindToRuntimeByCfg"
+                - string: "CorBindToCurrentRuntime"
+                - string: "CoCreateInstance"
+              - match: link function at runtime on Windows
         - bytes: 23 67 2F CB 3A AB D2 11 9C 40 00 C0 4F A3 0A 3E = CLSID_CorRuntimeHost
         - bytes: 22 67 2F CB 3A AB D2 11 9C 40 00 C0 4F A3 0A 3E = IID_ICorRuntimeHost
       - and:
         - description: .NET Framework version 4.x
         - or:
           - api: mscoree.CLRCreateInstance
-          - and:
-            - string: "CLRCreateInstance"
-            - match: link function at runtime on Windows
+          - basic block:
+            - and:
+              - string: "CLRCreateInstance"
+              - match: link function at runtime on Windows
         - bytes: 8D 18 80 92 8E 0E 67 48 B3 0C 7F A8 38 84 E8 DE = CLSID_CLRMetaHost
         - bytes: 9E DB 32 D3 B3 B9 25 41 82 07 A1 48 84 F5 32 16 = IID_ICLRMetaHost

@@ -6,7 +6,7 @@ rule:
       - "@mr-tz"
     lib: true
     scopes:
-      static: basic block
+      static: function
       dynamic: call
     mbc:
       - Memory::Allocate Memory [C0007]
@@ -22,13 +22,14 @@ rule:
       - api: ZwAllocateVirtualMemory
       - api: NtMapViewOfSection
       - api: ZwMapViewOfSection
-      - and:
-        - match: link function at runtime on Windows
-        - or:
-          - string: "VirtualAlloc"
-          - string: "VirtualAllocEx"
-          - string: "VirtualAllocExNuma"
-          - string: "NtAllocateVirtualMemory"
-          - string: "ZwAllocateVirtualMemory"
-          - string: "NtMapViewOfSection"
-          - string: "ZwMapViewOfSection"
+      - basic block:
+        - and:
+          - match: link function at runtime on Windows
+          - or:
+            - string: "VirtualAlloc"
+            - string: "VirtualAllocEx"
+            - string: "VirtualAllocExNuma"
+            - string: "NtAllocateVirtualMemory"
+            - string: "ZwAllocateVirtualMemory"
+            - string: "NtMapViewOfSection"
+            - string: "ZwMapViewOfSection"

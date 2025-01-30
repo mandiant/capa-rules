@@ -19,9 +19,10 @@ rule:
   features:
     - or:
       - api: SystemFunction033
-      - and:
-        - match: link function at runtime on Windows
-        - string: "SystemFunction033"
-        - optional:
-          - string: /advapi32/i
-          - string: /cryptsp/i
+      - basic block:
+        - and:
+          - match: link function at runtime on Windows
+          - string: "SystemFunction033"
+          - optional:
+            - string: /advapi32/i
+            - string: /cryptsp/i
