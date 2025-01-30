@@ -6,7 +6,7 @@ rule:
       - michael.hunhoff@mandiant.com
     scopes:
       static: function
-      dynamic: span of calls
+      dynamic: thread
     mbc:
       - Defense Evasion::Disable or Evade Security Tools::Bypass Windows File Protection [F0004.007]
     examples:
