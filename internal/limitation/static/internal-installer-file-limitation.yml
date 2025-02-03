@@ -3,7 +3,7 @@ rule:
     name: (internal) installer file limitation
     # capa will likely detect installer specific functionality.
     # this is probably not what the user wants.
-    namespace: internal/limitation/file
+    namespace: internal/limitation/static
     authors:
       - william.ballenthin@mandiant.com
     description: |

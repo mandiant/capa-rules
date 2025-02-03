@@ -4,7 +4,7 @@ rule:
     # capa will detect dozens of capabilities for AutoIt samples,
     # but these are due to the AutoIt runtime, not the payload script.
     # so, don't confuse the user with FP matches - bail instead
-    namespace: internal/limitation/file
+    namespace: internal/limitation/static
     authors:
       - william.ballenthin@mandiant.com
     description: |

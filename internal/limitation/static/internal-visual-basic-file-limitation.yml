@@ -1,7 +1,7 @@
 rule:
   meta:
     name: (internal) Visual Basic file limitation
-    namespace: internal/limitation/file
+    namespace: internal/limitation/static
     authors:
       - "@mr-tz"
     description: |
