@@ -6,7 +6,7 @@ rule:
       - "@mr-tz"
     lib: true
     scopes:
-      static: function
+      static: basic block
       dynamic: call
     mbc:
       - Memory::Allocate Memory [C0007]

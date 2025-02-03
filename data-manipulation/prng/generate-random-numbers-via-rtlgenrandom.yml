@@ -7,7 +7,7 @@ rule:
       - richard.weiss@mandiant.com
     scopes:
       static: function
-      dynamic: span of calls
+      dynamic: call
     mbc:
       - Cryptography::Generate Pseudo-random Sequence::Use API [C0021.003]
     references:

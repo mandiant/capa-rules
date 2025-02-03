@@ -5,7 +5,7 @@ rule:
       - "@mr-tz"
     lib: true
     scopes:
-      static: function
+      static: basic block
       dynamic: call
     mbc:
       - Memory::Change Memory Protection [C0008]
