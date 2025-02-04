@@ -17,7 +17,9 @@ rule:
   features:
     - or:
       - and:
-        - number: 6 = IPPROTO_TCP
+        - or:
+          - number: 0 = protocol (default)
+          - number: 6 = IPPROTO_TCP
         - number: 1 = SOCK_STREAM
         - number: 2 = AF_INET
         - or:
