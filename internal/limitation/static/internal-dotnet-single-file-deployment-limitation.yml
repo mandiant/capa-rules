@@ -1,7 +1,7 @@
 rule:
   meta:
     name: (internal) .NET single file deployment limitation
-    namespace: internal/limitation/file
+    namespace: internal/limitation/static
     authors:
       - sara.rincon@mandiant.com
     description: |

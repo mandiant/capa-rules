@@ -1,7 +1,7 @@
 rule:
   meta:
     name: (internal) packer file limitation
-    namespace: internal/limitation/file
+    namespace: internal/limitation/static
     authors:
       - william.ballenthin@mandiant.com
     description: |
