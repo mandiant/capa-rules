@@ -24,6 +24,9 @@ rule:
       - api: exit
       - api: Exit
       - and:
+        - os: linux
+        - api: exit_group
+      - and:
         - optional:
           - match: open process
         - or:
