@@ -14,6 +14,7 @@ rule:
       - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]
     references:
       - https://github.com/LloydLabs/wsb-detect
+      - https://www.esentire.com/blog/unraveling-not-azorult-but-koi-loader-a-precursor-to-koi-stealer
     examples:
       - ccbf7cba35bab56563c0fbe4237fdc41:0x402B90
   features:
