@@ -19,6 +19,7 @@ rule:
         - count(number(2 = AF_INET/SOCK_DGRAM)): 2 or more
         - or:
           - number: 0 = protocol (default)
+          - number: 17 = IPPROTO_UDP
         - or:
           - api: socket
           - api: ws2_32.socket
