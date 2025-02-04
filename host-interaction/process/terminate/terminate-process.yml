@@ -23,7 +23,9 @@ rule:
       - api: System.Windows.Forms.Application::Exit
       - api: exit
       - api: Exit
-      - api: exit_group
+      - and:
+        - os: linux
+        - api: exit_group
       - and:
         - optional:
           - match: open process
