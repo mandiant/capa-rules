@@ -18,6 +18,8 @@ rule:
       - and:
         - count(number(2 = AF_INET/SOCK_DGRAM)): 2 or more
         - or:
+          - number: 0 = protocol (default)
+        - or:
           - api: socket
           - api: ws2_32.socket
           - api: ws2_32.#23 = socket
