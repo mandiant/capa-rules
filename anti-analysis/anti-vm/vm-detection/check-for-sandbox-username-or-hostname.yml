@@ -14,6 +14,7 @@ rule:
       - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]
     references:
       - https://github.com/LloydLabs/wsb-detect
+      - https://www.esentire.com/blog/unraveling-not-azorult-but-koi-loader-a-precursor-to-koi-stealer
     examples:
       - ccbf7cba35bab56563c0fbe4237fdc41:0x402B90
   features:
@@ -23,6 +24,26 @@ rule:
         # Usernames often overlap with hostnames for many of these checks.
         - match: get hostname
       - or:
+        - string: /WILLCARTER-PC/i
+          description: Known sandbox hostname
+        - string: /FORTI-PC/i
+          description: Known sandbox hostname
+        - string: /SFTOR-PC/i
+          description: Known sandbox hostname
+        - string: /Joe\s?Cage/i
+          description: Known sandbox username
+        - string: /STRAZNJICA\.GRUBUTT/i
+          description: Known sandbox username
+        - string: /Paul\s?Jones/i
+          description: Known sandbox username
+        - string: /PJones/i
+          description: Known sandbox username
+        - string: /Harry\s?Johnson/i
+          description: Known sandbox username
+        - string: /sal\.rosenburg/i
+          description: Known sandbox username
+        - string: /d5\.vc\/g/i
+          description: Known sandbox username
         - string: /MALTEST/i
           description: Betabot Username Check
         - string: /TEQUILABOOMBOOM/i
