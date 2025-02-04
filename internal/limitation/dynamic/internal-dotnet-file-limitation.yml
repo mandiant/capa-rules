@@ -1,14 +1,14 @@
 rule:
   meta:
-    name: (internal) dotnet file limitation
+    name: (internal) .NET file limitation
     namespace: internal/limitation/dynamic
     authors:
       - "@v1bh475u"
     description: |
-      This sample contains a .NET sample analysis.
+      This dynamic analysis trace describes a .NET file.
 
-      The runtime .NET APIs called in code may differ from the ones called in runtime.
-      This may cause the analysis to be incomplete or misleading. 
+      capa rules are not yet tuned for the .NET runtime, 
+      so its analysis may be incomplete or misleading.
     scopes:
       static: unsupported
       dynamic: file
