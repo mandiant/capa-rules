@@ -16,4 +16,4 @@ rule:
       - string: "sfc_os.dll"
         description: System File Checker
       - number: 0x2 = SfcTerminateWatcherThread
-      - match: linking/runtime-linking
+      - match: link function at runtime on Windows

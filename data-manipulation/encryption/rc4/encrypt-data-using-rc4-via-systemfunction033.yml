@@ -6,7 +6,7 @@ rule:
       - daniel.stepanic@elastic.co
     scopes:
       static: function
-      dynamic: span of calls
+      dynamic: call
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
@@ -19,9 +19,10 @@ rule:
   features:
     - or:
       - api: SystemFunction033
-      - and:
-        - match: link function at runtime on Windows
-        - string: "SystemFunction033"
-        - optional:
-          - string: /advapi32/i
-          - string: /cryptsp/i
+      - basic block:
+        - and:
+          - match: link function at runtime on Windows
+          - string: "SystemFunction033"
+          - optional:
+            - string: /advapi32/i
+            - string: /cryptsp/i

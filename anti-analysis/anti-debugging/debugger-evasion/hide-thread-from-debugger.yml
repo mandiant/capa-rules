@@ -7,7 +7,7 @@ rule:
       - jakub.jozwiak@mandiant.com
     scopes:
       static: function
-      dynamic: span of calls
+      dynamic: call
     att&ck:
       - Defense Evasion::Debugger Evasion [T1622]
     mbc:
@@ -19,23 +19,14 @@ rule:
     examples:
       - 26beba7352a32b803aa19e0782011a383a1df19549910e7b2f2f244e49678524:0x10001670
   features:
-    - or:
-      - basic block:
-        - and:
-          - or:
-            - api: NtSetInformationThread
-            - api: ZwSetInformationThread
-          - number: 0x11 = ThreadHideFromDebugger
-      - call:
-        - and:
-          - or:
-            - api: NtSetInformationThread
-            - api: ZwSetInformationThread
-          - number: 0x11 = ThreadHideFromDebugger
-      - and:
-        - or:
-          - string: "NtSetInformationThread"
-          - string: "ZwSetInformationThread"
-        - match: link function at runtime on Windows
-        - api: GetCurrentThread
-        - number: 0x11 = ThreadHideFromDebugger
+    - and:
+      - or:
+        - api: NtSetInformationThread
+        - api: ZwSetInformationThread
+        - basic block:
+          - and:
+            - or:
+              - string: "NtSetInformationThread"
+              - string: "ZwSetInformationThread"
+            - match: link function at runtime on Windows
+      - number: 0x11 = ThreadHideFromDebugger

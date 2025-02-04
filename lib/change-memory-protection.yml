@@ -17,10 +17,11 @@ rule:
       - api: kernel32.VirtualProtectEx
       - api: NtProtectVirtualMemory
       - api: ZwProtectVirtualMemory
-      - and:
-        - match: link function at runtime on Windows
-        - or:
-          - string: "VirtualProtect"
-          - string: "VirtualProtectEx"
-          - string: "NtProtectVirtualMemory"
-          - string: "ZwProtectVirtualMemory"
+      - basic block:
+        - and:
+          - match: link function at runtime on Windows
+          - or:
+            - string: "VirtualProtect"
+            - string: "VirtualProtectEx"
+            - string: "NtProtectVirtualMemory"
+            - string: "ZwProtectVirtualMemory"
