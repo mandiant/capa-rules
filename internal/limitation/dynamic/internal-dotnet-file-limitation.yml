@@ -10,7 +10,7 @@ rule:
       capa rules are not yet tuned for the .NET runtime, 
       so its analysis may be incomplete or misleading.
     scopes:
-      static: unsupported
+      static: file
       dynamic: file
     examples:
       - 2f8a79b12a7a989ac7e5f6ec65050036588a92e65aeb6841e08dc228ff0e21b4_min_archive.zip
