@@ -23,6 +23,30 @@ rule:
         # Usernames often overlap with hostnames for many of these checks.
         - match: get hostname
       - or:
+        # Newly added hostnames
+        - string: /WILLCARTER-PC/i
+          description: Known sandbox hostname
+        - string: /FORTI-PC/i
+          description: Known sandbox hostname
+        - string: /SFTOR-PC/i
+          description: Known sandbox hostname
+        
+        # Newly added usernames
+        - string: /Joe\s?Cage/i
+          description: Known sandbox username
+        - string: /STRAZNJICA\.GRUBUTT/i
+          description: Known sandbox username
+        - string: /Paul\s?Jones/i
+          description: Known sandbox username
+        - string: /PJones/i
+          description: Known sandbox username
+        - string: /Harry\s?Johnson/i
+          description: Known sandbox username
+        - string: /sal\.rosenburg/i
+          description: Known sandbox username
+        - string: /d5\.vc\/g/i
+          description: Known sandbox username
+          
         - string: /MALTEST/i
           description: Betabot Username Check
         - string: /TEQUILABOOMBOOM/i
