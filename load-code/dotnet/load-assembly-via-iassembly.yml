@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: load assembly via IAssembly
+    namespace: load-code/dotnet
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: function
+      dynamic: unsupported
+    references:
+      - https://github.com/TheWover/donut/blob/master/loader/inmem_dotnet.c
+    examples:
+      - d890c1c67d83f1131c065b5eb5f263cbf54559dbcdb4562c3bde3dc30d1a3205
+  features:
+    - and:
+      - instruction:
+        - mnemonic: mov
+        - number: 0x2008 = VT_ARRAY | VT_BSTR (for passing args)
+      - instruction:
+        - mnemonic: mov
+        - number: 0x118 = BindingFlags_InvokeMethod | BindingFlags_Static | BindingFlags_Public (InvokeMember_3)
+      - match: contain loop

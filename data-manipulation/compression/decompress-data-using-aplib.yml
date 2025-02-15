@@ -6,6 +6,7 @@ rule:
       - "@r3c0nst (Frank Boldewin)"
       - moritz.raabe@mandiant.com
       - cdong49@gatech.edu
+      - still@teamt5.org
     description: detects decompression function of library aPLib
     scopes:
       static: function
@@ -25,7 +26,9 @@ rule:
       - instruction:
         - description: line 138, if (offs >= 32000)
         - mnemonic: cmp
-        - number: 32000
+        - or:
+          - number: 31999
+          - number: 32000
       - instruction:
         - description: line 144, if (offs < 128)
         - mnemonic: cmp
