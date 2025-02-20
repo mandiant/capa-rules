@@ -6,7 +6,7 @@ rule:
       - j.j.vannielen@utwente.nl
     scopes:
       static: function
-      dynamic: call
+      dynamic: span of calls
     att&ck:
       - Persistence::Boot or Logon Autostart Execution::Port Monitors [T1547.010]
     references:

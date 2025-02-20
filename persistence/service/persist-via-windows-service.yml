@@ -6,7 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
     scopes:
       static: function
-      dynamic: call
+      dynamic: span of calls
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
       - Execution::System Services::Service Execution [T1569.002]
@@ -38,5 +38,5 @@ rule:
           - string: /^sc(|\.exe) create/i
           - string: /New-Service /i
       - and:
-        - match: "set registry value"
+        - match: set registry value
         - string: /System\\(CurrentControlSet|ControlSet001)\\Services/i
