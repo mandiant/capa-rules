@@ -6,7 +6,7 @@ rule:
       - j.j.vannielen@utwente.nl
     scopes:
       static: function
-      dynamic: call
+      dynamic: span of calls
     att&ck:
       - Persistence::Event Triggered Execution::Image File Execution Options Injection [T1546.012]
     references:

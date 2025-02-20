@@ -6,7 +6,7 @@ rule:
       - j.j.vannielen@utwente.nl
     scopes:
       static: function
-      dynamic: call
+      dynamic: span of calls
     att&ck:
       - Persistence::Hijack Execution Flow::COR_PROFILER [T1574.012]
     references:

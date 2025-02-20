@@ -7,7 +7,7 @@ rule:
       - j.j.vannielen@utwente.nl
     scopes:
       static: function
-      dynamic: call
+      dynamic: span of calls
     att&ck:
       - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
     references:
