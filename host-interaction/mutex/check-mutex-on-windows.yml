@@ -3,7 +3,6 @@ rule:
     name: check mutex on Windows
     namespace: host-interaction/mutex
     authors:
-      - "@_re_fox"
       - moritz.raabe@mandiant.com
       - mehunhoff@google.com
     scopes:
