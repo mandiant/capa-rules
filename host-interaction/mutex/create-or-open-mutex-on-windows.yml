@@ -1,10 +1,10 @@
 rule:
   meta:
-    name: create mutex
+    name: create or open mutex on Windows
     namespace: host-interaction/mutex
     authors:
       - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: instruction
       dynamic: call
@@ -14,6 +14,12 @@ rule:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
     - or:
+      - api: kernel32.OpenMutex
       - api: kernel32.CreateMutex
       - api: kernel32.CreateMutexEx
-      - api: System.Threading.Mutex::ctor
+      - and:
+        - format: dotnet
+        - or:
+          - api: System.Threading.Mutex::ctor
+          - api: System.Threading.Mutex::OpenExisting
+          - api: System.Threading.Mutex::TryOpenExisting

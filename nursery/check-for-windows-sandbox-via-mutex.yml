@@ -15,5 +15,5 @@ rule:
       - https://github.com/LloydLabs/wsb-detect
   features:
     - and:
-      - match: check mutex
+      - match: check mutex on Windows
       - string: "WindowsSandboxMutex"
