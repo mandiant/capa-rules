@@ -12,12 +12,17 @@ rule:
       dynamic: call
     mbc:
       - Communication::Socket Communication::Create TCP Socket [C0001.011]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket
+      - https://man7.org/linux/man-pages/man2/socket.2.html
     examples:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
     - or:
       - and:
-        - number: 6 = IPPROTO_TCP
+        - or:
+          - number: 0 = protocol (default)
+          - number: 6 = IPPROTO_TCP
         - number: 1 = SOCK_STREAM
         - number: 2 = AF_INET
         - or:
