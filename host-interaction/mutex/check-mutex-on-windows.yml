@@ -12,7 +12,7 @@ rule:
     mbc:
       - Process::Check Mutex [C0043]
     examples:
-      - Practical Malware Analysis Lab 01-01.dll_:0x10001010
+      - 1d8fd13c890060464019c0f07b928b1a:0x402eb0
   features:
     - and:
       - match: create or open mutex on Windows
