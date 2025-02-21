@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - william.ballenthin@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: function
       dynamic: span of calls
@@ -19,7 +20,10 @@ rule:
         - api: kernel32.MapViewOfFile
       - or:
         - api: kernel32.QueueUserAPC
+        - api: kernel32.KeInsertQueueApc
         - api: ntdll.NtQueueApcThread
+        - api: ntdll.NtQueueApcThreadEx
+        - api: ntdll.NtQueueApcThreadEx2
       - optional:
         - or:
           - number: 0x1fffff = THREAD_ALL_ACCESS
