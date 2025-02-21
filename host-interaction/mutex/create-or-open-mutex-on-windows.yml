@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/mutex
     authors:
       - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
       - mehunhoff@google.com
     scopes:
       static: instruction
