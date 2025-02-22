@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: clear Windows event logs remotely
+    namespace: anti-analysis/anti-forensic/clear-logs
+    authors:
+      - 99.elad.levi@gmail.com
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Defense Evasion::Indicator Removal::Clear Windows Event Logs [T1070.001]
+    references:
+      - https://github.com/getel-arch/ClearLogsRemotely
+    examples:
+      - 4f509bdfe5a2fe4320cdc070eedc0a72e12cc08f43d60a7701305b3d1408102b:0x1400014de
+  features:
+    - and:
+      - api: wevtapi.EvtOpenSession
+      - api: wevtapi.EvtOpenLog
+      - api: wevtapi.EvtClearLog
