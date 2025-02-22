@@ -25,7 +25,7 @@ rule:
             - api: advapi32.OpenEventLog
             - api: advapi32.GetNumberOfEventLogRecords
             - api: wevtapi.EvtOpenLog
-            - api: wevtapi.EvtOpenSession
+            - api: wevtapi.EvtOpenSessio
         - basic block:
           - and:
             - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i
