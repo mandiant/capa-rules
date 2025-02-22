@@ -20,9 +20,12 @@ rule:
           - or:
             - api: advapi32.ElfClearEventLogFile
             - api: advapi32.ClearEventLog
+            - api: wevtapi.EvtClearLog
           - optional:
             - api: advapi32.OpenEventLog
             - api: advapi32.GetNumberOfEventLogRecords
+            - api: wevtapi.EvtOpenLog
+            - api: wevtapi.EvtOpenSession
         - basic block:
           - and:
             - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i
