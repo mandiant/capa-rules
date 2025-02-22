@@ -6,6 +6,7 @@ rule:
       - 99.elad.levi@gmail.com
     scopes:
       static: function
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Indicator Removal::Clear Windows Event Logs [T1070.001]
   features:
