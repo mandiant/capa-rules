@@ -22,14 +22,15 @@ rule:
       - de5f2dd641b3e75eea6e4575b0ba4a48:0x140002180
   features:
         # Classic GDI Capture
-    - or:
+    - or: 
       - and:
         - or:
           - api: user32.GetWindowDC
           - api: user32.GetDC
           - and:
             - api: gdi32.CreateDC
-            - string: "DISPLAY"
+            - optional:
+                - string: "DISPLAY"
         - or:
           - api: gdi32.BitBlt
           - api: gdi32.GetDIBits
@@ -47,25 +48,17 @@ rule:
         - and:
           - api: BitBlt
       - api: System.Drawing.Graphics::CopyFromScreen
-
       - and:
-        - or:
-          - api: "GetDC"
-          - and:
-            - api: "CreateDC"
-            - optional:
-              - string: "DISPLAY"
         - or:
           - and:
             - api: "SelectObject"
             - api: "DrawText"
           - and:
-            - api: "CreateCompatibleDC"
-            - api: "CreateCompatibleBitmap"
             - or:
               - api: "BitBlt"
               - api: "StretchBlt"
               - api: "PrintWindow"
+
 
       # GDI+ Graphics API chain
       - and:
