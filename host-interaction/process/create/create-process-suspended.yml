@@ -16,11 +16,27 @@ rule:
     examples:
       - Practical Malware Analysis Lab 03-03.exe_:0x4010EA
   features:
-    - and:
-      - or:
-        - number: 0x08000004 = CREATE_NO_WINDOW | CREATE_SUSPENDED
-        - number: 4 = CREATE_SUSPENDED
-        - number: 2 = DEBUG_ONLY_THIS_PROCESS
-      - or:
-        - api: kernel32.CreateProcess
-        - api: advapi32.CreateProcessAsUser
+    - or:
+      - and:
+        - or:
+          - number: 0x08000004 = CREATE_NO_WINDOW | CREATE_SUSPENDED
+          - number: 0x800000C = CREATE_SUSPENDED | DETACHED_PROCESS | CREATE_NO_WINDOW
+          - number: 4 = CREATE_SUSPENDED
+          - number: 2 = DEBUG_ONLY_THIS_PROCESS
+        - or:
+          - api: kernel32.CreateProcess
+          - api: kernel32.CreateProcessInternal
+          - api: advapi32.CreateProcessAsUser
+          - api: advapi32.CreateProcessWithLogon
+          - api: advapi32.CreateProcessWithToken
+      - and:
+        - or:
+          - number: 0x10 = PROCESS_CREATE_FLAGS_CREATE_SUSPENDED
+          - number: 0x2000010 = PROCESS_CREATE_FLAGS_CREATE_SUSPENDED | PROCESS_CREATE_FLAGS_NO_WINDOW
+          - number: 0x11 = PROCESS_CREATE_FLAGS_CREATE_SUSPENDED | PROCESS_CREATE_FLAGS_BREAKAWAY
+        - or:
+          - api: ntdll.NtCreateProcessEx
+          - api: ZwCreateProcessEx
+          - api: ntdll.NtCreateUserProcess
+          - api: ntdll.ZwCreateUserProcess
+          - api: ntdll.RtlCreateUserProcess

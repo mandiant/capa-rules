@@ -5,7 +5,7 @@ rule:
       - moritz.raabe@mandiant.com
     lib: true
     scopes:
-      static: function
+      static: instruction
       dynamic: call
     att&ck:
       - Defense Evasion::Process Injection [T1055]
