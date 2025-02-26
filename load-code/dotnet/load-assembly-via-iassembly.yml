@@ -10,7 +10,7 @@ rule:
     references:
       - https://github.com/TheWover/donut/blob/master/loader/inmem_dotnet.c
     examples:
-      - d890c1c67d83f1131c065b5eb5f263cbf54559dbcdb4562c3bde3dc30d1a3205
+      - d890c1c67d83f1131c065b5eb5f263cbf54559dbcdb4562c3bde3dc30d1a3205:0x1641B
   features:
     - and:
       - instruction:
