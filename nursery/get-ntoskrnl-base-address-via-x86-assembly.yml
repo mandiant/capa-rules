@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get ntoskrnl base address
+    name: get ntoskrnl base address via x86 assembly
     namespace: linking/runtime-linking
     authors:
       - "@mr-tz"

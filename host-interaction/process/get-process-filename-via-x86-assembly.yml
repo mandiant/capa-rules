@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get process filename
+    name: get process filename via x86 assembly
     namespace: host-interaction/process
     authors:
       - matthew.williams@mandiant.com
