@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt data using Sosemanuk via x86 assembly
+    name: encrypt data using Sosemanuk
     namespace: data-manipulation/encryption/sosemanuk
     authors:
       - awillia2@cisco.com

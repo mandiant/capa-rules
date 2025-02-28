@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: hash data using djb2 via x86 assembly
+    name: hash data using djb2
     namespace: data-manipulation/hashing/djb2
     authors:
       - awillia2@cisco.com

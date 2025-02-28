@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: resolve function by Brute Ratel Badger hash via x86 assembly
+    name: resolve function by Brute Ratel Badger hash
     namespace: linking/runtime-linking
     authors:
       - jakub.jozwiak@mandiant.com

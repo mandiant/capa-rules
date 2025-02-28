@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: create a process with modified I/O handles and window via x86 assembly
+    name: create a process with modified I/O handles and window
     namespace: host-interaction/process/create
     authors:
       - matthew.williams@mandiant.com

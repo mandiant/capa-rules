@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: rebuild import table via x86 assembly
+    name: rebuild import table
     namespace: load-code/pe
     authors:
       - "@Ana06"

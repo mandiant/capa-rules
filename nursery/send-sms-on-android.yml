@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: send SMS on Android via x86 assembly
+    name: send SMS on Android
     namespace: communication/sms
     authors:
       - "@mr-tz"

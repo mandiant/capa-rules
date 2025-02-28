@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt data using TEA via x86 assembly
+    name: encrypt data using TEA
     namespace: data-manipulation/encryption/tea
     authors:
       - william.ballenthin@mandiant.com

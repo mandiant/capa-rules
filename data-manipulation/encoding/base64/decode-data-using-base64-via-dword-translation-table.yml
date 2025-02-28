@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: decode data using Base64 via dword translation table via x86 assembly
+    name: decode data using Base64 via dword translation table
     namespace: data-manipulation/encoding/base64
     authors:
       - gilbert.elliot@mandiant.com

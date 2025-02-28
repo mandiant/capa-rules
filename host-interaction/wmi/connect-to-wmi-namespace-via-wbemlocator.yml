@@ -1,7 +1,7 @@
 # generated using capa explorer for IDA Pro
 rule:
   meta:
-    name: connect to WMI namespace via WbemLocator via x86 assembly
+    name: connect to WMI namespace via WbemLocator
     namespace: host-interaction/wmi
     authors:
       - michael.hunhoff@mandiant.com

@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: resolve function by FIN8 fasthash via x86 assembly
+    name: resolve function by FIN8 fasthash
     namespace: linking/runtime-linking
     authors:
       - "@r3c0nst (Frank Boldewin)"

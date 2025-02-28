@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: resolve function by parsing PE exports via x86 assembly
+    name: resolve function by parsing PE exports
     namespace: load-code/pe
     authors:
       - sara-rn

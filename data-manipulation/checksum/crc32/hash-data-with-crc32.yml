@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: hash data with CRC32 via x86 assembly
+    name: hash data with CRC32
     namespace: data-manipulation/checksum/crc32
     authors:
       - moritz.raabe@mandiant.com

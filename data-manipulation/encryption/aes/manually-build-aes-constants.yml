@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: manually build AES constants via x86 assembly
+    name: manually build AES constants
     namespace: data-manipulation/encryption/aes
     authors:
       - huynh.t.nhan@gmail.com

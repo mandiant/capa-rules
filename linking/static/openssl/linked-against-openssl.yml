@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: linked against OpenSSL via x86 assembly
+    name: linked against OpenSSL
     namespace: linking/static/openssl
     authors:
       - william.ballenthin@mandiant.com

@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: validate payment card number using luhn algorithm with lookup table via x86 assembly
+    name: validate payment card number using luhn algorithm with lookup table
     authors:
       - "@_re_fox"
     lib: true

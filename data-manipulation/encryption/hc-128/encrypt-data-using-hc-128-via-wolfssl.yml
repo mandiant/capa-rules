@@ -1,7 +1,7 @@
 # generated using capa explorer for IDA Pro
 rule:
   meta:
-    name: encrypt data using HC-128 via WolfSSL via x86 assembly
+    name: encrypt data using HC-128 via WolfSSL
     namespace: data-manipulation/encryption/hc-128
     authors:
       - blaine.stancill@mandiant.com

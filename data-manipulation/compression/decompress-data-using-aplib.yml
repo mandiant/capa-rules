@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: decompress data using aPLib via x86 assembly
+    name: decompress data using aPLib
     namespace: data-manipulation/compression
     authors:
       - "@r3c0nst (Frank Boldewin)"

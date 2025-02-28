@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: decompress data using UCL via x86 assembly
+    name: decompress data using UCL
     namespace: data-manipulation/compression
     authors:
       - jakub.jozwiak@mandiant.com

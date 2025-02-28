@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: populate SysWhispers2 syscall list via x86 assembly
+    name: populate SysWhispers2 syscall list
     namespace: linking/runtime-linking
     authors:
       - still@teamt5.org

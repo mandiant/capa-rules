@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: decode data using Base64 via VBMI lookup table via x86 assembly
+    name: decode data using Base64 via VBMI lookup table
     namespace: data-manipulation/encoding/base64
     authors:
       - still@teamt5.org

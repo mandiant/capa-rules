@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: parse PE header via x86 assembly
+    name: parse PE header
     namespace: load-code/pe
     authors:
       - moritz.raabe@mandiant.com

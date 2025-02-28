@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get OS version via x86 assembly
+    name: get OS version
     authors:
       - "@mr-tz"
     lib: true

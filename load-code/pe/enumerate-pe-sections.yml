@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: enumerate PE sections via x86 assembly
+    name: enumerate PE sections
     namespace: load-code/pe
     authors:
       - "@Ana06"
