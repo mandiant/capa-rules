@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: calculate modulo 256 via x86 assembly via x86 assembly
+    authors:
+      - moritz.raabe@mandiant.com
+    lib: true
+    scopes:
+      static: instruction
+      dynamic: unsupported  # requires mnemonic features
+    mbc:
+      - Data::Modulo [C0058]
+    examples:
+      - 9324D1A8AE37A36AE560C37448C9705A:0x4049A9
+  features:
+    #  and ecx, 800000FFh
+    #  and ecx, 0FFh
+    - and:
+      - or:
+        - arch: i386
+        - arch: amd64
+      - mnemonic: and
+      - or:
+        - number: 0x800000FF
+        - number: 0xFF

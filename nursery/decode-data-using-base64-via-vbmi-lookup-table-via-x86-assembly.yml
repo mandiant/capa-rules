@@ -1,0 +1,43 @@
+rule:
+  meta:
+    name: decode data using Base64 via VBMI lookup table via x86 assembly
+    namespace: data-manipulation/encoding/base64
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: function
+      dynamic: unsupported  # requires bytes, mnemonic features
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]
+      - Data::Encode Data::Base64 [C0026.001]
+    references:
+      - https://github.com/powturbo/Turbo-Base64/blob/50fdf37b8517160c772dba357684ea6144befaa9/turbob64v512.c#L124
+    # the example uses SSE/AVX instructions that vivisect does not support currently
+    # examples:
+    #  - f53dfa294d6979145fbb34303cf73bb6:0x1400083A0
+  features:
+    - or:
+      - and:
+        - mnemonic: shl
+        - or:
+          - mnemonic: sar
+          - mnemonic: shr
+        - match: contain loop
+        - 3 or more:
+          - number: 0x1C1B1A40
+          - number: 0x201F1E1D
+          - number: 0x40191817
+          - number: 0x1211100F
+          - number: 0x6050403
+          - number: 0x16151413
+      - and:
+        - or:
+          - mnemonic: vmovdqa64
+          - mnemonic: vmovdqu64
+          - mnemonic: vpmaddubsw
+        - match: contain loop
+        - or:
+          - bytes: 80 00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f 10 11 12 13 14 15 16 17 18 19 80 80 80 80 80 80 1a 1b 1c 1d 1e 1f 20 21 22 23 24 25 26 27 28 29 2a 2b 2c 2d 2e 2f 30 31 32 33 80 80 80 80 80
+          - bytes: 02 01 00 06 05 04 0a 09 08 0e 0d 0c 12 11 10 16 15 14 1a 19 18 1e 1d 1c 22 21 20 26 25 24 2a 29 28 2e 2d 2c 32 31 30 36 35 34 3a 39 38 3e 3d 3c 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00

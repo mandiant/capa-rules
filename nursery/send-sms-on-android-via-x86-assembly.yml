@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: send SMS on Android via x86 assembly
+    namespace: communication/sms
+    authors:
+      - "@mr-tz"
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset features
+    # att&ck:
+    #   - Mobile::SMS Control [T1582]
+  features:
+    - and:
+      - os: android
+      # ... = (*env)->FindClass(env, "android/telephony/SmsManager");
+      - string: "android/telephony/SmsManager"
+      - optional:
+        - or:
+          - and:
+            - arch: i386
+            - offset: 0x30 = (*env)->FindClass
+          - and:
+            - arch: amd64
+            - offset: 0x1C = (*env)->FindClass
+      # ... = (*env)->GetMethodID(env, ..., "sendTextMessage" ...);
+      - string: "sendTextMessage"

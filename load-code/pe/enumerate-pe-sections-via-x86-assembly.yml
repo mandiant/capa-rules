@@ -1,0 +1,58 @@
+rule:
+  meta:
+    name: enumerate PE sections via x86 assembly
+    namespace: load-code/pe
+    authors:
+      - "@Ana06"
+      - "@mr-tz"
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, operand[1].offset, characteristic, mnemonic, basicblock features
+    mbc:
+      - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
+    references:
+      - https://0x00sec.org/t/reflective-dll-injection/3080
+      - https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection
+    examples:
+      - E4C33AC3638EEF68311F8AC0D72483C7:0x401510
+  features:
+    - and:
+      - os: windows
+      # there should be some complexity to functions like this
+      - count(basic blocks): 3 or more
+      - optional:
+        - offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
+      - instruction:
+        - or:
+          - mnemonic: mov
+          - mnemonic: movzx
+        - operand[1].offset: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
+      - basic block:
+        - or:
+          - and:
+            - description: IMAGE_FIRST_SECTION(nt_header)
+            - instruction:
+              - or:
+                - mnemonic: add
+                - mnemonic: mov
+                - mnemonic: movzx
+              - operand[1].offset: 0x14 = IMAGE_NT_HEADERS.FileHeader.SizeOfOptionalHeader
+            - operand[1].offset: 0x18 = FileHeader.SizeOfOptionalHeader
+          - and:
+            - description: (DWORD)dll_raw + dos_header->e_lfanew + sizeof(IMAGE_NT_HEADERS) + sizeof(IMAGE_SECTION_HEADER) * i
+            - number: 0x28 = sizeof(IMAGE_SECTION_HEADER)
+            - or:
+              - and:
+                - arch: i386
+                - operand[1].offset: 0xF8 = sizeof(IMAGE_NT_HEADERS32)
+              - and:
+                - arch: amd64
+                - operand[1].offset: 0x108 = sizeof(IMAGE_NT_HEADERS64)
+      - 2 or more:
+        - operand[1].offset: 0xC = IMAGE_SECTION_HEADER.VirtualAddress
+        - operand[1].offset: 0x14 = IMAGE_SECTION_HEADER.PointerToRawData
+        - operand[1].offset: 0x10 = IMAGE_SECTION_HEADER.SizeOfRawData
+        # there's also offset 0x8 = IMAGE_SECTION_HEADER.Misc.PhysicalAddress, but it's likely too common
+      - not:
+        # non-zeroing XOR was observed in FPs
+        - characteristic: nzxor
