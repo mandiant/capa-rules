@@ -12,11 +12,24 @@ rule:
     examples:
       - 6f99a2c8944cb02ff28c6f9ced59b161:0x414B70
   features:
-    - and:
-      - or:
-        - api: wtsapi32.WTSEnumerateProcesses
-        - api: wtsapi32.WTSEnumerateProcessesEx
-      - optional:
+    - or:
+      - and:
         - or:
-          - api: wtsapi32.WTSFreeMemory
-          - api: wtsapi32.WTSOpenServer
+          - api: wtsapi32.WTSEnumerateProcesses
+          - api: wtsapi32.WTSEnumerateProcessesEx
+        - optional:
+          - or:
+            - api: wtsapi32.WTSFreeMemory
+            - api: wtsapi32.WTSOpenServer
+      - and:
+        - or:
+          - api: wtsapi32.WTSEnumerateSessionsA
+          - api: wtsapi32.WTSEnumerateSessionsExA
+          - api: wtsapi32.WTSEnumerateSessionsExW
+          - api: wtsapi32.WTSEnumerateSessionsW
+        - api: kernel32.ProcessIdToSessionId
+        - match: enumerate processes
+        - optional:
+          - or:
+            - api: wtsapi32.WTSFreeMemory
+            - api: wtsapi32.WTSOpenServer
