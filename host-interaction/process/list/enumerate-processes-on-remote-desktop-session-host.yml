@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/process/list
     authors:
       - michael.hunhoff@mandiant.com
+      - 99.elad.levi@gmail.com
     scopes:
       static: function
       dynamic: span of calls
