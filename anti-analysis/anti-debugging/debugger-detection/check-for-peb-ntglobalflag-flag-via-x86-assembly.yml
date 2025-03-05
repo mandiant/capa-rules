@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: check for PEB NtGlobalFlag flag
+    name: check for PEB NtGlobalFlag flag via x86 assembly
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - moritz.raabe@mandiant.com

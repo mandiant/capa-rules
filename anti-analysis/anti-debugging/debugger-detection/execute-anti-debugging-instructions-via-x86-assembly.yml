@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: execute anti-debugging instructions
+    name: execute anti-debugging instructions via x86 assembly
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - moritz.raabe@mandiant.com

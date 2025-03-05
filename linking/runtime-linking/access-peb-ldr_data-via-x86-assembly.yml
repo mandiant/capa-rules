@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: access PEB ldr_data
+    name: access PEB ldr_data via x86 assembly
     namespace: linking/runtime-linking
     authors:
       - moritz.raabe@mandiant.com
