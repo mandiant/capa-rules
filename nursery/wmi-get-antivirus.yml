@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: wmi get antivirus
+    namespace: collection/anti-virus
+    authors:
+      - kevross33/Kevin Ross
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Discovery::Permission Groups Discovery [T1069]
+    examples:
+      - f5fca1b178af87bd48c7ea9e3f2c957b
+  features:
+    - and:
+      - string: /root\\securitycenter/i
+      - string: /antivirusproduct/i
