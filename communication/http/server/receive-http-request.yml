@@ -3,10 +3,10 @@ rule:
     name: receive HTTP request
     namespace: communication/http/server
     authors:
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
     scopes:
-      static: function
-      dynamic: span of calls
+      static: basic block
+      dynamic: call
     mbc:
       - Communication::HTTP Communication::Receive Request [C0002.015]
     examples:
