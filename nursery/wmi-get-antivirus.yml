@@ -8,7 +8,7 @@ rule:
       static: function
       dynamic: span of calls
     att&ck:
-      - Discovery::Permission Groups Discovery [T1069]
+      - Discovery::Windows Management Instrumentation [T1047]
     examples:
       - f5fca1b178af87bd48c7ea9e3f2c957b
   features:
