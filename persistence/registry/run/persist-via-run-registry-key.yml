@@ -18,11 +18,10 @@ rule:
       - 9ff8e68343cc29c1036650fc153e69f7:0x470624
   features:
     - and:
-      - and:
+      - or:
         - match: set registry value
-        - or:
-          - number: 0x80000001 = HKEY_CURRENT_USER
-          - number: 0x80000002 = HKEY_LOCAL_MACHINE
+        - number: 0x80000001 = HKEY_CURRENT_USER
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
       - or:
         - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Run/i
         - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders/i
