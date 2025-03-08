@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: connect UDP socket
+    namespace: communication/socket/udp
+    authors:
+      - mrhafizfarhad@gmail.com
+    description: >
+      Detects UDP socket connections by combining UDP socket creation with connection attempts.
+    scopes:
+      static: function
+      dynamic: span of calls
+    mbc:
+      - Communication::Socket Communication::UDP Client [C0001.013]
+  features:
+    - and:
+      - match: create UDP socket
+      - match: connect socket
