@@ -7,7 +7,7 @@ rule:
       - joakim@intezer.com
       - michael.hunhoff@mandiant.com
     scopes:
-      static: basic block
+      static: function
       dynamic: call
     mbc:
       - Communication::Socket Communication::Create UDP Socket [C0001.010]
@@ -16,7 +16,8 @@ rule:
   features:
     - or:
       - and:
-        - count(number(2 = AF_INET/SOCK_DGRAM)): 2 or more
+        - number: 2 = AF_INET
+        - number: 2 = SOCK_DGRAM
         - or:
           - number: 0 = protocol (default)
           - number: 17 = IPPROTO_UDP
