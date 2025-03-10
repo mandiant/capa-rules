@@ -23,7 +23,7 @@ rule:
         - or:
           - api: advapi32.DuplicateToken
           - api: advapi32.DuplicateTokenEx
-        - api: advapi32.CreateProcessWithTokenW
+        - api: advapi32.CreateProcessWithToken
         - optional:
           - match: acquire debug privileges
           - match: enumerate processes
