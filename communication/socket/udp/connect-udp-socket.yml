@@ -11,6 +11,8 @@ rule:
       dynamic: span of calls
     mbc:
       - Communication::Socket Communication::UDP Client [C0001.013]
+    examples:
+      - 368239d36d221d8877a07ab6799e643a.elf_:0x20011E9
   features:
     - and:
       - match: create UDP socket

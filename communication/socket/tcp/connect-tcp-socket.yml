@@ -15,5 +15,5 @@ rule:
       - Practical Malware Analysis Lab 01-01.dll_:0x10001010
   features:
     - and:
-      - match: create UDP socket
+      - match: create TCP socket
       - match: connect socket
