@@ -24,10 +24,8 @@ rule:
             - api: wtsapi32.WTSOpenServer
       - and:
         - or:
-          - api: wtsapi32.WTSEnumerateSessionsA
-          - api: wtsapi32.WTSEnumerateSessionsExA
-          - api: wtsapi32.WTSEnumerateSessionsExW
-          - api: wtsapi32.WTSEnumerateSessionsW
+          - api: wtsapi32.WTSEnumerateSessions
+          - api: wtsapi32.WTSEnumerateSessionsEx
         - api: kernel32.ProcessIdToSessionId
         - optional:
           - match: enumerate processes
