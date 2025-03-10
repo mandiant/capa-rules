@@ -6,8 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
       - mrhafizfarhad@gmail.com
-    description: >
-      Detects socket connection attempts using common APIs or ConnectEx setup.
+    description: Detects socket connection attempts using common APIs or ConnectEx setup.
     scopes:
       static: basic block
       dynamic: span of calls

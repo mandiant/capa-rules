@@ -4,8 +4,7 @@ rule:
     namespace: communication/socket/udp
     authors:
       - mrhafizfarhad@gmail.com
-    description: >
-      Detects UDP socket connections by combining UDP socket creation with connection attempts.
+    description: Detects UDP socket connections by combining UDP socket creation with connection attempts.
     scopes:
       static: function
       dynamic: span of calls
