@@ -23,4 +23,4 @@ rule:
         - mnemonic: popad  # vivisect
       - characteristic: cross section flow
       - not:
-        - match: contain pusha popa sequence
+        - match: contain pusha popa sequence via x86 assembly
