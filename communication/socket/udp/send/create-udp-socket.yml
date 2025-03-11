@@ -22,7 +22,7 @@ rule:
         - or: # Protocol (0 or IPPROTO_UDP=17)
           - number: 0
           - number: 17
-          - bytes: 33 C0 5
+          - bytes: 33 C0 50
         - or:
           - api: socket
           - api: ws2_32.socket
