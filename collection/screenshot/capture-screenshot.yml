@@ -21,7 +21,7 @@ rule:
       - 0a30182ff3a6b67beb0f2cda9d0de678:0x407910
   features:
         # Classic GDI Capture
-    - or: 
+    - or:
       - and:
         - or:
           - api: user32.GetWindowDC
@@ -29,7 +29,7 @@ rule:
           - and:
             - api: gdi32.CreateDC
             - optional:
-                - string: "DISPLAY"
+              - string: "DISPLAY"
         - or:
           - api: gdi32.BitBlt
           - api: gdi32.GetDIBits
@@ -47,30 +47,23 @@ rule:
         - and:
           - api: BitBlt
       - api: System.Drawing.Graphics::CopyFromScreen
-      - and:
+      - or:
+        - and:
+          - api: "SelectObject"
+          - api: "DrawText"
         - or:
-          - and:
-            - api: "SelectObject"
-            - api: "DrawText"
-          - and:
-            - or:
-              - api: "BitBlt"
-              - api: "StretchBlt"
-              - api: "PrintWindow"
-
-
+          - api: "BitBlt"
+          - api: "StretchBlt"
+          - api: "PrintWindow"
       # GDI+ Graphics API chain
       - and:
         - api: "GdipCreateBitmapFromScan0"
         - api: "GdipGetImageGraphicsContext"
         - api: "GdipGetDC"
-
       # Direct GDI+ screen copy
-
       - and:
         - api: "Gdiplus::Graphics::FromHDC"
         - api: "Gdiplus::Graphics::CopyFromScreen"
-
       # DirectX method of screen capture
       - and:
         - or:
