@@ -27,4 +27,3 @@ rule:
         - and:
           - arch: amd64
           - offset: 0x18 = RTL_PROCESS_MODULES.Modules[0].ImageBase
-
