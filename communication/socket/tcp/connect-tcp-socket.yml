@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
+      - mrhafizfarhad@gmail.com
     scopes:
       static: function
       dynamic: span of calls
@@ -15,58 +16,4 @@ rule:
   features:
     - and:
       - match: create TCP socket
-      - or:
-        - api: connect
-        - api: ws2_32.connect
-        - api: ws2_32.#4 = connect
-        - api: ws2_32.WSAConnect
-        - api: ws2_32.#33 = WSAConnect
-        - api: ConnectEx
-        - or:
-          - and:
-            # static
-            - basic block:
-              # candidate for GUID: WSAID_CONNECTEX/25a207b9-ddf3-4660-8ee9-76e58c74063e
-              - and:
-                - number: 0x25A207B9
-                - number: 0x4660DDF3
-                - number: 0xE576E98E
-                - number: 0x3E06748C
-            - basic block:
-              - and:
-                - or:
-                  - api: ws2_32.WSAIoctl
-                  - api: ws2_32.#60 = WSAIoctl
-                - number: 0xC8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
-            - basic block:
-              - and:
-                - or:
-                  - api: setsockopt
-                  - api: ws2_32.#21 = setsockopt
-                - number: 0xFFFF = SOL_SOCKET
-                - number: 0x7010 = SO_UPDATE_CONNECT_CONTEXT
-            # socket must be bound to ConnectEx
-            # https://gist.github.com/joeyadams/4158972
-            - or:
-              - api: bind
-              - api: ws2_32.#2 = bind
-          - and:
-            # dynamic
-            - call:
-              - and:
-                - or:
-                  - api: ws2_32.WSAIoctl
-                  - api: ws2_32.#60 = WSAIoctl
-                - number: 0xC8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
-            - call:
-              - and:
-                - or:
-                  - api: setsockopt
-                  - api: ws2_32.#21 = setsockopt
-                - number: 0xFFFF = SOL_SOCKET
-                - number: 0x7010 = SO_UPDATE_CONNECT_CONTEXT
-            # socket must be bound to ConnectEx
-            # https://gist.github.com/joeyadams/4158972
-            - or:
-              - api: bind
-              - api: ws2_32.#2 = bind
+      - match: connect socket
