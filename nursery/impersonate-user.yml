@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/user
     authors:
       - michael.hunhoff@mandiant.com
+      - 99.elad.levi@gmail.com
     scopes:
       static: function
       dynamic: span of calls
@@ -17,3 +18,12 @@ rule:
         - optional:
           - api: advapi32.GetUserName
           - api: advapi32.GetUserNameEx
+      - and:
+        - api: advapi32.OpenProcessToken
+        - or:
+          - api: advapi32.DuplicateToken
+          - api: advapi32.DuplicateTokenEx
+        - api: advapi32.CreateProcessWithToken
+        - optional:
+          - match: acquire debug privileges
+          - match: enumerate processes
