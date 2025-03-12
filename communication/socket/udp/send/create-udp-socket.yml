@@ -16,13 +16,11 @@ rule:
   features:
     - or:
       - and:
-        - or: # Socket type (AF_INET=2/SOCK_DGRAM=2)
-          - number: 2 = AF_INET
-          - number: 2 = SOCK_DGRAM
+        - number: 2 = AF_INET
+        - number: 2 = SOCK_DGRAM
         - or: # Protocol (0 or IPPROTO_UDP=17)
-          - number: 0
-          - number: 17
-          - bytes: 33 C0 50
+          - number: 0 = protocol (default)
+          - number: 17 = IPPROTO_UDP
         - or:
           - api: socket
           - api: ws2_32.socket
