@@ -16,5 +16,4 @@ rule:
   features:
     - and:
       - api: wevtapi.EvtOpenSession
-      - api: wevtapi.EvtOpenLog
       - api: wevtapi.EvtClearLog
