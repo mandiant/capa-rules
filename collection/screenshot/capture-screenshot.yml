@@ -20,8 +20,8 @@ rule:
       - 50D5EE1CE2CA5E30C6B1019EE64EEEC2:0x406E07
       - 0a30182ff3a6b67beb0f2cda9d0de678:0x407910
   features:
-        # Classic GDI Capture
     - or:
+      # Classic GDI Capture
       - and:
         - or:
           - api: user32.GetWindowDC
@@ -47,10 +47,8 @@ rule:
         - and:
           - api: BitBlt
       - api: System.Drawing.Graphics::CopyFromScreen
-      - or:
-        - and:
-          - api: "SelectObject"
-          - api: "DrawText"
+      - and:
+        - api: "SelectObject"
         - or:
           - api: "BitBlt"
           - api: "StretchBlt"
