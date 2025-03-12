@@ -15,7 +15,7 @@ rule:
       - al-khaser_x86.exe_:0x425470
   features:
     - and:
-      - match: PEB access
+      - match: PEB access via x86 assembly
       - or:
         - and:
           - arch: i386

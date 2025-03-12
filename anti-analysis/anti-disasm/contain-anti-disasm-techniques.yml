@@ -13,4 +13,4 @@ rule:
       - a5c70086b3bc4fe64f4e7a0aa452e620
   features:
     - or:
-      - count(match(contain pusha popa sequence)): 10 or more
+      - count(match(contain pusha popa sequence via x86 assembly)): 10 or more

@@ -17,7 +17,7 @@ rule:
   features:
     - and:
       # PEB -> PEB.Ldr -> PEB_LDR_DATA.InLoadOrderModuleList.Flink
-      - match: access PEB ldr_data
+      - match: access PEB ldr_data via x86 assembly
       # -> current module
       - count(offset(0)): 1
       # -> ntdll -> LDR_DATA_TABLE_ENTRY.DllBase

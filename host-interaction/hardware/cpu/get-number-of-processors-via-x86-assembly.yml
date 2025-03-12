@@ -17,7 +17,7 @@ rule:
   features:
     - or:
       - and:
-        - match: PEB access
+        - match: PEB access via x86 assembly
         - or:
           - and:
             - arch: i386
