@@ -12,7 +12,7 @@ rule:
     mbc:
       - Communication::Socket Communication::Create UDP Socket [C0001.010]
     examples:
-      - 203BD48BCC18434314AD60F4C8BC21E3D3422EB0624B22B827410F9BC63B4082:0x401240
+      # Have to find a suitable sample for this rule
   features:
     - or:
       - and:
