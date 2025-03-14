@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: enter debug mode in .NET
+    namespace: host-interaction/process/modify
+    authors:
+      - "@v1bh475u"
+    description: Often used by debuggers and malware to attach to and modify other processes.
+    scopes:
+      static: basic block
+      dynamic: call
+    references:
+      - https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.enterdebugmode?view=net-8.0
+  features:
+    - and:
+      - api: System.Diagnostics.Process::EnterDebugMode
+      - format: dotnet
