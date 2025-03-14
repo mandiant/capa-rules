@@ -1,15 +1,16 @@
 rule:
   meta:
-    name: enter debug mode
+    name: enter debug mode in .NET
     namespace: runtime/dotnet
     authors:
       - "@v1bh475u"
     description: Often used by debuggers and malware to attach to and modify other processes.
     scopes:
-      static: function
+      static: basic block
       dynamic: call
     references:
       - https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.enterdebugmode?view=net-8.0
   features:
-    - or:
+    - and:
       - api: System.Diagnostics.Process::EnterDebugMode
+      - format: dotnet
