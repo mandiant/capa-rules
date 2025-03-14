@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: 64-bit execution via heavens gate
+    name: 64-bit execution via heavens gate via x86 assembly
     namespace: anti-analysis/anti-disasm
     authors:
       - awillia2@cisco.com

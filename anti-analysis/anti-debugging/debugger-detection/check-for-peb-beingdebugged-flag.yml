@@ -15,5 +15,5 @@ rule:
       - Practical Malware Analysis Lab 16-01.exe_:0x403530
   features:
     - and:
-      - match: PEB access
+      - match: PEB access via x86 assembly
       - offset: 2 = PEB.BeingDebugged
