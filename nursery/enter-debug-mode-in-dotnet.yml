@@ -1,7 +1,7 @@
 rule:
   meta:
     name: enter debug mode in .NET
-    namespace: runtime/dotnet
+    namespace: host-interaction/process/modify
     authors:
       - "@v1bh475u"
     description: Often used by debuggers and malware to attach to and modify other processes.
