@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: use of TripleDESCryptoServiceProvider
+    namespace: data-manipulation/encryption/des
+    authors:
+      - "0xRavenspar"
+    scopes: 
+      static: file
+      dynamic: span of calls
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc: 
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+      - Cryptography::Encrypt Data::3DES [C0027.004]
+  features:
+    - or:
+      - string: "System.Security.Cryptography.TripleDESCryptoServiceProvider"
+      - string: "TripleDESCryptoServiceProvider"
+      - string: "new TripleDESCryptoServiceProvider"
+      - api: System.Security.Cryptography.TripleDESCryptoServiceProvider
+        
+
