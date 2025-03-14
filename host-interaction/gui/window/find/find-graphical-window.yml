@@ -5,7 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     scopes:
-      static: function
+      static: instruction
       dynamic: call
     att&ck:
       - Discovery::Application Window Discovery [T1010]
