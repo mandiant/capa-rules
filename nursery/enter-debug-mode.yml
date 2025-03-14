@@ -4,7 +4,7 @@ rule:
     namespace: runtime/dotnet
     authors:
       - "@v1bh475u"
-    description: Process.EnterDebugMode is used
+    description: Often used by debuggers and malware to attach to and modify other processes.
     scopes:
       static: function
       dynamic: call
