@@ -1,22 +1,20 @@
 rule:
   meta:
-    name: use of TripleDESCryptoServiceProvider
+    name: encrypt data using tripleDES via dotnetapi
     namespace: data-manipulation/encryption/des
     authors:
       - "0xRavenspar"
-    scopes: 
+    scopes:
       static: file
       dynamic: span of calls
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]
-    mbc: 
+    mbc:
       - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
       - Cryptography::Encrypt Data::3DES [C0027.004]
+    examples:
+      - e71618ae5f1a67d90490be62796854ee
   features:
     - or:
-      - string: "System.Security.Cryptography.TripleDESCryptoServiceProvider"
       - string: "TripleDESCryptoServiceProvider"
-      - string: "new TripleDESCryptoServiceProvider"
       - api: System.Security.Cryptography.TripleDESCryptoServiceProvider
-        
-
