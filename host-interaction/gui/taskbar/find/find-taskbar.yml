@@ -5,8 +5,8 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     scopes:
-      static: function
-      dynamic: span of calls
+      static: basic block
+      dynamic: call
     mbc:
       - Discovery::Taskbar Discovery [B0043]
     examples:
