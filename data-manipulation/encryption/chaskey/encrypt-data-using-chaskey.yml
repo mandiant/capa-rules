@@ -1,0 +1,42 @@
+rule:
+  meta:
+    name: encrypt data using chaskey
+    namespace: data-manipulation/encryption/chaskey
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: function
+      dynamic: unsupported  # requires characteristic, mnemonic features
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+    references:
+      - https://mouha.be/chaskey/
+      - https://github.com/TheWover/donut/blob/47758d787209dd1744f58c140102ac91b649df16/encrypt.c#L37
+    examples:
+      - d890c1c67d83f1131c065b5eb5f263cbf54559dbcdb4562c3bde3dc30d1a3205:0x19495
+  features:
+    - and:
+      - count(characteristic(nzxor)): 6 or more
+      - match: contain loop
+      - instruction:
+        - or:
+          - mnemonic: rol
+          - mnemonic: shl
+        - number: 13
+      - instruction:
+        - or:
+          - mnemonic: rol
+          - mnemonic: shl
+        - number: 8
+      - instruction:
+        - or:
+          - mnemonic: rol
+          - mnemonic: shl
+        - number: 7
+      - instruction:
+        - or:
+          - mnemonic: rol
+          - mnemonic: shl
+        - number: 5
