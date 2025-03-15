@@ -19,5 +19,6 @@ rule:
     - and:
       - or:
         - api: ntdll.NtCreateThreadEx
-        - string: "NtCreateThreadEx"
-      - number: 0x40 = Undocumented thread creation flag dubbed as THREAD_CREATE_FLAGS_BYPASS_PROCESS_FREEZE
+          properties:
+          arguments:
+            CreateFlags: 0x40
