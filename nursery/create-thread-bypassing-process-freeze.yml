@@ -17,8 +17,7 @@ rule:
       - https://github.com/winsiderss/systeminformer/blob/master/phnt/include/ntpsapi.h
   features:
     - and:
-      - or:
-        - api: ntdll.NtCreateThreadEx
-          properties:
+      - api: ntdll.NtCreateThreadEx
+        properties:
           arguments:
             CreateFlags: 0x40
