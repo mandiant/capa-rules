@@ -14,11 +14,11 @@ rule:
   features:
     - or:
       - and:
-        - string: /bcdedit.exe/i
+        - string: /bcdedit\.exe/i
         - optional:
           - string: "/deletevalue safeboot"
       - and:
-        - string: /boot.ini/i
+        - string: /boot\.ini/i
         - optional:
           - api: kernel32.GetPrivateProfileStringA
           - api: kernel32.WritePrivateProfileString
