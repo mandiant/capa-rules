@@ -17,4 +17,4 @@ rule:
         - match: copy file
         - match: move file
         - match: write file on Windows
-      - string: /Microsoft\\WindowsApps\\Get-Variable.exe/i
+      - string: /Microsoft\\WindowsApps\\Get-Variable\.exe/i

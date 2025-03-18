@@ -36,9 +36,9 @@ rule:
           description: Virtual PC
         - string: /wpespy\.dll/i
           description: WPE Pro
-        - string: /cmdvrt(64|32).dll/i
+        - string: /cmdvrt(64|32)\.dll/i
           description: Comodo Container
-        - string: /sxin.dll/i
+        - string: /sxin\.dll/i
           description: 360 SOFTWARE
         - string: /dbghelp\.dll/i
           description: WINE
