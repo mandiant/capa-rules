@@ -17,4 +17,4 @@ rule:
       - match: host-interaction/file-system/write
       - or:
         - substring: "/etc/init.d/"
-        - string: /\/etc\/rc[0-9].d\//
+        - string: /\/etc\/rc[0-9]\.d\//

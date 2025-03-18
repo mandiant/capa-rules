@@ -26,5 +26,5 @@ rule:
         - substring: "g_CiOptions"
           description: non-exported name for code integrity settings
       - optional:
-        - string: /CI.dll/i
+        - string: /CI\.dll/i
           description: code integrity implementation DLL

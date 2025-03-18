@@ -34,28 +34,28 @@ rule:
       - string: /Microsoft Hv/i
         description: Microsoft Hyper-V or Windows Virtual PC
       # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L8
-      - string: /avghookx.dll/i
+      - string: /avghookx\.dll/i
         description: AVG
-      - string: /avghooka.dll/i
+      - string: /avghooka\.dll/i
         description: AVG
-      - string: /snxhk.dll/i
+      - string: /snxhk\.dll/i
         description: Avast
-      - string: /pstorec.dll/i
+      - string: /pstorec\.dll/i
         description: SunBelt Sandbox
-      - string: /vmcheck.dll/i
+      - string: /vmcheck\.dll/i
         description: Virtual PC
-      - string: /wpespy.dll/i
+      - string: /wpespy\.dll/i
         description: WPE Pro
-      - string: /cmdvrt64.dll/i
+      - string: /cmdvrt64\.dll/i
         description: Comodo Container
-      - string: /cmdvrt32.dll/i
+      - string: /cmdvrt32\.dll/i
         description: Comodo Container
       # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L46
-      - string: /sample.exe/i
-      - string: /bot.exe/i
-      - string: /sandbox.exe/i
-      - string: /malware.exe/i
-      - string: /test.exe/i
-      - string: /klavme.exe/i
-      - string: /myapp.exe/i
-      - string: /testapp.exe/i
+      - string: /sample\.exe/i
+      - string: /bot\.exe/i
+      - string: /sandbox\.exe/i
+      - string: /malware\.exe/i
+      - string: /test\.exe/i
+      - string: /klavme\.exe/i
+      - string: /myapp\.exe/i
+      - string: /testapp\.exe/i

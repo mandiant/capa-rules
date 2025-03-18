@@ -18,6 +18,6 @@ rule:
   features:
     - or:
       - string: /Parallels/i
-      - string: /prl_cc.exe/i
-      - string: /prl_tools.exe/i
+      - string: /prl_cc\.exe/i
+      - string: /prl_tools\.exe/i
       - string: /prl hyperv/i

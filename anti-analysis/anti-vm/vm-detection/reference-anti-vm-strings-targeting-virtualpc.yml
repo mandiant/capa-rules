@@ -18,6 +18,6 @@ rule:
   features:
     - or:
       - string: /VirtualPC/i
-      - string: /VMSrvc.exe/i
-      - string: /VMUSrvc.exe/i
+      - string: /VMSrvc\.exe/i
+      - string: /VMUSrvc\.exe/i
       - string: /SOFTWARE\\Microsoft\\Virtual Machine\\Guest\\Parameters/i

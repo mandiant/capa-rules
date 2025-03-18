@@ -18,4 +18,4 @@ rule:
         - match: move file
         - match: write file on Windows
       - or:
-        - string: /Local\\Packages\\Microsoft.WindowsTerminal_.*\\LocalState\\settings.json/i
+        - string: /Local\\Packages\\Microsoft\.WindowsTerminal_.*\\LocalState\\settings\.json/i
