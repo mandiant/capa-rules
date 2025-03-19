@@ -4,7 +4,7 @@ rule:
     namespace: linking/runtime-linking
     authors:
       - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: instruction
       dynamic: call
@@ -19,3 +19,6 @@ rule:
       - or:
         - api: kernel32.GetProcAddress
         - api: ntdll.LdrGetProcedureAddress
+        - api: ntdll.LdrGetProcedureAddressEx
+        - api: ntdll.LdrGetProcedureAddressForCaller
+        - api: MmGetSystemRoutineAddress
