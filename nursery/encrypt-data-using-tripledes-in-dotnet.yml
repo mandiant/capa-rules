@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt data using TripleDESCryptoServiceProvider in dotnet
+    name: encrypt data using TripleDES in dotnet
     namespace: data-manipulation/decryption/des
     authors:
       - "0xRavenspar"
