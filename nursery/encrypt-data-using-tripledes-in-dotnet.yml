@@ -16,4 +16,4 @@ rule:
       - https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.tripledescryptoserviceprovider.createencryptor
   features:
     - or:
-      - api: System.Security.Cryptography.TripleDESCryptoServiceProvider::CreateDecryptor
+      - api: System.Security.Cryptography.TripleDESCryptoServiceProvider::CreateEncryptor
