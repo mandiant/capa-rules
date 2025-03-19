@@ -18,5 +18,5 @@ rule:
         - match: move file
         - match: write file on Windows
       - or:
-        - string: /Profile.ps1/i
-        - string: /Microsoft.PowerShell_profile.ps1/i
+        - string: /Profile\.ps1/i
+        - string: /Microsoft\.PowerShell_profile\.ps1/i

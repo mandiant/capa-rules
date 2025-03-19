@@ -35,8 +35,8 @@ rule:
       - string: /vmkdb\.sys/i
       - string: /vmnetuserif\.sys/i
       - string: /vmnetadapter\.sys/i
-      - string: /\\\\.\\HGFS/i
-      - string: /\\\\.\\vmci/i
+      - string: /\\\\\.\\HGFS/i
+      - string: /\\\\\.\\vmci/i
       - string: /vmtoolsd\.exe/i
       - string: /vmwaretray\.exe/i
       - string: /vmwareuser\.exe/i

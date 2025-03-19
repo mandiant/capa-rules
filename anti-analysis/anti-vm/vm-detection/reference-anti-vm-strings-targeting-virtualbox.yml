@@ -48,14 +48,13 @@ rule:
       - string: /vboxtray\.exe/i
       - string: /VBoxControl\.exe/i
       - string: /oracle\\virtualbox guest additions\\/i
-      - string: /\\\\.\\VBoxMiniRdrDN/i
-      - string: /\\\\.\\VBoxGuest/i
-      - string: /\\\\.\\pipe\\VBoxMiniRdDN/i
-      - string: /\\\\.\\VBoxTrayIPC/i
-      - string: /\\\\.\\pipe\\VBoxTrayIPC/i
+      - string: /\\\\\.\\VBoxMiniRdrDN/i
+      - string: /\\\\\.\\VBoxGuest/i
+      - string: /\\\\\.\\pipe\\VBoxMiniRdDN/i
+      - string: /\\\\\.\\VBoxTrayIPC/i
+      - string: /\\\\\.\\pipe\\VBoxTrayIPC/i
       - string: /VBoxTrayToolWndClass/i
       - string: /VBoxTrayToolWnd/i
-      - string: /vboxtray.exe/i
       - string: /vboxvideo/i
       - string: /VBoxVideoW8/i
       - string: /VBoxWddm/i

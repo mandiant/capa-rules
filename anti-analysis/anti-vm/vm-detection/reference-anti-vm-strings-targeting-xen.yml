@@ -19,5 +19,5 @@ rule:
     - or:
       - string: /^Xen/i
       - string: /XenVMMXenVMM/i
-      - string: /xenservice.exe/i
+      - string: /xenservice\.exe/i
       - string: /HVM domU/i

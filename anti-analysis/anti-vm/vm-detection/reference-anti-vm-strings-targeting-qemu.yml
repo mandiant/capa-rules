@@ -18,6 +18,6 @@ rule:
   features:
     - or:
       - string: /Qemu/i
-      - string: /qemu-ga.exe/i
+      - string: /qemu-ga\.exe/i
       - string: /BOCHS/i
       - string: /^BXPC/i
