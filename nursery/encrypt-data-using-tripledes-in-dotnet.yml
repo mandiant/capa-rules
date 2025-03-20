@@ -1,11 +1,11 @@
 rule:
   meta:
-    name: encrypt data using TripleDES in dotnet
-    namespace: data-manipulation/decryption/des
+    name: encrypt data using TripleDES in .NET
+    namespace: data-manipulation/encryption/des
     authors:
       - "0xRavenspar"
     scopes:
-      static: function
+      static: instruction
       dynamic: call
     att&ck:
       - Defense Evasion::Obfuscated Files or Information [T1027]

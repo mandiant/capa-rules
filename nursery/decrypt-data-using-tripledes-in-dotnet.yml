@@ -1,18 +1,17 @@
 rule:
   meta:
-    name: decrypt data using TripleDES in dotnet
-    namespace: data-manipulation/decryption/des
+    name: decrypt data using TripleDES in .NET
+    namespace: data-manipulation/encryption/des
     authors:
       - "0xRavenspar"
     scopes:
-      static: function
+      static: instruction
       dynamic: call
     att&ck:
       - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
     mbc:
       - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
       - Cryptography::Decrypt Data::3DES [C0031.005]
-
     references:
       - https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.tripledescryptoserviceprovider.createdecryptor
   features:
