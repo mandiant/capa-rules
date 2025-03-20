@@ -18,6 +18,8 @@ rule:
       - api: kernel32.OpenMutex
       - api: kernel32.CreateMutex
       - api: kernel32.CreateMutexEx
+      - api: ntdll.NtCreateMutant
+      - api: ntdll.NtOpenMutant
       - and:
         - format: dotnet
         - or:
