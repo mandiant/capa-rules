@@ -1,0 +1,33 @@
+rule:
+  meta:
+    name: disable system features via registry on Windows
+    namespace: impact/features
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools [F0004]
+  features:
+    - and:
+      - match: set registry value
+      - or:
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableRegistryTools/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableTaskMgr/i
+        - string: /Software\\Policies\\Microsoft\\Windows\\System\\DisableCMD/i
+        - string: /SOFTWARE\\Policies\\Microsoft\\Windows NT\\SystemRestore\\DisableSR/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoFind/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoDesktop/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoRun/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoClose/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoViewContextMenu/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoPropertiesMyComputer/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\HideClock/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\NoSizeChoice/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\NoColorChoice/i
+        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\NoDispBackGroundPage/i
+        - string: /SOFTWARE\\Policies\\Microsoft\\Internet Explorer\\Restrictions\\NoBrowserClose/i
+        - string: /SOFTWARE\\Policies\\Microsoft\\Internet Explorer\\Restrictions\\NoFavorites/i
