@@ -36,5 +36,4 @@ rule:
         - instruction:
           - mnemonic: mov
           - number: 0x118 = BindingFlags_InvokeMethod | BindingFlags_Static | BindingFlags_Public (InvokeMember_3)
-      - match: contain loop
       - characteristic: indirect call
