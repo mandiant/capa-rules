@@ -1,0 +1,49 @@
+rule:
+  meta:
+    name: disable Windows Defender features via registry on Windows
+    namespace: impact/features
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools [F0004]
+  features:
+    - and:
+      - match: set registry value
+      - or:
+        - and:
+          - string: /SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Real-Time Protection/i
+          - or:
+            - string: /DisableScriptScanning/i
+            - string: /DisableNetworkProtection/i
+            - string: /SubmitSamplesConsent/i
+            - string: /DisableCloudProtection/i
+            - string: /DisableBlockAtFirstSeen/i
+            - string: /DisableBehaviorMonitoring/i
+            - string: /DisableOnAccessProtection/i
+            - string: /DisableScanOnRealtimeEnable/i
+        - and:
+          - string: /SOFTWARE\\Policies\\Microsoft\\Windows Defender/i
+          - or:
+            - string: /DisableTamperProtection/i
+            - string: /DisableSpecialRunningModes/i
+            - string: /DisableRoutinelyTakingAction/i
+            - string: /DisableRealtimeMonitoring/i
+            - string: /DisableIntrusionPreventionSystem/i
+            - string: /DisableIOAVProtection/i
+            - string: /DisableCredentialGuard/i
+            - string: /DisableControlledFolderAccess/i
+            - string: /DisableApplicationGuard/i
+            - string: /PUAProtection/i
+            - string: /ServiceKeepAlive/i
+            - string: /DisableAntiSpyware/i
+        - and:
+          - string: /SOFTWARE\\Policies\\Microsoft\\Windows Defender Security Center\\Notifications/i
+          - string: /DisableNotifications/i
+        - and:
+          - string: /SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard/i
+          - string: /EnableExploitProtection/i
