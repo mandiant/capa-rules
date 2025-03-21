@@ -23,6 +23,7 @@ rule:
             - string: /NoSizeChoice/i
             - string: /NoColorChoice/i
             - string: /NoDispBackGroundPage/i
+            - string: /EnableLUA/i
         - and:
           - string: /Software\\Policies\\Microsoft\\Windows\\System/i
           - string: /DisableCMD/i
@@ -73,6 +74,3 @@ rule:
         - and:
           - string: /SYSTEM\\ControlSet001\\Control\\CI\\Config/i
           - string: /VulnerableDriverBlocklistEnable/i
-        - and:
-          - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System/i
-          - string: /EnableLUA/i
