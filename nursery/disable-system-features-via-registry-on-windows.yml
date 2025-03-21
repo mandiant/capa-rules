@@ -20,7 +20,7 @@ rule:
           - or:
             - string: /DisableRegistryTools/i
             - string: /DisableTaskMgr/i
-              - string: /NoSizeChoice/i
+            - string: /NoSizeChoice/i
             - string: /NoColorChoice/i
             - string: /NoDispBackGroundPage/i
         - and:
