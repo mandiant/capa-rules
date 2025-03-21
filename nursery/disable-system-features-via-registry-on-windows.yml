@@ -15,19 +15,67 @@ rule:
     - and:
       - match: set registry value
       - or:
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableRegistryTools/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableTaskMgr/i
-        - string: /Software\\Policies\\Microsoft\\Windows\\System\\DisableCMD/i
-        - string: /SOFTWARE\\Policies\\Microsoft\\Windows NT\\SystemRestore\\DisableSR/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoFind/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoDesktop/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoRun/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoClose/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoViewContextMenu/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoPropertiesMyComputer/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\HideClock/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\NoSizeChoice/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\NoColorChoice/i
-        - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\NoDispBackGroundPage/i
-        - string: /SOFTWARE\\Policies\\Microsoft\\Internet Explorer\\Restrictions\\NoBrowserClose/i
-        - string: /SOFTWARE\\Policies\\Microsoft\\Internet Explorer\\Restrictions\\NoFavorites/i
+        - and:
+          - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System/i
+          - or:
+            - string: /DisableRegistryTools/i
+            - string: /DisableTaskMgr/i
+        - and:
+          - string: /Software\\Policies\\Microsoft\\Windows\\System/i
+          - string: /DisableCMD/i
+        - and:
+          - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer/i
+          - or:
+            - string: /NoFind/i
+            - string: /NoDesktop/i
+            - string: /NoRun/i
+            - string: /NoClose/i
+            - string: /NoViewContextMenu/i
+            - string: /NoPropertiesMyComputer/i
+            - string: /HideClock/i
+        - and:
+          - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System/i
+          - or:
+            - string: /NoSizeChoice/i
+            - string: /NoColorChoice/i
+            - string: /NoDispBackGroundPage/i
+        - and:
+          - string: /SOFTWARE\\Policies\\Microsoft\\Internet Explorer\\Restrictions/i
+          - or:
+            - string: /NoBrowserClose/i
+            - string: /NoFavorites/i
+        - and:
+          - string: /SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting/i
+          - string: /Disabled/i
+        - and:
+          - string: /SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\AU/i
+          - string: /NoAutoUpdate/i
+        - and:
+          - or:
+            - string: /SOFTWARE\\WOW6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
+            - string: /SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
+          - string: /SFCDisable/i
+        - and:
+          - string: /SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate/i
+          - string: /DisableWindowsUpdateAccess/i
+        - and:
+          - string: /SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Maintenance/i
+          - string: /MaintenanceDisabled/i
+        - and:
+          - string: /SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection/i
+          - string: /AllowTelemetry/i
+        - and:
+          - string: /SYSTEM\\ControlSet001\\Services\\SecurityHealthService/i
+          - string: /Start/
+        - and:
+          - string: /SYSTEM\\ControlSet001\\Services\\EventLog/i
+          - string: /Start/
+        - and:
+          - string: /SYSTEM\\ControlSet001\\Control\\Lsa/i
+          - string: /LsaCfgFlags/i
+        - and:
+          - string: /SYSTEM\\ControlSet001\\Control\\CI\\Config/i
+          - string: /VulnerableDriverBlocklistEnable/i
+        - and:
+          - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System/i
+          - string: /EnableLUA/i
