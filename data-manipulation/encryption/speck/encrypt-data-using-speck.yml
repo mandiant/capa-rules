@@ -1,0 +1,37 @@
+rule:
+  meta:
+    name: encrypt data using speck
+    namespace: data-manipulation/encryption/speck
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: function
+      dynamic: unsupported  # requires characteristic, mnemonic features
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+    references:
+      - https://github.com/maxmouchet/gfc/blob/8d818b0fe2023c92cbf8d7eb89674916bdc78f62/src/gfc.c#L15
+      - https://github.com/TheWover/donut/blob/47758d787209dd1744f58c140102ac91b649df16/hash.c#L35
+    examples:
+      - d890c1c67d83f1131c065b5eb5f263cbf54559dbcdb4562c3bde3dc30d1a3205:0x1929D
+  features:
+    - and:
+      - 2 or more:
+        - mnemonic: rol
+        - mnemonic: ror
+        - mnemonic: shl
+        - mnemonic: imul
+      - count(characteristic(nzxor)): 2 or more
+      - match: contain loop
+      - instruction:
+        - mnemonic: cmp
+        - or:
+          - number: 0x1A = encryption loop
+          - number: 0x1B = encryption loop
+      - instruction:
+        - mnemonic: cmp
+        - or:
+          - number: 0x3 = master key copy loop
+          - number: 0x4 = master key copy loop

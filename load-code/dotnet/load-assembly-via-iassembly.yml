@@ -1,0 +1,39 @@
+rule:
+  meta:
+    name: load assembly via IAssembly
+    namespace: load-code/dotnet
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: function
+      dynamic: unsupported
+    references:
+      - https://github.com/TheWover/donut/blob/master/loader/inmem_dotnet.c
+    examples:
+      - d890c1c67d83f1131c065b5eb5f263cbf54559dbcdb4562c3bde3dc30d1a3205:0x1641B
+  features:
+    - and:
+      - 3 or more:
+        - instruction:
+          - description: _MethodInfoVtbl->Invoke_3
+          - or:
+            - mnemonic: call
+            - mnemonic: mov
+          - or:
+            - operand[1].offset: 0x128
+            - operand[1].offset: 0x94
+        - instruction:
+          - description: _AssemblyVtbl->InvokeMember_3
+          - or:
+            - mnemonic: call
+            - mnemonic: mov
+          - or:
+            - operand[1].offset: 0xE4
+            - operand[1].offset: 0x88
+        - instruction:
+          - mnemonic: mov
+          - number: 0x2008 = VT_ARRAY | VT_BSTR (for passing args)
+        - instruction:
+          - mnemonic: mov
+          - number: 0x118 = BindingFlags_InvokeMethod | BindingFlags_Static | BindingFlags_Public (InvokeMember_3)
+      - characteristic: indirect call
