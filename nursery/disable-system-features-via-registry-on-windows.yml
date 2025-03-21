@@ -20,6 +20,9 @@ rule:
           - or:
             - string: /DisableRegistryTools/i
             - string: /DisableTaskMgr/i
+              - string: /NoSizeChoice/i
+            - string: /NoColorChoice/i
+            - string: /NoDispBackGroundPage/i
         - and:
           - string: /Software\\Policies\\Microsoft\\Windows\\System/i
           - string: /DisableCMD/i
@@ -33,12 +36,6 @@ rule:
             - string: /NoViewContextMenu/i
             - string: /NoPropertiesMyComputer/i
             - string: /HideClock/i
-        - and:
-          - string: /SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System/i
-          - or:
-            - string: /NoSizeChoice/i
-            - string: /NoColorChoice/i
-            - string: /NoDispBackGroundPage/i
         - and:
           - string: /SOFTWARE\\Policies\\Microsoft\\Internet Explorer\\Restrictions/i
           - or:
