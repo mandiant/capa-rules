@@ -14,4 +14,4 @@ rule:
   features:
     - and:
       - match: set registry value
-      - string: /System\\(CurrentControlSet|ControlSet001)\\Control\\Session Manager\\AppCertDlls/i
+      - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Control\\Session Manager\\AppCertDlls/i

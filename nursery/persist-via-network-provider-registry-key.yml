@@ -14,5 +14,5 @@ rule:
   features:
     - and:
       - match: set registry value
-      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Services\\.*\\NetworkProvider/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\.*\\NetworkProvider/i
       - string: /ProviderPath/i

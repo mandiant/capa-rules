@@ -18,11 +18,11 @@ rule:
       - match: set registry value
       - or:
         - and:
-          - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Lsa/i
+          - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Control\\Lsa/i
           - or:
             - string: /Authentication Packages/i
             - string: /Notification packages/i
             - string: /Security Packages/i
         - and:
-          - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\LsaExtensionConfig\\LsaSrv/i
+          - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Control\\LsaExtensionConfig\\LsaSrv/i
           - string: /Extensions/i

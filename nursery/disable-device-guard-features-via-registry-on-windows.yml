@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: disable Device Guard features via registry on Windows
+    namespace: impact/features
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools [F0004]
+  features:
+    - and:
+      - match: set registry value
+      - or:
+        - and:
+          - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Control\\DeviceGuard/i
+          - or:
+            - string: /RequirePlatformSecurityFeatures/i
+            - string: /HVCIMATRequired/i
+            - string: /RequireSignedBoot/i
+            - string: /EnableVirtualizationBasedSecurity/i
+        - and:
+          - string: /SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceGuard/i
+          - string: /LsaCfgFlags/i

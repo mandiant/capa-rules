@@ -29,4 +29,4 @@ rule:
         - string: /Software\\Microsoft\\Windows\\CurrentVersion\\RunServices/i
         - string: /Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run/i
         - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\Load/i
-        - string: /System\\CurrentControlSet\\Control\\Session Manager\\BootExecute/i
+        - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Control\\Session Manager\\BootExecute/i

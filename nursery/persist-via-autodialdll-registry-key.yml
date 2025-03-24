@@ -15,5 +15,5 @@ rule:
   features:
     - and:
       - match: set registry value
-      - string: /System\\(CurrentControlSet|ControlSet001)\\Services\\WinSock2\\Parameters/i
+      - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Services\\WinSock2\\Parameters/i
       - string: /AutodialDLL/i

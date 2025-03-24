@@ -14,5 +14,5 @@ rule:
   features:
     - and:
       - match: set registry value
-      - string: /System\\(CurrentControlSet|ControlSet001)\\Control\\BootVerificationProgram/i
+      - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Control\\BootVerificationProgram/i
       - string: /ImagePath/i
