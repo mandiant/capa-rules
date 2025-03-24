@@ -25,11 +25,11 @@ rule:
       - string: /HARDWARE\\ACPI\\FADT\\VBOX__/i
       - string: /HARDWARE\\ACPI\\RSDT\\VBOX__/i
       - string: /SOFTWARE\\Oracle\\VirtualBox Guest Additions/i
-      - string: /SYSTEM\\ControlSet001\\Services\\VBoxGuest/i
-      - string: /SYSTEM\\ControlSet001\\Services\\VBoxMouse/i
-      - string: /SYSTEM\\ControlSet001\\Services\\VBoxService/i
-      - string: /SYSTEM\\ControlSet001\\Services\\VBoxSF/i
-      - string: /SYSTEM\\ControlSet001\\Services\\VBoxVideo/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\VBoxGuest/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\VBoxMouse/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\VBoxService/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\VBoxSF/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\VBoxVideo/i
       - string: /VBoxMouse\.sys/i
       - string: /VBoxGuest\.sys/i
       - string: /VBoxSF\.sys/i

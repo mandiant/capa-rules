@@ -16,5 +16,5 @@ rule:
       - match: set registry value
       - or:
         - string: /\\Policies\\Microsoft\\Windows NT\\Terminal Services/i
-        - string: /System\\(CurrentControlSet|ControlSet001)\\Control\\Terminal Server\\WinStations\\RDP-Tcp/i
+        - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Control\\Terminal Server\\WinStations\\RDP-Tcp/i
       - string: /^InitialProgram$/i

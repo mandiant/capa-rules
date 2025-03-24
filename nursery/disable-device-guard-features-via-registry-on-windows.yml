@@ -16,7 +16,7 @@ rule:
       - match: set registry value
       - or:
         - and:
-          - string: /SYSTEM\\ControlSet001\\Control\\DeviceGuard/i
+          - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Control\\DeviceGuard/i
           - or:
             - string: /RequirePlatformSecurityFeatures/i
             - string: /HVCIMATRequired/i

@@ -19,7 +19,7 @@ rule:
         - or:
           - match: query or enumerate registry key
           - match: query or enumerate registry value
-        - string: /System\\(CurrentControlSet|ControlSet001)\\Services/i
-        - string: /System\\(CurrentControlSet|ControlSet001)\\Control/i
-        - string: /System\\(CurrentControlSet|ControlSet001)\\Enum/i
-        - string: /System\\(CurrentControlSet|ControlSet001)\\HardwareProfiles/i
+        - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Services/i
+        - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Control/i
+        - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Enum/i
+        - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\HardwareProfiles/i

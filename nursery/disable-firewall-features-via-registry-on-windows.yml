@@ -17,11 +17,11 @@ rule:
       - or:
         - and:
           - or:
-            - string: /SYSTEM\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile/i
-            - string: /SYSTEM\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile/i
+            - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile/i
+            - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile/i
           - or:
             - string: /EnableFirewall/i
             - string: /DisableNotifications/i
         - and:
-          - string: /SYSTEM\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile/i
+          - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile/i
           - string: /DisableNotifications/i

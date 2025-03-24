@@ -63,14 +63,14 @@ rule:
           - string: /SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection/i
           - string: /AllowTelemetry/i
         - and:
-          - string: /SYSTEM\\ControlSet001\\Services\\SecurityHealthService/i
+          - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\SecurityHealthService/i
           - string: /Start/
         - and:
-          - string: /SYSTEM\\ControlSet001\\Services\\EventLog/i
+          - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\EventLog/i
           - string: /Start/
         - and:
-          - string: /SYSTEM\\ControlSet001\\Control\\Lsa/i
+          - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Control\\Lsa/i
           - string: /LsaCfgFlags/i
         - and:
-          - string: /SYSTEM\\ControlSet001\\Control\\CI\\Config/i
+          - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Control\\CI\\Config/i
           - string: /VulnerableDriverBlocklistEnable/i

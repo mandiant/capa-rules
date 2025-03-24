@@ -14,7 +14,7 @@ rule:
   features:
     - and:
       - match: set registry value
-      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\ContentIndex\\Language\\/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Control\\ContentIndex\\Language\\/i
       - or:
         - string: /StemmerDLLPathOverride/i
         - string: /WBDLLPathOverride/i

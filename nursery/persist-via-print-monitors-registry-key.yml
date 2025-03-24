@@ -15,5 +15,5 @@ rule:
   features:
     - and:
       - match: set registry value
-      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\Print\\Monitors\\/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Control\\Print\\Monitors\\/i
       - string: /^Driver$/i

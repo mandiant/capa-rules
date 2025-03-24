@@ -22,9 +22,9 @@ rule:
       - string: /HARDWARE\\DESCRIPTION\\System\\(SystemBiosVersion|VideoBiosVersion)/i
       - string: /HARDWARE\\DESCRIPTION\\System\\CentralProcessor/i
       - string: /HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0/i
-      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Enum\\IDE/i
-      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Services\\Disk\\Enum\\/i
-      - string: /SYSTEM\\(CurrentControlSet|ControlSet001)\\Control\\SystemInformation\\SystemManufacturer/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Enum\\IDE/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Services\\Disk\\Enum\\/i
+      - string: /SYSTEM\\(ControlSet\d{3}|CurrentControlSet)\\Control\\SystemInformation\\SystemManufacturer/i
       - string: /A M I/i
       - string: /Hyper-V/i
       - string: /Kernel-VMDetection-Private/i
