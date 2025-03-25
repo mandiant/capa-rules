@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: obtain TransmitPackets callback function via WSAIoctl
+    name: obtain TransmitPackets callback function via WSAIoctl via x86 assembly
     namespace: communication/socket/tcp/send
     authors:
       - jonathan.lepore@mandiant.com

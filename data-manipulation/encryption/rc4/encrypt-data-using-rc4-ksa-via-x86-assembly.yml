@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt data using RC4 KSA
+    name: encrypt data using RC4 KSA via x86 assembly
     namespace: data-manipulation/encryption/rc4
     authors:
       - moritz.raabe@mandiant.com
