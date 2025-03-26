@@ -13,29 +13,60 @@ rule:
       - and:
         - os: linux
         - and:
+          # Check socksv5 handshake
           - basic block:
+          # Check first entry for version (VER)
             - and:
                 - mnemonic: mov
                 - mnemonic: movzx
                 - offset: 0x0
                 - operand[1].offset: 0x0
                 - mnemonic: cmp
-                - number: 0x5
+                - number: 0x5                 # socks version
                 - operand[1].number: 0x5
           - basic block:
-            - and:
-                - mnemonic: mov
-                - mnemonic: add
-                - number: 0x1
-                - operand[1].number: 0x1
-                - offset: 0x1
-                - operand[1].offset: 0x1
-                - mnemonic: movzx
-                - offset: 0x0
-                - operand[1].offset: 0x0
-                - mnemonic: cmp
-                - number: 0x1
-                - operand[1].number: 0x1
+            # Check second entry for command code (CMD)
+            - or: 
+              - and:
+                  - mnemonic: mov
+                  - mnemonic: add
+                  - number: 0x1
+                  - operand[1].number: 0x1
+                  - offset: 0x1
+                  - operand[1].offset: 0x1
+                  - mnemonic: movzx
+                  - offset: 0x0
+                  - operand[1].offset: 0x0
+                  - mnemonic: cmp
+                  - number: 0x1                   # TCP-IP Stream
+                  - operand[1].number: 0x1
+              - and:
+                  - mnemonic: mov
+                  - mnemonic: add
+                  - number: 0x1
+                  - operand[1].number: 0x1
+                  - offset: 0x1
+                  - operand[1].offset: 0x1
+                  - mnemonic: movzx
+                  - offset: 0x0
+                  - operand[1].offset: 0x0
+                  - mnemonic: cmp
+                  - number: 0x2                   # TCP-IP Port Bind
+                  - operand[1].number: 0x2
+              - and:
+                  - mnemonic: mov
+                  - mnemonic: add
+                  - number: 0x1
+                  - operand[1].number: 0x1
+                  - offset: 0x1
+                  - operand[1].offset: 0x1
+                  - mnemonic: movzx
+                  - offset: 0x0
+                  - operand[1].offset: 0x0
+                  - mnemonic: cmp
+                  - number: 0x3                   # Establish UDP Port
+                  - operand[1].number: 0x3
+            # Check third entry for reserved (RSV) 
             - basic block:
               - and:
                 - mnemonic: mov
@@ -45,10 +76,11 @@ rule:
                 - offset: 0x2
                 - operand[1].offset: 0x2
                 - mnemonic: movzx
-                - offset: 0x0
+                - offset: 0x0                     # RSV Value should be 0x00
                 - operand[1].offset: 0x0
                 - mnemonic: test
             - basic block:
+              # AF_INET and a Minimum length 10
               - and:
                 - mnemonic: mov
                 - number: 0x2
@@ -57,6 +89,7 @@ rule:
                 - mnemonic: mov
                 - number: 0xA
                 - operand[1].number: 0xA
+              # Check TYPE
               - and:
                 - mnemonic: mov
                 - mnemonic: add
@@ -72,22 +105,22 @@ rule:
                 - or:
                   - and:
                     - mnemonic: cmp
-                    - number: 0x4
+                    - number: 0x4                   # IPv6
                     - operand[1].number: 0x4
                     - basic block:
                       -  mnemonic: mov
-                      -  number: 0xA
+                      -  number: 0xA                # AF_INET6
                       -  operand[1].number: 0xA
                       -  mnemonic: mov
                       -  number: 0x16
-                      -  operand[1].number: 0x16
+                      -  operand[1].number: 0x16    # Change minimum length to accommodate for IPv6 Address
                     - basic block:
                       - api: inet_ntop
                       - mnemonic: call
                       - characteristic: (calls from) -> 0x20022D0
                   - and:
                     - mnemonic: cmp
-                    - number: 0x1
+                    - number: 0x1                   #IPv4
                     - operand[1].number: 0x1
                     - basic block:
                       - api: inet_ntop
@@ -95,7 +128,7 @@ rule:
                       - characteristic: (calls from) -> 0x20022D0
                   - and:
                     - mnemonic: cmp
-                    - number: 0x3
+                    - number: 0x3                   #DNS_NAME
                     - operand[1].number: 0x3
                     - basic block:
                       - mnemonic: mov
@@ -104,25 +137,36 @@ rule:
                       - operand[1].number: 0x4
                       - offset: 0x4
                       - operand[1].offset: 0x4
-  insn: 0x20027F9: mnemonic(movzx)
-  insn: 0x20027F9: offset(0x0)
-  insn: 0x20027F9: operand[1].offset(0x0)
-  insn: 0x20027FC: mnemonic(movzx)
-  insn: 0x20027FF: mnemonic(mov)
-  insn: 0x2002806: mnemonic(mov)
-  insn: 0x200280D: mnemonic(add)
-  insn: 0x200280D: number(0x7)
-  insn: 0x200280D: operand[1].number(0x7)
-  insn: 0x200280D: offset(0x7)
-  insn: 0x200280D: operand[1].offset(0x7)
-  insn: 0x2002811: mnemonic(mov)
-  insn: 0x2002818: mnemonic(mov)
-  insn: 0x200281F: mnemonic(add)
-  insn: 0x200281F: number(0x7)
-  insn: 0x200281F: operand[1].number(0x7)
-  insn: 0x200281F: offset(0x7)
-  insn: 0x200281F: operand[1].offset(0x7)
-  insn: 0x2002823: mnemonic(cmp)
-
-
+                      - mnemonic: movzx
+                      - offset: 0x0
+                      - operand[1].offset: 0x0
+                      - mnemonic: movzx
+                      - mnemonic: mov
+                      - mnemonic: mov
+                      - mnemonic: add
+                      - number: 0x7
+                      - operand[1].number: 0x7
+                      - offset: 0x7
+                      - operand[1].offset: 0x7
+                      - mnemonic: mov
+                      - mnemonic: mov
+                      - mnemonic: add
+                      - number: 0x7
+                      - operand[1].number: 0x7
+                      - offset: 0x7
+                      - operand[1].offset: 0x7
+                      - mnemonic: cmp
+            # Socket call block
+          - basic block:
+            - and:
+              - mnemonic: mov
+              - offset: 0x10
+              - operand[1].offset: 0x10
+              - mnemonic: mov
+              - offset: 0x18
+              - operand[1].offset: 0x18
+              - mnemonic: mov
+              - api: connect
+              - mnemonic: call
+              - characteristic: (calls from) -> 0x20024E0
 
