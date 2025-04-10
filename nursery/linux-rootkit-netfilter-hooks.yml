@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: linux-rootkit-netfilter-hooks
+    namespace:
+    authors:
+      - mrhafizfarhad@gmail.com
+    scopes:
+      static: file
+      dynamic: file
+    references:
+      - https://gist.github.com/loneicewolf/226e3e20e6041d12a63a5e833ebb0503
+  features:
+    - or:
+      - substring: nf_register_net_hook
+      - substring: nf_register_net_hooks
