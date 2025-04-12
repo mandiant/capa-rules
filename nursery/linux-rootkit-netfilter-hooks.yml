@@ -8,11 +8,10 @@ rule:
     scopes:
       static: file
       dynamic: file
-    references:
-      - https://gist.github.com/loneicewolf/226e3e20e6041d12a63a5e833ebb0503
     att&ck:
       - Defense Evasion::Rootkit [T1014]
-      - Collection::Network Sniffing [T1040]
+    references:
+      - https://gist.github.com/loneicewolf/226e3e20e6041d12a63a5e833ebb0503
   features:
     - and:
       - os: linux
