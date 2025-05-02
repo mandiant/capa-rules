@@ -22,6 +22,7 @@ rule:
       - or:
         - string: "EventWrite"
         - string: "EtwEventWrite"
+        - string: "EtwpEventWriteFull"
         - string: "EtwEventWriteFull"
         - string: "TraceEvent"
         - string: "NtTraceEvent"
