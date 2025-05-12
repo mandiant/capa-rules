@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: enumerate kernel information
+    namespace: host-interaction/os/info
+    authors:
+      - zdw@google.com
+    scopes:
+      static: basic block
+      dynamic: calls
+    examples:
+      - cb0ce85efef94a4f7eacb4571ebf71b12ebbf9fb9faba96e853552822668aa22.exe_:0x140001260
+  features:
+    - and:
+      - os: windows
+      - and:
+        - api: NtQuerySystemInformation
+        - or:
+          - number: 0xb = SystemModuleInformation
+          - number: 0x10 = SystemHandleInformation
+          - number: 0x40 = SystemExtendedHandleInformation
+          - number: 0x42 = SystemBigPoolInformation
