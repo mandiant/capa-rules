@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: enumerate kernel information
+    name: suspicious NtQuerySystemInformation call
     namespace: host-interaction/os/info
     authors:
       - zdw@google.com
