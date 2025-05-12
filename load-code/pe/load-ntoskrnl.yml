@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: load ntoskrnl.exe
+    namespace: load-code/pe
+    authors:
+      - zdw@google.com
+    scopes:
+      static: basic block
+      dynamic: call
+    examples:
+      - cb0ce85efef94a4f7eacb4571ebf71b12ebbf9fb9faba96e853552822668aa22.exe_:0x1400013E0
+  features:
+    - and:
+      - string: "ntoskrnl.exe"
+      - or:
+        - api: LoadLibrary
+        - api: LoadLibraryEx
