@@ -18,7 +18,6 @@ rule:
       - 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001E04
   features:
     - or:
-      - api: kernel32.SetEndOfFile
       - api: kernel32.DeleteFile
       - api: DeleteFileTransacted
       - api: NtDeleteFile
