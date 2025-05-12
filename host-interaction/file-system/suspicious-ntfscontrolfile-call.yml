@@ -1,0 +1,28 @@
+rule:
+  meta:
+    name: suspicious NtFsControlFile call
+    namespace: host-interaction/file-system
+    authors:
+      - zdw@google.com
+    description: look for suspicious NtFsControlFile calls that may be used in filesystem/minifilter related LPEs
+    scopes:
+      static: basic block
+      dynamic: call
+    references:
+      - https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntfscontrolfile
+    examples:
+      - 7d333c9b11b06ef0982b61bfc062631bb6cf9d12d0d4f2cf1b807a25ddf62fbc.exe_:0x140001B99
+      - 86a8f267cf0f51c032f7b1777eb1e51f7cd1badf3f3894e2557a3f571fca9f3d.exe_:0x1400BE30B
+  features:
+    - and:
+      - os: windows
+      # - and:
+      #   - or:
+      #     - api: NtFsControlFile
+      #     - characteristic: indirect call  # NtFsControlFile is often dynamically resolved
+      - or:
+        - number: 0x11003c
+        - number: 0x110038
+        - number: 0x119ff8
+      - count(number(0)): 3
+      # - number: 0
