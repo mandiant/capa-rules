@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: load ntoskrnl.exe
+    name: load ntoskrnl
     namespace: load-code/pe
     authors:
       - zdw@google.com
