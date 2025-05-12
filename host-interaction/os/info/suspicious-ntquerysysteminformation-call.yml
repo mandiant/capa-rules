@@ -15,10 +15,9 @@ rule:
   features:
     - and:
       - os: windows
-      - and:
-        - api: NtQuerySystemInformation
-        - or:
-          - number: 0xb = SystemModuleInformation
-          - number: 0x10 = SystemHandleInformation
-          - number: 0x40 = SystemExtendedHandleInformation
-          - number: 0x42 = SystemBigPoolInformation
+      - api: NtQuerySystemInformation
+      - or:
+        - number: 0xb = SystemModuleInformation
+        - number: 0x10 = SystemHandleInformation
+        - number: 0x40 = SystemExtendedHandleInformation
+        - number: 0x42 = SystemBigPoolInformation

@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: resolve ntoskrnl gadgets
+    namespace: host-interaction/os/info
+    authors:
+      - zdw@google.com
+    description: look for suspicious GetProcAddress calls used to resolve addresses of functions often used for ROP gadgets in LPEs
+    scopes:
+      static: basic block
+      dynamic: call
+    examples:
+      - b87b8637121d5e213ca02b45cbaca496bdf1fcc4bfddce48eea6e41637ffedd4.exe_:0x1400021B1
+  features:
+    - and:
+      - os: windows
+      - api: GetProcAddress
+      - or:
+        - string: "RtlSetAllBits"
+        - string: "RtlClearAllBits"
+        - string: "RtlClearBit"
+        - string: "RtlCopyLuid"
+        - string: "PsInitialSystemProcess"
+        - string: "PsReferencePrimaryToken"
+        - string: "SeQueryInformationToken"
+        - string: "SeSetAccessStateGenericMapping"
+        - string: "PoFxProcessorNotification"
+        - string: "HalDispatchTable"
