@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/os/info
     authors:
       - zdw@google.com
-    description: look for suspicious GetProcAddress calls used to resolve addresses of functions often used for ROP gadgets in LPEs
+    description: look for suspicious GetProcAddress calls used to resolve addresses of functions often used for gadgets in LPEs
     scopes:
       static: basic block
       dynamic: call

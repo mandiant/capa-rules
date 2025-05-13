@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/os/info
     authors:
       - zdw@google.com
-    description: look for calls to LoadLibrary* for ntoskrnl.exe, which can be indicative of kernel ROP gadgets being resolved in user-mode for LPEs
+    description: look for calls to LoadLibrary* for ntoskrnl.exe, which can be indicative of kernel gadgets being resolved in user-mode for LPEs
     scopes:
       static: basic block
       dynamic: call

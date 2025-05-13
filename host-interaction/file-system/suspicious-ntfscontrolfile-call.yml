@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/file-system
     authors:
       - zdw@google.com
-    description: look for suspicious NtFsControlFile calls that may be used in filesystem/minifilter related LPEs
+    description: look for suspicious NtFsControlFile calls that may be used for spraying objects into kernel heap pools
     scopes:
       static: basic block
       dynamic: unsupported  # requires characteristics, mnemonic features
