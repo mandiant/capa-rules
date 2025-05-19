@@ -17,4 +17,3 @@ rule:
     - or:
       - api: NtUnloadDriver
       - api: ZwUnloadDriver
-      - api: fltlib.FilterUnload
