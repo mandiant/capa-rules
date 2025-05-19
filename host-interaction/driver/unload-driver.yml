@@ -11,7 +11,6 @@ rule:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
     examples:
       - 31cee4f66cf3b537e3d2d37a71f339f4:0x1400044ce
-      - c3ef997d330e65be1e22ba4d2622ece23391c6cfc78b2ee515f3d0c7a3083a79:0x14000161D
   features:
     - or:
       - api: NtUnloadDriver
