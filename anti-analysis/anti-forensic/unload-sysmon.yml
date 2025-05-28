@@ -17,5 +17,5 @@ rule:
       - c3ef997d330e65be1e22ba4d2622ece23391c6cfc78b2ee515f3d0c7a3083a79
   features:
     - and:
-        - match: unload minifilter driver
-        - string: /SysmonDrv/i
+      - match: unload minifilter driver
+      - string: /SysmonDrv/i
