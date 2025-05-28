@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: unload sysmon
+    namespace: anti-analysis/anti-forensic
+    authors:
+      - JakePeralta7
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools [F0004]
+    references:
+      - https://github.com/getel-arch/Unload-Sysmon/blob/main/src/main.c
+    examples:
+      - c3ef997d330e65be1e22ba4d2622ece23391c6cfc78b2ee515f3d0c7a3083a79
+  features:
+    - and:
+      - match: unload minifilter driver
+      - string: /SysmonDrv/i
