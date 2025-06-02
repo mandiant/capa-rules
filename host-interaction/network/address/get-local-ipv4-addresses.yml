@@ -5,6 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
       - joakim@intezer.com
+      - mehunhoff@google.com
     scopes:
       static: function
       dynamic: span of calls
@@ -20,10 +21,11 @@ rule:
         - api: GetAdaptersInfo
         - offset: 0x1B0 = IP_ADAPTER_INFO.IpAddressList.IpAddress
         # loop feature?
-      - and:
-        - api: GetAdaptersAddresses
-        - optional:
-          - or:
-            - number: 0 = AF_UNSPEC
-            - number: 2 = AF_INET
-            - number: 23 = AF_INET6
+      - call:
+        - and:
+          - api: GetAdaptersAddresses
+          - optional:
+            - or:
+              - number: 0 = AF_UNSPEC
+              - number: 2 = AF_INET
+              - number: 23 = AF_INET6
