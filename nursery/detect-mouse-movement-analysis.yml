@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: detect mouse movement analysis
+    name: detect mouse movement via activity checks on Windows
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - tevajdr@gmail.com
