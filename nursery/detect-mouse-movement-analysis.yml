@@ -4,7 +4,7 @@ rule:
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - tevajdr@gmail.com
-    description: Identifies code that analyzes mouse movement patterns to detect non-human/sandbox behavior. - Advanced pattern analysis using vector mathematics - Simple position tracking over time in loop - Correlation of mouse movement with click event
+    description: Identifies code that analyzes mouse movement patterns to detect non-human/sandbox behavior
     scopes:
       static: function
       dynamic: unsupported
