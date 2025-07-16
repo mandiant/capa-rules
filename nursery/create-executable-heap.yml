@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: create executable heap
+    namespace: load-code/shellcode
+    authors:
+      - moritz.raabe@mandiant.com
+    scopes:
+      static: function
+      dynamic: span of calls
+    mbc:
+      - Memory::Allocate Memory [C0007]
+  features:
+    - and:
+      - or:
+        - basic block:
+          - and:
+            - api: kernel32.HeapCreate
+            - number: 0x40000 = HEAP_CREATE_ENABLE_EXECUTE
+        - call:
+          - and:
+            - api: kernel32.HeapCreate
+            - number: 0x40000 = HEAP_CREATE_ENABLE_EXECUTE
+      - optional:
+        - api: msvcrt.memcpy
+        - api: ntdll.RtlCopyMemory
+        - api: ntdll.RtlMoveMemory
