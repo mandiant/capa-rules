@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: acquire load driver privileges
+    namespace: host-interaction/process/modify
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: basic block
+      dynamic: call
+    att&ck:
+      - Privilege Escalation::Access Token Manipulation [T1134]
+  features:
+    - and:
+      - api: RtlAdjustPrivilege
+      - number: 10 = SE_LOAD_DRIVER_PRIVILEGE
