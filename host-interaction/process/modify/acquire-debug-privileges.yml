@@ -12,7 +12,11 @@ rule:
     examples:
       - Practical Malware Analysis Lab 01-04.exe_:0x401174
   features:
-    - and:
-      - string: "SeDebugPrivilege"
-      - optional:
-        - match: modify access privileges
+    - or:
+      - and:
+        - string: "SeDebugPrivilege"
+        - optional:
+          - match: modify access privileges
+      - and:
+        - api: RtlAdjustPrivilege
+        - number: 20 = SE_DEBUG_PRIVILEGE

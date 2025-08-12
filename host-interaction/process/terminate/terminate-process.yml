@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/process/terminate
     authors:
       - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
@@ -33,3 +33,4 @@ rule:
           - api: kernel32.TerminateProcess
           - api: ntdll.NtTerminateProcess
           - api: kernel32.ExitProcess
+          - api: ZwTerminateProcess

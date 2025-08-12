@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: communicate using FTP
+    namespace: communication/ftp
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: instruction
+      dynamic: call
+    mbc:
+      - Communication::FTP Communication::WinINet [C0004.002]
+  features:
+    - or:
+      - api: FtpGetCurrentDirectory
+      - api: FtpGetFile
+      - api: FtpSetCurrentDirectory
+      - api: FtpOpenFile
+      - api: FtpGetFileSize
+      - api: FtpDeleteFile
+      - api: FtpCreateDirectory
+      - api: FtpRemoveDirectory
+      - api: FtpRenameFile
+      - api: FtpDownload
+      - api: FtpGetDirectory
