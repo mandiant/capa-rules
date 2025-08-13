@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: access PowerShell lockdown policy
+    namespace: host-interaction/powershell
+    authors:
+      - jakubjozwiak@google.com
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Discovery::Software Discovery::Security Software Discovery [T1518.001]
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
+    references:
+      - https://github.com/calebstewart/bypass-clm/
+    examples:
+      - 7cd03db8ed91a66920cc03026baa2df2a8370293b072218b9fbf6d9a21cad66b:0x180004EB0
+      - a69ce1cf6c5a409829cc899eea6124c31c6f187b25d1d5ed1a6b6aadc702bfbb:0x6000006
+  features:
+    - and:
+      - string: "System.Management.Automation.Security.SystemPolicy"
+      - string: "GetSystemLockdownPolicy"

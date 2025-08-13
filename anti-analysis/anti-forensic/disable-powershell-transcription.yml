@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: disable PowerShell transcription
+    namespace: anti-analysis/anti-forensic
+    authors:
+      - jakubjozwiak@google.com
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools [F0004]
+    references:
+      - https://itm4n.github.io/reinventing-powershell/
+    examples:
+      - 7cd03db8ed91a66920cc03026baa2df2a8370293b072218b9fbf6d9a21cad66b:0x180004EB0
+  features:
+    - and:
+      - match: change memory protection
+      - string: "System.Management.Automation.Host.TranscriptionOption"
+      - string: "FlushContentToDisk"
+      - optional:
+        - number: 0xc3 = RET
