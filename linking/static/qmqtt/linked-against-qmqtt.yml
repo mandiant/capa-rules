@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: linked against QMQTT
+    namespace: linking/static/qmqtt
+    authors:
+      - jakubjozwiak@google.com
+    scopes:
+      static: file
+      dynamic: file
+    references:
+      - https://github.com/emqx/qmqtt
+    examples:
+      - bc716f1d17c8859e3102284738b2f6911ddaeb372402db8e16bec667c0c41187
+  features:
+    - or:
+      - string: "qmqtt: Binary data size bigger than %u bytes, truncate it!"
+      - string: "qmqtt: String size bigger than %u bytes, truncate it!"
+      - string: "qmqtt: Control packet bigger than 256 MB, dropped!"
+      - string: "qmqtt: Control packet write error!"
+      - string: "QMQTT::Client"
+      - string: "QMQTT::ClientPrivate"
+      - string: "QMQTT::Network"
+      - string: "QMQTT::Socket"
+      - string: "QMQTT::SslSocket"
+      - string: "QMQTT::Timer"
+      - string: "QMQTT::WebSocket"
+      - string: "QMQTT::WebSocketIODevice"
