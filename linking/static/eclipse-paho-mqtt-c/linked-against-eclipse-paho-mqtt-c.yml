@@ -10,7 +10,7 @@ rule:
     references:
       - https://github.com/eclipse-paho/paho.mqtt.c
     examples:
-      - 196a0155600aa40a8bf62128b2ba81475dbe50d094674da4115c1731e62c476a
+      - 80f166e9c0427f055c88c9ee62016a6ba6a938023ff8778f5a0b5f8d7fe7570d
   features:
     - or:
       - string: "mqttasync_mutex error %d"

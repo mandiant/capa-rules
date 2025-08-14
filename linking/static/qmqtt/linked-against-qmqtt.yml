@@ -10,7 +10,7 @@ rule:
     references:
       - https://github.com/emqx/qmqtt
     examples:
-      - bc716f1d17c8859e3102284738b2f6911ddaeb372402db8e16bec667c0c41187
+      - 96abcbcb4aec439ac1619b02a44b6f482241dbb7486a15138e3aada5fa01d382
   features:
     - or:
       - string: "qmqtt: Binary data size bigger than %u bytes, truncate it!"
