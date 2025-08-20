@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: linked against gRPC
+    namespace: linking/static/grpc
+    authors:
+      - jakubjozwiak@google.com
+    scopes:
+      static: file
+      dynamic: file
+    references:
+      - https://grpc.io
+      - https://github.com/grpc/grpc
+    examples:
+      - 71419e4d6f538b8a04ca6786e4d68f0d40204df465fe80bc6b4a0b259103e50f
+  features:
+    - or:
+      - 2 or more:
+        - string: "GRPC_SLICE_LENGTH(*slice_) <= INT_MAX"
+        - string: "GRPC_SLICE_LENGTH(slice_) <= INT_MAX"
+        - string: "grpc-status-details-bin"
+        - string: "!ran_hijacking_interceptor_"
+        - string: "orig_send_message_ != nullptr"
+        - string: "serializer_(msg_).ok()"
+        - string: "GRPC_CALL_ERROR"
+        - string: "Bad GRPC frame type 0x%02x"
+        - string: "grpc.http_proxy"
+        - string: "grpc_shutdown"
