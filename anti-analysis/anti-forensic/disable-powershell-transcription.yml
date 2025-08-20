@@ -4,6 +4,7 @@ rule:
     namespace: anti-analysis/anti-forensic
     authors:
       - jakubjozwiak@google.com
+    description: Match on files capable of patching the FlushContentToDisk method in order to prevent PowerShell from writing transcripts to disk.
     scopes:
       static: function
       dynamic: span of calls

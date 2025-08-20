@@ -1,9 +1,10 @@
 rule:
   meta:
-    name: access PowerShell lockdown policy
+    name: bypass PowerShell Constrained Language Mode via GetSystemLockdownPolicy patch
     namespace: host-interaction/powershell
     authors:
       - jakubjozwiak@google.com
+    description: Match on files capable of patching the GetSystemLockdownPolicy method in order to bypass PowerShell Constrained Language Mode.
     scopes:
       static: function
       dynamic: span of calls
@@ -17,5 +18,8 @@ rule:
       - a69ce1cf6c5a409829cc899eea6124c31c6f187b25d1d5ed1a6b6aadc702bfbb:0x6000006
   features:
     - and:
+      - match: change memory protection
       - string: "System.Management.Automation.Security.SystemPolicy"
       - string: "GetSystemLockdownPolicy"
+      - optional:
+        - number: 0xC3C03148 = XOR RAX,RAX; RET
