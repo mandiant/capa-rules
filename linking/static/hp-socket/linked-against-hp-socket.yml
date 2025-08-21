@@ -12,17 +12,16 @@ rule:
     examples:
       - d8d2ed4a5f13e4bda8edf89d0dd1ef57cec8b18c01fcccdb89fb745a1a2be05f
   features:
-    - or:
-      - 3 or more:
-        - string: "Create SOCKET Fail"
-        - string: "Bind SOCKET Fail"
-        - string: "Prepare SOCKET Fail"
-        - string: "Listen SOCKET Fail"
-        - string: "Create IOCP Fail"
-        - string: "Create Worker Thread Fail"
-        - string: "Create Detector Thread Fail"
-        - string: "Attach SOCKET to IOCP Fail"
-        - string: "Start GC Fail"
-        - string: "SSL environment not ready"
-        - string: "hp-worker-"
-        - string: "hp-pool-"
+    - 3 or more:
+      - string: "Create SOCKET Fail"
+      - string: "Bind SOCKET Fail"
+      - string: "Prepare SOCKET Fail"
+      - string: "Listen SOCKET Fail"
+      - string: "Create IOCP Fail"
+      - string: "Create Worker Thread Fail"
+      - string: "Create Detector Thread Fail"
+      - string: "Attach SOCKET to IOCP Fail"
+      - string: "Start GC Fail"
+      - string: "SSL environment not ready"
+      - string: "hp-worker-"
+      - string: "hp-pool-"
