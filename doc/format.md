@@ -336,7 +336,7 @@ There are five structural expressions that may be nested:
   - `or` - match at least one of the children
   - `not` - match when the child expression does not
   - `N or more` - match at least `N` or more of the children
-    - `optional` is an alias for `0 or more`, which is useful for documenting related features. See [write-file.yml](/host-interaction/file-system/write/write-file.yml) for an example.
+    - `optional` is an alias for `0 or more`, which is useful for documenting related features. See [write-file.yml](/host-interaction/file-system/write/write-file-on-linux.yml) for an example.
 
 To add context to a statement, you can add *one* nested description entry in the form `- description: DESCRIPTION STRING`.
 Check the [description section](#descriptions) for more details.
