@@ -1,9 +1,10 @@
 rule:
   meta:
-    name: get ntoskrnl base address
+    name: get ntoskrnl base address via x86 assembly
     namespace: linking/runtime-linking
     authors:
       - "@mr-tz"
+      - "@akh7177"
     scopes:
       static: function
       dynamic: unsupported  # requires offset features
@@ -19,9 +20,10 @@ rule:
           - description: returns RTL_PROCESS_MODULES structure
           - number: 0xB = SystemModuleInformation
           - match: get system information on Windows
-      - and:
-        - arch: i386
-        - offset: 0xC = RTL_PROCESS_MODULES.Modules[0].ImageBase
-      - and:
-        - arch: amd64
-        - offset: 0x18 = RTL_PROCESS_MODULES.Modules[0].ImageBase
+      - or:
+        - and:
+          - arch: i386
+          - offset: 0xC = RTL_PROCESS_MODULES.Modules[0].ImageBase
+        - and:
+          - arch: amd64
+          - offset: 0x18 = RTL_PROCESS_MODULES.Modules[0].ImageBase
