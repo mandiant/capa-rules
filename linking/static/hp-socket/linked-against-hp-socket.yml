@@ -1,0 +1,36 @@
+rule:
+  meta:
+    name: linked against HP-Socket
+    namespace: linking/static/hp-socket
+    authors:
+      - still@teamt5.org
+      - jakubjozwiak@google.com
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Command and Control::Non-Application Layer Protocol [T1095]
+    references:
+      - https://github.com/ldcsaa/HP-Socket
+    examples:
+      - d8d2ed4a5f13e4bda8edf89d0dd1ef57cec8b18c01fcccdb89fb745a1a2be05f
+  features:
+    - 3 or more:
+      - string: "Create SOCKET Fail"
+      - string: "Bind SOCKET Fail"
+      - string: "Prepare SOCKET Fail"
+      - string: "Listen SOCKET Fail"
+      - string: "Create IOCP Fail"
+      - string: "Create Worker Thread Fail"
+      - string: "Create Detector Thread Fail"
+      - string: "Attach SOCKET to IOCP Fail"
+      - string: "Start GC Fail"
+      - string: "SSL environment not ready"
+      - string: "hp-worker-"
+      - string: "hp-pool-"
+      - string: "# %sClient Send Fail [SOCK: %d, SEQ: %d] --> %s (%d)"
+      - string: "$ %s(%Iu) Send OK --> %s"
+      - string: "# %s%zu Send OK --> %s"
+      - string: "<%s#%d> OP: %d, CODE: %d (DATA: 0x%X, LEN: %d>"
+      - string: "---------------> Client Worker Thread 0x%08X stoped <---------------"
+      - string: "<C-CNNID: %Iu> OnSend() event should not return 'HR_ERROR' !!"
