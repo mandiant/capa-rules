@@ -10,6 +10,8 @@ rule:
       dynamic: span of calls
     att&ck:
       - Privilege Escalation::Access Token Manipulation::Token Impersonation/Theft [T1134.001]
+    examples:
+      - bf9a888e226d8396e84e042732daf32b8c1df8fd675eb128e8da3f0d7768bea5:0x140001896
   features:
     - or:
       - api: advapi32.LogonUser
