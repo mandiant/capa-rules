@@ -1,0 +1,37 @@
+rule:
+  meta:
+    name: linked against Funchook
+    namespace: linking/static/funchook
+    authors:
+      - jakubjozwiak@google.com
+    description: Match on files linked with the Funchook hooking library.
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Defense Evasion::Hijack Execution Flow [T1574]
+    references:
+      - https://github.com/kubo/funchook
+    examples:
+      - 749cf36adc5513c92c7acc836d20935e3c433f3c2d5641293e7a9c57c5ce22c2
+  features:
+    - or:
+      - export: "funchook_hook_caller_asm"
+      - 3 or more:
+        - string: "Enter funchook_create()"
+        - string: "Leave funchook_create() => %p"
+        - string: "Enter funchook_prepare(%p, %p, %p)"
+        - string: "Leave funchook_prepare(..., [%p->%p],...) => %d"
+        - string: "Enter funchook_install(%p, 0x%x)"
+        - string: "Leave funchook_install() => %d"
+        - string: "Enter funchook_uninstall(%p, 0x%x)"
+        - string: "Leave funchook_uninstall() => %d"
+        - string: "Enter funchook_destroy(%p)"
+        - string: "Leave funchook_destroy() => %d"
+        - string: "Could not modify already-installed funchook handle."
+        - string: "Failed to protect memory %p (size=%"
+        - string: "Failed to unprotect memory %p (size=%"
+        - string: "Failed to unprotect page %p (size=%"
+        - string: "Failed to protect page %p (size=%"
+        - string: "Failed to deallocate page %p (size=%"
+        - string: "Could not find a free region near %p"
