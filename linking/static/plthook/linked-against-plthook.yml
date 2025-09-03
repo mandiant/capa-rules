@@ -1,0 +1,55 @@
+rule:
+  meta:
+    name: linked against PLTHook
+    namespace: linking/static/plthook
+    authors:
+      - jakubjozwiak@google.com
+    description: Match on files linked with the PLTHook hooking library.
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Defense Evasion::Hijack Execution Flow [T1574]
+    references:
+      - https://github.com/kubo/plthook
+    examples:
+      - c2c3b3eea177b9411bc92a8800b40529fcd2d5c3696e71cbb2f4025429b314ee
+  features:
+    - or:
+      - string: "plthook_open"
+      - string: "plthook_open_by_handle"
+      - string: "plthook_open_by_address"
+      - string: "plthook_enum"
+      - string: "plthook_replace"
+      - string: "plthook_close"
+      - string: "plthook_error"
+      - export: "plthook_open"
+      - export: "plthook_open_by_handle"
+      - export: "plthook_open_by_address"
+      - export: "plthook_enum"
+      - export: "plthook_replace"
+      - export: "plthook_close"
+      - export: "plthook_error"
+      - 3 or more:
+        - string: "Cannot get module %s: "
+        - string: "Cannot get module at address %p: "
+        - string: "ImageDirectoryEntryToData error: "
+        - string: "invalid argument: The first argument is null."
+        - string: "no such function: %s"
+        - string: "Could not find an address in the specified handle."
+        - string: "Could not find memory region containing address %p"
+        - string: "Could not open %s: %s"
+        - string: "Could not find r_debug"
+        - string: "Opening the main program is not supported on this platform."
+        - string: "failed to open /proc/self/maps"
+        - string: "Could not find memory region containing %p"
+        - string: "Unexcepted memory permission %s at %p"
+        - string: "failed to call kinfo_getvmmap()"
+        - string: "Unknown kve_protection 0x%x at %p"
+        - string: "Unknown pr_mflags 0x%x at %p"
+        - string: "failed to find DT_SYMTAB"
+        - string: "failed to find DT_STRTAB"
+        - string: "failed to find DT_STRSZ"
+        - string: "failed to find DT_PLTRELSZ"
+        - string: "failed to find PLT_DT_RELENT"
+        - string: "failed to allocate memory: %"
