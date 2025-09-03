@@ -4,15 +4,21 @@ rule:
     namespace: host-interaction/filter
     authors:
       - aseel.kayal@mandiant.com
+      - jakubjozwiak@google.com
     scopes:
       static: function
       dynamic: span of calls
     references:
       - https://posts.specterops.io/mimidrv-in-depth-4d273d19e148
       - https://learn.microsoft.com/en-us/windows-hardware/drivers/ifs/filter-manager-concepts
+      - https://github.com/gentilkiwi/mimikatz/blob/2.2.0-20220919/mimikatz/modules/kuhl_m_misc.c#L944
     examples:
       - 3E528207CA374123F63789195A4AEDDE:0x12F49
   features:
-    - and:
-      - api: fltmgr.FltEnumerateFilters
-      - api: fltmgr.FltGetFilterInformation
+    - or:
+      - and:
+        - api: fltmgr.FltEnumerateFilters
+        - api: fltmgr.FltGetFilterInformation
+      - and:
+        - api: fltlib.FilterFindFirst
+        - api: fltlib.FilterFindNext
