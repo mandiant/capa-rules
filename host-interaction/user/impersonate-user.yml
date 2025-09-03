@@ -17,10 +17,14 @@ rule:
       - api: advapi32.LogonUser
       - and:
         - api: userenv.LoadUserProfile
-        - api: advapi32.GetUserName
+        - optional:
+          - api: advapi32.GetUserName
+          - api: advapi32.GetUserNameEx
       - and:
         - api: advapi32.OpenProcessToken
-        - api: advapi32.DuplicateToken
+        - or:
+          - api: advapi32.DuplicateToken
+          - api: advapi32.DuplicateTokenEx
         - api: advapi32.CreateProcessWithToken
         - optional:
           - match: acquire debug privileges
