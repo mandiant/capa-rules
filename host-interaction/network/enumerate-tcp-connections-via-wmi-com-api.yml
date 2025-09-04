@@ -7,7 +7,7 @@ rule:
     description: Match on files capable of enumerating TCP connections using WMI COM API
     scopes:
       static: function
-      dynamic: call
+      dynamic: span of calls
     att&ck:
       - Discovery::System Network Connections Discovery [T1049]
     references:

@@ -5,7 +5,7 @@ rule:
     authors:
       - michael.hunhoff@mandiant.com
     scopes:
-      static: function
+      static: instruction
       dynamic: call
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]

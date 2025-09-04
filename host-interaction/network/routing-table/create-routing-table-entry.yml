@@ -5,7 +5,7 @@ rule:
     authors:
       - jakubjozwiak@google.com
     scopes:
-      static: function
+      static: instruction
       dynamic: call
     references:
       - https://learn.microsoft.com/en-us/windows/win32/api/iphlpapi/nf-iphlpapi-createipforwardentry
