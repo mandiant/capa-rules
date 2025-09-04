@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: enumerate TCP connections via WMI COM API
+    namespace: host-interaction/network
+    authors:
+      - jakubjozwiak@google.com
+    description: Match on files capable of enumerating TCP connections using WMI COM API
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Discovery::System Network Connections Discovery [T1049]
+    references:
+      - https://medium.com/@s12deff/get-tcp-active-connections-with-wmi-cfd80899d7fa
+    examples:
+      - 0a942aca9589d10f7b8f127870ca35cdd90d25c0b3449abe0434ffeb9f93f277:0x140001000
+  features:
+    - and:
+      - match: connect to WMI namespace via WbemLocator
+      - string: "ROOT\\StandardCIMV2"
+      - string: "MSFT_NetTCPConnection"
