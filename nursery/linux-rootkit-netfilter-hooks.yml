@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: linux-rootkit-netfilter-hooks
+    namespace: anti-analysis/linux/rootkit
+    authors:
+      - mrhafizfarhad@gmail.com
+    description: Detects Linux kernel rootkits that register Netfilter hooks.
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Defense Evasion::Rootkit [T1014]
+    references:
+      - https://gist.github.com/loneicewolf/226e3e20e6041d12a63a5e833ebb0503
+  features:
+    - and:
+      - os: linux
+      - or:
+        - substring: "nf_register_net_hook"
+        - substring: "nf_register_net_hooks"
