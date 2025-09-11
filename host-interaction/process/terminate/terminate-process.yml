@@ -23,7 +23,7 @@ rule:
       - api: System.Windows.Forms.Application::Exit
       - api: exit
       - api: Exit
-      - and: RstrtMgr.RmShutdown
+      - api: RstrtMgr.RmShutdown
       - and:
         - os: linux
         - api: exit_group
