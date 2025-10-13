@@ -1,9 +1,9 @@
 rule:
   meta:
-    name: log keystrokes via directx
+    name: log keystrokes via rawinput
     namespace: collection/keylog
     authors:
-      - https://github.com/zeze-zeze
+      - @zeze-zeze
     scopes:
       static: function
       dynamic: call
@@ -13,5 +13,5 @@ rule:
       - 52d8e95c9883cd16d7b44e3a7adc22d6.exe_
   features:
     - and:
-      - api: RegisterRawInputDevices
-      - api: GetRawInputData
+      - api: user32.RegisterRawInputDevices
+      - api: user32.GetRawInputData
