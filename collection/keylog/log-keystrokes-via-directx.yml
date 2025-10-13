@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: log keystrokes via directx
+    namespace: collection/keylog
+    authors:
+      - https://github.com/zeze-zeze
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Collection::Input Capture::Keylogging [T1056.001]
+    examples:
+      - 52d8e95c9883cd16d7b44e3a7adc22d6.exe_
+  features:
+    - and:
+      - api: RegisterRawInputDevices
+      - api: GetRawInputData
