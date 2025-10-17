@@ -3,7 +3,7 @@ rule:
     name: log keystrokes via direct input
     namespace: collection/keylog
     authors:
-      - @zeze-zeze
+      - zeze-zeze
     scopes:
       static: function
       dynamic: call
