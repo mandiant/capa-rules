@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: use io_uring IO interface on Linux
+    namespace: host-interaction/file-system
+    authors:
+      - jakubjozwiak@google.com
+    description: Match on files using io_uring to perform asynchronous I/O
+    scopes:
+      static: basic block
+      dynamic: unsupported  # requires mnemonic features
+    references:
+      - https://man7.org/linux/man-pages/man7/io_uring.7.html
+    examples:
+      - 512a5575ff395389fc952d7925e72be1ca4ba86a5d4f2da50f1cbbde0b208c92:0x404B3C
+  features:
+    - and:
+      - os: linux
+      - or:
+        - mnemonic: syscall
+        - and:
+          - mnemonic: int
+          - operand[0].number: 0x80
+      - or:
+        - number: 0x1A9 = io_uring_setup
+        - number: 0x1AA = io_uring_enter
+        - number: 0x1AB = io_uring_register
