@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: log keystrokes via rawinput
+    name: register raw input devices
     namespace: collection/keylog
     authors:
       - zeze-zeze
