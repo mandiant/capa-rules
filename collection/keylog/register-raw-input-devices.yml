@@ -1,13 +1,17 @@
-# generated using capa explorer for IDA Pro
 rule:
   meta:
     name: register raw input devices
-    namespace: host-interaction/hardware
+    namespace: collection/keylog
     authors:
+      - zeze-zeze
       - michael.hunhoff@mandiant.com
     scopes:
       static: basic block
       dynamic: call
+    att&ck:
+      - Collection::Input Capture::Keylogging [T1056.001]
+    examples:
+      - 52d8e95c9883cd16d7b44e3a7adc22d6.exe_
   features:
     - or:
       - api: user32.RegisterRawInputDevices
