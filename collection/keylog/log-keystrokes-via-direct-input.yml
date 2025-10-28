@@ -12,4 +12,8 @@ rule:
     examples:
       - 0db010298586f17ee7e46f390d5724be.exe_
   features:
-    - api: dinput8.DirectInput8Create
+    - or:
+      - api: dinput8.DirectInput8Create
+      - api: dinput.DirectInputCreateEx
+      - api: dinput.DirectInputCreateW
+      - api: dinput.DirectInputCreateA
