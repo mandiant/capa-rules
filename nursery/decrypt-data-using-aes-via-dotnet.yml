@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: decrypt data using AES via .NET
+    namespace: data-manipulation/encryption/aes
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+  features:
+    - and:
+      - format: dotnet
+      - api: System.Security.Cryptography.Aes::Create
+      - api: System.Security.Cryptography.SymmetricAlgorithm::CreateDecryptor

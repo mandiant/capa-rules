@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: compiled with F#
+    namespace: compiler/fsharp
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: file
+      dynamic: file
+  features:
+    - and:
+      - format: dotnet
+      - namespace: Microsoft.FSharp.Core
