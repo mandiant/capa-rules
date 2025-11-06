@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: get .NET assembly entry point
+    namespace: load-code/dotnet
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: span of calls
+  features:
+    - and:
+      - format: dotnet
+      - property/read: System.Reflection.Assembly::EntryPoint
