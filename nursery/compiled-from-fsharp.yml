@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: compiled with F#
+    name: compiled from FSharp
     namespace: compiler/fsharp
     authors:
       - mehunhoff@google.com
