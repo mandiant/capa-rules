@@ -4,7 +4,7 @@ rule:
     namespace: communication/http/client
     authors:
       - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: function
       dynamic: span of calls
@@ -15,8 +15,6 @@ rule:
       - 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x100026E0
   features:
     - or:
-      - api: System.Net.WebRequest::GetResponse
-      - api: System.Net.WebRequest::GetResponseAsync
       - and:
         - or:
           - api: wininet.HttpOpenRequest
@@ -34,3 +32,18 @@ rule:
       - and:
         - match: send data on socket
         - string: /HTTP/i
+      - and:
+        - format: dotnet
+        - or:
+          - api: System.Net.WebRequest::GetResponse
+          - api: System.Net.WebRequest::GetResponseAsync
+          - api: System.Net.Http.HttpClient::PostAsync
+          - api: System.Net.Http.HttpClient::GetAsync
+          - api: System.Net.Http.HttpClient::GetByteArrayAsync
+          - api: System.Net.Http.HttpClient::GetStreamAsync
+          - api: System.Net.Http.HttpClient::GetStringAsync
+          - api: System.Net.Http.HttpClient::Send
+          - api: System.Net.Http.HttpClient::SendAsync
+          - api: System.Net.Http.HttpClientHandler::Send
+          - api: System.Net.Http.HttpClientHandler::SendAsync
+          - class: System.Net.Http.HttpRequestMessage

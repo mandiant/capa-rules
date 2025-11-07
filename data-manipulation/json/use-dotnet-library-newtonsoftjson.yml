@@ -4,6 +4,7 @@ rule:
     namespace: data-manipulation/json
     authors:
       - "@johnk3r"
+      - mehunhoff@google.com
     scopes:
       static: file
       dynamic: file
@@ -13,5 +14,5 @@ rule:
       - 387f15043f0198fd3a637b0758c2b6dde9ead795c3ed70803426fc355731b173
   features:
     - and:
-      - match: compiled to the .NET platform
-      - string: "Newtonsoft.Json"
+      - format: dotnet
+      - namespace: Newtonsoft.Json

@@ -6,6 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
       - anushka.virgaonkar@mandiant.com
       - william.ballenthin@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: function
       dynamic: span of calls
@@ -50,4 +51,5 @@ rule:
           - api: System.Security.Cryptography.SHA256CryptoServiceProvider::Initialize
           - api: System.Security.Cryptography.SHA256::Create
           - api: System.Security.Cryptography.SHA256Managed::ctor
-        - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
+        - optional:
+          - api: System.Security.Cryptography.HashAlgorithm::ComputeHash

@@ -3,7 +3,7 @@ rule:
     name: receive HTTP response
     namespace: communication/http/client
     authors:
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: function
       dynamic: span of calls
@@ -13,9 +13,13 @@ rule:
       - 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x10002790
   features:
     - or:
-      - api: System.Net.WebRequest::GetResponse
       - api: winhttp.WinHttpReceiveResponse
       - and:
         - api: winhttp.WinHttpReadData
         - optional:
           - api: winhttp.WinHttpQueryDataAvailable
+      - and:
+        - format: dotnet
+        - or:
+          - api: System.Net.WebRequest::GetResponse
+          - class: System.Net.Http.HttpResponseMessage
