@@ -5,6 +5,7 @@ rule:
     authors:
       - "@_re_fox"
       - "echernofsky@google.com"
+      - mehunhoff@google.com
     scopes:
       static: function
       dynamic: span of calls
@@ -96,3 +97,7 @@ rule:
           description: Windows Defender Application Guard
         - string: /HAL9TH/i
           description: Windows Defender Emulator
+        - string: /nepenthes/i
+          description: Nepenthes honeypot
+        - string: /heuerzl/i
+          description: Known sandbox username

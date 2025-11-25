@@ -4,6 +4,7 @@ rule:
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - moritz.raabe@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: file
       dynamic: file
@@ -59,3 +60,7 @@ rule:
       - string: /klavme\.exe/i
       - string: /myapp\.exe/i
       - string: /testapp\.exe/i
+      - string: /vmusrvc\.exe/i
+        description: Microsoft Virtual PC / Hyper-V
+      - string: /vmsrvc\.exe/i
+        description: Microsoft Virtual PC / Hyper-V

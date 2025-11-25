@@ -3,7 +3,7 @@ rule:
     name: reference analysis tools strings
     namespace: anti-analysis
     authors:
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: file
       dynamic: file
@@ -51,3 +51,45 @@ rule:
       - string: /decompile(\.exe)?/i
       - string: /scylla/i
       - string: /megadumper/i
+      - string: /apdagent(\.exe)?/i
+      - string: /apimonitor(\.exe)?/i
+      - string: /azurearcsystray(\.exe)?/i
+      - string: /binaryninja(\.exe)?/i
+      - string: /burpsuite(\.exe)?/i
+      - string: /charles\.exe/i
+      - string: /cutter(\.exe)?/i
+      - string: /dbgx\.shell(\.exe)?/i
+      - string: /df5serv(\.exe)?/i
+      - string: /frida(\.exe)?/i
+      - string: /httpanalyzerv7(\.exe)?/i
+      - string: /httpdebuggerui(\.exe)?/i
+      - string: /netcat(\.exe)?/i
+      - string: /pin\.exe/i
+      - string: /prl_tools(\.exe)?/i
+      - string: /qemu-ga(\.exe)?/i
+      - string: /rammap(\.exe)?/i
+      - string: /rammap64(\.exe)?/i
+      - string: /rdpclip(\.exe)?/i
+      - string: /tasklist/i
+      - string: /cred-store(\.exe)?/i
+      - string: /decoder\.exe/i
+      - string: /dnspy(\.exe)?/i
+      - string: /drrun(\.exe)?/i
+      - string: /dumpit(\.exe)?/i
+      - string: /frida-inject(\.exe)?/i
+      - string: /frida-server(\.exe)?/i
+      - string: /gdb\.exe/i
+      - string: /httpdebuggersvc(\.exe)?/i
+      - string: /ilspy(\.exe)?/i
+      - string: /inetsim(\.exe)?/i
+      - string: /ksdumper(\.exe)?/i
+      - string: /ksdumperclient(\.exe)?/i
+      - string: /mitmdump(\.exe)?/i
+      - string: /pestudio(\.exe)?/i
+      - string: /private-cloud-proxy(\.exe)?/i
+      - string: /process\.exe/i
+      - string: /r2\.exe/i
+      - string: /rekall(\.exe)?/i
+      - string: /tcpdump(\.exe)?/i
+      - string: /windasm(\.exe)?/i
+      - string: /x32dbgn(\.exe)?/i

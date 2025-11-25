@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: run as NodeJS native module
+    namespace: runtime/node
+    authors:
+      - mehunhoff@google.com
+    description: NodeJS native modules enable native code to interact with the NodeJS runtime.
+    scopes:
+      static: file
+      dynamic: file
+  features:
+    - or:
+      - export: napi_register_module_v1
