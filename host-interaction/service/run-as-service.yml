@@ -4,7 +4,7 @@ rule:
     namespace: host-interaction/service
     authors:
       - moritz.raabe@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
     scopes:
       static: file
       dynamic: file
@@ -15,7 +15,13 @@ rule:
   features:
     - or:
       - export: ServiceMain
-      - function:
+      - instruction:
+        - or:
+          - api: RegisterServiceCtrlHandler
+          - api: RegisterServiceCtrlHandlerEx
+          - api: StartServiceCtrlDispatcher
+          - api: System.ServiceProcess.ServiceBase::Run
+      - call:
         - or:
           - api: RegisterServiceCtrlHandler
           - api: RegisterServiceCtrlHandlerEx

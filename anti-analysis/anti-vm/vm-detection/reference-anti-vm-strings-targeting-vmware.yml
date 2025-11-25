@@ -3,7 +3,7 @@ rule:
     name: reference anti-VM strings targeting VMWare
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
       - "@johnk3r"
     scopes:
       static: file
@@ -65,3 +65,5 @@ rule:
       - string: /vmmousever\.dll/i
       - string: /VmGuestLibJava\.dll/i
       - string: /vmscsi\.sys/i
+      - string: /vmwareservice\.exe/i
+      - string: /vgautservice\.exe/i
