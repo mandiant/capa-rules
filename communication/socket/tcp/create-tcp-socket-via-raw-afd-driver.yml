@@ -20,7 +20,6 @@ rule:
       # wanted, but the routine is resolved via GetProcAddress into a global
       # - api: ntdll.NtCreateFile
 
-      - api: kernel32.CreateEvent
       - string: "\\Device\\Afd\\Endpoint"
       - or:
         - description: a hardcoded byte array that provides the socket details to the AFD driver via "extended attributes".
@@ -77,6 +76,7 @@ rule:
       - optional:
         - api: NtCreateFile
         - api: NtDeviceIoControlFile
+        - api: kernel32.CreateEvent 
         - api: kernel32.WaitForSingleObject
         - number: 0x12003 = IOCTL_AFD_BIND
         - number: 0x12007 = IOCTL_AFD_CONNECT
