@@ -4,6 +4,7 @@ rule:
     namespace: host-interaction/process/inject
     authors:
       - still@teamt5.org
+    description: Detect APIs related to injection techniques that injects malicious thread pool context into the target process (TP_WORK)
     scopes:
       static: function
       dynamic: unsupported  # requires offset features
