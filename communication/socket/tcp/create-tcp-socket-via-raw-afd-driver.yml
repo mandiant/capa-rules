@@ -76,7 +76,7 @@ rule:
       - optional:
         - api: NtCreateFile
         - api: NtDeviceIoControlFile
-        - api: kernel32.CreateEvent 
+        - api: kernel32.CreateEvent
         - api: kernel32.WaitForSingleObject
         - number: 0x12003 = IOCTL_AFD_BIND
         - number: 0x12007 = IOCTL_AFD_CONNECT
