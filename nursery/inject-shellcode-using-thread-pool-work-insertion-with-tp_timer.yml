@@ -1,0 +1,38 @@
+rule:
+  meta:
+    name: inject shellcode using thread pool work insertion with TP_TIMER
+    namespace: host-interaction/process/inject
+    authors:
+      - still@teamt5.org
+    description: Detect APIs related to injection techniques that injects malicious thread pool context into the target process (TP_TIMER)
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset features
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection [E1055]
+    references:
+      - https://i.blackhat.com/EU-23/Presentations/EU-23-Leviev-The-Pool-Party-You-Will-Never-Forget.pdf
+      - https://github.com/SafeBreach-Labs/PoolParty
+    examples:
+      - e999b36d5f9783178f0a4efa35a25d158f8d94325c3d6794f4153235c0aee60b:0x14001C1C0
+  features:
+    - and:
+      - description: RemoteTpTimerInsertion
+      - api: CreateThreadpoolTimer
+      - api: NtSetTimer2
+      - or:
+        - api: VirtualAllocEx
+        - api: WriteProcessMemory
+      - or:
+        - and:
+          - arch: amd64
+          - offset: 0x148 = ThreadpoolTimer->DueTime
+          - offset: 0x110 = ThreadpoolTimer->WindowEndLinks.Children.Blink
+          - offset: 0x130 = ThreadpoolTimer->WindowStartLinks.Children.Blink
+        - instruction:
+          - description: set timeout to -10000000
+          - mnemonic: mov
+          - or:
+            - number: 0x0FFFFFFFFFF676980

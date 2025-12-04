@@ -1,0 +1,36 @@
+rule:
+  meta:
+    name: inject shellcode using thread pool work insertion with TP_WORK
+    namespace: host-interaction/process/inject
+    authors:
+      - still@teamt5.org
+    description: Detect APIs related to injection techniques that injects malicious thread pool context into the target process (TP_WORK)
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset features
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection [E1055]
+    references:
+      - https://i.blackhat.com/EU-23/Presentations/EU-23-Leviev-The-Pool-Party-You-Will-Never-Forget.pdf
+      - https://github.com/SafeBreach-Labs/PoolParty
+    examples:
+      - e999b36d5f9783178f0a4efa35a25d158f8d94325c3d6794f4153235c0aee60b:0x140016380
+  features:
+    - and:
+      - description: RemoteTpWorkInsertion
+      - api: CreateThreadpoolWork
+      - or:
+        - api: VirtualAllocEx
+        - api: WriteProcessMemory
+      - or:
+        - and:
+          - arch: amd64
+          - offset: 0x90 = CleanupGroupMember.Pool
+          - offset: 0xD8 = Task.ListEntry.Flink
+          - offset: 0xE0 = Task.ListEntry.Blink
+        - instruction:
+          - description: set WorkState.Exchange to 2
+          - mnemonic: mov
+          - number: 0x2

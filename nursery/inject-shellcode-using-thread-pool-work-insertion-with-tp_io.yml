@@ -1,0 +1,32 @@
+rule:
+  meta:
+    name: inject shellcode using thread pool work insertion with TP_IO
+    namespace: host-interaction/process/inject
+    authors:
+      - still@teamt5.org
+    description: Detect APIs related to injection techniques that injects malicious thread pool context into the target process (TP_IO)
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset features
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection [E1055]
+    references:
+      - https://i.blackhat.com/EU-23/Presentations/EU-23-Leviev-The-Pool-Party-You-Will-Never-Forget.pdf
+      - https://github.com/SafeBreach-Labs/PoolParty
+    examples:
+      - e999b36d5f9783178f0a4efa35a25d158f8d94325c3d6794f4153235c0aee60b:0x1400180E0
+  features:
+    - and:
+      - description: RemoteTpIoInsertion
+      - api: CreateThreadpoolIo
+      - api: ZwSetInformationFile
+      - or:
+        - api: WriteProcessMemory
+        - api: VirtualAllocEx
+      - optional:
+        - and:
+          - arch: amd64
+          - offset: 0x50 = ThreadpoolIo->CleanupGroupMember.Callback
+          - offset: 0x118 = ThreadpoolIo->PendingIrpCount
