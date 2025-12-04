@@ -26,8 +26,6 @@ rule:
         - api: WriteProcessMemory
         - api: VirtualAllocEx
       - optional:
-        - string: "PoolParty.txt"
-          description: "hardcoded filename found in the original PoolParty PoC; file used to trigger TP_IO-related thread pool event"
         - and:
           - arch: amd64
           - offset: 0x50 = ThreadpoolIo->CleanupGroupMember.Callback
