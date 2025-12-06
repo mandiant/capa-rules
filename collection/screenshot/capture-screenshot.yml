@@ -6,6 +6,7 @@ rule:
       - moritz.raabe@mandiant.com
       - "@_re_fox"
       - michael.hunhoff@mandiant.com
+      - "Abhyuday K Hegde"
     scopes:
       static: function
       dynamic: span of calls
@@ -17,15 +18,18 @@ rule:
       - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314610A
       - 7204e3efc2434012e13ca939db0d0b02:0x414070
       - 50D5EE1CE2CA5E30C6B1019EE64EEEC2:0x406E07
+      - 0a30182ff3a6b67beb0f2cda9d0de678:0x407910
   features:
     - or:
+      # Classic GDI Capture
       - and:
         - or:
           - api: user32.GetWindowDC
           - api: user32.GetDC
           - and:
             - api: gdi32.CreateDC
-            - string: "DISPLAY"
+            - optional:
+              - string: "DISPLAY"
         - or:
           - api: gdi32.BitBlt
           - api: gdi32.GetDIBits
@@ -43,3 +47,31 @@ rule:
         - and:
           - api: BitBlt
       - api: System.Drawing.Graphics::CopyFromScreen
+      - and:
+        - api: "SelectObject"
+        - or:
+          - api: "BitBlt"
+          - api: "StretchBlt"
+          - api: "PrintWindow"
+      # GDI+ Graphics API chain
+      - and:
+        - api: "GdipCreateBitmapFromScan0"
+        - api: "GdipGetImageGraphicsContext"
+        - api: "GdipGetDC"
+      # Direct GDI+ screen copy
+      - and:
+        - api: "Gdiplus::Graphics::FromHDC"
+        - api: "Gdiplus::Graphics::CopyFromScreen"
+      # DirectX method of screen capture
+      - and:
+        - or:
+          - api: "PrintWindow"
+          - api: "StretchBlt"
+        - and:
+          - api: "DwmGetDxSharedSurface"
+          - optional:
+            - string: "DXGI"
+        - or:
+          - api: "Direct3DCreate9"
+          - api: "IDirect3DDevice9::GetFrontBufferData"
+          - string: "IDirect3DSurface9::GetDC"
