@@ -82,7 +82,9 @@ rule:
         - api: ImmEnumInputContext
         - api: LdrCallEnclave
         - api: LineDDA
-        - api: RtlRegisterWait
+        - and:
+          - api: RtlRegisterWait
+          - api: SetEvent
         - and:
           - api: SymInitialize
           - or:
