@@ -21,6 +21,7 @@ rule:
       - https://github.com/aahmad097/AlternativeShellcodeExec/
       - https://osandamalith.com/2021/04/01/executing-shellcode-via-callbacks/
       - https://github.com/tlsbollei/Malware-Training/blob/main/Code%20Injection/LdrCallEnclave.cpp
+      - https://osandamalith.com/2025/10/18/rtlregisterwait-shellcode-execution-poc/
     examples:
       - 10cd7afd580ee9c222b0a87ff241d306:0x10008BE0
       - 268d61837aa248c1d49a973612a129ce:0x1000CEC0
@@ -81,6 +82,9 @@ rule:
         - api: ImmEnumInputContext
         - api: LdrCallEnclave
         - api: LineDDA
+        - and:
+          - api: RtlRegisterWait
+          - api: SetEvent
         - and:
           - api: SymInitialize
           - or:
