@@ -1,0 +1,43 @@
+rule:
+  meta:
+    name: encrypt data using HC-256
+    namespace: data-manipulation/encryption/hc-256
+    authors:
+      - wballenthin@hex-rays.com
+    scopes:
+      static: function
+      dynamic: unsupported  # requires mnemonic and operand features
+    att&ck:
+      - Defense Evasion::Obfuscated Files or Information [T1027]
+    mbc:
+      - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+    references:
+      - https://github.com/peterferrie/hc256/blob/master/hc256.c
+      - https://en.wikipedia.org/wiki/HC-256
+      - https://blu3eye.gitbook.io/malware-insight/moonstone-sleet-trojaned-putty
+    examples:
+      - f59035192098e44b86c4648a0de4078edbe80352260276f4755d15d354f5fc58:14006DA50
+  features:
+    - and:
+      - basic block:
+        # from: hc128_generate:
+        #
+        # x0[i] += x0[i10] +
+        #          (ROTR32(x0[i3], 10) ^ ROTL32(x0[i1023], 9)) +
+        #          x1[(x0[i3] ^ x0[i1023]) & 0x3ff];
+        # 
+        # .text:000000014006DAF5 41 C1 C8 0A             ror     r8d, 0Ah
+        # .text:000000014006DAF9 81 E2 FF 03 00 00       and     edx, 3FFh
+        # .text:000000014006DAFF C1 C0 09                rol     eax, 9
+        # .text:000000014006DB02 44 33 C0                xor     r8d, eax
+        - and:
+          - instruction:
+            - mnemonic: ror
+            - operand[1].number: 0xA
+          - instruction:
+            - mnemonic: and
+            - operand[1].number: 0x3FF
+          - instruction:
+            - mnemonic: rol
+            - operand[1].number: 0x9
+          - characteristic: nzxor
