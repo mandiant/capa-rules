@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: PEB access
+    name: PEB access via x86 assembly
     authors:
       - michael.hunhoff@mandiant.com
     lib: true
