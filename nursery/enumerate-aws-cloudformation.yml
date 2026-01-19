@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: enumerate AWS CloudFormation
+    namespace: host-interaction/cloud/aws
+    authors:
+      - maximemorin@google.com
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Discovery::Cloud Service Discovery [T1526]
+    references:
+      - https://unit42.paloaltonetworks.com/teamtnt-operations-cloud-environments/
+      - https://docs.aws.amazon.com/cli/latest/reference/cloudformation/index.html
+  features:
+    - or:
+      - string: "aws cloudformation describe-account-limits"
+      - string: "aws cloudformation describe-stacks"
+      - string: "aws cloudformation list-exports"
+      - string: "aws cloudformation list-stacks"

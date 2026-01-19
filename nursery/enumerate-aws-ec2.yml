@@ -1,0 +1,62 @@
+rule:
+  meta:
+    name: enumerate AWS EC2
+    namespace: host-interaction/cloud/aws
+    authors:
+      - maximemorin@google.com
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Discovery::Cloud Service Discovery [T1526]
+      - Discovery::System Information Discovery [T1082]
+      - Discovery::System Network Configuration Discovery [T1016]
+    references:
+      - https://unit42.paloaltonetworks.com/teamtnt-operations-cloud-environments/
+      - https://docs.aws.amazon.com/cli/latest/reference/ec2/index.html
+  features:
+    - or:
+      - string: "aws ec2 describe-account-attributes"
+      - string: "aws ec2 describe-addresses"
+      - string: "aws ec2 describe-bundle-tasks"
+      - string: "aws ec2 describe-classic-link-instances"
+      - string: "aws ec2 describe-conversion-tasks"
+      - string: "aws ec2 describe-customer-gateways"
+      - string: "aws ec2 describe-dhcp-options"
+      - string: "aws ec2 describe-export-tasks"
+      - string: "aws ec2 describe-flow-logs"
+      - string: "aws ec2 describe-host-reservations"
+      - string: "aws ec2 describe-hosts"
+      - string: "aws ec2 describe-images"
+      - string: "aws ec2 describe-import-image-tasks"
+      - string: "aws ec2 describe-import-snapshot-tasks"
+      - string: "aws ec2 describe-instance-status"
+      - string: "aws ec2 describe-instances"
+      - string: "aws ec2 describe-internet-gateways"
+      - string: "aws ec2 describe-key-pairs"
+      - string: "aws ec2 describe-moving-addresses"
+      - string: "aws ec2 describe-nat-gateways"
+      - string: "aws ec2 describe-network-acls"
+      - string: "aws ec2 describe-network-interfaces"
+      - string: "aws ec2 describe-placement-groups"
+      - string: "aws ec2 describe-reserved-instances"
+      - string: "aws ec2 describe-reserved-instances-listings"
+      - string: "aws ec2 describe-reserved-instances-modifications"
+      - string: "aws ec2 describe-route-tables"
+      - string: "aws ec2 describe-scheduled-instances"
+      - string: "aws ec2 describe-security-groups"
+      - string: "aws ec2 describe-snapshots"
+      - string: "aws ec2 describe-spot-datafeed-subscription"
+      - string: "aws ec2 describe-spot-fleet-requests"
+      - string: "aws ec2 describe-spot-instance-requests"
+      - string: "aws ec2 describe-subnets"
+      - string: "aws ec2 describe-tags"
+      - string: "aws ec2 describe-volume-status"
+      - string: "aws ec2 describe-volumes"
+      - string: "aws ec2 describe-vpc-classic-link"
+      - string: "aws ec2 describe-vpc-classic-link-dns-support"
+      - string: "aws ec2 describe-vpc-endpoints"
+      - string: "aws ec2 describe-vpc-peering-connections"
+      - string: "aws ec2 describe-vpcs"
+      - string: "aws ec2 describe-vpn-connections"
+      - string: "aws ec2 describe-vpn-gateways"

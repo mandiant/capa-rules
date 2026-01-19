@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: enumerate AWS S3
+    namespace: host-interaction/cloud/aws
+    authors:
+      - maximemorin@google.com
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Discovery::Cloud Service Discovery [T1526]
+    references:
+      - https://unit42.paloaltonetworks.com/teamtnt-operations-cloud-environments/
+      - https://docs.aws.amazon.com/cli/latest/reference/s3/index.html
+  features:
+    - or:
+      - string: "aws s3 ls"

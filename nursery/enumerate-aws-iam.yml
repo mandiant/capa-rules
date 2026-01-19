@@ -1,0 +1,32 @@
+rule:
+  meta:
+    name: enumerate AWS IAM
+    namespace: host-interaction/cloud/aws
+    authors:
+      - maximemorin@google.com
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Discovery::Account Discovery::Cloud Account [T1087.004]
+      - Discovery::Permission Groups Discovery::Cloud Groups [T1069.003]
+      - Discovery::Cloud Service Discovery [T1526]
+    references:
+      - https://unit42.paloaltonetworks.com/teamtnt-operations-cloud-environments/
+      - https://docs.aws.amazon.com/cli/latest/reference/iam/index.html
+  features:
+    - or:
+      - string: "aws iam get-account-authorization-details"
+      - string: "aws iam get-account-password-policy"
+      - string: "aws iam get-account-summary"
+      - string: "aws iam list-account-aliases"
+      - string: "aws iam list-groups"
+      - string: "aws iam list-instance-profiles"
+      - string: "aws iam list-open-id-connect-providers"
+      - string: "aws iam list-policies"
+      - string: "aws iam list-roles"
+      - string: "aws iam list-saml-providers"
+      - string: "aws iam list-server-certificates"
+      - string: "aws iam list-users"
+      - string: "aws iam list-virtual-mfa-devices"
+      - string: "aws iam get-credential-report"
