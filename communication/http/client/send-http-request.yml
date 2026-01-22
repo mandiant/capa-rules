@@ -31,7 +31,9 @@ rule:
             - api: winhttp.WinHttpConnect
       - and:
         - match: send data on socket
-        - string: /HTTP/i
+        - or:
+          - string: "GET "
+          - string: "POST "
       - and:
         - format: dotnet
         - or:
