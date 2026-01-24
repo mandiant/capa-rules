@@ -32,8 +32,7 @@ rule:
       - and:
         - match: send data on socket
         - or:
-          - string: /^GET\s+\/\S*\s+HTTP\/\d+(\.\d+)?/i
-          - string: /^POST\s+\/\S*\s+HTTP\/\d+(\.\d+)?/i
+          - string: /^(GET|POST|PUT|PATCH|HEAD|DELETE)\s+\/\S*\s+HTTP\/\d+(\.\d+)?/i
       - and:
         - format: dotnet
         - or:
