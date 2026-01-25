@@ -1,0 +1,33 @@
+rule:
+  meta:
+    name: create UDP socket via WinSock variants
+    namespace: communication/socket/udp
+    authors:
+      - adityashankarkhorne@gmail.com
+    scopes:
+      static: function
+    mbc:
+      - Communication::Socket Communication::Create UDP Socket [C0001.012]
+  features:
+    - or:
+      - and:
+        - api: ws2_32.socket
+        - number: 17 = IPPROTO_UDP
+        - number: 2 = SOCK_DGRAM
+        - number: 2 = AF_INET
+      - and:
+        - api: ws2_32.WSASocket
+        - number: 17 = IPPROTO_UDP
+        - number: 2 = SOCK_DGRAM
+        - number: 2 = AF_INET
+      - and:
+        - api: ws2_32.WSASocketA
+        - number: 17 = IPPROTO_UDP
+        - number: 2 = SOCK_DGRAM
+        - number: 2 = AF_INET
+      - and:
+        - api: ws2_32.WSASocketW
+        - number: 17 = IPPROTO_UDP
+        - number: 2 = SOCK_DGRAM
+        - number: 2 = AF_INET
+      - api: socket
