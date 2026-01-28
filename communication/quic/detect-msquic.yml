@@ -9,7 +9,7 @@ rule:
     references:
       - https://github.com/microsoft/msquic
     examples:
-      - 05be49819139a3fdcdbddbdefd298398779521f3d68daa25275cc77508e42310.exe
+  - 05be49819139a3fdcdbddbdefd298398779521f3d68daa25275cc77508e42310:0x401000
   features:
     - or:
       - string: "msquic.dll"
@@ -21,3 +21,4 @@ rule:
       - api: MsQuicSetParam
       - api: MsQuicGetParam
       - api: MsQuicConnectionStart
+
