@@ -25,7 +25,7 @@ rule:
           - number: 6 = IPPROTO_TCP
         - number: 1 = SOCK_STREAM
         - or:
-          - number: 2 = AF_INET
+- or:`n  - number: 2 = AF_INET`n  - number: 23 = AF_INET6
           - number: 23 = AF_INET6
         - or:
           - api: socket
@@ -36,3 +36,4 @@ rule:
           - api: ws2_32.#83 = WSASocketW
           - api: System.Net.Sockets.Socket::ctor
       - property/read: System.Net.Sockets.TcpClient::Client
+
