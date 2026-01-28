@@ -1,0 +1,34 @@
+rule:
+  meta:
+    name: detect usage of msquic (QUIC) APIs
+    namespace: communication/quic
+    authors:
+      - adityashankarkhorne@gmail.com
+    scopes:
+      static: function
+    mbc:
+      - Communication::Network Communication::QUIC Client/Server [C0005.001]
+    examples:
+      - 05be49819139a3fdcdbddbdefd298398779521f3d68daa25275cc77508e42310.exe:0x401000
+    references:
+      - https://docs.microsoft.com/en-us/windows/win32/quic/overview
+  features:
+    - or:
+      # MsQuic APIs (Windows)
+      - api: MsQuicOpen
+      - api: MsQuicClose
+      - api: MsQuicRegistrationOpen
+      - api: MsQuicRegistrationClose
+      - api: MsQuicConfigurationOpen
+      - api: MsQuicConfigurationClose
+      - api: MsQuicConnectionOpen
+      - api: MsQuicConnectionClose
+      - api: MsQuicStreamOpen
+      - api: MsQuicStreamClose
+
+      # strings and library names (catch other implementations)
+      - string: msquic
+      - string: msquic.dll
+      - string: quiche
+      - string: ngtcp2
+      - string: "quic-go"
