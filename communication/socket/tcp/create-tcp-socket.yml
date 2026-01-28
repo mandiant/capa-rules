@@ -34,3 +34,4 @@ rule:
           - api: ws2_32.#83 = WSASocketW
           - api: System.Net.Sockets.Socket::ctor
       - property/read: System.Net.Sockets.TcpClient::Client
+
