@@ -24,7 +24,9 @@ rule:
           - number: 0 = protocol (default)
           - number: 6 = IPPROTO_TCP
         - number: 1 = SOCK_STREAM
-        - number: 2 = AF_INET
+        - or:
+          - number: 2 = AF_INET
+          - number: 23 = AF_INET6
         - or:
           - api: socket
           - api: ws2_32.socket
