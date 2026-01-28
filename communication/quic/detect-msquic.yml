@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: detect QUIC communication via Microsoft MsQuic
+    namespace: communication/quic/msquic
+    authors:
+      - adityashankarkhorne@gmail.com
+    scopes:
+      static: function
+    references:
+      - https://github.com/microsoft/msquic
+    examples:
+      - 05be49819139a3fdcdbddbdefd298398779521f3d68daa25275cc77508e42310.exe
+  features:
+    - or:
+      - string: "msquic.dll"
+      - api: MsQuicOpen
+      - api: MsQuicConnectionOpen
+      - api: MsQuicStreamOpen
+      - api: MsQuicListenerOpen
+      - api: MsQuicConfigurationOpen
+      - api: MsQuicSetParam
+      - api: MsQuicGetParam
+      - api: MsQuicConnectionStart
