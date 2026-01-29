@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt data using RSA via embedded library
+    name: encrypt data using RSA via embedded library via x86 assembly
     namespace: data-manipulation/encryption/rsa
     authors:
       - "Ana06"
