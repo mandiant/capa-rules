@@ -31,8 +31,9 @@ rule:
             - api: winhttp.WinHttpConnect
       - and:
         - match: send data on socket
-        - or:
-          - string: /^(GET|POST|PUT|PATCH|HEAD|DELETE)\s+\/\S*\s+HTTP\/\d+(\.\d+)?/i
+        - and: 
+            - string: /^(GET|POST|PUT|PATCH|HEAD|DELETE)/i
+            - string: /HTTP\/1\.\d/i
       - and:
         - format: dotnet
         - or:
