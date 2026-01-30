@@ -6,6 +6,7 @@ features:
     - api: advapi32.ChangeServiceConfigA
     - api: advapi32.ChangeServiceConfigW
     - api: advapi32.CreateServiceExA
+    
     - api: advapi32.CreateServiceExW
 
     # Original logic: service-create with SERVICE_AUTO_START / api patterns
