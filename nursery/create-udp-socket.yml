@@ -19,9 +19,7 @@ rule:
       - and:
         - number: 2 = AF_INET
         - number: 2 = SOCK_DGRAM
-        - or:
-          - number: 0 = protocol (default)
-          - number: 17 = IPPROTO_UDP
+        - number: 17 = IPPROTO_UDP
         - or:
           - api: socket
           - api: ws2_32.socket
