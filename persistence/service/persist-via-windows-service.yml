@@ -1,18 +1,3 @@
-rule:
-  meta:
-    name: persist via Windows service
-    namespace: persistence/service
-    authors:
-      - moritz.raabe@mandiant.com
-    scopes:
-      static: function
-      dynamic: span of calls
-    att&ck:
-      - Persistence::Create or Modify System Process::Windows Service [T1543.003]
-      - Execution::System Services::Service Execution [T1569.002]
-    examples:
-      - Practical Malware Analysis Lab 03-02.dll_:0x10004706
-      - 9f012d7e3ae8f62370278e372691eb73b878fe2280b6083e1be637b278021855:0x40113A
 features:
   or:
     # Strong indicator: service APIs
@@ -23,7 +8,35 @@ features:
     - api: advapi32.CreateServiceExA
     - api: advapi32.CreateServiceExW
 
-    # Registry-based persistence (tight, correct)
+    # Original logic: service-create with SERVICE_AUTO_START / api patterns
+    - and:
+      - or:
+        - and:
+          - or:
+            - basic block:
+              - and:
+                - number: 2 = SERVICE_AUTO_START
+                - api: advapi32.CreateService
+            - call:
+              - and:
+                - number: 2 = SERVICE_AUTO_START
+                - api: advapi32.CreateService
+          - optional:
+            - or:
+              - api: advapi32.OpenService
+              - api: advapi32.StartService
+
+    # Original logic: process/create invoking sc.exe or New-Service
+    - and:
+      - match: host-interaction/process/create
+      - or:
+        - and:
+          - string: /^sc(|\.exe)$/i
+          - string: /create /i
+        - string: /^sc(|\.exe) create/i
+        - string: /New-Service /i
+
+    # Tight registry-based persistence: only ImagePath / Start / Type under Service keys
     - and:
       - match: host-interaction/registry/set-value
       - or:
