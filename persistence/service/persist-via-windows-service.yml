@@ -13,30 +13,55 @@ rule:
     examples:
       - Practical Malware Analysis Lab 03-02.dll_:0x10004706
       - 9f012d7e3ae8f62370278e372691eb73b878fe2280b6083e1be637b278021855:0x40113A
-  features:
-    - or:
-      - and:
-        - or:
-          - basic block:
-            - and:
-              - number: 2 = SERVICE_AUTO_START
-              - api: advapi32.CreateService
-          - call:
-            - and:
-              - number: 2 = SERVICE_AUTO_START
-              - api: advapi32.CreateService
-        - optional:
-          - or:
-            - api: advapi32.OpenService
-            - api: advapi32.StartService
-      - and:
-        - match: host-interaction/process/create
-        - or:
+features:
+  or:
+    # -------------------------------------------------
+    # Service creation APIs (strong signal)
+    # -------------------------------------------------
+    - api: advapi32.CreateServiceA
+    - api: advapi32.CreateServiceW
+    - api: advapi32.ChangeServiceConfigA
+    - api: advapi32.ChangeServiceConfigW
+    - api: advapi32.CreateServiceExA
+    - api: advapi32.CreateServiceExW
+
+    # -------------------------------------------------
+    # Original logic: CreateService + SERVICE_AUTO_START
+    # -------------------------------------------------
+    - and:
+      - or:
+        - basic block:
           - and:
-            - string: /^sc(|\.exe)$/i
-            - string: /create /i
-          - string: /^sc(|\.exe) create/i
-          - string: /New-Service /i
-      - and:
-        - match: set registry value
-        - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Services/i
+            - number: 2 = SERVICE_AUTO_START
+            - api: advapi32.CreateService
+        - call:
+          - and:
+            - number: 2 = SERVICE_AUTO_START
+            - api: advapi32.CreateService
+      - optional:
+        - or:
+          - api: advapi32.OpenService
+          - api: advapi32.StartService
+
+    # -------------------------------------------------
+    # Original logic: sc.exe / PowerShell New-Service
+    # -------------------------------------------------
+    - and:
+      - match: host-interaction/process/create
+      - or:
+        - and:
+          - string: /^sc(|\.exe)$/i
+          - string: /create /i
+        - string: /^sc(|\.exe) create/i
+        - string: /New-Service /i
+
+    # -------------------------------------------------
+    # FIXED registry-based persistence (no FP)
+    # -------------------------------------------------
+    - and:
+      - match: host-interaction/registry/set-value
+      - or:
+        - string: /SYSTEM\\CurrentControlSet\\Services\\[^\\]+\\ImagePath/i
+        - string: /SYSTEM\\CurrentControlSet\\Services\\[^\\]+\\Start(?![A-Za-z0-9_])/i
+        - string: /SYSTEM\\CurrentControlSet\\Services\\[^\\]+\\Type(?![A-Za-z0-9_])/i
+
