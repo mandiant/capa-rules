@@ -1,0 +1,33 @@
+rule:
+  meta:
+    name: create TCP socket via WinSock variants
+    namespace: communication/socket/tcp
+    authors:
+      - adityashankarkhorne@gmail.com
+    scopes:
+      static: function
+    mbc:
+      - Communication::Socket Communication::Create TCP Socket [C0001.011]
+  features:
+    - or:
+      - and:
+        - api: ws2_32.socket
+        - number: 6 = IPPROTO_TCP
+        - number: 1 = SOCK_STREAM
+        - number: 2 = AF_INET
+      - and:
+        - api: ws2_32.WSASocket
+        - number: 6 = IPPROTO_TCP
+        - number: 1 = SOCK_STREAM
+        - number: 2 = AF_INET
+      - and:
+        - api: ws2_32.WSASocketA
+        - number: 6 = IPPROTO_TCP
+        - number: 1 = SOCK_STREAM
+        - number: 2 = AF_INET
+      - and:
+        - api: ws2_32.WSASocketW
+        - number: 6 = IPPROTO_TCP
+        - number: 1 = SOCK_STREAM
+        - number: 2 = AF_INET
+      - api: socket
