@@ -14,24 +14,35 @@ rule:
     references:
       - https://github.com/maxmouchet/gfc/blob/8d818b0fe2023c92cbf8d7eb89674916bdc78f62/src/gfc.c#L15
       - https://github.com/TheWover/donut/blob/47758d787209dd1744f58c140102ac91b649df16/hash.c#L35
+      - https://eprint.iacr.org/2013/404.pdf
     examples:
       - d890c1c67d83f1131c065b5eb5f263cbf54559dbcdb4562c3bde3dc30d1a3205:0x1929D
   features:
     - and:
-      - 2 or more:
-        - mnemonic: rol
-        - mnemonic: ror
-        - mnemonic: shl
-        - mnemonic: imul
-      - count(characteristic(nzxor)): 2 or more
       - match: contain loop
-      - instruction:
-        - mnemonic: cmp
-        - or:
-          - number: 0x1A = encryption loop
-          - number: 0x1B = encryption loop
-      - instruction:
-        - mnemonic: cmp
-        - or:
-          - number: 0x3 = master key copy loop
-          - number: 0x4 = master key copy loop
+      - mnemonic: add
+      - count(characteristic(nzxor)): 2 or more
+      - or:
+        - and:
+          - instruction:
+            - mnemonic: ror
+            - number: 0x8
+          - instruction:
+            - mnemonic: rol
+            - number: 0x3
+        - and:
+          - instruction:
+            - mnemonic: ror
+            - number: 0x7
+          - instruction:
+            - mnemonic: rol
+            - number: 0x2
+      - optional:
+        - instruction:
+          - mnemonic: cmp
+          - or:
+            - number: 0x1A
+            - number: 0x1B
+            - number: 0x20
+            - number: 0x21
+            - number: 0x22
