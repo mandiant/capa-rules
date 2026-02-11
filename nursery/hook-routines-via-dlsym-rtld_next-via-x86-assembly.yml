@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: hook routines via dlsym RTLD_NEXT
+    name: hook routines via dlsym RTLD_NEXT via x86 assembly
     namespace: linking/hooking
     authors:
       - william.ballenthin@mandiant.com

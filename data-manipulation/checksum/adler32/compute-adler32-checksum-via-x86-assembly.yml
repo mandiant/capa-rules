@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: compute adler32 checksum
+    name: compute adler32 checksum via x86 assembly
     namespace: data-manipulation/checksum/adler32
     authors:
       - matthew.williams@mandiant.com

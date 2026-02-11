@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get number of processors
+    name: get number of processors via x86 assembly
     namespace: host-interaction/hardware/cpu
     authors:
       - michael.hunhoff@mandiant.com
@@ -17,7 +17,7 @@ rule:
   features:
     - or:
       - and:
-        - match: PEB access
+        - match: PEB access via x86 assembly
         - or:
           - and:
             - arch: i386

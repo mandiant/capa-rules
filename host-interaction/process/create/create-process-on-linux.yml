@@ -20,7 +20,7 @@ rule:
       - or:
         - api: execve
         - and:
-          - match: execute syscall
+          - match: execute syscall via x86 assembly
           - arch: aarch64
           - number: 0xdd = execve
         - api: execl

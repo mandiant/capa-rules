@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: execute syscall
+    name: execute syscall via x86 assembly
     namespace: anti-analysis
     authors:
       - "@kulinacs"

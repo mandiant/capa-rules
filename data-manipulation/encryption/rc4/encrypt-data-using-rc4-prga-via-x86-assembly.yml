@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: encrypt data using RC4 PRGA
+    name: encrypt data using RC4 PRGA via x86 assembly
     namespace: data-manipulation/encryption/rc4
     authors:
       - moritz.raabe@mandiant.com

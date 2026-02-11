@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: access PEB ldr_data
+    name: access PEB ldr_data via x86 assembly
     namespace: linking/runtime-linking
     authors:
       - moritz.raabe@mandiant.com
@@ -20,7 +20,7 @@ rule:
         - arch: i386
         - description: x32
 
-        - match: PEB access
+        - match: PEB access via x86 assembly
 
         # x86 Windows uses fs:0 to access the TIB which contains SEH information at offset 0
         # checking for fs:0 and a (possibly unrelated) number or offset often results in false positives
@@ -37,7 +37,7 @@ rule:
         - arch: amd64
         - description: x64
 
-        - match: PEB access
+        - match: PEB access via x86 assembly
 
         - offset: 0x18 = PEB.LDR_DATA
 

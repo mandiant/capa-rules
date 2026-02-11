@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get process heap flags
+    name: get process heap flags via x86 assembly
     namespace: host-interaction/process
     authors:
       - michael.hunhoff@mandiant.com
@@ -15,7 +15,7 @@ rule:
       - al-khaser_x86.exe_:0x425470
   features:
     - and:
-      - match: PEB access
+      - match: PEB access via x86 assembly
       - or:
         - and:
           - arch: i386

@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: reference processor manufacturer constants
+    name: reference processor manufacturer constants via x86 assembly
     namespace: anti-analysis/anti-vm/vm-detection
     authors:
       - matthew.williams@mandiant.com

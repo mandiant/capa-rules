@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: contain pusha popa sequence
+    name: contain pusha popa sequence via x86 assembly
     authors:
       - moritz.raabe@mandiant.com
     lib: true

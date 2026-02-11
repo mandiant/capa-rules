@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: check for trap flag exception
+    name: check for trap flag exception via x86 assembly
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
       - michael.hunhoff@mandiant.com
