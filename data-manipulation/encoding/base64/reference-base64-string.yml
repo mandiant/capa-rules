@@ -17,4 +17,4 @@ rule:
       - 074072B261FC27B65C72671F13510C05
       - 5DB2D2BE20D59AA0BE6709A6850F1775
   features:
-    - string: /ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\+/
+    - string: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
