@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: persist via ShellServiceObjectDelayLoad registry key
+    namespace: persistence/registry
+    authors:
+      - xpzhxhm@gmail.com
+    description: Match on files using ShellServiceObjectDelayLoad to persist
+    scopes:
+      static: file
+      dynamic: span of calls
+    att&ck:
+      - Persistence::Event Triggered Execution::Component Object Model Hijacking [T1546.015]
+    references:
+      - https://blog.virustotal.com/2024/03/com-objects-hijacking.html
+    examples:
+      - c05ec67e75693127e5556eee229b88f93c7cef926cfe905dfd5464be9d305c94
+
+  features:
+    - and:
+      - os: windows
+      - match: set registry value
+      - or:
+        - string: /Software\\Microsoft\\Windows\\CurrentVersion\\ShellServiceObjectDelayLoad/i
+        - string: /Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\ShellServiceObjectDelayLoad/i
