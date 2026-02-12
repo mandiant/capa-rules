@@ -14,13 +14,29 @@ rule:
     examples:
       - 692f7fd6d198e804d6af98eb9e390d61:0x6000004
   features:
-    - and:
-      - or:
-        - string: / iex\(/i
-        - string: / iex /i
-        - string: /Invoke-Expression/i
-        - api: System.Management.Automation.PowerShell::Create
-        - api: System.Management.Automation.PowerShell::AddScript
+    - or:
+      - and:
         - api: System.Management.Automation.PowerShell::Invoke
-      - optional:
-        - substring: "powershell.exe "
+        - or:
+          - api: System.Management.Automation.PowerShell::Create
+          - api: System.Management.Automation.PowerShell::AddScript
+
+      - and:
+        - substring: "powershell.exe"
+        - or:
+          - string: /\b-EncodedCommand\b/i
+          - string: /\biex\b/i
+          - string: /\bInvoke-Expression\b/i
+
+      - or:
+        - string: /\biex\s*\(/i
+        - string: /\biex\s+\$/i
+        - string: /\bInvoke-Expression\s*\(/i
+        - string: /\bInvoke-Expression\s+\$/i
+        - string: /\|\s*iex\b/i
+        - string: /\|\s*Invoke-Expression\b/i
+        - string: /\bDownloadString\s*\(/i
+        - string: /\bInvoke-WebRequest\s+/i
+        - string: /\bNew-Object\s+System\.Net\.WebClient/i
+        - string: /\bAmsiUtils\b/i
+        - string: /\bamsiInitFailed\b/i
