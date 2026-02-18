@@ -23,7 +23,7 @@ rule:
       - or:
         - string: /\/c\s*del\s*/
           description: "/c del"
-        - string: /(^|[\&;\|]\s*)del(\s.*)?/i
+        - string: /(^|[\&;\|]\s*)del\b(\s.*)?/i
           description: "echo 1&&del /path/to/file"
       - optional:
         - string: /\s*>\s*nul\s*/i
