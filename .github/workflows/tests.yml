@@ -79,21 +79,27 @@ jobs:
       if: github.event_name != 'workflow_dispatch' && github.event_name != 'schedule' && steps.lint_thorough.outcome != 'success'
       run: |
         cd rules/
-        for changed_file in ${{ steps.files.outputs.added_modified }} ${{ steps.files.outputs.renamed }}; do
+        for changed_file in ${STEPS_FILES_OUTPUTS_ADDED_MODIFIED} ${STEPS_FILES_OUTPUTS_RENAMED}; do
           if [[ ! $changed_file =~ .git|.md ]]; then
             tag=$(grep '\sname:' $changed_file | sed 's/^.*: //')
             python ../scripts/lint.py --thorough -t "$tag" -v .
           fi
         done
+      env:
+        STEPS_FILES_OUTPUTS_ADDED_MODIFIED: ${{ steps.files.outputs.added_modified }}
+        STEPS_FILES_OUTPUTS_RENAMED: ${{ steps.files.outputs.renamed }}
     - name: Check feature overlaps on modified rules
       run: |
         cd rules/
-        for changed_file in ${{ steps.files.outputs.added_modified }} ${{ steps.files.outputs.renamed }}; do
+        for changed_file in ${STEPS_FILES_OUTPUTS_ADDED_MODIFIED} ${STEPS_FILES_OUTPUTS_RENAMED}; do
           if [[ ! $changed_file =~ (.git|.md) ]]; then
             python ../scripts/detect_duplicate_features.py . "$changed_file"
           fi
         done
       continue-on-error: true
+      env:
+        STEPS_FILES_OUTPUTS_ADDED_MODIFIED: ${{ steps.files.outputs.added_modified }}
+        STEPS_FILES_OUTPUTS_RENAMED: ${{ steps.files.outputs.renamed }}
 
   # On update of version branch, ensure that branch rules are compatible with latest respective release
   # assume we only update the branch that corresponds to the latest release
@@ -124,6 +130,6 @@ jobs:
         latest: true
         fileName: ${{ env.zip_name }}
     - name: Unzip
-      run: unzip ${{ env.zip_name }} -d latest-release
+      run: unzip ${ZIP_NAME} -d latest-release
     - name: Run latest release with current rules
       run: latest-release/capa -r rules/ tests/data/9324d1a8ae37a36ae560c37448c9705a.exe_

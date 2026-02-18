@@ -59,13 +59,15 @@ jobs:
         pip install pyyaml
     - name: Add new rules to CHANGELOG
       run: |
-        for added_file in ${{ steps.files.outputs.added }}; do
+        for added_file in ${STEPS_FILES_OUTPUTS_ADDED}; do
           [[ $added_file != *.yml ]] && continue # Skip files that are not rules
           [[ $added_file == .git* ]] && continue # Skip git and GitHub Action files
           author=$(python rules/.github/scripts/changelog_author.py rules/$added_file)
           rule=$(echo $added_file | sed 's/\//\\\//g' | sed 's/\.yml//')
           sed -i "0,/- *$/s//- $rule $author\n-/" CHANGELOG.md
         done
+      env:
+        STEPS_FILES_OUTPUTS_ADDED: ${{ steps.files.outputs.added }}
     - name: Commit changes
       run: |
         git config user.email 'capa-dev@mandiant.com'

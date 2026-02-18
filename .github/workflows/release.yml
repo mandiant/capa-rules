@@ -19,7 +19,7 @@ jobs:
         # get all history and tags
         fetch-depth: 0
     - name: Get release text
-      run: python .github/scripts/create_releases.py ${{ github.ref_name }} > release_body.txt
+      run: python .github/scripts/create_releases.py ${GITHUB_REF_NAME} > release_body.txt
     - name: Create GitHub release
       uses: ncipollo/release-action@2c591bcc8ecdcd2db72b97d6147f871fcd833ba5 # v1.14.0
       with:
