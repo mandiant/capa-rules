@@ -20,11 +20,15 @@ rule:
         - or:
           - api: System.Management.Automation.PowerShell::Create
           - api: System.Management.Automation.PowerShell::AddScript
+          - api: System.Management.Automation.PowerShell::AddCommand
+          - api: System.Management.Automation.PowerShell::AddStatement
 
       - and:
-        - substring: "powershell.exe"
         - or:
-          - string: /\b-EncodedCommand\b/i
+          - string: /powershell(\.exe)?/i
+          - string: /pwsh(\.exe)?/i
+        - or:
+          - string: /\b-(e|en|enc|enco|encod|encodedcommand)\b/i
           - string: /\biex\b/i
           - string: /\bInvoke-Expression\b/i
 
@@ -36,7 +40,9 @@ rule:
         - string: /\|\s*iex\b/i
         - string: /\|\s*Invoke-Expression\b/i
         - string: /\bDownloadString\s*\(/i
+        - string: /\b(iwr|curl|wget)\b/i
         - string: /\bInvoke-WebRequest\s+/i
         - string: /\bNew-Object\s+System\.Net\.WebClient/i
+        - string: /\bSystem\.Management\.Automation\.AmsiUtils\b/i
         - string: /\bAmsiUtils\b/i
         - string: /\bamsiInitFailed\b/i
