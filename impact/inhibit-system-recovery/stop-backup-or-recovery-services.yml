@@ -1,10 +1,10 @@
 rule:
   meta:
-    name: disable backup or recovery services
+    name: stop backup or recovery services
     namespace: impact/inhibit-system-recovery
     authors:
       - srivastava.ameya@gmail.com
-    description: the sample attempts to disable and stop backup and recovery services
+    description: the sample attempts to stop backup and recovery services
     scopes:
       static: file
       dynamic: unsupported
