@@ -4,7 +4,7 @@ rule:
     namespace: impact/inhibit-system-recovery
     authors:
       - srivastava.ameya@gmail.com
-    description: the sample attempts to stop backup and recovery services
+    description: the sample attempts to stop backup or recovery services
     scopes:
       static: file
       dynamic: unsupported
@@ -16,19 +16,9 @@ rule:
     examples:
       - B87E9DD18A5533A09D3E48A7A1EFBCF6
   features:
-    - and:
-      - or:
-        - match: stop service
-        - string: /net\s+stop/i
-        - string: /sc(\.exe)?\s+stop/i
-        - string: /sc(\.exe)?\s+config.*start=\s*disabled/i
-        - string: /stop\s+.*\/y/i
-      - or:
-        - string: /veeam/i
-        - string: /backup/i
-        - string: /vss/i
-        - string: /oracle/i
-        - string: /sqlwriter/i
-        - string: /sqlsafe/i
-        - string: /sqltelemetry/i
-        - string: /acronis/i
+    - or:
+      - string: /\bnet\s+stop\s+["']?(veeam|vss|oracle|sqlwriter|sqlsafe|sqltelemetry|acronis|sophos|mssql)\b/i
+      - string: /\bsc(\.exe)?\s+stop\s+["']?(veeam|vss|oracle|sqlwriter|sqlsafe|sqltelemetry|acronis|sophos|mssql)\b/i
+      - string: /\bsc(\.exe)?\s+config\s+["']?(veeam|vss|oracle|sqlwriter|sqlsafe|sqltelemetry|acronis|sophos|mssql)\b.*start=\s*disabled\b/i
+      - string: /\bstop\s+["']?(veeam|vss|oracle|sqlwriter|sqlsafe|sqltelemetry|acronis|sophos|mssql)\b.*\/y\b/i
+      - string: /\btaskkill\b[^"\r\n]\/f\b[^"\r\n]\b(veeam|sqlservr|oracle|acronis|sophos|iis)\b/i
