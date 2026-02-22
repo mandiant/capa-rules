@@ -1,0 +1,34 @@
+rule:
+  meta:
+    name: disable backup or recovery services
+    namespace: impact/inhibit-system-recovery
+    authors:
+      - srivastava.ameya@gmail.com
+    description: the sample attempts to disable and stop backup and recovery services
+    scopes:
+      static: file
+      dynamic: unsupported
+    att&ck:
+      - Impact::Inhibit System Recovery [T1490]
+      - Impact::Service Stop [T1489]
+    references:
+      - https://media.kasperskycontenthub.com/wp-content/uploads/sites/63/2024/09/16054035/Common-TTPs-of-the-modern-ransomware_low-res.pdf
+    examples:
+      - B87E9DD18A5533A09D3E48A7A1EFBCF6
+  features:
+    - and:
+      - or:
+        - match: stop service
+        - string: /net\s+stop/i
+        - string: /sc(\.exe)?\s+stop/i
+        - string: /sc(\.exe)?\s+config.*start=\s*disabled/i
+        - string: /stop\s+.*\/y/i
+      - or:
+        - string: /veeam/i
+        - string: /backup/i
+        - string: /vss/i
+        - string: /oracle/i
+        - string: /sqlwriter/i
+        - string: /sqlsafe/i
+        - string: /sqltelemetry/i
+        - string: /acronis/i
