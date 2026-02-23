@@ -18,6 +18,7 @@ rule:
   features:
     - and:
       - os: windows
+      - match: parse PE header
       # there should be some complexity to functions like this
       - count(basic blocks): 3 or more
       - optional:
