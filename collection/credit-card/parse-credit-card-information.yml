@@ -9,6 +9,10 @@ rule:
       dynamic: unsupported  # requires mnemonic features
     mbc:
       - Data::Check String [C0019]
+    references:
+      - https://github.com/mandiant/capa-rules/issues/1088
+      - https://github.com/mandiant/capa-rules/issues/897
+      - https://en.wikipedia.org/wiki/ISO/IEC_7813
     examples:
       - 1d8fd13c890060464019c0f07b928b1a:0x402860
   features:

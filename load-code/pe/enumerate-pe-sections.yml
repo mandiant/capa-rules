@@ -11,6 +11,7 @@ rule:
     mbc:
       - Discovery::Code Discovery::Enumerate PE Sections [B0046.001]
     references:
+      - https://github.com/mandiant/capa-rules/issues/1090
       - https://0x00sec.org/t/reflective-dll-injection/3080
       - https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection
     examples:
