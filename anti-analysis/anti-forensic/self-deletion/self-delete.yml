@@ -21,9 +21,9 @@ rule:
         - string: "cmd.exe"
         - match: host-interaction/process/create
       - or:
-        - string: /\/c\s*del\s*/
+        - string: /\/c\s*\bdel\b\s*/
           description: "/c del"
-        - string: /(^|[\&;\|]\s*)del\b(\s.*)?/i
+        - string: /(^|[\&;\|]\s*)\bdel\b(\s.*)?/i
           description: "echo 1&&del /path/to/file"
       - optional:
         - string: /\s*>\s*nul\s*/i
