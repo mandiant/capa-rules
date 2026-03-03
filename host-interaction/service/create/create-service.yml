@@ -13,7 +13,14 @@ rule:
     examples:
       - Practical Malware Analysis Lab 03-02.dll_:0x10004706
   features:
-    - and:
-      - api: advapi32.CreateService
-      - optional:
-        - api: advapi32.OpenSCManager
+    - or:
+      - and:
+        - api: advapi32.CreateService
+        - optional:
+          - api: advapi32.OpenSCManager
+      - and:
+        - or:
+          - substring: "sc.exe create"
+          - substring: "sc create"
+        - optional:
+          - substring: "binpath="
