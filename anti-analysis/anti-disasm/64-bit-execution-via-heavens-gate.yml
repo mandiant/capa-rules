@@ -13,21 +13,40 @@ rule:
     references:
       - https://download.bitdefender.com/resources/files/News/CaseStudies/study/318/Bitdefender-TRR-Whitepaper-Maze-creat4351-en-EN-GenericUse.pdf
       - https://www.malwaretech.com/2014/02/the-0x33-segment-selector-heavens-gate.html
+      - https://github.com/mandiant/capa-rules/issues/1096
     examples:
       - 79abd17391adc6251ecdc58d13d76baf:0x10002385
   features:
     - and:
+      - arch: i386
       - or:
-        - description: set up retf to push 0x33 to CS indicating 64-bit mode
-        - instruction:
-          - mnemonic: push
-          - number: 0x33
-        - instruction:
-          - mnemonic: mov
-          - number: 0x33
-      - characteristic: call $+5
-        description: call $+5 pushes the current EIP onto the stack, +5 to jump past call insn bytes
-      - instruction:
-        - mnemonic: add = 'add dword ptr[esp], 5' updates the return address to point after retf
-        - number: 0x5 = length of add + retf insn bytes
-      - mnemonic: retf = set EIP = [ESP] and CS = [ESP+4]
+        - and:
+          - description: set up retf to push 0x33 to CS indicating 64-bit mode
+          - or:
+            - instruction:
+              - mnemonic: push
+              - number: 0x33
+            - instruction:
+              - mnemonic: mov
+              - number: 0x33
+          - characteristic: call $+5
+            description: call $+5 pushes the current EIP onto the stack, +5 to jump past call insn bytes
+          - instruction:
+            - mnemonic: add = 'add dword ptr[esp], 5' updates the return address to point after retf
+            - number: 0x5 = length of add + retf insn bytes
+          - mnemonic: retf = set EIP = [ESP] and CS = [ESP+4]
+        - and:
+          - description: obfuscated variant computes selector 0x33 at runtime then transitions using retf
+          - instruction:
+            - mnemonic: push
+            - number: 0x3
+          - instruction:
+            - mnemonic: shl
+            - number: 0x4
+          - instruction:
+            - mnemonic: add
+            - number: 0x3
+          - instruction:
+            - mnemonic: push
+            - number: 0x0
+          - mnemonic: retf
