@@ -25,8 +25,8 @@ rule:
 
       - and:
         - or:
-          - string: /powershell(\.exe)?/i
-          - string: /pwsh(\.exe)?/i
+          - string: /\bpowershell(\.exe)?\b/i
+          - string: /\bpwsh(\.exe)?\b/i
         - or:
           - string: /\b-(e|en|enc|enco|encod|encodedcommand)\b/i
           - string: /\biex\b/i
