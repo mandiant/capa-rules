@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: get HTTP response date
+    namespace: communication/http/client
+    authors:
+      - social.tarang@gmail.com
+    scopes:
+      static: basic block
+      dynamic: call
+    mbc:
+      - Communication::HTTP Communication::Read Header [C0002.014]
+  features:
+    - and:
+      - api: wininet.HttpQueryInfo
+      - number: 0x9 = HTTP_QUERY_DATE
