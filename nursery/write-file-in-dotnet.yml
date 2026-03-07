@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: write file in .NET
+    namespace: host-interaction/file-system/write
+    authors:
+      - william.ballenthin@mandiant.com
+      - anushka.virgaonkar@mandiant.com
+    scopes:
+      static: function
+      dynamic: call
+    mbc:
+      - File System::Writes File [C0052]
+  features:
+    - or:
+      - api: System.IO.File::WriteAllBytes
+      - api: System.IO.File::WriteAllBytesAsync
+      - api: System.IO.File::WriteAllLines
+      - api: System.IO.File::WriteAllLinesAsync
+      - api: System.IO.File::WriteAllText
+      - api: System.IO.File::WriteAllTextAsync
+      - api: System.IO.File::AppendAllLines
+      - api: System.IO.File::AppendAllLinesAsync
+      - api: System.IO.File::AppendAllText
+      - api: System.IO.File::AppendAllTextAsync
+      - api: System.IO.File::AppendText
+      - api: System.IO.FileInfo::AppendText
