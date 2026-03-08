@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: create process in .NET
+    namespace: host-interaction/process/create
+    authors:
+      - moritz.raabe@mandiant.com
+      - social.tarang@gmail.com
+    scopes:
+      static: basic block
+      dynamic: call
+    mbc:
+      - Process::Create Process [C0017]
+    examples:
+      - 692f7fd6d198e804d6af98eb9e390d61:0x6000003
+  features:
+    - or:
+      - api: System.Diagnostics.Process::Start
