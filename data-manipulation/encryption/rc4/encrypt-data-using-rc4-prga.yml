@@ -23,10 +23,11 @@ rule:
       - count(characteristic(nzxor)): 1
       - or:
         - match: calculate modulo 256 via x86 assembly
+        - number: 0x800000FF
         # compiler may do this via zero-extended mov from 8-bit register
         - count(mnemonic(movzx)): 4 or more
       # should not call (many) functions
-      - count(characteristic(calls from)): (0, 4)
+      - count(characteristic(calls from)): (0, 10)
       # should not be too simple or too complex (50 is picked by intuition)
       - count(basic blocks): (4, 50)
       - match: contain loop

@@ -32,6 +32,7 @@ rule:
         - or:
           - description: modulo 256
           - match: calculate modulo 256 via x86 assembly
+          - number: 0x800000FF
           - basic block:
             - and:
               - description: modulo via zero-extended mov from 8-bit register
