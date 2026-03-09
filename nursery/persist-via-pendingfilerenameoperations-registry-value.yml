@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: persist via PendingFileRenameOperations registry value
+    namespace: persistence/registry
+    authors:
+      - akshat4703
+    scopes:
+      static: function
+      dynamic: span of calls
+    references:
+      - https://github.com/mandiant/capa-rules/issues/911
+      - https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefileexa
+      - https://forensicatorj.wordpress.com/2014/06/25/interpreting-the-pendingfilerenameoperations-registry-key-for-forensics/
+    examples:
+      - ac742739cae0d411dfcb78ae99a7baee:0x140002318
+  features:
+    - and:
+      - or:
+        - match: set registry value
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
+      - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Control\\Session Manager/i
+      - string: /PendingFileRenameOperations/i
