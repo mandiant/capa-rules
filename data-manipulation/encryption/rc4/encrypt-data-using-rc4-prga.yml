@@ -18,20 +18,27 @@ rule:
       - 9324D1A8AE37A36AE560C37448C9705A:0x4049F0
       - 73CE04892E5F39EC82B00C02FC04C70F:0x4064C6
   features:
-    - and:
-      # TODO: maybe add characteristic for nzxor reg size
-      - count(characteristic(nzxor)): 1
-      - or:
-        - match: calculate modulo 256 via x86 assembly
-        - number: 0x800000FF
-        # compiler may do this via zero-extended mov from 8-bit register
-        - count(mnemonic(movzx)): 4 or more
-      # should not call (many) functions
-      - count(characteristic(calls from)): (0, 10)
-      # should not be too simple or too complex (50 is picked by intuition)
-      - count(basic blocks): (4, 50)
-      - match: contain loop
-      - optional:
+    - or:
+      - and:
+        # TODO: maybe add characteristic for nzxor reg size
+        - count(characteristic(nzxor)): 1
         - or:
-          - number: 0xFF
-          - number: 0x100
+          - match: calculate modulo 256 via x86 assembly
+          # compiler may do this via zero-extended mov from 8-bit register
+          - count(mnemonic(movzx)): 4 or more
+        # should not call (many) functions
+        - count(characteristic(calls from)): (0, 4)
+        # should not be too simple or too complex (50 is picked by intuition)
+        - count(basic blocks): (4, 50)
+        - match: contain loop
+        - optional:
+          - or:
+            - number: 0xFF
+            - number: 0x100
+      - and:
+        # when RC4 PRGA is inlined, the modulo constant may be
+        # loaded into a register rather than used directly with AND
+        - count(characteristic(nzxor)): 1
+        - number: 0x800000FF
+        - count(basic blocks): (4, 50)
+        - match: contain loop
