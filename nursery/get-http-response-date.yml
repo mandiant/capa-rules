@@ -3,7 +3,7 @@ rule:
     name: get HTTP response date
     namespace: communication/http/client
     authors:
-      - social.tarang@gmail.com
+      - "@cosmoworker"
     scopes:
       static: basic block
       dynamic: call
