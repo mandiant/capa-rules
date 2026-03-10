@@ -15,6 +15,7 @@ rule:
       - https://en.wikipedia.org/wiki/CPUID
   features:
     - and:
+      - mnemonic: cpuid
       - mnemonic: cmp
       - or:
         - number: 0x61774D56 = 'awMV' (VMware)
@@ -23,5 +24,3 @@ rule:
         - number: 0x4B4D564B = 'KMVK' (KVM)
         - number: 0x70726C20 = 'prl ' (Parallels)
         - number: 0x786F4256 = 'xoBV' (VirtualBox)
-      - optional:
-        - mnemonic: cpuid
