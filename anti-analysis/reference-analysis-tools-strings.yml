@@ -24,8 +24,8 @@ rule:
       - string: /\bprocmon(\.exe)?\b/i
       - string: /\bregmon(\.exe)?\b/i
       - string: /\bprocexp(\.exe)?\b/i
-      - string: /(?<!\w)ida[gqtuw]?(\.exe)?$/i
-      - string: /ida[gqtuw]?64(\.exe)?$/i
+      - string: /\bida[gqtuw]?(\.exe)?\b/i
+      - string: /\bida[gqtuw]?64(\.exe)?\b/i
       - string: /\bImmunityDebugger(\.exe)?\b/i
       - string: /\bWireshark(\.exe)?\b/i
       - string: /\bdumpcap(\.exe)?\b/i
