@@ -10,7 +10,6 @@ rule:
     att&ck:
       - Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]
     references:
-      - https://github.com/mandiant/capa-rules/issues/959
       - https://learn.microsoft.com/en-us/windows/win32/taskschd/taskservice
   features:
     - or:
@@ -25,7 +24,7 @@ rule:
         - or:
           - string: /Microsoft\.Win32\.TaskScheduler\.TaskService/i
           - string: /TaskScheduler\.TaskService/i
-          - string: /Schedule\.Service/i
+          - string: /\bSchedule\.Service\b/i
         - or:
-          - string: /RegisterTaskDefinition/i
-          - string: /NewTask/i
+          - string: /\bRegisterTaskDefinition\b/i
+          - string: /\bNewTask\b/i
