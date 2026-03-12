@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: read file in .NET
+    namespace: host-interaction/file-system/read
+    authors:
+      - moritz.raabe@mandiant.com
+      - anushka.virgaonkar@mandiant.com
+    scopes:
+      static: instruction
+      dynamic: call
+    mbc:
+      - File System::Read File [C0051]
+  features:
+    - and:
+      - format: dotnet
+      - or:
+        - api: System.IO.File::ReadAllBytes
+        - api: System.IO.File::ReadAllBytesAsync
+        - api: System.IO.File::ReadAllLines
+        - api: System.IO.File::ReadAllLinesAsync
+        - api: System.IO.File::ReadAllText
+        - api: System.IO.File::ReadAllTextAsync
+        - api: System.IO.File::ReadLines
