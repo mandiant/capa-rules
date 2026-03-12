@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: check for time delay via Environment.TickCount in .NET
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    authors:
+      - Aryan Khandhadiya
+    description: detects potential debugger checks by comparing Environment.TickCount values around Thread.Sleep calls.
+    scopes:
+      static: function
+      dynamic: unsupported
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion [T1497]
+    mbc:
+      - Anti-Behavioral Analysis::Debugger Detection::Timing/Delay Check GetTickCount [B0001.032]
+    references:
+      - https://github.com/Outbuilt/.NET-Anti-Debug
+      - https://github.com/mandiant/capa-rules/issues/596
+    examples:
+      - e842958188274d5ffee7fbeffb803b2e:0x6000001
+
+  features:
+    - and:
+      - format: dotnet
+      - api: System.Threading.Thread::Sleep
+      - count(property(System.Environment::TickCount)): 2 or more
