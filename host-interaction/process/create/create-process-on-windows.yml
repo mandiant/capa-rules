@@ -5,7 +5,7 @@ rule:
     authors:
       - moritz.raabe@mandiant.com
     scopes:
-      static: basic block
+      static: instruction
       dynamic: call
     mbc:
       - Process::Create Process [C0017]
