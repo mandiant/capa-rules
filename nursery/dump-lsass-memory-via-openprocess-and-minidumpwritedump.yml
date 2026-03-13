@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: dump LSASS memory via OpenProcess and MiniDumpWriteDump
+    namespace: collection/credential-dumping
+    authors:
+      - akshatpal
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Credential Access::OS Credential Dumping::LSASS Memory [T1003.001]
+    references:
+      - https://attack.mitre.org/techniques/T1003/001/
+      - https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess
+      - https://learn.microsoft.com/en-us/windows/win32/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump
+    examples:
+      - 91a12a4cf437589ba70b1687f5acad19:0x43E1C9
+  features:
+    - and:
+      - match: open process
+      - match: create process memory minidump
+      - or:
+        - substring: "lsass.exe"
+        - substring: "\\lsass.exe"
+      - optional:
+        - match: acquire debug privileges
