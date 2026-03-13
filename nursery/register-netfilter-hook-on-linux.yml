@@ -3,17 +3,16 @@ rule:
     name: register Netfilter hook on Linux
     namespace: host-interaction/network
     authors:
-      - Aryan Khandhadiya
+      - aryanyk
     description: kernel rootkits can register Netfilter hooks to inspect or modify packet flow
     scopes:
-      static: function
+      static: instruction
       dynamic: call
     att&ck:
       - Defense Evasion::Impair Defenses [T1562]
     references:
       - https://inferi.club/post/the-art-of-linux-kernel-rootkits
       - https://www.kernel.org/doc/html/latest/networking/netfilter.html
-
   features:
     - and:
       - os: linux
