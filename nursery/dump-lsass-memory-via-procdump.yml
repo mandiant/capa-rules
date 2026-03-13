@@ -13,6 +13,8 @@ rule:
       - https://attack.mitre.org/techniques/T1003/001/
       - https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
       - https://lolbas-project.github.io/lolbas/OtherMSBinaries/Procdump/
+    examples:
+      - 91a12a4cf437589ba70b1687f5acad19:0x43E1C9
   features:
     - and:
       - match: host-interaction/process/create
