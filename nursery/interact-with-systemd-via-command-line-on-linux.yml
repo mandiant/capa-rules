@@ -1,0 +1,28 @@
+rule:
+  meta:
+    name: interact with systemd via command line on Linux
+    namespace: host-interaction/service
+    authors:
+      - akshatpal@users.noreply.github.com
+    description: detect command-line interaction with systemd services or logs on Linux
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Discovery::System Service Discovery [T1007]
+    references:
+      - https://man7.org/linux/man-pages/man1/systemctl.1.html
+      - https://man7.org/linux/man-pages/man1/journalctl.1.html
+      - https://man7.org/linux/man-pages/man1/systemd-run.1.html
+  features:
+    - and:
+      - or:
+        - os: linux
+        - os: android
+      - or:
+        - match: execute command
+        - match: create process on Linux
+      - or:
+        - string: /\bsystemctl\b/i
+        - string: /\bjournalctl\b/i
+        - string: /\bsystemd-run\b/i
