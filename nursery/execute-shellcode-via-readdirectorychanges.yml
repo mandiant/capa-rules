@@ -1,0 +1,31 @@
+rule:
+  meta:
+    name: execute shellcode via ReadDirectoryChanges
+    namespace: load-code/shellcode
+    authors:
+      - akshatpal@users.noreply.github.com
+    description: detect execution of arbitrary shellcode via ReadDirectoryChanges completion routines
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Defense Evasion::Reflective Code Loading [T1620]
+    mbc:
+      - Defense Evasion::Hijack Execution Flow::Abuse Windows Function Calls [F0015.006]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readdirectorychangesw
+      - https://learn.microsoft.com/en-us/windows/win32/api/minwinbase/nc-minwinbase-lpoverlapped_completion_routine
+  features:
+    - and:
+      - match: allocate or change RWX memory
+      - or:
+        - api: ReadDirectoryChangesW
+        - api: ReadDirectoryChangesExW
+      - or:
+        - api: SleepEx
+        - api: WaitForSingleObjectEx
+        - api: WaitForMultipleObjectsEx
+      - optional:
+        - or:
+          - api: CreateFileA
+          - api: CreateFileW
