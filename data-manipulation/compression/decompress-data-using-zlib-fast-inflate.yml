@@ -1,0 +1,28 @@
+rule:
+  meta:
+    name: decompress data using ZLIB fast inflate
+    namespace: data-manipulation/compression
+    authors:
+      - priyank766
+    description: detects Chris Anderson's x86 assembly implementation of zlib inflate_fast
+    scopes:
+      static: function
+      dynamic: unsupported  # requires bytes features
+    mbc:
+      - Data::Decompress Data [C0025]
+    references:
+      - https://github.com/madler/zlib/blob/cacf7f1d4e3d44d871b605da3b647f07d718623f/contrib/masmx86/inffas32.asm
+      - https://github.com/mandiant/capa-rules/issues/494
+    examples:
+      - c2ba065654f13612ae63bca7f972ea91c6fe97291caeaaa3a28a180fb1912b3a.dll_:0x3FE40
+  features:
+    - and:
+      - description: Chris Anderson x86 assembly implementation of zlib inflate_fast
+      - string: Fast decoding Code from Chris Anderson
+      - string: invalid literal/length code
+      - string: invalid distance code
+      - string: invalid distance too far back
+      - bytes: 0F A2 81 FB 47 65 6E 75 75 38 81 F9 6E 74 65 6C 75 30 81 FA 69 6E 65 49 75 28
+        = cpuid GenuineIntel checks before enabling MMX
+      - bytes: 00 00 00 00 01 00 00 00 03 00 00 00 07 00 00 00 0F 00 00 00 1F 00 00 00 3F 00 00 00
+        = inflate_fast_mask table prefix
