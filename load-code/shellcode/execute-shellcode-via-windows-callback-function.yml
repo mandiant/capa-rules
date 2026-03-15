@@ -22,6 +22,7 @@ rule:
       - https://osandamalith.com/2021/04/01/executing-shellcode-via-callbacks/
       - https://github.com/tlsbollei/Malware-Training/blob/main/Code%20Injection/LdrCallEnclave.cpp
       - https://osandamalith.com/2025/10/18/rtlregisterwait-shellcode-execution-poc/
+      - https://osandamalith.com/2025/09/25/executing-shellcode-with-readdirectorychangess-hidden-callback/
     examples:
       - 10cd7afd580ee9c222b0a87ff241d306:0x10008BE0
       - 268d61837aa248c1d49a973612a129ce:0x1000CEC0
@@ -82,6 +83,10 @@ rule:
         - api: ImmEnumInputContext
         - api: LdrCallEnclave
         - api: LineDDA
+        - api: ReadDirectoryChangesA
+        - api: ReadDirectoryChangesW
+        - api: ReadDirectoryChangesExA
+        - api: ReadDirectoryChangesExW
         - and:
           - api: RtlRegisterWait
           - api: SetEvent

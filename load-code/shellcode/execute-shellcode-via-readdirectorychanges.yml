@@ -1,0 +1,31 @@
+rule:
+  meta:
+    name: execute shellcode via ReadDirectoryChanges APC
+    namespace: load-code/shellcode
+    authors:
+      - sherkhanz
+    description: Detects abuse of the ReadDirectoryChanges API completion routine combined with an alertable wait state to execute shellcode.
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Defense Evasion::Process Injection::Asynchronous Procedure Call [T1055.004]
+    mbc:
+      - Defense Evasion::Hijack Execution Flow::Abuse Windows Function Calls [F0015.006]
+    references:
+      - https://github.com/mandiant/capa-rules/issues/1095
+      - https://osandamalith.com/2025/09/25/executing-shellcode-with-readdirectorychangess-hidden-callback/
+      - https://github.com/OsandaMalith/CallbackShellcode/blob/main/ReadDirectoryChanges.c
+  features:
+    - and:
+      - or:
+        - api: ReadDirectoryChangesW
+        - api: ReadDirectoryChangesA
+        - api: ReadDirectoryChangesExW
+        - api: ReadDirectoryChangesExA
+      - or:
+        - api: SleepEx
+        - api: WaitForSingleObjectEx
+        - api: WaitForMultipleObjectsEx
+        - api: MsgWaitForMultipleObjectsEx
+        - api: SignalObjectAndWait
