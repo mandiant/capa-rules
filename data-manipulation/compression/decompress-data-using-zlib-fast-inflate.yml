@@ -12,7 +12,6 @@ rule:
       - Data::Decompress Data [C0025]
     references:
       - https://github.com/madler/zlib/blob/cacf7f1d4e3d44d871b605da3b647f07d718623f/contrib/masmx86/inffas32.asm
-      - https://github.com/mandiant/capa-rules/issues/494
     examples:
       - c2ba065654f13612ae63bca7f972ea91c6fe97291caeaaa3a28a180fb1912b3a.dll_:0x3FE40
   features:
