@@ -3,10 +3,10 @@ rule:
     name: interact with systemd via command line on Linux
     namespace: host-interaction/service
     authors:
-      - akshatpal@users.noreply.github.com
+      - akshatpal
     description: detect command-line interaction with systemd services or logs on Linux
     scopes:
-      static: function
+      static: basic block
       dynamic: call
     att&ck:
       - Discovery::System Service Discovery [T1007]
@@ -18,9 +18,9 @@ rule:
     - and:
       - or:
         - os: linux
-        - os: android
       - or:
-        - match: execute command
+        - api: system
+        - api: _system
         - match: create process on Linux
       - or:
         - string: /\bsystemctl\b/i
