@@ -19,13 +19,11 @@ rule:
     - and:
       - match: allocate or change RWX memory
       - or:
-        - api: ReadDirectoryChangesW
-        - api: ReadDirectoryChangesExW
+        - api: ReadDirectoryChanges
+        - api: ReadDirectoryChangesEx
       - or:
         - api: SleepEx
         - api: WaitForSingleObjectEx
         - api: WaitForMultipleObjectsEx
       - optional:
-        - or:
-          - api: CreateFileA
-          - api: CreateFileW
+        - api: CreateFile
