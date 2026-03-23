@@ -25,16 +25,24 @@ rule:
           - api: user32.GetDC
           - and:
             - api: gdi32.CreateDC
-            - string: "DISPLAY"
+            - string: /^DISPLAY.*$/i # Regex exp. to match "DISPLAY", "DISPLAY1", "DISPLAYVGA", etc.
         - or:
           - api: gdi32.BitBlt
           - api: gdi32.GetDIBits
+          - api: gdi32.StretchBlt
+          - api: user32.PrintWindow
         - api: gdi32.CreateCompatibleDC
         - api: gdi32.CreateCompatibleBitmap
         - optional:
           - or:
             - api: user32.GetSystemMetrics = fetch screen dimensions
             - api: user32.GetDesktopWindow = get entire desktop
+      # GDI+ Screen capture
+      - and:
+        - api: GdipCreateBitmapFromScan0
+        - api: GdipGetImageGraphicsContext
+        - api: GdipGetDC
+
       - basic block:
         - and:
           - api: BitBlt
