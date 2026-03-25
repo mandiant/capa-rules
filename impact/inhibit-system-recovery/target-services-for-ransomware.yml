@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: target services for ransomware
+    namespace: impact/inhibit-system-recovery
+    authors:
+      - AnasRm01
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Impact::Inhibit System Recovery [T1490]
+      - Impact::Service Stop [T1489]
+    references:
+      - https://github.com/netskopeoss/NetskopeThreatLabsIOCs/blob/main/Malware/BlackMatter/IOCs/README.md
+  features:
+    - or:
+      - and:
+        - api: OpenServiceA
+        - api: ControlService
+      - and:
+        - api: OpenServiceW
+        - api: ControlService
