@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: get HTTP custom headers
+    name: get custom HTTP header
     namespace: communication/http
     authors:
       - "@msanchit-dev"
