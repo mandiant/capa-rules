@@ -20,7 +20,6 @@ rule:
         - os: linux
       - or:
         - api: system
-        - api: _system
         - match: create process on Linux
       - or:
         - string: /\bsystemctl\b/i
