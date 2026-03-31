@@ -7,7 +7,7 @@ rule:
     description: detects Chris Anderson's x86 assembly implementation of zlib inflate_fast
     scopes:
       static: function
-      dynamic: unsupported  # requires bytes features
+      dynamic: unsupported  # requires mnemonic features
     mbc:
       - Data::Decompress Data [C0025]
     references:
@@ -19,4 +19,4 @@ rule:
       - string: "invalid literal/length code"
       - string: "invalid distance code"
       - string: "invalid distance too far back"
-      - bytes: 0F A2 81 FB 47 65 6E 75 75 38 81 F9 6E 74 65 6C 75 30 81 FA 69 6E 65 49 75 28 = cpuid GenuineIntel checks before enabling MMX
+      - mnemonic: cpuid
