@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: decompress data using ZLIB fast inflate
+    namespace: data-manipulation/compression
+    authors:
+      - priyank766
+    description: detects Chris Anderson's x86 assembly implementation of zlib inflate_fast
+    scopes:
+      static: function
+      dynamic: unsupported  # requires mnemonic features
+    mbc:
+      - Data::Decompress Data [C0025]
+    references:
+      - https://github.com/madler/zlib/blob/cacf7f1d4e3d44d871b605da3b647f07d718623f/contrib/masmx86/inffas32.asm
+    examples:
+      - c2ba065654f13612ae63bca7f972ea91c6fe97291caeaaa3a28a180fb1912b3a.dll_:0x3FE40
+  features:
+    - and:
+      - string: "invalid literal/length code"
+      - string: "invalid distance code"
+      - string: "invalid distance too far back"
+      - mnemonic: cpuid
