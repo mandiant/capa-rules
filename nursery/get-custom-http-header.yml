@@ -1,0 +1,15 @@
+rule:
+  meta:
+    name: get custom HTTP header
+    namespace: communication/http
+    authors:
+      - "@msanchit-dev"
+    scopes:
+      static: basic block
+      dynamic: call
+    mbc:
+      - Communication::HTTP Communication::Read Header [C0002.014]
+  features:
+    - and:
+      - api: wininet.HttpQueryInfo
+      - number: 0xFFFF = HTTP_QUERY_CUSTOM
