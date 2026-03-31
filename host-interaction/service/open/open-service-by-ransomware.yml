@@ -1,0 +1,55 @@
+rule:
+  meta:
+    name: open service by ransomware
+    namespace: host-interaction/service/open
+    authors:
+      - github - @cipherBT
+    description: Detects when a ransomware tries to open services known to be associared to them
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Impact::Inhibit system recovery [T1490]
+      - Defense Evasion::Disable/moify tools [F004.004]
+    examples:
+      - ""
+  features:
+    - and:
+      # Call a windows api
+      - or:
+        - api: advapi32.OpenService
+        - api: advapi32.ControlService
+        - api: advapi32.DeleteService
+      # Reference one of the typical ransomware targets from Netskope
+      -or:
+        - string: "vss"   
+        - string: "sql"        
+        - string: "backup"
+        - string: "svc$"
+        - string: "VSS"
+        # Specific Antivirus/Security/Backup targets
+        - string: "sophos"
+        - string: "veeam"
+        - string: "memtas"
+        - string: "mepocs"
+        - string: "GxVss"
+        - string: "GxBlr"
+        - string: "GxFWD"
+        - string: "GxCVD"
+        - string: "GxCIC"
+        - string: "DefWatch"
+        - string: "ccevtmgr"
+        - string: "ccSetMgr"
+        - string: "SavRoam"
+        - string: "RTVscan"
+        - string: "zhudongfangyu"
+        - string: "stisvc"
+        - string: "UI0Detect"
+        # QuickBooks / Accounting software targets
+        - string: "QBFCService"
+        - string: "QBIDPService"
+        - string: "Intuit.QuickBooks.FCS"
+        - string: "QBCFMonitorService"   
+        # Other specified IOCs
+        - string: "YooBackup"
+        - string: "YooIT"
