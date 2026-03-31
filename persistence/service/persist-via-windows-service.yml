@@ -39,4 +39,7 @@ rule:
           - string: /New-Service /i
       - and:
         - match: set registry value
-        - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Services/i
+        - string: /System\(ControlSet\d{3}|CurrentControlSet)\Services/i
+        - or:
+          - string: /ImagePath/i
+          - string: /StartType/i
