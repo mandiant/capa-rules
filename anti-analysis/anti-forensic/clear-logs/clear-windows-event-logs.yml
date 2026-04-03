@@ -28,7 +28,7 @@ rule:
             - api: wevtapi.EvtOpenSession
         - basic block:
           - and:
-            - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i
+            - string: /\bwevtutil(\.exe)?\s+(clear-log|cl)/i
         - call:
           - and:
-            - string: /wevtutil(\.exe)?\s+(clear-log|cl)/i
+            - string: /\bwevtutil(\.exe)?\s+(clear-log|cl)/i
