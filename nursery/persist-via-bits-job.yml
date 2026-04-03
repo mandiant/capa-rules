@@ -16,10 +16,10 @@ rule:
       - match: host-interaction/process/create
       - or:
         - and:
-          - string: /bitsadmin(|\.exe) /i
-          - string: /\/SetNotifyCmdLine/i
+          - string: /\bbitsadmin(?:\.exe)?\b/i
+          - string: /\b\/SetNotifyCmdLine\b/i
         - and:
           - or:
-            - string: /Set-BitsTransfer /i
-            - string: /Start-BitsTransfer /i
-          - string: / -NotifyCmdLine /i
+            - string: /\bSet-BitsTransfer\b/i
+            - string: /\bStart-BitsTransfer\b/i
+          - string: /\b-NotifyCmdLine\b/i
