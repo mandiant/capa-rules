@@ -3,8 +3,8 @@ rule:
     name: reference ConfuserEx anti-profiling
     namespace: anti-analysis/anti-debugging
     author: Nitezio
-    description: Detects strings associated with ConfuserEx's anti-profiling mechanisms, which patch the CLR and hijack named pipes to prevent managed profilers from attaching.
-    scope: file
+    description: Detects ConfuserEx's anti-profiling mechanisms, which patch the CLR and hijack named pipes to prevent managed profilers from attaching.
+    scope: function
     att&ck:
       - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
     references:
@@ -12,5 +12,13 @@ rule:
       - https://github.com/yck1509/ConfuserEx/blob/master/Confuser.Runtime/antinet/AntiManagedProfiler.cs
   features:
     - or:
-      - string: "ProfAPIMaxWaitForTriggerMs"
-      - string: "\\\\.\\pipe\\CPFATP_{0}_v{1}.{2}.{3}"
+      # Behavior 1: Modifying the CLR timeout via memory protection
+      - and:
+        - api: kernel32.VirtualProtect
+        - string: "ProfAPIMaxWaitForTriggerMs"
+      # Behavior 2: Hijacking the CLR profiler named pipe
+      - and:
+        - string: "\\\\.\\pipe\\CPFATP_{0}_v{1}.{2}.{3}"
+        - or:
+          - api: kernel32.CreateNamedPipe
+          - api: kernel32.CreateFile
