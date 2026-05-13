@@ -3,7 +3,7 @@ rule:
     name: set HTTP header
     namespace: communication/http
     authors:
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
       - anushka.virgaonkar@mandiant.com
     scopes:
       static: function
@@ -15,8 +15,11 @@ rule:
   features:
     - or:
       - api: winhttp.WinHttpAddRequestHeaders
+      - api: System.Net.WebSockets.ClientWebSocketOptions::SetRequestHeader
       - property/write: System.Net.WebClient::Headers
       - and:
-        - api: System.Net.WebHeaderCollection::Add
-        - optional:
+        - or:
           - property/read: System.Net.WebClient::Headers
+          - property/read: System.Net.WebRequest::Headers
+          - property/read: System.Net.HttpWebRequest::Headers
+        - api: System.Collections.Specialized.NameValueCollection::Add

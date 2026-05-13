@@ -5,10 +5,10 @@ rule:
     authors:
       - awillia2@cisco.com
       - anushka.virgaonkar@mandiant.com
-      - michael.hunhoff@mandiant.com
+      - mehunhoff@google.com
     description: Detect collection of Windows domain information
     scopes:
-      static: function
+      static: instruction
       dynamic: call
     att&ck:
       - Discovery::System Network Configuration Discovery [T1016]
@@ -19,3 +19,4 @@ rule:
       - api: netapi32.DsRoleGetPrimaryDomainInformation
       - api: System.DirectoryServices.ActiveDirectory.Domain::GetComputerDomain
       - property/read: System.Net.NetworkInformation.IPGlobalProperties::DomainName
+      - property/read: System.Environment::UserDomainName

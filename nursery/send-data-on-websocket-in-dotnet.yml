@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: send data on WebSocket in .NET
+    namespace: communication/websocket/client
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: span of calls
+  features:
+    - and:
+      - api: System.Net.WebSockets.WebSocket::SendAsync
+      - optional:
+        - match: connect to WebSocket server in .NET

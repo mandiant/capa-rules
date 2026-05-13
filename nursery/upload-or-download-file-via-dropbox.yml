@@ -1,0 +1,13 @@
+rule:
+  meta:
+    name: upload or download file via Dropbox
+    namespace: communication/c2/file-transfer
+    authors:
+      - mehunhoff@google.com
+    scopes:
+      static: function
+      dynamic: span of calls
+  features:
+    - and:
+      - match: set HTTP header
+      - string: "Dropbox-API-Arg"
