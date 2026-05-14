@@ -6,7 +6,7 @@ rule:
       - omurcankaya@protonmail.com
     description: check internet connectivity
     scopes:
-      static: basic block
+      static: instruction
       dynamic: call
     att&ck:
       - Discovery::System Network Configuration Discovery::Internet Connection Discovery [T1016.001]
