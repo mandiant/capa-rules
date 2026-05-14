@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: check Internet connectivity via GetIsNetworkAvailable in .NET
+    name: check Internet connectivity in .NET
     namespace: host-interaction/network/connectivity
     authors:
       - omurcankaya@protonmail.com
