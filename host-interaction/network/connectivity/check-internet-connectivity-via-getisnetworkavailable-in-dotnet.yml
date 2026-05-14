@@ -4,7 +4,6 @@ rule:
     namespace: host-interaction/network/connectivity
     authors:
       - omurcankaya@protonmail.com
-    description: check internet connectivity
     scopes:
       static: instruction
       dynamic: call
