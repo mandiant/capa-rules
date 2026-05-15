@@ -1,15 +1,12 @@
 rule:
   meta:
-    name: decrypt shellcode using IPV6
+    name: decrypt shellcode stored with IPV6 strings
     namespace: load-code/shellcode
     authors:
       - corkami@google.com
     scopes:
-      static: file
-      dynamic: file
-    examples:
-      - 48bada9bc9759492da3944645fbe3bc6
-      - 664b85996b069b0698c6ae8c8c0d3ce4
+      static: function
+      dynamic: call
   features:
     - and:
       - string: "RtlIpv6StringToAddressA"
