@@ -1,7 +1,7 @@
 rule:
   meta:
     name: check for time delay in .NET
-    namespace: anti-analysis/anti-debugging/debugger-detection
+    namespace: anti-analysis/anti-debugging
     authors:
       - "@aryanyk"
     description: detects potential debugger checks by comparing Environment.TickCount values around Thread.Sleep calls.
