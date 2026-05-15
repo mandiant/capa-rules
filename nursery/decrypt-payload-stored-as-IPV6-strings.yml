@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: decrypt payload stored as IPV6 strings
+    name: decrypt payload stored as IPv6 strings
     namespace: load-code
     authors:
       - corkami@google.com
