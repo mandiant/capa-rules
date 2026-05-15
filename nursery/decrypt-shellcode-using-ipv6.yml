@@ -1,7 +1,7 @@
 rule:
   meta:
-    name: decrypt shellcode stored with IPV6 strings
-    namespace: load-code/shellcode
+    name: decrypt payload stored as IPV6 strings
+    namespace: load-code
     authors:
       - corkami@google.com
     scopes:
@@ -11,5 +11,5 @@ rule:
     - and:
       - string: "RtlIpv6StringToAddressA"
       - or:
-        - string: "4D5A:9000:0300:0000:0400:0000:FFFF:0000"
-        - string: "5648:89E6:4883:E4F0:4883:EC20:E80F:0000"
+        - string: "4D5A:9000:0300:0000:0400:0000:FFFF:0000" # PE header
+        - string: "5648:89E6:4883:E4F0:4883:EC20:E80F:0000" # Havoc shellcode
