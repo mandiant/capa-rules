@@ -16,7 +16,6 @@ rule:
       - https://github.com/Outbuilt/.NET-Anti-Debug
     examples:
       - e842958188274d5ffee7fbeffb803b2e:0x6000001
-
   features:
     - and:
       - format: dotnet
