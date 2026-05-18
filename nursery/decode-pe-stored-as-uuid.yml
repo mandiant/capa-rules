@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: decode PE stored as UUID
+    namespace: load-code/pe
+    authors:
+      - corkami@google.com
+    scopes:
+      static: function
+      dynamic: call
+  features:
+    - and:
+      - api: "UuidFromStringA"
+      - substring: "90909090"
+        description: nops
+      - substring: "00000000"
+      - substring: "-0000-"
+      - substring: "ffffffff"
+      - substring: "-ffff-"
+      - string: /.*4d-?5a.*/
+        description: PE signature
