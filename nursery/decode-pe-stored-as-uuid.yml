@@ -9,10 +9,7 @@ rule:
       dynamic: call
   features:
     - and:
-      - or:
-        - api: "UuidFromStringA"
-        - api: "UuidFromStringW"
-        - api: "UuidFromString"
+      - api: "UuidFromString"
       - or:
         - and:
           - substring: "90909090"
