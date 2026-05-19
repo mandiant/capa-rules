@@ -9,12 +9,18 @@ rule:
       dynamic: call
   features:
     - and:
-      - api: "UuidFromStringA"
-      - substring: "90909090"
-        description: nops
-      - substring: "00000000"
-      - substring: "-0000-"
-      - substring: "ffffffff"
-      - substring: "-ffff-"
-      - string: /.*4d-?5a.*/
-        description: PE signature
+      - or:
+        - api: "UuidFromStringA"
+        - api: "UuidFromStringW"
+        - api: "UuidFromString"
+      - or:
+        - and:
+          - substring: "90909090"
+            description: nops
+          - substring: "00000000"
+          - substring: "-0000-"
+          - substring: "ffffffff"
+          - substring: "-ffff-"
+          - string: /.*4d-?5a.*/
+            description: PE signature
+        - string: "90909090-9090-9090-9090-909090909090"
