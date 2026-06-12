@@ -14,4 +14,4 @@ rule:
   features:
     - and:
       - match: persist via COM hijack
-      - string: /{52A2AAAE-085D-4187-97EA-8C30DB990436}/i
+      - string: /\{52A2AAAE-085D-4187-97EA-8C30DB990436\}/i
