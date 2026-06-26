@@ -15,6 +15,7 @@ rule:
       - https://blog.f-secure.com/detecting-parent-pid-spoofing/
       - https://attack.mitre.org/techniques/T1134/004/
     examples:
+      - 7fc295b013cf773eb71e3de24944a7ca1e876846137cb6c6a758a26bbc1ce4f5:0x140001000
       - 2ebadd04f0ada89c36c1409b6e96423a68dd77b513db8db3da203c36d3753e5f:0x140002291
   features:
     - and:
