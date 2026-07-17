@@ -10,14 +10,33 @@ rule:
       dynamic: file
     references:
       - https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/
+      - https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/Bootstrap/main.cpp
+      - https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/Runtime/DebugHeader.cpp
+      - https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/Runtime/EHHelpers.cpp
     examples:
       - 684cc28e6a7fbd12f23dbc563f06306555ebb870bd727ad60839d4ff26e7f3b2
   features:
-    - and:
-      - substring: ".NETCoreApp,Version="
+    - or:
+      - export: DotNetRuntimeDebugHeader
+        description: runtime debug header exported by .NET 8+ AoT binaries unless DebuggerSupport is disabled
       - 2 or more:
-        - substring: "AotAnalysis4IL"
-        - substring: "https://aka.ms/nativeaot-compatibilit"
-        - substring: "removed by the AOT compiler"
-        - substring: "\\native\\"
-          description: During compilation, the output by default contains the path "native," which is then in turn included in the PDB path.
+        - section: .managed
+          description: managed code section emitted by .NET 7/8 era ILCompiler on Windows
+        - section: hydrated
+          description: data rehydration section, default on Linux and in .NET 8 era or size-optimized Windows builds
+        - substring: ".managedcode$A"
+          description: section marker bracketing AoT-compiled managed code on Windows
+        - substring: ".modules$A"
+          description: section marker bracketing AoT module headers on Windows
+        - substring: ".unbox$A"
+          description: section marker bracketing AoT unboxing stubs on Windows
+        - substring: "__managedcode"
+          description: section and bracketing symbols holding AoT-compiled managed code on Linux
+        - substring: "System.Private.TypeLoader"
+          description: managed runtime assembly only present in AoT binaries
+        - substring: "System.Private.Reflection.Execution"
+          description: managed runtime assembly only present in AoT binaries
+        - string: "Fatal error. Invalid Program: attempted to call a UnmanagedCallersOnly method from managed code."
+          description: fail-fast message from the statically linked AoT runtime
+        - string: "Process is terminating due to StackOverflowException."
+          description: fail-fast message from the statically linked AoT runtime
