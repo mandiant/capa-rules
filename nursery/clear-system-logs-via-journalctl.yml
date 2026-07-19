@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: clear system logs via journalctl
+    namespace: anti-analysis/anti-forensic/clear-logs
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Defense Evasion::Indicator Removal::Clear Linux or Mac System Logs [T1070.002]
+    examples:
+      - 6a5bda892608df18c543036b71f46dd2ae533c85256c40dffeb23ea78c70f021
+  features:
+    - and:
+      - os: linux
+      - string: /\bjournalctl\s+(--?\S+\s+)*--(rotate|vacuum-time|vacuum-size|vacuum-files)/
