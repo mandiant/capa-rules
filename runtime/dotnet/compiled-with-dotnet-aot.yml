@@ -32,11 +32,14 @@ rule:
           description: section marker bracketing AoT unboxing stubs on Windows
         - substring: "__managedcode"
           description: section and bracketing symbols holding AoT-compiled managed code on Linux
-        - substring: "System.Private.TypeLoader"
-          description: managed runtime assembly only present in AoT binaries
-        - substring: "System.Private.Reflection.Execution"
-          description: managed runtime assembly only present in AoT binaries
         - string: "Fatal error. Invalid Program: attempted to call a UnmanagedCallersOnly method from managed code."
           description: fail-fast message from the statically linked AoT runtime
         - string: "Process is terminating due to StackOverflowException."
           description: fail-fast message from the statically linked AoT runtime
+      - 2 or more:
+        - substring: "System.Private.TypeLoader"
+          description: managed runtime assembly only present in AoT binaries
+        - substring: "System.Private.Reflection.Execution"
+          description: managed runtime assembly only present in AoT binaries
+        - substring: "System.Private.StackTraceMetadata"
+          description: managed runtime assembly only present in AoT binaries
