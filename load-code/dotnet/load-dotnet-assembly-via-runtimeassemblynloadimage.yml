@@ -1,0 +1,42 @@
+rule:
+  meta:
+    name: load .NET assembly via RuntimeAssembly.nLoadImage
+    namespace: load-code/dotnet
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: file
+      dynamic: call
+    att&ck:
+      - Defense Evasion::Reflective Code Loading [T1620]
+    references:
+      - https://dr4k0nia.github.io/posts/NixImports-a-NET-loader-using-HInvoke/
+    examples:
+      - 6c8b0f234a239eb76c80b6e5b911720dfcd3738ff410375fbc65030c1f8fefe1
+  features:
+    - and:
+      - format: dotnet
+      - string: "nLoadImage"
+      - or:
+        - or:
+          - api: System.Reflection.Module::GetMethod
+          - api: System.Reflection.Module::GetMethodImpl
+          - api: System.Reflection.Module::GetMethods
+          - api: System.Reflection.Module::ResolveMethod
+          - api: System.Type::GetMethod
+          - api: System.Type::GetMethodImpl
+          - api: System.Type::GetMethods
+          - api: System.Reflection.MethodBase::Invoke
+          - api: System.Reflection.MethodInfo::Invoke
+          - api: System.Delegate::CreateDelegate
+        - or:
+          - import: System.Reflection.Module::GetMethod
+          - import: System.Reflection.Module::GetMethodImpl
+          - import: System.Reflection.Module::GetMethods
+          - import: System.Reflection.Module::ResolveMethod
+          - import: System.Type::GetMethod
+          - import: System.Type::GetMethodImpl
+          - import: System.Type::GetMethods
+          - import: System.Reflection.MethodBase::Invoke
+          - import: System.Reflection.MethodInfo::Invoke
+          - import: System.Delegate::CreateDelegate
