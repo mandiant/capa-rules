@@ -14,6 +14,8 @@ rule:
     references:
       - https://github.com/es3n1n/defendnot
       - https://github.com/Feng-Teng/Microsoft-Defender/
+    examples:
+      - f5449806ad50242a4df9186455434b5957f3fc2044d85a9f1d9135a542b678cc
   features:
     - and:
       - api: ole32.CoCreateInstance
