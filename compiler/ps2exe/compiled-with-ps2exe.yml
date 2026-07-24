@@ -5,6 +5,7 @@ rule:
     authors:
       - "@_re_fox"
       - jakub.jozwiak@mandiant.com
+      - "@shreethaar"
     scopes:
       static: file
       dynamic: file
