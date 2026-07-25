@@ -11,7 +11,7 @@ rule:
       - Impact::Service Stop [T1489]
       - Persistence::Create or Modify System Process::Systemd Service [T1543.002]
     examples:
-      - 6a5bda892608df18c543036b71f46dd2ae533c85256c40dffeb23ea78c70f021
+      - 9a065f123d185623b6cb6762bd5a21cf1b836fbaeae0ef85b58aa76a97d5077b
   features:
     - and:
       - os: linux
