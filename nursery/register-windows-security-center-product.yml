@@ -4,6 +4,7 @@ rule:
     namespace: impact/features
     authors:
       - still@teamt5.org
+    description: Looks for CLSID/IIDs used when making COM calls to the Windows Security Center component; may be to impair Windows Defender by registering itself as a security solution.
     scopes:
       static: function
       dynamic: unsupported  # requires bytes features
@@ -16,7 +17,6 @@ rule:
       - https://github.com/Feng-Teng/Microsoft-Defender/
     examples:
       - f5449806ad50242a4df9186455434b5957f3fc2044d85a9f1d9135a542b678cc:0x18000d090
-    description: Match CLSID/IIDs used when making COM calls to the Windows Security Center component; may be to impair Windows Defender by registering itself as a security solution.
   features:
     - and:
       - api: ole32.CoCreateInstance
