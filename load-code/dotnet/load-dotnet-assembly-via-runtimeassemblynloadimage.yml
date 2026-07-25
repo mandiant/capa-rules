@@ -6,7 +6,7 @@ rule:
       - still@teamt5.org
     scopes:
       static: file
-      dynamic: call
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Reflective Code Loading [T1620]
     references:

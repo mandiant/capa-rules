@@ -7,7 +7,7 @@ rule:
       - mehunhoff@google.com
     scopes:
       static: function
-      dynamic: call
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Reflective Code Loading [T1620]
   features:
