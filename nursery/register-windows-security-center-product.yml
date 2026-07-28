@@ -4,7 +4,7 @@ rule:
     namespace: impact/features
     authors:
       - still@teamt5.org
-      description: Looks for CLSID/IIDs associated with making COM calls to the Windows Security Center component; may be used to impair Windows Defender by registering itself as a security solution.
+    description: Looks for CLSID/IIDs associated with making COM calls to the Windows Security Center component; may be used to impair Windows Defender by registering itself as a security solution.
     scopes:
       static: function
       dynamic: unsupported  # requires bytes features
