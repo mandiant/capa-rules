@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: search for file via SearchPath
+    namespace: host-interaction/file-system
+    authors:
+      - "@w3lld1"
+    scopes:
+      static: instruction
+      dynamic: call
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/api/processenv/nf-processenv-searchpatha
+      - https://learn.microsoft.com/en-us/windows/win32/api/processenv/nf-processenv-searchpathw
+  features:
+    - or:
+      - api: kernel32.SearchPath
