@@ -9,8 +9,6 @@ rule:
       dynamic: call
     att&ck:
       - Discovery::File and Directory Discovery [T1083]
-    references:
-      - https://learn.microsoft.com/en-us/windows/win32/api/processenv/nf-processenv-searchpatha
   features:
     - or:
       - api: SearchPath
