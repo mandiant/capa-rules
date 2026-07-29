@@ -1,6 +1,6 @@
 rule:
   meta:
-    name: search for file via SearchPath
+    name: search for file via WinAPI
     namespace: host-interaction/file-system
     authors:
       - "@w3lld1"
@@ -11,7 +11,6 @@ rule:
       - Discovery::File and Directory Discovery [T1083]
     references:
       - https://learn.microsoft.com/en-us/windows/win32/api/processenv/nf-processenv-searchpatha
-      - https://learn.microsoft.com/en-us/windows/win32/api/processenv/nf-processenv-searchpathw
   features:
     - or:
-      - api: kernel32.SearchPath
+      - api: SearchPath
