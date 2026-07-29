@@ -1,0 +1,31 @@
+rule:
+  meta:
+    name: register Windows Security Center product
+    namespace: impact/features
+    authors:
+      - still@teamt5.org
+    description: Looks for CLSID/IIDs associated with making COM calls to the Windows Security Center component; may be used to impair Windows Defender by registering itself as a security solution.
+    scopes:
+      static: function
+      dynamic: unsupported  # requires bytes features
+    att&ck:
+      - Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]
+    mbc:
+      - Defense Evasion::Disable or Evade Security Tools [F0004]
+    references:
+      - https://github.com/es3n1n/defendnot
+      - https://github.com/Feng-Teng/Microsoft-Defender/
+    examples:
+      - f5449806ad50242a4df9186455434b5957f3fc2044d85a9f1d9135a542b678cc:0x18000d090
+  features:
+    - and:
+      - api: ole32.CoCreateInstance
+      - bytes: 37 2C 10 F2 C3 90 0C 45 B3 F6 92 BE 16 93 BD F2 = CLSID_WindowsSecurityCenterISVAPI
+      - or:
+        - bytes: 56 97 4E 02 6C BA D1 4A 83 21 87 BA E7 8F D0 E3 = IID_IWscASStatus
+        - bytes: 6E 6C 8F 9B 4A 8A 91 48 AF 63 1A 2F 50 92 40 40 = IID_IWscFWStatus
+        - bytes: CB 98 F6 62 4A 09 68 4C 94 19 8E 8C 49 42 0E 59 = IID_IWscFWStatus2
+        - bytes: 65 A7 01 39 91 AB A9 4B A5 53 5B 85 38 DE B8 40 = IID_IWscAVStatus
+        - bytes: 96 9C 6D 20 DF AC 4B 48 83 3E DE B9 14 56 5E 44 = IID_IWscAVStatus2
+        - bytes: A2 7C 00 CF E3 F5 E5 11 9C E9 5E 55 17 50 7C 66 = IID_IWscAVStatus3
+        - bytes: AC AF CB 4D BA 29 B1 46 80 FC B8 BD E3 C0 AE 4D = IID_IWscAVStatus4
