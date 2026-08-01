@@ -1,0 +1,14 @@
+rule:
+  meta:
+    name: search for file via WinAPI
+    namespace: host-interaction/file-system
+    authors:
+      - "@w3lld1"
+    scopes:
+      static: instruction
+      dynamic: call
+    att&ck:
+      - Discovery::File and Directory Discovery [T1083]
+  features:
+    - or:
+      - api: SearchPath
