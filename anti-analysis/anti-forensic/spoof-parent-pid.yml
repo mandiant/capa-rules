@@ -5,16 +5,30 @@ rule:
     namespace: anti-analysis/anti-forensic
     authors:
       - michael.hunhoff@mandiant.com
+      - itxsamad1
     scopes:
-      static: basic block
-      dynamic: call
+      static: function
+      dynamic: span of calls
     att&ck:
       - Defense Evasion::Access Token Manipulation::Parent PID Spoofing [T1134.004]
     references:
       - https://blog.f-secure.com/detecting-parent-pid-spoofing/
+      - https://attack.mitre.org/techniques/T1134/004/
     examples:
+      - bfe31574ede658dcd647bcbcceee17cf10605a66fe8be366da94f90f4ed516a3:0x140001760
       - 2ebadd04f0ada89c36c1409b6e96423a68dd77b513db8db3da203c36d3753e5f:0x140002291
   features:
     - and:
+      - api: kernel32.InitializeProcThreadAttributeList
       - api: kernel32.UpdateProcThreadAttribute
       - number: 0x20000 = PROC_THREAD_ATTRIBUTE_PARENT_PROCESS
+      - or:
+        - api: kernel32.CreateProcess
+        - api: kernel32.CreateProcessA
+        - api: kernel32.CreateProcessW
+        - api: kernel32.CreateProcessAsUser
+        - api: kernel32.CreateProcessWithLogonW
+        - api: kernel32.CreateProcessWithTokenW
+        - api: advapi32.CreateProcessAsUser
+        - api: advapi32.CreateProcessWithLogon
+        - api: advapi32.CreateProcessWithToken
