@@ -9,11 +9,12 @@ rule:
       dynamic: span of calls
     att&ck:
       - Discovery::Group Policy Discovery [T1615]
+    references:
+      - https://github.com/mandiant/capa-rules/issues/1036
+      - https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/gpresult
     examples:
       - 9e4d06759f278255073f9ac7b31a115a:0x100068B7
   features:
     - and:
       - os: windows
-      - or:
-        - substring: "gpresult"
-        - substring: "GPRESULT"
+      - string: /\bgpresult(\.exe)?\s+\/\w+/i
