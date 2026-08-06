@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: stop backup or recovery services
+    namespace: impact/inhibit-system-recovery
+    authors:
+      - srivastava.ameya@gmail.com
+    description: the sample attempts to stop backup or recovery services
+    scopes:
+      static: file
+      dynamic: unsupported
+    att&ck:
+      - Impact::Inhibit System Recovery [T1490]
+      - Impact::Service Stop [T1489]
+    references:
+      - https://media.kasperskycontenthub.com/wp-content/uploads/sites/63/2024/09/16054035/Common-TTPs-of-the-modern-ransomware_low-res.pdf
+    examples:
+      - B87E9DD18A5533A09D3E48A7A1EFBCF6
+  features:
+    - or:
+      - string: /\bnet\s+stop\s+["']?(veeam|vss|oracle|sqlwriter|sqlsafe|sqltelemetry|acronis|sophos|mssql)\b/i
+      - string: /\bsc(\.exe)?\s+stop\s+["']?(veeam|vss|oracle|sqlwriter|sqlsafe|sqltelemetry|acronis|sophos|mssql)\b/i
+      - string: /\bsc(\.exe)?\s+config\s+["']?(veeam|vss|oracle|sqlwriter|sqlsafe|sqltelemetry|acronis|sophos|mssql)\b.*start=\s*disabled\b/i
+      - string: /\bstop\s+["']?(veeam|vss|oracle|sqlwriter|sqlsafe|sqltelemetry|acronis|sophos|mssql)\b.*\/y\b/i
+      - string: /\btaskkill\b[^"\r\n]\/f\b[^"\r\n]\b(veeam|sqlservr|oracle|acronis|sophos|iis)\b/i
