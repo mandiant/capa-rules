@@ -15,7 +15,9 @@ rule:
       - al-khaser_x86.exe_:0x425470
   features:
     - and:
-      - match: PEB access
+      - or:
+        - match: PEB access
+        - api: GetProcessHeap
       - or:
         - and:
           - arch: i386
