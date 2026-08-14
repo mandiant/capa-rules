@@ -1,0 +1,24 @@
+rule:
+  meta:
+    name: is NOP byte
+    namespace: lib
+    authors:
+      - wballenthin@hex-rays.com
+    description: checks to see if the start of a buffer contains NOP (0x90) bytes
+    scopes:
+      static: instruction
+      dynamic: unsupported
+    examples:
+      - F3D8530A2B81D1871C2F96E064291AD0:0x1400016D9
+  features:
+    - and:
+      - or:
+        - arch: i386
+        - arch: amd64
+      - mnemonic: cmp
+      - or:
+        - operand[0].offset: 0x0
+        - operand[0].offset: 0x1
+        - operand[0].offset: 0x2
+        - operand[0].offset: 0x3
+      - operand[1].number: 0x90

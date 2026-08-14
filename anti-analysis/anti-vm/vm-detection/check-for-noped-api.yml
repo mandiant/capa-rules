@@ -1,0 +1,17 @@
+rule:
+  meta:
+    name: check for NOPed API
+    namespace: anti-analysis/anti-vm/vm-detection
+    authors:
+      - wballenthin@hex-rays.com
+    scopes:
+      static: function
+      dynamic: unsupported
+    references:
+      - https://www.acronis.com/en/tru/posts/patchcord-new-malware-cluster-targets-afghan-telecom-and-south-asian-critical-infrastructure/
+    examples:
+      - F3D8530A2B81D1871C2F96E064291AD0:0x140001699
+  features:
+    - and:
+      - api: GetProcAddress
+      - count(match(is NOP byte)): 3 or more
