@@ -25,4 +25,15 @@ rule:
           - and:
             - arch: amd64
             - number: 0xB8 = PEB->NumberOfProcessors
+      - and:
+        - or:
+          - api: GetSystemInfo
+          - api: GetNativeSystemInfo
+        - or:
+          - and:
+            - arch: i386
+            - operand[1].offset: 0x14 = SYSTEM_INFO.dwNumberOfProcessors
+          - and:
+            - arch: amd64
+            - operand[1].offset: 0x20 = SYSTEM_INFO.dwNumberOfProcessors
       - property/read: System.Environment::ProcessorCount
