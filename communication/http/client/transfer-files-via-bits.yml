@@ -1,0 +1,26 @@
+rule:
+  meta:
+    name: transfer files via BITS
+    namespace: communication/http/client
+    authors:
+      - akshat4703
+    description: transfer files using a BITS job
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, bytes features
+    att&ck:
+      - Defense Evasion::BITS Jobs [T1197]
+    references:
+      - https://cloud.google.com/blog/topics/threat-intelligence/attacker-use-of-windows-background-intelligent-transfer-service/
+      - https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/bitsadmin
+      - https://learn.microsoft.com/en-us/powershell/module/bitstransfer/start-bitstransfer
+    examples:
+      - 08ac667c65d36d6542917655571e61c8.exe_:0x401E78
+  features:
+    - and:
+      - match: create BITS job
+      - or:
+        - offset: 0x10 = IBackgroundCopyJobVtbl.AddFile
+        - string: /\bbitsadmin(?:\.exe)?\b.{0,80}\b\/addfile\b/i
+        - string: /\bbitsadmin(?:\.exe)?\b.{0,80}\b\/transfer\b/i
+        - string: /\bSet-BitsTransfer\b/i
