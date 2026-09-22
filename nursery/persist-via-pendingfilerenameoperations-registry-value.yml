@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: persist via PendingFileRenameOperations registry value
+    namespace: persistence/registry
+    authors:
+      - akshat4703
+    description: persist by queuing file rename or delete operations via Session Manager at next reboot
+    scopes:
+      static: function
+      dynamic: span of calls
+    att&ck:
+      - Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]
+    references:
+      - https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefileexa
+      - https://forensicatorj.wordpress.com/2014/06/25/interpreting-the-pendingfilerenameoperations-registry-key-for-forensics/
+    examples:
+      - ac742739cae0d411dfcb78ae99a7baee:0x140002318
+  features:
+    - and:
+      - match: set registry value
+      - string: /\bSystem\\(ControlSet\d{3}|CurrentControlSet)\\Control\\Session Manager\\PendingFileRenameOperations\b/i
