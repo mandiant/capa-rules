@@ -10,6 +10,9 @@ rule:
     att&ck:
       - Persistence::Create or Modify System Process::Windows Service [T1543.003]
       - Execution::System Services::Service Execution [T1569.002]
+    references:
+      - https://github.com/mandiant/capa-rules/issues/1100
+      - https://learn.microsoft.com/en-us/windows-hardware/drivers/install/hklm-system-currentcontrolset-services-registry-tree
     examples:
       - Practical Malware Analysis Lab 03-02.dll_:0x10004706
       - 9f012d7e3ae8f62370278e372691eb73b878fe2280b6083e1be637b278021855:0x40113A
@@ -40,3 +43,7 @@ rule:
       - and:
         - match: set registry value
         - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Services/i
+        - or:
+          - string: /ImagePath/i
+          - string: /ServiceDll/i
+          - string: /^Start$/i
