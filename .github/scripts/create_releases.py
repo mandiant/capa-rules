@@ -126,7 +126,7 @@ def create_releases(repo_name: str, prior_tag: str, release_tag: str, create: bo
     initial_commit = commits.splitlines()[-1]
     tags = [initial_commit]
 
-    git_tags, _ = run_cmd(f"{GIT_EXE} tag -l v*.*")
+    git_tags, _ = run_cmd(f"{GIT_EXE} tag -l --sort=v:refname v*.*")
     tags.extend(git_tags.splitlines())
     logger.debug("tags: %s", tags)
 
