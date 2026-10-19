@@ -24,10 +24,10 @@ rule:
         - operand[1].offset: 0xC
         - mnemonic: movzx
       - 3 or more:
-        - operand[1].number: 8888 = Fiddler / Charles Proxy
-        - operand[1].number: 8080 = Burp Suite / HTTP proxy
-        - operand[1].number: 9999
-        - operand[1].number: 8000
-        - operand[1].number: 8443 = HTTPS proxy
-        - operand[1].number: 5000
+        - operand[1].number: 8888 = HTTP proxy / Fiddler / Charles Proxy
+        - operand[1].number: 8080 = HTTP proxy / Burp Suite
+        - operand[1].number: 9999 = debugger / proxy listener
+        - operand[1].number: 8000 = HTTP proxy / mitmweb
+        - operand[1].number: 8443 = HTTPS proxy / alternate SSL
+        - operand[1].number: 5000 = local web server / UPnP
         - operand[1].number: 31337 = Back Orifice / sandbox sinkhole
