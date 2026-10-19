@@ -1,0 +1,33 @@
+rule:
+  meta:
+    name: check for analysis tools listening on local ports
+    namespace: anti-analysis
+    authors:
+      - wballenthin@hex-rays.com
+      - ninadgowdru
+    description: detects attempts to inspect local TCP listening ports for active analysis tools (e.g. Burp Suite, Fiddler, network monitors)
+    scopes:
+      static: function
+      dynamic: unsupported
+    att&ck:
+      - Discovery::Software Discovery::Security Software Discovery [T1518.001]
+      - Discovery::System Network Connections Discovery [T1049]
+    mbc:
+      - Discovery::Analysis Tool Discovery [B0013]
+    examples:
+      - 5e17360d32e9b272bb7e1b97c8e4dca34622ec9ce08fd240fe2758cc3f67dc4a:0x1400016FB
+  features:
+    - and:
+      - api: GetTcpTable
+      - instruction:
+        - description: pTcpTable->dwLocalPort
+        - operand[1].offset: 0xC
+        - mnemonic: movzx
+      - 3 or more:
+        - operand[1].number: 8888 = Fiddler / Charles Proxy
+        - operand[1].number: 8080 = Burp Suite / HTTP proxy
+        - operand[1].number: 9999
+        - operand[1].number: 8000
+        - operand[1].number: 8443 = HTTPS proxy
+        - operand[1].number: 5000
+        - operand[1].number: 31337 = Back Orifice / sandbox sinkhole
