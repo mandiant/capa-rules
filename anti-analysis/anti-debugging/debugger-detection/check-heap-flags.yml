@@ -1,0 +1,66 @@
+rule:
+  meta:
+    name: check heap flags
+    namespace: anti-analysis/anti-debugging/debugger-detection
+    authors:
+      - wballenthin@hex-rays.com
+      - Pratham21223
+    scopes:
+      static: function
+      dynamic: unsupported  # requires offset, mnemonic features
+    mbc:
+      - Anti-Behavioral Analysis::Debugger Detection::ProcessHeap [B0001.021]
+    references:
+      - https://www.reverseengineering.app/en/techniques/heap-flags
+    examples:
+      - 5e17360d32e9b272bb7e1b97c8e4dca34622ec9ce08fd240fe2758cc3f67dc4a:0x1400016FB
+  features:
+    - and:
+      - or:
+        - match: get process heap flags
+        - match: get process heap force flags
+        - api: GetProcessHeap
+      - or:
+        - instruction:
+          - description: compare heap flags against debugger-modified values
+          - or:
+            - mnemonic: test
+            - mnemonic: cmp
+            - mnemonic: and
+          - or:
+            - number: 0x40000000 = HEAP_VALIDATE_PARAMETERS_ENABLED
+            - number: 0x40000002 = HEAP_GROWABLE | HEAP_VALIDATE_PARAMETERS_ENABLED
+            - number: 0x40000060 = HEAP_TAIL_CHECKING_ENABLED | HEAP_FREE_CHECKING_ENABLED | HEAP_VALIDATE_PARAMETERS_ENABLED
+            - number: 0x40000062 = HEAP_GROWABLE | HEAP_TAIL_CHECKING_ENABLED | HEAP_FREE_CHECKING_ENABLED | HEAP_VALIDATE_PARAMETERS_ENABLED
+            - number: 0xFFFFFFFD = ~HEAP_GROWABLE
+        - and:
+          - arch: i386
+          - or:
+            - instruction:
+              - mnemonic: cmp
+              - or:
+                - offset: 0x40 = ProcessHeap->HeapFlags >= Vista
+                - offset: 0xC = ProcessHeap->HeapFlags < Vista
+              - number: 0x2 = HEAP_GROWABLE
+            - instruction:
+              - mnemonic: cmp
+              - or:
+                - offset: 0x44 = ProcessHeap->ForceFlags >= Vista
+                - offset: 0x10 = ProcessHeap->ForceFlags < Vista
+              - number: 0x0
+        - and:
+          - arch: amd64
+          - or:
+            - instruction:
+              - mnemonic: cmp
+              - or:
+                - offset: 0x70 = ProcessHeap->HeapFlags >= Vista
+                - offset: 0x14 = ProcessHeap->HeapFlags < Vista
+              - number: 0x2 = HEAP_GROWABLE
+            - instruction:
+              - description: compare ForceFlags against its normal value
+              - mnemonic: cmp
+              - or:
+                - offset: 0x74 = ProcessHeap->ForceFlags >= Vista
+                - offset: 0x18 = ProcessHeap->ForceFlags < Vista
+              - number: 0x0
