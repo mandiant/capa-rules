@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: terminate process via killall
+    namespace: host-interaction/process/terminate
+    authors:
+      - saniyafatima07
+    scopes:
+      static: function
+      dynamic: call
+    mbc:
+      - Process::Terminate Process [C0018]
+    references:
+      - https://www.elastic.co/security-labs/teampcp-container-attack-scenario
+      - https://www.elastic.co/security-labs/outlaw-linux-malware
+    examples:
+      - cff512dd1c9f82e79a9cc5af5f0a096b20737548f8d1bdc1aebf5744ffc78f6b.sh_:0x0
+  features:
+    - or:
+      - api: killall
+      - api: kill
+      - api: pkill

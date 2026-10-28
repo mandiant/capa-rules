@@ -1,0 +1,38 @@
+rule:
+  meta:
+    name: download and execute payload
+    namespace: host-interaction/software
+    authors:
+      - saniyafatima07
+    scopes:
+      static: function
+      dynamic: call
+    att&ck:
+      - Command and Control::Ingress Tool Transfer [T1105]
+    mbc:
+      - Lateral Movement::Ingress Tool Transfer [E1105]
+      - Execution::Remote Commands::Download File [B0011.002]
+    references:
+      - https://www.elastic.co/security-labs/teampcp-container-attack-scenario
+      - https://www.elastic.co/security-labs/outlaw-linux-malware
+    examples:
+      - 91800a2afbdc98837d6b23a6de2b5f2433fedcdae9330d0a5b2a776571a4fef6.sh_:0xA4
+  features:
+    - or:
+      - and:
+        - or:
+          - api: curl
+          - api: wget
+        - or:
+          - substring: "| bash"
+          - substring: "| sh"
+          - substring: "| zsh"
+          - substring: "| python"
+          - substring: "| perl"
+          - api: bash
+          - api: sh
+          - api: python
+          - api: perl
+          - api: exec
+          - api: source
+          - api: chmod
