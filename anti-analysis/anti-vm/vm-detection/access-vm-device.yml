@@ -1,0 +1,25 @@
+rule:
+  meta:
+    name: access VM device
+    namespace: anti-analysis/anti-vm/vm-detection
+    authors:
+      - wballenthin@hex-rays.com
+      - ninadgowdru
+    description: detects attempts to access virtual machine communication ports or guest devices (e.g., VirtualBox, VMware)
+    scopes:
+      static: basic block
+      dynamic: call
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
+    mbc:
+      - Anti-Behavioral Analysis::Virtual Machine Detection [B0009]
+    examples:
+      - 5e17360d32e9b272bb7e1b97c8e4dca34622ec9ce08fd240fe2758cc3f67dc4a:0x1400016FB
+  features:
+    - and:
+      - api: CreateFile
+      - or:
+        - string: "\\\\.\\VBoxGuest"
+        - string: "\\\\.\\VBoxTrayIPC"
+        - string: "\\\\.\\vmci"
+        - string: "\\\\.\\HGFS"
