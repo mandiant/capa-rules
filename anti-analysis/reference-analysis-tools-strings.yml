@@ -60,7 +60,7 @@ rule:
       - string: /cutter(\.exe)?/i
       - string: /dbgx\.shell(\.exe)?/i
       - string: /df5serv(\.exe)?/i
-      - string: /frida(\.exe)?/i
+      - string: /frida(\.exe)?\b/i
       - string: /httpanalyzerv7(\.exe)?/i
       - string: /httpdebuggerui(\.exe)?/i
       - string: /netcat(\.exe)?/i
