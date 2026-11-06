@@ -40,3 +40,10 @@ rule:
       - and:
         - match: set registry value
         - string: /System\\(ControlSet\d{3}|CurrentControlSet)\\Services/i
+        - or:
+          - string: /ImagePath/i
+            description: service binary path
+          - string: /ServiceDll/i
+            description: svchost-hosted service DLL
+          - string: /FailureCommand/i
+            description: command run on service failure
