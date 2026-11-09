@@ -1,0 +1,23 @@
+rule:
+  meta:
+    name: check for low physical memory
+    namespace: anti-analysis/anti-vm/vm-detection
+    authors:
+      - "@Anbu-00001"
+    scopes:
+      static: basic block
+      dynamic: unsupported
+    att&ck:
+      - Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]
+    mbc:
+      - Anti-Behavioral Analysis::Virtual Machine Detection::Modern Specs Check - Total physical memory [B0009.014]
+    examples:
+      - 5e17360d32e9b272bb7e1b97c8e4dca34622ec9ce08fd240fe2758cc3f67dc4a:0x140001830
+  features:
+    - and:
+      - or:
+        - api: kernel32.GlobalMemoryStatusEx
+        - api: kernel32.GlobalMemoryStatus
+      - instruction:
+        - mnemonic: cmp
+        - number: 0x7FFFFFFF
