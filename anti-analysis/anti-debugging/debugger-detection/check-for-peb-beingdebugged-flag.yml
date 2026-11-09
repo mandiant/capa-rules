@@ -13,6 +13,7 @@ rule:
       - Practical Malware Analysis, Chapter 16, p. 353
     examples:
       - Practical Malware Analysis Lab 16-01.exe_:0x403530
+      - 5e17360d32e9b272bb7e1b97c8e4dca34622ec9ce08fd240fe2758cc3f67dc4a:0x14000193A
   features:
     - and:
       - match: PEB access

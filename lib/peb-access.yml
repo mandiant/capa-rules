@@ -13,6 +13,8 @@ rule:
       - https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtGlobalFlag.cpp
     examples:
       - al-khaser_x86.exe_:0x420D20
+      - 5e17360d32e9b272bb7e1b97c8e4dca34622ec9ce08fd240fe2758cc3f67dc4a:0x14000193A
+      - 932dab8756ad4ae9a62bde0772d952e4:0x14001BD43
   features:
     - or:
       - characteristic: peb access
@@ -39,6 +41,13 @@ rule:
           - instruction:
             - mnemonic: add
             - number: 0x60
+          - and:
+            - instruction:
+              - mnemonic: mov
+              - number: 0x60
+            - instruction:
+              - characteristic: gs access
+              - offset: 0x0
       - and:
         # WoW64 PEB address is fetched via the WoW64 Thread Environment Block (TEB) at FS:[0x18]-0x2000
         # https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/NtGlobalFlag.cpp#L45
