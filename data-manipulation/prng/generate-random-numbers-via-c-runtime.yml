@@ -1,0 +1,22 @@
+rule:
+  meta:
+    name: generate random numbers via C runtime
+    namespace: data-manipulation/prng
+    authors:
+      - "@Anbu-00001"
+    scopes:
+      static: function
+      dynamic: call
+    mbc:
+      - Cryptography::Generate Pseudo-random Sequence::rand [C0021.002]
+    examples:
+      - 5e17360d32e9b272bb7e1b97c8e4dca34622ec9ce08fd240fe2758cc3f67dc4a:0x1400016FB
+      - 07f7846bbcda782e5639292ad93907eb:0x401270
+      - 42e81cc1145ba3c1936a6cf9b8da0ccd:0x1000D570
+      - 152d4c9f63efb332ccb134c6953c0104:0x1400467A0
+      - 34dbc85ed0386e024c724c7969e8d0ff0ff0b1882508ea259c458d59657a1971:0x404AA4
+  features:
+    - and:
+      - api: rand
+      - optional:
+        - api: srand
