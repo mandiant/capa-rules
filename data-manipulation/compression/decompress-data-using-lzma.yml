@@ -1,0 +1,41 @@
+rule:
+  meta:
+    name: decompress data using LZMA
+    namespace: data-manipulation/compression
+    authors:
+      - david@edeca.net
+    description: detects the LzmaProps_Decode routine from LZMA decompression
+    scopes:
+      static: function
+      dynamic: unsupported  # requires number, characteristic, mnemonic features
+    mbc:
+      - Data::Decompress Data [C0025]
+    references:
+      - https://github.com/welovegit/LZMA-SDK/blob/main/C/LzmaDec.c
+    examples:
+      - 414b979bfc0a903f49a81f30d08aaa2f300f43ce4ae1ea5fffacc2926dc04f75:0x793750
+  features:
+    - and:
+      - instruction:
+        - description: if (d >= (9 * 5 * 5))
+        - mnemonic: cmp
+        - number: 0xE1
+      - instruction:
+        - description: if (dicSize < LZMA_DIC_MIN)
+        - mnemonic: cmp
+        - number: 0x1000 = LZMA_DIC_MIN
+      - or:
+        - and:
+          - instruction:
+            - description: unoptimised divide by 5 or modulo 5
+            - number: 5
+          - instruction:
+            - description: unoptimised divide by 9 or modulo 9
+            - number: 9
+        - and:
+          - instruction:
+            - description: optimized divide by 9
+            - number: 0x38E38E39
+          - instruction:
+            - description: optimized divide by 5
+            - number: 0x66666667
