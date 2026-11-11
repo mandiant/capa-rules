@@ -1,0 +1,30 @@
+rule:
+  meta:
+    name: decrypt payload stored as IPv4 strings
+    namespace: load-code
+    authors:
+      - corkami@google.com
+    scopes:
+      static: function
+      dynamic: call
+    examples:
+      # fixture_ipv4_havoc_f0eccd42.exe mimicking f0eccd42512d8930f6f7600a1ea6d69def4e28de577386030cfe068372744259:0x241732380 (Havoc shellcode)
+      - cab2d640a8b0a2a0e352902289ab7a664eeadf71aa387f2ec522eadc78fe22ee:0x140001000
+      # fixture_ipv4_pe_a1edfd22.exe mimicking a1edfd226f16b925d05c66ed616024d4a979cfe4e7718cad307a0f8b5539c937:0x140003a40 (PE start)
+      - 5347b1869ecc7ceb0a6c4b9378ca3b15c98e181f030b706941a2f343d50052d4:0x140001000
+      # fixture_ipv4_pe_da8373f4.exe mimicking da8373f46fad75ab0f867d75fc4849b2c8a96bfe723ad8a50ce69879acee2946 (PE start, RtlIpv4StringToAddressW variant)
+      - 3543072b39a8ed5159838e353991ca9f2f7892622e8f293f9fd61b6559aa80a0:0x140001000
+      # fixture_ipv4_msf_350eb9a5.exe mimicking 350eb9a5522be3bff07bccf9658ca462b58b2ce13bf0b743bbb535a9472725eb:0x140001460 (Metasploit / Cobalt Strike shellcode)
+      - 8f2bf4879cee5ffa055ecadee5bac0fd7ce14bfc0c3d2e2cace0f5279c466e02:0x140001000
+  features:
+    - and:
+      - or:
+        - api: RtlIpv4StringToAddress
+        - substring: "RtlIpv4StringToAddress"
+      - or:
+        - string: "77.90.144.0"
+          description: PE header
+        - string: "86.72.137.230"
+          description: Havoc shellcode
+        - string: "252.72.131.228"
+          description: Metasploit shellcode
