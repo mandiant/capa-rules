@@ -17,7 +17,7 @@ rule:
       - al-khaser_x86.exe_
   features:
     - or:
-      - string: /VBOX/i
+      - string: /\bVBOX\b/i
       - string: /VEN_VBOX/i
       - string: /VirtualBox/i
       - string: /06/23/99/i
