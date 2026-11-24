@@ -1,0 +1,18 @@
+rule:
+  meta:
+    name: manage system services via systemctl
+    namespace: host-interaction/service
+    authors:
+      - still@teamt5.org
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Impact::Service Stop [T1489]
+      - Persistence::Create or Modify System Process::Systemd Service [T1543.002]
+    examples:
+      - 9a065f123d185623b6cb6762bd5a21cf1b836fbaeae0ef85b58aa76a97d5077b
+  features:
+    - and:
+      - os: linux
+      - string: /\bsystemctl\s+(--?\S+\s+)*(daemon-reload|daemon-reexec|start|stop|restart|reload|enable|disable|mask|unmask|kill|reset-failed)\b/
