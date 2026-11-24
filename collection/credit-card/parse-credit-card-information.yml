@@ -9,14 +9,22 @@ rule:
       dynamic: unsupported  # requires mnemonic features
     mbc:
       - Data::Check String [C0019]
+    references:
+      - https://github.com/mandiant/capa-rules/issues/1088
+      - https://github.com/mandiant/capa-rules/issues/897
+      - https://en.wikipedia.org/wiki/ISO/IEC_7813
     examples:
       - 1d8fd13c890060464019c0f07b928b1a:0x402860
   features:
     - and:
-      - 3 or more:
+      - or:
         - instruction:
           - mnemonic: cmp
           - number: 0x5E = '^' (Track 1 separator)
+        - instruction:
+          - mnemonic: cmp
+          - number: 0x3B = ';' (Track 2 start sentinel)
+      - 2 or more:
         - instruction:
           - mnemonic: cmp
           - number: 0x3D = '=' (Track 2 separator)
@@ -32,9 +40,6 @@ rule:
         - instruction:
           - mnemonic: cmp
           - number: 0x3F = '?' (Track 1 & 2 end sentinel)
-        - instruction:
-          - mnemonic: cmp
-          - number: 0x3B = ';' (Track 2 start sentinel)
       - not:
         - description: if a function also compares these non-hex characters it's most likely NOT parsing CC data
         - and:
