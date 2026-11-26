@@ -1,0 +1,27 @@
+rule:
+  meta:
+    name: target services for ransomware
+    namespace: impact/inhibit-system-recovery
+    authors:
+      - Aryan Khandhadiya
+    description: detects stopping services commonly targeted by ransomware
+    scopes:
+      static: file
+      dynamic: file
+    att&ck:
+      - Impact::Service Stop [T1489]
+    references:
+      - https://github.com/netskopeoss/NetskopeThreatLabsIOCs/blob/main/Malware/BlackMatter/IOCs/README.md
+    examples:
+      - 4a5ac3c6f8383cc33c795804ba5f7f5553c029bbb4a6d28f1e4d8fb5107902c1
+  features:
+    - and:
+      - match: stop service
+      - 2 or more:
+        - substring: "msexchange"
+        - substring: "veeam"
+        - substring: "mssql"
+        - substring: "database"
+        - substring: "sophos"
+        - substring: "symantec"
+        - substring: "backup"
